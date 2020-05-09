@@ -21,5 +21,5 @@ Calculates AUC
 x <- seq(-3,3,l = 100)
 y <- dnorm(x)
 plot(x,y)
-aux(x,y)
+auc(x,y)
 }
