@@ -4,7 +4,7 @@
 # relper
 
 The goal of relper is to provide miscellaneous functions to assist in
-data cleaning and preparation
+data cleaning and preparation.
 
 ## Installation
 

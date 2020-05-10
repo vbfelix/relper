@@ -8,9 +8,19 @@
 #' @export
 #'
 #' @examples
-
+#'
+#'
+#' library(ggplot2)
+#'
+#' url <- "https://www.osbsoftware.com.br/admin/upload_produtos/RStudio%20-%20produto.png"
+#'
+#' logo <- water_mark(RCurl::getURLContent(url))
+#'
+#' ggplot()+
+#'   annotation_custom(logo)
+#'
 water_mark<-function(png_file){
 
-  grid::rasterGrob(image = png::readPNG(logo), interpolate = T)
+  grid::rasterGrob(image = png::readPNG(png_file), interpolate = T)
 
 }
