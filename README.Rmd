@@ -1,0 +1,111 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(relper)
+
+```
+# relper
+
+The goal of relper is to provide miscellaneous functions to assist in data cleaning and preparation
+
+## Installation
+
+You can install the developer version of relper from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+remotes::install_github("vbfelix/relper")
+```
+
+## ggplot2 functions
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(ggplot2)
+plot <- 
+ggplot(mtcars,aes(drat,hp))+
+  geom_point()
+
+plot
+```
+
+### theme_x
+
+```{r}
+plot + theme_x()
+```
+
+### theme_y
+
+```{r}
+plot + theme_y()
+```
+
+### theme_x
+
+```{r}
+plot + theme_map()
+```
+
+
+## metrics
+
+```{r}
+
+x <- rexp(20,.5)
+
+x
+
+```
+
+
+### Coefficient of Variation (CV)
+
+```{r}
+
+#raw
+cv(x, perc = F)
+
+#%
+cv(x, perc = T)
+
+```
+
+### Harmonic mean
+
+```{r}
+
+harmonic_mean(x)
+
+```
+
+
+## Other
+
+### Area under the curve
+
+```{r}
+x <- seq(-3,3,l = 100)
+y <- dnorm(x)
+plot(x,y)
+```
+
+
+```{r}
+auc(x,y)
+```
+
+
+
+
+
