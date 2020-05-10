@@ -6,6 +6,11 @@
 \usage{
 cv(x, perc = T)
 }
+\arguments{
+\item{x}{numeric vector}
+
+\item{perc}{as percentage (T = default)}
+}
 \value{
 Coefficient of variation
 }

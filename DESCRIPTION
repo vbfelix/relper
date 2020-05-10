@@ -1,10 +1,15 @@
 Package: relper
-Title: What the Package Does (one line, title case)
+Title: Miscellaneous Functions
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Vinícius", "Félix", email = "vinicius1b7f@gmail.com", role = c("aut", "cre"))
+Description: Miscellaneous Functions to assist in data cleaning and preparation
 Depends: R (>= 3.6.3)
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Imports: 
+    ggplot2,
+    stringr,
+    gridExtra,
+    png

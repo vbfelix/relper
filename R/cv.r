@@ -2,6 +2,9 @@
 #'
 #' @description Coefficient of variation
 #'
+#' @param x numeric vector
+#' @param perc as percentage (T = default)
+#'
 #' @return Coefficient of variation
 #' @export
 #'
@@ -12,8 +15,7 @@
 #' cv(x)
 #'
 
-cv <-
-  function(x, perc = T){
+cv <- function(x, perc = T){
 
     if(perc == T){
       100*sd(x)/mean(x)
