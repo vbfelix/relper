@@ -8,8 +8,7 @@ data cleaning and preparation
 
 ## Installation
 
-You can install the developer version of relper from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the developer version of relper with:
 
 ``` r
 remotes::install_github("vbfelix/relper")
@@ -57,13 +56,14 @@ plot + theme_map()
 ## metrics
 
 ``` r
-
+set.seed(123)
 x <- rexp(20,.5)
 
 x
-#>  [1] 2.4868794 0.4392151 0.6746712 3.7225304 2.3968872 0.1075790 0.1421367
-#>  [8] 2.9956407 1.1980031 5.0932069 1.1530218 4.0700921 2.9336107 4.7318863
-#> [15] 0.3189925 2.1247582 1.7788290 7.9864627 1.4708594 1.2267898
+#>  [1] 1.68691452 1.15322054 2.65810974 0.06315472 0.11242195 0.63300243
+#>  [7] 0.62845458 0.29053361 5.45247293 0.05830689 2.00966012 0.96042946
+#> [13] 0.56202726 0.75423566 0.37656808 1.69957226 3.12640708 0.95752083
+#> [19] 1.18186967 8.08202342
 ```
 
 ### Coefficient of Variation (CV)
@@ -72,11 +72,11 @@ x
 
 #raw
 cv(x, perc = F)
-#> [1] 0.8514989
+#> [1] 1.228836
 
 #%
 cv(x, perc = T)
-#> [1] 85.14989
+#> [1] 122.8836
 ```
 
 ### Harmonic mean
@@ -84,10 +84,10 @@ cv(x, perc = T)
 ``` r
 
 harmonic_mean(x)
-#> [1] 0.666758
+#> [1] 0.3293037
 ```
 
-## Other
+## Others
 
 ### Area under the curve
 

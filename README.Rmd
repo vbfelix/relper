@@ -61,7 +61,7 @@ plot + theme_map()
 ## metrics
 
 ```{r}
-
+set.seed(123)
 x <- rexp(20,.5)
 
 x
@@ -87,21 +87,6 @@ cv(x, perc = T)
 
 harmonic_mean(x)
 
-```
-
-## Data generation
-
-### Linear correlated data
-
-```{r}
-library(tidyverse)
-
-map_df(seq(-1,1,.25), r_pearson, n = 20) %>% 
-  ggplot(aes(x,y))+
-  geom_point()+
-  theme_map()+
-  geom_smooth(se = F, method = "lm")+
-  facet_wrap(~p)
 ```
 
 ## Others
