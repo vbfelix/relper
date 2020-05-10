@@ -28,8 +28,6 @@ remotes::install_github("vbfelix/relper")
 
 ## ggplot2 functions
 
-This is a basic example which shows you how to solve a common problem:
-
 ```{r example}
 library(ggplot2)
 plot <- 
@@ -58,35 +56,30 @@ plot + theme_map()
 ```
 
 
-## metrics
+## Metrics
 
 ```{r}
 set.seed(123)
 x <- rexp(20,.5)
 
 x
-
 ```
 
 
 ### Coefficient of Variation (CV)
 
 ```{r}
-
 #raw
 cv(x, perc = F)
 
 #%
 cv(x, perc = T)
-
 ```
 
 ### Harmonic mean
 
 ```{r}
-
 harmonic_mean(x)
-
 ```
 
 ## Others

@@ -16,8 +16,6 @@ remotes::install_github("vbfelix/relper")
 
 ## ggplot2 functions
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(ggplot2)
 plot <- 
@@ -53,7 +51,7 @@ plot + theme_map()
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
-## metrics
+## Metrics
 
 ``` r
 set.seed(123)
@@ -69,7 +67,6 @@ x
 ### Coefficient of Variation (CV)
 
 ``` r
-
 #raw
 cv(x, perc = F)
 #> [1] 1.228836
@@ -82,7 +79,6 @@ cv(x, perc = T)
 ### Harmonic mean
 
 ``` r
-
 harmonic_mean(x)
 #> [1] 0.3293037
 ```
