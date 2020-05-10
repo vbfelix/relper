@@ -97,7 +97,7 @@ y <- dnorm(x)
 plot(x,y)
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-aux example-1.png" width="100%" />
 
 ``` r
 auc(x,y)

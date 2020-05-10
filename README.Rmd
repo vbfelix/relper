@@ -93,7 +93,7 @@ harmonic_mean(x)
 
 ### Area under the curve
 
-```{r}
+```{r aux example}
 x <- seq(-3,3,l = 100)
 y <- dnorm(x)
 plot(x,y)
