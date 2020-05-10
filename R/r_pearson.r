@@ -20,7 +20,8 @@ r_pearson<- function(n,p = .5,...){
   y <- rnorm(length(x), p*x, sqrt(1-p^2))
 
   out <- data.frame(x = x,
-                    y = y)
+                    y = y,
+                    p = p)
 
   return(out)
 

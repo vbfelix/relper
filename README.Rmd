@@ -20,7 +20,7 @@ The goal of relper is to provide miscellaneous functions to assist in data clean
 
 ## Installation
 
-You can install the developer version of relper from [CRAN](https://CRAN.R-project.org) with:
+You can install the developer version of relper with:
 
 ``` r
 remotes::install_github("vbfelix/relper")
@@ -89,8 +89,22 @@ harmonic_mean(x)
 
 ```
 
+## Data generation
 
-## Other
+### Linear correlated data
+
+```{r}
+library(tidyverse)
+
+map_df(seq(-1,1,.25), r_pearson, n = 20) %>% 
+  ggplot(aes(x,y))+
+  geom_point()+
+  theme_map()+
+  geom_smooth(se = F, method = "lm")+
+  facet_wrap(~p)
+```
+
+## Others
 
 ### Area under the curve
 
@@ -99,7 +113,6 @@ x <- seq(-3,3,l = 100)
 y <- dnorm(x)
 plot(x,y)
 ```
-
 
 ```{r}
 auc(x,y)
