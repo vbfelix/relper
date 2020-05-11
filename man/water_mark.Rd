@@ -15,3 +15,16 @@ object to use in ggplot2
 \description{
 Import png file as watermark for ggplot2
 }
+\examples{
+
+
+library(ggplot2)
+
+url <- "https://www.osbsoftware.com.br/admin/upload_produtos/RStudio\%20-\%20produto.png"
+
+logo <- water_mark(RCurl::getURLContent(url))
+
+ggplot()+
+  annotation_custom(logo)
+
+}
