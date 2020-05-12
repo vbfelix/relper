@@ -19,12 +19,12 @@
 #'
 
 theme_x <-
-  function(base_size = 14, base_family = ""){
+  function(base_size = 14, base_family = "", margin = .25){
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%
       ggplot2::theme(
         legend.text = element_text(size = 14, face = "bold"),
         panel.grid.major.y = element_blank(),
         panel.grid.minor = element_blank(),
-        plot.margin = unit(c(.2,.2,.2,.2), "cm")
+        plot.margin = unit(rep(margin,4), "cm")
       )
   }

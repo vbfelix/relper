@@ -4,7 +4,7 @@
 \alias{theme_map}
 \title{ggplot2 theme}
 \usage{
-theme_map(base_size = 14, base_family = "")
+theme_map(base_size = 14, base_family = "", margin = 0.25)
 }
 \value{
 theme object

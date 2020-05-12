@@ -3,6 +3,7 @@
 export(auc)
 export(cut_quantile)
 export(cv)
+export(flip_y_title)
 export(harmonic_mean)
 export(mult_seq)
 export(num_convert)

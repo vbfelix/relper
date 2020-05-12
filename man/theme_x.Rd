@@ -4,7 +4,7 @@
 \alias{theme_x}
 \title{ggplot2 theme}
 \usage{
-theme_x(base_size = 14, base_family = "")
+theme_x(base_size = 14, base_family = "", margin = 0.25)
 }
 \value{
 ggplot2 theme
