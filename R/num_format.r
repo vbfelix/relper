@@ -13,7 +13,7 @@
 #' num_format(12345.67)
 #'
 
-num_format <- function(x,digits = 2){
+num_format <- function(x, digits = 2){
 
   formatC(x,
           format="f",

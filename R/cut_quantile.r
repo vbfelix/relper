@@ -14,7 +14,7 @@
 cut_quantile <- function(x, q = seq(0,1,by = .20) ) {
 
   cut(x,
-      breaks = c(quantile(x,probs = q,na.rm = T)),
+      breaks = quantile(x,probs = q,na.rm = T),
       include.lowest = T,
       right = T)
 

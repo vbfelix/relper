@@ -15,9 +15,11 @@
 
 range_date <- function(x){
 
-  aux <- stringr::str_split(range(x,na.rm = T),pattern = "-")
+  aux <- stringr::str_split(range(x,na.rm = T), pattern = "-")
 
-  out <- paste0(paste(aux[[1]][3:1],collapse ="/" )," - ",paste(aux[[2]][3:1],collapse ="/" ))
+  out <- paste0(paste(aux[[1]][3:1],collapse ="/"),
+                " - ",
+                paste(aux[[2]][3:1],collapse ="/"))
 
   return(out)
 }

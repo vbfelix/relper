@@ -17,7 +17,7 @@
 #'
 #'
 
-tbl_plot <- function(tbl,header_col = "grey78"){
+tbl_plot <- function(tbl,header_col = "grey75"){
 
   n <- nrow(tbl)
 
@@ -28,4 +28,5 @@ tbl_plot <- function(tbl,header_col = "grey78"){
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
 
   plot(out)
+
 }

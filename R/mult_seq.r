@@ -14,14 +14,15 @@
 #' mult_seq(x,m = .5)
 #'
 
-mult_seq <- function(x,m=1){
+mult_seq <- function(x, m=1){
 
-  min <- m*ceiling( (min(x)-m) /m)
+  min <- m*ceiling((min(x)-m)/m)
 
-  max <- m*ceiling( (max(x)+m) /m)
+  max <- m*ceiling((max(x)+m)/m)
 
-  out <- seq(min,max,by = m)
+  out <- seq(min, max, by = m)
 
   return(out)
+
 }
 
