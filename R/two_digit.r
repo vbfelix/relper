@@ -15,7 +15,7 @@
 
 two_digit <- function(x){
 
-  ifelse(nchar(x)==1,
+  ifelse(nchar(x) == 1,
          paste0("0",x),
          x)
 
