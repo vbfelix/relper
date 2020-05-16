@@ -17,8 +17,6 @@
 #'plot + theme_map()
 #'
 
-
-
 theme_map <-
   function(base_size = 14, base_family = "", margin = .25){
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%

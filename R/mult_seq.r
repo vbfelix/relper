@@ -14,7 +14,8 @@
 #' mult_seq(x,m = .5)
 #'
 
-mult_seq <- function(x, m=1){
+mult_seq <- function(x,
+                     m = 1){
 
   min <- m*ceiling((min(x)-m)/m)
 

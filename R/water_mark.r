@@ -18,7 +18,8 @@
 #'
 #' ggplot()+
 #'   annotation_custom(logo)
-#'
+
+
 water_mark<-function(png_file){
 
   grid::rasterGrob(image = png::readPNG(png_file), interpolate = T)

@@ -10,10 +10,12 @@
 #'
 #' @examples
 #'
-#' plot(r_pearson(100,.8,mean = 3))
+#' plot(r_pearson(n = 100, p = .8,mean = 3))
 #'
 
-r_pearson<- function(n,p = .5,...){
+r_pearson<- function(n,
+                     p = .5,
+                     ...){
 
   x <- rnorm(n,...)
 
