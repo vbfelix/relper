@@ -16,10 +16,11 @@ no grid, text and ticks
 library(ggplot2)
 
 plot <-
-  ggplot(mtcars,aes(hp,drat))+
-  geom_point()
+ ggplot(mtcars,aes(hp,drat))+
+ geom_point()
 
 plot
 
 plot + theme_map()
+
 }

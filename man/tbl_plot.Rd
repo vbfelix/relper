@@ -4,7 +4,7 @@
 \alias{tbl_plot}
 \title{Table plot}
 \usage{
-tbl_plot(tbl, header_col = "grey78")
+tbl_plot(tbl, header_col = "grey75")
 }
 \arguments{
 \item{tbl}{table data.frame}

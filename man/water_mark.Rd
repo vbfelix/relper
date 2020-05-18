@@ -26,5 +26,4 @@ logo <- water_mark(RCurl::getURLContent(url))
 
 ggplot()+
   annotation_custom(logo)
-
 }
