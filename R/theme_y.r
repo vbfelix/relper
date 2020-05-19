@@ -1,6 +1,6 @@
 #' ggplot2 theme
 #'
-#' @description no minor grid and major x grid
+#' @description theme_bw with no minor grid and major x grid
 #'
 #' @return ggplot2 theme
 #' @export

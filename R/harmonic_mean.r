@@ -15,6 +15,10 @@
 
 harmonic_mean <- function(x){
 
+   if(sum(x == 0) >0 ){
+     warning("There is a value = 0 and that cause the harmonic mean to be 0")
+     }
+
   1/mean(1/x)
 
   }

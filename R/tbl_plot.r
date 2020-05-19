@@ -19,6 +19,10 @@
 
 tbl_plot <- function(tbl,header_col = "grey75"){
 
+  if(class(tbl) != "data.frame"){
+    stop("x must be a data.frame")
+  }
+
   n <- nrow(tbl)
 
   tbl_theme <- gridExtra::ttheme_default(

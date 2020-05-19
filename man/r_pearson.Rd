@@ -2,23 +2,25 @@
 % Please edit documentation in R/r_pearson.r
 \name{r_pearson}
 \alias{r_pearson}
-\title{Correlated linear data generator}
+\title{Linear correlated data generator}
 \usage{
-r_pearson(n, p = 0.5, ...)
+r_pearson(n = 25, p_sim = 0.5, tol = 0.1, ...)
 }
 \arguments{
 \item{n}{number of observations}
 
-\item{p}{pearson linear correlation coefficient}
+\item{p_sim}{pearson linear correlation coefficient}
+
+\item{tol}{tolerance between the simulated and estimated correlation}
 }
 \value{
-data.frame with 2 numeric correlated
+data.frame with 2 numeric correlated series and both the simulated and estimated pearson linear coefficient
 }
 \description{
-Simulates
+Simulates linear correlated data
 }
 \examples{
 
-plot(r_pearson(n = 100, p = .8,mean = 3))
+plot(r_pearson(n = 100, p_sim = .8,mean = 3))
 
 }

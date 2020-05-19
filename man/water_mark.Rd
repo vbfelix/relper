@@ -4,10 +4,12 @@
 \alias{water_mark}
 \title{Water mark}
 \usage{
-water_mark(png_file)
+water_mark(png_file, local_file = T)
 }
 \arguments{
-\item{png_file}{png file.}
+\item{png_file}{png file path}
+
+\item{local_file}{if is a local file, local = T (default), if it is a url local = F}
 }
 \value{
 object to use in ggplot2
@@ -20,9 +22,9 @@ Import png file as watermark for ggplot2
 
 library(ggplot2)
 
-url <- "https://www.osbsoftware.com.br/admin/upload_produtos/RStudio\%20-\%20produto.png"
+url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
 
-logo <- water_mark(RCurl::getURLContent(url))
+logo <- water_mark(url,local_file = F)
 
 ggplot()+
   annotation_custom(logo)

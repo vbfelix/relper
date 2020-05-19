@@ -15,6 +15,10 @@
 
 range_date <- function(x){
 
+  if(class(x) != "Date"){
+    stop("x must be of class Date")
+  }
+
   aux <- stringr::str_split(range(x,na.rm = T), pattern = "-")
 
   out <- paste0(paste(aux[[1]][3:1],collapse ="/"),

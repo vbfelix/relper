@@ -18,9 +18,9 @@
 cv <- function(x, perc = T){
 
     if(perc == T){
-      100*sd(x)/mean(x)
+      100*sd(x,na.rm = T)/mean(x,na.rm = T)
     } else{
-      sd(x)/mean(x)
+      sd(x,na.rm = T)/mean(x,na.rm = T)
     }
 
   }
