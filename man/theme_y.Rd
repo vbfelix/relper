@@ -10,7 +10,7 @@ theme_y(base_size = 14, base_family = "", margin = 0.25)
 ggplot2 theme
 }
 \description{
-no minor grid and major x grid
+theme_bw with no minor grid and major x grid
 }
 \examples{
 
