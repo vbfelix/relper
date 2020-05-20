@@ -15,7 +15,7 @@
 
 harmonic_mean <- function(x){
 
-   if(sum(x == 0) >0 ){
+   if(sum(x == 0) > 0 ){
      warning("There is a value = 0 and that cause the harmonic mean to be 0")
      }
 

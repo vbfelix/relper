@@ -4,6 +4,8 @@
 #'
 #' @param x numeric vector
 #' @param digits number of decimals digits
+#' @param dec_mark decimal mark
+#' @param mil_mark tgousand mark
 #'
 #' @return formatted data
 #' @export
@@ -13,13 +15,13 @@
 #' num_format(12345.67)
 #'
 
-num_format <- function(x, digits = 2){
+num_format <- function(x, digits = 2,dec_mark = ",",mil_mark = "."){
 
   formatC(x,
           format="f",
-          big.mark = ".",
+          big.mark = mil_mark,
           digits = digits,
-          decimal.mark = ",")
+          decimal.mark = dec_mark)
 
 }
 
