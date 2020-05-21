@@ -25,6 +25,10 @@
 
 water_mark<-function(png_file,local_file = T){
 
+  if(is.logical(local_file)==F){
+    stop("local_file must be logical")
+  }
+
   if(local_file == T){
     png <- png::readPNG(png_file)
   }else{

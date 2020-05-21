@@ -20,10 +20,18 @@
 
 auc  <- function(x,y) {
 
-    tryCatch({
-    integrate(approxfun(x,y), range(x)[1], range(x)[2])$value
-      },
-    error = function(e) return(NA_real_)
-    )
+  if(is.numeric(x)==F){
+    stop("x must be numeric")
+  }
+
+  if(is.numeric(y)==F){
+    stop("y must be numeric")
+  }
+
+  tryCatch({
+  integrate(approxfun(x,y), range(x)[1], range(x)[2])$value
+    },
+  error = function(e) return(NA_real_)
+  )
 
 }

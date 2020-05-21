@@ -17,10 +17,17 @@
 mult_seq <- function(x,
                      m = 1){
 
+  if(is.numeric(x)==F){
+    stop("x must be numeric")
+  }
+
+  if(is.numeric(m)==F){
+    stop("m must be numeric")
+  }
+
   if(m <= 0){
     stop("m must be > 0")
   }
-
 
   min <- m*ceiling((min(x)-m)/m)
 

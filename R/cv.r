@@ -17,10 +17,18 @@
 
 cv <- function(x, perc = T){
 
-    if(perc == T){
-      100*sd(x,na.rm = T)/mean(x,na.rm = T)
-    } else{
-      sd(x,na.rm = T)/mean(x,na.rm = T)
-    }
+  if(is.numeric(x)==F){
+    stop("x must be numeric")
+  }
+
+  if(is.logical(perc)==F){
+    stop("perc must be logical")
+  }
+
+  if(perc == T){
+    100*sd(x,na.rm = T)/mean(x,na.rm = T)
+  } else{
+    sd(x,na.rm = T)/mean(x,na.rm = T)
+  }
 
   }

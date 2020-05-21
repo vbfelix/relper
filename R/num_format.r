@@ -17,6 +17,14 @@
 
 num_format <- function(x, digits = 2,dec_mark = ",",mil_mark = "."){
 
+  if(is.numeric(x)==F){
+    stop("x must be numeric")
+  }
+
+  if(is.numeric(digits)==F){
+    stop("digits must be numeric")
+  }
+
   formatC(x,
           format="f",
           big.mark = mil_mark,
