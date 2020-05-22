@@ -19,6 +19,18 @@ r_pearson<- function(n = 25,
                      tol = 0.10,
                      ...){
 
+  if(is.numeric(n)==F){
+    stop("n must be numeric")
+  }
+
+  if(is.numeric(p_sim)==F){
+    stop("p_sim must be numeric")
+  }
+
+  if(is.numeric(tol)==F){
+    stop("tol must be numeric")
+  }
+
   if(n <= 0){
     stop("n must be > 0")
   }
