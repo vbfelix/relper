@@ -30,9 +30,9 @@ num_corr <- function(x,y){
 
   out <-
   dplyr::tibble(
-    pearson =  cor(x,y,method = "pearson"),
-    kendall =  cor(x,y,method = "kendall"),
-    spearman = cor(x,y,method = "spearman")
+    pearson =  cor.test(x,y,method = "pearson",na.rm = T)$estimate,
+    kendall =  cor.test(x,y,method = "kendall",na.rm = T)$estimate,
+    spearman = cor.test(x,y,method = "spearman",na.rm = T)$estimate
   )
 
   return(out)
