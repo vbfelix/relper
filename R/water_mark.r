@@ -25,7 +25,7 @@
 
 water_mark<-function(png_file,local_file = T){
 
-  if(is.logical(local_file)==F){
+  if(is.logical(local_file) == F){
     stop("local_file must be logical")
   }
 

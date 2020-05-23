@@ -19,15 +19,15 @@ r_pearson<- function(n = 25,
                      tol = 0.10,
                      ...){
 
-  if(is.numeric(n)==F){
+  if(is.numeric(n) == F){
     stop("n must be numeric")
   }
 
-  if(is.numeric(p_sim)==F){
+  if(is.numeric(p_sim) == F){
     stop("p_sim must be numeric")
   }
 
-  if(is.numeric(tol)==F){
+  if(is.numeric(tol) == F){
     stop("tol must be numeric")
   }
 
@@ -39,15 +39,15 @@ r_pearson<- function(n = 25,
     stop("n must be a integer")
   }
 
-  if(tol <= 0 | tol >= 1){
+  if((tol <= 0) | (tol >= 1)){
     stop("tol must be (0,1)")
   }
 
-  if(tol > 0 & tol < .05){
-    warning("A low tolerance may cause a infinite loop or a long wait time")
+  if((tol > 0) & (tol < .05)){
+    warning("A low tolerance may cause a infinite loop or a long loading time")
   }
 
-  if(p_sim > 1 | p_sim < -1){
+  if((p_sim > 1) | (p_sim < -1)){
     stop("p_sim must be [-1;1]")
   }
 

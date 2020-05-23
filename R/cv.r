@@ -17,11 +17,11 @@
 
 cv <- function(x, perc = T){
 
-  if(is.numeric(x)==F){
+  if(is.numeric(x) == F){
     stop("x must be numeric")
   }
 
-  if(is.logical(perc)==F){
+  if(is.logical(perc) == F){
     stop("perc must be logical")
   }
 

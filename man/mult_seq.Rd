@@ -7,9 +7,9 @@
 mult_seq(x, m = 1)
 }
 \arguments{
-\item{x}{numeric vector.}
+\item{x}{numeric vector}
 
-\item{m}{multiple.}
+\item{m}{multiple}
 }
 \value{
 sequence

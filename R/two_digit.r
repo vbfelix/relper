@@ -1,6 +1,6 @@
 #' Two Digits
 #'
-#' @description Format 1 as "01"
+#' @description Format numbers < 10, e.g., 1 as "01"
 #'
 #' @param x numeric vector
 #' @return character vector
@@ -14,6 +14,10 @@
 #'
 
 two_digit <- function(x){
+
+  if(is.numeric(x) == F){
+    stop("x must be numeric")
+  }
 
   ifelse(nchar(x) == 1,
          paste0("0",x),

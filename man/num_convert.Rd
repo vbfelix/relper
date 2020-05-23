@@ -13,7 +13,7 @@ num_convert(x)
 Numeric vector
 }
 \description{
-Coerce a vector to numeric: removing thousand separator, replace comma with dots and applytins as.numeric()
+Coerce a character vector to numeric: removing thousand separator, replace comma with dots and applytins as.numeric()
 }
 \examples{
 

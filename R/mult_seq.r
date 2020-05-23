@@ -2,8 +2,8 @@
 #'
 #' @description Gets sequence by a multiple, with the minimum and maximum of data
 #'
-#' @param x numeric vector.
-#' @param m multiple.
+#' @param x numeric vector
+#' @param m multiple
 #'
 #' @return sequence
 #' @export
@@ -17,11 +17,11 @@
 mult_seq <- function(x,
                      m = 1){
 
-  if(is.numeric(x)==F){
+  if(is.numeric(x) == F){
     stop("x must be numeric")
   }
 
-  if(is.numeric(m)==F){
+  if(is.numeric(m) == F){
     stop("m must be numeric")
   }
 

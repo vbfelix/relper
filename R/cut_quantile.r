@@ -14,17 +14,17 @@
 #'
 
 
-cut_quantile <- function(x, q = seq(0,1,by = .20) ) {
+cut_quantile <- function(x, q = seq(0,1,by = .20),...) {
 
-  if(is.numeric(x)==F){
+  if(is.numeric(x) == F){
     stop("x must be numeric")
   }
 
-  if(is.numeric(q)==F){
+  if(is.numeric(q) == F){
     stop("q must be numeric")
   }
 
-  if(min(q) < 0 | max(q) > 1){
+  if((min(q) < 0) | (max(q) > 1)){
     stop("q range must be [0;1]")
   }
 
@@ -38,7 +38,9 @@ cut_quantile <- function(x, q = seq(0,1,by = .20) ) {
 
   cut(x,
       breaks = quantile(x,probs = q,na.rm = T),
+      ...,
       include.lowest = T,
-      right = T)
+      right = T
+      )
 
 }

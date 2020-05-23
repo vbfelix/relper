@@ -4,6 +4,7 @@
 #'
 #' @param tbl table data.frame
 #' @param header_col color of the header
+#' @param base_size table size (default = 20)
 #'
 #' @return prints a image
 #' @export
@@ -17,16 +18,18 @@
 #'
 #'
 
-tbl_plot <- function(tbl,header_col = "grey75"){
+tbl_plot <- function(tbl,header_col = "grey75",base_size = 20){
 
-  if(class(tbl) != "data.frame"){
-    stop("x must be a data.frame")
+  if( !(class(tbl)[1] %in% c("tbl_df","tbl","data.frame"))){
+    stop("x must be a data.frame/tibble")
   }
+
+  dev.off()
 
   n <- nrow(tbl)
 
   tbl_theme <- gridExtra::ttheme_default(
-    base_size = 20,
+    base_size = base_size,
     colhead = list(bg_params = list(fill = header_col, col=NA)),
     core = list(bg_params = list(fill = NA))
   )

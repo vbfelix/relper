@@ -4,12 +4,14 @@
 \alias{tbl_plot}
 \title{Table plot}
 \usage{
-tbl_plot(tbl, header_col = "grey75")
+tbl_plot(tbl, header_col = "grey75", base_size = 20)
 }
 \arguments{
 \item{tbl}{table data.frame}
 
 \item{header_col}{color of the header}
+
+\item{base_size}{table size (default = 20)}
 }
 \value{
 prints a image

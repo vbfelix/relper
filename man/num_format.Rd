@@ -4,12 +4,16 @@
 \alias{num_format}
 \title{Format numeric data}
 \usage{
-num_format(x, digits = 2)
+num_format(x, digits = 2, dec_mark = ",", mil_mark = ".")
 }
 \arguments{
 \item{x}{numeric vector}
 
 \item{digits}{number of decimals digits}
+
+\item{dec_mark}{decimal mark}
+
+\item{mil_mark}{tgousand mark}
 }
 \value{
 formatted data

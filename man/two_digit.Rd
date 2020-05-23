@@ -13,7 +13,7 @@ two_digit(x)
 character vector
 }
 \description{
-Format 1 as "01"
+Format numbers < 10, e.g., 1 as "01"
 }
 \examples{
 

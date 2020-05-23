@@ -20,11 +20,11 @@
 
 auc  <- function(x,y) {
 
-  if(is.numeric(x)==F){
+  if(is.numeric(x) == F){
     stop("x must be numeric")
   }
 
-  if(is.numeric(y)==F){
+  if(is.numeric(y) == F){
     stop("y must be numeric")
   }
 
