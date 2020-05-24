@@ -4,7 +4,7 @@
 \alias{num_summary}
 \title{Numeric summary}
 \usage{
-num_summary(x, y)
+num_summary(x)
 }
 \arguments{
 \item{x}{numeric vector}

@@ -9,14 +9,15 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "60%"
 )
+
 library(relper)
 
 ```
 # relper
 
-The goal of relper is to provide miscellaneous functions to assist in data cleaning and preparation.
+The goal of relper is to provide miscellaneous functions to assist in data cleaning and visualization.
 
 ## Installation
 
@@ -30,6 +31,7 @@ remotes::install_github("vbfelix/relper")
 
 ```{r example}
 library(ggplot2)
+
 plot <- 
 ggplot(mtcars,aes(drat,hp))+
   geom_point()
@@ -49,17 +51,31 @@ plot + theme_x()
 plot + theme_y()
 ```
 
-### theme_x
+### theme_map
 
 ```{r}
 plot + theme_map()
 ```
 
+### flip_y_title
+
+```{r}
+plot + flip_y_title
+```
+
+### water_mark
+
+```{r}
+url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+
+logo <- water_mark(url, local_file = F)
+
+plot + annotation_custom(logo)
+```
 
 ## Metrics
 
 ```{r}
-set.seed(123)
 x <- rexp(20,.5)
 
 x
@@ -76,10 +92,30 @@ cv(x, perc = F)
 cv(x, perc = T)
 ```
 
-### Harmonic mean
+### Mean's
+
+```{r}
+num_mean(x)
+```
+
+#### Harmonic mean
 
 ```{r}
 harmonic_mean(x)
+```
+
+### Numeric univariate summary statistics
+
+```{r}
+num_summary(x)
+```
+
+### Correlations
+
+```{r}
+y <- rnorm(20)
+
+num_corr(x,y)
 ```
 
 ## Others
@@ -88,7 +124,9 @@ harmonic_mean(x)
 
 ```{r aux example}
 x <- seq(-3,3,l = 100)
+
 y <- dnorm(x)
+
 plot(x,y)
 ```
 

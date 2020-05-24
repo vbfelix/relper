@@ -4,7 +4,7 @@
 \alias{cut_quantile}
 \title{Breaks data by quantile}
 \usage{
-cut_quantile(x, q = seq(0, 1, by = 0.2))
+cut_quantile(x, q = seq(0, 1, by = 0.2), ...)
 }
 \arguments{
 \item{x}{numeric vector.}

@@ -19,6 +19,6 @@ harmonic_mean <- function(x){
      warning("There is a value = 0 and that cause the harmonic mean to be 0")
      }
 
-  1/mean(1/x)
+  1/mean(1/x, na.rm = T)
 
   }
