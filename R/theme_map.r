@@ -1,6 +1,6 @@
 #' ggplot2 theme
 #'
-#' @description no grid, text and ticks
+#' @description no grid, border, background, title, text and ticks
 #'
 #' @return theme object
 #' @export

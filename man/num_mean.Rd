@@ -7,8 +7,7 @@
 num_mean(x)
 }
 \arguments{
-\item{x}{numeric vector
-#'}
+\item{x}{numeric vector}
 }
 \value{
 Numeric vector

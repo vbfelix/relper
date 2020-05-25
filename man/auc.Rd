@@ -20,6 +20,7 @@ auc
 Calculates AUC
 }
 \examples{
+
 x <- seq(-3,3,l = 100)
 
 y <- dnorm(x)

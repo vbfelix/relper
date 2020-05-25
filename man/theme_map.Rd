@@ -10,7 +10,7 @@ theme_map(base_size = 14, base_family = "", margin = 0.25)
 theme object
 }
 \description{
-no grid, text and ticks
+no grid, title, text and ticks
 }
 \examples{
 library(ggplot2)

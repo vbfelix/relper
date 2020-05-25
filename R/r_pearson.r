@@ -48,7 +48,7 @@ r_pearson<- function(n = 25,
   }
 
   if((tol > 0) & (tol < .05)){
-    warning("A low tolerance may cause a infinite loop or a long loading time")
+    print("A low tolerance may cause a infinite loop or a long loading time")
   }
 
   if((p_sim > 1) | (p_sim < -1)){

@@ -14,8 +14,7 @@
 #' mult_seq(x,m = .5)
 #'
 
-mult_seq <- function(x,
-                     m = 1){
+mult_seq <- function(x, m = 1){
 
   if(is.numeric(x) == F){
     stop("x must be numeric")
