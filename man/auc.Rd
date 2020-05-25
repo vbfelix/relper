@@ -4,12 +4,14 @@
 \alias{auc}
 \title{Area under the curve (AUC)}
 \usage{
-auc(x, y)
+auc(x, y, limits = NULL)
 }
 \arguments{
-\item{x}{numeric vector.}
+\item{x}{numeric vector}
 
-\item{y}{numeric vector.}
+\item{y}{numeric vector}
+
+\item{limits}{numeric range for integration (default = x range)}
 }
 \value{
 auc
@@ -25,4 +27,5 @@ y <- dnorm(x)
 plot(x,y)
 
 auc(x,y)
+
 }

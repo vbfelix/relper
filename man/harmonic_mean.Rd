@@ -18,6 +18,7 @@ Calculates harmonic mean
 \examples{
 
 x <- rexp(100,.5)
+
 harmonic_mean(x)
 
 }

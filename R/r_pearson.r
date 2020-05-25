@@ -11,7 +11,11 @@
 #'
 #' @examples
 #'
-#' plot(r_pearson(n = 100, p_sim = .8,mean = 3))
+#' df <- r_pearson(n = 100, p_sim = .8, mean = 3)
+#'
+#' head(df)
+#'
+#' plot(df)
 #'
 
 r_pearson<- function(n = 25,

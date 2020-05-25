@@ -4,7 +4,7 @@
 #'
 #'
 #' @return ggplot2 object
-#' @export
+  #' @export
 #'
 #' @examples
 #'

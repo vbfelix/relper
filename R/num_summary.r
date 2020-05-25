@@ -9,7 +9,9 @@
 #'
 #' @examples
 #'
-#' x <- rnorm(100)
+#' x <- c(rnorm(10),NA,10)
+#'
+#' x
 #'
 #' num_summary(x)
 #'

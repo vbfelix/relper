@@ -24,5 +24,6 @@ plot <-
 plot
 
 plot + flip_y_title
+
 }
 \keyword{datasets}

@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "60%"
+  out.width = "40%"
 )
 
 library(relper)
@@ -71,6 +71,8 @@ url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/120
 logo <- water_mark(url, local_file = F)
 
 plot + annotation_custom(logo)
+
+plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
 ```
 
 ## Metrics
@@ -104,6 +106,12 @@ num_mean(x)
 harmonic_mean(x)
 ```
 
+#### Geometric mean
+
+```{r}
+geometric_mean(x)
+```
+
 ### Numeric univariate summary statistics
 
 ```{r}
@@ -131,7 +139,17 @@ plot(x,y)
 ```
 
 ```{r}
+#from min to max of x
+range(x)
+
 auc(x,y)
+
+#from -2 to 2
+auc(x,y,limits = c(-2,2))
+
+#from -1 to 1
+auc(x,y,limits = c(-1,1))
+
 ```
 
 

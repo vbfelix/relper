@@ -15,7 +15,10 @@
 #'
 #' y <- rnorm(100)
 #'
+#' plot(x,y)
+#'
 #' num_corr(x,y)
+#'
 #'
 
 num_corr <- function(x,y){

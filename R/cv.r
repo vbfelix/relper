@@ -25,10 +25,16 @@ cv <- function(x, perc = T){
     stop("perc must be logical")
   }
 
-  if(perc == T){
-    100*sd(x, na.rm = T)/mean(x, na.rm = T)
-  } else{
-    sd(x, na.rm = T)/mean(x, na.rm = T)
+  mu_x <- mean(x, na.rm = T)
+
+  if(mu_x == 0){
+    stop("mean = 0 -> cv is NaN")
   }
 
+  if(perc == T){
+    100*sd(x, na.rm = T)/mu_x
+  } else{
+    sd(x, na.rm = T)/mu_x
   }
+
+}
