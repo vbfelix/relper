@@ -10,14 +10,15 @@ theme_map(base_size = 14, base_family = "", margin = 0.25)
 theme object
 }
 \description{
-no grid, title, text and ticks
+no grid, border, background, title, text and ticks
 }
 \examples{
+
 library(ggplot2)
 
 plot <-
- ggplot(mtcars,aes(hp,drat))+
- geom_point()
+  ggplot(mtcars,aes(hp,drat))+
+  geom_point()
 
 plot
 

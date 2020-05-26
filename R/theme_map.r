@@ -6,15 +6,16 @@
 #' @export
 #'
 #' @examples
+#'
 #' library(ggplot2)
 #'
-#'plot <-
-#'  ggplot(mtcars,aes(hp,drat))+
-#'  geom_point()
+#' plot <-
+#'   ggplot(mtcars,aes(hp,drat))+
+#'   geom_point()
 #'
-#'plot
+#' plot
 #'
-#'plot + theme_map()
+#' plot + theme_map()
 #'
 
 theme_map <-
