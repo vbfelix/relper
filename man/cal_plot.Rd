@@ -4,7 +4,7 @@
 \alias{cal_plot}
 \title{Calendar plot}
 \usage{
-cal_plot(df)
+cal_plot(df, facet = "")
 }
 \arguments{
 \item{df}{data.frame from cal_data function}
@@ -17,10 +17,18 @@ Calendar plot, from library ggcal
 }
 \examples{
 
-date <- seq(as.Date("2017-02-01"), as.Date("2017-07-22"), by="1 day")
+library(tidyverse)
 
-fill <- rnorm(length(mydate))
+# Calendar + a variable
+date <- seq(as.Date("2016-01-01"), as.Date("2016-02-28"),by = "1 day")
 
-cal_plot(cal_data(date,fill))
+tibble(dates = rep(date, 3),
+      value = rnorm(3*length(date)),
+      grp = rep(c("A","B","C"), each = length(date)) \%>\%
+ nest(-grp) \%>\%
+ mutate(aux = map(data,~cal_data(.$dates,.$value))) \%>\%
+ select(-data) \%>\%
+ unnest() \%>\%
+ cal_plot(facet = grp)
 
 }
