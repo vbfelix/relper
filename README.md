@@ -79,16 +79,51 @@ plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
 
 <img src="man/figures/README-unnamed-chunk-5-2.png" width="40%" />
 
+### calendar data and plot (from ggcal)
+
+``` r
+library(tidyverse)
+
+date <- seq(as.Date("2016-01-01"), as.Date("2016-02-29"),by = "1 day")
+
+#data
+df <-
+  tibble(dates = rep(date, 3),
+         value = num_format(rnorm(3*length(date)),0),
+         grp = rep(c("A","B","C"), each = length(date))) %>%
+  nest(-grp) %>%
+  mutate(aux = map(data,~cal_data(.$dates,.$value))) %>%
+  select(-data) %>%
+  unnest() 
+
+head(df)
+#> # A tibble: 6 x 9
+#>   grp   date       fill      x month    year monlabel     y wday 
+#>   <chr> <date>     <chr> <dbl> <ord>   <dbl> <fct>    <dbl> <ord>
+#> 1 A     2016-01-01 -1        5 janeiro  2016 Janeiro     10 Sex  
+#> 2 A     2016-01-02 0         6 janeiro  2016 Janeiro     10 Sáb  
+#> 3 A     2016-01-03 -2        0 janeiro  2016 Janeiro      9 Dom  
+#> 4 A     2016-01-04 -1        1 janeiro  2016 Janeiro      9 Seg  
+#> 5 A     2016-01-05 -1        2 janeiro  2016 Janeiro      9 Ter  
+#> 6 A     2016-01-06 -0        3 janeiro  2016 Janeiro      9 Qua
+
+df %>% 
+  cal_plot(facet = grp)+
+  scale_fill_viridis_d()
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" /><img src="man/figures/README-unnamed-chunk-6-2.png" width="40%" />
+
 ## Metrics
 
 ``` r
 x <- rexp(20,.5)
 
 x
-#>  [1] 3.37028277 0.10978208 0.15126045 4.40741212 0.49822440 1.99523089
-#>  [7] 0.01971827 3.48182780 4.96428696 0.51453678 0.05946686 1.48674663
-#> [13] 1.62719588 4.52893921 0.26444873 0.57534021 0.13733641 1.22902808
-#> [19] 2.48941303 4.57123634
+#>  [1] 0.30138730 6.16176821 0.84381754 5.26088526 3.05339848 0.22066048
+#>  [7] 1.44721656 0.64691094 6.58140231 0.56089856 0.53891895 1.70002008
+#> [13] 0.30213813 0.58854067 3.70621210 2.30330046 0.07327182 1.37573138
+#> [19] 2.20282485 0.32802576
 ```
 
 ### Coefficient of Variation (CV)
@@ -96,11 +131,11 @@ x
 ``` r
 #raw
 cv(x, perc = F)
-#> [1] 0.9736563
+#> [1] 1.064462
 
 #%
 cv(x, perc = T)
-#> [1] 97.36563
+#> [1] 106.4462
 ```
 
 ### Mean’s
@@ -110,21 +145,21 @@ num_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1       1.82     0.786    0.191
+#> 1       1.91      1.03    0.501
 ```
 
 #### Harmonic mean
 
 ``` r
 harmonic_mean(x)
-#> [1] 0.1914652
+#> [1] 0.5009991
 ```
 
 #### Geometric mean
 
 ``` r
 geometric_mean(x)
-#> [1] 0.7864269
+#> [1] 1.033811
 ```
 
 ### Numeric univariate summary statistics
@@ -134,7 +169,7 @@ num_summary(x)
 #> # A tibble: 1 x 13
 #>       n    na outlier negative equal_zero positive    min   p25   p50   p75
 #>   <int> <int>   <int>    <int>      <int>    <int>  <dbl> <dbl> <dbl> <dbl>
-#> 1    20     0       0        0          0       20 0.0197 0.236  1.36  3.40
+#> 1    20     0       2        0          0       20 0.0733 0.486  1.11  2.49
 #> # … with 3 more variables: max <dbl>, mean <dbl>, cv <dbl>
 ```
 
@@ -147,7 +182,7 @@ num_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1  -0.166 -0.0947  -0.0962
+#> 1 -0.0404 -0.0737  -0.0677
 ```
 
 ## Others

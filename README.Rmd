@@ -4,9 +4,11 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "40%"
@@ -74,6 +76,32 @@ plot + annotation_custom(logo)
 
 plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
 ```
+
+### Calendar data and plot (from ggcal)
+
+```{r}
+library(tidyverse)
+
+date <- seq(as.Date("2016-01-01"), as.Date("2016-02-29"),by = "1 day")
+
+#data
+df <-
+  tibble(dates = rep(date, 3),
+         value = num_format(rnorm(3*length(date)),0),
+         grp = rep(c("A","B","C"), each = length(date))) %>%
+  nest(-grp) %>%
+  mutate(aux = map(data,~cal_data(.$dates,.$value))) %>%
+  select(-data) %>%
+  unnest() 
+
+head(df)
+
+df %>% 
+  cal_plot(facet = grp)+
+  scale_fill_viridis_d()
+```
+
+
 
 ## Metrics
 

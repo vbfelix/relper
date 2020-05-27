@@ -12,7 +12,7 @@
 #'
 #' date <- seq(as.Date("2017-02-01"), as.Date("2017-07-22"), by="1 day")
 #'
-#' fill <- rnorm(length(mydate))
+#' fill <- rnorm(length(date))
 #'
 #' cal_data(date,fill)
 #'
