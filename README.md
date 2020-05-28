@@ -100,11 +100,11 @@ head(df)
 #> # A tibble: 6 x 9
 #>   grp   date       fill      x month    year monlabel     y wday 
 #>   <chr> <date>     <chr> <dbl> <ord>   <dbl> <fct>    <dbl> <ord>
-#> 1 A     2016-01-01 -1        5 janeiro  2016 Janeiro     10 Sex  
-#> 2 A     2016-01-02 0         6 janeiro  2016 Janeiro     10 Sáb  
-#> 3 A     2016-01-03 -2        0 janeiro  2016 Janeiro      9 Dom  
-#> 4 A     2016-01-04 -1        1 janeiro  2016 Janeiro      9 Seg  
-#> 5 A     2016-01-05 -1        2 janeiro  2016 Janeiro      9 Ter  
+#> 1 A     2016-01-01 2         5 janeiro  2016 Janeiro     10 Sex  
+#> 2 A     2016-01-02 -0        6 janeiro  2016 Janeiro     10 Sáb  
+#> 3 A     2016-01-03 0         0 janeiro  2016 Janeiro      9 Dom  
+#> 4 A     2016-01-04 1         1 janeiro  2016 Janeiro      9 Seg  
+#> 5 A     2016-01-05 0         2 janeiro  2016 Janeiro      9 Ter  
 #> 6 A     2016-01-06 -0        3 janeiro  2016 Janeiro      9 Qua
 
 df %>% 
@@ -120,10 +120,10 @@ df %>%
 x <- rexp(20,.5)
 
 x
-#>  [1] 0.30138730 6.16176821 0.84381754 5.26088526 3.05339848 0.22066048
-#>  [7] 1.44721656 0.64691094 6.58140231 0.56089856 0.53891895 1.70002008
-#> [13] 0.30213813 0.58854067 3.70621210 2.30330046 0.07327182 1.37573138
-#> [19] 2.20282485 0.32802576
+#>  [1] 1.89599263 4.50506953 1.71776172 1.94380798 0.01750844 1.88013313
+#>  [7] 5.03444907 0.30076595 1.53995196 1.13018828 2.62573258 3.14514321
+#> [13] 0.24465338 1.07007163 2.86454990 0.77972041 0.99306952 6.71351822
+#> [19] 2.98408302 1.05080126
 ```
 
 ### Coefficient of Variation (CV)
@@ -131,11 +131,11 @@ x
 ``` r
 #raw
 cv(x, perc = F)
-#> [1] 1.064462
+#> [1] 0.8095792
 
 #%
 cv(x, perc = T)
-#> [1] 106.4462
+#> [1] 80.95792
 ```
 
 ### Mean’s
@@ -145,21 +145,21 @@ num_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1       1.91      1.03    0.501
+#> 1       2.12      1.32    0.269
 ```
 
 #### Harmonic mean
 
 ``` r
 harmonic_mean(x)
-#> [1] 0.5009991
+#> [1] 0.2690128
 ```
 
 #### Geometric mean
 
 ``` r
 geometric_mean(x)
-#> [1] 1.033811
+#> [1] 1.317884
 ```
 
 ### Numeric univariate summary statistics
@@ -169,7 +169,7 @@ num_summary(x)
 #> # A tibble: 1 x 13
 #>       n    na outlier negative equal_zero positive    min   p25   p50   p75
 #>   <int> <int>   <int>    <int>      <int>    <int>  <dbl> <dbl> <dbl> <dbl>
-#> 1    20     0       2        0          0       20 0.0733 0.486  1.11  2.49
+#> 1    20     0       1        0          0       20 0.0175  1.04  1.80  2.89
 #> # … with 3 more variables: max <dbl>, mean <dbl>, cv <dbl>
 ```
 
@@ -182,7 +182,7 @@ num_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1 -0.0404 -0.0737  -0.0677
+#> 1  -0.448    -0.4   -0.579
 ```
 
 ## Others

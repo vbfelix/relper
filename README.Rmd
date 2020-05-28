@@ -77,7 +77,7 @@ plot + annotation_custom(logo)
 plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
 ```
 
-### Calendar data and plot (from ggcal)
+### calendar data and plot (from ggcal)
 
 ```{r}
 library(tidyverse)

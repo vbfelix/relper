@@ -33,7 +33,7 @@ date <- seq(as.Date("2016-01-01"), as.Date("2016-02-28"),by = "1 day")
 
 tibble(dates = rep(date, 3),
       value = rnorm(3*length(date)),
-      grp = rep(c("A","B","C"), each = length(date)) \%>\%
+      grp = rep(c("A","B","C"), each = length(date))) \%>\%
  nest(-grp) \%>\%
  mutate(aux = map(data,~cal_data(.$dates,.$value))) \%>\%
  select(-data) \%>\%
