@@ -1,8 +1,9 @@
 #' Scaling data
 #'
-#' @description Scale data, making them go from 0 to 1
+#' @description Scale data, making them go from 0 to superior lim (1 by default)
 #'
 #' @param x numeric vector
+#' @param lim_sup numeric value
 #'
 #' @return numeric vector
 #'
@@ -21,17 +22,29 @@
 #' plot(x,y)
 #'
 
-scale01 <- function(x){
+scale01 <- function(x, lim_sup = 1){
 
   if(is.numeric(x) == F){
     stop("x must be numeric")
   }
 
-  maxx <- max(x, na.rm = T)
+  if(is.numeric(lim_sup) == F){
+    stop("lim_sup must be numeric")
+  }
 
-  minx <- min(x, na.rm = T)
+  if(length(lim_sup) != 1){
+    stop("lim_sup must be just one numeric value")
+  }
 
-  out <- (x - minx)/(maxx - minx)
+  if(lim_sup <= 0){
+    stop("lim_sup must be > 0")
+  }
+
+  max_x <- max(x, na.rm = T)
+
+  min_x <- min(x, na.rm = T)
+
+  out <- lim_sup*(x - min_x)/(max_x - min_x)
 
   return(out)
 }
