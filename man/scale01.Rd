@@ -4,16 +4,18 @@
 \alias{scale01}
 \title{Scaling data}
 \usage{
-scale01(x)
+scale01(x, lim_sup = 1)
 }
 \arguments{
 \item{x}{numeric vector}
+
+\item{lim_sup}{numeric value}
 }
 \value{
 numeric vector
 }
 \description{
-Scale data, making them go from 0 to 1
+Scale data, making them go from 0 to superior lim (1 by default)
 }
 \examples{
 
