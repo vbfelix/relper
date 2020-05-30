@@ -156,6 +156,25 @@ num_corr(x,y)
 
 ## Others
 
+### Scaling
+
+```{r}
+x <- seq(-3,3,l = 10)
+
+x
+
+y <- scale01(x)
+
+y
+
+plot(x,y)
+
+z <- scale01(x,100)
+
+plot(x,z)
+```
+
+
 ### Area under the curve
 
 ```{r aux example}
@@ -177,7 +196,6 @@ auc(x,y,limits = c(-2,2))
 
 #from -1 to 1
 auc(x,y,limits = c(-1,1))
-
 ```
 
 

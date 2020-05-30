@@ -3,7 +3,7 @@
 #' @description Scale data, making them go from 0 to superior lim (1 by default)
 #'
 #' @param x numeric vector
-#' @param lim_sup numeric value
+#' @param lim_sup numeric value of the superior limit
 #'
 #' @return numeric vector
 #'
