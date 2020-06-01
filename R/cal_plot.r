@@ -46,7 +46,7 @@ cal_plot <- function(df, facet = ""){
                                 labels = wday_lbl,
                                 expand = c(0,0))+
     ggplot2::scale_y_continuous(expand = c(0,0)) +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA,color = NA),
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = NA, color = NA),
                    strip.background = ggplot2::element_rect(fill = NA, color = NA),
                    panel.grid = ggplot2::element_blank(),
                    strip.text.x = ggplot2::element_text(hjust = 0, face = "bold"),
