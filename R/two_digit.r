@@ -1,4 +1,4 @@
-#' Left zero
+#' two_digit
 #'
 #' @description Format numbers < 10, e.g., 1 as "01"
 #'
