@@ -1,4 +1,4 @@
-#' Two Digits
+#' Left zero
 #'
 #' @description Format numbers < 10, e.g., 1 as "01"
 #'
@@ -19,9 +19,10 @@ two_digit <- function(x){
     stop("x must be numeric")
   }
 
+  x <- as.character(x)
+
   ifelse(nchar(x) == 1,
          paste0("0",x),
          x)
-
   }
 
