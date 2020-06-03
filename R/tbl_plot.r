@@ -20,9 +20,11 @@
 
 tbl_plot <- function(tbl,header_col = "grey75",base_size = 20){
 
-  if( !(class(tbl)[1] %in% c("tbl_df","tbl","data.frame"))){
+  if( !(class(tbl)[1] %in% c("tbl_df","tbl","data.frame","tabyl","grouped_df"))){
     stop("tbl must be a data.frame/tibble")
   }
+
+  plot(1)
 
   dev.off()
 
