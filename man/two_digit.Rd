@@ -2,7 +2,7 @@
 % Please edit documentation in R/two_digit.r
 \name{two_digit}
 \alias{two_digit}
-\title{Two Digits}
+\title{two_digit}
 \usage{
 two_digit(x)
 }

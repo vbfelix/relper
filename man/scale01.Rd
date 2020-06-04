@@ -9,7 +9,7 @@ scale01(x, lim_sup = 1)
 \arguments{
 \item{x}{numeric vector}
 
-\item{lim_sup}{numeric value}
+\item{lim_sup}{numeric value of the superior limit}
 }
 \value{
 numeric vector
