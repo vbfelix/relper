@@ -1,6 +1,6 @@
 #' Table plot
 #'
-#' @description Plot table as image
+#' @description Plot a table as an image
 #'
 #' @param tbl table data.frame
 #' @param header_col color of the header
