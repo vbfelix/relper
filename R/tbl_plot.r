@@ -20,7 +20,9 @@
 
 tbl_plot <- function(tbl,header_col = "grey75",base_size = 15){
 
-  if( !(class(tbl)[1] %in% c("tbl_df","tbl","data.frame","tabyl","grouped_df"))){
+  if(sum(stringr::str_detect(class(tbl),
+                             paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
+                                   collapse = "|"))) ==  0){
     stop("tbl must be a data.frame/tibble")
   }
 

@@ -10,7 +10,7 @@ num_summary(x)
 \item{x}{numeric vector}
 }
 \value{
-Numeric vector
+tibble
 }
 \description{
 Compute summary statistics for numeric variable

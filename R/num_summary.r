@@ -4,7 +4,7 @@
 #'
 #' @param x numeric vector
 #'
-#' @return Numeric vector
+#' @return tibble
 #' @export
 #'
 #' @examples

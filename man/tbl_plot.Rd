@@ -4,7 +4,7 @@
 \alias{tbl_plot}
 \title{Table plot}
 \usage{
-tbl_plot(tbl, header_col = "grey75", base_size = 20)
+tbl_plot(tbl, header_col = "grey75", base_size = 15)
 }
 \arguments{
 \item{tbl}{table data.frame}
@@ -17,7 +17,7 @@ tbl_plot(tbl, header_col = "grey75", base_size = 20)
 prints a image
 }
 \description{
-Plot table as image
+Plot a table as an image
 }
 \examples{
 
