@@ -2,3 +2,4 @@
 ^LICENSE\.md$
 ^relper\.Rproj$
 ^\.Rproj\.user$
+^test\.r$
