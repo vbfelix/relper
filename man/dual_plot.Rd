@@ -4,8 +4,9 @@
 \alias{dual_plot}
 \title{Dual axis plot}
 \usage{
-dual_plot(df, x_axis, y_left, y_right, col_left = "forestgreen",
-  col_right = "chocolate2", legend_pos = "top", ...)
+dual_plot(df, x_axis, y_left, y_right, y_breaks = NULL,
+  col_left = "forestgreen", col_right = "chocolate2",
+  legend_pos = "top", ...)
 }
 \arguments{
 \item{df}{data.frame}
@@ -15,6 +16,8 @@ dual_plot(df, x_axis, y_left, y_right, col_left = "forestgreen",
 \item{y_left}{name of the y axis variable for the left side}
 
 \item{y_right}{name of the y axis variable for the right side}
+
+\item{y_breaks}{numeric vector of the y axis left breaks}
 
 \item{col_left}{name of the color for the left side}
 
@@ -38,6 +41,6 @@ z <- y^3 + rnorm(100)
 
 data <- tibble(x,y,z)
 
-dual_axis(data,"x","y","z")
+dual_plot(data,"x","y","z")
 
 }
