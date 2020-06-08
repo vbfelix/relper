@@ -16,7 +16,7 @@
 
 df_summary <- function(df){
 
-  if(sum(stringr::str_detect(class(tbl),
+  if(sum(stringr::str_detect(class(df),
                              paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
                                    collapse = "|"))) ==  0){
     stop("df must be a data.frame/tibble")

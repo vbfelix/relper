@@ -114,15 +114,32 @@ df %>%
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" /><img src="man/figures/README-unnamed-chunk-6-2.png" width="40%" />
 
+### Duas axis plot
+
+``` r
+x <- seq(0,1,l = 100)
+
+y <- cumsum(rnorm(100))
+
+z <- y^3 + rnorm(100)
+
+df <- data.frame(x,y,z)
+
+dual_plot(df,x_axis = "x",y_left = "y",y_right = "z")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="40%" />
+
 ## Metrics
 
 ``` r
 x <- rexp(20,.5)
 
 x
-#>  [1] 3.4418720 3.5828581 2.7889652 2.3361063 2.5952627 1.6272921 0.3933713
-#>  [8] 3.0400792 1.7327033 0.3328295 0.9660080 1.1039143 0.9754496 6.9486297
-#> [15] 1.7783748 2.2776161 2.1052747 0.8671692 1.3413013 5.3987888
+#>  [1] 0.43119520 3.73177170 1.54977541 4.94929453 3.37711971 0.69241786
+#>  [7] 0.18526518 3.08497202 4.99925677 0.92958227 1.75513403 3.51972756
+#> [13] 2.16951010 0.16673226 3.21944080 2.83216770 1.25067660 0.03485112
+#> [19] 3.70465381 5.36779970
 ```
 
 ### Coefficient of Variation (CV)
@@ -130,11 +147,11 @@ x
 ``` r
 #raw
 cv(x, perc = F)
-#> [1] 0.7219543
+#> [1] 0.7162335
 
 #%
 cv(x, perc = T)
-#> [1] 72.19543
+#> [1] 71.62335
 ```
 
 ### Mean’s
@@ -144,21 +161,21 @@ num_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1       2.28      1.77     1.29
+#> 1       2.40      1.43    0.399
 ```
 
 #### Harmonic mean
 
 ``` r
 harmonic_mean(x)
-#> [1] 1.292049
+#> [1] 0.3992195
 ```
 
 #### Geometric mean
 
 ``` r
 geometric_mean(x)
-#> [1] 1.769498
+#> [1] 1.434095
 ```
 
 ### Numeric univariate summary statistics
@@ -166,10 +183,10 @@ geometric_mean(x)
 ``` r
 num_summary(x)
 #> # A tibble: 1 x 13
-#>       n    na outlier negative equal_zero positive   min   p25   p50   p75   max
-#>   <int> <int>   <int>    <int>      <int>    <int> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1    20     0       1        0          0       20 0.333  1.07  1.94  2.85  6.95
-#> # … with 2 more variables: mean <dbl>, cv <dbl>
+#>       n    na outlier negative equal_zero positive    min   p25   p50   p75
+#>   <int> <int>   <int>    <int>      <int>    <int>  <dbl> <dbl> <dbl> <dbl>
+#> 1    20     0       0        0          0       20 0.0349 0.870  2.50  3.57
+#> # … with 3 more variables: max <dbl>, mean <dbl>, cv <dbl>
 ```
 
 ### Correlations
@@ -181,7 +198,7 @@ num_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1  -0.100 -0.0105   0.0165
+#> 1  -0.271  -0.126   -0.186
 ```
 
 ## Others
@@ -204,16 +221,16 @@ y
 plot(x,y)
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="40%" />
 
 ``` r
 
-z <- scale01(x,100)
+z <- scale01(x,lim_sup = 100)
 
 plot(x,z)
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-2.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-15-2.png" width="40%" />
 
 ### Area under the curve
 

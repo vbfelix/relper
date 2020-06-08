@@ -16,10 +16,11 @@ knitr::opts_chunk$set(
 )
 
 set.seed(333)
-
+  
 library(relper)
 
 ```
+
 # relper
 
 The goal of relper is to provide miscellaneous functions to assist in data cleaning and visualization.
@@ -104,6 +105,19 @@ df %>%
   scale_fill_viridis_d()
 ```
 
+### Duas axis plot
+
+```{r}
+x <- seq(0,1,l = 100)
+
+y <- cumsum(rnorm(100))
+
+z <- y^3 + rnorm(100)
+
+df <- data.frame(x,y,z)
+
+dual_plot(df,x_axis = "x",y_left = "y",y_right = "z")
+```
 
 
 ## Metrics
@@ -172,11 +186,10 @@ y
 
 plot(x,y)
 
-z <- scale01(x,100)
+z <- scale01(x,lim_sup = 100)
 
 plot(x,z)
 ```
-
 
 ### Area under the curve
 
@@ -199,6 +212,7 @@ auc(x,y,limits = c(-2,2))
 
 #from -1 to 1
 auc(x,y,limits = c(-1,1))
+
 ```
 
 

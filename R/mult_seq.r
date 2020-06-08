@@ -30,7 +30,7 @@ mult_seq <- function(x, m = 1){
 
   min <- m*ceiling((min(x)-m)/m)
 
-  max <- m*ceiling((max(x)+m)/m)
+  max <- m*ceiling((max(x))/m)
 
   out <- seq(min, max, by = m)
 
