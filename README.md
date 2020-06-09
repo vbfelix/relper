@@ -74,7 +74,7 @@ plot + annotation_custom(logo)
 
 ``` r
 
-plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
+plot + annotation_custom(logo, xmin = 4.65, xmax = Inf, ymin = 310, ymax = Inf)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-2.png" width="40%" />

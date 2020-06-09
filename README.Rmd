@@ -78,7 +78,7 @@ logo <- water_mark(url, local_file = F)
 
 plot + annotation_custom(logo)
 
-plot + annotation_custom(logo, xmin = 4.75, xmax = 5, ymin = 315, ymax = 335)
+plot + annotation_custom(logo, xmin = 4.65, xmax = Inf, ymin = 310, ymax = Inf)
 ```
 
 ### calendar data and plot (from ggcal)
