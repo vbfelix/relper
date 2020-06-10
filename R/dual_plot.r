@@ -114,6 +114,8 @@ dual_plot <- function(df,
 
   dplyr::tibble(x,y,y2) %>%
     tidyr::gather(var,value,-x) %>%
+    dplyr::mutate(var = ifelse(var == "y",y_left,y_right)) %>%
+    dplyr::mutate(var = forcats::fct_relevel(var,y_left)) %>%
     ggplot2::ggplot(aes(x,value,col = var))+
     ggplot2::geom_line(size = .8)+
     relper::theme_y()+
