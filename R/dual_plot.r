@@ -1,6 +1,6 @@
 #' Dual axis plot
 #'
-#' @description Rescale data
+#' @description Rescale data with linear scaling, non-linear relationship between variables may cause wrong interpretations
 #'
 #' @param df data.frame
 #'
@@ -59,10 +59,6 @@ dual_plot <- function(df,
   y <- unlist(df[,y_left])
 
   z <- unlist(df[,y_right])
-
-  # if(is.numeric(x) == F){
-  #   stop("x_axis must be numeric")
-  # }
 
   if(is.numeric(y) == F){
     stop("y_left must be numeric")
