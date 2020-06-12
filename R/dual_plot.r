@@ -108,6 +108,8 @@ dual_plot <- function(df,
 
   y2_lbl <- y2_lbl[1:length(y1_seq)]
 
+  warning("non-linear relationship between variables may cause misleading rescaling")
+
   dplyr::tibble(x,y,y2) %>%
     tidyr::gather(var,value,-x) %>%
     dplyr::mutate(var = ifelse(var == "y",y_left,y_right)) %>%
