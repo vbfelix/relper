@@ -29,7 +29,7 @@ dual_plot(df, x_axis, y_left, y_right, y_breaks = NULL,
 ggplot2 object
 }
 \description{
-Rescale data
+Rescale data with linear scaling, non-linear relationship between variables may cause wrong interpretations
 }
 \examples{
 

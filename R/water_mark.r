@@ -35,6 +35,6 @@ water_mark<-function(png_file,local_file = T){
     png <- png::readPNG(RCurl::getURLContent(png_file))
   }
 
-  grid::rasterGrob(image = png, interpolate = T)
+  grid::rasterGrob(image = png, interpolate = F)
 
 }
