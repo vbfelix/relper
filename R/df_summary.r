@@ -38,7 +38,7 @@ df_summary <- function(df){
       dplyr::group_by(var) %>%
       dplyr::summarise(relper::num_summary(value))
 
-   print("Numeric variables")
+   print(paste0(ncol(df_num)," numeric variables"))
 
    print(df_num)
   }
@@ -59,7 +59,7 @@ df_summary <- function(df){
       dplyr::group_by(var) %>%
       dplyr::summarise(relper::cat_summary(value))
 
-    print("Categoric variables")
+    print(paste0(ncol(df_cat)," categoric variables"))
 
     print(df_cat)
   }

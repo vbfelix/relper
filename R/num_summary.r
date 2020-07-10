@@ -35,6 +35,7 @@ num_summary <- function(x){
     p50  = median(x, na.rm = T),
     p75  = quantile(x,probs = .75, na.rm = T),
     max = max(x, na.rm = T),
+    mode = relper::num_mode(x),
     mean = mean(x, na.rm = T),
     cv = relper::cv(x)
   )
