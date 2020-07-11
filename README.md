@@ -114,44 +114,53 @@ df %>%
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" /><img src="man/figures/README-unnamed-chunk-6-2.png" width="40%" />
 
-### Duas axis plot
+<!-- ### Duas axis plot -->
 
-``` r
-x <- seq(0,1,l = 100)
+<!-- ```{r} -->
 
-y <- cumsum(rnorm(100))
+<!-- x <- seq(0,1,l = 100) -->
 
-z <- y^3 + rnorm(100)
+<!-- y <- cumsum(rnorm(100)) -->
 
-df <- data.frame(x,y,z)
+<!-- z <- y^3 + rnorm(100) -->
 
-dual_plot(df,x_axis = "x",y_left = "y",y_right = "z")
-```
+<!-- df <- data.frame(x,y,z) -->
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="40%" />
+<!-- dual_plot(df,x_axis = "x",y_left = "y",y_right = "z") -->
+
+<!-- ``` -->
 
 ## Metrics
 
 ``` r
-x <- rexp(20,.5)
+x <- rexp(20,.2)
 
 x
-#>  [1] 0.43119520 3.73177170 1.54977541 4.94929453 3.37711971 0.69241786
-#>  [7] 0.18526518 3.08497202 4.99925677 0.92958227 1.75513403 3.51972756
-#> [13] 2.16951010 0.16673226 3.21944080 2.83216770 1.25067660 0.03485112
-#> [19] 3.70465381 5.36779970
+#>  [1]  8.6046801  8.9571452  6.9724129  5.8402658  6.4881568  4.0682301
+#>  [7]  0.9834283  7.6001980  4.3317581  0.8320739  2.4150200  2.7597858
+#> [13]  2.4386240 17.3715741  4.4459370  5.6940402  5.2631867  2.1679231
+#> [19]  3.3532533 13.4969721
 ```
+
+### Highest density value
+
+``` r
+num_mode(x)
+#> [1] 4.015031
+```
+
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="40%" />
 
 ### Coefficient of Variation (CV)
 
 ``` r
 #raw
 cv(x, perc = F)
-#> [1] 0.7162335
+#> [1] 0.7219543
 
 #%
 cv(x, perc = T)
-#> [1] 71.62335
+#> [1] 72.19543
 ```
 
 ### Mean’s
@@ -161,32 +170,32 @@ num_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1       2.40      1.43    0.399
+#> 1       5.70      4.42     3.23
 ```
 
 #### Harmonic mean
 
 ``` r
 harmonic_mean(x)
-#> [1] 0.3992195
+#> [1] 3.230122
 ```
 
 #### Geometric mean
 
 ``` r
 geometric_mean(x)
-#> [1] 1.434095
+#> [1] 4.423744
 ```
 
 ### Numeric univariate summary statistics
 
 ``` r
 num_summary(x)
-#> # A tibble: 1 x 13
-#>       n    na outlier negative equal_zero positive    min   p25   p50   p75
-#>   <int> <int>   <int>    <int>      <int>    <int>  <dbl> <dbl> <dbl> <dbl>
-#> 1    20     0       0        0          0       20 0.0349 0.870  2.50  3.57
-#> # … with 3 more variables: max <dbl>, mean <dbl>, cv <dbl>
+#> # A tibble: 1 x 14
+#>       n    na outlier negative equal_zero positive   min   p25   p50   p75   max
+#>   <int> <int>   <int>    <int>      <int>    <int> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1    20     0       1        0          0       20 0.832  2.68  4.85  7.13  17.4
+#> # … with 3 more variables: mode <dbl>, mean <dbl>, cv <dbl>
 ```
 
 ### Correlations
@@ -198,12 +207,12 @@ num_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1  -0.271  -0.126   -0.186
+#> 1  -0.100 -0.0105   0.0165
 ```
 
 ## Others
 
-### Scaling
+### Linear scaling from a to b
 
 ``` r
 x <- seq(-3,3,l = 10)
@@ -217,20 +226,44 @@ y <- scale01(x)
 y
 #>  [1] 0.0000000 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667
 #>  [8] 0.7777778 0.8888889 1.0000000
-
-plot(x,y)
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" width="40%" />
 
 ``` r
-
 z <- scale01(x,lim_sup = 100)
-
-plot(x,z)
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-2.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-19-1.png" width="40%" />
+
+### Scaling to percentage
+
+#### Multiply by 100
+
+``` r
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  mutate(perc = as_perc(prop))
+#>   vs am  n    prop   perc
+#> 1  0  0 12 0.37500 37.500
+#> 2  0  1  6 0.18750 18.750
+#> 3  1  0  7 0.21875 21.875
+#> 4  1  1  7 0.21875 21.875
+```
+
+#### Divide by total and multiply by 100
+
+``` r
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(perc = as_perc(n,sum = T))
+#>   vs am  n   perc
+#> 1  0  0 12 37.500
+#> 2  0  1  6 18.750
+#> 3  1  0  7 21.875
+#> 4  1  1  7 21.875
+```
 
 ### Area under the curve
 
@@ -238,11 +271,9 @@ plot(x,z)
 x <- seq(-3,3,l = 100)
 
 y <- dnorm(x)
-
-plot(x,y)
 ```
 
-<img src="man/figures/README-aux example-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-22-1.png" width="40%" />
 
 ``` r
 #from min to max of x
@@ -251,12 +282,22 @@ range(x)
 
 auc(x,y)
 #> [1] 0.9972835
+```
 
+<img src="man/figures/README-unnamed-chunk-24-1.png" width="40%" />
+
+``` r
 #from -2 to 2
 auc(x,y,limits = c(-2,2))
 #> [1] 0.9544345
+```
 
+<img src="man/figures/README-unnamed-chunk-26-1.png" width="40%" />
+
+``` r
 #from -1 to 1
 auc(x,y,limits = c(-1,1))
 #> [1] 0.6825416
 ```
+
+<img src="man/figures/README-unnamed-chunk-28-1.png" width="40%" />

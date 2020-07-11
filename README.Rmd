@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
   out.width = "40%"
 )
 
-set.seed(333)
+set.seed(125)
   
 library(relper)
 
@@ -105,27 +105,42 @@ df %>%
   scale_fill_viridis_d()
 ```
 
-### Duas axis plot
+<!-- ### Duas axis plot -->
 
-```{r}
-x <- seq(0,1,l = 100)
+<!-- ```{r} -->
+<!-- x <- seq(0,1,l = 100) -->
 
-y <- cumsum(rnorm(100))
+<!-- y <- cumsum(rnorm(100)) -->
 
-z <- y^3 + rnorm(100)
+<!-- z <- y^3 + rnorm(100) -->
 
-df <- data.frame(x,y,z)
+<!-- df <- data.frame(x,y,z) -->
 
-dual_plot(df,x_axis = "x",y_left = "y",y_right = "z")
-```
+<!-- dual_plot(df,x_axis = "x",y_left = "y",y_right = "z") -->
+<!-- ``` -->
 
 
 ## Metrics
 
 ```{r}
-x <- rexp(20,.5)
+x <- rexp(20,.2)
 
 x
+```
+
+### Highest density value
+
+```{r}
+num_mode(x)
+```
+
+```{r,echo = F}
+ggplot(data = tibble(x = x),aes(x))+
+  geom_density()+
+  geom_vline(xintercept = num_mode(x),col = "royalblue4", size = 1)+
+  theme_y()+
+  scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(num_mode(x),2)))
+
 ```
 
 
@@ -173,7 +188,7 @@ num_corr(x,y)
 
 ## Others
 
-### Scaling
+### Linear scaling from a to b
 
 ```{r}
 x <- seq(-3,3,l = 10)
@@ -183,13 +198,41 @@ x
 y <- scale01(x)
 
 y
+```
 
+```{r, echo = F}
 plot(x,y)
+```
 
+
+```{r}
 z <- scale01(x,lim_sup = 100)
 
+```
+
+```{r, echo = F}
 plot(x,z)
 ```
+
+
+### Scaling to percentage
+
+#### Multiply by 100
+```{r}
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  mutate(perc = as_perc(prop))
+```
+
+#### Divide by total and multiply by 100
+
+```{r}
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(perc = as_perc(n,sum = T))
+```
+
 
 ### Area under the curve
 
@@ -197,23 +240,86 @@ plot(x,z)
 x <- seq(-3,3,l = 100)
 
 y <- dnorm(x)
-
-plot(x,y)
 ```
+
+```{r, echo = F}
+ggplot(tibble(x = x,
+              y = y),
+       aes(x,y))+
+  geom_point()+
+  theme_y()
+```
+
 
 ```{r}
 #from min to max of x
 range(x)
 
 auc(x,y)
+```
 
+```{r, echo = F}
+df_auc <-
+  tibble(
+    x = x,
+    y = y)
+
+df_auc %>% 
+ggplot(aes(x,y))+
+  geom_area(alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(auc(x,y),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-3,3), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+```{r}
 #from -2 to 2
 auc(x,y,limits = c(-2,2))
+```
 
+```{r, echo = F}
+df_auc %>% 
+  ggplot(aes(x,y))+
+  geom_area(data = df_auc %>% 
+              filter(between(x,-2,2)),
+              alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(auc(x,y,limits = c(-2,2)),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-2,2), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+```{r}
 #from -1 to 1
 auc(x,y,limits = c(-1,1))
-
 ```
+
+```{r, echo = F}
+df_auc %>% 
+  ggplot(aes(x,y))+
+  geom_area(data = df_auc %>% 
+              filter(between(x,-1,1)),
+              alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(auc(x,y,limits = c(-1,1)),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-1,1), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+
 
 
 
