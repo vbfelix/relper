@@ -108,12 +108,12 @@ head(df)
 #> # A tibble: 6 x 9
 #>   grp   date       fill      x month    year monlabel     y wday 
 #>   <chr> <date>     <chr> <dbl> <ord>   <dbl> <fct>    <dbl> <ord>
-#> 1 A     2016-01-01 -0        5 janeiro  2016 Janeiro     10 Sex  
-#> 2 A     2016-01-02 2         6 janeiro  2016 Janeiro     10 Sáb  
-#> 3 A     2016-01-03 -2        0 janeiro  2016 Janeiro      9 Dom  
+#> 1 A     2016-01-01 1         5 janeiro  2016 Janeiro     10 Sex  
+#> 2 A     2016-01-02 -1        6 janeiro  2016 Janeiro     10 Sáb  
+#> 3 A     2016-01-03 2         0 janeiro  2016 Janeiro      9 Dom  
 #> 4 A     2016-01-04 0         1 janeiro  2016 Janeiro      9 Seg  
-#> 5 A     2016-01-05 -2        2 janeiro  2016 Janeiro      9 Ter  
-#> 6 A     2016-01-06 -0        3 janeiro  2016 Janeiro      9 Qua
+#> 5 A     2016-01-05 0         2 janeiro  2016 Janeiro      9 Ter  
+#> 6 A     2016-01-06 -2        3 janeiro  2016 Janeiro      9 Qua
 
 df %>% 
   cal_plot(facet = grp)+
@@ -144,17 +144,17 @@ df %>%
 x <- rexp(20,.2)
 
 x
-#>  [1]  8.6046801  8.9571452  6.9724129  5.8402658  6.4881568  4.0682301
-#>  [7]  0.9834283  7.6001980  4.3317581  0.8320739  2.4150200  2.7597858
-#> [13]  2.4386240 17.3715741  4.4459370  5.6940402  5.2631867  2.1679231
-#> [19]  3.3532533 13.4969721
+#>  [1]  5.1294026  1.8608857 10.5494423  7.7229027  1.0215421  4.2307937
+#>  [7]  1.5944066  5.5043944  1.5049696  4.1691228  9.8131169  0.9545804
+#> [13]  0.3210714  0.4567200  8.8834275  1.8016886  2.8448262  0.9455190
+#> [19]  5.0566663  0.7829451
 ```
 
 ### Highest density value
 
 ``` r
 num_mode(x)
-#> [1] 4.015031
+#> [1] 1.43404
 ```
 
 <img src="man/figures/README-unnamed-chunk-10-1.png" width="40%" />
@@ -164,11 +164,11 @@ num_mode(x)
 ``` r
 #raw
 cv(x, perc = F)
-#> [1] 0.7219543
+#> [1] 0.8733989
 
 #%
 cv(x, perc = T)
-#> [1] 72.19543
+#> [1] 87.33989
 ```
 
 ### Mean’s
@@ -178,21 +178,21 @@ num_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1       5.70      4.42     3.23
+#> 1       3.76      2.41     1.44
 ```
 
 #### Harmonic mean
 
 ``` r
 harmonic_mean(x)
-#> [1] 3.230122
+#> [1] 1.439845
 ```
 
 #### Geometric mean
 
 ``` r
 geometric_mean(x)
-#> [1] 4.423744
+#> [1] 2.40902
 ```
 
 ### Numeric univariate summary statistics
@@ -202,7 +202,7 @@ num_summary(x)
 #> # A tibble: 1 x 14
 #>       n    na outlier negative equal_zero positive   min   p25   p50   p75   max
 #>   <int> <int>   <int>    <int>      <int>    <int> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1    20     0       1        0          0       20 0.832  2.68  4.85  7.13  17.4
+#> 1    20     0       0        0          0       20 0.321  1.00  2.35  5.22  10.5
 #> # … with 3 more variables: mode <dbl>, mean <dbl>, cv <dbl>
 ```
 
@@ -215,7 +215,7 @@ num_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1  -0.100 -0.0105   0.0165
+#> 1  -0.116 -0.0421  -0.0586
 ```
 
 ## Scaling
