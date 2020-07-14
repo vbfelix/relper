@@ -57,6 +57,12 @@ plot + theme_x()
 plot + theme_y()
 ```
 
+### theme_xy
+
+```{r}
+plot + theme_xy()
+```
+
 ### theme_map
 
 ```{r}
@@ -135,11 +141,12 @@ num_mode(x)
 ```
 
 ```{r,echo = F}
-ggplot(data = tibble(x = x),aes(x))+
-  geom_density()+
-  geom_vline(xintercept = num_mode(x),col = "royalblue4", size = 1)+
-  theme_y()+
-  scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(num_mode(x),2)))
+ggplot2::ggplot(data = dplyr::tibble(x = x),
+                ggplot2::aes(x))+
+  ggplot2::geom_density()+
+  ggplot2::geom_vline(xintercept = relper::num_mode(x),col = "royalblue4", size = 1)+
+  relper::theme_y()+
+  ggplot2::scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(relper::num_mode(x),2)))
 
 ```
 
@@ -186,7 +193,7 @@ y <- rnorm(20)
 num_corr(x,y)
 ```
 
-## Others
+## Scaling
 
 ### Linear scaling from a to b
 
@@ -232,7 +239,7 @@ mtcars %>%
   count(vs,am) %>% 
   mutate(perc = as_perc(n,sum = T))
 ```
-
+## Others
 
 ### Area under the curve
 

@@ -44,13 +44,21 @@ plot + theme_y()
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="40%" />
 
+### theme\_xy
+
+``` r
+plot + theme_xy()
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="40%" />
+
 ### theme\_map
 
 ``` r
 plot + theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="40%" />
 
 ### flip\_y\_title
 
@@ -58,7 +66,7 @@ plot + theme_map()
 plot + flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="40%" />
 
 ### water\_mark
 
@@ -70,14 +78,14 @@ logo <- water_mark(url, local_file = F)
 plot + annotation_custom(logo)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" />
 
 ``` r
 
 plot + annotation_custom(logo, xmin = 4.65, xmax = Inf, ymin = 310, ymax = Inf)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-2.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-6-2.png" width="40%" />
 
 ### calendar data and plot (from ggcal)
 
@@ -112,7 +120,7 @@ df %>%
   scale_fill_viridis_d()
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" /><img src="man/figures/README-unnamed-chunk-6-2.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="40%" /><img src="man/figures/README-unnamed-chunk-7-2.png" width="40%" />
 
 <!-- ### Duas axis plot -->
 
@@ -149,7 +157,7 @@ num_mode(x)
 #> [1] 4.015031
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="40%" />
 
 ### Coefficient of Variation (CV)
 
@@ -210,7 +218,7 @@ num_corr(x,y)
 #> 1  -0.100 -0.0105   0.0165
 ```
 
-## Others
+## Scaling
 
 ### Linear scaling from a to b
 
@@ -228,13 +236,13 @@ y
 #>  [8] 0.7777778 0.8888889 1.0000000
 ```
 
-<img src="man/figures/README-unnamed-chunk-17-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-18-1.png" width="40%" />
 
 ``` r
 z <- scale01(x,lim_sup = 100)
 ```
 
-<img src="man/figures/README-unnamed-chunk-19-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-20-1.png" width="40%" />
 
 ### Scaling to percentage
 
@@ -265,6 +273,8 @@ mtcars %>%
 #> 4  1  1  7 21.875
 ```
 
+## Others
+
 ### Area under the curve
 
 ``` r
@@ -273,7 +283,7 @@ x <- seq(-3,3,l = 100)
 y <- dnorm(x)
 ```
 
-<img src="man/figures/README-unnamed-chunk-22-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-23-1.png" width="40%" />
 
 ``` r
 #from min to max of x
@@ -284,7 +294,7 @@ auc(x,y)
 #> [1] 0.9972835
 ```
 
-<img src="man/figures/README-unnamed-chunk-24-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-25-1.png" width="40%" />
 
 ``` r
 #from -2 to 2
@@ -292,7 +302,7 @@ auc(x,y,limits = c(-2,2))
 #> [1] 0.9544345
 ```
 
-<img src="man/figures/README-unnamed-chunk-26-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-27-1.png" width="40%" />
 
 ``` r
 #from -1 to 1
@@ -300,4 +310,4 @@ auc(x,y,limits = c(-1,1))
 #> [1] 0.6825416
 ```
 
-<img src="man/figures/README-unnamed-chunk-28-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-29-1.png" width="40%" />
