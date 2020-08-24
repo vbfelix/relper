@@ -1,4 +1,4 @@
-#' Opposite of %in%
+#' Opposite of in
 #'
 #' @description Check if a x are not in y
 #'

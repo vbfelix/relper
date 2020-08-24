@@ -2,7 +2,7 @@
 % Please edit documentation in R/not_in.R
 \name{not_in}
 \alias{not_in}
-\title{Opposite of %in%}
+\title{Opposite of in}
 \usage{
 not_in(x, y)
 }
