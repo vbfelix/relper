@@ -11,14 +11,14 @@
 #'
 #' @examples
 #'
-#' df <- data.frame(grp = c("a","b","c"),
+#'df <- data.frame(grp = c("a","b","c"),
 #'                 freq = c(2,4,6))
 #'
-#' tbl_plot(df)
+#tbl_plot(df,bold_last = T,header_col = "red")
 #'
 #'
 
-tbl_plot <- function(tbl,header_col = "grey75",base_size = 15){
+tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F){
 
   if(sum(stringr::str_detect(class(tbl),
                              paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
@@ -40,11 +40,18 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15){
 
   n <- nrow(tbl)
 
+  if(bold_last == F){
+    aux_bold <- "plain"
+  }else{
+    aux_bold <- "bold.italic"
+  }
+
   tbl_theme <-
     gridExtra::ttheme_default(
       base_size = base_size,
       colhead = list(bg_params = list(fill = header_col, col=NA)),
-      core = list(bg_params = list(fill = NA))
+      core = list(bg_params = list(fill = NA),
+                  fg_params=list(fontface=c(rep("plain", n-1),aux_bold)))
     )
 
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
