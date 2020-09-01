@@ -20,7 +20,7 @@ num_mode <- function(x){
     stop("x must be numeric")
   }
 
-  d <- density(x)
+  d <- density(na.omit(x))
 
   modes <- function(d){
     i <- which(diff(sign(diff(d$y))) < 0) + 1

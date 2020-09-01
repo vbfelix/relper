@@ -15,6 +15,10 @@
 
 range_date <- function(x){
 
+  if(sum(class(x) %in% c("POSIXct","POSIXt" )) > 0 ){
+    x <- lubridate::as_date(x)
+  }
+
   if(class(x) != "Date"){
     stop("x must be of class Date")
   }

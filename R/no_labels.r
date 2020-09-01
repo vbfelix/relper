@@ -19,9 +19,12 @@
 #' plot + no_labels
 #'
 
-no_labels <- ggplot2::labs(x = "",
-                           y = "",
-                           col = "",
-                           fill = "",
-                           size = "",
-                           alpha = "")
+no_labels <-
+  ggplot2::labs(
+    x = "",
+    y = "",
+    col = "",
+    fill = "",
+    size = "",
+    alpha = ""
+    )

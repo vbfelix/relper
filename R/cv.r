@@ -3,7 +3,7 @@
 #' @description Coefficient of variation
 #'
 #' @param x numeric vector
-#' @param perc as percentage (T = default)
+#' @param perc as percentage (default = T)
 #'
 #' @return Coefficient of variation
 #' @export

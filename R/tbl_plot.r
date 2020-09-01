@@ -3,8 +3,9 @@
 #' @description Plot a table as an image
 #'
 #' @param tbl table data.frame
-#' @param header_col color of the header
+#' @param header_col color of the header (default = grey75)
 #' @param base_size table size (default = 20)
+#' @param bold_last bold last row (default = F)
 #'
 #' @return prints a image
 #' @export
@@ -51,7 +52,7 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F){
       base_size = base_size,
       colhead = list(bg_params = list(fill = header_col, col=NA)),
       core = list(bg_params = list(fill = NA),
-                  fg_params=list(fontface=c(rep("plain", n-1),aux_bold)))
+                  fg_params = list(fontface = c(rep("plain", n-1),aux_bold)))
     )
 
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
