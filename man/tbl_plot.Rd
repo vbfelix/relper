@@ -9,9 +9,11 @@ tbl_plot(tbl, header_col = "grey75", base_size = 15, bold_last = F)
 \arguments{
 \item{tbl}{table data.frame}
 
-\item{header_col}{color of the header}
+\item{header_col}{color of the header (default = grey75)}
 
 \item{base_size}{table size (default = 20)}
+
+\item{bold_last}{bold last row (default = F)}
 }
 \value{
 prints a image
