@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
   out.width = "40%"
 )
 
-set.seed(125)
+set.seed(124)
   
 library(relper)
 

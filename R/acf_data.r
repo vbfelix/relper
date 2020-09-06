@@ -20,7 +20,7 @@
 
 acf_data <- function(x,y = NULL,...){
 
-  if(is.null(y) == T){
+  if(is.null(y)){
 
     aux <- acf(x,plot = F,...)
 
