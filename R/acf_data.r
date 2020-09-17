@@ -15,7 +15,7 @@
 #'
 #' y <- rexp(100)
 #'
-#' ccf_data(x,y)
+#' acf_data(x,y)
 #'
 
 acf_data <- function(x,y = NULL,...){

@@ -54,6 +54,8 @@ dual_plot <- function(df,
     stop("y_breaks must be numeric")
   }
 
+  df <- na.omit(df[,c(x_axis,y_left,y_right)])
+
   x <- do.call("c",df[,x_axis])
 
   y <- unlist(df[,y_left])
@@ -119,11 +121,11 @@ dual_plot <- function(df,
     relper::theme_y()+
     ggplot2::scale_y_continuous(breaks = y1_seq,
                                 sec.axis = ggplot2::sec_axis(~., breaks = y1_seq, labels = y2_lbl))+
-    theme(axis.text.y.left    = ggplot2::element_text(colour = col_left,  face = "bold"))+
-    theme(axis.text.y.right   = ggplot2::element_text(colour = col_right, face = "bold"))+
-    scale_color_manual(values = c(col_left,col_right))+
-    theme(legend.position = legend_pos)+
-    labs(
+    ggplot2::theme(axis.text.y.left    = ggplot2::element_text(colour = col_left,  face = "bold"))+
+    ggplot2::theme(axis.text.y.right   = ggplot2::element_text(colour = col_right, face = "bold"))+
+    ggplot2::scale_color_manual(values = c(col_left,col_right))+
+    ggplot2::theme(legend.position = legend_pos)+
+    ggplot2::labs(
       y = "",
       col = ""
       )

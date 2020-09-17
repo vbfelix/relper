@@ -19,7 +19,7 @@
 #'
 #'
 
-tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F){
+tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F, print = T){
 
   if(sum(stringr::str_detect(class(tbl),
                              paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
@@ -57,7 +57,13 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F){
 
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
 
-  grid::grid.draw(out)
+  if(print == T){
+    grid::grid.draw(out)
+
+  }else{
+    return(out)
+
+  }
 
 }
 
