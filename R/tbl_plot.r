@@ -58,6 +58,7 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F, pr
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
 
   if(print == T){
+
     grid::grid.draw(out)
 
   }else{

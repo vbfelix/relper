@@ -1,11 +1,11 @@
 #' Difference between dates
 #'
-#' @description Computes data of ACF ou CCF
+#' @description  Difference between dates
 #'
 #' @param first_date
 #' @param last_date
 #'
-#' @return tibble
+#' @return numeric value
 #' @export
 #'
 #' @examples

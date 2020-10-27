@@ -3,7 +3,7 @@
 #' @description Compute summary statistics for numeric variable
 #'
 #' @param x numeric vector
-#' @param minimal minimal version (default = F)
+#' @param minimal return minimal version (default = F)
 #'
 #' @return tibble
 #' @export
