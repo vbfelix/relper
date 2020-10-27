@@ -16,10 +16,6 @@
 
 cat_mode <- function(x){
 
-  # if(is.character(x) == F & is.factor(x) == F){
-  #   stop("x must be numeric")
-  # }
-
     cat_levels <- unique(x)
 
     out <- cat_levels[which.max(tabulate(match(x, cat_levels)))]
