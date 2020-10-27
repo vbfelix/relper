@@ -4,7 +4,7 @@
 \alias{tbl_plot}
 \title{Table plot}
 \usage{
-tbl_plot(tbl, header_col = "grey75", base_size = 15, bold_last = F)
+tbl_plot(tbl, header_col = "grey75", base_size = 15, bold_last = F, print = T)
 }
 \arguments{
 \item{tbl}{table data.frame}

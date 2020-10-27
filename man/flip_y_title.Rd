@@ -4,7 +4,9 @@
 \name{flip_y_title}
 \alias{flip_y_title}
 \title{Flip y axis title}
-\format{An object of class \code{theme} (inherits from \code{gg}) of length 1.}
+\format{
+An object of class \code{theme} (inherits from \code{gg}) of length 1.
+}
 \usage{
 flip_y_title
 }

@@ -63,10 +63,11 @@ cal_plot <- function(df, facet = ""){
   }
 
   if(rlang::expr(facet) != ""){
-    plot <- plot + ggplot2::facet_wrap(facets = dplyr::vars(monlabel,{{facet}}),
-                                       ncol = 3,
-                                       scales = "free")
+    plot <- plot +
+      ggplot2::facet_wrap(facets = dplyr::vars(monlabel,{{facet}}),
+                          ncol = 3,
+                          scales = "free")
   }
 
-  plot(plot)
+  return(plot)
 }

@@ -4,7 +4,9 @@
 \name{no_labels}
 \alias{no_labels}
 \title{No labels in ggplot2}
-\format{An object of class \code{labels} of length 6.}
+\format{
+An object of class \code{labels} of length 6.
+}
 \usage{
 no_labels
 }

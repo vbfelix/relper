@@ -31,7 +31,7 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F, pr
     warning("numbers of rows is to long")
   }
 
-  if(ncol(tbl) > 8){
+  if(ncol(tbl) > 10){
     warning("numbers of columns is to long")
   }
 

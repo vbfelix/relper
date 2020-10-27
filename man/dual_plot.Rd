@@ -4,9 +4,17 @@
 \alias{dual_plot}
 \title{Dual axis plot}
 \usage{
-dual_plot(df, x_axis, y_left, y_right, y_breaks = NULL,
-  col_left = "forestgreen", col_right = "chocolate2",
-  legend_pos = "top", ...)
+dual_plot(
+  df,
+  x_axis,
+  y_left,
+  y_right,
+  y_breaks = NULL,
+  col_left = "forestgreen",
+  col_right = "chocolate2",
+  legend_pos = "top",
+  ...
+)
 }
 \arguments{
 \item{df}{data.frame}

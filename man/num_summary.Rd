@@ -4,10 +4,12 @@
 \alias{num_summary}
 \title{Numeric summary}
 \usage{
-num_summary(x)
+num_summary(x, minimal = F)
 }
 \arguments{
 \item{x}{numeric vector}
+
+\item{minimal}{minimal version (default = F)}
 }
 \value{
 tibble
