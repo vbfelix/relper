@@ -4,10 +4,10 @@
 \alias{str_to_text}
 \title{Convert case of a string}
 \usage{
-str_to_text(x, n_char = 3)
+str_to_text(string, n_char = 3)
 }
 \arguments{
-\item{x}{characther vector}
+\item{string}{characther vector}
 
 \item{n_char}{numeric value}
 }

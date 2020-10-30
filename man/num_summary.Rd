@@ -9,7 +9,7 @@ num_summary(x, minimal = F)
 \arguments{
 \item{x}{numeric vector}
 
-\item{minimal}{minimal version (default = F)}
+\item{minimal}{return minimal version (default = F)}
 }
 \value{
 tibble

@@ -10,10 +10,10 @@ diff_date(first_date, last_date)
 \item{last_date}{}
 }
 \value{
-tibble
+numeric value
 }
 \description{
-Computes data of ACF ou CCF
+Difference between dates
 }
 \examples{
 
