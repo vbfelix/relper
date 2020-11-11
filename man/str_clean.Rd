@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_clean.R
 \name{str_clean}
 \alias{str_clean}
-\title{Remove punctuation and/ot accent}
+\title{Remove punctuation and/or accent}
 \usage{
 str_clean(string, accent = T, punct = T, sub = "")
 }
@@ -19,11 +19,11 @@ str_clean(string, accent = T, punct = T, sub = "")
 character value
 }
 \description{
-Remove punctuation and/ot accent
+Remove punctuation and/or accent
 }
 \examples{
 
-string <- "a..;éâ...íõ]"
+string <- "a..;éâ...íõ"
 
 #remove only punctuation
 str_clean(string,accent = F,punct = T)
