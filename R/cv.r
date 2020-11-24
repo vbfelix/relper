@@ -28,13 +28,17 @@ cv <- function(x, perc = T){
   mu_x <- mean(x, na.rm = T)
 
   if(mu_x == 0){
-    stop("mean = 0 -> cv is NaN")
+    warning("mean = 0 -> cv is NaN")
   }
 
   if(perc == T){
-    100*sd(x, na.rm = T)/mu_x
+    out <- 100*sd(x, na.rm = T)/mu_x
   } else{
-    sd(x, na.rm = T)/mu_x
+    out <- sd(x, na.rm = T)/mu_x
   }
+
+  out <- abs(round(out,2))
+
+  return(out)
 
 }

@@ -13,9 +13,9 @@
 #'
 #'
 
-diff_date <- function(first_date,last_date){
+diff_date <- function(first_date,last_date, units = "days",aux_sum = 0){
 
-  out <- as.numeric(difftime(last_date,first_date,units = "days")) + 1
+  out <- as.numeric(difftime(last_date,first_date,units = units)) + aux_sum
 
   return(out)
 
