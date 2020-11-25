@@ -22,11 +22,6 @@ num_mode <- function(x){
 
   d <- density(na.omit(x))
 
-  modes <- function(d){
-    i <- which(diff(sign(diff(d$y))) < 0) + 1
-    data.frame(x = d$x[i], y = d$y[i])
-  }
-
   return(d$x[which.max(d$y)])
 
 }
