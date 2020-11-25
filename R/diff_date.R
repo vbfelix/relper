@@ -13,7 +13,7 @@
 #'
 #'
 
-diff_date <- function(first_date,last_date, units = "days",aux_sum = 0){
+diff_date <- function(first_date,last_date,aux_sum = 0, units = "days"){
 
   out <- as.numeric(difftime(last_date,first_date,units = units)) + aux_sum
 
