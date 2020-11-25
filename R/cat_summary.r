@@ -25,8 +25,10 @@ cat_summary <- function(x){
   out <-
     dplyr::tibble(
       n = length(x),
-      na = sum(is.na(x)),
-      n_distinct = dplyr::n_distinct(x)
+      na = sum(is.na(x),na.rm = T),
+      blank_space = sum(x == "",na.rm = T),
+      n_distinct = dplyr::n_distinct(x[relper::not_na(x)]),
+      mode = cat_mode(x[relper::not_na(x)])
     )
 
   return(out)
