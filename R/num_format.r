@@ -15,7 +15,7 @@
 #' num_format(12345.67)
 #'
 
-num_format <- function(x, digits = 2,dec_mark = ",",mil_mark = "."){
+num_format <- function(x, digits = 2,decimal_mark = ",",thousand_mark = "."){
 
   if(is.numeric(x) == F){
     stop("x must be numeric")
@@ -27,9 +27,9 @@ num_format <- function(x, digits = 2,dec_mark = ",",mil_mark = "."){
 
   formatC(x,
           format="f",
-          big.mark = mil_mark,
+          big.mark = thousand_mark,
           digits = digits,
-          decimal.mark = dec_mark)
+          decimal.mark = decimal_mark)
 
 }
 
