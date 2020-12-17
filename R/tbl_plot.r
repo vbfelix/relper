@@ -19,7 +19,16 @@
 #'
 #'
 
-tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F, print = T){
+tbl_plot <- function(tbl,
+                     header_col = "grey75",
+                     base_size = 15,
+                     bold_last = F,
+                     print = T,
+                     save = F,
+                     img_path = getwd(),
+                     img_name = "test",
+                     img_width = 20,
+                     img_height = 14){
 
   if(sum(stringr::str_detect(class(tbl),
                              paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
@@ -51,20 +60,32 @@ tbl_plot <- function(tbl,header_col = "grey75",base_size = 15, bold_last = F, pr
     gridExtra::ttheme_default(
       base_size = base_size,
       colhead = list(bg_params = list(fill = header_col, col=NA)),
-      core = list(bg_params = list(fill = NA),
-                  fg_params = list(fontface = c(rep("plain", n-1),aux_bold)))
+      core = list(
+        bg_params = list(fill = NA),
+        fg_params = list(fontface = c(rep("plain", n-1),aux_bold))
+        )
     )
 
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
 
   if(print == T){
-
     grid::grid.draw(out)
-
-  }else{
+  }
+  if(print == F){
     return(out)
+  }
+  if(save == T){
+    ggplot2::ggsave(
+      plot = out,
+      filename = paste0(img_name,".png"),
+      path = img_path,
+      width = img_width,
+      height = img_height,
+      units = "cm"
+    )
 
   }
+
 
 }
 

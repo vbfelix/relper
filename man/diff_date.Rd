@@ -4,7 +4,7 @@
 \alias{diff_date}
 \title{Difference between dates}
 \usage{
-diff_date(first_date, last_date)
+diff_date(first_date, last_date, aux_sum = 0, units = "days")
 }
 \arguments{
 \item{last_date}{}

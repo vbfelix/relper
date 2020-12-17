@@ -4,7 +4,7 @@
 \alias{num_format}
 \title{Format numeric data}
 \usage{
-num_format(x, digits = 2, dec_mark = ",", mil_mark = ".")
+num_format(x, digits = 2, decimal_mark = ",", thousand_mark = ".")
 }
 \arguments{
 \item{x}{numeric vector}

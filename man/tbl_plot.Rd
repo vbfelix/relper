@@ -4,7 +4,18 @@
 \alias{tbl_plot}
 \title{Table plot}
 \usage{
-tbl_plot(tbl, header_col = "grey75", base_size = 15, bold_last = F, print = T)
+tbl_plot(
+  tbl,
+  header_col = "grey75",
+  base_size = 15,
+  bold_last = F,
+  print = T,
+  save = F,
+  img_path = getwd(),
+  img_name = "test",
+  img_width = 20,
+  img_height = 14
+)
 }
 \arguments{
 \item{tbl}{table data.frame}
