@@ -4,7 +4,7 @@
 #'
 #' @param x char vector
 #'
-#' @return prints a image
+#' @return char vector
 #' @export
 #'
 #' @examples
