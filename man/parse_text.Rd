@@ -10,7 +10,7 @@ parse_text(x)
 \item{x}{char vector}
 }
 \value{
-prints a image
+char vector
 }
 \description{
 Extract only text from a string
