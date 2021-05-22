@@ -1,6 +1,6 @@
 #' Difference between dates
 #'
-#' @description  Difference between dates
+#' @description Difference between dates
 #'
 #' @param first_date
 #' @param last_date
