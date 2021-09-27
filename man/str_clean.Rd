@@ -23,7 +23,7 @@ Remove punctuation and/or accent
 }
 \examples{
 
-string <- "a..;éâ...íõ"
+string <- "a..;Ã©Ã¢...Ã­Ãµ"
 
 #remove only punctuation
 str_clean(string,accent = F,punct = T)

@@ -4,7 +4,7 @@
 \alias{theme_y}
 \title{ggplot2 theme}
 \usage{
-theme_y(base_size = 14, base_family = "", margin = 0.25)
+theme_y(base_size = 14, base_family = "", margin = 0.35)
 }
 \value{
 ggplot2 theme
