@@ -1,5 +1,7 @@
 ---
-output: github_document
+output:
+  github_document:
+    toc: true  
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -18,6 +20,13 @@ knitr::opts_chunk$set(
 set.seed(124)
   
 library(relper)
+library(dplyr)
+library(lubridate)
+
+df_date <-
+  tibble(date = seq.Date(from = today(),
+                         to = today() + days(5),
+                         by = "1 day"))
 
 ```
 
@@ -32,6 +41,31 @@ You can install the developer version of relper with:
 ``` r
 remotes::install_github("vbfelix/relper")
 ```
+
+## Date Manipulation
+
+### Create date auxiliary variables
+
+```{r}
+df_date
+```
+
+```{r}
+df_date %>% 
+  date_vars(date) %>% 
+  glimpse()
+```
+
+### Date difference
+
+```{r}
+date1 <- dmy("01/05/1998")
+date2 <- dmy("21/11/2018")
+
+diff_date(first_date = date1,last_date = date2,units = "days")
+```
+
+
 
 ## ggplot2 functions
 
@@ -78,7 +112,7 @@ plot + flip_y_title
 ### water_mark
 
 ```{r}
-url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+url <- "https://istatistikcibiri.files.wordpress.com/2020/03/285_r_project_logo-512.png"
 
 logo <- water_mark(url, local_file = F)
 
@@ -150,6 +184,18 @@ ggplot2::ggplot(data = dplyr::tibble(x = x),
 
 ```
 
+### Mode
+
+```{r}
+let <- sample(letters,100,replace = TRUE)
+
+table(let)
+
+```
+
+```{r}
+cat_mode(let)
+```
 
 ### Coefficient of Variation (CV)
 
