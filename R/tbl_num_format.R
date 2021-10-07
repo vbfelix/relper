@@ -14,7 +14,7 @@
 #'   count(vs,am) %>%
 #'   tbl_num_format(digits = 5)
 
-tbl_num_format <- function(df,digits){
+tbl_num_format <- function(df,digits = 2){
 
   df %>%
     dplyr::mutate(dplyr::across(where(is.numeric),~relper::num_format(.,digits = digits)))

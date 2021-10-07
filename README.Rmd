@@ -30,11 +30,11 @@ df_date <-
 
 ```
 
-# relper
+# Intro
 
 The goal of relper is to provide miscellaneous functions to assist in data cleaning and visualization.
 
-## Installation
+# Installation
 
 You can install the developer version of relper with:
 
@@ -42,9 +42,11 @@ You can install the developer version of relper with:
 remotes::install_github("vbfelix/relper")
 ```
 
+# Functions
+
 ## Date Manipulation
 
-### Create date auxiliary variables
+### date_vars - Create date auxiliary variables
 
 ```{r}
 df_date
@@ -56,7 +58,7 @@ df_date %>%
   glimpse()
 ```
 
-### Date difference
+### diff_date - Date difference
 
 ```{r}
 date1 <- dmy("01/05/1998")
@@ -168,7 +170,7 @@ x <- rexp(20,.2)
 x
 ```
 
-### Highest density value
+### num_mode - Highest density value
 
 ```{r}
 num_mode(x)
@@ -184,7 +186,7 @@ ggplot2::ggplot(data = dplyr::tibble(x = x),
 
 ```
 
-### Mode
+### cat_mode - Mode
 
 ```{r}
 let <- sample(letters,100,replace = TRUE)
@@ -197,7 +199,7 @@ table(let)
 cat_mode(let)
 ```
 
-### Coefficient of Variation (CV)
+### cv - Coefficient of Variation (CV)
 
 ```{r}
 #raw
@@ -213,25 +215,25 @@ cv(x, perc = T)
 num_mean(x)
 ```
 
-#### Harmonic mean
+#### harmonic_mean - Harmonic mean
 
 ```{r}
 harmonic_mean(x)
 ```
 
-#### Geometric mean
+#### geometric_mean - Geometric mean
 
 ```{r}
 geometric_mean(x)
 ```
 
-### Numeric univariate summary statistics
+### num_summary - Numeric univariate summary statistics
 
 ```{r}
 num_summary(x)
 ```
 
-### Correlations
+### num_corr - Correlations
 
 ```{r}
 y <- rnorm(20)
@@ -241,7 +243,7 @@ num_corr(x,y)
 
 ## Scaling
 
-### Linear scaling from a to b
+### scale01 - Linear scaling from a to b
 
 ```{r}
 x <- seq(-3,3,l = 10)
@@ -268,7 +270,7 @@ plot(x,z)
 ```
 
 
-### Scaling to percentage
+### as_perc - Scaling to percentage
 
 #### Multiply by 100
 ```{r}
@@ -287,7 +289,7 @@ mtcars %>%
 ```
 ## Others
 
-### Area under the curve
+### auc - Area under the curve
 
 ```{r aux example}
 x <- seq(-3,3,l = 100)
