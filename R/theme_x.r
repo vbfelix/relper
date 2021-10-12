@@ -24,7 +24,7 @@ theme_x <-
       ggplot2::theme(
         legend.text = ggplot2::element_text(size = 14, face = "bold"),
         legend.position = "top",
-        strip.text = ggplot2::element_text(colour = "white", face = "bold"),
+        strip.text = ggplot2::element_text(colour = "white"),
         strip.background = ggplot2::element_rect(fill = "black"),
         panel.grid.major.y = ggplot2::element_blank(),
         panel.grid.minor = ggplot2::element_blank(),
