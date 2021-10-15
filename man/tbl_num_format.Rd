@@ -4,7 +4,7 @@
 \alias{tbl_num_format}
 \title{Format data.frame}
 \usage{
-tbl_num_format(df, digits)
+tbl_num_format(df, digits = 2)
 }
 \arguments{
 \item{df}{data.frame}
