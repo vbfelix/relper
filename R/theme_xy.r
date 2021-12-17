@@ -20,6 +20,8 @@
 
 theme_xy <-
   function(base_size = 14, base_family = "", margin = .35){
+    '%+replace%' <- ggplot2::'%+replace%'
+    
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%
       ggplot2::theme(
         legend.text = ggplot2::element_text(size = 14, face = "bold"),
