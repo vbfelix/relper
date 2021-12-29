@@ -22,24 +22,21 @@ acf_data <- function(x,y = NULL,...){
 
   if(is.null(y)){
 
-    aux <- acf(x,plot = F,...)
+    aux <- acf(x,plot = FALSE,...)
 
     out <- tibble::tibble(
       acf = unlist(aux[[1]][,1,1]),
       lag = unlist(aux[[4]][,1,1])
     )
-
   }else{
 
-    aux <- ccf(x,y,plot = F,...)
+    aux <- ccf(x,y,plot = FALSE,...)
 
     out <- tibble::tibble(
       acf = unlist(aux[[1]][,1,1]),
       lag = unlist(aux[[4]][,1,1])
     )
-
   }
-
 
   return(out)
 }

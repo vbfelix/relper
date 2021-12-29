@@ -17,7 +17,7 @@
 
 num_convert <- function(x){
 
-  if(is.numeric(x) == F){
+  if(!is.numeric(x)){
 
     as.numeric(gsub("\\,", "\\.",gsub("\\.", "", x)), na.rm = F)
 

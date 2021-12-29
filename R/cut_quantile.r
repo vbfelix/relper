@@ -16,31 +16,31 @@
 
 cut_quantile <- function(x, q = seq(0,1,by = .20),...) {
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
-  if(is.numeric(q) == F){
-    stop("q must be numeric")
+  if(!is.numeric(q)){
+    stop("q must be numeric.")
   }
 
   if((min(q) < 0) | (max(q) > 1)){
-    stop("q range must be [0;1]")
+    stop("q range must be [0;1].")
   }
 
   if(length(q) <= 1){
-    stop("q length must be > 1")
+    stop("q length must be > 1.")
   }
 
   if(length(x) <= 1){
-    stop("x length must be > 1")
+    stop("x length must be > 1.")
   }
 
   cut(x,
-      breaks = quantile(x,probs = q,na.rm = T),
+      breaks = quantile(x,probs = q,na.rm = TRUE),
       ...,
-      include.lowest = T,
-      right = T
+      include.lowest = TRUE,
+      right = TRUE
       )
 
 }

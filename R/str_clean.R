@@ -24,24 +24,27 @@
 #'str_clean(string)
 
 
-str_clean <- function(string,
-                      accent = T,
-                      punct = T,
-                      sub = ""){
+str_clean <-
+  function(
+    string,
+    accent = TRUE,
+    punct = TRUE,
+    sub = ""
+    ){
 
-  if(is.character(string) == F & is.factor(string) == F){
-    stop("string must be a characther/factor")
+  if(!is.character(string) & !is.factor(string)){
+    stop("string must be a characther/factor.")
   }
 
-  if(is.character(sub) == F & is.factor(sub) == F){
-    stop("sub must be a characther/factor")
+  if(!is.character(sub) & !is.factor(sub)){
+    stop("sub must be a characther/factor.")
   }
 
-  if(punct == T){
+  if(punct){
     string <- gsub("[[:punct:]]",sub, string)
   }
 
-  if(accent == T){
+  if(accent){
     string <- iconv(string, from = 'UTF-8', to = 'ASCII//TRANSLIT')
   }
 

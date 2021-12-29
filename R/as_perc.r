@@ -15,13 +15,13 @@
 #' as_perc(x)
 #'
 
-as_perc <- function(x, sum = F){
+as_perc <- function(x, sum = FALSE){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
-  if(sum == F){
+  if(sum == FALSE){
     out <- 100*x
   }else{
     out <- 100*x/sum(x)

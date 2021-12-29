@@ -18,41 +18,43 @@
 #' plot(df)
 #'
 
-r_pearson<- function(n = 25,
-                     p_sim = 0.50,
-                     tol = 0.10,
-                     ...){
+r_pearson <-
+  function(
+    n = 25,
+    p_sim = 0.50,
+    tol = 0.10,
+    ...){
 
-  if(is.numeric(n) == F){
-    stop("n must be numeric")
+  if(!is.numeric(n)){
+    stop("n must be numeric.")
   }
 
-  if(is.numeric(p_sim) == F){
-    stop("p_sim must be numeric")
+  if(!is.numeric(p_sim)){
+    stop("p_sim must be numeric.")
   }
 
-  if(is.numeric(tol) == F){
-    stop("tol must be numeric")
+  if(!is.numeric(tol)){
+    stop("tol must be numeric.")
   }
 
   if(n <= 0){
-    stop("n must be > 0")
+    stop("n must be > 0.")
   }
 
   if((n%%1)!= 0 ){
-    stop("n must be a integer")
+    stop("n must be a integer.")
   }
 
   if((tol <= 0) | (tol >= 1)){
-    stop("tol must be (0,1)")
+    stop("tol must be (0,1).")
   }
 
   if((tol > 0) & (tol < .05)){
-    print("A low tolerance may cause a infinite loop or a long loading time")
+    warning("A low tolerance may cause a infinite loop or a long loading time.")
   }
 
   if((p_sim > 1) | (p_sim < -1)){
-    stop("p_sim must be [-1;1]")
+    stop("p_sim must be [-1;1].")
   }
 
   p_stop <- 1
@@ -69,10 +71,13 @@ r_pearson<- function(n = 25,
 
   }
 
-  out <- data.frame(x = x,
-                    y = y,
-                    p_sim = p_sim,
-                    p_est = p_est)
+  out <-
+    dplyr::tibble(
+      x = x,
+      y = y,
+      p_sim = p_sim,
+      p_est = p_est
+      )
 
   return(out)
 

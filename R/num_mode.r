@@ -16,8 +16,8 @@
 
 num_mode <- function(x){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
   d <- density(na.omit(x))

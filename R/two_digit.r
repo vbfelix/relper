@@ -15,14 +15,16 @@
 
 two_digit <- function(x){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
   x <- as.character(x)
 
-  ifelse(nchar(x) == 1,
-         paste0("0",x),
-         x)
+  ifelse(
+    nchar(x) == 1,
+    paste0("0",x),
+    x
+    )
   }
 

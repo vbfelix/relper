@@ -19,29 +19,32 @@
 #'
 #'
 
-tbl_plot <- function(tbl,
-                     header_col = "grey75",
-                     base_size = 15,
-                     bold_last = F,
-                     print = T,
-                     save = F,
-                     img_path = getwd(),
-                     img_name = "test",
-                     img_width = 20,
-                     img_height = 14){
+tbl_plot <-
+  function(
+    tbl,
+    header_col = "grey75",
+    base_size = 15,
+    bold_last = FALSE,
+    print = TRUE,
+    save = FALSE,
+    img_path = getwd(),
+    img_name = "test",
+    img_width = 20,
+    img_height = 14
+    ){
 
   if(sum(stringr::str_detect(class(tbl),
                              paste(c("tbl_df","tbl","data.frame","tabyl","grouped_df","data.table"),
                                    collapse = "|"))) ==  0){
-    stop("tbl must be a data.frame/tibble")
+    stop("tbl must be a data.frame/tibble.")
   }
 
   if(nrow(tbl) > 25){
-    warning("numbers of rows is to long")
+    warning("numbers of rows is to long.")
   }
 
   if(ncol(tbl) > 10){
-    warning("numbers of columns is to long")
+    warning("numbers of columns is to long.")
   }
 
   plot(1)
@@ -50,7 +53,7 @@ tbl_plot <- function(tbl,
 
   n <- nrow(tbl)
 
-  if(bold_last == F){
+  if(bold_last == FALSE){
     aux_bold <- "plain"
   }else{
     aux_bold <- "bold.italic"
@@ -59,7 +62,7 @@ tbl_plot <- function(tbl,
   tbl_theme <-
     gridExtra::ttheme_default(
       base_size = base_size,
-      colhead = list(bg_params = list(fill = header_col, col=NA)),
+      colhead = list(bg_params = list(fill = header_col, col = NA)),
       core = list(
         bg_params = list(fill = NA),
         fg_params = list(fontface = c(rep("plain", n-1),aux_bold))
@@ -68,13 +71,13 @@ tbl_plot <- function(tbl,
 
   out <- gridExtra::tableGrob(tbl,rows = NULL, theme = tbl_theme)
 
-  if(print == T){
+  if(print){
     grid::grid.draw(out)
   }
-  if(print == F){
+  if(print == FALSE){
     return(out)
   }
-  if(save == T){
+  if(save){
     ggplot2::ggsave(
       plot = out,
       filename = paste0(img_name,".png"),
@@ -83,9 +86,6 @@ tbl_plot <- function(tbl,
       height = img_height,
       units = "cm"
     )
-
   }
-
-
 }
 

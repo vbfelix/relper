@@ -23,18 +23,18 @@
 #'   annotation_custom(logo)
 
 
-water_mark<-function(png_file,local_file = T){
+water_mark<-function(png_file,local_file = TRUE){
 
-  if(is.logical(local_file) == F){
-    stop("local_file must be logical")
+  if(!is.logical(local_file)){
+    stop("local_file must be logical.")
   }
 
-  if(local_file == T){
+  if(local_file){
     png <- png::readPNG(png_file)
   }else{
     png <- png::readPNG(RCurl::getURLContent(png_file))
   }
 
-  grid::rasterGrob(image = png, interpolate = F)
+  grid::rasterGrob(image = png, interpolate = FALSE)
 
 }

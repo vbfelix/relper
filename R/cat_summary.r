@@ -18,15 +18,15 @@
 
 cat_summary <- function(x){
 
-  if(is.character(x) == F & is.factor(x) == F){
-    stop("x must be character/factor")
+  if(!is.character(x) & !is.factor(x)){
+    stop("x must be character/factor.")
   }
 
   out <-
     dplyr::tibble(
       n = length(x),
-      na = sum(is.na(x),na.rm = T),
-      blank_space = sum(x == "",na.rm = T),
+      na = sum(is.na(x),na.rm = TRUE),
+      blank_space = sum(x == "",na.rm = TRUE),
       n_distinct = dplyr::n_distinct(x[relper::not_na(x)]),
       mode = cat_mode(x[relper::not_na(x)])
     )

@@ -19,8 +19,12 @@
 
 no_bg <-
   ggplot2::theme(
-    panel.background  = ggplot2::element_rect(fill = "transparent"), # bg of the panel
-    plot.background   = ggplot2::element_rect(fill = "transparent", color = NA), # bg of the plot
-    legend.background = ggplot2::element_rect(fill = "transparent"), # get rid of legend bg
-    legend.box.background = ggplot2::element_rect(fill = "transparent") # get rid of legend panel bg
+    # bg of the panel
+    panel.background  = ggplot2::element_rect(fill = "transparent"),
+    # bg of the plot
+    plot.background   = ggplot2::element_rect(fill = "transparent", color = NA),
+    # get rid of legend bg
+    legend.background = ggplot2::element_rect(fill = "transparent"),
+    # get rid of legend panel bg
+    legend.box.background = ggplot2::element_rect(fill = "transparent")
   )

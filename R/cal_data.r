@@ -22,20 +22,25 @@ cal_data <- function(dates, fills){
   months <-
     format(seq(as.Date("2016-01-01"), as.Date("2016-12-01"), by = "1 month"), "%B")
 
-  mindate <- as.Date(format(min(dates), "%Y-%m-01"))
+  mindate <-
+    as.Date(format(min(dates), "%Y-%m-01"))
 
-  maxdate <- (seq(as.Date(format(max(dates), "%Y-%m-01")), length.out = 2, by = "1 month") - 1)[2]
+  maxdate <-
+    (seq(as.Date(format(max(dates), "%Y-%m-01")), length.out = 2, by = "1 month") - 1)[2]
 
-  filler <- dplyr::tibble(date = seq(mindate, maxdate, by = "1 day"))
+  filler <-
+    dplyr::tibble(date = seq(mindate, maxdate, by = "1 day"))
 
   df1 <-
     dplyr::tibble(date = dates, fill = fills) %>%
     dplyr::right_join(filler, by = "date") %>%
-    dplyr::mutate(dow = as.numeric(format(date,"%w"))) %>%
-    dplyr::mutate(month = format(date, "%B")) %>%
-    dplyr::mutate(woy = as.numeric(format(date,"%U"))) %>%
-    dplyr::mutate(year = as.numeric(format(date, "%Y"))) %>%
-    dplyr::mutate(month = factor(month, levels = months, ordered = TRUE)) %>%
+    dplyr::mutate(
+      dow = as.numeric(format(date,"%w")),
+      month = format(date, "%B"),
+      woy = as.numeric(format(date,"%U")),
+      year = as.numeric(format(date, "%Y")),
+      month = factor(month, levels = months, ordered = TRUE)
+      ) %>%
     dplyr::arrange(year, month) %>%
     dplyr::mutate(monlabel = month)
 
@@ -45,10 +50,12 @@ cal_data <- function(dates, fills){
 
   out <-
     df1 %>%
-    dplyr::mutate(monlabel = factor(monlabel, ordered = TRUE)) %>%
-    dplyr::mutate(monlabel = forcats::fct_inorder(stringr::str_to_title(monlabel))) %>%
-    dplyr::mutate(monthweek = woy - min(woy), y = max(monthweek) - monthweek + 1) %>%
-    dplyr::mutate(wday = lubridate::wday(date,label = T, abbr = T)) %>%
+    dplyr::mutate(
+      monlabel = factor(monlabel, ordered = TRUE),
+      monlabel = forcats::fct_inorder(stringr::str_to_title(monlabel)),
+      monthweek = woy - min(woy), y = max(monthweek) - monthweek + 1,
+      wday = lubridate::wday(date,label = TRUE, abbr = TRUE)
+      ) %>%
     dplyr::rename(x = dow) %>%
     dplyr::select(-woy,-monthweek)
 

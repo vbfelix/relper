@@ -16,13 +16,13 @@
 
 num_mean<- function(x){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
   out <-
     dplyr::tibble(
-      arithmetic =  mean(x, na.rm = T),
+      arithmetic =  mean(x, na.rm = TRUE),
       geometric  =  relper::geometric_mean(x),
       harmonic   =  relper::harmonic_mean(x)
     )

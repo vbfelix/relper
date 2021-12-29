@@ -18,13 +18,13 @@
 
 is_outlier <- function(x){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
-  q1 <- quantile(x, 0.25, na.rm = T)
+  q1 <- quantile(x, 0.25, na.rm = TRUE)
 
-  q3 <- quantile(x, 0.75, na.rm = T)
+  q3 <- quantile(x, 0.75, na.rm = TRUE)
 
   aiq  <- q3 - q1
 
@@ -32,7 +32,7 @@ is_outlier <- function(x){
 
   ls <- q3 + (1.5 * aiq)
 
-  out <- ifelse( (x <= li) | (x >= ls), T, F)
+  out <- ifelse( (x <= li) | (x >= ls), TRUE, FALSE)
 
   return(out)
 

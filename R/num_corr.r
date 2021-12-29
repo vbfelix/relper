@@ -23,19 +23,19 @@
 
 num_corr <- function(x,y){
 
-  if(is.numeric(x) == F){
-    stop("x must be numeric")
+  if(!is.numeric(x)){
+    stop("x must be numeric.")
   }
 
-  if(is.numeric(y) == F){
-    stop("y must be numeric")
+  if(!is.numeric(y)){
+    stop("y must be numeric.")
   }
 
   out <-
   dplyr::tibble(
-    pearson  =  cor.test(x,y,method = "pearson",na.rm = T)$estimate,
-    kendall  =  cor.test(x,y,method = "kendall",na.rm = T)$estimate,
-    spearman =  cor.test(x,y,method = "spearman",na.rm = T)$estimate
+    pearson  =  cor.test(x,y,method = "pearson",na.rm = TRUE)$estimate,
+    kendall  =  cor.test(x,y,method = "kendall",na.rm = TRUE)$estimate,
+    spearman =  cor.test(x,y,method = "spearman",na.rm = TRUE)$estimate
   )
 
   return(out)

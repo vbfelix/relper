@@ -24,28 +24,28 @@
 
 str_select <- function(string,after = NULL,before = NULL){
 
-  if(is.character(string) == F & is.factor(string) == F){
-    stop("string must be a characther/factor")
+  if(!is.character(string) & !is.factor(string)){
+    stop("string must be a characther/factor.")
   }
 
-  if( !is.null(after) & is.character(after) == F & is.factor(after) == F){
-    stop("after must be a characther/factor")
+  if(!is.null(after) & !is.character(after) & !is.factor(after)){
+    stop("after must be a characther/factor.")
   }
 
-  if( !is.null(before) & is.character(before) == F & is.factor(before) == F){
-    stop("before must be a characther/factor")
+  if(!is.null(before) & !is.character(before) & !is.factor(before)){
+    stop("before must be a characther/factor.")
   }
 
-  if((!is.null(before)) & (!is.null(after)) ){
+  if((!is.null(before)) & (!is.null(after))){
     out <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))
     out <- out[,2]
   }
 
-  if((!is.null(before)) & (is.null(after)) ){
+  if((!is.null(before)) & (is.null(after))){
     out <- sub(paste0(before,".*"),"",string)
   }
 
-  if((is.null(before)) & (!is.null(after)) ){
+  if((is.null(before)) & (!is.null(after))){
     out <- sub(paste0(".*",after),"",string)
   }
 
