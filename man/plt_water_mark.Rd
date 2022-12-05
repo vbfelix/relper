@@ -24,7 +24,7 @@ library(ggplot2)
 
 url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
 
-logo <- plt_water_mark(url,local_file = F)
+logo <- plt_water_mark(url,local_file = FALSE)
 
 ggplot()+
   annotation_custom(logo)

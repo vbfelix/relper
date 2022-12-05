@@ -18,7 +18,9 @@ breaks
 Breaks data by quantile
 }
 \examples{
+
 x <- rnorm(100)
+
 cut_by_quantile(x)
 
 }

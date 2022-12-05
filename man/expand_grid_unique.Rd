@@ -21,5 +21,6 @@ expand_grid_unique(x, y, include_equals = FALSE)
 }
 \examples{
 
+expand_grid_unique(x = 1:6,y = 1:8)
 
 }

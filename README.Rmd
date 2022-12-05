@@ -566,6 +566,17 @@ summary_num(x)
 
 This functions will serve to show data in table format.
 
+### tbl_chi_square
+
+The goal of *tbl_chi_square* is to create a frequency table with chi-square statistic, p-value, Cramer's V.
+
+```{r}
+mtcars %>%
+  mutate(vs = paste0("vs = ",vs)) %>%
+  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
+```
+
+
 ### tbl_format_num
 
 The goal of *tbl_format_num* is to apply *format_num* to all numeric variables in a data.frame.

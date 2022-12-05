@@ -51,6 +51,7 @@
     - <a href="#summary_data" id="toc-summary_data">summary_data</a>
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
   - <a href="#tbl-functions" id="toc-tbl-functions">“Tbl” functions</a>
+    - <a href="#tbl_chi_square" id="toc-tbl_chi_square">tbl_chi_square</a>
     - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
     - <a href="#tbl_print" id="toc-tbl_print">tbl_print</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
@@ -694,6 +695,27 @@ summary_num(x)
 
 This functions will serve to show data in table format.
 
+### tbl_chi_square
+
+The goal of *tbl_chi_square* is to create a frequency table with
+chi-square statistic, p-value, Cramer’s V.
+
+``` r
+mtcars %>%
+  mutate(vs = paste0("vs = ",vs)) %>%
+  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
+#> # A tibble: 7 x 7
+#>   name  value `vs = 0`       `vs = 1`       statistic p_value cramers_v
+#>   <chr> <chr> <chr>          <chr>          <chr>     <chr>   <chr>    
+#> 1 "am"  -     -              -              0,3475    0,5555  0,1042   
+#> 2 ""    0     66,67% (12/18) 50,00% (7/14)  -         -       -        
+#> 3 ""    1     33,33% (6/18)  50,00% (7/14)  -         -       -        
+#> 4 "cyl" -     -              -              21,3399   <0.001  0,8166   
+#> 5 ""    4     5,56% (1/18)   71,43% (10/14) -         -       -        
+#> 6 ""    6     16,67% (3/18)  28,57% (4/14)  -         -       -        
+#> 7 ""    8     77,78% (14/18) -              -         -       -
+```
+
 ### tbl_format_num
 
 The goal of *tbl_format_num* is to apply *format_num* to all numeric
@@ -807,4 +829,4 @@ df <- rpearson(n = 100, p_sim = .8, mean = 3)
 plot(df)
 ```
 
-<img src="man/figures/README-unnamed-chunk-59-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-60-1.png" width="40%" />
