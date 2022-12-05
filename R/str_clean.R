@@ -3,8 +3,8 @@
 #' @description Remove punctuation and/or accent
 #'
 #' @param string character value
-#' @param accent logical value to remove accent (default = T)
-#' @param punct logical value to remove punctuation (default = T)
+#' @param accent logical value to remove accent (default = TRUE)
+#' @param punct logical value to remove punctuation (default = TRUE)
 #' @param sub character value to replace punctuation (default = "")
 #'
 #' @return character value
@@ -15,10 +15,10 @@
 #'string <- "a..;éâ...íõ"
 #'
 #'#remove only punctuation
-#'str_clean(string,accent = F,punct = T)
+#'str_clean(string,accent = FALSE,punct = TRUE)
 #'
 #'#remove only accent
-#'str_clean(string,accent = T,punct = F)
+#'str_clean(string,accent = TRUE,punct = FALSE)
 #'
 #'#remove both
 #'str_clean(string)

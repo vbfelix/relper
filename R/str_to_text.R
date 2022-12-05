@@ -10,9 +10,9 @@
 #'
 #' @examples
 #'
-#' x <- rnorm(100)
+#' string <- c("aaaaa","bb","ccc","dddd")
 #'
-#' num_mode(x)
+#' str_to_text(string)
 #'
 
 str_to_text <- function(string, n_char = 3){

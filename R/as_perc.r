@@ -3,7 +3,7 @@
 #' @description Transform numeric to percentage
 #'
 #' @param x numeric vector
-#' @param sum need to sum the value (T/F)
+#' @param sum need to sum the value (Default = FALSE)
 #'
 #' @return numeric vector
 #' @export
@@ -17,9 +17,9 @@
 
 as_perc <- function(x, sum = FALSE){
 
-  if(!is.numeric(x)){
-    stop("x must be numeric.")
-  }
+  if(!is.numeric(x)){stop("x must be numeric.")}
+
+  if(!is.logical(sum)){stop("sum must be logical.")}
 
   if(sum == FALSE){
     out <- 100*x

@@ -19,8 +19,8 @@ str_to_upper to strings with number of characters lower than "n_char" (default =
 }
 \examples{
 
-x <- rnorm(100)
+string <- c("aaaaa","bb","ccc","dddd")
 
-num_mode(x)
+str_to_text(string)
 
 }

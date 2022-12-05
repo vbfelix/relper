@@ -4,14 +4,14 @@
 \alias{str_clean}
 \title{Remove punctuation and/or accent}
 \usage{
-str_clean(string, accent = T, punct = T, sub = "")
+str_clean(string, accent = TRUE, punct = TRUE, sub = "")
 }
 \arguments{
 \item{string}{character value}
 
-\item{accent}{logical value to remove accent (default = T)}
+\item{accent}{logical value to remove accent (default = TRUE)}
 
-\item{punct}{logical value to remove punctuation (default = T)}
+\item{punct}{logical value to remove punctuation (default = TRUE)}
 
 \item{sub}{character value to replace punctuation (default = "")}
 }
@@ -23,13 +23,13 @@ Remove punctuation and/or accent
 }
 \examples{
 
-string <- "a..;Ã©Ã¢...Ã­Ãµ"
+string <- "a..;éâ...íõ"
 
 #remove only punctuation
-str_clean(string,accent = F,punct = T)
+str_clean(string,accent = FALSE,punct = TRUE)
 
 #remove only accent
-str_clean(string,accent = T,punct = F)
+str_clean(string,accent = TRUE,punct = FALSE)
 
 #remove both
 str_clean(string)

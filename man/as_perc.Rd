@@ -4,12 +4,12 @@
 \alias{as_perc}
 \title{Scaling}
 \usage{
-as_perc(x, sum = F)
+as_perc(x, sum = FALSE)
 }
 \arguments{
 \item{x}{numeric vector}
 
-\item{sum}{need to sum the value (T/F)}
+\item{sum}{need to sum the value (Default = FALSE)}
 }
 \value{
 numeric vector

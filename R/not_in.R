@@ -10,7 +10,7 @@
 #'
 #' @examples
 #'
-#' not_in(a, letters)
+#' not_in("a", letters)
 #'
 
 not_in <- function(x,y){
