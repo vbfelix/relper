@@ -84,8 +84,8 @@ remotes::install_github("vbfelix/relper")
 
 ### as_num
 
-The goal of *as_num* is to be a version of as.numeric, where the input
-is data with marks, such as “10.000,02”
+The goal of **as_num** is to be a version of `as.numeric`, where the
+input is data with marks, such as “10.000,02”.
 
 ``` r
 as_num("123.456,78")
@@ -94,7 +94,7 @@ as_num("123.456,78")
 
 ### as_perc
 
-The goal of *as_perc* is to compute a number as percentage. By default
+The goal of **as_perc** is to compute a number as percentage. By default
 the function will just multiply values by 100.
 
 ``` r
@@ -109,8 +109,8 @@ mtcars %>%
 #> 4  1  1  7 0.21875 21.875
 ```
 
-If you set the parameter *sum* to `TRUE` will divide the values by total
-and multiply by 100.
+If you set the parameter **sum** to `TRUE` will divide the values by
+total and multiply by 100.
 
 ``` r
 mtcars %>% 
@@ -129,7 +129,7 @@ This functions will compute a certain value.
 
 ### calc_acf
 
-The goal of *calc_acf* is to computes the auto-correlation.
+The goal of **calc_acf** is to computes the auto-correlation.
 
 ``` r
 x <- rnorm(100)
@@ -151,7 +151,8 @@ calc_acf(x)
 #> # ... with 11 more rows
 ```
 
-If you pass a second vector the cross-correlation will be computed.
+If you pass a second vector in the parameter `y` the cross-correlation
+will be computed.
 
 ``` r
 y <- rexp(100)
@@ -175,7 +176,7 @@ calc_acf(x,y)
 
 ### calc_auc
 
-The goal of *calc_auc* is to compute the area under a curve (AUC).
+The goal of **calc_auc** is to compute the area under a curve (AUC).
 
 ``` r
 x <- seq(-3,3,l = 100)
@@ -196,6 +197,8 @@ calc_auc(x,y)
 
 <img src="man/figures/README-unnamed-chunk-8-1.png" width="40%" />
 
+You can define the parameter `limits` to get the AUC of that limit.
+
 ``` r
 #from -2 to 2
 calc_auc(x,y,limits = c(-2,2))
@@ -214,7 +217,7 @@ calc_auc(x,y,limits = c(-1,1))
 
 ### calc_corr
 
-The goal of *calc_corr* is to compute Pearson, Kendall and Spearman
+The goal of **calc_corr** is to compute Pearson, Kendall and Spearman
 correlation coefficients.
 
 ``` r
@@ -231,7 +234,7 @@ calc_corr(x,y)
 
 ### calc_cramers_v
 
-The goal of *calc_cramers_v* is to compute Cramer’s V.
+The goal of **calc_cramers_v** is to compute Cramer’s V.
 
 ``` r
 m <- matrix(c(12, 5, 7, 7), ncol = 2)
@@ -244,7 +247,7 @@ calc_cramers_v(chi_square)
 
 ### calc_cv
 
-The goal of *calc_cv* is to compute the coefficient of variation (CV).
+The goal of **calc_cv** is to compute the coefficient of variation (CV).
 
 ``` r
 x <- rnorm(100,1)
@@ -265,7 +268,7 @@ calc_cv(x,as_perc = FALSE)
 
 ### calc_date_aux
 
-The goal of *calc_date_aux* is to compute variables derived from date,
+The goal of **calc_date_aux** is to compute variables derived from date,
 such as year, month, day, etc.
 
 ``` r
@@ -290,7 +293,7 @@ calc_date_aux(df_dt,dt) %>% glimpse()
 
 ### calc_date_diff
 
-The goal of *calc_date_diff* is to compute the difference between two
+The goal of **calc_date_diff** is to compute the difference between two
 dates.
 
 ``` r
@@ -312,7 +315,8 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
 
 ### calc_date_range
 
-The goal of *calc_date_range* is to compute the range of a date vector.
+The goal of **calc_date_range** is to compute the range of a date
+vector.
 
 ``` r
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
@@ -323,7 +327,7 @@ calc_date_range(dt)
 
 ### calc_geometric_mean
 
-The goal of *calc_geometric_mean* is to compute the geometric mean.
+The goal of **calc_geometric_mean** is to compute the geometric mean.
 
 ``` r
 calc_geometric_mean(x)
@@ -332,7 +336,7 @@ calc_geometric_mean(x)
 
 ### calc_harmonic_mean
 
-The goal of *calc_harmonic_mean* is to compute the harmonic mean.
+The goal of **calc_harmonic_mean** is to compute the harmonic mean.
 
 ``` r
 calc_harmonic_mean(x)
@@ -341,7 +345,7 @@ calc_harmonic_mean(x)
 
 ### calc_mean
 
-The goal of *calc_mean* is to compute the arithmetic, geometric and
+The goal of **calc_mean** is to compute the arithmetic, geometric and
 harmonic mean.
 
 ``` r
@@ -354,7 +358,7 @@ calc_mean(x)
 
 ### calc_mode
 
-The goal of *calc_mean* is to compute the mode.
+The goal of **calc_mean** is to compute the mode.
 
 ``` r
 cat_var <- sample(letters,100,replace = TRUE)
@@ -372,7 +376,7 @@ calc_mode(cat_var)
 
 ### calc_peak_density
 
-The goal of *calc_peak_density* is to compute the peak density value.
+The goal of **calc_peak_density** is to compute the peak density value.
 
 ``` r
 calc_peak_density(x)
@@ -387,8 +391,8 @@ This functions will modify an existing variable.
 
 ### format_digit
 
-The goal of *format_digit* is to add zero on left of a number, so that
-all values have the same number of characters.
+The goal of **format_digit** is to add zero on the left of a number, so
+that all values of a vector have the same number of characters.
 
 ``` r
 x <- c(1,4,10,12,100,2000)
@@ -407,7 +411,7 @@ format_digit(x,digits = 4)
 
 ### format_num
 
-The goal of *format_num* is to add markers to a number.
+The goal of **format_num** is to add markers to a number.
 
 ``` r
 
@@ -417,7 +421,7 @@ format_num(12345.67)
 
 ### format_scale
 
-The goal of *format_scale* is to reescale a variable.
+The goal of **format_scale** is to reescale a variable.
 
 ``` r
 x <- seq(-3,3,l = 10)
@@ -438,6 +442,7 @@ y
 You can also change the range of the new scale.
 
 ``` r
+
 z <- format_scale(x,new_min = 25,new_max = 100)
 ```
 
@@ -450,7 +455,7 @@ condition.
 
 ### not_in
 
-The goal of *not_in* is to check if a variable is not contained, it is
+The goal of **not_in** is to check if a variable is not contained, it is
 the same as `!(x %in% y)`.
 
 ``` r
@@ -460,7 +465,7 @@ not_in("a", letters)
 
 ### not_na
 
-The goal of *not_na* is to check if a variable is not a `NA` it is the
+The goal of **not_na** is to check if a variable is not a `NA` it is the
 same as `!is.na(x)`.
 
 ``` r
@@ -473,7 +478,7 @@ not_na(NA)
 
 ## “Plt” functions
 
-This functions will be complementary to *ggplot2* objects.
+This functions will be complementary to **ggplot2** objects.
 
 ``` r
 library(ggplot2)
@@ -489,7 +494,7 @@ plot
 
 ### plt_flip_y\_title
 
-The goal of *plt_flip_y\_title* is to flip the title from y axis.
+The goal of **plt_flip_y\_title** is to flip the title from y axis.
 
 ``` r
 plot + flip_y_title
@@ -499,7 +504,7 @@ plot + flip_y_title
 
 ### plt_no_background
 
-The goal of *plt_no_background* is to remove the background.
+The goal of **plt_no_background** is to remove the background.
 
 ``` r
 plot + plt_no_background
@@ -509,7 +514,7 @@ plot + plt_no_background
 
 ### plt_no_labels
 
-The goal of *plt_no_labels* is to remove all labels.
+The goal of **plt_no_labels** is to remove all labels.
 
 ``` r
 plot + plt_no_labels
@@ -519,7 +524,7 @@ plot + plt_no_labels
 
 ### plt_scale_auto
 
-The goal of *plt_scale_auto* is to add a automatic scale.
+The goal of **plt_scale_auto** is to add a automatic scale.
 
 ``` r
 plot + plt_scale_auto(axis = "x",n = 5)
@@ -529,7 +534,7 @@ plot + plt_scale_auto(axis = "x",n = 5)
 
 ### plt_theme_map
 
-The goal of *plt_theme_map* is to add a theme appropriate for a map.
+The goal of **plt_theme_map** is to add a theme appropriate for a map.
 
 ``` r
 plot + plt_theme_map()
@@ -539,7 +544,7 @@ plot + plt_theme_map()
 
 ### plt_theme_x
 
-The goal of *plt_theme_x* is to remove grid lines from y axis.
+The goal of **plt_theme_x** is to remove grid lines from y axis.
 
 ``` r
 plot + plt_theme_x()
@@ -549,7 +554,7 @@ plot + plt_theme_x()
 
 ### plt_theme_xy
 
-The goal of *plt_theme_xy* is to remove grid lines from x and y axis.
+The goal of **plt_theme_xy** is to remove grid lines from x and y axis.
 
 ``` r
 plot + plt_theme_xy()
@@ -559,7 +564,7 @@ plot + plt_theme_xy()
 
 ### plt_theme_y
 
-The goal of *plt_theme_y* is to remove grid lines from x axis.
+The goal of **plt_theme_y** is to remove grid lines from x axis.
 
 ``` r
 plot + plt_theme_y()
@@ -582,7 +587,7 @@ This functions will be serve to manipulate strings.
 
 ### str_clean
 
-The goal of *str_clean* is to remove punctuation and/or accent.
+The goal of **str_clean** is to remove punctuation and/or accent.
 
 ``` r
 string <- "a..;éâ...íõ"
@@ -602,8 +607,8 @@ str_clean(string)
 
 ### str_select
 
-The goal of *str_select* is to select part of a string, before, after or
-between patterns.
+The goal of **str_select** is to select part of a string, before, after
+or between patterns.
 
 ``` r
 string <- "example text STRING1 TARGET STRING2 example text"
@@ -623,8 +628,8 @@ str_select(string,"STRING1","STRING2")
 
 ### str_to_text
 
-The goal of *str_to_text* is to apply uppercase to strings with a number
-of characters lower than parameter `n_char` (default = 3).
+The goal of **str_to_text** is to apply uppercase to strings with a
+number of characters lower than parameter `n_char` (default = 3).
 
 ``` r
 string <- c("aaaaa","bb","ccc","dddd")
@@ -639,10 +644,10 @@ This functions will summarize data and return metrics related to them.
 
 ### summary_cat
 
-The goal of *summary_cat* is to summarize categorical variables.
+The goal of **summary_cat** is to summarize categorical variables.
 
 ``` r
-x <- c(sample(letters,100,re = T),NA)
+x <- c(sample(letters,100,replace = TRUE),NA)
 
 summary_cat(x)
 #> # A tibble: 1 x 5
@@ -653,7 +658,7 @@ summary_cat(x)
 
 ### summary_data
 
-The goal of *summary_data* is to summarize all variables from data.
+The goal of **summary_data** is to summarize all variables from data.
 
 ``` r
 summary_data(mtcars)
@@ -678,7 +683,7 @@ summary_data(mtcars)
 
 ### summary_num
 
-The goal of *summary_num* is to summarize numeric variables.
+The goal of **summary_num** is to summarize numeric variables.
 
 ``` r
 x <- c(rnorm(10),NA,10)
@@ -697,7 +702,7 @@ This functions will serve to show data in table format.
 
 ### tbl_chi_square
 
-The goal of *tbl_chi_square* is to create a frequency table with
+The goal of **tbl_chi_square** is to create a frequency table with
 chi-square statistic, p-value, Cramer’s V.
 
 ``` r
@@ -718,7 +723,7 @@ mtcars %>%
 
 ### tbl_format_num
 
-The goal of *tbl_format_num* is to apply *format_num* to all numeric
+The goal of **tbl_format_num** is to apply **format_num** to all numeric
 variables in a data.frame.
 
 ``` r
@@ -734,7 +739,7 @@ mtcars %>%
 
 ### tbl_print
 
-The goal of *tbl_print* is to print a data.frame as a plot.
+The goal of **tbl_print** is to print a data.frame as a plot.
 
 ``` r
 df <- data.frame(grp = c("a","b","c"),
@@ -747,7 +752,7 @@ tbl_print(df,bold_last = TRUE,header_col = "red")
 
 ### cut_by_quantile
 
-The goal of *cut_by_quantile* is to cut a numeric variable by a set of
+The goal of **cut_by_quantile** is to cut a numeric variable by a set of
 quantiles.
 
 ``` r
@@ -761,8 +766,8 @@ table(cut_by_quantile(x,q = seq(0,1,by = .25)))
 
 ### expand_grid_unique
 
-The goal of *expand_grid_unique* is to create a grid of all combination
-from two variables, with no repetition.
+The goal of **expand_grid_unique** is to create a grid of all
+combination from two variables, with no repetition.
 
 ``` r
 expand_grid_unique(x = 1:3,y = 1:2)
@@ -787,7 +792,7 @@ expand_grid_unique(x = 1:3,y = 1:2, include_equals = TRUE)
 
 ### is_outlier
 
-The goal of *is_outlier* is to check if a value is an outlier, by the
+The goal of **is_outlier** is to check if a value is an outlier, by the
 boxplor criteria.
 
 ``` r
@@ -799,7 +804,7 @@ is_outlier(x)
 
 ### obj_to_string
 
-The goal of *obj_to_string* is to return the name of an R object as a
+The goal of **obj_to_string** is to return the name of an R object as a
 string.
 
 ``` r
@@ -811,7 +816,7 @@ obj_to_string(x)
 
 ### parse_text
 
-The goal of *parse_text* is to extract only letters from a string.
+The goal of **parse_text** is to extract only letters from a string.
 
 ``` r
 parse_text("1ABCF45Z89")
@@ -820,13 +825,16 @@ parse_text("1ABCF45Z89")
 
 ### rpearson
 
-The goal of *parse_text* is to simulate data, where two variables will
+The goal of **parse_text** is to simulate data, where two variables will
 be linear correlated using pearson correlation coefficient.
 
 ``` r
 df <- rpearson(n = 100, p_sim = .8, mean = 3)
 
-plot(df)
+df %>% 
+  ggplot(aes(x,y))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)
 ```
 
 <img src="man/figures/README-unnamed-chunk-60-1.png" width="40%" />
