@@ -33,11 +33,11 @@ str_clean <-
     ){
 
   if(!is.character(string) & !is.factor(string)){
-    stop("string must be a characther/factor.")
+    stop("string must be a character/factor.")
   }
 
   if(!is.character(sub) & !is.factor(sub)){
-    stop("sub must be a characther/factor.")
+    stop("sub must be a character/factor.")
   }
 
   if(punct){
@@ -45,7 +45,7 @@ str_clean <-
   }
 
   if(accent){
-    string <- iconv(string, from = 'UTF-8', to = 'ASCII//TRANSLIT')
+    string <- iconv(string, from = Encoding(string), to = 'ASCII//TRANSLIT')
   }
 
   return(string)
