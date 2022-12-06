@@ -229,7 +229,7 @@ calc_corr(x,y)
 #> # A tibble: 1 x 3
 #>   pearson kendall spearman
 #>     <dbl>   <dbl>    <dbl>
-#> 1   0.188   0.152    0.225
+#> 1   0.141   0.107    0.162
 ```
 
 ### calc_cramers_v
@@ -253,7 +253,7 @@ The goal of **calc_cv** is to compute the coefficient of variation (CV).
 x <- rnorm(100,1)
 
 calc_cv(x)
-#> [1] 110.95
+#> [1] 80.34
 ```
 
 If you set the parameter `as_perc` to `FALSE`, the CV will not be
@@ -263,7 +263,7 @@ multiplied by 100.
 x <- rnorm(100,1)
 
 calc_cv(x,as_perc = FALSE)
-#> [1] 0.9
+#> [1] 0.97
 ```
 
 ### calc_date_aux
@@ -331,7 +331,7 @@ The goal of **calc_geometric_mean** is to compute the geometric mean.
 
 ``` r
 calc_geometric_mean(x)
-#> [1] 0.9085499
+#> [1] 1.014884
 ```
 
 ### calc_harmonic_mean
@@ -340,7 +340,7 @@ The goal of **calc_harmonic_mean** is to compute the harmonic mean.
 
 ``` r
 calc_harmonic_mean(x)
-#> [1] -0.0004410016
+#> [1] -8.33655
 ```
 
 ### calc_mean
@@ -351,9 +351,9 @@ harmonic mean.
 ``` r
 calc_mean(x)
 #> # A tibble: 1 x 3
-#>   arithmetic geometric  harmonic
-#>        <dbl>     <dbl>     <dbl>
-#> 1       1.01     0.909 -0.000441
+#>   arithmetic geometric harmonic
+#>        <dbl>     <dbl>    <dbl>
+#> 1      0.979      1.01    -8.34
 ```
 
 ### calc_mode
@@ -365,13 +365,13 @@ cat_var <- sample(letters,100,replace = TRUE)
 
 table(cat_var)
 #> cat_var
-#> a b c d e f g h i j k l n o p q r s t u v w x y z 
-#> 1 3 1 4 3 4 6 4 2 2 3 6 6 4 4 3 6 8 4 7 3 2 2 7 5
+#>  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
+#>  2  2  2  4  2  5  8  6  2  3  5  2  1  9  4  4  2  3  7  3 10  2  3  2  4  3
 ```
 
 ``` r
 calc_mode(cat_var)
-#> [1] "s"
+#> [1] "u"
 ```
 
 ### calc_peak_density
@@ -380,7 +380,7 @@ The goal of **calc_peak_density** is to compute the peak density value.
 
 ``` r
 calc_peak_density(x)
-#> [1] 0.4965314
+#> [1] 1.071238
 ```
 
 <img src="man/figures/README-unnamed-chunk-27-1.png" width="40%" />
@@ -598,11 +598,11 @@ str_clean(string,accent = FALSE,punct = TRUE)
 
 #remove only accent
 str_clean(string,accent = TRUE,punct = FALSE)
-#> [1] NA
+#> [1] "a..;ea...io"
 
 #remove both
 str_clean(string)
-#> [1] NA
+#> [1] "aeaio"
 ```
 
 ### str_select
@@ -653,7 +653,7 @@ summary_cat(x)
 #> # A tibble: 1 x 5
 #>       n    na blank_space n_distinct mode 
 #>   <int> <int>       <int>      <int> <chr>
-#> 1   101     1           0         25 a
+#> 1   101     1           0         25 y
 ```
 
 ### summary_data
@@ -690,10 +690,10 @@ x <- c(rnorm(10),NA,10)
 
 summary_num(x)
 #> # A tibble: 1 x 13
-#>       n    na negative equal_zero positive   min    p25    p50   p75   max
-#>   <int> <int>    <int>      <int>    <int> <dbl>  <dbl>  <dbl> <dbl> <dbl>
-#> 1    12     1        5          0        6 -2.08 -0.415 0.0249  1.15    10
-#> # ... with 3 more variables: mode <dbl>, mean <dbl>, cv <dbl>
+#>       n    na negative equal_zero positive   min    p25   p50   p75   max  mode
+#>   <int> <int>    <int>      <int>    <int> <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1    12     1        4          0        7 -1.81 -0.442 0.601 0.728    10 0.621
+#> # ... with 2 more variables: mean <dbl>, cv <dbl>
 ```
 
 ## “Tbl” functions
@@ -760,8 +760,8 @@ x <- rnorm(100)
 
 table(cut_by_quantile(x,q = seq(0,1,by = .25)))
 #> 
-#> [-2.46,-0.575] (-0.575,0.127]  (0.127,0.734]    (0.734,2.6] 
-#>             25             25             25             25
+#>   [-2.6,-0.782] (-0.782,-0.115]  (-0.115,0.637]    (0.637,2.78] 
+#>              25              25              25              25
 ```
 
 ### expand_grid_unique

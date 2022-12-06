@@ -22,6 +22,7 @@ set.seed(124)
 library(relper)
 library(dplyr)
 library(lubridate)
+library(ggplot2)
 
 df_date <-
   tibble(date = seq.Date(from = today(),
@@ -105,7 +106,7 @@ ggplot(tibble(x = x,
               y = y),
        aes(x,y))+
   geom_point()+
-  theme_y()
+  plt_theme_y()
 ```
 
 
@@ -126,7 +127,7 @@ df_auc %>%
 ggplot(aes(x,y))+
   geom_area(alpha = .7, fill = "chocolate2")+
   geom_point()+
-  theme_y()+
+  plt_theme_y()+
   annotate("text",
            x = mean(x),y = mean(y),label = round(calc_auc(x,y),3),
            fontface = "bold", size = 7)+
@@ -149,7 +150,7 @@ df_auc %>%
               filter(between(x,-2,2)),
               alpha = .7, fill = "chocolate2")+
   geom_point()+
-  theme_y()+
+  plt_theme_y()+
   annotate("text",
            x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-2,2)),3),
            fontface = "bold", size = 7)+
@@ -170,7 +171,7 @@ df_auc %>%
               filter(between(x,-1,1)),
               alpha = .7, fill = "chocolate2")+
   geom_point()+
-  theme_y()+
+  plt_theme_y()+
   annotate("text",
            x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-1,1)),3),
            fontface = "bold", size = 7)+
