@@ -129,7 +129,7 @@ This functions will compute a certain value.
 
 ### calc_acf
 
-The goal of **calc_acf** is to computes the auto-correlation.
+The goal of **calc_acf** is to compute the auto-correlation.
 
 ``` r
 x <- rnorm(100)
@@ -424,6 +424,7 @@ format_num(12345.67)
 The goal of **format_scale** is to reescale a variable.
 
 ``` r
+
 x <- seq(-3,3,l = 10)
 
 x
@@ -532,6 +533,14 @@ plot + plt_scale_auto(axis = "x",n = 5)
 
 <img src="man/figures/README-unnamed-chunk-40-1.png" width="40%" />
 
+``` r
+plot +
+  plt_scale_auto(axis = "x",n = 5)+
+  plt_scale_auto(axis = "y",n = 3)
+```
+
+<img src="man/figures/README-unnamed-chunk-41-1.png" width="40%" />
+
 ### plt_theme_map
 
 The goal of **plt_theme_map** is to add a theme appropriate for a map.
@@ -540,7 +549,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-41-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-42-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -550,7 +559,7 @@ The goal of **plt_theme_x** is to remove grid lines from y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-42-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -560,7 +569,7 @@ The goal of **plt_theme_xy** is to remove grid lines from x and y axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -570,7 +579,7 @@ The goal of **plt_theme_y** is to remove grid lines from x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
 
 <!-- ### plt_water_mark -->
 <!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
@@ -703,7 +712,7 @@ This functions will serve to show data in table format.
 ### tbl_chi_square
 
 The goal of **tbl_chi_square** is to create a frequency table with
-chi-square statistic, p-value, Cramer’s V.
+chi-square statistic, p-value and Cramer’s V.
 
 ``` r
 mtcars %>%
@@ -793,7 +802,7 @@ expand_grid_unique(x = 1:3,y = 1:2, include_equals = TRUE)
 ### is_outlier
 
 The goal of **is_outlier** is to check if a value is an outlier, by the
-boxplor criteria.
+boxplot criteria.
 
 ``` r
 x <- c(1,2,3,5,7,8,12,100)
@@ -825,8 +834,9 @@ parse_text("1ABCF45Z89")
 
 ### rpearson
 
-The goal of **parse_text** is to simulate data, where two variables will
-be linear correlated using pearson correlation coefficient.
+The goal of **rpearson** is to simulate data, where two variables will
+be linear correlated with a normal distribution, using pearson
+correlation coefficient as a parameter.
 
 ``` r
 df <- rpearson(n = 100, p_sim = .8, mean = 3)
@@ -837,4 +847,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-60-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
