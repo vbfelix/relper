@@ -253,7 +253,7 @@ The goal of **calc_cv** is to compute the coefficient of variation (CV).
 x <- rnorm(100,1)
 
 calc_cv(x)
-#> [1] 80.34
+#> [1] 0.8
 ```
 
 If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied
@@ -553,7 +553,8 @@ plot + plt_theme_map()
 
 ### plt_theme_x
 
-The goal of **plt_theme_x** is to remove grid lines from y axis.
+The goal of **plt_theme_x** is to remove major and minor grid lines from
+y axis.
 
 ``` r
 plot + plt_theme_x()
@@ -563,7 +564,8 @@ plot + plt_theme_x()
 
 ### plt_theme_xy
 
-The goal of **plt_theme_xy** is to remove grid lines from x and y axis.
+The goal of **plt_theme_xy** is to remove minor grid lines from x and y
+axis.
 
 ``` r
 plot + plt_theme_xy()
@@ -573,7 +575,8 @@ plot + plt_theme_xy()
 
 ### plt_theme_y
 
-The goal of **plt_theme_y** is to remove grid lines from x axis.
+The goal of **plt_theme_y** is to remove major and minor grid lines from
+x axis.
 
 ``` r
 plot + plt_theme_y()
@@ -602,11 +605,11 @@ The goal of **str_clean** is to remove punctuation and/or accent.
 string <- "a..;éâ...íõ"
 
 #remove only punctuation
-str_clean(string,accent = FALSE,punct = TRUE)
+str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
 #> [1] "aéâíõ"
 
 #remove only accent
-str_clean(string,accent = TRUE,punct = FALSE)
+str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
 #> [1] "a..;ea...io"
 
 #remove both

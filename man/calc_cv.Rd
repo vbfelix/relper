@@ -4,12 +4,12 @@
 \alias{calc_cv}
 \title{Coefficient of variation (CV)}
 \usage{
-calc_cv(x, as_perc = TRUE)
+calc_cv(x, as_perc = FALSE)
 }
 \arguments{
 \item{x}{numeric vector}
 
-\item{as_perc}{as percentage (default = TRUE)}
+\item{as_perc}{as percentage (default = FALSE)}
 }
 \value{
 Coefficient of variation

@@ -6,11 +6,11 @@
 \usage{
 tbl_print(
   tbl,
-  header_col = "grey75",
-  base_size = 15,
-  bold_last = FALSE,
+  header_color = "grey75",
+  text_size = 15,
+  bold_last_row = FALSE,
   print = TRUE,
-  save = FALSE,
+  img_save = FALSE,
   img_path = getwd(),
   img_name = "test",
   img_width = 20,
@@ -18,13 +18,25 @@ tbl_print(
 )
 }
 \arguments{
-\item{tbl}{table data.frame}
+\item{tbl}{data.frame}
 
-\item{header_col}{color of the header (default = grey75)}
+\item{header_color}{color of the header (default = grey75)}
 
-\item{base_size}{table size (default = 20)}
+\item{text_size}{table size (default = 20)}
 
-\item{bold_last}{bold last row (default = F)}
+\item{bold_last_row}{bold last row (default = FALSE)}
+
+\item{print}{print the table (default = TRUE)}
+
+\item{img_save}{save the table as image (default = FALSE)}
+
+\item{img_path}{path to save the image (default = working directory)}
+
+\item{img_name}{name of the image to be saved (default = 'test')}
+
+\item{img_width}{width of the image to be saved, in centimeters (default = 20)}
+
+\item{img_height}{height of the image to be saved, in centimeters  (default = 14)}
 }
 \value{
 prints a image
@@ -35,9 +47,9 @@ Plot a table as an image
 \examples{
 
 df <- data.frame(grp = c("a","b","c"),
-                freq = c(2,4,6))
+                 freq = c(2,4,6))
 
-tbl_print(df,bold_last = T,header_col = "red")
+tbl_print(df,bold_last_row = TRUE,header_color = "red")
 
 
 }

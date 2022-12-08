@@ -11,15 +11,15 @@ calc_date_diff(date1, date2, add = 0, unit = "days")
 
 \item{date2}{date number 2}
 
-\item{add}{auxiliar number to sum to the difference (date2 - date1 + add)}
+\item{add}{auxiliar value (default = 0)}
 
-\item{unit}{unit of the date difference}
+\item{unit}{unit of the date difference (secs, mins, hours, days, weeks)}
 }
 \value{
 numeric value
 }
 \description{
-Difference between dates (date2 - date1)
+Difference between dates (date2 - date1 + add)
 }
 \examples{
 

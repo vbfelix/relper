@@ -4,12 +4,18 @@
 \alias{plt_scale_auto}
 \title{Auto scale}
 \usage{
-plt_scale_auto(axis = "x", n = 10, expand = 0.01)
+plt_scale_auto(
+  axis = "x",
+  n_ticks = 10,
+  expand = 0.01,
+  thousand_mark = ".",
+  decimal_mark = ","
+)
 }
 \arguments{
 \item{axis}{axis indicator: x or y}
 
-\item{n}{number of ticks}
+\item{n_ticks}{number of ticks}
 
 \item{expand}{expanded space}
 }
@@ -27,8 +33,8 @@ ggplot(mtcars,aes(hp,drat))+
 geom_point()
 
 plot+
- plt_scale_auto("x",n = 10)+
- plt_scale_auto("y",n = 10)
+ plt_scale_auto("x",n_ticks = 10)+
+ plt_scale_auto("y",n_ticks = 10)
 
 
 }

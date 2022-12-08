@@ -19,6 +19,6 @@ Create auxiliar variables from a date, such as: year, month, day, etc.
 }
 \examples{
 
-create_date_aux(df,dt)
+calc_date_aux(df,dt)
 
 }

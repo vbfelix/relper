@@ -23,6 +23,6 @@ tbl_format_num <- function(df,digits = 2){
   if(!is.numeric(digits)){stop("'digits' must be numeric.")}
 
   df %>%
-    dplyr::mutate(dplyr::across(tidyselect::where(is.numeric),~relper::format_num(.,digits = digits)))
+    dplyr::mutate(dplyr::across(where(is.numeric),~relper::format_num(.,digits = digits)))
 
 }

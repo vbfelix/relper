@@ -17,7 +17,7 @@
 
 calc_date_aux <- function(df,dt_var){
 
-  if(!is.data.frame(tbl)){stop("'df' must be a data.frame.")}
+  if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
 
   df %>%
     dplyr::mutate(

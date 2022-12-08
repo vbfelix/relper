@@ -19,6 +19,6 @@ Format numbers < 10, e.g., 1 as "01"
 
 x <- c(1,4,10,12)
 
-format_digits(x)
+format_digit(x)
 
 }
