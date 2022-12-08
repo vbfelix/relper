@@ -3,9 +3,9 @@
 #' @description Remove punctuation and/or accent
 #'
 #' @param string character value
-#' @param accent logical value to remove accent (default = TRUE)
-#' @param punct logical value to remove punctuation (default = TRUE)
-#' @param sub character value to replace punctuation (default = "")
+#' @param remove_accent logical value to remove accent (default = TRUE)
+#' @param remove_punct logical value to remove punctuation (default = TRUE)
+#' @param sub_punct character value to replace punctuation (default = "")
 #'
 #' @return character value
 #' @export
@@ -15,10 +15,10 @@
 #'string <- "a..;éâ...íõ"
 #'
 #'#remove only punctuation
-#'str_clean(string,accent = FALSE,punct = TRUE)
+#'str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
 #'
 #'#remove only accent
-#'str_clean(string,accent = TRUE,punct = FALSE)
+#'str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
 #'
 #'#remove both
 #'str_clean(string)
@@ -27,24 +27,26 @@
 str_clean <-
   function(
     string,
-    accent = TRUE,
-    punct = TRUE,
-    sub = ""
+    remove_accent = TRUE,
+    remove_punct = TRUE,
+    sub_punct = ""
     ){
 
   if(!is.character(string) & !is.factor(string)){
     stop("string must be a character/factor.")
   }
 
-  if(!is.character(sub) & !is.factor(sub)){
-    stop("sub must be a character/factor.")
+  if(!is.logical(remove_accent)){stop("'remove_accent' must be logical.")}
+
+  if(!is.logical(remove_punct)){stop("'remove_punct' must be logical.")}
+
+  if(!is.character(sub_punct)){stop("'sub_punct' must be a character.")}
+
+  if(remove_punct){
+    string <- gsub("[[:punct:]]",sub_punct, string)
   }
 
-  if(punct){
-    string <- gsub("[[:punct:]]",sub, string)
-  }
-
-  if(accent){
+  if(remove_accent){
     string <- iconv(string, from = Encoding(string), to = 'ASCII//TRANSLIT')
   }
 

@@ -19,9 +19,9 @@
 
 summary_num <- function(x, minimal = FALSE){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
 
-  if(!is.logical(minimal)){stop("minimal must be logical.")}
+  if(!is.logical(minimal)){stop("'minimal' must be logical.")}
 
   if(minimal == FALSE){
     out <-

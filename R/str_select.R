@@ -3,8 +3,8 @@
 #' @description Select string: before, after or between patterns
 #'
 #' @param string character value
-#' @param after first pattern
-#' @param before second pattern
+#' @param after pattern to select after
+#' @param before pattern to select before
 #'
 #' @return character value
 #' @export
@@ -29,11 +29,11 @@ str_select <- function(string,after = NULL,before = NULL){
   }
 
   if(!is.null(after) & !is.character(after) & !is.factor(after)){
-    stop("after must be a characther/factor.")
+    stop("after must be a characther.")
   }
 
   if(!is.null(before) & !is.character(before) & !is.factor(before)){
-    stop("before must be a characther/factor.")
+    stop("before must be a characther.")
   }
 
   if((!is.null(before)) & (!is.null(after))){

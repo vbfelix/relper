@@ -10,14 +10,14 @@
 #'
 #' x <- c(1,4,10,12)
 #'
-#' format_digits(x)
+#' format_digit(x)
 #'
 
 format_digit <- function(x, digits = 2){
 
-  if(!is.numeric(digits)){stop("digits must be numeric.")}
+  if(!is.numeric(digits)){stop("'digits' must be numeric.")}
 
-  if(digits < 2){stop("digits must be > 1.")}
+  if(digits < 2){stop("'digits' must be > 1.")}
 
   x <- as.character(x)
 

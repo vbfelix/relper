@@ -16,7 +16,9 @@
 
 calc_peak_density <- function(x){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
+
+  if(length(x) == 1){stop("'x' length must be > 1.")}
 
   d <- density(na.omit(x))
 

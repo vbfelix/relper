@@ -17,17 +17,17 @@
 
 format_num <- function(x, digits = 2,decimal_mark = ",",thousand_mark = "."){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
 
-  if(!is.numeric(digits)){stop("digits must be numeric.")}
+  if(!is.numeric(digits)){stop("'digits' must be numeric.")}
 
-  if(!is.character(decimal_mark)){stop("decimal_mark must be numeric.")}
+  if(!is.character(decimal_mark)){stop("'decimal_mark' must be a character.")}
 
-  if(!is.character(thousand_mark)){stop("thousand_mark must be numeric.")}
+  if(!is.character(thousand_mark)){stop("'thousand_mark' must be a character.")}
 
   formatC(
     x,
-    format="f",
+    format = "f",
     big.mark = thousand_mark,
     digits = digits,
     decimal.mark = decimal_mark

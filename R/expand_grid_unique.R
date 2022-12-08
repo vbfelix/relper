@@ -17,16 +17,19 @@
 expand_grid_unique <-
   function(x, y, include_equals = FALSE){
 
-  if(!is.logical(include_equals)){stop("include_equals must be logical.")}
+  if(!is.logical(include_equals)){stop("'include_equals' must be logical.")}
 
   x <- unique(x)
+
   y <- unique(y)
+
   g <- function(i)
   {
     z <- setdiff(y, x[seq_len(i-include_equals)])
 
     if(length(z)) cbind(x[i], z, deparse.level=0)
   }
+
   do.call(rbind, lapply(seq_along(x), g)) %>%
     dplyr::as_tibble()
 }

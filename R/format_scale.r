@@ -25,19 +25,19 @@
 
 format_scale <- function(x, new_min = 0, new_max = 1){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
 
-  if(length(x) == 1){stop("length of x must be > 1.")}
+  if(length(x) == 1){stop("'x' length must be > 1.")}
 
-  if(!is.numeric(new_max)){stop("new_max must be numeric.")}
+  if(!is.numeric(new_max)){stop("'new_max' must be numeric.")}
 
-  if(!is.numeric(new_min)){stop("new_min must be numeric.")}
+  if(!is.numeric(new_min)){stop("'new_min' must be numeric.")}
 
-  if(length(new_max) != 1){stop("new_max must be just one numeric value.")}
+  if(length(new_max) > 1){stop("'new_max' must be a single value.")}
 
-  if(length(new_min) != 1){stop("new_min must be just one numeric value.")}
+  if(length(new_min) > 1){stop("'new_min' must be a single value.")}
 
-  if(new_max <= new_min){stop("new_max must be > new_min.")}
+  if(new_max <= new_min){stop("'new_max' must be > 'new_min'.")}
 
   max_x <- max(x, na.rm = TRUE)
 

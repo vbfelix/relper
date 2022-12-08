@@ -16,7 +16,7 @@
 
 calc_mean<- function(x){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
 
   out <-
     dplyr::tibble(

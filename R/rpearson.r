@@ -33,7 +33,7 @@ rpearson <-
 
   if(n <= 0){stop("n must be > 0.")}
 
-  if((n%%1)!= 0 ){stop("n must be a integer.")}
+  if((n%%1)!= 0){stop("n must be a integer.")}
 
   if((tol <= 0) | (tol >= 1)){stop("tol must be (0,1).")}
 

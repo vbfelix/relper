@@ -27,6 +27,11 @@ tbl_chi_square <-
     vars,
     filter = ""
   ){
+
+    if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
+
+    if(!is.character(filter)){stop("'filter' must be a character.")}
+
     pivotted_data <-
       df %>%
       dplyr::select(grp_var = {{grp_var}},{{vars}}) %>%

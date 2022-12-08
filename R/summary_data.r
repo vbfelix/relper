@@ -16,7 +16,7 @@
 
 summary_data <- function(df){
 
-  if(!is.data.frame(df)){stop("df must be a data.frame/tibble.")}
+  if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
 
   df_num <-
     df %>%
