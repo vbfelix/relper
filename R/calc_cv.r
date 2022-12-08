@@ -3,7 +3,7 @@
 #' @description Coefficient of variation
 #'
 #' @param x numeric vector
-#' @param as_perc as percentage (default = TRUE)
+#' @param as_perc as percentage (default = FALSE)
 #'
 #' @return Coefficient of variation
 #' @export
@@ -15,7 +15,7 @@
 #' calc_cv(x)
 #'
 
-calc_cv <- function(x, as_perc = TRUE){
+calc_cv <- function(x, as_perc = FALSE){
 
   if(!is.numeric(x)){stop("x must be numeric.")}
 

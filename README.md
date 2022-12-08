@@ -256,14 +256,14 @@ calc_cv(x)
 #> [1] 80.34
 ```
 
-If you set the parameter `as_perc` to `FALSE`, the CV will not be
-multiplied by 100.
+If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied
+by 100.
 
 ``` r
 x <- rnorm(100,1)
 
-calc_cv(x,as_perc = FALSE)
-#> [1] 0.97
+calc_cv(x,as_perc = TRUE)
+#> [1] 96.59
 ```
 
 ### calc_date_aux
