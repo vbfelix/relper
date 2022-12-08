@@ -24,7 +24,7 @@ calc_acf <- function(x,y = NULL,...){
 
   if(!is.numeric(y) & !is.null(y)){stop("y must be numeric/NULL.")}
 
-  if(!is.null(y) & (length(y) != length(x)) ){stop("x and y have the same length.")}
+  if(!is.null(y) & (length(y) != length(x)) ){stop("x and y  must have the same length.")}
 
 
   if(is.null(y)){

@@ -1,3 +1,6 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("error", {
+  expect_error(as_perc(x = "a"))
+  expect_error(as_perc(y = "a"))
+  expect_error(as_perc(x = 1,y = c(1,2)))
+  expect_error(as_perc(x = 1,y = 1))
 })
