@@ -12,6 +12,8 @@
 #'
 #' @examples
 #'
+#' df <- data.frame(dt = lubridate::dmy("01/01/01"))
+#'
 #' calc_date_aux(df,dt)
 #'
 
