@@ -1,11 +1,11 @@
 #' Difference between dates
 #'
-#' @description Difference between dates (date2 - date1)
+#' @description Difference between dates (date2 - date1 + add)
 #'
 #' @param date1 date number 1
 #' @param date2 date number 2
-#' @param add auxiliar number to sum to the difference (date2 - date1 + add)
-#' @param unit unit of the date difference
+#' @param add auxiliar value (default = 0)
+#' @param unit unit of the date difference (secs, mins, hours, days, weeks)
 #'
 #' @return numeric value
 #' @export
@@ -20,13 +20,19 @@
 
 calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
 
+  if(!lubridate::is.Date(date1)){stop("'date1' must be a date.")}
+
+  if(!lubridate::is.Date(date2)){stop("'date1' must be a date.")}
+
   if(!is.numeric(add)){stop("'add' must be numeric.")}
+
+  if(!is.character(unit)){stop("'unit' must be numeric.")}
 
   unit <- tolower(unit)
 
-  if(!(unit %in% c("secs", "mins", "hours","days", "weeks"))){
-    stop("'unit' must be one of secs, mins, hours, days, weeks.")
-  }
+  units <- c("secs", "mins", "hours","days", "weeks")
+
+  if(!(unit %in% units)){stop("'unit' must be one of secs, mins, hours, days, weeks.")}
 
   out <- as.numeric(difftime(date2,date1,units = unit)) + add
 
