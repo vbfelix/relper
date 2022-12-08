@@ -9,9 +9,10 @@
 #' @examples
 #'
 #'x <- matrix(c(12, 5, 7, 7), ncol = 2)
+#'
 #'chi_square <- chisq.test(x)
 #'
-#'relper::calc_cramers_v(chi_square)
+#'calc_cramers_v(chi_square)
 #'
 #'
 
