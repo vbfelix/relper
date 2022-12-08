@@ -22,11 +22,11 @@ calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
 
   if(!lubridate::is.Date(date1)){stop("'date1' must be a date.")}
 
-  if(!lubridate::is.Date(date2)){stop("'date1' must be a date.")}
+  if(!lubridate::is.Date(date2)){stop("'date2' must be a date.")}
 
   if(!is.numeric(add)){stop("'add' must be numeric.")}
 
-  if(!is.character(unit)){stop("'unit' must be numeric.")}
+  if(!is.character(unit)){stop("'unit' must be character.")}
 
   unit <- tolower(unit)
 
