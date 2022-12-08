@@ -12,10 +12,12 @@
 #'
 #' @examples
 #'
-#' create_date_aux(df,dt)
+#' calc_date_aux(df,dt)
 #'
 
 calc_date_aux <- function(df,dt_var){
+
+  if(!is.data.frame(tbl)){stop("'df' must be a data.frame.")}
 
   df %>%
     dplyr::mutate(
