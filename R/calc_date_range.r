@@ -19,7 +19,7 @@ calc_date_range <- function(x){
     x <- lubridate::as_date(x)
   }
 
-  if(!lubridate::is.Date(x)){stop("'x' must be of class Date.")}
+  if(!lubridate::is.Date(x)){stop("'x' must be of a date.")}
 
   aux <- stringr::str_split(range(x,na.rm = TRUE), pattern = "-")
 
