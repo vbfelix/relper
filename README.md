@@ -418,7 +418,7 @@ The goal of **format_num** is to add markers to a number.
 ``` r
 
 format_num(12345.67)
-#> [1] "12.345,67"
+#> [1] "12,345.67"
 ```
 
 ### format_scale
@@ -757,7 +757,7 @@ tbl_compare_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
-  method = c("mean","median","median")
+  method = c("auto")
 )
 ```
 

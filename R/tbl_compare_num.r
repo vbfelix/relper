@@ -5,7 +5,7 @@
 #' @param df data.frame
 #' @param grp_var variable to group by
 #' @param num_vars numerical variable(s)
-#' @param method method of summary and test (default = 'mean')
+#' @param method method of summary and test (default = 'auto')
 #'
 #' @return data.frame
 #' @export
@@ -30,13 +30,12 @@ tbl_compare_num <-
     df,
     grp_var,
     num_vars,
-    method = "mean"
+    method = "auto"
   ){
 
     if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
 
     if(!is.character(method)){stop("'method' must be a character.")}
-
 
     # utils -------------------------------------------------------------------
 

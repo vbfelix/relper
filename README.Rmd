@@ -613,7 +613,7 @@ tbl_compare_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
-  method = c("mean","median","median")
+  method = c("auto")
 )
 
 ```
@@ -633,7 +633,7 @@ tbl_compare_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
-  method = c("mean","median","median")
+  method = c("auto")
 )
 
 gt::gtsave(table, "tbl_compare_num.png", vwidth = 1500, vheight = 1000)
