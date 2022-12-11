@@ -81,7 +81,25 @@ tbl_chi_square <-
         name = dplyr::if_else(id == 0,name,""),
         across(.fns = ~dplyr::if_else(is.na(.),"-",as.character(.) ))
       ) %>%
-      dplyr::select(-id)
+      dplyr::select(-id) %>%
+      gt::gt(rowname_col = "name") %>%
+      gt::cols_align(
+        align = c("center"),
+        columns = everything()
+      ) %>%
+      gt::cols_label(
+        statistic = "Statistic",
+        p_value = "P-value",
+        value = "Levels",
+        cramers_v = "Cramer's V",
+        name = "Variables"
+      ) %>%
+      gt::cols_width(
+        name ~ px(120),
+        statistic ~ px(100),
+        cramers_v ~ px(90),
+        everything() ~ px(70)
+      )
 
   }
 
