@@ -27,6 +27,7 @@
     - <a href="#format_digit" id="toc-format_digit">format_digit</a>
     - <a href="#format_num" id="toc-format_num">format_num</a>
     - <a href="#format_scale" id="toc-format_scale">format_scale</a>
+    - <a href="#format_p_value" id="toc-format_p_value">format_p_value</a>
   - <a href="#not-functions" id="toc-not-functions">“Not” functions</a>
     - <a href="#not_in" id="toc-not_in">not_in</a>
     - <a href="#not_na" id="toc-not_na">not_na</a>
@@ -52,6 +53,7 @@
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
   - <a href="#tbl-functions" id="toc-tbl-functions">“Tbl” functions</a>
     - <a href="#tbl_chi_square" id="toc-tbl_chi_square">tbl_chi_square</a>
+    - <a href="#tbl_compare_num" id="toc-tbl_compare_num">tbl_compare_num</a>
     - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
     - <a href="#tbl_print" id="toc-tbl_print">tbl_print</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
@@ -449,6 +451,17 @@ z <- format_scale(x,new_min = 25,new_max = 100)
 
 <img src="man/figures/README-unnamed-chunk-34-1.png" width="40%" />
 
+### format_p\_value
+
+The goal of **format_p\_value** is to change a p value, by considering a
+minimal value where if is minor than it, let’s say 0.001, the p value
+will be changed to *\<0.001*
+
+``` r
+format_p_value(c(.001,.00000001),p_value_min = 0.001)
+#> [1] "0.0010" "<0.001"
+```
+
 ## “Not” functions
 
 This functions will check if a variable does not pass a certain
@@ -501,7 +514,7 @@ The goal of **plt_flip_y\_title** is to flip the title from y axis.
 plot + flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-37-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-38-1.png" width="40%" />
 
 ### plt_no_background
 
@@ -511,7 +524,7 @@ The goal of **plt_no_background** is to remove the background.
 plot + plt_no_background
 ```
 
-<img src="man/figures/README-unnamed-chunk-38-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-39-1.png" width="40%" />
 
 ### plt_no_labels
 
@@ -521,7 +534,7 @@ The goal of **plt_no_labels** is to remove all labels.
 plot + plt_no_labels
 ```
 
-<img src="man/figures/README-unnamed-chunk-39-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-40-1.png" width="40%" />
 
 ### plt_scale_auto
 
@@ -531,7 +544,7 @@ The goal of **plt_scale_auto** is to add a automatic scale.
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-<img src="man/figures/README-unnamed-chunk-40-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-41-1.png" width="40%" />
 
 ``` r
 plot +
@@ -539,7 +552,7 @@ plot +
   plt_scale_auto(axis = "y",n = 3)
 ```
 
-<img src="man/figures/README-unnamed-chunk-41-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-42-1.png" width="40%" />
 
 ### plt_theme_map
 
@@ -549,7 +562,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-42-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -560,7 +573,7 @@ y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -571,7 +584,7 @@ axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -582,7 +595,7 @@ x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
 
 <!-- ### plt_water_mark -->
 <!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
@@ -724,14 +737,31 @@ mtcars %>%
 #> # A tibble: 7 x 7
 #>   name  value `vs = 0`       `vs = 1`       statistic p_value cramers_v
 #>   <chr> <chr> <chr>          <chr>          <chr>     <chr>   <chr>    
-#> 1 "am"  -     -              -              0,3475    0,5555  0,1042   
-#> 2 ""    0     66,67% (12/18) 50,00% (7/14)  -         -       -        
-#> 3 ""    1     33,33% (6/18)  50,00% (7/14)  -         -       -        
-#> 4 "cyl" -     -              -              21,3399   <0.001  0,8166   
-#> 5 ""    4     5,56% (1/18)   71,43% (10/14) -         -       -        
-#> 6 ""    6     16,67% (3/18)  28,57% (4/14)  -         -       -        
-#> 7 ""    8     77,78% (14/18) -              -         -       -
+#> 1 "am"  -     -              -              0.3475    0.5555  0.1042   
+#> 2 ""    0     66.67% (12/18) 50.00% (7/14)  -         -       -        
+#> 3 ""    1     33.33% (6/18)  50.00% (7/14)  -         -       -        
+#> 4 "cyl" -     -              -              21.3399   <0.001  0.8166   
+#> 5 ""    4     5.56% (1/18)   71.43% (10/14) -         -       -        
+#> 6 ""    6     16.67% (3/18)  28.57% (4/14)  -         -       -        
+#> 7 ""    8     77.78% (14/18) -              -         -       -
 ```
+
+### tbl_compare_num
+
+The goal of **tbl_compare_num** is to create a summary table comparing a
+numerical variable with two groups.
+
+``` r
+
+tbl_compare_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("mean","median","median")
+)
+```
+
+<img src="man/figures/README-unnamed-chunk-55-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -743,10 +773,10 @@ mtcars %>%
    count(vs,am) %>%
    tbl_format_num(digits = 5)
 #>        vs      am        n
-#> 1 0,00000 0,00000 12,00000
-#> 2 0,00000 1,00000  6,00000
-#> 3 1,00000 0,00000  7,00000
-#> 4 1,00000 1,00000  7,00000
+#> 1 0.00000 0.00000 12.00000
+#> 2 0.00000 1.00000  6.00000
+#> 3 1.00000 0.00000  7.00000
+#> 4 1.00000 1.00000  7.00000
 ```
 
 ### tbl_print
@@ -772,8 +802,8 @@ x <- rnorm(100)
 
 table(cut_by_quantile(x,q = seq(0,1,by = .25)))
 #> 
-#>   [-2.6,-0.782] (-0.782,-0.115]  (-0.115,0.637]    (0.637,2.78] 
-#>              25              25              25              25
+#>  [-2.46,-1.01] (-1.01,-0.103] (-0.103,0.506]   (0.506,2.37] 
+#>             25             25             25             25
 ```
 
 ### expand_grid_unique
@@ -850,4 +880,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-64-1.png" width="40%" />

@@ -380,6 +380,13 @@ plot(x,z)
 
 ```
 
+### format_p_value
+The goal of **format_p_value** is to change a p value, by considering a minimal value where if is minor than it, let's say 0.001, the p value will be changed to *<0.001*
+
+```{r}
+format_p_value(c(.001,.00000001),p_value_min = 0.001)
+```
+
 
 ## "Not" functions
 
@@ -595,6 +602,44 @@ mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
+
+### tbl_compare_num
+
+The goal of **tbl_compare_num** is to create a summary table comparing a numerical variable with two groups.
+
+```{r,eval = FALSE}
+
+tbl_compare_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("mean","median","median")
+)
+
+```
+
+```{r, echo = FALSE}
+set.seed(123);df <-
+  data.frame(
+    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
+    num_var1 = rnorm(100),
+    num_var2 = rpois(100,2),
+    num_var3 = rexp(100,2),
+   num_var4 = abs(rnorm(100))
+  )
+
+table <- 
+tbl_compare_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("mean","median","median")
+)
+
+gt::gtsave(table, "table.png", vwidth = 1500, vheight = 1000)
+
+```
+
 
 
 ### tbl_format_num
