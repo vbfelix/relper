@@ -636,7 +636,7 @@ tbl_compare_num(
   method = c("mean","median","median")
 )
 
-gt::gtsave(table, "table.png", vwidth = 1500, vheight = 1000)
+gt::gtsave(table, "tbl_compare_num.png", vwidth = 1500, vheight = 1000)
 
 ```
 

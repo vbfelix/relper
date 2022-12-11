@@ -5,6 +5,8 @@
 #' @param df data.frame
 #' @param grp_var variable to group by
 #' @param num_vars numerical variable(s)
+#' @param method method of summary and test (default = 'mean')
+#'
 #' @return data.frame
 #' @export
 #'
@@ -32,68 +34,12 @@ tbl_compare_num <-
   ){
 
     if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
+
     if(!is.character(method)){stop("'method' must be a character.")}
-    method <- tolower(method)
-    if(sum(!(method %in% c("mean","median"))) > 0 ){stop("'method' must be 'mean' and/or 'median'.")}
 
 
-    methods_df <-
-      data.frame(
-        name = df %>%
-          select({{num_vars}}) %>%
-          # select(-grp_var) %>%
-          names(),
-        method = method
-      )
+    # utils -------------------------------------------------------------------
 
-    mean_footnote <- "mean (sd) - t test"
-    median_footnote <- "median (IQR) - wilcox test"
-
-    if( sum(method %in% "mean") > 0  & sum(method %in% "median") > 0 ){
-      gt_footnote <-
-        function(df){
-          gt::tab_footnote(
-            data = df,
-            footnote = mean_footnote,
-            locations = gt::cells_body(
-              columns = name,
-              rows = which(methods_df$method == "mean")
-            )
-          ) %>%
-            gt::tab_footnote(
-              data = .,
-              footnote = median_footnote,
-              locations = gt::cells_body(
-                columns = name,
-                rows = which(methods_df$method == "median")
-              )
-            )
-        }
-    }
-    if( sum(method %in% "mean") > 0  & sum(method %in% "median") == 0 ){
-      gt_footnote <-
-        function(df){
-        gt::tab_footnote(
-          data = df,
-          footnote = mean_footnote,
-          locations = gt::cells_column_labels(
-            columns = name
-          )
-        )
-      }
-    }
-    if( sum(method %in% "mean") == 0 & sum(method %in% "median") > 0 ){
-      gt_footnote <-
-        function(df){
-        gt::tab_footnote(
-          data = df,
-          footnote = median_footnote,
-          locations = gt::cells_column_labels(
-            columns = name
-          )
-        )
-      }
-    }
 
     format_metric <- function(x,y){
       paste0(
@@ -131,6 +77,8 @@ tbl_compare_num <-
       }
 
 
+# pivot data --------------------------------------------------------------
+
 
     pivotted_data <-
       df %>%
@@ -143,8 +91,99 @@ tbl_compare_num <-
           relper::format_num(n,digits = 0, decimal_mark = ".",thousand_mark = ","))
       ) %>%
       dplyr::select(-n) %>%
-      tidyr::pivot_longer(cols = -grp_var) %>%
+      tidyr::pivot_longer(cols = -grp_var)
+
+# method ------------------------------------------------------------------
+
+
+    method <- tolower(method)
+
+    if(sum(!(method %in% c("mean","median","auto"))) > 0 ){
+      stop("'method' must be 'mean', 'median' or 'auto'.")
+    }
+
+    if(length(method) == 1 & sum(method %in% "auto") > 0 ){
+      methods_df <-
+        pivotted_data %>%
+        group_by(name) %>%
+        summarise(p_value = shapiro.test(value)$p.value) %>%
+        mutate(
+          method = if_else(p_value < 0.05,"median","mean")
+        ) %>%
+        ungroup() %>%
+        select(-p_value)
+    }else{
+      methods_df <-
+        data.frame(
+          name = df %>%
+            select({{num_vars}}) %>%
+            # select(-grp_var) %>%
+            names(),
+          method = method
+        )
+    }
+
+    pivotted_data <-
+      pivotted_data %>%
       left_join(methods_df)
+
+    # footnote ----------------------------------------------------------------
+
+    mean_footnote <- "mean (sd) - t test"
+
+    median_footnote <- "median (IQR) - Wilcoxon test"
+
+    methods <- methods_df %>% pull(method)
+
+    if( sum(methods %in% "mean") > 0  & sum(methods %in% "median") > 0 ){
+      gt_footnote <-
+        function(df){
+          gt::tab_footnote(
+            data = df,
+            footnote = mean_footnote,
+            locations = gt::cells_body(
+              columns = name,
+              rows = which(methods_df$method == "mean")
+            )
+          ) %>%
+            gt::tab_footnote(
+              data = .,
+              footnote = median_footnote,
+              locations = gt::cells_body(
+                columns = name,
+                rows = which(methods_df$method == "median")
+              )
+            )
+        }
+    }
+    if( sum(methods %in% "mean") > 0  & sum(methods %in% "median") == 0 ){
+      gt_footnote <-
+        function(df){
+          gt::tab_footnote(
+            data = df,
+            footnote = mean_footnote,
+            locations = gt::cells_column_labels(
+              columns = name
+            )
+          )
+        }
+    }
+    if( sum(methods %in% "mean") == 0 & sum(methods %in% "median") > 0 ){
+      gt_footnote <-
+        function(df){
+          gt::tab_footnote(
+            data = df,
+            footnote = median_footnote,
+            locations = gt::cells_column_labels(
+              columns = name
+            )
+          )
+        }
+    }
+
+
+    # table -------------------------------------------------------------------
+
 
     pivotted_data %>%
       dplyr::group_by(grp_var,name,method) %>%
@@ -195,7 +234,7 @@ tbl_compare_num <-
         IC ~ px(120),
         statistic ~ px(100),
         everything() ~ px(70)
-        )
+      )
 
   }
 
