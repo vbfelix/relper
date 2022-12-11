@@ -4,16 +4,24 @@
 \alias{format_num}
 \title{Format numeric data}
 \usage{
-format_num(x, digits = 2, decimal_mark = ",", thousand_mark = ".")
+format_num(
+  x,
+  digits = 2,
+  decimal_mark = ".",
+  thousand_mark = ",",
+  br_mark = FALSE
+)
 }
 \arguments{
 \item{x}{numeric vector}
 
 \item{digits}{number of decimals digits}
 
-\item{dec_mark}{decimal mark}
+\item{decimal_mark}{decimal mark}
 
-\item{mil_mark}{tgousand mark}
+\item{thousand_mark}{thousand mark}
+
+\item{br_mark}{if TRUE, decimal_mark = "," and thousand_mark = "." (default = FALSE)}
 }
 \value{
 formatted data
