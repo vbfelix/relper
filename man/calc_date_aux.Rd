@@ -19,6 +19,8 @@ Create auxiliar variables from a date, such as: year, month, day, etc.
 }
 \examples{
 
+df <- data.frame(dt = lubridate::dmy("01/01/01"))
+
 calc_date_aux(df,dt)
 
 }
