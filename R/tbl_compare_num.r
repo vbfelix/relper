@@ -129,9 +129,9 @@ tbl_compare_num <-
 
     # footnote ----------------------------------------------------------------
 
-    mean_footnote <- "mean (sd) - t test"
+    mean_footnote <- "Mean (SD) - Student's t-test"
 
-    median_footnote <- "median (IQR) - Wilcoxon test"
+    median_footnote <- "Median (IQR) - Wilcoxon test"
 
     methods <- methods_df %>% pull(method)
 
