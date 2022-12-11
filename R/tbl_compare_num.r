@@ -216,6 +216,7 @@ tbl_compare_num <-
           select(-data,-method)
       )%>%
       dplyr::ungroup() %>%
+# gt ----------------------------------------------------------------------
       gt::gt() %>%
       gt::cols_align(
         align = c("center"),
