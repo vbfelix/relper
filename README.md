@@ -734,17 +734,9 @@ chi-square statistic, p-value and Cramer’s V.
 mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
-#> # A tibble: 7 x 7
-#>   name  value `vs = 0`       `vs = 1`       statistic p_value cramers_v
-#>   <chr> <chr> <chr>          <chr>          <chr>     <chr>   <chr>    
-#> 1 "am"  -     -              -              0.3475    0.5555  0.1042   
-#> 2 ""    0     66.67% (12/18) 50.00% (7/14)  -         -       -        
-#> 3 ""    1     33.33% (6/18)  50.00% (7/14)  -         -       -        
-#> 4 "cyl" -     -              -              21.3399   <0.001  0.8166   
-#> 5 ""    4     5.56% (1/18)   71.43% (10/14) -         -       -        
-#> 6 ""    6     16.67% (3/18)  28.57% (4/14)  -         -       -        
-#> 7 ""    8     77.78% (14/18) -              -         -       -
 ```
+
+<img src="man/figures/README-unnamed-chunk-54-1.png" width="40%" />
 
 ### tbl_compare_num
 
@@ -761,7 +753,7 @@ tbl_compare_num(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-55-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-56-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -802,7 +794,7 @@ x <- rnorm(100)
 
 table(cut_by_quantile(x,q = seq(0,1,by = .25)))
 #> 
-#>  [-2.46,-1.01] (-1.01,-0.103] (-0.103,0.506]   (0.506,2.37] 
+#> [-2.66,-0.423] (-0.423,0.139]  (0.139,0.762]    (0.762,2.4] 
 #>             25             25             25             25
 ```
 
@@ -880,4 +872,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-64-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-65-1.png" width="40%" />
