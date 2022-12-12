@@ -24,11 +24,11 @@ is_outlier <- function(x){
 
   q3 <- quantile(x, 0.75, na.rm = TRUE)
 
-  aiq  <- q3 - q1
+  iqr  <- q3 - q1
 
-  li <- q1 - (1.5 * aiq)
+  li <- q1 - (1.5 * iqr)
 
-  ls <- q3 + (1.5 * aiq)
+  ls <- q3 + (1.5 * iqr)
 
   out <- ifelse( (x <= li) | (x >= ls), TRUE, FALSE)
 
