@@ -1,3 +1,19 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("results", {
+
+  expect_equal(
+    object = is_outlier(1:5),
+    expected = c(FALSE, FALSE, FALSE, FALSE, FALSE)
+  )
+
+})
+
+test_that("warning", {
+
+
+})
+
+test_that("error", {
+
+  expect_error(is_outlier(x = "a"))
+
 })
