@@ -18,7 +18,7 @@
 str_to_text <- function(string, n_char = 3){
 
   if(!is.character(string) & !is.factor(string)){
-    stop("'string must' be a characther/factor.")
+    stop("'string' must be a characther.")
   }
 
   if(!is.numeric(n_char)){stop("'n_char' must be numeric.")}
