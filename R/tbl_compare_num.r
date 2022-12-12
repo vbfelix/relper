@@ -21,7 +21,7 @@
 #'   num_var4 = abs(rnorm(100))
 #'  )
 #'
-#'  tbl_compare_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
+#'tbl_compare_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
 
 
 
@@ -38,7 +38,6 @@ tbl_compare_num <-
     if(!is.character(method)){stop("'method' must be a character.")}
 
     # utils -------------------------------------------------------------------
-
 
     format_metric <- function(x,y){
       paste0(
@@ -71,17 +70,16 @@ tbl_compare_num <-
               relper::format_num(conf.high,3, decimal_mark = ".",thousand_mark = ","),
               ")")
           ) %>%
-          select(statistic,p_value,IC)
+          dplyr::select(statistic,p_value,IC)
 
       }
 
 
 # pivot data --------------------------------------------------------------
 
-
     pivotted_data <-
       df %>%
-      select(grp_var = {{grp_var}},{{num_vars}}) %>%
+      dplyr::select(grp_var = {{grp_var}},{{num_vars}}) %>%
       dplyr::add_count(grp_var) %>%
       dplyr::mutate(
         grp_var = paste0(
@@ -104,13 +102,13 @@ tbl_compare_num <-
     if(length(method) == 1 & sum(method %in% "auto") > 0 ){
       methods_df <-
         pivotted_data %>%
-        group_by(name) %>%
-        summarise(p_value = shapiro.test(value)$p.value) %>%
-        mutate(
+        dplyr::group_by(name) %>%
+        dplyr::summarise(p_value = shapiro.test(value)$p.value) %>%
+        dplyr::mutate(
           method = if_else(p_value < 0.05,"median","mean")
         ) %>%
-        ungroup() %>%
-        select(-p_value)
+        dplyr::ungroup() %>%
+        dplyr::select(-p_value)
     }else{
       methods_df <-
         data.frame(
@@ -124,7 +122,7 @@ tbl_compare_num <-
 
     pivotted_data <-
       pivotted_data %>%
-      left_join(methods_df)
+      dplyr::left_join(methods_df)
 
     # footnote ----------------------------------------------------------------
 
@@ -213,14 +211,14 @@ tbl_compare_num <-
           ) %>%
           dplyr::ungroup() %>%
           tidyr::unnest(t_test) %>%
-          select(-data,-method)
+          dplyr::select(-data,-method)
       )%>%
       dplyr::ungroup() %>%
 # gt ----------------------------------------------------------------------
       gt::gt() %>%
       gt::cols_align(
         align = c("center"),
-        columns = everything()
+        columns = dplyr::everything()
       ) %>%
       gt_footnote(df = .) %>%
       gt::cols_label(
@@ -233,7 +231,7 @@ tbl_compare_num <-
         name ~ px(120),
         IC ~ px(120),
         statistic ~ px(100),
-        everything() ~ px(70)
+        dplyr::everything() ~ px(70)
       )
 
   }
