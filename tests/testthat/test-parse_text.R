@@ -1,3 +1,16 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("results", {
+
+  expect_equal(
+    object = parse_text("A2"),
+    expected = "A"
+  )
+
+})
+
+test_that("warning", {
+
+})
+
+test_that("error", {
+
 })
