@@ -25,23 +25,29 @@ rpearson <-
     tol = 0.10,
     ...){
 
-  if(!is.numeric(n)){stop("n must be numeric.")}
+  if(!is.numeric(n)){stop("'n' must be numeric.")}
 
-  if(!is.numeric(p_sim)){stop("p_sim must be numeric.")}
+  if(n <= 0){stop("'n' must be > 0.")}
 
-  if(!is.numeric(tol)){stop("tol must be numeric.")}
+  if((n%%1)!= 0){stop("'n' must be a integer.")}
 
-  if(n <= 0){stop("n must be > 0.")}
+  if(length(n) > 1){stop("'n' must be a single value.")}
 
-  if((n%%1)!= 0){stop("n must be a integer.")}
+  if(!is.numeric(p_sim)){stop("'p_sim' must be numeric.")}
 
-  if((tol <= 0) | (tol >= 1)){stop("tol must be (0,1).")}
-
-  if((tol > 0) & (tol < .05)){
-    warning("A low tolerance may cause a infinite loop or a long loading time.")
-  }
+  if(length(p_sim) > 1){stop("'p_sim' must be a single value.")}
 
   if((p_sim > 1) | (p_sim < -1)){stop("p_sim must be [-1;1].")}
+
+  if(!is.numeric(tol)){stop("'tol' must be numeric.")}
+
+  if(length(tol) > 1){stop("'tol' must be a single value.")}
+
+  if((tol <= 0) | (tol >= 1)){stop("'tol' must be (0,1).")}
+
+  if((tol > 0) & (tol < .05)){
+    warning("A low tolerance may cause a infinite loop or a long simulation time.")
+  }
 
   p_stop <- 1
 
