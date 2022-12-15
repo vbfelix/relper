@@ -25,7 +25,4 @@ Create a frequency table with chi-square statistic, p-value, cramer's v.
 
 library(dplyr)
 
-mtcars \%>\%
- mutate(vs = paste0("vs = ",vs)) \%>\%
- tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 }
