@@ -28,6 +28,12 @@
     - <a href="#format_num" id="toc-format_num">format_num</a>
     - <a href="#format_scale" id="toc-format_scale">format_scale</a>
     - <a href="#format_p_value" id="toc-format_p_value">format_p_value</a>
+  - <a href="#is_-functions" id="toc-is_-functions">“is_” functions</a>
+    - <a href="#is_even" id="toc-is_even">is_even</a>
+    - <a href="#is_negative" id="toc-is_negative">is_negative</a>
+    - <a href="#is_odd" id="toc-is_odd">is_odd</a>
+    - <a href="#is_outlier" id="toc-is_outlier">is_outlier</a>
+    - <a href="#is_positive" id="toc-is_positive">is_positive</a>
   - <a href="#not-functions" id="toc-not-functions">“Not” functions</a>
     - <a href="#not_in" id="toc-not_in">not_in</a>
     - <a href="#not_na" id="toc-not_na">not_na</a>
@@ -60,7 +66,6 @@
     - <a href="#cut_by_quantile" id="toc-cut_by_quantile">cut_by_quantile</a>
     - <a href="#expand_grid_unique"
       id="toc-expand_grid_unique">expand_grid_unique</a>
-    - <a href="#is_outlier" id="toc-is_outlier">is_outlier</a>
     - <a href="#obj_to_string" id="toc-obj_to_string">obj_to_string</a>
     - <a href="#parse_text" id="toc-parse_text">parse_text</a>
     - <a href="#rpearson" id="toc-rpearson">rpearson</a>
@@ -462,6 +467,90 @@ format_p_value(c(.001,.00000001),p_value_min = 0.001)
 #> [1] "0.0010" "<0.001"
 ```
 
+## “is\_” functions
+
+This functions will check if the value checks a condition.
+
+### is_even
+
+The goal of **is_even** is to check if a value is even.
+
+``` r
+is_even(1)
+#> [1] FALSE
+
+is_even(2)
+#> [1] TRUE
+
+is_even(1.1)
+#> [1] FALSE
+
+is_even(2.2)
+#> [1] TRUE
+```
+
+### is_negative
+
+The goal of **is_negative** is to check if a value is negative.
+
+``` r
+is_negative(1)
+#> [1] FALSE
+
+is_negative(-1)
+#> [1] TRUE
+```
+
+### is_odd
+
+The goal of **is_odd** is to check if a value is odd.
+
+``` r
+is_odd(1)
+#> [1] TRUE
+
+is_odd(2)
+#> [1] FALSE
+
+is_odd(1.1)
+#> [1] TRUE
+
+is_odd(2.2)
+#> [1] FALSE
+```
+
+### is_outlier
+
+The goal of **is_outlier** is to check if a value is an outlier, by the
+boxplot outlier criteria, given by:
+
+$$ [x < (Q_1 - 1.5 * IQR)] \quad  |  \quad [x > (Q_3 - 1.5 * IQR)],$$
+
+where:
+
+- $Q_1$ is the first quartile;
+- $Q_3$ is the third quartile;
+- $IQR$ is the interquartile range, e.g., $Q_3-Q_1$.
+
+``` r
+x <- c(1,2,3,5,7,8,12,100)
+
+is_outlier(x)
+#> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
+```
+
+### is_positive
+
+The goal of **is_positive** is to check if a value is positive.
+
+``` r
+is_positive(1)
+#> [1] TRUE
+
+is_positive(-1)
+#> [1] FALSE
+```
+
 ## “Not” functions
 
 This functions will check if a variable does not pass a certain
@@ -514,7 +603,7 @@ The goal of **plt_flip_y\_title** is to flip the title from y axis.
 plot + flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-38-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
 
 ### plt_no_background
 
@@ -524,7 +613,7 @@ The goal of **plt_no_background** is to remove the background.
 plot + plt_no_background
 ```
 
-<img src="man/figures/README-unnamed-chunk-39-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
 
 ### plt_no_labels
 
@@ -534,7 +623,7 @@ The goal of **plt_no_labels** is to remove all labels.
 plot + plt_no_labels
 ```
 
-<img src="man/figures/README-unnamed-chunk-40-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
 
 ### plt_scale_auto
 
@@ -544,7 +633,7 @@ The goal of **plt_scale_auto** is to add a automatic scale.
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-<img src="man/figures/README-unnamed-chunk-41-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
 
 ``` r
 plot +
@@ -552,7 +641,7 @@ plot +
   plt_scale_auto(axis = "y",n = 3)
 ```
 
-<img src="man/figures/README-unnamed-chunk-42-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
 
 ### plt_theme_map
 
@@ -562,7 +651,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -573,7 +662,7 @@ y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -584,7 +673,7 @@ axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -595,7 +684,7 @@ x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
 
 <!-- ### plt_water_mark -->
 <!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
@@ -736,7 +825,7 @@ mtcars %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
 
-<img src="man/figures/README-unnamed-chunk-54-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-59-1.png" width="40%" />
 
 ### tbl_compare_num
 
@@ -753,7 +842,7 @@ tbl_compare_num(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-56-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -824,18 +913,6 @@ expand_grid_unique(x = 1:3,y = 1:2, include_equals = TRUE)
 #> 3     2     2
 ```
 
-### is_outlier
-
-The goal of **is_outlier** is to check if a value is an outlier, by the
-boxplot criteria.
-
-``` r
-x <- c(1,2,3,5,7,8,12,100)
-
-is_outlier(x)
-#> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
-```
-
 ### obj_to_string
 
 The goal of **obj_to_string** is to return the name of an R object as a
@@ -872,4 +949,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-65-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-69-1.png" width="40%" />
