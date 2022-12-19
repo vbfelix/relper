@@ -34,7 +34,7 @@ plt_scale_auto <-
 
     axis <- tolower(axis)
 
-    if(relper::not_in(axis,c("x","y"))){
+    if(relper::isnot_in(axis,c("x","y"))){
       stop("Axis must be equal x or y.")
     }
 

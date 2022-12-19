@@ -457,26 +457,26 @@ is_positive(-1)
 
 ```
 
-## "Not" functions
+## "isnot_" functions
 
 This functions will check if a variable does not pass a certain condition.
 
-### not_in
+### isnot_in
 
-The goal of **not_in** is to check if a variable is not contained, it is the same as `!(x %in% y)`.
+The goal of **isnot_in** is to check if a variable is not contained, it is the same as `!(x %in% y)`.
 
 ```{r}
-not_in("a", letters)
+isnot_in("a", letters)
 ```
 
-### not_na
+### isnot_na
 
-The goal of **not_na** is to check if a variable is not a `NA` it is the same as `!is.na(x)`.
+The goal of **isnot_na** is to check if a variable is not a `NA` it is the same as `!is.na(x)`.
 
 ```{r}
-not_na(2)
+isnot_na(2)
 
-not_na(NA)
+isnot_na(NA)
 ```
 
 ## "Plt" functions

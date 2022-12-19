@@ -1,6 +1,6 @@
-#' Opposite of in
+#' Opposite of %in%
 #'
-#' @description Check if a x are not in y
+#' @description Check if  x is not contained in y
 #'
 #' @param x single value
 #' @param y vector
@@ -10,10 +10,10 @@
 #'
 #' @examples
 #'
-#' not_in("a", letters)
+#' isnot_in("a", letters)
 #'
 
-not_in <- function(x,y){
+isnot_in <- function(x,y){
 
   !(x %in% y)
 

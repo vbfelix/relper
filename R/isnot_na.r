@@ -9,12 +9,12 @@
 #'
 #' @examples
 #'
-#' not_na(2)
+#' isnot_na(2)
 #'
-#' not_na(NA)
+#' isnot_na(NA)
 #'
 
-not_na <- function(x){
+isnot_na <- function(x){
 
   !is.na(x)
 

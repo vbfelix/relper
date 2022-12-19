@@ -27,8 +27,8 @@ summary_cat <- function(x){
       n = length(x),
       na = sum(is.na(x),na.rm = TRUE),
       blank_space = sum(x == "",na.rm = TRUE),
-      n_distinct = dplyr::n_distinct(x[relper::not_na(x)]),
-      mode = calc_mode(x[relper::not_na(x)])
+      n_distinct = dplyr::n_distinct(x[relper::isnot_na(x)]),
+      mode = calc_mode(x[relper::isnot_na(x)])
     )
 
   return(out)

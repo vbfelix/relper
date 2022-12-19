@@ -34,9 +34,10 @@
     - <a href="#is_odd" id="toc-is_odd">is_odd</a>
     - <a href="#is_outlier" id="toc-is_outlier">is_outlier</a>
     - <a href="#is_positive" id="toc-is_positive">is_positive</a>
-  - <a href="#not-functions" id="toc-not-functions">“Not” functions</a>
-    - <a href="#not_in" id="toc-not_in">not_in</a>
-    - <a href="#not_na" id="toc-not_na">not_na</a>
+  - <a href="#isnot_-functions" id="toc-isnot_-functions">“isnot_”
+    functions</a>
+    - <a href="#isnot_in" id="toc-isnot_in">isnot_in</a>
+    - <a href="#isnot_na" id="toc-isnot_na">isnot_na</a>
   - <a href="#plt-functions" id="toc-plt-functions">“Plt” functions</a>
     - <a href="#plt_flip_y_title"
       id="toc-plt_flip_y_title">plt_flip_y_title</a>
@@ -551,31 +552,31 @@ is_positive(-1)
 #> [1] FALSE
 ```
 
-## “Not” functions
+## “isnot\_” functions
 
 This functions will check if a variable does not pass a certain
 condition.
 
-### not_in
+### isnot_in
 
-The goal of **not_in** is to check if a variable is not contained, it is
-the same as `!(x %in% y)`.
+The goal of **isnot_in** is to check if a variable is not contained, it
+is the same as `!(x %in% y)`.
 
 ``` r
-not_in("a", letters)
+isnot_in("a", letters)
 #> [1] FALSE
 ```
 
-### not_na
+### isnot_na
 
-The goal of **not_na** is to check if a variable is not a `NA` it is the
-same as `!is.na(x)`.
+The goal of **isnot_na** is to check if a variable is not a `NA` it is
+the same as `!is.na(x)`.
 
 ``` r
-not_na(2)
+isnot_na(2)
 #> [1] TRUE
 
-not_na(NA)
+isnot_na(NA)
 #> [1] FALSE
 ```
 
