@@ -19,6 +19,10 @@
 calc_cramers_v <-
   function(chi_square){
 
+    if(!is.list(chi_square)){"'chi_square' must be a list."}
+
+    if(names(chi_square[["statistic"]]) != "X-squared"){"'chi_square1' must be an object from chisq.test()."}
+
     stat <- as.numeric(chi_square[["statistic"]])
 
     n <- sum(chi_square[["observed"]])
