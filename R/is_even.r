@@ -20,11 +20,11 @@ is_even <- function(x){
 
   x_len <- length(x_as_char)
 
-  n <- dplyr::if_else(x_as_char[x_len] == "0",x_len - 1,x_len)
+  n <- dplyr::if_else(x_as_char[x_len] == "0",x_len - 1L,x_len)
 
   condition <- (as.numeric(x_as_char[n])) %% 2 == 0
 
-  output <- ifelse(condition, TRUE, FALSE)
+  output <- dplyr::if_else(condition, TRUE, FALSE)
 
   return(output)
 

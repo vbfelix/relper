@@ -34,6 +34,7 @@
     - <a href="#is_odd" id="toc-is_odd">is_odd</a>
     - <a href="#is_outlier" id="toc-is_outlier">is_outlier</a>
     - <a href="#is_positive" id="toc-is_positive">is_positive</a>
+    - <a href="#is_string" id="toc-is_string">is_string</a>
   - <a href="#isnot_-functions" id="toc-isnot_-functions">“isnot_”
     functions</a>
     - <a href="#isnot_in" id="toc-isnot_in">isnot_in</a>
@@ -552,6 +553,19 @@ is_positive(-1)
 #> [1] FALSE
 ```
 
+### is_string
+
+The goal of **is_string** is to check if a value is a string, character
+or factor.
+
+``` r
+is_string("A")
+#> [1] TRUE
+
+is_string(factor("A"))
+#> [1] TRUE
+```
+
 ## “isnot\_” functions
 
 This functions will check if a variable does not pass a certain
@@ -604,7 +618,7 @@ The goal of **plt_flip_y\_title** is to flip the title from y axis.
 plot + flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-43-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
 
 ### plt_no_background
 
@@ -614,7 +628,7 @@ The goal of **plt_no_background** is to remove the background.
 plot + plt_no_background
 ```
 
-<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
 
 ### plt_no_labels
 
@@ -624,7 +638,7 @@ The goal of **plt_no_labels** is to remove all labels.
 plot + plt_no_labels
 ```
 
-<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
 
 ### plt_scale_auto
 
@@ -634,7 +648,7 @@ The goal of **plt_scale_auto** is to add a automatic scale.
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
 
 ``` r
 plot +
@@ -642,7 +656,7 @@ plot +
   plt_scale_auto(axis = "y",n = 3)
 ```
 
-<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
 
 ### plt_theme_map
 
@@ -652,7 +666,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -663,7 +677,7 @@ y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -674,7 +688,7 @@ axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -685,7 +699,7 @@ x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-52-1.png" width="40%" />
 
 <!-- ### plt_water_mark -->
 <!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
@@ -777,7 +791,7 @@ The goal of **summary_data** is to summarize all variables from data.
 
 ``` r
 summary_data(mtcars)
-#> [1] "14 numeric variables."
+#> [1] "11 numeric variables."
 #> # A tibble: 11 x 14
 #>    var       n    na negative equal_zero positive   min    p25    p50    p75
 #>    <chr> <int> <int>    <int>      <int>    <int> <dbl>  <dbl>  <dbl>  <dbl>
@@ -826,7 +840,7 @@ mtcars %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
 
-<img src="man/figures/README-unnamed-chunk-59-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-60-1.png" width="40%" />
 
 ### tbl_compare_num
 
@@ -843,7 +857,7 @@ tbl_compare_num(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-62-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -950,4 +964,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-69-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-70-1.png" width="40%" />

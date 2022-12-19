@@ -448,12 +448,24 @@ is_outlier(x)
 ```
 
 ### is_positive
+
 The goal of **is_positive** is to check if a value is positive.
 
 ```{r}
 is_positive(1)
 
 is_positive(-1)
+
+```
+
+### is_string
+
+The goal of **is_string** is to check if a value is a string, character or factor.
+
+```{r}
+is_string("A")
+
+is_string(factor("A"))
 
 ```
 
