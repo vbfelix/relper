@@ -4,7 +4,7 @@
 #'
 #' @param x numeric vector
 #' @param y numeric vector
-#' @param include_equals logical indicator to include equal pairs or not
+#' @param include_equals logical indicator to include equal pairs or not (default  = FALSE)
 #'
 #' @return
 #' @export
