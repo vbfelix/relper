@@ -20,7 +20,7 @@ summary_data <- function(df){
 
   df_num <-
     df %>%
-    dplyr::select_if(is.numeric)
+    dplyr::select(where(is.numeric))
 
   if(ncol(df_num) == 0){
 
@@ -28,20 +28,20 @@ summary_data <- function(df){
 
   }else{
 
-    df_num <-
+    output <-
       df_num %>%
-      tidyr::gather(var,value) %>%
+      tidyr::pivot_longer(cols = everything(),names_to = "var",values_to = "value") %>%
       dplyr::group_by(var) %>%
       dplyr::summarise(relper::summary_num(value))
 
    print(paste0(ncol(df_num)," numeric variables."))
 
-   print(df_num)
+   print(output)
   }
 
   df_cat <-
     df %>%
-    dplyr::select_if(purrr::negate(is.numeric))
+    dplyr::select(where(purrr::negate(is.numeric)))
 
   if(ncol(df_cat) == 0){
 
@@ -49,14 +49,14 @@ summary_data <- function(df){
 
   }else{
 
-    df_cat <-
+    output <-
       df_cat %>%
-      tidyr::gather(var,value) %>%
+      tidyr::pivot_longer(cols = everything(),names_to = "var",values_to = "value") %>%
       dplyr::group_by(var) %>%
       dplyr::summarise(relper::summary_cat(value))
 
     print(paste0(ncol(df_cat)," categoric variables."))
 
-    print(df_cat)
+    print(output)
   }
 }
