@@ -18,9 +18,9 @@ calc_mode <- function(x){
 
     cat_levels <- unique(x)
 
-    out <- cat_levels[which.max(tabulate(match(x, cat_levels)))]
+    output <- cat_levels[which.max(tabulate(match(x, cat_levels)))]
 
-    return(out)
+    return(output)
 
 }
 

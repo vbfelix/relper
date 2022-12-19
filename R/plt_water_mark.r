@@ -25,7 +25,7 @@
 
 plt_water_mark <-function(png_file,local_file = TRUE){
 
-  if(!is.logical(local_file)){stop("local_file must be logical.")}
+  if(!is.logical(local_file)){stop("'local_file' must be logical.")}
 
   if(local_file){
     png <- png::readPNG(png_file)

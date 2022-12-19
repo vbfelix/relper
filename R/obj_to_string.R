@@ -16,7 +16,6 @@
 #'
 #'
 
-obj_to_string <-
-  function(x){
+obj_to_string <- function(x){
     deparse(substitute(x))
   }

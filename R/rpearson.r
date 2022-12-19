@@ -63,7 +63,7 @@ rpearson <-
 
   }
 
-  out <-
+  output <-
     dplyr::tibble(
       x = x,
       y = y,
@@ -71,6 +71,6 @@ rpearson <-
       p_est = p_est
       )
 
-  return(out)
+  return(output)
 
 }

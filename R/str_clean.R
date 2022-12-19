@@ -33,7 +33,7 @@ str_clean <-
     ){
 
   if(!is.character(string) & !is.factor(string)){
-    stop("string must be a character/factor.")
+    stop("string must be a character.")
   }
 
   if(!is.logical(remove_accent)){stop("'remove_accent' must be logical.")}

@@ -17,9 +17,9 @@
 
 calc_cv <- function(x, as_perc = FALSE){
 
-  if(!is.numeric(x)){stop("x must be numeric.")}
+  if(!is.numeric(x)){stop("'x' must be numeric.")}
 
-  if(!is.logical(as_perc)){stop("perc must be logical.")}
+  if(!is.logical(as_perc)){stop("'perc' must be logical.")}
 
   mu_x <- mean(x, na.rm = TRUE)
 
@@ -32,14 +32,14 @@ calc_cv <- function(x, as_perc = FALSE){
     }
 
     if(as_perc == TRUE){
-      out <- 100*sd(x, na.rm = TRUE)/mu_x
+      output <- 100*sd(x, na.rm = TRUE)/mu_x
     } else{
-      out <- sd(x, na.rm = TRUE)/mu_x
+      output <- sd(x, na.rm = TRUE)/mu_x
     }
 
-    out <- abs(round(out,2))
+    output <- abs(round(output,2))
 
-    return(out)
+    return(output)
   }
 
 }

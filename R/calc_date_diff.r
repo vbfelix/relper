@@ -34,8 +34,8 @@ calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
 
   if(!(unit %in% units)){stop("'unit' must be one of secs, mins, hours, days, weeks.")}
 
-  out <- as.numeric(difftime(date2,date1,units = unit)) + add
+  output <- as.numeric(difftime(date2,date1,units = unit)) + add
 
-  return(out)
+  return(output)
 
 }

@@ -22,6 +22,8 @@ calc_peak_density <- function(x){
 
   d <- density(na.omit(x))
 
-  return(d$x[which.max(d$y)])
+  output <- d$x[which.max(d$y)]
+
+  return(output)
 
 }

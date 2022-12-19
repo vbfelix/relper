@@ -11,7 +11,7 @@ calc_auc(x, y, limits = NULL)
 
 \item{y}{numeric vector}
 
-\item{limits}{numeric range for integration (default = x range)}
+\item{limits}{numeric range for integration (default = 'x' range)}
 }
 \value{
 calc_auc

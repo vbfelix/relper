@@ -26,12 +26,12 @@ is_outlier <- function(x){
 
   iqr  <- q3 - q1
 
-  li <- q1 - (1.5 * iqr)
+  lower_limit <- q1 - (1.5 * iqr)
 
-  ls <- q3 + (1.5 * iqr)
+  upper_limit <- q3 + (1.5 * iqr)
 
-  out <- ifelse( (x <= li) | (x >= ls), TRUE, FALSE)
+  output <- dplyr::if_else((x <= lower_limit) | (x >= upper_limit), TRUE, FALSE)
 
-  return(out)
+  return(output)
 
 }

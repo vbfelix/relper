@@ -43,9 +43,9 @@ format_scale <- function(x, new_min = 0, new_max = 1){
 
   min_x <- min(x, na.rm = TRUE)
 
-  out <- (new_max-new_min) * ((x - min_x)/(max_x - min_x)) + new_min
+  output <- (new_max-new_min) * ((x - min_x)/(max_x - min_x)) + new_min
 
-  return(out)
+  return(output)
 }
 
 

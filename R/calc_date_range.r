@@ -23,12 +23,12 @@ calc_date_range <- function(x){
 
   aux <- stringr::str_split(range(x,na.rm = TRUE), pattern = "-")
 
-  out <-
+  output <-
     paste0(
       paste(aux[[1]][3:1],collapse ="/"),
       " - ",
       paste(aux[[2]][3:1],collapse ="/")
       )
 
-  return(out)
+  return(output)
 }

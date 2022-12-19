@@ -36,7 +36,7 @@ summary_num <- function(x, minimal = FALSE){
         p50  = median(x, na.rm = TRUE),
         p75  = quantile(x,probs = .75, na.rm = TRUE),
         max = max(x, na.rm = TRUE),
-        mode = ifelse(length(na.omit(x)) < 3, NA_real_,relper::calc_peak_density(na.omit(x))),
+        mode = dplyr::if_else(length(na.omit(x)) < 3, NA_real_,relper::calc_peak_density(na.omit(x))),
         mean = mean(x, na.rm = TRUE),
         cv = relper::calc_cv(x)
       )
@@ -49,7 +49,7 @@ summary_num <- function(x, minimal = FALSE){
         p50  = median(x, na.rm = TRUE),
         p75  = quantile(x,probs = .75, na.rm = TRUE),
         max = max(x, na.rm = TRUE),
-        mode = ifelse(length(na.omit(x)) < 3, NA_real_ ,relper::calc_peak_density(na.omit(x))),
+        mode = dplyr::if_else(length(na.omit(x)) < 3, NA_real_ ,relper::calc_peak_density(na.omit(x))),
         mean = mean(x, na.rm = TRUE),
         cv = relper::calc_cv(x)
       )

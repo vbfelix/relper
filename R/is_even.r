@@ -20,7 +20,7 @@ is_even <- function(x){
 
   x_len <- length(x_as_char)
 
-  n <- ifelse(x_as_char[x_len] == "0",x_len - 1,x_len)
+  n <- dplyr::if_else(x_as_char[x_len] == "0",x_len - 1,x_len)
 
   condition <- (as.numeric(x_as_char[n])) %% 2 == 0
 

@@ -23,9 +23,9 @@ format_digit <- function(x, digits = 2){
 
   rep_num <- digits - nchar(x)
 
-  rep_num <- ifelse(rep_num < 0,0,rep_num)
+  rep_num <- dplyr::if_else(rep_num < 0,0,rep_num)
 
-  paste0(sapply(rep_num,FUN = function(x)paste0(rep("0",times = x),collapse = "")),x)
+  paste0(sapply(rep_num,FUN = function(x) paste0(rep("0",times = x),collapse = "")),x)
 
   }
 

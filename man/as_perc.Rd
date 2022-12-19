@@ -9,7 +9,7 @@ as_perc(x, sum = FALSE)
 \arguments{
 \item{x}{numeric vector}
 
-\item{sum}{need to sum the value (Default = FALSE)}
+\item{sum}{need to sum the value (default = FALSE)}
 }
 \value{
 numeric vector

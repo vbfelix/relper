@@ -18,14 +18,14 @@
 str_to_text <- function(string, n_char = 3){
 
   if(!is.character(string) & !is.factor(string)){
-    stop("'string' must be a characther.")
+    stop("'string' must be a character.")
   }
 
   if(!is.numeric(n_char)){stop("'n_char' must be numeric.")}
 
   if(length(n_char) > 1){ stop("'n_char' must be a single value.")}
 
-  ifelse(
+  dplyr::if_else(
     nchar(string) <= n_char,
     stringr::str_to_upper(string),
     stringr::str_to_sentence(string)
