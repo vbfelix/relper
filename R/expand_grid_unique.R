@@ -30,6 +30,10 @@ expand_grid_unique <-
     if(length(z)) cbind(x[i], z, deparse.level=0)
   }
 
-  do.call(rbind, lapply(seq_along(x), g)) %>%
-    dplyr::as_tibble()
+  suppressWarnings(
+    output <- do.call(rbind, lapply(seq_along(x), g)) %>%
+      dplyr::as_tibble()
+  )
+
+  return(output)
 }
