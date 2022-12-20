@@ -801,6 +801,20 @@ The goal of **parse_text** is to extract only letters from a string.
 parse_text("1ABCF45Z89")
 ```
 
+### row_number_unique
+
+The goal of **row_number_unique** is to get the row number but considering the unique values
+of a variable.
+
+```{r}
+mtcars %>% 
+  select(vs,gear) %>% 
+  slice(1:10) %>% 
+  group_by(vs) %>% 
+  mutate(gear_position = row_number_unique(gear))
+```
+
+
 ### rpearson
 
 The goal of **rpearson** is to simulate data, where two variables will be linear correlated with a normal distribution, using pearson correlation coefficient as a parameter.

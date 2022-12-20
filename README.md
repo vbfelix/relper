@@ -70,6 +70,8 @@
       id="toc-expand_grid_unique">expand_grid_unique</a>
     - <a href="#obj_to_string" id="toc-obj_to_string">obj_to_string</a>
     - <a href="#parse_text" id="toc-parse_text">parse_text</a>
+    - <a href="#row_number_unique"
+      id="toc-row_number_unique">row_number_unique</a>
     - <a href="#rpearson" id="toc-rpearson">rpearson</a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -949,6 +951,33 @@ parse_text("1ABCF45Z89")
 #> [1] "ABCFZ"
 ```
 
+### row_number_unique
+
+The goal of **row_number_unique** is to get the row number but
+considering the unique values of a variable.
+
+``` r
+mtcars %>% 
+  select(vs,gear) %>% 
+  slice(1:10) %>% 
+  group_by(vs) %>% 
+  mutate(gear_position = row_number_unique(gear))
+#> # A tibble: 10 x 3
+#> # Groups:   vs [2]
+#>       vs  gear gear_position
+#>    <dbl> <dbl>         <int>
+#>  1     0     4             1
+#>  2     0     4             1
+#>  3     1     4             1
+#>  4     1     3             2
+#>  5     0     3             2
+#>  6     1     3             2
+#>  7     0     3             2
+#>  8     1     4             2
+#>  9     1     4             2
+#> 10     1     4             2
+```
+
 ### rpearson
 
 The goal of **rpearson** is to simulate data, where two variables will
@@ -964,4 +993,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-70-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-71-1.png" width="40%" />
