@@ -2,7 +2,7 @@
 % Please edit documentation in R/isnot_in.r
 \name{isnot_in}
 \alias{isnot_in}
-\title{Opposite of %in%}
+\title{Opposite of in}
 \usage{
 isnot_in(x, y)
 }
