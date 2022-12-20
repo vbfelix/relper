@@ -12,6 +12,7 @@
 #'
 #' library(ggplot2)
 #'
+#' #A local png file is necessary
 #' logo <- plt_water_mark(path_to_local_png)
 #'
 #' ggplot()+
