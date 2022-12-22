@@ -22,6 +22,7 @@
     - <a href="#calc_mode" id="toc-calc_mode">calc_mode</a>
     - <a href="#calc_peak_density"
       id="toc-calc_peak_density">calc_peak_density</a>
+    - <a href="#calc_rep_seq" id="toc-calc_rep_seq">calc_rep_seq</a>
   - <a href="#format-functions" id="toc-format-functions">“Format”
     functions</a>
     - <a href="#format_digit" id="toc-format_digit">format_digit</a>
@@ -396,6 +397,27 @@ calc_peak_density(x)
 
 <img src="man/figures/README-unnamed-chunk-27-1.png" width="40%" />
 
+### calc_rep_seq
+
+The goal of **calc_rep_seq** is to compute the number of sequential
+repeated values.
+
+``` r
+
+x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+
+calc_rep_seq(x)
+#>   value num_rep
+#> 1     1       3
+#> 2     2       4
+#> 3     3       1
+#> 4     4       1
+#> 5     5       1
+#> 6     6       1
+#> 7     7       1
+#> 8     1       2
+```
+
 ## “Format” functions
 
 This functions will modify an existing variable.
@@ -406,6 +428,7 @@ The goal of **format_digit** is to add zero on the left of a number, so
 that all values of a vector have the same number of characters.
 
 ``` r
+
 x <- c(1,4,10,12,100,2000)
 
 format_digit(x)
@@ -449,7 +472,7 @@ y
 #>  [8] 0.7777778 0.8888889 1.0000000
 ```
 
-<img src="man/figures/README-unnamed-chunk-32-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-33-1.png" width="40%" />
 
 You can also change the range of the new scale.
 
@@ -458,7 +481,7 @@ You can also change the range of the new scale.
 z <- format_scale(x,new_min = 25,new_max = 100)
 ```
 
-<img src="man/figures/README-unnamed-chunk-34-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-35-1.png" width="40%" />
 
 ### format_p\_value
 
@@ -620,7 +643,7 @@ The goal of **plt_flip_y\_title** is to flip the title from y axis.
 plot + flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-44-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
 
 ### plt_no_background
 
@@ -630,7 +653,7 @@ The goal of **plt_no_background** is to remove the background.
 plot + plt_no_background
 ```
 
-<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
 
 ### plt_no_labels
 
@@ -640,7 +663,7 @@ The goal of **plt_no_labels** is to remove all labels.
 plot + plt_no_labels
 ```
 
-<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
 
 ### plt_scale_auto
 
@@ -650,7 +673,7 @@ The goal of **plt_scale_auto** is to add a automatic scale.
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
 
 ``` r
 plot +
@@ -658,7 +681,7 @@ plot +
   plt_scale_auto(axis = "y",n = 3)
 ```
 
-<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
 
 ### plt_theme_map
 
@@ -668,7 +691,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -679,7 +702,7 @@ y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -690,7 +713,7 @@ axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-52-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -701,7 +724,7 @@ x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-52-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-53-1.png" width="40%" />
 
 <!-- ### plt_water_mark -->
 <!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
@@ -842,7 +865,7 @@ mtcars %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
 
-<img src="man/figures/README-unnamed-chunk-60-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
 
 ### tbl_compare_num
 
@@ -859,7 +882,7 @@ tbl_compare_num(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-62-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-63-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -993,4 +1016,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-71-1.png" width="40%" />
+<img src="man/figures/README-unnamed-chunk-72-1.png" width="40%" />

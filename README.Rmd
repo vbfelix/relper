@@ -317,6 +317,17 @@ ggplot2::ggplot(data = dplyr::tibble(x = x),
 
 ```
 
+### calc_rep_seq
+
+The goal of **calc_rep_seq** is to compute the number of sequential repeated values.
+
+```{r}
+
+x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+
+calc_rep_seq(x)
+
+```
 
 
 ## "Format" functions
@@ -327,6 +338,7 @@ This functions will modify an existing variable.
 The goal of **format_digit** is to add zero on the left of a number, so that all values of a vector have the same number of characters.
 
 ```{r}
+
 x <- c(1,4,10,12,100,2000)
 
 format_digit(x)
