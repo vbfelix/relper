@@ -640,7 +640,7 @@ plot
 The goal of **plt_flip_y\_title** is to flip the title from y axis.
 
 ``` r
-plot + flip_y_title
+plot + plt_flip_y_title
 ```
 
 <img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />

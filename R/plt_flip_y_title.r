@@ -14,8 +14,8 @@
 #'
 #' plot
 #'
-#' plot + flip_y_title
+#' plot + plt_flip_y_title
 #'
 
-flip_y_title <-
+plt_flip_y_title <-
   ggplot2::theme(axis.title.y = ggplot2::element_text(hjust = 1, angle = 360))
