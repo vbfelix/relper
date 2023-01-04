@@ -7,6 +7,8 @@
 format_p_value(p_value, p_value_min = NULL, ...)
 }
 \arguments{
+\item{p_value}{numeric vector of p value(s)}
+
 \item{p_value_min}{number of decimals digits}
 }
 \value{

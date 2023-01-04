@@ -2,7 +2,7 @@
 #'
 #' @description Format p value
 #'
-#' @param p_value
+#' @param p_value numeric vector of p value(s)
 #' @param p_value_min number of decimals digits
 #'
 #' @return formatted data
