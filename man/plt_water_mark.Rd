@@ -4,10 +4,12 @@
 \alias{plt_water_mark}
 \title{Water mark}
 \usage{
-plt_water_mark(png_file)
+plt_water_mark(png_file = NULL, png_path = NULL)
 }
 \arguments{
-\item{png_file}{png file path}
+\item{png_file}{png file, already imported in R}
+
+\item{png_path}{png path to import the png file}
 }
 \value{
 object to use in ggplot2
@@ -16,13 +18,11 @@ object to use in ggplot2
 Import png file as watermark for ggplot2
 }
 \examples{
-
-
+#'
 library(ggplot2)
 
 #A local png file is necessary
-logo <- plt_water_mark(path_to_local_png)
 
-ggplot()+
-  annotation_custom(logo)
+ggplot(mtcars)+
+  plt_water_mark(file_path = path_to_local_png)
 }
