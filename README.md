@@ -150,9 +150,11 @@ given by:
 
 $$
 \frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },
-$$ where: - $x_t$ is a time series of length $n$; - $x_{t-k}$ is a
-shifted time series by $k$ units in time; - $\bar{x}$ is the average of
-the time series.
+$$ where:
+
+- $x_t$ is a time series of length $n$;
+- $x_{t-k}$ is a shifted time series by $k$ units in time;
+- $\bar{x}$ is the average of the time series.
 
 ``` r
 x <- rnorm(100)
@@ -189,8 +191,10 @@ $$
   \right]
 }
 },
-$$ where: - $x_t$ is a time series of length $n$; - $y_t$ is a time
-series of length $n$.
+$$ where:
+
+- $x_t$ is a time series of length $n$;
+- $y_t$ is a time series of length $n$.
 
 ``` r
 y <- rexp(100)
