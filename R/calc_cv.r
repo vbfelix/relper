@@ -31,10 +31,10 @@ calc_cv <- function(x, as_perc = FALSE){
       warning("mean = 0 -> cv is NaN.")
     }
 
+    output <- sd(x, na.rm = TRUE)/mu_x
+
     if(as_perc == TRUE){
-      output <- 100*sd(x, na.rm = TRUE)/mu_x
-    } else{
-      output <- sd(x, na.rm = TRUE)/mu_x
+      output <- 100*output
     }
 
     output <- abs(round(output,2))
