@@ -2,10 +2,11 @@
 - <a href="#intro" id="toc-intro">Intro</a>
 - <a href="#installation" id="toc-installation">Installation</a>
 - <a href="#functions" id="toc-functions">Functions</a>
-  - <a href="#as-functions" id="toc-as-functions">“As” functions</a>
+  - <a href="#as_-functions" id="toc-as_-functions">“as_” functions</a>
     - <a href="#as_num" id="toc-as_num">as_num</a>
     - <a href="#as_perc" id="toc-as_perc">as_perc</a>
-  - <a href="#calc-functions" id="toc-calc-functions">“Calc” functions</a>
+  - <a href="#calc_-functions" id="toc-calc_-functions">“calc_”
+    functions</a>
     - <a href="#calc_acf" id="toc-calc_acf">calc_acf</a>
     - <a href="#calc_auc" id="toc-calc_auc">calc_auc</a>
     - <a href="#calc_corr" id="toc-calc_corr">calc_corr</a>
@@ -93,14 +94,14 @@ remotes::install_github("vbfelix/relper")
 
 # Functions
 
-## “As” functions
+## “as\_” functions
 
 This functions will transform values.
 
 ### as_num
 
 The goal of **as_num** is to be a version of `as.numeric`, where the
-input is data with marks, such as “10.000,02”.
+input is a string number with marks, such as “10.000,02”.
 
 ``` r
 as_num("123.456,78")
@@ -124,8 +125,8 @@ mtcars %>%
 #> 4  1  1  7 0.21875 21.875
 ```
 
-If you set the parameter **sum** to `TRUE` will divide the values by
-total and multiply by 100.
+If you set the parameter **sum** to `TRUE` the function will divide the
+values by their total and multiply by 100.
 
 ``` r
 mtcars %>% 
@@ -138,13 +139,20 @@ mtcars %>%
 #> 4  1  1  7 21.875
 ```
 
-## “Calc” functions
+## “calc\_” functions
 
 This functions will compute a certain value.
 
 ### calc_acf
 
-The goal of **calc_acf** is to compute the auto-correlation.
+The goal of **calc_acf** is to compute the auto-correlation function,
+given by:
+
+$$
+\frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },
+$$ where: - $x_t$ is a time series of length $n$; - $x_{t-k}$ is a
+shifted time series by $k$ units in time; - $\bar{x}$ is the average of
+the time series.
 
 ``` r
 x <- rnorm(100)
@@ -167,7 +175,22 @@ calc_acf(x)
 ```
 
 If you pass a second vector in the parameter `y` the cross-correlation
-will be computed.
+will be computed instead:
+
+$$
+\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[ \left( \sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t \right) \right]}
+{
+\sqrt{
+  \left[
+    n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2
+  \right]
+  \left[
+      n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2
+  \right]
+}
+},
+$$ where: - $x_t$ is a time series of length $n$; - $y_t$ is a time
+series of length $n$.
 
 ``` r
 y <- rexp(100)
@@ -249,7 +272,13 @@ calc_corr(x,y)
 
 ### calc_cramers_v
 
-The goal of **calc_cramers_v** is to compute Cramer’s V.
+The goal of **calc_cramers_v** is to compute Cramer’s V, given by:
+
+$$
+\sqrt{\frac{X^2}{n\min(r-1,c-1)}},
+$$ where: - $X^2$ the chi-square statistic; - $n$ is the sample size; -
+$r$ is the number of rows in the contingency table; - $c$ is the number
+of columns in the contingency table.
 
 ``` r
 m <- matrix(c(12, 5, 7, 7), ncol = 2)

@@ -45,12 +45,12 @@ remotes::install_github("vbfelix/relper")
 
 # Functions
 
-## "As" functions
+## "as_" functions
 
 This functions will transform values.
 
 ### as_num
-The goal of **as_num** is to be a version of `as.numeric`, where the input is data with marks, such as "10.000,02".
+The goal of **as_num** is to be a version of `as.numeric`, where the input is a string number with marks, such as "10.000,02".
 
 ```{r as_num}
 as_num("123.456,78")
@@ -65,7 +65,7 @@ mtcars %>%
   mutate(perc = as_perc(prop))
 ```
 
-If you set the parameter **sum** to `TRUE` will divide the values by total and multiply by 100.
+If you set the parameter **sum** to `TRUE` the function will divide the values by their total and multiply by 100.
 
 ```{r as_perc-sum}
 mtcars %>% 
@@ -73,12 +73,21 @@ mtcars %>%
   mutate(perc = as_perc(n,sum = TRUE))
 ```
 
-## "Calc" functions
+## "calc_" functions
 
 This functions will compute a certain value.
 
 ### calc_acf
-The goal of **calc_acf** is to compute the auto-correlation.
+
+The goal of **calc_acf** is to compute the auto-correlation function, given by:
+
+$$
+\frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },
+$$
+where:
+-   $x_t$ is a time series of length $n$;
+-   $x_{t-k}$ is a shifted time series by $k$ units in time;
+-   $\bar{x}$ is the average of the time series.
 
 ```{r calc_acf}
 x <- rnorm(100)
@@ -86,7 +95,25 @@ x <- rnorm(100)
 calc_acf(x)
 
 ```
-If you pass a second vector in the parameter `y` the cross-correlation will be computed.
+
+If you pass a second vector in the parameter `y` the cross-correlation will be computed instead:
+
+$$
+\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[ \left( \sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t \right) \right]}
+{
+\sqrt{
+  \left[
+    n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2
+  \right]
+  \left[
+      n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2
+  \right]
+}
+},
+$$
+where:
+-   $x_t$ is a time series of length $n$;
+-   $y_t$ is a time series of length $n$.
 
 ```{r calc_acf-ccf}
 y <- rexp(100)
@@ -94,7 +121,9 @@ y <- rexp(100)
 calc_acf(x,y)
 
 ```
+
 ### calc_auc
+
 The goal of **calc_auc** is to compute the area under a curve (AUC).
 
 ```{r calc_auc-data}
@@ -195,7 +224,17 @@ calc_corr(x,y)
 
 
 ### calc_cramers_v
-The goal of **calc_cramers_v** is to compute Cramer's V.
+
+The goal of **calc_cramers_v** is to compute Cramer's V, given by:
+
+$$
+\sqrt{\frac{X^2}{n\min(r-1,c-1)}},
+$$
+where:
+-   $X^2$ the chi-square statistic;
+-   $n$ is the sample size;
+-   $r$ is the number of rows in the contingency table;
+-   $c$ is the number of columns in the contingency table.
 
 ```{r calc_cramers_v}
 m <- matrix(c(12, 5, 7, 7), ncol = 2)
