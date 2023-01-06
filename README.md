@@ -178,8 +178,8 @@ calc_acf(x)
 If you pass a second vector in the parameter `y` the cross-correlation
 will be computed instead:
 
-$$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[ \left( \sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t \right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},
-$$ where:
+$$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[\left(\sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t\right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},$$
+where:
 
 - $x_t$ is a time series of length $n$;
 - $y_t$ is a time series of length $n$.
