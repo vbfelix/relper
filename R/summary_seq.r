@@ -18,7 +18,7 @@ summary_seq <- function(x){
 
   aux <- rle(x)
 
-  output <- data.frame(value = aux$values,num_rep = aux$lengths)
+  output <- tibble::tibble(value = aux$values,num_rep = aux$lengths)
 
   return(output)
 }
