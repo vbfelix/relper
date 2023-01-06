@@ -998,8 +998,8 @@ mtcars %>%
 
 ### tbl_two_num
 
-The goal of **tbl_two_num** is to create a summary table comparing a
-numerical variable with two groups.
+The goal of **tbl_two_num** is to create a summary table comparing on or
+more numerical variables between two groups.
 
 ``` r
 
