@@ -266,11 +266,10 @@ calc_corr(x,y)
 
 The goal of **calc_cramers_v** is to compute Cramer’s V, given by:
 
-$$
-\sqrt{\frac{X^2}{n\min(r-1,c-1)}},
-$$ where: - $X^2$ the chi-square statistic; - $n$ is the sample size; -
-$r$ is the number of rows in the contingency table; - $c$ is the number
-of columns in the contingency table.
+$$\sqrt{\frac{X^2}{n\min(r-1,c-1)}},$$ where: - $X^2$ the chi-square
+statistic; - $n$ is the sample size; - $r$ is the number of rows in the
+contingency table; - $c$ is the number of columns in the contingency
+table.
 
 ``` r
 m <- matrix(c(12, 5, 7, 7), ncol = 2)
