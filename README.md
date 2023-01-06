@@ -148,7 +148,7 @@ This functions will compute a certain value.
 The goal of **calc_acf** is to compute the auto-correlation function,
 given by:
 
-$$\frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },$$
+$$\frac{\sum_\limits{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_\limits{t = 1}^{n} (x_t - \bar{x})^2 },$$
 where:
 
 - $x_t$ is a time series of length $n$;
