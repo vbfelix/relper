@@ -51,6 +51,7 @@
     - <a href="#plt_theme_x" id="toc-plt_theme_x">plt_theme_x</a>
     - <a href="#plt_theme_xy" id="toc-plt_theme_xy">plt_theme_xy</a>
     - <a href="#plt_theme_y" id="toc-plt_theme_y">plt_theme_y</a>
+    - <a href="#plt_water_mark" id="toc-plt_water_mark">plt_water_mark</a>
   - <a href="#str-functions" id="toc-str-functions">“Str” functions</a>
     - <a href="#str_clean" id="toc-str_clean">str_clean</a>
     - <a href="#str_select" id="toc-str_select">str_select</a>
@@ -93,6 +94,8 @@ remotes::install_github("vbfelix/relper")
 # Functions
 
 ## “As” functions
+
+This functions will transform values.
 
 ### as_num
 
@@ -196,7 +199,7 @@ x <- seq(-3,3,l = 100)
 y <- dnorm(x)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="40%" />
+<img src="man/figures/README-calc_auc-base-plot-1.png" width="40%" />
 
 ``` r
 #from min to max of x
@@ -207,7 +210,7 @@ calc_auc(x,y)
 #> [1] 0.9972835
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="40%" />
+<img src="man/figures/README-calc_auc-plot-99-1.png" width="40%" />
 
 You can define the parameter `limits` to get the AUC of that limit.
 
@@ -217,7 +220,7 @@ calc_auc(x,y,limits = c(-2,2))
 #> [1] 0.9544345
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="40%" />
+<img src="man/figures/README-calc_auc-plot-95-1.png" width="40%" />
 
 ``` r
 #from -1 to 1
@@ -225,7 +228,7 @@ calc_auc(x,y,limits = c(-1,1))
 #> [1] 0.6825416
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" width="40%" />
+<img src="man/figures/README-calc_auc-plot-68-1.png" width="40%" />
 
 ### calc_corr
 
@@ -395,7 +398,7 @@ calc_peak_density(x)
 #> [1] 1.071238
 ```
 
-<img src="man/figures/README-unnamed-chunk-27-1.png" width="40%" />
+<img src="man/figures/README-calc_peak_density-plot-1.png" width="40%" />
 
 ### calc_rep_seq
 
@@ -472,7 +475,7 @@ y
 #>  [8] 0.7777778 0.8888889 1.0000000
 ```
 
-<img src="man/figures/README-unnamed-chunk-33-1.png" width="40%" />
+<img src="man/figures/README-format_scale-plot-1.png" width="40%" />
 
 You can also change the range of the new scale.
 
@@ -481,7 +484,7 @@ You can also change the range of the new scale.
 z <- format_scale(x,new_min = 25,new_max = 100)
 ```
 
-<img src="man/figures/README-unnamed-chunk-35-1.png" width="40%" />
+<img src="man/figures/README-format_scale-range-plot-1.png" width="40%" />
 
 ### format_p\_value
 
@@ -633,7 +636,7 @@ ggplot(mtcars,aes(drat,hp))+
 plot
 ```
 
-<img src="man/figures/README-example-1.png" width="40%" />
+<img src="man/figures/README-plt-base-1.png" width="40%" />
 
 ### plt_flip_y\_title
 
@@ -643,7 +646,7 @@ The goal of **plt_flip_y\_title** is to flip the title from y axis.
 plot + plt_flip_y_title
 ```
 
-<img src="man/figures/README-unnamed-chunk-45-1.png" width="40%" />
+<img src="man/figures/README-plt_flip_y_title-1.png" width="40%" />
 
 ### plt_no_background
 
@@ -653,7 +656,7 @@ The goal of **plt_no_background** is to remove the background.
 plot + plt_no_background
 ```
 
-<img src="man/figures/README-unnamed-chunk-46-1.png" width="40%" />
+<img src="man/figures/README-plt_no_background-1.png" width="40%" />
 
 ### plt_no_labels
 
@@ -663,7 +666,7 @@ The goal of **plt_no_labels** is to remove all labels.
 plot + plt_no_labels
 ```
 
-<img src="man/figures/README-unnamed-chunk-47-1.png" width="40%" />
+<img src="man/figures/README-plt_no_labels-1.png" width="40%" />
 
 ### plt_scale_auto
 
@@ -673,7 +676,7 @@ The goal of **plt_scale_auto** is to add a automatic scale.
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-<img src="man/figures/README-unnamed-chunk-48-1.png" width="40%" />
+<img src="man/figures/README-plt_scale_auto-1.png" width="40%" />
 
 ``` r
 plot +
@@ -681,7 +684,7 @@ plot +
   plt_scale_auto(axis = "y",n = 3)
 ```
 
-<img src="man/figures/README-unnamed-chunk-49-1.png" width="40%" />
+<img src="man/figures/README-plt_scale_auto-x-y-1.png" width="40%" />
 
 ### plt_theme_map
 
@@ -691,7 +694,7 @@ The goal of **plt_theme_map** is to add a theme appropriate for a map.
 plot + plt_theme_map()
 ```
 
-<img src="man/figures/README-unnamed-chunk-50-1.png" width="40%" />
+<img src="man/figures/README-plt_theme_map-1.png" width="40%" />
 
 ### plt_theme_x
 
@@ -702,7 +705,7 @@ y axis.
 plot + plt_theme_x()
 ```
 
-<img src="man/figures/README-unnamed-chunk-51-1.png" width="40%" />
+<img src="man/figures/README-plt_theme_x-1.png" width="40%" />
 
 ### plt_theme_xy
 
@@ -713,7 +716,7 @@ axis.
 plot + plt_theme_xy()
 ```
 
-<img src="man/figures/README-unnamed-chunk-52-1.png" width="40%" />
+<img src="man/figures/README-plt_theme_xy-1.png" width="40%" />
 
 ### plt_theme_y
 
@@ -724,16 +727,22 @@ x axis.
 plot + plt_theme_y()
 ```
 
-<img src="man/figures/README-unnamed-chunk-53-1.png" width="40%" />
+<img src="man/figures/README-plt_theme_y-1.png" width="40%" />
 
-<!-- ### plt_water_mark -->
-<!-- The goal of *plt_water_mark* is to add a image as a watermark. -->
-<!-- ```{r} -->
-<!-- url <- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" -->
-<!-- logo <- plt_water_mark(url, local_file = FALSE) -->
-<!-- plot + annotation_custom(logo) -->
-<!-- plot + annotation_custom(logo, xmin = 4.65, xmax = Inf, ymin = 310, ymax = Inf) -->
-<!-- ``` -->
+### plt_water_mark
+
+The goal of *plt_water_mark* is to add a image as a watermark in a
+ggplot2 object.
+
+``` r
+plot + plt_water_mark(png_file = vfx_watermark)
+```
+
+<img src="man/figures/README-plt_water_mark-1.png" width="40%" />
+
+In the function above we use a .png file already imported in the R
+environment, but it is also possible to import a local file, providing
+the argument *png_path* instead.
 
 ## “Str” functions
 
@@ -865,7 +874,7 @@ mtcars %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
 
-<img src="man/figures/README-unnamed-chunk-61-1.png" width="40%" />
+<img src="man/figures/README-tbl_chi_square-plot-1.png" width="40%" />
 
 ### tbl_compare_num
 
@@ -882,7 +891,7 @@ tbl_compare_num(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-63-1.png" width="40%" />
+<img src="man/figures/README-tbl_compare_num-plot-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -1016,4 +1025,4 @@ df %>%
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-72-1.png" width="40%" />
+<img src="man/figures/README-rpearson-1.png" width="40%" />

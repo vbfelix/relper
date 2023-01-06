@@ -36,6 +36,11 @@ plt_water_mark <-function(png_file = NULL, png_path = NULL){
 
   }
 
-  ggplot2::annotation_custom(grid::rasterGrob(image = png, interpolate = FALSE))
-
+  ggplot2::annotation_custom(
+    grob = grid::rasterGrob(image = png, interpolate = FALSE),
+    xmin = -Inf,
+    xmax = Inf,
+    ymin = -Inf,
+    ymax = Inf
+    )
 }
