@@ -148,9 +148,8 @@ This functions will compute a certain value.
 The goal of **calc_acf** is to compute the auto-correlation function,
 given by:
 
-$$
-\frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },
-$$ where:
+$$\frac{\sum_{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_{t = 1}^{n} (x_t - \bar{x})^2 },$$
+where:
 
 - $x_t$ is a time series of length $n$;
 - $x_{t-k}$ is a shifted time series by $k$ units in time;
@@ -179,18 +178,7 @@ calc_acf(x)
 If you pass a second vector in the parameter `y` the cross-correlation
 will be computed instead:
 
-$$
-\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[ \left( \sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t \right) \right]}
-{
-\sqrt{
-  \left[
-    n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2
-  \right]
-  \left[
-      n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2
-  \right]
-}
-},
+$$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[ \left( \sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t \right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},
 $$ where:
 
 - $x_t$ is a time series of length $n$;

@@ -6,30 +6,7 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE, warning = FALSE, message = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  warning = FALSE,
-  cache = TRUE,
-  message = FALSE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "40%"
-)
 
-set.seed(124)
-  
-library(relper)
-library(dplyr)
-library(lubridate)
-library(ggplot2)
-
-df_date <-
-  tibble(date = seq.Date(from = today(),
-                         to = today() + days(5),
-                         by = "1 day"))
-
-```
 
 # Intro
 
@@ -52,25 +29,39 @@ This functions will transform values.
 ### as_num
 The goal of **as_num** is to be a version of `as.numeric`, where the input is a string number with marks, such as "10.000,02".
 
-```{r as_num}
+
+```r
 as_num("123.456,78")
+#> [1] 123456.8
 ```
 ### as_perc
 The goal of **as_perc** is to compute a number as percentage. By default the function will just multiply values by 100.
 
-```{r as_perc}
+
+```r
 mtcars %>% 
   count(vs,am) %>% 
   mutate(prop = n/sum(n)) %>% 
   mutate(perc = as_perc(prop))
+#>   vs am  n    prop   perc
+#> 1  0  0 12 0.37500 37.500
+#> 2  0  1  6 0.18750 18.750
+#> 3  1  0  7 0.21875 21.875
+#> 4  1  1  7 0.21875 21.875
 ```
 
 If you set the parameter **sum** to `TRUE` the function will divide the values by their total and multiply by 100.
 
-```{r as_perc-sum}
+
+```r
 mtcars %>% 
   count(vs,am) %>% 
   mutate(perc = as_perc(n,sum = TRUE))
+#>   vs am  n   perc
+#> 1  0  0 12 37.500
+#> 2  0  1  6 18.750
+#> 3  1  0  7 21.875
+#> 4  1  1  7 21.875
 ```
 
 ## "calc_" functions
@@ -88,11 +79,25 @@ where:
  - $x_{t-k}$ is a shifted time series by $k$ units in time;
  - $\bar{x}$ is the average of the time series.
 
-```{r calc_acf}
+
+```r
 x <- rnorm(100)
 
 calc_acf(x)
-
+#> # A tibble: 21 x 2
+#>         acf   lag
+#>       <dbl> <dbl>
+#>  1  1           0
+#>  2  0.159       1
+#>  3 -0.0818      2
+#>  4 -0.163       3
+#>  5 -0.162       4
+#>  6 -0.00682     5
+#>  7 -0.0441      6
+#>  8 -0.0992      7
+#>  9  0.0595      8
+#> 10  0.117       9
+#> # ... with 11 more rows
 ```
 
 If you pass a second vector in the parameter `y` the cross-correlation will be computed instead:
@@ -104,111 +109,87 @@ where:
  - $x_t$ is a time series of length $n$;
  - $y_t$ is a time series of length $n$.
 
-```{r calc_acf-ccf}
+
+```r
 y <- rexp(100)
 
 calc_acf(x,y)
-
+#> # A tibble: 33 x 2
+#>         ccf   lag
+#>       <dbl> <dbl>
+#>  1  0.00782   -16
+#>  2  0.133     -15
+#>  3 -0.0314    -14
+#>  4 -0.122     -13
+#>  5 -0.233     -12
+#>  6 -0.103     -11
+#>  7 -0.0513    -10
+#>  8 -0.0112     -9
+#>  9  0.0629     -8
+#> 10  0.0210     -7
+#> # ... with 23 more rows
 ```
 
 ### calc_auc
 
 The goal of **calc_auc** is to compute the area under a curve (AUC).
 
-```{r calc_auc-data}
+
+```r
 x <- seq(-3,3,l = 100)
 
 y <- dnorm(x)
 ```
 
-```{r calc_auc-base-plot, echo = F}
-ggplot(tibble(x = x,
-              y = y),
-       aes(x,y))+
-  geom_point()+
-  plt_theme_y()
-```
+<img src="man/figures/README-calc_auc-base-plot-1.png" width="40%" />
 
 
-```{r calc_auc-99}
+
+```r
 #from min to max of x
 range(x)
+#> [1] -3  3
 
 calc_auc(x,y)
+#> [1] 0.9972835
 ```
 
-```{r calc_auc-plot-99, echo = F}
-df_auc <-
-  tibble(
-    x = x,
-    y = y)
-
-df_auc %>% 
-ggplot(aes(x,y))+
-  geom_area(alpha = .7, fill = "chocolate2")+
-  geom_point()+
-  plt_theme_y()+
-  annotate("text",
-           x = mean(x),y = mean(y),label = round(calc_auc(x,y),3),
-           fontface = "bold", size = 7)+
-  geom_vline(xintercept = c(-3,3), linetype = "dashed")+
-  scale_x_continuous(breaks = -5:5)+
-  scale_y_continuous(expand = c(0,0))
-```
+<img src="man/figures/README-calc_auc-plot-99-1.png" width="40%" />
 
 You can define the parameter `limits` to get the AUC of that limit.
 
-```{r calc_auc-95}
+
+```r
 #from -2 to 2
 calc_auc(x,y,limits = c(-2,2))
+#> [1] 0.9544345
 ```
 
-```{r calc_auc-plot-95, echo = F}
-df_auc %>% 
-  ggplot(aes(x,y))+
-  geom_area(data = df_auc %>% 
-              filter(between(x,-2,2)),
-              alpha = .7, fill = "chocolate2")+
-  geom_point()+
-  plt_theme_y()+
-  annotate("text",
-           x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-2,2)),3),
-           fontface = "bold", size = 7)+
-  geom_vline(xintercept = c(-2,2), linetype = "dashed")+
-  scale_x_continuous(breaks = -5:5)+
-  scale_y_continuous(expand = c(0,0))
-```
+<img src="man/figures/README-calc_auc-plot-95-1.png" width="40%" />
 
-```{r calc_auc-68}
+
+```r
 #from -1 to 1
 calc_auc(x,y,limits = c(-1,1))
+#> [1] 0.6825416
 ```
 
-```{r calc_auc-plot-68, echo = F}
-df_auc %>% 
-  ggplot(aes(x,y))+
-  geom_area(data = df_auc %>% 
-              filter(between(x,-1,1)),
-              alpha = .7, fill = "chocolate2")+
-  geom_point()+
-  plt_theme_y()+
-  annotate("text",
-           x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-1,1)),3),
-           fontface = "bold", size = 7)+
-  geom_vline(xintercept = c(-1,1), linetype = "dashed")+
-  scale_x_continuous(breaks = -5:5)+
-  scale_y_continuous(expand = c(0,0))
-```
+<img src="man/figures/README-calc_auc-plot-68-1.png" width="40%" />
 
 ### calc_corr
 The goal of **calc_corr** is to compute Pearson, Kendall and Spearman correlation coefficients.
 
-```{r calc_corr}
+
+```r
 x <- rnorm(100)
 
 y <- rnorm(100)
 
 calc_corr(x,y)
+#> # A tibble: 1 x 3
+#>   pearson kendall spearman
+#>     <dbl>   <dbl>    <dbl>
+#> 1   0.141   0.107    0.162
 ```
 
 
@@ -225,69 +206,94 @@ where:
 -   $r$ is the number of rows in the contingency table;
 -   $c$ is the number of columns in the contingency table.
 
-```{r calc_cramers_v}
+
+```r
 m <- matrix(c(12, 5, 7, 7), ncol = 2)
 
 chi_square <- chisq.test(m)
 
 calc_cramers_v(chi_square)
+#> [1] 0.1438099
 ```
 
 ### calc_cv
 The goal of **calc_cv** is to compute the coefficient of variation (CV).
 
-```{r calc_cv}
+
+```r
 x <- rnorm(100,1)
 
 calc_cv(x)
+#> [1] 0.8
 ```
 
 If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied by 100.
 
-```{r calc_cv-as-perc}
+
+```r
 x <- rnorm(100,1)
 
 calc_cv(x,as_perc = TRUE)
+#> [1] 96.59
 ```
 
 ### calc_date_aux
 
 The goal of **calc_date_aux** is to compute variables derived from date, such as year, month, day, etc.
 
-```{r calc_date_aux}
+
+```r
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
 
 df_dt <- data.frame(dt = dt)
 
 calc_date_aux(df_dt,dt) %>% glimpse()
+#> Rows: 366
+#> Columns: 10
+#> $ dt       <date> 1910-01-01, 1910-01-02, 1910-01-03, 1910-01-04, 1910-01-05, ~
+#> $ mon_abb  <ord> jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, j~
+#> $ mon_lbl  <ord> janeiro, janeiro, janeiro, janeiro, janeiro, janeiro, janeiro~
+#> $ mon_num  <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+#> $ day_num  <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18~
+#> $ year_num <dbl> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1~
+#> $ year_lbl <fct> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1~
+#> $ week_num <dbl> 52, 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3,~
+#> $ day_week <ord> sáb, dom, seg, ter, qua, qui, sex, sáb, dom, seg, ter, qua, q~
+#> $ week_day <chr> "1 [sáb]", "2 [dom]", "3 [seg]", "4 [ter]", "5 [qua]", "6 [qu~
 ```
 
 ### calc_date_diff
 
 The goal of **calc_date_diff** is to compute the difference between two dates.
 
-```{r calc_date_diff}
+
+```r
 date1 <- lubridate::dmy("01/05/1998")
 
 date2 <- lubridate::dmy("21/11/2018")
 
 calc_date_diff(date1 = date1,date2 = date2,unit = "days")
+#> [1] 7509
 ```
 
 If you need to add a constant to your difference you can use the parameter `add`.
 
-```{r calc_date_diff-add}
+
+```r
 calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
+#> [1] 7510
 ```
 
 ### calc_date_range
 
 The goal of **calc_date_range** is to compute the range of a date vector.
 
-```{r calc_date_range}
+
+```r
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
 
 calc_date_range(dt)
+#> [1] "01/01/1910 - 01/01/1911"
 ```
 
 
@@ -295,68 +301,85 @@ calc_date_range(dt)
 
 The goal of **calc_geometric_mean** is to compute the geometric mean.
 
-```{r calc_geometric_mean}
+
+```r
 calc_geometric_mean(x)
+#> [1] 1.014884
 ```
 
 ### calc_harmonic_mean
 
 The goal of **calc_harmonic_mean** is to compute the harmonic mean.
 
-```{r calc_harmonic_mean}
+
+```r
 calc_harmonic_mean(x)
+#> [1] -8.33655
 ```
 
 ### calc_mean
 
 The goal of **calc_mean** is to compute the arithmetic, geometric and harmonic mean.
 
-```{r calc_mean}
+
+```r
 calc_mean(x)
+#> # A tibble: 1 x 3
+#>   arithmetic geometric harmonic
+#>        <dbl>     <dbl>    <dbl>
+#> 1      0.979      1.01    -8.34
 ```
 
 ### calc_mode
 
 The goal of **calc_mean** is to compute the mode.
 
-```{r calc_mode-data}
+
+```r
 cat_var <- sample(letters,100,replace = TRUE)
 
 table(cat_var)
-
+#> cat_var
+#>  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
+#>  2  2  2  4  2  5  8  6  2  3  5  2  1  9  4  4  2  3  7  3 10  2  3  2  4  3
 ```
 
-```{r calc_mode}
+
+```r
 calc_mode(cat_var)
+#> [1] "u"
 ```
 
 ### calc_peak_density
 The goal of **calc_peak_density** is to compute the peak density value.
 
-```{r calc_peak_density}
+
+```r
 calc_peak_density(x)
+#> [1] 1.071238
 ```
 
-```{r calc_peak_density-plot,echo = F}
-ggplot2::ggplot(data = dplyr::tibble(x = x),
-                ggplot2::aes(x))+
-  ggplot2::geom_density()+
-  ggplot2::geom_vline(xintercept = relper::calc_peak_density(x),col = "royalblue4", size = 1)+
-  relper::plt_theme_y()+
-  ggplot2::scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(relper::calc_peak_density(x),2)))
-
-```
+<img src="man/figures/README-calc_peak_density-plot-1.png" width="40%" />
 
 ### calc_rep_seq
 
 The goal of **calc_rep_seq** is to compute the number of sequential repeated values.
 
-```{r calc_rep_seq}
+
+```r
 
 x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
 
 calc_rep_seq(x)
-
+#>   value num_rep
+#> 1     1       3
+#> 2     2       4
+#> 3     3       1
+#> 4     4       1
+#> 5     5       1
+#> 6     6       1
+#> 7     7       1
+#> 8     1       2
 ```
 
 
@@ -367,66 +390,70 @@ This functions will modify an existing variable.
 ### format_digit
 The goal of **format_digit** is to add zero on the left of a number, so that all values of a vector have the same number of characters.
 
-```{r format_digit}
+
+```r
 
 x <- c(1,4,10,12,100,2000)
 
 format_digit(x)
-
+#> [1] "01"   "04"   "10"   "12"   "100"  "2000"
 ```
 You can also set the parameter `digits` to add more zeros.
 
-```{r format_digit-digits}
+
+```r
 
 format_digit(x,digits = 4)
-
+#> [1] "0001" "0004" "0010" "0012" "0100" "2000"
 ```
 ### format_num
 
 The goal of **format_num** is to add markers to a number.
 
-```{r format_num}
+
+```r
 
 format_num(12345.67)
-
+#> [1] "12,345.67"
 ```
 
 ### format_scale
 The goal of **format_scale** is to reescale a variable.
 
-```{r format_scale}
+
+```r
 
 x <- seq(-3,3,l = 10)
 
 x
+#>  [1] -3.0000000 -2.3333333 -1.6666667 -1.0000000 -0.3333333  0.3333333
+#>  [7]  1.0000000  1.6666667  2.3333333  3.0000000
 
 y <- format_scale(x)
 
 y
+#>  [1] 0.0000000 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667
+#>  [8] 0.7777778 0.8888889 1.0000000
 ```
 
-```{r format_scale-plot, echo = F}
-plot(x,y)
-```
+<img src="man/figures/README-format_scale-plot-1.png" width="40%" />
 
 You can also change the range of the new scale.
-```{r format_scale-range}
+
+```r
 
 z <- format_scale(x,new_min = 25,new_max = 100)
-
 ```
 
-```{r format_scale-range-plot, echo = F}
-
-plot(x,z)
-
-```
+<img src="man/figures/README-format_scale-range-plot-1.png" width="40%" />
 
 ### format_p_value
 The goal of **format_p_value** is to change a p value, by considering a minimal value where if is minor than it, let's say 0.001, the p value will be changed to *<0.001*
 
-```{r format_p_value}
+
+```r
 format_p_value(c(.001,.00000001),p_value_min = 0.001)
+#> [1] "0.0010" "<0.001"
 ```
 ## "is_" functions
 
@@ -435,39 +462,49 @@ This functions will check if the value checks a condition.
 ### is_even
 The goal of **is_even** is to check if a value is even.
 
-```{r is_even}
+
+```r
 is_even(1)
+#> [1] FALSE
 
 is_even(2)
+#> [1] TRUE
 
 is_even(1.1)
+#> [1] FALSE
 
 is_even(2.2)
-
+#> [1] TRUE
 ```
 
 ### is_negative
 The goal of **is_negative** is to check if a value is negative.
 
-```{r is_negative}
+
+```r
 is_negative(1)
+#> [1] FALSE
 
 is_negative(-1)
-
+#> [1] TRUE
 ```
 
 ### is_odd
 The goal of **is_odd** is to check if a value is odd.
 
-```{r is_odd}
+
+```r
 is_odd(1)
+#> [1] TRUE
 
 is_odd(2)
+#> [1] FALSE
 
 is_odd(1.1)
+#> [1] TRUE
 
 is_odd(2.2)
-
+#> [1] FALSE
 ```
 
 ### is_outlier
@@ -482,33 +519,38 @@ where:
  - $Q_3$ is the third quartile;
  - $IQR$ is the interquartile range, e.g., $Q_3-Q_1$.
 
-```{r is_outlier}
+
+```r
 x <- c(1,2,3,5,7,8,12,100)
 
 is_outlier(x)
-
+#> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
 ```
 
 ### is_positive
 
 The goal of **is_positive** is to check if a value is positive.
 
-```{r is_positive}
+
+```r
 is_positive(1)
+#> [1] TRUE
 
 is_positive(-1)
-
+#> [1] FALSE
 ```
 
 ### is_string
 
 The goal of **is_string** is to check if a value is a string, character or factor.
 
-```{r is_string}
+
+```r
 is_string("A")
+#> [1] TRUE
 
 is_string(factor("A"))
-
+#> [1] TRUE
 ```
 
 ## "isnot_" functions
@@ -519,25 +561,31 @@ This functions will check if a variable does not pass a certain condition.
 
 The goal of **isnot_in** is to check if a variable is not contained, it is the same as `!(x %in% y)`.
 
-```{r isnot_in}
+
+```r
 isnot_in("a", letters)
+#> [1] FALSE
 ```
 
 ### isnot_na
 
 The goal of **isnot_na** is to check if a variable is not a `NA` it is the same as `!is.na(x)`.
 
-```{r isnot_na}
+
+```r
 isnot_na(2)
+#> [1] TRUE
 
 isnot_na(NA)
+#> [1] FALSE
 ```
 
 ## "Plt" functions
 
 This functions will be complementary to **ggplot2** objects.
 
-```{r plt-base}
+
+```r
 library(ggplot2)
 
 plot <- 
@@ -547,83 +595,115 @@ ggplot(mtcars,aes(drat,hp))+
 plot
 ```
 
+<img src="man/figures/README-plt-base-1.png" width="40%" />
+
 ### plt_flip_y_title
 
 The goal of **plt_flip_y_title** is to flip the title from y axis.
 
-```{r plt_flip_y_title}
+
+```r
 plot + plt_flip_y_title
 ```
+
+<img src="man/figures/README-plt_flip_y_title-1.png" width="40%" />
 
 ### plt_no_background
 
 The goal of **plt_no_background** is to remove the background.
 
-```{r plt_no_background}
+
+```r
 plot + plt_no_background
 ```
+
+<img src="man/figures/README-plt_no_background-1.png" width="40%" />
 
 ### plt_no_labels
 
 The goal of **plt_no_labels** is to remove all labels.
 
-```{r plt_no_labels}
+
+```r
 plot + plt_no_labels
 ```
+
+<img src="man/figures/README-plt_no_labels-1.png" width="40%" />
 
 ### plt_scale_auto
 
 The goal of **plt_scale_auto** is to add a automatic scale.
 
-```{r plt_scale_auto}
+
+```r
 plot + plt_scale_auto(axis = "x",n = 5)
 ```
 
-```{r plt_scale_auto-x-y}
+<img src="man/figures/README-plt_scale_auto-1.png" width="40%" />
+
+
+```r
 plot +
   plt_scale_auto(axis = "x",n = 5)+
   plt_scale_auto(axis = "y",n = 3)
 ```
 
+<img src="man/figures/README-plt_scale_auto-x-y-1.png" width="40%" />
+
 ### plt_theme_map
 
 The goal of **plt_theme_map** is to add a theme appropriate for a map.
 
-```{r plt_theme_map}
+
+```r
 plot + plt_theme_map()
 ```
+
+<img src="man/figures/README-plt_theme_map-1.png" width="40%" />
 
 ### plt_theme_x
 
 The goal of **plt_theme_x** is to remove major and minor grid lines from y axis.
 
-```{r plt_theme_x}
+
+```r
 plot + plt_theme_x()
 ```
+
+<img src="man/figures/README-plt_theme_x-1.png" width="40%" />
 
 ### plt_theme_xy
 
 The goal of **plt_theme_xy** is to remove minor grid lines from x and y axis.
 
-```{r plt_theme_xy}
+
+```r
 plot + plt_theme_xy()
 ```
+
+<img src="man/figures/README-plt_theme_xy-1.png" width="40%" />
 
 ### plt_theme_y
 
 The goal of **plt_theme_y** is to remove major and minor grid lines from x axis.
 
-```{r plt_theme_y}
+
+```r
 plot + plt_theme_y()
 ```
+
+<img src="man/figures/README-plt_theme_y-1.png" width="40%" />
 
 ### plt_water_mark
 
 The goal of *plt_water_mark* is to add a image as a watermark in a ggplot2 object.
 
-```{r plt_water_mark}
+
+```r
 plot + plt_water_mark(png_file = vfx_watermark)
 ```
+
+<img src="man/figures/README-plt_water_mark-1.png" width="40%" />
 
 In the function above we use a .png file already imported in the R environment, but it is also possible to import a local file, providing the argument *png_path* instead.
 
@@ -635,44 +715,54 @@ This functions will be serve to manipulate strings.
 
 The goal of **str_clean** is to remove punctuation and/or accent.
 
-```{r str_clean}
+
+```r
 string <- "a..;éâ...íõ"
 
 #remove only punctuation
 str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
+#> [1] "aéâíõ"
 
 #remove only accent
 str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
+#> [1] "a..;ea...io"
 
 #remove both
 str_clean(string)
+#> [1] "aeaio"
 ```
 
 ### str_select
 
 The goal of **str_select** is to select part of a string, before, after or between patterns.
 
-```{r str_select}
+
+```r
 string <- "example text STRING1 TARGET STRING2 example text"
 
 #Select a string, before a pattern
 str_select(string,before = "STRING2")
+#> [1] "example text STRING1 TARGET "
 
 #Select a string, after a pattern
 str_select(string,after = "STRING1")
+#> [1] " TARGET STRING2 example text"
 
 #Select a string, between two patterns
 str_select(string,"STRING1","STRING2")
+#> [1] "TARGET"
 ```
 
 ### str_to_text
 
 The goal of **str_to_text** is to apply uppercase to strings with a number of characters lower than parameter `n_char` (default = 3).
 
-```{r str_to_text}
+
+```r
 string <- c("aaaaa","bb","ccc","dddd")
 
 str_to_text(string)
+#> [1] "Aaaaa" "BB"    "CCC"   "Dddd"
 ```
 
 ## "Summary" functions
@@ -683,28 +773,57 @@ This functions will summarize data and return metrics related to them.
 
 The goal of **summary_cat** is to summarize categorical variables.
 
-```{r summary_cat}
+
+```r
 x <- c(sample(letters,100,replace = TRUE),NA)
 
 summary_cat(x)
+#> # A tibble: 1 x 5
+#>       n    na blank_space n_distinct mode 
+#>   <int> <int>       <int>      <int> <chr>
+#> 1   101     1           0         25 y
 ```
 
 ### summary_data
 
 The goal of **summary_data** is to summarize all variables from data.
 
-```{r summary_data}
+
+```r
 summary_data(mtcars)
+#> [1] "11 numeric variables."
+#> # A tibble: 11 x 14
+#>    var       n    na negative equal_zero positive   min    p25    p50    p75
+#>    <chr> <int> <int>    <int>      <int>    <int> <dbl>  <dbl>  <dbl>  <dbl>
+#>  1 am       32     0        0         19       13  0      0      0      1   
+#>  2 carb     32     0        0          0       32  1      2      2      4   
+#>  3 cyl      32     0        0          0       32  4      4      6      8   
+#>  4 disp     32     0        0          0       32 71.1  121.   196.   326   
+#>  5 drat     32     0        0          0       32  2.76   3.08   3.70   3.92
+#>  6 gear     32     0        0          0       32  3      3      4      4   
+#>  7 hp       32     0        0          0       32 52     96.5  123    180   
+#>  8 mpg      32     0        0          0       32 10.4   15.4   19.2   22.8 
+#>  9 qsec     32     0        0          0       32 14.5   16.9   17.7   18.9 
+#> 10 vs       32     0        0         18       14  0      0      0      1   
+#> 11 wt       32     0        0          0       32  1.51   2.58   3.32   3.61
+#> # ... with 4 more variables: max <dbl>, mode <dbl>, mean <dbl>, cv <dbl>
+#> [1] "0 categoric variables."
 ```
 
 ### summary_num
 
 The goal of **summary_num** is to summarize numeric variables.
 
-```{r summary_num}
+
+```r
 x <- c(rnorm(10),NA,10)
 
 summary_num(x)
+#> # A tibble: 1 x 13
+#>       n    na negative equal_zero positive   min    p25   p50   p75   max  mode
+#>   <int> <int>    <int>      <int>    <int> <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1    12     1        4          0        7 -1.81 -0.442 0.601 0.728    10 0.621
+#> # ... with 2 more variables: mean <dbl>, cv <dbl>
 ```
 
 
@@ -716,31 +835,23 @@ This functions will serve to show data in table format.
 
 The goal of **tbl_chi_square** is to create a frequency table with chi-square statistic, p-value and Cramer's V.
 
-```{r tbl_chi_square,eval = FALSE}
+
+```r
 mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
   tbl_chi_square(grp_var = vs,vars = c(am,cyl))
 ```
 
 
-```{r tbl_chi_square-plot, echo = FALSE}
-
-png_tbl_chi_square <- 
-  mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
-
-gt::gtsave(png_tbl_chi_square, "tbl_chi_square.png",
-           vwidth = 1500, vheight = 1000)
-
-```
+<img src="man/figures/README-tbl_chi_square-plot-1.png" width="40%" />
 
 
 ### tbl_compare_num
 
 The goal of **tbl_compare_num** is to create a summary table comparing a numerical variable with two groups.
 
-```{r tbl_compare_num,eval = FALSE}
+
+```r
 
 tbl_compare_num(
   df = df,
@@ -751,43 +862,30 @@ tbl_compare_num(
 
 ```
 
-```{r tbl_compare_num-plot, echo = FALSE}
-set.seed(123);df <-
-  data.frame(
-    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-    num_var1 = rnorm(100),
-    num_var2 = rpois(100,2),
-    num_var3 = rexp(100,2),
-   num_var4 = abs(rnorm(100))
-  )
-
-table <- 
-tbl_compare_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
-)
-
-gt::gtsave(table, "tbl_compare_num.png", vwidth = 1500, vheight = 1000)
-
-```
+<img src="man/figures/README-tbl_compare_num-plot-1.png" width="40%" />
 
 ### tbl_format_num
 
 The goal of **tbl_format_num** is to apply **format_num** to all numeric variables in a data.frame.
 
-```{r tbl_format_num}
+
+```r
 mtcars %>%
    count(vs,am) %>%
    tbl_format_num(digits = 5)
+#>        vs      am        n
+#> 1 0.00000 0.00000 12.00000
+#> 2 0.00000 1.00000  6.00000
+#> 3 1.00000 0.00000  7.00000
+#> 4 1.00000 1.00000  7.00000
 ```
 
 ### tbl_print
 
 The goal of **tbl_print** is to print a data.frame as a plot.
 
-```{r tbl_print}
+
+```r
 df <- data.frame(grp = c("a","b","c"),
                  freq = c(2,4,6))
 
@@ -800,43 +898,62 @@ tbl_print(df,bold_last = TRUE,header_col = "red")
 
 The goal of **cut_by_quantile** is to cut a numeric variable by a set of quantiles.
 
-```{r cut_by_quantile}
+
+```r
 x <- rnorm(100)
 
 table(cut_by_quantile(x,q = seq(0,1,by = .25)))
+#> 
+#> [-2.66,-0.423] (-0.423,0.139]  (0.139,0.762]    (0.762,2.4] 
+#>             25             25             25             25
 ```
 
 ### expand_grid_unique
 
 The goal of **expand_grid_unique** is to create a grid of all combination from two variables, with no repetition.
 
-```{r expand_grid_unique}
+
+```r
 expand_grid_unique(x = 1:3,y = 1:2)
+#> # A tibble: 1 x 2
+#>      V1    V2
+#>   <int> <int>
+#> 1     1     2
 ```
 
 You can also set the parameter `include_equals` to `TRUE` so equal pairs are kept.
 
-```{r}
+
+```r
 expand_grid_unique(x = 1:3,y = 1:2, include_equals = TRUE)
+#> # A tibble: 3 x 2
+#>      V1    V2
+#>   <int> <int>
+#> 1     1     1
+#> 2     1     2
+#> 3     2     2
 ```
 
 ### obj_to_string
 
 The goal of **obj_to_string** is to return the name of an R object as a string.
 
-```{r obj_to_string}
+
+```r
 x <- c(1,2,3,5,7,8,12,100)
 
 obj_to_string(x)
-
+#> [1] "x"
 ```
 
 ### parse_text
 
 The goal of **parse_text** is to extract only letters from a string.
 
-```{r parse_text}
+
+```r
 parse_text("1ABCF45Z89")
+#> [1] "ABCFZ"
 ```
 
 ### row_number_unique
@@ -844,19 +961,35 @@ parse_text("1ABCF45Z89")
 The goal of **row_number_unique** is to get the row number but considering the unique values
 of a variable.
 
-```{r row_number_unique}
+
+```r
 mtcars %>% 
   select(vs,gear) %>% 
   slice(1:10) %>% 
   group_by(vs) %>% 
   mutate(gear_position = row_number_unique(gear))
+#> # A tibble: 10 x 3
+#> # Groups:   vs [2]
+#>       vs  gear gear_position
+#>    <dbl> <dbl>         <int>
+#>  1     0     4             1
+#>  2     0     4             1
+#>  3     1     4             1
+#>  4     1     3             2
+#>  5     0     3             2
+#>  6     1     3             2
+#>  7     0     3             2
+#>  8     1     4             2
+#>  9     1     4             2
+#> 10     1     4             2
 ```
 
 ### rpearson
 
 The goal of **rpearson** is to simulate data, where two variables will be linear correlated with a normal distribution, using pearson correlation coefficient as a parameter.
 
-```{r rpearson}
+
+```r
 df <- rpearson(n = 100, p_sim = .8, mean = 3)
 
 df %>% 
@@ -864,6 +997,8 @@ df %>%
   geom_point()+
   geom_smooth(method = "lm", se = FALSE)
 ```
+
+<img src="man/figures/README-rpearson-1.png" width="40%" />
 
 
 
