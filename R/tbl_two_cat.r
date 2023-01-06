@@ -1,4 +1,4 @@
-#' Format data.frame
+#' Summary table for comparative analysis between two categorical variables
 #'
 #' @description Create a frequency table with chi-square statistic, p-value, cramer's v.
 #'
@@ -17,10 +17,10 @@
 #'
 # mtcars %>%
 #  mutate(vs = paste0("vs = ",vs)) %>%
-#  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
+#  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
 
 
-tbl_chi_square <-
+tbl_two_cat <-
   function(
     df,
     grp_var,

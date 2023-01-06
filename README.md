@@ -23,7 +23,6 @@
     - <a href="#calc_mode" id="toc-calc_mode">calc_mode</a>
     - <a href="#calc_peak_density"
       id="toc-calc_peak_density">calc_peak_density</a>
-    - <a href="#calc_rep_seq" id="toc-calc_rep_seq">calc_rep_seq</a>
   - <a href="#format_-functions" id="toc-format_-functions">“format_”
     functions</a>
     - <a href="#format_digit" id="toc-format_digit">format_digit</a>
@@ -62,11 +61,12 @@
     - <a href="#summary_cat" id="toc-summary_cat">summary_cat</a>
     - <a href="#summary_data" id="toc-summary_data">summary_data</a>
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
+    - <a href="#summary_seq" id="toc-summary_seq">summary_seq</a>
   - <a href="#tbl_-functions" id="toc-tbl_-functions">“tbl_” functions</a>
-    - <a href="#tbl_chi_square" id="toc-tbl_chi_square">tbl_chi_square</a>
-    - <a href="#tbl_compare_num" id="toc-tbl_compare_num">tbl_compare_num</a>
     - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
     - <a href="#tbl_print" id="toc-tbl_print">tbl_print</a>
+    - <a href="#tbl_two_cat" id="toc-tbl_two_cat">tbl_two_cat</a>
+    - <a href="#tbl_two_num" id="toc-tbl_two_num">tbl_two_num</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
     - <a href="#cut_by_quantile" id="toc-cut_by_quantile">cut_by_quantile</a>
     - <a href="#expand_grid_unique"
@@ -467,27 +467,6 @@ calc_peak_density(x)
 
 <img src="man/figures/README-calc_peak_density-plot-1.png" width="40%" />
 
-### calc_rep_seq
-
-The goal of **calc_rep_seq** is to compute the number of sequential
-repeated values.
-
-``` r
-
-y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
-
-calc_rep_seq(y)
-#>   value num_rep
-#> 1     1       3
-#> 2     2       4
-#> 3     3       1
-#> 4     4       1
-#> 5     5       1
-#> 6     6       1
-#> 7     7       1
-#> 8     1       2
-```
-
 ## “format\_” functions
 
 This functions will modify an existing variable.
@@ -543,7 +522,7 @@ The goal of **format_scale** is to reescale a variable, given by:
 $$y_i = (y_{\max} - y_{\min}) * \left[\frac{x_i - \min(x_i)}{\max(x)-\min(x)} \right] + y_{\min},$$
 where:
 
-- $y_i$ is reescaled numeric value;
+- $y_i$ is the reescaled numeric vector;
 - $y_{\max}$ is the new maximum value, after the reescale;
 - $y_{\min}$ is the new minimum value, after the reescale;
 - $x_i$ is the original numeric vector;
@@ -952,39 +931,30 @@ summary_num(x)
 #> # ... with 2 more variables: mean <dbl>, cv <dbl>
 ```
 
+### summary_seq
+
+The goal of **summary_seq** is to compute the number of sequential
+repeated values.
+
+``` r
+
+y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+
+summary_seq(y)
+#>   value num_rep
+#> 1     1       3
+#> 2     2       4
+#> 3     3       1
+#> 4     4       1
+#> 5     5       1
+#> 6     6       1
+#> 7     7       1
+#> 8     1       2
+```
+
 ## “tbl\_” functions
 
 This functions will serve to show data in table format.
-
-### tbl_chi_square
-
-The goal of **tbl_chi_square** is to create a frequency table with
-chi-square statistic, p-value and Cramer’s V.
-
-``` r
-mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
-```
-
-<img src="man/figures/README-tbl_chi_square-plot-1.png" width="40%" />
-
-### tbl_compare_num
-
-The goal of **tbl_compare_num** is to create a summary table comparing a
-numerical variable with two groups.
-
-``` r
-
-tbl_compare_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
-)
-```
-
-<img src="man/figures/README-tbl_compare_num-plot-1.png" width="40%" />
 
 ### tbl_format_num
 
@@ -1012,6 +982,36 @@ df <- data.frame(grp = c("a","b","c"),
 
 tbl_print(df,bold_last = TRUE,header_col = "red")
 ```
+
+### tbl_two_cat
+
+The goal of **tbl_two_cat** is to create a frequency table with
+chi-square statistic, p-value and Cramer’s V.
+
+``` r
+mtcars %>%
+  mutate(vs = paste0("vs = ",vs)) %>%
+  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+```
+
+<img src="man/figures/README-tbl_two_cat-plot-1.png" width="40%" />
+
+### tbl_two_num
+
+The goal of **tbl_two_num** is to create a summary table comparing a
+numerical variable with two groups.
+
+``` r
+
+tbl_two_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("auto")
+)
+```
+
+<img src="man/figures/README-tbl_two_num-plot-1.png" width="40%" />
 
 ## Other functions
 

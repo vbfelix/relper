@@ -388,19 +388,6 @@ ggplot2::ggplot(data = dplyr::tibble(x = x),
 
 ```
 
-### calc_rep_seq
-
-The goal of **calc_rep_seq** is to compute the number of sequential repeated values.
-
-```{r calc_rep_seq}
-
-y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
-
-calc_rep_seq(y)
-
-```
-
-
 ## "format_" functions
 
 This functions will modify an existing variable.
@@ -448,7 +435,7 @@ The goal of **format_scale** is to reescale a variable, given by:
 $$y_i = (y_{\max} - y_{\min}) * \left[\frac{x_i - \min(x_i)}{\max(x)-\min(x)} \right] + y_{\min},$$
 where:
 
-  - $y_i$ is reescaled numeric value;
+  - $y_i$ is the reescaled numeric vector;
   - $y_{\max}$ is the new maximum value, after the reescale;
   - $y_{\min}$ is the new minimum value, after the reescale;
   - $x_i$ is the original numeric vector;
@@ -776,71 +763,21 @@ x <- c(rnorm(10),NA,10)
 summary_num(x)
 ```
 
+### summary_seq
+
+The goal of **summary_seq** is to compute the number of sequential repeated values.
+
+```{r summary_seq}
+
+y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+
+summary_seq(y)
+
+```
 
 ## "tbl_" functions
 
 This functions will serve to show data in table format.
-
-### tbl_chi_square
-
-The goal of **tbl_chi_square** is to create a frequency table with chi-square statistic, p-value and Cramer's V.
-
-```{r tbl_chi_square,eval = FALSE}
-mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
-```
-
-
-```{r tbl_chi_square-plot, echo = FALSE}
-
-png_tbl_chi_square <- 
-  mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_chi_square(grp_var = vs,vars = c(am,cyl))
-
-gt::gtsave(png_tbl_chi_square, "tbl_chi_square.png",
-           vwidth = 1500, vheight = 1000)
-
-```
-
-
-### tbl_compare_num
-
-The goal of **tbl_compare_num** is to create a summary table comparing a numerical variable with two groups.
-
-```{r tbl_compare_num,eval = FALSE}
-
-tbl_compare_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
-)
-
-```
-
-```{r tbl_compare_num-plot, echo = FALSE}
-set.seed(123);df <-
-  data.frame(
-    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-    num_var1 = rnorm(100),
-    num_var2 = rpois(100,2),
-    num_var3 = rexp(100,2),
-   num_var4 = abs(rnorm(100))
-  )
-
-table <- 
-tbl_compare_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
-)
-
-gt::gtsave(table, "tbl_compare_num.png", vwidth = 1500, vheight = 1000)
-
-```
 
 ### tbl_format_num
 
@@ -862,6 +799,70 @@ df <- data.frame(grp = c("a","b","c"),
 
 tbl_print(df,bold_last = TRUE,header_col = "red")
 ```
+
+
+### tbl_two_cat
+
+The goal of **tbl_two_cat** is to create a frequency table with chi-square statistic, p-value and Cramer's V.
+
+```{r tbl_two_cat,eval = FALSE}
+mtcars %>%
+  mutate(vs = paste0("vs = ",vs)) %>%
+  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+```
+
+
+```{r tbl_two_cat-plot, echo = FALSE}
+
+png_tbl_two_cat <- 
+  mtcars %>%
+  mutate(vs = paste0("vs = ",vs)) %>%
+  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+
+gt::gtsave(png_tbl_two_cat, "png_tbl_two_cat.png",
+           vwidth = 1500, vheight = 1000)
+
+```
+
+### tbl_two_num
+
+The goal of **tbl_two_num** is to create a summary table comparing a numerical variable with two groups.
+
+```{r tbl_two_num,eval = FALSE}
+
+tbl_two_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("auto")
+)
+
+```
+
+```{r tbl_two_num-plot, echo = FALSE}
+set.seed(123);df <-
+  data.frame(
+    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
+    num_var1 = rnorm(100),
+    num_var2 = rpois(100,2),
+    num_var3 = rexp(100,2),
+   num_var4 = abs(rnorm(100))
+  )
+
+table <- 
+tbl_two_num(
+  df = df,
+  grp_var = grp_var,
+  num_vars = c(num_var1,num_var2,num_var3),
+  method = c("auto")
+)
+
+gt::gtsave(table, "tbl_two_num.png", vwidth = 1500, vheight = 1000)
+
+```
+
+
+
 
 ## Other functions
 
@@ -933,46 +934,4 @@ df %>%
   geom_point()+
   geom_smooth(method = "lm", se = FALSE)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

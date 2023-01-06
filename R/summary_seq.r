@@ -11,10 +11,10 @@
 #'
 #' x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
 #'
-#' calc_rep_seq(x)
+#' summary_seq(x)
 #'
 
-calc_rep_seq <- function(x){
+summary_seq <- function(x){
 
   aux <- rle(x)
 
