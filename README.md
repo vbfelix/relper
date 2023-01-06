@@ -538,7 +538,20 @@ format_num(12345.67,br_mark = TRUE)
 
 ### format_scale
 
-The goal of **format_scale** is to reescale a variable.
+The goal of **format_scale** is to reescale a variable, given by:
+
+$$y_i = (y_{\max} - y_{\min}) * \left[\frac{x_i - \min(x_i)}{\max(x)-\min(x)} \right] + y_{\min},$$
+where:
+
+- $y_i$ is reescaled numeric value;
+- $y_{\max}$ is the new maximum value, after the reescale;
+- $y_{\min}$ is the new minimum value, after the reescale;
+- $x_i$ is the original numeric vector;
+- $\min(x_i)$ is the original minimum value of $x_i$;
+- $\max(x_i)$ is the original maximum value of $x_i$.
+
+By default the vector will be reescaled to have 0 and 1 as their new
+minimum and maximum values.
 
 ``` r
 
@@ -631,8 +644,8 @@ is_odd(2.2)
 
 ### is_outlier
 
-The goal of **is_outlier** is to check if a value is an outlier, by the
-boxplot outlier criteria, given by:
+The goal of **is_outlier** is to check if a value is an outlier, by
+using the boxplot outlier criteria, given by:
 
 $$ [x < (Q_1 - 1.5 * IQR)] \quad  |  \quad [x > (Q_3 - 1.5 * IQR)],$$
 
@@ -875,9 +888,9 @@ The goal of **str_to_text** is to apply uppercase to strings with a
 number of characters lower than parameter `n_char` (default = 3).
 
 ``` r
-string <- c("aaaaa","bb","ccc","dddd")
+abcde_string <- c("aaaaa","bb","ccc","dddd")
 
-str_to_text(string)
+str_to_text(abcde_string)
 #> [1] "Aaaaa" "BB"    "CCC"   "Dddd"
 ```
 
