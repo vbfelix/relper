@@ -29,8 +29,10 @@ calc_date_aux <- function(df,dt_var){
       day_num = lubridate::day({{dt_var}}),
       year_num = lubridate::year({{dt_var}}),
       year_lbl = as.factor(year_num),
-      week_num = lubridate::isoweek({{dt_var}}),
-      day_week = lubridate::wday({{dt_var}},label = TRUE),
-      week_day = paste0(day_num," [",day_week,"]")
+      week_num = lubridate::week({{dt_var}}),
+      epiweek_num = lubridate::epiweek({{dt_var}}),
+      isoweek_num = lubridate::isoweek({{dt_var}}),
+      wday_abb = lubridate::wday({{dt_var}},label = TRUE,abbr = TRUE),
+      wday_lbl = lubridate::wday({{dt_var}},label = TRUE,abbr = FALSE)
     )
 }
