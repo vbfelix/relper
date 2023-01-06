@@ -232,10 +232,16 @@ calc_cramers_v(chi_square)
 ```
 
 ### calc_cv
-The goal of **calc_cv** is to compute the coefficient of variation (CV).
+The goal of **calc_cv** is to compute the coefficient of variation (CV), given by:
 
+$$\frac{s}{\bar{x}},$$
+where:
+
+ - $s$ is the sample standard deviation;
+ - $\bar{x}$ is the sample mean.
+ 
 ```{r calc_cv}
-x <- rnorm(100,1)
+set.seed(123);x <- rnorm(100,1)
 
 calc_cv(x)
 ```
@@ -243,8 +249,6 @@ calc_cv(x)
 If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied by 100.
 
 ```{r calc_cv-as-perc}
-x <- rnorm(100,1)
-
 calc_cv(x,as_perc = TRUE)
 ```
 
@@ -260,6 +264,20 @@ df_dt <- data.frame(dt = dt)
 calc_date_aux(df_dt,dt) %>% glimpse()
 ```
 
+The new variables respective to the date are:
+
+ - **mon_abb:** a factor with the abbreviated name of the month;
+ - **mon_lbl:** a factor with the complete name of the month;
+ - **mon_num:** the number of the month;
+ - **day_num:** the number of the day within the month;
+ - **year_num:** the number of the year;
+ - **year_lbl:** a factor with the number of the year;
+ - **week_num:** the number of complete seven day periods that have occurred between the date and January 1st, plus one;
+ - **epiweek_num:** the US CDC version of epidemiological week. Starts on Sunday;
+ - **isoweek_num:**  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
+ - **wday_abb:** a factor with the week day abbreviated name;
+ - **wday_lbl:** a factor with the week day complete name.
+ 
 ### calc_date_diff
 
 The goal of **calc_date_diff** is to compute the difference between two dates.
@@ -272,6 +290,8 @@ date2 <- lubridate::dmy("21/11/2018")
 calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 ```
 
+So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509 days.
+
 If you need to add a constant to your difference you can use the parameter `add`.
 
 ```{r calc_date_diff-add}
@@ -280,7 +300,7 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
 
 ### calc_date_range
 
-The goal of **calc_date_range** is to compute the range of a date vector.
+The goal of **calc_date_range** is to compute the range of a date vector, and create a string with the minimal and maximum date.
 
 ```{r calc_date_range}
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
@@ -291,7 +311,12 @@ calc_date_range(dt)
 
 ### calc_geometric_mean
 
-The goal of **calc_geometric_mean** is to compute the geometric mean.
+The goal of **calc_geometric_mean** is to compute the geometric mean, given by:
+
+$$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
+where:
+
+ - $x_i$ is a numeric vector of length $n$.
 
 ```{r calc_geometric_mean}
 calc_geometric_mean(x)
@@ -299,7 +324,12 @@ calc_geometric_mean(x)
 
 ### calc_harmonic_mean
 
-The goal of **calc_harmonic_mean** is to compute the harmonic mean.
+The goal of **calc_harmonic_mean** is to compute the harmonic mean, given by:
+
+$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$
+where:
+
+ - $x_i$ is a numeric vector of length $n$.
 
 ```{r calc_harmonic_mean}
 calc_harmonic_mean(x)
@@ -315,21 +345,34 @@ calc_mean(x)
 
 ### calc_mode
 
-The goal of **calc_mean** is to compute the mode.
+The goal of **calc_mode** is to compute the mode.
 
 ```{r calc_mode-data}
-cat_var <- sample(letters,100,replace = TRUE)
+set.seed(123);cat_var <- sample(letters,100,replace = TRUE)
 
 table(cat_var)
 
 ```
+We can see that the letter "*y*" is the one that appears the most, so it is the mode of the variable.
 
 ```{r calc_mode}
 calc_mode(cat_var)
 ```
 
 ### calc_peak_density
-The goal of **calc_peak_density** is to compute the peak density value.
+The goal of **calc_peak_density** is to compute the peak density value of a numeric value.
+
+```{r calc_peak_density-base-plot,echo = F}
+
+ggplot2::ggplot(data = dplyr::tibble(x = x),
+                ggplot2::aes(x))+
+  ggplot2::geom_density()+
+  relper::plt_theme_y()+
+  ggplot2::scale_x_continuous(breaks = 0:20)
+
+```
+
+Let's say we eant to discover what value is the peak in the density above.
 
 ```{r calc_peak_density}
 calc_peak_density(x)
@@ -351,19 +394,19 @@ The goal of **calc_rep_seq** is to compute the number of sequential repeated val
 
 ```{r calc_rep_seq}
 
-x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
 
-calc_rep_seq(x)
+calc_rep_seq(y)
 
 ```
 
 
-## "Format" functions
+## "format_" functions
 
 This functions will modify an existing variable.
 
 ### format_digit
-The goal of **format_digit** is to add zero on the left of a number, so that all values of a vector have the same number of characters.
+The goal of **format_digit** is to add zero(s) on the left of a number.
 
 ```{r format_digit}
 
@@ -384,10 +427,20 @@ format_digit(x,digits = 4)
 The goal of **format_num** is to add markers to a number.
 
 ```{r format_num}
-
 format_num(12345.67)
-
 ```
+
+You can also change the markers for other characters of your choice.
+
+```{r format_num-markers}
+format_num(12345.67,decimal_mark = "*",thousand_mark = "#")
+```
+Also, if you are Brazilian like me, I made a argument to make our lives easier.
+
+```{r format_num-br}
+format_num(12345.67,br_mark = TRUE)
+```
+
 
 ### format_scale
 The goal of **format_scale** is to reescale a variable.
@@ -531,7 +584,7 @@ isnot_na(2)
 isnot_na(NA)
 ```
 
-## "Plt" functions
+## "plt_" functions
 
 This functions will be complementary to **ggplot2** objects.
 
@@ -625,7 +678,7 @@ plot + plt_water_mark(png_file = vfx_watermark)
 
 In the function above we use a .png file already imported in the R environment, but it is also possible to import a local file, providing the argument *png_path* instead.
 
-## "Str" functions
+## "str_" functions
 
 This functions will be serve to manipulate strings.
 
@@ -673,7 +726,7 @@ string <- c("aaaaa","bb","ccc","dddd")
 str_to_text(string)
 ```
 
-## "Summary" functions
+## "summary_" functions
 
 This functions will summarize data and return metrics related to them.
 
@@ -706,7 +759,7 @@ summary_num(x)
 ```
 
 
-## "Tbl" functions
+## "tbl_" functions
 
 This functions will serve to show data in table format.
 

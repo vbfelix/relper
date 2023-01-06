@@ -24,7 +24,7 @@
     - <a href="#calc_peak_density"
       id="toc-calc_peak_density">calc_peak_density</a>
     - <a href="#calc_rep_seq" id="toc-calc_rep_seq">calc_rep_seq</a>
-  - <a href="#format-functions" id="toc-format-functions">“Format”
+  - <a href="#format_-functions" id="toc-format_-functions">“format_”
     functions</a>
     - <a href="#format_digit" id="toc-format_digit">format_digit</a>
     - <a href="#format_num" id="toc-format_num">format_num</a>
@@ -41,7 +41,7 @@
     functions</a>
     - <a href="#isnot_in" id="toc-isnot_in">isnot_in</a>
     - <a href="#isnot_na" id="toc-isnot_na">isnot_na</a>
-  - <a href="#plt-functions" id="toc-plt-functions">“Plt” functions</a>
+  - <a href="#plt_-functions" id="toc-plt_-functions">“plt_” functions</a>
     - <a href="#plt_flip_y_title"
       id="toc-plt_flip_y_title">plt_flip_y_title</a>
     - <a href="#plt_no_background"
@@ -53,16 +53,16 @@
     - <a href="#plt_theme_xy" id="toc-plt_theme_xy">plt_theme_xy</a>
     - <a href="#plt_theme_y" id="toc-plt_theme_y">plt_theme_y</a>
     - <a href="#plt_water_mark" id="toc-plt_water_mark">plt_water_mark</a>
-  - <a href="#str-functions" id="toc-str-functions">“Str” functions</a>
+  - <a href="#str_-functions" id="toc-str_-functions">“str_” functions</a>
     - <a href="#str_clean" id="toc-str_clean">str_clean</a>
     - <a href="#str_select" id="toc-str_select">str_select</a>
     - <a href="#str_to_text" id="toc-str_to_text">str_to_text</a>
-  - <a href="#summary-functions" id="toc-summary-functions">“Summary”
+  - <a href="#summary_-functions" id="toc-summary_-functions">“summary_”
     functions</a>
     - <a href="#summary_cat" id="toc-summary_cat">summary_cat</a>
     - <a href="#summary_data" id="toc-summary_data">summary_data</a>
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
-  - <a href="#tbl-functions" id="toc-tbl-functions">“Tbl” functions</a>
+  - <a href="#tbl_-functions" id="toc-tbl_-functions">“tbl_” functions</a>
     - <a href="#tbl_chi_square" id="toc-tbl_chi_square">tbl_chi_square</a>
     - <a href="#tbl_compare_num" id="toc-tbl_compare_num">tbl_compare_num</a>
     - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
@@ -284,23 +284,27 @@ calc_cramers_v(chi_square)
 
 ### calc_cv
 
-The goal of **calc_cv** is to compute the coefficient of variation (CV).
+The goal of **calc_cv** is to compute the coefficient of variation (CV),
+given by:
+
+$$\frac{s}{\bar{x}},$$ where:
+
+- $s$ is the sample standard deviation;
+- $\bar{x}$ is the sample mean.
 
 ``` r
-x <- rnorm(100,1)
+set.seed(123);x <- rnorm(100,1)
 
 calc_cv(x)
-#> [1] 0.8
+#> [1] 0.84
 ```
 
 If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied
 by 100.
 
 ``` r
-x <- rnorm(100,1)
-
 calc_cv(x,as_perc = TRUE)
-#> [1] 96.59
+#> [1] 83.71
 ```
 
 ### calc_date_aux
@@ -315,18 +319,37 @@ df_dt <- data.frame(dt = dt)
 
 calc_date_aux(df_dt,dt) %>% glimpse()
 #> Rows: 366
-#> Columns: 10
-#> $ dt       <date> 1910-01-01, 1910-01-02, 1910-01-03, 1910-01-04, 1910-01-05, ~
-#> $ mon_abb  <ord> jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, j~
-#> $ mon_lbl  <ord> janeiro, janeiro, janeiro, janeiro, janeiro, janeiro, janeiro~
-#> $ mon_num  <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
-#> $ day_num  <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18~
-#> $ year_num <dbl> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1~
-#> $ year_lbl <fct> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1~
-#> $ week_num <dbl> 52, 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3,~
-#> $ day_week <ord> sáb, dom, seg, ter, qua, qui, sex, sáb, dom, seg, ter, qua, q~
-#> $ week_day <chr> "1 [sáb]", "2 [dom]", "3 [seg]", "4 [ter]", "5 [qua]", "6 [qu~
+#> Columns: 12
+#> $ dt          <date> 1910-01-01, 1910-01-02, 1910-01-03, 1910-01-04, 1910-01-0~
+#> $ mon_abb     <ord> jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan, jan~
+#> $ mon_lbl     <ord> janeiro, janeiro, janeiro, janeiro, janeiro, janeiro, jane~
+#> $ mon_num     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+#> $ day_num     <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+#> $ year_num    <dbl> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910~
+#> $ year_lbl    <fct> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910~
+#> $ week_num    <dbl> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3~
+#> $ epiweek_num <dbl> 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, ~
+#> $ isoweek_num <dbl> 52, 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3,~
+#> $ wday_abb    <ord> sáb, dom, seg, ter, qua, qui, sex, sáb, dom, seg, ter, qua~
+#> $ wday_lbl    <ord> sábado, domingo, segunda-feira, terça-feira, quarta-feira,~
 ```
+
+The new variables respective to the date are:
+
+- **mon_abb:** a factor with the abbreviated name of the month;
+- **mon_lbl:** a factor with the complete name of the month;
+- **mon_num:** the number of the month;
+- **day_num:** the number of the day within the month;
+- **year_num:** the number of the year;
+- **year_lbl:** a factor with the number of the year;
+- **week_num:** the number of complete seven day periods that have
+  occurred between the date and January 1st, plus one;
+- **epiweek_num:** the US CDC version of epidemiological week. Starts on
+  Sunday;
+- **isoweek_num:** the week as it would appear in the ISO 8601 system,
+  which uses a reoccurring leap week. Starts on Monday;
+- **wday_abb:** a factor with the week day abbreviated name;
+- **wday_lbl:** a factor with the week day complete name.
 
 ### calc_date_diff
 
@@ -342,6 +365,8 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 #> [1] 7509
 ```
 
+So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509 days.
+
 If you need to add a constant to your difference you can use the
 parameter `add`.
 
@@ -353,7 +378,7 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
 ### calc_date_range
 
 The goal of **calc_date_range** is to compute the range of a date
-vector.
+vector, and create a string with the minimal and maximum date.
 
 ``` r
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
@@ -364,20 +389,31 @@ calc_date_range(dt)
 
 ### calc_geometric_mean
 
-The goal of **calc_geometric_mean** is to compute the geometric mean.
+The goal of **calc_geometric_mean** is to compute the geometric mean,
+given by:
+
+$$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
+where:
+
+- $x_i$ is a numeric vector of length $n$.
 
 ``` r
 calc_geometric_mean(x)
-#> [1] 1.014884
+#> [1] 1.106355
 ```
 
 ### calc_harmonic_mean
 
-The goal of **calc_harmonic_mean** is to compute the harmonic mean.
+The goal of **calc_harmonic_mean** is to compute the harmonic mean,
+given by:
+
+$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$ where:
+
+- $x_i$ is a numeric vector of length $n$.
 
 ``` r
 calc_harmonic_mean(x)
-#> [1] -8.33655
+#> [1] -1.048597
 ```
 
 ### calc_mean
@@ -390,34 +426,43 @@ calc_mean(x)
 #> # A tibble: 1 x 3
 #>   arithmetic geometric harmonic
 #>        <dbl>     <dbl>    <dbl>
-#> 1      0.979      1.01    -8.34
+#> 1       1.09      1.11    -1.05
 ```
 
 ### calc_mode
 
-The goal of **calc_mean** is to compute the mode.
+The goal of **calc_mode** is to compute the mode.
 
 ``` r
-cat_var <- sample(letters,100,replace = TRUE)
+set.seed(123);cat_var <- sample(letters,100,replace = TRUE)
 
 table(cat_var)
 #> cat_var
-#>  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
-#>  2  2  2  4  2  5  8  6  2  3  5  2  1  9  4  4  2  3  7  3 10  2  3  2  4  3
+#>  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  y  z 
+#>  1  2  5  2  4  3  6  4  5  4  3  3  3  6  4  3  3  3  4  3  4  8  3 10  4
 ```
+
+We can see that the letter “*y*” is the one that appears the most, so it
+is the mode of the variable.
 
 ``` r
 calc_mode(cat_var)
-#> [1] "u"
+#> [1] "y"
 ```
 
 ### calc_peak_density
 
-The goal of **calc_peak_density** is to compute the peak density value.
+The goal of **calc_peak_density** is to compute the peak density value
+of a numeric value.
+
+<img src="man/figures/README-calc_peak_density-base-plot-1.png" width="40%" />
+
+Let’s say we eant to discover what value is the peak in the density
+above.
 
 ``` r
 calc_peak_density(x)
-#> [1] 1.071238
+#> [1] 0.8076021
 ```
 
 <img src="man/figures/README-calc_peak_density-plot-1.png" width="40%" />
@@ -429,9 +474,9 @@ repeated values.
 
 ``` r
 
-x <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
 
-calc_rep_seq(x)
+calc_rep_seq(y)
 #>   value num_rep
 #> 1     1       3
 #> 2     2       4
@@ -443,14 +488,13 @@ calc_rep_seq(x)
 #> 8     1       2
 ```
 
-## “Format” functions
+## “format\_” functions
 
 This functions will modify an existing variable.
 
 ### format_digit
 
-The goal of **format_digit** is to add zero on the left of a number, so
-that all values of a vector have the same number of characters.
+The goal of **format_digit** is to add zero(s) on the left of a number.
 
 ``` r
 
@@ -473,9 +517,23 @@ format_digit(x,digits = 4)
 The goal of **format_num** is to add markers to a number.
 
 ``` r
-
 format_num(12345.67)
 #> [1] "12,345.67"
+```
+
+You can also change the markers for other characters of your choice.
+
+``` r
+format_num(12345.67,decimal_mark = "*",thousand_mark = "#")
+#> [1] "12#345*67"
+```
+
+Also, if you are Brazilian like me, I made a argument to make our lives
+easier.
+
+``` r
+format_num(12345.67,br_mark = TRUE)
+#> [1] "12.345,67"
 ```
 
 ### format_scale
@@ -644,7 +702,7 @@ isnot_na(NA)
 #> [1] FALSE
 ```
 
-## “Plt” functions
+## “plt\_” functions
 
 This functions will be complementary to **ggplot2** objects.
 
@@ -766,7 +824,7 @@ In the function above we use a .png file already imported in the R
 environment, but it is also possible to import a local file, providing
 the argument *png_path* instead.
 
-## “Str” functions
+## “str\_” functions
 
 This functions will be serve to manipulate strings.
 
@@ -823,7 +881,7 @@ str_to_text(string)
 #> [1] "Aaaaa" "BB"    "CCC"   "Dddd"
 ```
 
-## “Summary” functions
+## “summary\_” functions
 
 This functions will summarize data and return metrics related to them.
 
@@ -838,7 +896,7 @@ summary_cat(x)
 #> # A tibble: 1 x 5
 #>       n    na blank_space n_distinct mode 
 #>   <int> <int>       <int>      <int> <chr>
-#> 1   101     1           0         25 y
+#> 1   101     1           0         26 n
 ```
 
 ### summary_data
@@ -875,13 +933,13 @@ x <- c(rnorm(10),NA,10)
 
 summary_num(x)
 #> # A tibble: 1 x 13
-#>       n    na negative equal_zero positive   min    p25   p50   p75   max  mode
-#>   <int> <int>    <int>      <int>    <int> <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1    12     1        4          0        7 -1.81 -0.442 0.601 0.728    10 0.621
+#>       n    na negative equal_zero positive    min    p25   p50   p75   max  mode
+#>   <int> <int>    <int>      <int>    <int>  <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1    12     1        3          0        8 -0.766 0.0490 0.603  1.15    10 0.742
 #> # ... with 2 more variables: mean <dbl>, cv <dbl>
 ```
 
-## “Tbl” functions
+## “tbl\_” functions
 
 This functions will serve to show data in table format.
 
