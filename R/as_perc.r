@@ -17,9 +17,9 @@
 
 as_perc <- function(x, sum = FALSE){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
-  if(!is.logical(sum)){stop("'sum' must be logical.")}
+  stop_function(arg = sum,type = "logical")
 
   if(sum == FALSE){
     output <- 100*x
