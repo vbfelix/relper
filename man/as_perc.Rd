@@ -12,7 +12,7 @@ as_perc(x, sum = FALSE)
 \item{sum}{A boolean value, if TRUE the function will add the values (default = FALSE)}
 }
 \value{
-numeric vector
+Numeric vector
 }
 \description{
 Transform numeric to percentage

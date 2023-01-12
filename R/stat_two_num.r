@@ -21,11 +21,11 @@
 #'   num_var4 = abs(rnorm(100))
 #'  )
 #'
-#'tbl_two_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
+#'stat_two_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
 
 
 
-tbl_two_num <-
+stat_two_num <-
   function(
     df,
     grp_var,

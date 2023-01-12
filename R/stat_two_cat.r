@@ -17,10 +17,10 @@
 #'
 # mtcars %>%
 #  mutate(vs = paste0("vs = ",vs)) %>%
-#  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+#  stat_two_cat(grp_var = vs,vars = c(am,cyl))
 
 
-tbl_two_cat <-
+stat_two_cat <-
   function(
     df,
     grp_var,

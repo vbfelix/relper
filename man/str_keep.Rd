@@ -12,7 +12,7 @@ str_keep(string, keep = "text")
 \item{keep}{A character single value (default = 'text'), that will be the type of character to keep}
 }
 \value{
-character vector
+Character vector
 }
 \description{
 Keep only a type of character in the string

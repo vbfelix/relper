@@ -829,43 +829,43 @@ summary_seq(y)
 
 ```
 
-## "tbl_" functions
+## "stat_" functions
 
 This functions apply statistical tests and show the results in an table.
 
-### tbl_two_cat
+### stat_two_cat
 
-The goal of `tbl_two_cat` is to create a frequency table with chi-square statistic, p-value and Cramer's V.
+The goal of `stat_two_cat` is to create a frequency table with chi-square statistic, p-value and Cramer's V.
 
-```{r tbl_two_cat,eval = FALSE}
+```{r stat_two_cat,eval = FALSE}
 mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+  stat_two_cat(grp_var = vs,vars = c(am,cyl))
 ```
 
 
-```{r tbl_two_cat-plot, echo = FALSE}
+```{r stat_two_cat-plot, echo = FALSE}
 
-png_tbl_two_cat <- 
+temp_table <- 
   mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+  stat_two_cat(grp_var = vs,vars = c(am,cyl))
 
 gt::gtsave(
-  png_tbl_two_cat,
-  "tbl_two_cat.png",
+  temp_table,
+  "stat_two_cat.png",
   vwidth = 1500,
   vheight = 1000)
 
 ```
 
-### tbl_two_num
+### stat_two_num
 
-The goal of `tbl_two_num` is to create a summary table comparing one or more numerical variables between two groups.
+The goal of `stat_two_num` is to create a summary table comparing one or more numerical variables between two groups.
 
-```{r tbl_two_num,eval = FALSE}
+```{r stat_two_num,eval = FALSE}
 
-tbl_two_num(
+stat_two_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
@@ -874,7 +874,7 @@ tbl_two_num(
 
 ```
 
-```{r tbl_two_num-plot, echo = FALSE}
+```{r stat_two_num-plot, echo = FALSE}
 set.seed(123);df <-
   data.frame(
     grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
@@ -885,14 +885,14 @@ set.seed(123);df <-
   )
 
 table <- 
-tbl_two_num(
+stat_two_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
   method = c("auto")
 )
 
-gt::gtsave(table, "tbl_two_num.png", vwidth = 1500, vheight = 1000)
+gt::gtsave(table, "stat_two_num.png", vwidth = 1500, vheight = 1000)
 
 ```
 

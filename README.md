@@ -68,9 +68,10 @@
     - <a href="#summary_data" id="toc-summary_data">summary_data</a>
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
     - <a href="#summary_seq" id="toc-summary_seq">summary_seq</a>
-  - <a href="#tbl_-functions" id="toc-tbl_-functions">“tbl_” functions</a>
-    - <a href="#tbl_two_cat" id="toc-tbl_two_cat">tbl_two_cat</a>
-    - <a href="#tbl_two_num" id="toc-tbl_two_num">tbl_two_num</a>
+  - <a href="#stat_-functions" id="toc-stat_-functions">“stat_”
+    functions</a>
+    - <a href="#stat_two_cat" id="toc-stat_two_cat">stat_two_cat</a>
+    - <a href="#stat_two_num" id="toc-stat_two_num">stat_two_num</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
     - <a href="#cut_by_quantile" id="toc-cut_by_quantile">cut_by_quantile</a>
     - <a href="#expand_grid_unique"
@@ -1025,31 +1026,31 @@ summary_seq(y)
 #> 8     1       2
 ```
 
-## “tbl\_” functions
+## “stat\_” functions
 
 This functions apply statistical tests and show the results in an table.
 
-### tbl_two_cat
+### stat_two_cat
 
-The goal of `tbl_two_cat` is to create a frequency table with chi-square
-statistic, p-value and Cramer’s V.
+The goal of `stat_two_cat` is to create a frequency table with
+chi-square statistic, p-value and Cramer’s V.
 
 ``` r
 mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
-  tbl_two_cat(grp_var = vs,vars = c(am,cyl))
+  stat_two_cat(grp_var = vs,vars = c(am,cyl))
 ```
 
-<img src="man/figures/README-tbl_two_cat-plot-1.png" width="40%" />
+<img src="man/figures/README-stat_two_cat-plot-1.png" width="40%" />
 
-### tbl_two_num
+### stat_two_num
 
-The goal of `tbl_two_num` is to create a summary table comparing one or
+The goal of `stat_two_num` is to create a summary table comparing one or
 more numerical variables between two groups.
 
 ``` r
 
-tbl_two_num(
+stat_two_num(
   df = df,
   grp_var = grp_var,
   num_vars = c(num_var1,num_var2,num_var3),
@@ -1057,7 +1058,7 @@ tbl_two_num(
 )
 ```
 
-<img src="man/figures/README-tbl_two_num-plot-1.png" width="40%" />
+<img src="man/figures/README-stat_two_num-plot-1.png" width="40%" />
 
 ## Other functions
 
