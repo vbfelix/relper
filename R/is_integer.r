@@ -1,4 +1,4 @@
-#' Check if a value is a integer, but not by their type
+#' Conditional check for an integer value, but not by their variable type
 #'
 #' @description return TRUE if the number is a integer, not considering their type but the number itself
 #'

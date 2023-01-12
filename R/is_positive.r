@@ -1,6 +1,6 @@
-#' Positive number
+#' Conditional check for a positive value
 #'
-#' @description return TRUE if the number is positive
+#' @description return TRUE if the value is positive
 #'
 #' @eval arg_vector("x","numeric")
 #'

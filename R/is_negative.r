@@ -1,6 +1,6 @@
-#' Negative number
+#' Conditional check for n negative value
 #'
-#' @description return TRUE if the number is negative
+#' @description return TRUE if the value is negative
 #'
 #' @eval arg_vector("x","numeric")
 #'

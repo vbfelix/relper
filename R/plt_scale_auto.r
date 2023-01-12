@@ -65,7 +65,7 @@ plt_scale_auto <-
         )
     }
 
-    if(axis %in% c("xy","both") ){
+    if(axis %in% c("xy","both")){
       output <-
         list(
           ggplot2::scale_y_continuous(

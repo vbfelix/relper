@@ -1,4 +1,4 @@
-#' Datetime variable
+#' Conditional check for datetime variable
 #'
 #' @description return TRUE if the vector is a datetime
 #'

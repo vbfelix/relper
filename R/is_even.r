@@ -1,6 +1,6 @@
-#' Even number
+#' Conditional check for an even value
 #'
-#' @description return TRUE if the number is even
+#' @description return TRUE if the value is even
 #'
 #' @eval arg_vector("x","numeric")
 #'

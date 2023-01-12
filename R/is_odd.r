@@ -1,6 +1,6 @@
-#' Odd number
+#' Conditional check for an odd value
 #'
-#' @description return TRUE if the number is odd
+#' @description return TRUE if the value is odd
 #'
 #' @eval arg_vector("x","numeric")
 #'

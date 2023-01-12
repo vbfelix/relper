@@ -1,4 +1,4 @@
-#' Outlier
+#' Conditional check for an outlier value
 #'
 #' @description return TRUE if the value is an outlier (boxplot criteria)
 #'
