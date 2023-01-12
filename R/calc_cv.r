@@ -1,11 +1,11 @@
-#' Coefficient of variation (CV)
+#' Coefficient of variation computation
 #'
-#' @description Coefficient of variation
+#' @description Computation of the coefficient of variation (CV)
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_boolean("as_perc","multiply the CV by 100")
 #'
-#' @return Coefficient of variation
+#' @return Numeric single value
 #' @export
 #'
 #' @examples

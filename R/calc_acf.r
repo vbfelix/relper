@@ -1,11 +1,11 @@
-#' Auto-correlation function (ACF)
+#' Auto-correlation computation
 #'
-#' @description Computes data of ACF ou CCF
+#' @description Computation of the auto-correlation function (ACF) or cross-correlation function (CCF)
 #'
 #' @eval arg_vector("x","numeric")
-#' @eval arg_vector("y","numeric")
+#' @eval arg_vector("y","numeric",default = "NULL",action = "will be the value to compute the CCF")
 #'
-#' @return tibble
+#' @return Tibble
 #' @export
 #'
 #' @examples

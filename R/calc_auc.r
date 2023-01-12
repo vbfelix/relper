@@ -1,12 +1,13 @@
-#' Area under the curve (AUC)
+#' Area under the curve computation
 #'
-#' @description Calculates AUC
+#' @description Computation of the area under the curve (AUC), by linear interpolation
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("y","numeric")
+#'
 #' @param limits numeric range for integration (default = 'x' range)
 #'
-#' @return calc_auc
+#' @return Numeric value
 #' @export
 #'
 #' @examples

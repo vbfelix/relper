@@ -1,10 +1,10 @@
-#' calc_cramers_v
+#' Cramer's V computation
 #'
-#' @description Computes Cramer's V
+#' @description Computation of the Cramer's V from a chi-square test
 #'
 #' @param chi_square object from the application of the function chisq.test
 #'
-#' @return numeric vector
+#' @return Numeric value
 #' @export
 #'
 #' @examples

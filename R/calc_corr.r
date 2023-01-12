@@ -1,12 +1,11 @@
-#' Numeric correlation
+#' Correlation computation
 #'
-#' @description Compute pearson, kendall and spearman correlation coefficient
+#' @description Computation of the Pearson, Kendall and Spearman correlations coefficients
 #'
-#' @param x numeric vector
-#' @param y numeric vector
-#'
-#'
-#' @return Numeric vector
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("y","numeric")
+#'#'
+#' @return Tibble
 #' @export
 #'
 #' @examples
