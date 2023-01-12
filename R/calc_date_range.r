@@ -15,7 +15,7 @@
 
 calc_date_range <- function(x){
 
-  if(sum(class(x) %in% c("POSIXct","POSIXt" )) > 0 ){
+  if(relper::is_datetime(x)){
     x <- lubridate::as_date(x)
   }
 
