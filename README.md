@@ -1126,7 +1126,13 @@ be linear correlated with a normal distribution, using pearson
 correlation coefficient as a parameter.
 
 ``` r
-df <- rpearson(n = 100, p_sim = .8, mean = 3)
+set.seed(123);df <- rpearson(n = 100, pearson = .8, mean = 3)
+#> 100 observations of x and y were simulated with: 
+#>  - Mean = 3 
+#>  - SD = 1 
+#>  - Linear correlation coefficient = 0.8 
+#>  - Simulation tolerance =  0.1 
+#>  - Real linear correlation coefficient = 0.7709791
 
 df %>% 
   ggplot(aes(x,y))+

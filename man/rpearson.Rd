@@ -4,14 +4,18 @@
 \alias{rpearson}
 \title{Linear correlated data generator}
 \usage{
-rpearson(n = 25, p_sim = 0.5, tol = 0.1, ...)
+rpearson(n = 25, pearson = 0.5, tol = 0.1, mean = 0, sd = 1)
 }
 \arguments{
-\item{n}{number of observations}
+\item{n}{Number of observations to simulate}
 
-\item{p_sim}{pearson linear correlation coefficient}
+\item{pearson}{Pearson linear correlation coefficient}
 
-\item{tol}{tolerance between the simulated and estimated correlation}
+\item{tol}{Tolerance between the simulated and estimated correlation}
+
+\item{mean}{Mean of the simulated data}
+
+\item{sd}{Standard deviation of the simulated data}
 }
 \value{
 data.frame with 2 numeric correlated series and both the simulated and estimated pearson linear coefficient
@@ -21,7 +25,7 @@ Simulates linear correlated data
 }
 \examples{
 
-df <- rpearson(n = 100, p_sim = .8, mean = 3)
+df <- rpearson(n = 100, pearson = .8, mean = 3)
 
 head(df)
 
