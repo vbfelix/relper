@@ -1045,24 +1045,29 @@ The goal of **expand_grid_unique** is to create a grid of all
 combination from two variables, with no repetition.
 
 ``` r
-expand_grid_unique(x = 1:3,y = 1:2)
-#> # A tibble: 1 x 2
+expand_grid_unique(x = 1:3,y = 1:3)
+#> # A tibble: 3 x 2
 #>      V1    V2
 #>   <int> <int>
 #> 1     1     2
+#> 2     1     3
+#> 3     2     3
 ```
 
 You can also set the parameter `include_equals` to `TRUE` so equal pairs
 are kept.
 
 ``` r
-expand_grid_unique(x = 1:3,y = 1:2, include_equals = TRUE)
-#> # A tibble: 3 x 2
+expand_grid_unique(x = 1:3,y = 1:3, include_equals = TRUE)
+#> # A tibble: 6 x 2
 #>      V1    V2
 #>   <int> <int>
 #> 1     1     1
 #> 2     1     2
-#> 3     2     2
+#> 3     1     3
+#> 4     2     2
+#> 5     2     3
+#> 6     3     3
 ```
 
 ### obj_to_string
