@@ -1,10 +1,10 @@
 #' String value
 #'
-#' @description return TRUE if the variable is a string
+#' @description return TRUE if the variable is a string (character or factor)
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return boolean
+#' @return Boolean vector
 #' @export
 #'
 #' @examples

@@ -4,21 +4,21 @@
 \alias{format_p_value}
 \title{Format p value}
 \usage{
-format_p_value(p_value, p_value_min = NULL, ...)
+format_p_value(p_value, lower_bound = NULL, ...)
 }
 \arguments{
 \item{p_value}{A numeric vector}
 
-\item{p_value_min}{A numeric single value (default = NULL), that will be the lower bound}
+\item{lower_bound}{A numeric single value (default = NULL), that will be the lower bound}
 }
 \value{
-formatted data
+Characther vector
 }
 \description{
 Format p value
 }
 \examples{
 
-format_p_value(c(.001,.00000001),p_value_min = 0.001)
+format_p_value(c(.001,.00000001),lower_bound = 0.001)
 
 }

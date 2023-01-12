@@ -12,7 +12,7 @@ isnot_in(x, y)
 \item{y}{A  vector}
 }
 \value{
-boolean
+Boolean vector
 }
 \description{
 Check if  x is not contained in y

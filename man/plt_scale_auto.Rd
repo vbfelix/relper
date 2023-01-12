@@ -6,7 +6,7 @@
 \usage{
 plt_scale_auto(
   axis = "x",
-  n_ticks = 10,
+  n_breaks = 10,
   expand = 0.01,
   thousand_mark = ".",
   decimal_mark = ","
@@ -15,7 +15,7 @@ plt_scale_auto(
 \arguments{
 \item{axis}{A character single value (default = 'x'), that will be the axis to scale, must be x, y or xy}
 
-\item{n_ticks}{A numeric integer single value (default = 10), that will be the number of axis breaks}
+\item{n_breaks}{A numeric integer single value (default = 10), that will be the number of axis breaks}
 
 \item{expand}{A numeric single value (default = 0.01), that will be the expanded margin to the axis}
 
@@ -37,8 +37,8 @@ ggplot(mtcars,aes(hp,drat))+
 geom_point()
 
 plot+
- plt_scale_auto("x",n_ticks = 10)+
- plt_scale_auto("y",n_ticks = 10)
+ plt_scale_auto("x",n_breaks = 10)+
+ plt_scale_auto("y",n_breaks = 10)
 
 
 }

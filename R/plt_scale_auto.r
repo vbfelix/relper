@@ -3,7 +3,7 @@
 #' @description Provide automatic scaling to ggplot2
 #'
 #' @eval arg_value("axis","character",default = "'x'","will be the axis to scale, must be x, y or xy")
-#' @eval arg_number_of("n_ticks",default = "10",number_of = "axis breaks")
+#' @eval arg_number_of("n_breaks",default = "10",number_of = "axis breaks")
 #' @eval arg_value("expand","numeric",default = "0.01","will be the expanded margin to the axis")
 #' @eval arg_mark("decimal")
 #' @eval arg_mark("thousand")
@@ -19,15 +19,15 @@
 #' geom_point()
 #'
 #'plot+
-#'  plt_scale_auto("x",n_ticks = 10)+
-#'  plt_scale_auto("y",n_ticks = 10)
+#'  plt_scale_auto("x",n_breaks = 10)+
+#'  plt_scale_auto("y",n_breaks = 10)
 #'
 #'
 
 plt_scale_auto <-
   function(
     axis = "x",
-    n_ticks = 10,
+    n_breaks = 10,
     expand = .01,
     thousand_mark = ".",
     decimal_mark = ","
@@ -35,7 +35,7 @@ plt_scale_auto <-
 
     stop_function(arg = axis,type = "character",single_value = TRUE)
 
-    stop_function(arg = n_ticks,type = "integer",single_value = TRUE,bigger_than = 2)
+    stop_function(arg = n_breaks,type = "integer",single_value = TRUE,bigger_than = 2)
 
     stop_function(arg = expand,type = "numeric",single_value = TRUE,bigger_than = 0)
 
@@ -51,7 +51,7 @@ plt_scale_auto <-
       output <-
         ggplot2::scale_x_continuous(
           expand = c(expand,0),
-          breaks = scales::breaks_extended(n_ticks),
+          breaks = scales::breaks_extended(n_breaks),
           labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
         )
     }
@@ -60,7 +60,7 @@ plt_scale_auto <-
       output <-
         ggplot2::scale_y_continuous(
           expand = c(expand,0),
-          breaks = scales::breaks_extended(n_ticks),
+          breaks = scales::breaks_extended(n_breaks),
           labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
         )
     }
@@ -70,12 +70,12 @@ plt_scale_auto <-
         list(
           ggplot2::scale_y_continuous(
             expand = c(expand,0),
-            breaks = scales::breaks_extended(n_ticks),
+            breaks = scales::breaks_extended(n_breaks),
             labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
           ),
           ggplot2::scale_x_continuous(
             expand = c(expand,0),
-            breaks = scales::breaks_extended(n_ticks),
+            breaks = scales::breaks_extended(n_breaks),
             labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
           )
         )
@@ -92,8 +92,8 @@ plt_scale_auto <-
 # geom_point()
 #
 # plot+
-#  plt_scale_auto("xy",n_ticks = 3,expand = 0)
+#  plt_scale_auto("xy",n_breaks = 3,expand = 0)
 #
 # plot+
-#  plt_scale_auto("x",n_ticks = 10)+
-#  plt_scale_auto("y",n_ticks = 10)
+#  plt_scale_auto("x",n_breaks = 10)+
+#  plt_scale_auto("y",n_breaks = 10)

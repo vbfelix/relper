@@ -10,7 +10,7 @@ is_outlier(x)
 \item{x}{A numeric vector}
 }
 \value{
-Numeric vector
+Boolean vector
 }
 \description{
 return TRUE if the value is an outlier (boxplot criteria)

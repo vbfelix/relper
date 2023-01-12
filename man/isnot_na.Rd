@@ -10,7 +10,7 @@ isnot_na(x)
 \item{x}{A  vector}
 }
 \value{
-boolean
+Boolean vector
 }
 \description{
 Check if the value is not a NA

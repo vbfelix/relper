@@ -10,7 +10,7 @@ is_integer(x)
 \item{x}{A numeric vector}
 }
 \value{
-Numeric vector
+Boolean vector
 }
 \description{
 return TRUE if the number is a integer, not considering their type but the number itself

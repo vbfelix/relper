@@ -5,7 +5,7 @@
 #' @eval arg_value("x","")
 #' @eval arg_vector("y","")
 #'
-#' @return boolean
+#' @return Boolean vector
 #' @export
 #'
 #' @examples

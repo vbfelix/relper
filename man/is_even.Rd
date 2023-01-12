@@ -10,7 +10,7 @@ is_even(x)
 \item{x}{A numeric vector}
 }
 \value{
-Numeric vector
+Boolean vector
 }
 \description{
 return TRUE if the number is even

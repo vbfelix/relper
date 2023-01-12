@@ -10,10 +10,10 @@ is_string(x)
 \item{x}{A  vector}
 }
 \value{
-boolean
+Boolean vector
 }
 \description{
-return TRUE if the variable is a string
+return TRUE if the variable is a string (character or factor)
 }
 \examples{
 

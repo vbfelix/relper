@@ -4,7 +4,7 @@
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Numeric vector
+#' @return Boolean vector
 #' @export
 #'
 #' @examples

@@ -6,7 +6,7 @@ test_that("results", {
   )
 
   expect_equal(
-    object = format_p_value(1,p_value_min = 5),
+    object = format_p_value(1,5),
     expected = "<5"
   )
 

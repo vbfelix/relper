@@ -564,11 +564,11 @@ z <- format_scale(x,new_min = 25,new_max = 100)
 ### format_p\_value
 
 The goal of `format_p_value` is to change a p value, by considering a
-minimal value where if is minor than it, let’s say 0.001, the p value
-will be changed to *\<0.001*
+lower bound value where if is the valor is smaller than it, let’s say
+0.001, the p value will be changed to *\<0.001*
 
 ``` r
-format_p_value(c(.001,.00000001),p_value_min = 0.001)
+format_p_value(c(.001,.00000001),lower_bound = 0.001)
 #> [1] "0.0010" "<0.001"
 ```
 
@@ -797,15 +797,15 @@ plot + plt_no_labels
 The goal of `plt_scale_auto` is to add a automatic scale.
 
 ``` r
-plot + plt_scale_auto(axis = "x",n = 5)
+plot + plt_scale_auto(axis = "x",n_breaks = 5)
 ```
 
 <img src="man/figures/README-plt_scale_auto-1.png" width="40%" />
 
 ``` r
 plot +
-  plt_scale_auto(axis = "x",n = 5)+
-  plt_scale_auto(axis = "y",n = 3)
+  plt_scale_auto(axis = "x",n_breaks = 5)+
+  plt_scale_auto(axis = "y",n_breaks = 3)
 ```
 
 <img src="man/figures/README-plt_scale_auto-x-y-1.png" width="40%" />

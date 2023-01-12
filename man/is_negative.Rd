@@ -10,7 +10,7 @@ is_negative(x)
 \item{x}{A numeric vector}
 }
 \value{
-Numeric vector
+Boolean vector
 }
 \description{
 return TRUE if the number is negative
