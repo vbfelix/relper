@@ -100,8 +100,8 @@ This functions convert values to another type.
 
 ### as_num
 
-The goal of **as_num** is to be a version of `as.numeric`, where the
-input is a string number with marks, such as “10.000,02”.
+The goal of `as_num` is to be a version of `as.numeric`, where the input
+is a string number with marks, such as “10.000,02”.
 
 ``` r
 as_num("123.456,78")
@@ -110,7 +110,7 @@ as_num("123.456,78")
 
 ### as_perc
 
-The goal of **as_perc** is to compute a number as percentage. By default
+The goal of `as_perc` is to compute a number as percentage. By default
 the function will just multiply values by 100.
 
 ``` r
@@ -125,7 +125,7 @@ mtcars %>%
 #> 4  1  1  7 0.21875 21.875
 ```
 
-If you set the parameter **sum** to `TRUE` the function will divide the
+If you set the argument `sum` to `TRUE` the function will divide the
 values by their total and multiply by 100.
 
 ``` r
@@ -145,7 +145,7 @@ This functions compute a certain value.
 
 ### calc_acf
 
-The goal of **calc_acf** is to compute the auto-correlation function,
+The goal of `calc_acf` is to compute the auto-correlation function,
 given by:
 
 $$\frac{\sum_\limits{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_\limits{t = 1}^{n} (x_t - \bar{x})^2 },$$
@@ -175,7 +175,7 @@ calc_acf(x)
 #> # ... with 11 more rows
 ```
 
-If you pass a second vector in the parameter `y` the cross-correlation
+If you pass a second vector in the argument `y` the cross-correlation
 will be computed instead:
 
 $$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[\left(\sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t\right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},$$
@@ -206,7 +206,7 @@ calc_acf(x,y)
 
 ### calc_auc
 
-The goal of **calc_auc** is to compute the area under a curve (AUC).
+The goal of `calc_auc` is to compute the area under a curve (AUC).
 
 ``` r
 x <- seq(-3,3,l = 100)
@@ -227,7 +227,7 @@ calc_auc(x,y)
 
 <img src="man/figures/README-calc_auc-plot-99-1.png" width="40%" />
 
-You can define the parameter `limits` to get the AUC of that limit.
+You can define the argument `limits` to get the AUC of that limit.
 
 ``` r
 #from -2 to 2
@@ -247,7 +247,7 @@ calc_auc(x,y,limits = c(-1,1))
 
 ### calc_corr
 
-The goal of **calc_corr** is to compute Pearson, Kendall and Spearman
+The goal of `calc_corr` is to compute Pearson, Kendall and Spearman
 correlation coefficients.
 
 ``` r
@@ -264,7 +264,7 @@ calc_corr(x,y)
 
 ### calc_cramers_v
 
-The goal of **calc_cramers_v** is to compute Cramer’s V, given by:
+The goal of `calc_cramers_v` is to compute Cramer’s V, given by:
 
 $$\sqrt{\frac{X^2}{n\min(r-1,c-1)}},$$ where:
 
@@ -284,7 +284,7 @@ calc_cramers_v(chi_square)
 
 ### calc_cv
 
-The goal of **calc_cv** is to compute the coefficient of variation (CV),
+The goal of `calc_cv` is to compute the coefficient of variation (CV),
 given by:
 
 $$\frac{s}{\bar{x}},$$ where:
@@ -299,7 +299,7 @@ calc_cv(x)
 #> [1] 0.84
 ```
 
-If you set the parameter `as_perc` to `TRUE`, the CV will be multiplied
+If you set the argument `as_perc` to `TRUE`, the CV will be multiplied
 by 100.
 
 ``` r
@@ -309,7 +309,7 @@ calc_cv(x,as_perc = TRUE)
 
 ### calc_date_aux
 
-The goal of **calc_date_aux** is to compute variables derived from date,
+The goal of `calc_date_aux` is to compute variables derived from date,
 such as year, month, day, etc.
 
 ``` r
@@ -353,7 +353,7 @@ The new variables respective to the date are:
 
 ### calc_date_diff
 
-The goal of **calc_date_diff** is to compute the difference between two
+The goal of `calc_date_diff` is to compute the difference between two
 dates.
 
 ``` r
@@ -368,7 +368,7 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509 days.
 
 If you need to add a constant to your difference you can use the
-parameter `add`.
+argument `add`.
 
 ``` r
 calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
@@ -377,8 +377,8 @@ calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
 
 ### calc_date_range
 
-The goal of **calc_date_range** is to compute the range of a date
-vector, and create a string with the minimal and maximum date.
+The goal of `calc_date_range` is to compute the range of a date vector,
+and create a string with the minimal and maximum date.
 
 ``` r
 dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
@@ -389,7 +389,7 @@ calc_date_range(dt)
 
 ### calc_geometric_mean
 
-The goal of **calc_geometric_mean** is to compute the geometric mean,
+The goal of `calc_geometric_mean` is to compute the geometric mean,
 given by:
 
 $$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
@@ -404,8 +404,8 @@ calc_geometric_mean(x)
 
 ### calc_harmonic_mean
 
-The goal of **calc_harmonic_mean** is to compute the harmonic mean,
-given by:
+The goal of `calc_harmonic_mean` is to compute the harmonic mean, given
+by:
 
 $$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$ where:
 
@@ -418,7 +418,7 @@ calc_harmonic_mean(x)
 
 ### calc_mean
 
-The goal of **calc_mean** is to compute the arithmetic, geometric and
+The goal of `calc_mean` is to compute the arithmetic, geometric and
 harmonic mean.
 
 ``` r
@@ -431,7 +431,7 @@ calc_mean(x)
 
 ### calc_mode
 
-The goal of **calc_mode** is to compute the mode.
+The goal of `calc_mode` is to compute the mode.
 
 ``` r
 set.seed(123);cat_var <- sample(letters,100,replace = TRUE)
@@ -452,8 +452,8 @@ calc_mode(cat_var)
 
 ### calc_peak_density
 
-The goal of **calc_peak_density** is to compute the peak density value
-of a numeric value.
+The goal of `calc_peak_density` is to compute the peak density value of
+a numeric value.
 
 <img src="man/figures/README-calc_peak_density-base-plot-1.png" width="40%" />
 
@@ -473,7 +473,7 @@ This functions modify an existing variable for aesthetic reasons.
 
 ### format_digit
 
-The goal of **format_digit** is to add zero(s) on the left of a number.
+The goal of `format_digit` is to add zero(s) on the left of a number.
 
 ``` r
 
@@ -483,7 +483,7 @@ format_digit(x)
 #> [1] "01"   "04"   "10"   "12"   "100"  "2000"
 ```
 
-You can also set the parameter `digits` to add more zeros.
+You can also set the argument `digits` to add more zeros.
 
 ``` r
 
@@ -493,7 +493,7 @@ format_digit(x,digits = 4)
 
 ### format_num
 
-The goal of **format_num** is to add markers to a number.
+The goal of `format_num` is to add markers to a number.
 
 ``` r
 format_num(12345.67)
@@ -517,7 +517,7 @@ format_num(12345.67,br_mark = TRUE)
 
 ### format_scale
 
-The goal of **format_scale** is to reescale a variable, given by:
+The goal of `format_scale` is to reescale a variable, given by:
 
 $$y_i = (y_{\max} - y_{\min}) * \left[\frac{x_i - \min(x_i)}{\max(x)-\min(x)} \right] + y_{\min},$$
 where:
@@ -560,7 +560,7 @@ z <- format_scale(x,new_min = 25,new_max = 100)
 
 ### format_p\_value
 
-The goal of **format_p\_value** is to change a p value, by considering a
+The goal of `format_p_value` is to change a p value, by considering a
 minimal value where if is minor than it, let’s say 0.001, the p value
 will be changed to *\<0.001*
 
@@ -575,7 +575,7 @@ This functions return a boolean, given a condition.
 
 ### is_even
 
-The goal of **is_even** is to check if a value is even.
+The goal of `is_even` is to check if a value is even.
 
 ``` r
 is_even(1)
@@ -593,7 +593,7 @@ is_even(2.2)
 
 ### is_negative
 
-The goal of **is_negative** is to check if a value is negative.
+The goal of `is_negative` is to check if a value is negative.
 
 ``` r
 is_negative(1)
@@ -605,7 +605,7 @@ is_negative(-1)
 
 ### is_odd
 
-The goal of **is_odd** is to check if a value is odd.
+The goal of `is_odd` is to check if a value is odd.
 
 ``` r
 is_odd(1)
@@ -623,8 +623,8 @@ is_odd(2.2)
 
 ### is_outlier
 
-The goal of **is_outlier** is to check if a value is an outlier, by
-using the boxplot outlier criteria, given by:
+The goal of `is_outlier` is to check if a value is an outlier, by using
+the boxplot outlier criteria, given by:
 
 $$ [x < (Q_1 - 1.5 * IQR)] \quad  |  \quad [x > (Q_3 - 1.5 * IQR)],$$
 
@@ -643,7 +643,7 @@ is_outlier(x)
 
 ### is_positive
 
-The goal of **is_positive** is to check if a value is positive.
+The goal of `is_positive` is to check if a value is positive.
 
 ``` r
 is_positive(1)
@@ -655,8 +655,8 @@ is_positive(-1)
 
 ### is_string
 
-The goal of **is_string** is to check if a value is a string, character
-or factor.
+The goal of `is_string` is to check if a value is a string, character or
+factor.
 
 ``` r
 is_string("A")
@@ -673,8 +673,8 @@ condition.
 
 ### isnot_in
 
-The goal of **isnot_in** is to check if a variable is not contained, it
-is the same as `!(x %in% y)`.
+The goal of `isnot_in` is to check if a variable is not contained, it is
+the same as `!(x %in% y)`.
 
 ``` r
 isnot_in("a", letters)
@@ -683,8 +683,8 @@ isnot_in("a", letters)
 
 ### isnot_na
 
-The goal of **isnot_na** is to check if a variable is not a `NA` it is
-the same as `!is.na(x)`.
+The goal of `isnot_na` is to check if a variable is not a `NA` it is the
+same as `!is.na(x)`.
 
 ``` r
 isnot_na(2)
@@ -696,7 +696,7 @@ isnot_na(NA)
 
 ## “plt\_” functions
 
-This functions are extensions to **ggplot2** objects.
+This functions are extensions to `ggplot2` objects.
 
 ``` r
 library(ggplot2)
@@ -712,8 +712,8 @@ plot
 
 ### plt_flip_y\_title
 
-The goal of **plt_flip_y\_title** is to flip the title from y axis, to
-be read horizontally.
+The goal of `plt_flip_y_title` is to flip the title from y axis, to be
+read horizontally.
 
 ``` r
 plot + plt_flip_y_title
@@ -723,7 +723,7 @@ plot + plt_flip_y_title
 
 ### plt_identity_line
 
-The goal of **plt_identity_line** is to add a identity line to a scatter
+The goal of `plt_identity_line` is to add a identity line to a scatter
 plot.
 
 ``` r
@@ -734,7 +734,7 @@ plot + plt_identity_line(color = "red")
 
 ### plt_no_background
 
-The goal of **plt_no_background** is to remove the background.
+The goal of `plt_no_background` is to remove the background.
 
 ``` r
 plot + plt_no_background
@@ -744,7 +744,7 @@ plot + plt_no_background
 
 ### plt_no_labels
 
-The goal of **plt_no_labels** is to remove all labels.
+The goal of `plt_no_labels` is to remove all labels.
 
 ``` r
 plot + plt_no_labels
@@ -754,7 +754,7 @@ plot + plt_no_labels
 
 ### plt_scale_auto
 
-The goal of **plt_scale_auto** is to add a automatic scale.
+The goal of `plt_scale_auto` is to add a automatic scale.
 
 ``` r
 plot + plt_scale_auto(axis = "x",n = 5)
@@ -772,7 +772,7 @@ plot +
 
 ### plt_theme_map
 
-The goal of **plt_theme_map** is to add a theme appropriate for a map.
+The goal of `plt_theme_map` is to add a theme appropriate for a map.
 
 ``` r
 plot + plt_theme_map()
@@ -782,8 +782,8 @@ plot + plt_theme_map()
 
 ### plt_theme_x
 
-The goal of **plt_theme_x** is to remove major and minor grid lines from
-y axis.
+The goal of `plt_theme_x` is to remove major and minor grid lines from y
+axis.
 
 ``` r
 plot + plt_theme_x()
@@ -793,7 +793,7 @@ plot + plt_theme_x()
 
 ### plt_theme_xy
 
-The goal of **plt_theme_xy** is to remove minor grid lines from x and y
+The goal of `plt_theme_xy` is to remove minor grid lines from x and y
 axis.
 
 ``` r
@@ -804,8 +804,8 @@ plot + plt_theme_xy()
 
 ### plt_theme_y
 
-The goal of **plt_theme_y** is to remove major and minor grid lines from
-x axis.
+The goal of `plt_theme_y` is to remove major and minor grid lines from x
+axis.
 
 ``` r
 plot + plt_theme_y()
@@ -815,8 +815,8 @@ plot + plt_theme_y()
 
 ### plt_water_mark
 
-The goal of *plt_water_mark* is to add a image as a watermark in a
-ggplot2 object.
+The goal of `plt_water_mark` is to add a image as a watermark in a
+`ggplot2` object.
 
 ``` r
 plot + plt_water_mark(png_obj = vfx_watermark)
@@ -834,7 +834,7 @@ This functions manipulate strings.
 
 ### str_clean
 
-The goal of **str_clean** is to remove punctuation and/or accent.
+The goal of `str_clean` is to remove punctuation and/or accent.
 
 ``` r
 string <- "a..;éâ...íõ"
@@ -854,7 +854,7 @@ str_clean(string)
 
 ### str_keep
 
-The goal of **str_keep** is to keep only a type of character in the
+The goal of `str_keep` is to keep only a type of character in the
 string.
 
 ``` r
@@ -872,8 +872,8 @@ str_keep(string,keep = "special")
 
 ### str_select
 
-The goal of **str_select** is to select part of a string, before, after
-or between patterns.
+The goal of `str_select` is to select part of a string, before, after or
+between patterns.
 
 ``` r
 string <- "example text STRING1 TARGET STRING2 example text"
@@ -893,8 +893,8 @@ str_select(string,"STRING1","STRING2")
 
 ### str_to_abb
 
-The goal of **str_to_abb** is to apply uppercase to strings with a
-number of characters lower than the argument `n_char` (default = 3).
+The goal of `str_to_abb` is to apply uppercase to strings with a number
+of characters lower than the argument `n_char` (default = 3).
 
 ``` r
 abcde_string <- c("aaaaa","bb","ccc","dddd")
@@ -909,7 +909,7 @@ This functions will summarize data and return metrics related to them.
 
 ### summary_cat
 
-The goal of **summary_cat** is to summarize categorical variables.
+The goal of `summary_cat` is to summarize categorical variables.
 
 ``` r
 x <- c(sample(letters,100,replace = TRUE),NA)
@@ -923,7 +923,8 @@ summary_cat(x)
 
 ### summary_data
 
-The goal of **summary_data** is to summarize all variables from data.
+The goal of `summary_data` is to summarize all variables from a
+dataframe.
 
 ``` r
 summary_data(mtcars)
@@ -948,7 +949,7 @@ summary_data(mtcars)
 
 ### summary_num
 
-The goal of **summary_num** is to summarize numeric variables.
+The goal of `summary_num` is to summarize numeric variables.
 
 ``` r
 x <- c(rnorm(10),NA,10)
@@ -963,7 +964,7 @@ summary_num(x)
 
 ### summary_seq
 
-The goal of **summary_seq** is to compute the number of sequential
+The goal of `summary_seq` is to compute the number of sequential
 repeated values.
 
 ``` r
@@ -986,27 +987,12 @@ summary_seq(y)
 
 ## “tbl\_” functions
 
-This functions show data in an table.
-
-<!-- ### tbl_format_num -->
-<!-- The goal of **tbl_format_num** is to apply **format_num** to all numeric variables in a data.frame. -->
-<!-- ```{r tbl_format_num} -->
-<!-- mtcars %>% -->
-<!--    count(vs,am) %>% -->
-<!--    tbl_format_num(digits = 5) -->
-<!-- ``` -->
-<!-- ### tbl_print -->
-<!-- The goal of **tbl_print** is to print a data.frame as a plot. -->
-<!-- ```{r tbl_print} -->
-<!-- df <- data.frame(grp = c("a","b","c"), -->
-<!--                  freq = c(2,4,6)) -->
-<!-- tbl_print(df,bold_last = TRUE,header_col = "red") -->
-<!-- ``` -->
+This functions apply statistical tests and show the results in an table.
 
 ### tbl_two_cat
 
-The goal of **tbl_two_cat** is to create a frequency table with
-chi-square statistic, p-value and Cramer’s V.
+The goal of `tbl_two_cat` is to create a frequency table with chi-square
+statistic, p-value and Cramer’s V.
 
 ``` r
 mtcars %>%
@@ -1018,8 +1004,8 @@ mtcars %>%
 
 ### tbl_two_num
 
-The goal of **tbl_two_num** is to create a summary table comparing one
-or more numerical variables between two groups.
+The goal of `tbl_two_num` is to create a summary table comparing one or
+more numerical variables between two groups.
 
 ``` r
 
@@ -1037,7 +1023,7 @@ tbl_two_num(
 
 ### cut_by_quantile
 
-The goal of **cut_by_quantile** is to cut a numeric variable by a set of
+The goal of `cut_by_quantile` is to cut a numeric variable by a set of
 quantiles.
 
 ``` r
@@ -1051,8 +1037,8 @@ table(cut_by_quantile(x,q = seq(0,1,by = .25)))
 
 ### expand_grid_unique
 
-The goal of **expand_grid_unique** is to create a grid of all
-combination from two variables, with no repetition.
+The goal of `expand_grid_unique` is to create a grid of all combination
+from two variables, with no repetition.
 
 ``` r
 expand_grid_unique(x = 1:3,y = 1:3)
@@ -1064,7 +1050,7 @@ expand_grid_unique(x = 1:3,y = 1:3)
 #> 3     2     3
 ```
 
-You can also set the parameter `include_equals` to `TRUE` so equal pairs
+You can also set the argument `include_equals` to `TRUE` so equal pairs
 are kept.
 
 ``` r
@@ -1082,7 +1068,7 @@ expand_grid_unique(x = 1:3,y = 1:3, include_equals = TRUE)
 
 ### obj_to_string
 
-The goal of **obj_to_string** is to return the name of an R object as a
+The goal of `obj_to_string` is to return the name of an R object as a
 string.
 
 ``` r
@@ -1094,8 +1080,8 @@ obj_to_string(x)
 
 ### row_number_unique
 
-The goal of **row_number_unique** is to get the row number but
-considering the unique values of a variable.
+The goal of `row_number_unique` is to get the row number but considering
+the unique values of a variable.
 
 ``` r
 mtcars %>% 
@@ -1121,9 +1107,9 @@ mtcars %>%
 
 ### rpearson
 
-The goal of **rpearson** is to simulate data, where two variables will
-be linear correlated with a normal distribution, using pearson
-correlation coefficient as a parameter.
+The goal of `rpearson` is to simulate data, where two variables will be
+linear correlated with a normal distribution, using pearson correlation
+coefficient as a argument.
 
 ``` r
 set.seed(123);df <- rpearson(n = 100, pearson = .8, mean = 3)
