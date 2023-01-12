@@ -485,6 +485,16 @@ format_p_value(c(.001,.00000001),p_value_min = 0.001)
 
 This functions return a boolean, given a condition.
 
+### is_date
+
+The goal of `is_date` is to check if a value is a date.
+
+```{r is_date}
+is_date(Sys.time())
+
+is_date(Sys.Date())
+```
+
 ### is_even
 
 The goal of `is_even` is to check if a value is even.
