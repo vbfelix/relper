@@ -22,7 +22,8 @@ stop_function <- function(
       date = !lubridate::is.Date(arg),
       integer = !relper::is_integer(arg),
       character = !is.character(arg),
-      string = !relper::is_string(arg)
+      string = !relper::is_string(arg),
+      datetime = !relper::is_datetime(arg)
     )
 
 
