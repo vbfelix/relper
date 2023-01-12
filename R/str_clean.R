@@ -32,7 +32,7 @@ str_clean <-
     sub_punct = ""
     ){
 
-  if(!relper::is_string(string)){"'string' must be a character."}
+  if(!relper::is_string(string)){stop("'string' must be a character.")}
 
   if(!is.logical(remove_accent)){stop("'remove_accent' must be logical.")}
 
