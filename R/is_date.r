@@ -2,7 +2,7 @@
 #'
 #' @description return TRUE if the vector is a date
 #'
-#' @eval arg_vector("x","date")
+#' @eval arg_vector("x","")
 #'
 #' @return Boolean vector
 #' @export

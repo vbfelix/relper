@@ -30,6 +30,8 @@
     - <a href="#format_scale" id="toc-format_scale">format_scale</a>
     - <a href="#format_p_value" id="toc-format_p_value">format_p_value</a>
   - <a href="#is_-functions" id="toc-is_-functions">“is_” functions</a>
+    - <a href="#is_date" id="toc-is_date">is_date</a>
+    - <a href="#is_datetime" id="toc-is_datetime">is_datetime</a>
     - <a href="#is_even" id="toc-is_even">is_even</a>
     - <a href="#is_integer" id="toc-is_integer">is_integer</a>
     - <a href="#is_negative" id="toc-is_negative">is_negative</a>
@@ -573,6 +575,30 @@ format_p_value(c(.001,.00000001),p_value_min = 0.001)
 ## “is\_” functions
 
 This functions return a boolean, given a condition.
+
+### is_date
+
+The goal of `is_date` is to check if a value is a date.
+
+``` r
+is_date(Sys.time())
+#> [1] FALSE
+
+is_date(Sys.Date())
+#> [1] TRUE
+```
+
+### is_datetime
+
+The goal of `is_datetime` is to check if a value is a datetime.
+
+``` r
+is_date(Sys.time())
+#> [1] FALSE
+
+is_date(Sys.Date())
+#> [1] TRUE
+```
 
 ### is_even
 

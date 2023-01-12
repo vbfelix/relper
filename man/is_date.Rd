@@ -7,7 +7,7 @@
 is_date(x)
 }
 \arguments{
-\item{x}{A date vector}
+\item{x}{A  vector}
 }
 \value{
 Boolean vector
