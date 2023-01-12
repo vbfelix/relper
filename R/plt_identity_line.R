@@ -1,8 +1,8 @@
 #' Add a identity line to ggplot2 scatter plot
 #'
 #' @description Add a identity line to ggplot2 scatter plot
-#' @param color line color
-#' @param linetype line type
+#' @param color line color (default = 'black')
+#' @param linetype line type (default = 'dashed')
 #'
 #' @return ggplot2 theme
 #' @export
