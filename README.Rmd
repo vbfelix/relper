@@ -712,6 +712,20 @@ str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
 str_clean(string)
 ```
 
+### str_keep
+
+The goal of **str_keep** is to keep only a type of character in the string.
+
+```{r str_keep}
+string <- "1Aa45Z89$$%#"
+
+str_keep(string,keep = "text")
+
+str_keep(string,keep = "numbers")
+
+str_keep(string,keep = "special")
+```
+
 ### str_select
 
 The goal of **str_select** is to select part of a string, before, after or between patterns.
@@ -909,13 +923,7 @@ obj_to_string(x)
 
 ```
 
-### parse_text
 
-The goal of **parse_text** is to extract only letters from a string.
-
-```{r parse_text}
-parse_text("1ABCF45Z89")
-```
 
 ### row_number_unique
 

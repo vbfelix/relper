@@ -56,6 +56,7 @@
     - <a href="#plt_water_mark" id="toc-plt_water_mark">plt_water_mark</a>
   - <a href="#str_-functions" id="toc-str_-functions">“str_” functions</a>
     - <a href="#str_clean" id="toc-str_clean">str_clean</a>
+    - <a href="#str_keep" id="toc-str_keep">str_keep</a>
     - <a href="#str_select" id="toc-str_select">str_select</a>
     - <a href="#str_to_text" id="toc-str_to_text">str_to_text</a>
   - <a href="#summary_-functions" id="toc-summary_-functions">“summary_”
@@ -73,7 +74,6 @@
     - <a href="#expand_grid_unique"
       id="toc-expand_grid_unique">expand_grid_unique</a>
     - <a href="#obj_to_string" id="toc-obj_to_string">obj_to_string</a>
-    - <a href="#parse_text" id="toc-parse_text">parse_text</a>
     - <a href="#row_number_unique"
       id="toc-row_number_unique">row_number_unique</a>
     - <a href="#rpearson" id="toc-rpearson">rpearson</a>
@@ -853,6 +853,24 @@ str_clean(string)
 #> [1] "aeaio"
 ```
 
+### str_keep
+
+The goal of **str_keep** is to keep only a type of character in the
+string.
+
+``` r
+string <- "1Aa45Z89$$%#"
+
+str_keep(string,keep = "text")
+#> [1] "AaZ"
+
+str_keep(string,keep = "numbers")
+#> [1] "14589"
+
+str_keep(string,keep = "special")
+#> [1] "$$%#"
+```
+
 ### str_select
 
 The goal of **str_select** is to select part of a string, before, after
@@ -1080,15 +1098,6 @@ x <- c(1,2,3,5,7,8,12,100)
 
 obj_to_string(x)
 #> [1] "x"
-```
-
-### parse_text
-
-The goal of **parse_text** is to extract only letters from a string.
-
-``` r
-parse_text("1ABCF45Z89")
-#> [1] "ABCFZ"
 ```
 
 ### row_number_unique
