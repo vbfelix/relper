@@ -66,7 +66,6 @@
     - <a href="#summary_seq" id="toc-summary_seq">summary_seq</a>
   - <a href="#tbl_-functions" id="toc-tbl_-functions">“tbl_” functions</a>
     - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
-    - <a href="#tbl_print" id="toc-tbl_print">tbl_print</a>
     - <a href="#tbl_two_cat" id="toc-tbl_two_cat">tbl_two_cat</a>
     - <a href="#tbl_two_num" id="toc-tbl_two_num">tbl_two_num</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
@@ -968,7 +967,7 @@ summary_seq(y)
 
 ## “tbl\_” functions
 
-This functions will serve to show data in table format.
+This functions show data in an table.
 
 ### tbl_format_num
 
@@ -986,16 +985,13 @@ mtcars %>%
 #> 4 1.00000 1.00000  7.00000
 ```
 
-### tbl_print
-
-The goal of **tbl_print** is to print a data.frame as a plot.
-
-``` r
-df <- data.frame(grp = c("a","b","c"),
-                 freq = c(2,4,6))
-
-tbl_print(df,bold_last = TRUE,header_col = "red")
-```
+<!-- ### tbl_print -->
+<!-- The goal of **tbl_print** is to print a data.frame as a plot. -->
+<!-- ```{r tbl_print} -->
+<!-- df <- data.frame(grp = c("a","b","c"), -->
+<!--                  freq = c(2,4,6)) -->
+<!-- tbl_print(df,bold_last = TRUE,header_col = "red") -->
+<!-- ``` -->
 
 ### tbl_two_cat
 
@@ -1012,8 +1008,8 @@ mtcars %>%
 
 ### tbl_two_num
 
-The goal of **tbl_two_num** is to create a summary table comparing on or
-more numerical variables between two groups.
+The goal of **tbl_two_num** is to create a summary table comparing one
+or more numerical variables between two groups.
 
 ``` r
 
