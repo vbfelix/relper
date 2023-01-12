@@ -819,14 +819,14 @@ The goal of *plt_water_mark* is to add a image as a watermark in a
 ggplot2 object.
 
 ``` r
-plot + plt_water_mark(png_file = vfx_watermark)
+plot + plt_water_mark(png_obj = vfx_watermark)
 ```
 
 <img src="man/figures/README-plt_water_mark-1.png" width="40%" />
 
 In the function above we use a .png file already imported in the R
 environment, but it is also possible to import a local file, providing
-the argument *png_path* instead.
+the argument `png_filepath` instead.
 
 ## “str\_” functions
 

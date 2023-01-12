@@ -4,12 +4,12 @@
 \alias{plt_water_mark}
 \title{Water mark}
 \usage{
-plt_water_mark(png_file = NULL, png_path = NULL)
+plt_water_mark(png_obj = NULL, png_filepath = NULL)
 }
 \arguments{
-\item{png_file}{png file, already imported in R}
+\item{png_obj}{png obj, already imported in the R global environment}
 
-\item{png_path}{png path to import the png file}
+\item{png_filepath}{png path to import the png file}
 }
 \value{
 object to use in ggplot2

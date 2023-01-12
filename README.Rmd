@@ -686,10 +686,10 @@ plot + plt_theme_y()
 The goal of *plt_water_mark* is to add a image as a watermark in a ggplot2 object.
 
 ```{r plt_water_mark}
-plot + plt_water_mark(png_file = vfx_watermark)
+plot + plt_water_mark(png_obj = vfx_watermark)
 ```
 
-In the function above we use a .png file already imported in the R environment, but it is also possible to import a local file, providing the argument *png_path* instead.
+In the function above we use a .png file already imported in the R environment, but it is also possible to import a local file, providing the argument `png_filepath` instead.
 
 ## "str_" functions
 

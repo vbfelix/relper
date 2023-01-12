@@ -2,8 +2,8 @@
 #'
 #' @description Import png file as watermark for ggplot2
 #'
-#' @param png_file png file, already imported in R
-#' @param png_path png path to import the png file
+#' @param png_obj png obj, already imported in the R global environment
+#' @param png_filepath png path to import the png file
 #'
 #' @return object to use in ggplot2
 #' @export
@@ -12,27 +12,30 @@
 #'#'
 #' library(ggplot2)
 #'
+#' ggplot(mtcars)+
+#' plt_water_mark(vfx_watermark)
+#'
 #' #A local png file is necessary
 #'
 #' ggplot(mtcars)+
-#'   plt_water_mark(file_path = path_to_local_png)
+#'   plt_water_mark(png_filepath = path_to_local_png)
 
 
-plt_water_mark <-function(png_file = NULL, png_path = NULL){
+plt_water_mark <-function(png_obj = NULL, png_filepath = NULL){
 
-  if(is.null(png_file) & is.null(png_path)){stop("You must set either 'png_file' or 'png_path'.")}
+  if(is.null(png_obj) & is.null(png_filepath)){stop("You must set either 'png_obj' or 'png_filepath'.")}
 
-  if(!is.null(png_file) & !is.null(png_path)){stop("You must set either 'png_file' or 'png_path'.")}
+  if(!is.null(png_obj) & !is.null(png_filepath)){stop("You must set either 'png_obj' or 'png_filepath'.")}
 
-  if(is.null(png_file) & !is.null(png_path)){
+  if(is.null(png_obj) & !is.null(png_filepath)){
 
-    png <- png::readPNG(png_file)
+    png <- png::readPNG(png_obj)
 
   }
 
-  if(!is.null(png_file) & is.null(png_path)){
+  if(!is.null(png_obj) & is.null(png_filepath)){
 
-    png <- png_file
+    png <- png_obj
 
   }
 
@@ -44,3 +47,5 @@ plt_water_mark <-function(png_file = NULL, png_path = NULL){
     ymax = Inf
     )
 }
+
+
