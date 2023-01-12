@@ -24,9 +24,7 @@
 
 str_select <- function(string,after = NULL,before = NULL){
 
-  if(!is.character(string) & !is.factor(string)){
-    stop("string must be a characther/factor.")
-  }
+  if(!relper::is_string(string)){stop("'string' must be a character.")}
 
   if(!is.null(after) & !is.character(after) & !is.factor(after)){
     stop("after must be a characther.")
