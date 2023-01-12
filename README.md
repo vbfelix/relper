@@ -98,7 +98,7 @@ remotes::install_github("vbfelix/relper")
 
 ## “as\_” functions
 
-This functions will transform values.
+This functions convert values to another type.
 
 ### as_num
 
@@ -143,7 +143,7 @@ mtcars %>%
 
 ## “calc\_” functions
 
-This functions will compute a certain value.
+This functions compute a certain value.
 
 ### calc_acf
 
@@ -471,7 +471,7 @@ calc_peak_density(x)
 
 ## “format\_” functions
 
-This functions will modify an existing variable.
+This functions modify an existing variable for aesthetic reasons.
 
 ### format_digit
 
@@ -573,7 +573,7 @@ format_p_value(c(.001,.00000001),p_value_min = 0.001)
 
 ## “is\_” functions
 
-This functions will check if the value checks a condition.
+This functions return a boolean, given a condition.
 
 ### is_even
 
@@ -698,7 +698,7 @@ isnot_na(NA)
 
 ## “plt\_” functions
 
-This functions will be complementary to **ggplot2** objects.
+This functions are extensions to **ggplot2** objects.
 
 ``` r
 library(ggplot2)
@@ -714,7 +714,8 @@ plot
 
 ### plt_flip_y\_title
 
-The goal of **plt_flip_y\_title** is to flip the title from y axis.
+The goal of **plt_flip_y\_title** is to flip the title from y axis, to
+be read horizontally.
 
 ``` r
 plot + plt_flip_y_title
@@ -831,7 +832,7 @@ the argument *png_path* instead.
 
 ## “str\_” functions
 
-This functions will be serve to manipulate strings.
+This functions manipulate strings.
 
 ### str_clean
 

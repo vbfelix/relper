@@ -47,7 +47,7 @@ remotes::install_github("vbfelix/relper")
 
 ## "as_" functions
 
-This functions will transform values.
+This functions convert values to another type.
 
 ### as_num
 The goal of **as_num** is to be a version of `as.numeric`, where the input is a string number with marks, such as "10.000,02".
@@ -75,7 +75,7 @@ mtcars %>%
 
 ## "calc_" functions
 
-This functions will compute a certain value.
+This functions compute a certain value.
 
 ### calc_acf
 
@@ -390,7 +390,7 @@ ggplot2::ggplot(data = dplyr::tibble(x = x),
 
 ## "format_" functions
 
-This functions will modify an existing variable.
+This functions modify an existing variable for aesthetic reasons.
 
 ### format_digit
 The goal of **format_digit** is to add zero(s) on the left of a number.
@@ -483,7 +483,7 @@ format_p_value(c(.001,.00000001),p_value_min = 0.001)
 
 ## "is_" functions
 
-This functions will check if the value checks a condition.
+This functions return a boolean, given a condition.
 
 ### is_even
 
@@ -591,7 +591,7 @@ isnot_na(NA)
 
 ## "plt_" functions
 
-This functions will be complementary to **ggplot2** objects.
+This functions are extensions to **ggplot2** objects.
 
 ```{r plt-base}
 library(ggplot2)
@@ -605,7 +605,7 @@ plot
 
 ### plt_flip_y_title
 
-The goal of **plt_flip_y_title** is to flip the title from y axis.
+The goal of **plt_flip_y_title** is to flip the title from y axis, to be read horizontally.
 
 ```{r plt_flip_y_title}
 plot + plt_flip_y_title
@@ -693,7 +693,7 @@ In the function above we use a .png file already imported in the R environment, 
 
 ## "str_" functions
 
-This functions will be serve to manipulate strings.
+This functions manipulate strings.
 
 ### str_clean
 
