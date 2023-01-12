@@ -21,7 +21,9 @@ as_num <- function(x){
     as.numeric(gsub("\\,", "\\.",gsub("\\.", "", x)), na.rm = FALSE)
 
   }else{
-      return(x)
-    }
+
+    return(x)
+
+  }
 
 }
