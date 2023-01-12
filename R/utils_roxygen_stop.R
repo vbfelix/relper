@@ -40,7 +40,6 @@ stop_function <- function(
     }
   }
 
-
   msg <- paste0("argument '",arg_name,"' must be ",type,".")
 
   if(condition){stop(msg)}
@@ -49,11 +48,11 @@ stop_function <- function(
 
   if(!is.null(length_bigger)){
 
-    len_condition <- length(arg) <= length_bigger
+    condition <- length(arg) <= length_bigger
 
-    len_msg <- paste0("argument '",arg_name,"' must have length > ",length_bigger,".")
+    msg <- paste0("argument '",arg_name,"' must have length > ",length_bigger,".")
 
-    if(len_condition){stop(len_msg)}
+    if(condition){stop(msg)}
 
   }
 
@@ -61,11 +60,11 @@ stop_function <- function(
 
   if(!is.null(range)){
 
-    range_condition <- (min(arg) < range[1]) | (max(arg) > range[2])
+    condition <- (min(arg) < range[1]) | (max(arg) > range[2])
 
-    range_msg <- paste0("argument '",arg_name,"' must be in [",range[1],"; ",range[2] ,"]")
+    msg <- paste0("argument '",arg_name,"' must be in [",range[1],"; ",range[2] ,"]")
 
-    if(range_condition){stop(range_msg)}
+    if(condition){stop(msg)}
 
   }
 
@@ -143,4 +142,17 @@ stop_two_args <-
 
 }
 
+stop_one_of <- function(arg,one_of){
 
+  arg_name <- rlang::get_expr(rlang::enquo(arg))
+
+  arg <- tolower(arg)
+
+  condition <- relper::isnot_in(arg,one_of)
+
+  msg <- paste0("argument '",arg_name,"' must be one of: ",
+                paste(one_of, collapse = ", "))
+
+  if(condition){stop(msg)}
+
+}

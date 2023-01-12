@@ -24,8 +24,6 @@ str_keep <- function(string,keep = "text"){
 
   stop_function(arg = keep,type = "character")
 
-  keep <- tolower(keep)
-
   keep_text <- c("text","char","character","string","word")
 
   keep_num <- c("numeric","number","num","numbers")
@@ -34,9 +32,7 @@ str_keep <- function(string,keep = "text"){
 
   keep_ref <- c(keep_text,keep_num,keep_special)
 
-  keep_stop <- paste(keep_ref,collapse = ", ")
-
-  if(relper::isnot_in(keep,keep_ref)){stop("'keep' must be one of: ", keep_stop)}
+  stop_one_of(keep,keep_ref)
 
   if(keep %in% keep_text){
     output <- gsub("[^a-zA-Z]", "", string)
