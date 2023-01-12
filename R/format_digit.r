@@ -17,9 +17,7 @@
 
 format_digit <- function(x, digits = 2){
 
-  if(!is.numeric(digits)){stop("'digits' must be numeric.")}
-
-  if(digits < 2){stop("'digits' must be > 1.")}
+  stop_function(arg = digits,type = "integer",bigger_than = 2,single_value = TRUE)
 
   x <- as.character(x)
 

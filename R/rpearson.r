@@ -28,65 +28,47 @@ rpearson <-
     mean = 0,
     sd = 1){
 
-  if(!is.numeric(n)){stop("'n' must be numeric.")}
+    stop_function(arg = n,type = "integer",single_value = TRUE,bigger_than = 3)
 
-  if(length(n) > 1){stop("'n' must be a single value.")}
+    stop_function(arg = pearson,type = "numeric",single_value = TRUE,range = c(-1,1))
 
-  if(n < 3){stop("'n' must be >= 3.")}
+    stop_function(arg = tol,type = "numeric",single_value = TRUE,range = c(0,1))
 
-  if((n%%1)!= 0){stop("'n' must be a integer.")}
+    stop_function(arg = mean,type = "numeric",single_value = TRUE)
 
-  if(!is.numeric(pearson)){stop("'pearson' must be numeric.")}
+    stop_function(arg = sd,type = "numeric",single_value = TRUE)
 
-  if(length(pearson) > 1){stop("'pearson' must be a single value.")}
+    if((tol > 0) & (tol < .05)){
+      warning("A low tolerance may cause a infinite loop or a long simulation time.")
+    }
 
-  if((pearson > 1) | (pearson < -1)){stop("pearson must be [-1;1].")}
+    p_stop <- 1
 
-  if(!is.numeric(tol)){stop("'tol' must be numeric.")}
+    while (p_stop > tol) {
 
-  if(length(tol) > 1){stop("'tol' must be a single value.")}
+      x <- rnorm(n,mean = mean, sd = sd)
 
-  if((tol <= 0) | (tol >= 1)){stop("'tol' must be (0,1).")}
+      y <- rnorm(length(x), pearson*x, sqrt(1-pearson^2))
 
-  if((tol > 0) & (tol < .05)){
-    warning("A low tolerance may cause a infinite loop or a long simulation time.")
-  }
+      p_est <- cor(x,y)
 
-  if(!is.numeric(mean)){stop("'mean' must be numeric.")}
+      p_stop <- abs(pearson - p_est)
 
-  if(length(mean) > 1){stop("'mean' must be a single value.")}
+    }
 
-  if(!is.numeric(sd)){stop("'sd' must be numeric.")}
-
-  if(length(sd) > 1){stop("'sd' must be a single value.")}
-
-  p_stop <- 1
-
-  while (p_stop > tol) {
-
-    x <- rnorm(n,mean = mean, sd = sd)
-
-    y <- rnorm(length(x), pearson*x, sqrt(1-pearson^2))
-
-    p_est <- cor(x,y)
-
-    p_stop <- abs(pearson - p_est)
-
-  }
-
-  output <-
-    dplyr::tibble(
-      x = x,
-      y = y
+    output <-
+      dplyr::tibble(
+        x = x,
+        y = y
       )
 
-  cat(n, "observations of x and y were simulated with:",
-      "\n - Mean =", mean,"\n - SD =", sd,
-      "\n - Linear correlation coefficient =", pearson,
-      "\n - Simulation tolerance = ", tol,
-      "\n Resulting in a linear correlation coefficient =", p_est ,"\n")
+    cat(n, "observations of x and y were simulated with:",
+        "\n - Mean =", mean,"\n - SD =", sd,
+        "\n - Linear correlation coefficient =", pearson,
+        "\n - Simulation tolerance = ", tol,
+        "\n Resulting in a linear correlation coefficient =", p_est ,"\n")
 
-  return(output)
+    return(output)
 
-}
+  }
 

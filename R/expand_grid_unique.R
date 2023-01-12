@@ -11,13 +11,13 @@
 #'
 #' @examples
 #'
-#' expand_grid_unique(x = 1:6,y = 1:8)
+#' expand_grid_unique(x = 1:6,y = 1:6)
 #'
 
 expand_grid_unique <-
   function(x, y, include_equals = FALSE){
 
-  if(!is.logical(include_equals)){stop("'include_equals' must be logical.")}
+  stop_function(arg = include_equals,type = "logical")
 
   x <- unique(x)
 

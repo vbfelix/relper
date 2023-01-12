@@ -18,9 +18,7 @@
 
 summary_cat <- function(x){
 
-  if(!is.character(x) & !is.factor(x)){
-    stop("x must be character/factor.")
-  }
+  stop_function(arg = x,type = "string")
 
   out <-
     dplyr::tibble(

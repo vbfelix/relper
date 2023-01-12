@@ -16,10 +16,10 @@
 
 calc_geometric_mean <- function(x){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
   if(sum(x == 0, na.rm = TRUE) > 0 ){
-    warning("There is at least one value = 0 and that cause the geometric mean to be 0.")
+    warning("There is at least one value = 0 and that caused the geometric mean to be 0.")
   }
 
   if(sum(x < 0, na.rm = TRUE) > 0 ){

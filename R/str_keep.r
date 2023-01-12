@@ -20,9 +20,9 @@
 
 str_keep <- function(string,keep = "text"){
 
-  if(!relper::is_string(string)){stop("'string' must be a character.")}
+  stop_function(arg = string,type = "string")
 
-  if(!relper::is_string(keep)){stop("'keep' must be a character.")}
+  stop_function(arg = keep,type = "character")
 
   keep <- tolower(keep)
 

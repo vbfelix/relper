@@ -20,12 +20,11 @@
 
 calc_acf <- function(x,y = NULL,...){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
-  if(!is.numeric(y) & !is.null(y)){stop("'y' must be numeric/NULL.")}
+  stop_function(arg = y,type = "numeric",null = TRUE)
 
-  if(!is.null(y) & (length(y) != length(x)) ){stop("'x' and 'y'  must have the same length.")}
-
+  stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE,null = TRUE)
 
   if(is.null(y)){
 

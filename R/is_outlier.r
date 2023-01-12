@@ -18,7 +18,7 @@
 
 is_outlier <- function(x){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
   q1 <- quantile(x, 0.25, na.rm = TRUE)
 

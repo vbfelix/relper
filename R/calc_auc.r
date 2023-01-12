@@ -22,13 +22,11 @@
 
 calc_auc  <- function(x,y, limits = NULL) {
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
-  if(!is.numeric(y)){stop("'y' must be numeric.")}
+  stop_function(arg = y,type = "numeric")
 
-  if((is.numeric(limits) == FALSE) & (is.null(limits) == FALSE)){
-    stop("'limits' must be numeric or NULL.")
-  }
+  stop_function(arg = limits,type = "numeric",null = TRUE)
 
   if((length(limits) != 0) & (length(limits) != 2)){
     stop("'limits' must be of length 2 or NULL.")

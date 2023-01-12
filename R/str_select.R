@@ -24,15 +24,11 @@
 
 str_select <- function(string,after = NULL,before = NULL){
 
-  if(!relper::is_string(string)){stop("'string' must be a character.")}
+  stop_function(arg = string,type = "string")
 
-  if(!is.null(after) & !is.character(after) & !is.factor(after)){
-    stop("after must be a characther.")
-  }
+  stop_function(arg = after,type = "string",null = TRUE)
 
-  if(!is.null(before) & !is.character(before) & !is.factor(before)){
-    stop("before must be a characther.")
-  }
+  stop_function(arg = before,type = "string",null = TRUE)
 
   if((!is.null(before)) & (!is.null(after))){
     out <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))

@@ -30,27 +30,25 @@ str_clean <-
     remove_accent = TRUE,
     remove_punct = TRUE,
     sub_punct = ""
-    ){
+  ){
 
-  if(!relper::is_string(string)){stop("'string' must be a character.")}
+    stop_function(arg = string,type = "string")
 
-  if(!is.logical(remove_accent)){stop("'remove_accent' must be logical.")}
+    stop_function(arg = remove_accent,type = "logical",single_value = TRUE)
 
-  if(!is.logical(remove_punct)){stop("'remove_punct' must be logical.")}
+    stop_function(arg = remove_punct,type = "logical",single_value = TRUE)
 
-  if(!is.character(sub_punct)){stop("'sub_punct' must be a character.")}
+    stop_function(arg = sub_punct,type = "character",single_value = TRUE)
 
-  if(length(sub_punct) > 1){stop("'sub_punct' must be a single value.")}
+    if(remove_punct){
+      string <- gsub("[[:punct:]]",sub_punct, string)
+    }
 
-  if(remove_punct){
-    string <- gsub("[[:punct:]]",sub_punct, string)
+    if(remove_accent){
+      string <- iconv(string, from = Encoding(string), to = 'ASCII//TRANSLIT')
+    }
+
+    return(string)
   }
-
-  if(remove_accent){
-    string <- iconv(string, from = Encoding(string), to = 'ASCII//TRANSLIT')
-  }
-
-  return(string)
-}
 
 

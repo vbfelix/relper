@@ -19,7 +19,7 @@ as_perc <- function(x, sum = FALSE){
 
   stop_function(arg = x,type = "numeric")
 
-  stop_function(arg = sum,type = "logical")
+  stop_function(arg = sum,type = "logical",single_value = TRUE)
 
   if(sum == FALSE){
     output <- 100*x

@@ -19,7 +19,7 @@
 
 calc_date_aux <- function(df,dt_var){
 
-  if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
+  stop_function(arg = df,type = "dataframe")
 
   df %>%
     dplyr::mutate(
@@ -36,3 +36,5 @@ calc_date_aux <- function(df,dt_var){
       wday_lbl = lubridate::wday({{dt_var}},label = TRUE,abbr = FALSE)
     )
 }
+
+

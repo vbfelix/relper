@@ -14,7 +14,7 @@
 
 is_even <- function(x){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
   x_as_char <- unlist(strsplit(as.character(x),split = ""))
 

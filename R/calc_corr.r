@@ -23,15 +23,11 @@
 
 calc_corr <- function(x,y){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric",length_bigger = 2)
 
-  if(!is.numeric(y)){stop("'y' must be numeric.")}
+  stop_function(arg = y,type = "numeric",length_bigger = 2)
 
-  if(length(x) < 3){stop("the lenght of 'x' must be > 2.")}
-
-  if(length(y) < 3){stop("the lenght of 'y' must be > 2.")}
-
-  if(length(x) != length(y)){stop("'x' and 'y' must have the same length.")}
+  stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE)
 
   output <-
   dplyr::tibble(

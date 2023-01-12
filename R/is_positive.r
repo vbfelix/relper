@@ -14,8 +14,12 @@
 
 is_positive <- function(x){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
-  dplyr::if_else(x > 0, TRUE, FALSE)
+  dplyr::if_else(
+    condition = x > 0,
+    true =  TRUE,
+    false =  FALSE
+    )
 
 }

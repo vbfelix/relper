@@ -17,13 +17,9 @@
 
 str_to_abb <- function(string, n_char = 3){
 
-  if(!relper::is_string(string)){stop("'string' must be a character.")}
+  stop_function(arg = string,type = "string")
 
-  if(!is.numeric(n_char)){stop("'n_char' must be numeric.")}
-
-  if(length(n_char) > 1){ stop("'n_char' must be a single value.")}
-
-  if(n_char <= 0){stop("'n_char' must be > 0.")}
+  stop_function(arg = n_char,type = "integer",single_value = TRUE,bigger_than = 1)
 
   dplyr::if_else(
     nchar(string) <= n_char,

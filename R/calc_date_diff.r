@@ -20,13 +20,13 @@
 
 calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
 
-  if(!lubridate::is.Date(date1)){stop("'date1' must be a date.")}
+  stop_function(arg = date1,type = "date")
 
-  if(!lubridate::is.Date(date2)){stop("'date2' must be a date.")}
+  stop_function(arg = date2,type = "date")
 
-  if(!is.numeric(add)){stop("'add' must be numeric.")}
+  stop_function(arg = add,type = "numeric",single_value = TRUE)
 
-  if(!is.character(unit)){stop("'unit' must be character.")}
+  stop_function(arg = unit,type = "character",single_value = TRUE)
 
   unit <- tolower(unit)
 

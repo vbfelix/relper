@@ -33,9 +33,9 @@ tbl_two_num <-
     method = "auto"
   ){
 
-    if(!is.data.frame(df)){stop("'df' must be a data.frame.")}
+    stop_function(arg = df,type = "dataframe")
 
-    if(!is.character(method)){stop("'method' must be a character.")}
+    stop_function(arg = method,type = "character")
 
     # utils -------------------------------------------------------------------
 

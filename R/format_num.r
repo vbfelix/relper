@@ -19,15 +19,15 @@
 format_num <-
   function(x, digits = 2,decimal_mark = ".",thousand_mark = ",", br_mark = FALSE){
 
-    if(!is.numeric(x)){stop("'x' must be numeric.")}
+    stop_function(arg = x,type = "numeric")
 
-    if(!is.numeric(digits)){stop("'digits' must be numeric.")}
+    stop_function(arg = digits,type = "integer",single_value = TRUE)
 
-    if(!is.character(decimal_mark)){stop("'decimal_mark' must be a character.")}
+    stop_function(arg = br_mark,type = "logical")
 
-    if(!is.character(thousand_mark)){stop("'thousand_mark' must be a character.")}
+    stop_function(arg = decimal_mark,type = "character")
 
-    if(!is.logical(br_mark)){stop("'br_mark' must be logical.")}
+    stop_function(arg = thousand_mark,type = "character")
 
     if(br_mark){
       decimal_mark <- ","

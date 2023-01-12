@@ -16,9 +16,9 @@
 format_p_value <-
   function(p_value, p_value_min = NULL,...){
 
-  if(!is.numeric(p_value)){stop("'p_value' must be numeric.")}
+  stop_function(arg = p_value,type = "numeric")
 
-  if(!is.numeric(p_value_min) & !is.null(p_value_min)){stop("'p_value_min' must be numeric or NULL.")}
+  stop_function(arg = p_value_min,type = "numeric",null = TRUE)
 
   if(is.null(p_value_min)){
     relper::format_num(p_value,digits = 4,...)
