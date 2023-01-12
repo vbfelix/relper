@@ -7,9 +7,9 @@
 isnot_in(x, y)
 }
 \arguments{
-\item{x}{single value}
+\item{x}{A  single value}
 
-\item{y}{vector}
+\item{y}{A  vector}
 }
 \value{
 boolean

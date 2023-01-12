@@ -4,3 +4,4 @@
 ^\.Rproj\.user$
 ^test\.r$
 ^data-raw$
+^man-roxygen

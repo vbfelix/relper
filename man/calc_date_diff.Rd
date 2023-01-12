@@ -7,13 +7,13 @@
 calc_date_diff(date1, date2, add = 0, unit = "days")
 }
 \arguments{
-\item{date1}{date number 1}
+\item{date1}{A date single value}
 
-\item{date2}{date number 2}
+\item{date2}{A date single value}
 
-\item{add}{auxiliar value (default = 0)}
+\item{add}{A numeric single value (default = 0)}
 
-\item{unit}{unit of the date difference (secs, mins, hours, days, weeks)}
+\item{unit}{A character single value with the unit of the date result (secs, mins, hours, days, weeks)}
 }
 \value{
 numeric value

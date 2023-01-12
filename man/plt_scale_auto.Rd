@@ -13,11 +13,15 @@ plt_scale_auto(
 )
 }
 \arguments{
-\item{axis}{axis indicator: x (default), y or xy}
+\item{axis}{A character single value (default = 'x'), that will be the axis to scale, must be x, y or xy}
 
-\item{n_ticks}{number of ticks}
+\item{n_ticks}{A numeric integer single value (default = 10), that will be the number of axis breaks}
 
-\item{expand}{expanded space}
+\item{expand}{A numeric single value (default = 0.01), that will be the expanded margin to the axis}
+
+\item{thousand_mark}{A character single value to use as the thousand mark}
+
+\item{decimal_mark}{A character single value to use as the decimal mark}
 }
 \value{
 ggplot2 object

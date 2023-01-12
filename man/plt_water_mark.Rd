@@ -7,9 +7,9 @@
 plt_water_mark(png_obj = NULL, png_filepath = NULL)
 }
 \arguments{
-\item{png_obj}{png obj, already imported in the R global environment}
+\item{png_obj}{A character single value, that will be name of an .png file already imported in the R global environment}
 
-\item{png_filepath}{png path to import the png file}
+\item{png_filepath}{A character single value, that will be the path to a .png file}
 }
 \value{
 object to use in ggplot2

@@ -7,7 +7,7 @@
 isnot_na(x)
 }
 \arguments{
-\item{x}{single value or vector}
+\item{x}{A  vector}
 }
 \value{
 boolean

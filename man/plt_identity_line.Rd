@@ -7,9 +7,9 @@
 plt_identity_line(color = "black", linetype = "dashed")
 }
 \arguments{
-\item{color}{line color (default = 'black')}
+\item{color}{A character single value (default = black), that will be the line color}
 
-\item{linetype}{line type (default = 'dashed')}
+\item{linetype}{A character single value (default = dashed), that will be the line type}
 }
 \value{
 ggplot2 theme

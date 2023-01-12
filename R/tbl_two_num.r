@@ -2,10 +2,10 @@
 #'
 #' @description Create a summary table with t.test: statistic, p-value and IC(95%).
 #'
-#' @param df data.frame
-#' @param grp_var variable to group by
-#' @param num_vars numerical variable(s)
-#' @param method method of summary and test (default = 'auto')
+#' @eval arg_df("df")
+#' @eval arg_df_var("grp_var","character")
+#' @param num_vars One or more variables from a data.frame
+#' @param method Method of summary and test (default = 'auto')
 #'
 #' @return data.frame
 #' @export

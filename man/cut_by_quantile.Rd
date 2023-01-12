@@ -7,9 +7,9 @@
 cut_by_quantile(x, q = seq(0, 1, by = 0.2), ...)
 }
 \arguments{
-\item{x}{numeric vector.}
+\item{x}{A numeric vector}
 
-\item{q}{numeric vector of quantiles.}
+\item{q}{A numeric vector}
 }
 \value{
 breaks

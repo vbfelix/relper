@@ -7,13 +7,13 @@
 tbl_two_cat(df, grp_var, vars, filter = "")
 }
 \arguments{
-\item{df}{data.frame}
+\item{df}{A single data.frame}
 
-\item{grp_var}{variable to group by}
+\item{grp_var}{A character variable from a data.frame}
 
-\item{vars}{variable(s)}
+\item{vars}{One or more variables from a data.frame}
 
-\item{filter}{value to filter grp_var and vars}
+\item{filter}{A character single value (default = ), that will be the value to filter the variables}
 }
 \value{
 data.frame

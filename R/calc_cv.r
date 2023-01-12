@@ -2,8 +2,8 @@
 #'
 #' @description Coefficient of variation
 #'
-#' @param x numeric vector
-#' @param as_perc as percentage (default = FALSE)
+#' @eval arg_vector("x","numeric")
+#' @eval arg_boolean("as_perc","multiply the CV by 100")
 #'
 #' @return Coefficient of variation
 #' @export
@@ -17,9 +17,9 @@
 
 calc_cv <- function(x, as_perc = FALSE){
 
-  if(!is.numeric(x)){stop("'x' must be numeric.")}
+  stop_function(arg = x,type = "numeric")
 
-  if(!is.logical(as_perc)){stop("'perc' must be logical.")}
+  stop_function(arg = as_perc,type = "logical")
 
   mu_x <- mean(x, na.rm = TRUE)
 

@@ -7,7 +7,7 @@
 calc_mode(x)
 }
 \arguments{
-\item{x}{character vector}
+\item{x}{A character vector}
 }
 \value{
 character value

@@ -2,9 +2,9 @@
 #'
 #' @description
 #'
-#' @param x numeric vector
-#' @param y numeric vector
-#' @param include_equals logical indicator to include equal pairs or not (default  = FALSE)
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("y","numeric")
+#' @eval arg_boolean("include_equals","ignore the equal pairs")
 #'
 #' @return
 #' @export

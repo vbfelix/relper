@@ -2,7 +2,7 @@
 #'
 #' @description Compute summary statistics for categoric variable
 #'
-#' @param x characther/factor vector
+#' @eval arg_vector("string","character")
 #'
 #' @return tibble
 #' @export

@@ -2,6 +2,9 @@
 #'
 #' @description theme_bw with no minor grid and major y grid
 #'
+#' @eval arg_value("base_size","numeric",default = "14","will be the base font size")
+#' @eval arg_value("margin","numeric",default = "0.35","will be the plot margin")
+#'
 #' @return ggplot2 theme
 #' @export
 #'

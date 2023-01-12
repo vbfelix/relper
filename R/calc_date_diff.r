@@ -2,10 +2,10 @@
 #'
 #' @description Difference between dates (date2 - date1 + add)
 #'
-#' @param date1 date number 1
-#' @param date2 date number 2
-#' @param add auxiliar value (default = 0)
-#' @param unit unit of the date difference (secs, mins, hours, days, weeks)
+#' @eval arg_value("date1","date")
+#' @eval arg_value("date2","date")
+#' @eval arg_value("add","numeric",default = "0")
+#' @eval arg_date_unit("unit")
 #'
 #' @return numeric value
 #' @export

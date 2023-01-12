@@ -2,7 +2,7 @@
 #'
 #' @description Find the mode
 #'
-#' @param x character vector
+#' @eval arg_vector("x","character")
 #'
 #' @return character value
 #' @export

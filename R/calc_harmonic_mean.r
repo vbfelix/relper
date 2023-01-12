@@ -2,7 +2,7 @@
 #'
 #' @description Calculates harmonic mean
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
 #'
 #' @return Harmonic mean
 #' @export

@@ -7,11 +7,11 @@
 expand_grid_unique(x, y, include_equals = FALSE)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{y}{numeric vector}
+\item{y}{A numeric vector}
 
-\item{include_equals}{logical indicator to include equal pairs or not (default  = FALSE)}
+\item{include_equals}{A boolean value, if TRUE the function will ignore the equal pairs (default = FALSE)}
 }
 \value{
 

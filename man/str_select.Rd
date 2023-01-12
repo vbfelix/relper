@@ -7,11 +7,11 @@
 str_select(string, after = NULL, before = NULL)
 }
 \arguments{
-\item{string}{character value}
+\item{string}{A character vector}
 
-\item{after}{pattern to select after}
+\item{after}{A character single value (default = NULL), that will be the pattern to select after}
 
-\item{before}{pattern to select before}
+\item{before}{A character single value (default = NULL), that will be the pattern to select before}
 }
 \value{
 character value

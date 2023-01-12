@@ -2,6 +2,9 @@
 #'
 #' @description no grid, border, background, title, text and ticks
 #'
+#' @eval arg_value("base_size","numeric",default = "14","will be the base font size")
+#' @eval arg_value("margin","numeric",default = "0.35","will be the plot margin")
+#'
 #' @return theme object
 #' @export
 #'
@@ -19,7 +22,7 @@
 #'
 
 plt_theme_map <-
-  function(base_size = 14, base_family = "", margin = .25){
+  function(base_size = 14, base_family = "", margin = .35){
     '%+replace%' <- ggplot2::'%+replace%'
 
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%

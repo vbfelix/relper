@@ -2,10 +2,10 @@
 #'
 #' @description Remove punctuation and/or accent
 #'
-#' @param string character value
-#' @param remove_accent logical value to remove accent (default = TRUE)
-#' @param remove_punct logical value to remove punctuation (default = TRUE)
-#' @param sub_punct character value to replace punctuation (default = "")
+#' @eval arg_vector("string","character")
+#' @eval arg_boolean("remove_accent","remove accent symbols from the string","TRUE")
+#' @eval arg_boolean("remove_punct","remove punctuation symbols from the string","TRUE")
+#' @eval arg_value("sub_punct","character",default = "",action = "will be replace for the punctuation symbols")
 #'
 #' @return character value
 #' @export
@@ -39,6 +39,8 @@ str_clean <-
   if(!is.logical(remove_punct)){stop("'remove_punct' must be logical.")}
 
   if(!is.character(sub_punct)){stop("'sub_punct' must be a character.")}
+
+  if(length(sub_punct) > 1){stop("'sub_punct' must be a single value.")}
 
   if(remove_punct){
     string <- gsub("[[:punct:]]",sub_punct, string)

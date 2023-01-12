@@ -7,18 +7,18 @@
 rpearson(n = 25, pearson = 0.5, tol = 0.1, mean = 0, sd = 1)
 }
 \arguments{
-\item{n}{Number of observations to simulate}
+\item{n}{A numeric integer single value (default = 25), that will be the number of observations to simulate}
 
-\item{pearson}{Pearson linear correlation coefficient}
+\item{pearson}{A numeric single value (default = 0.50), that will be the expected Pearson linear correlation coefficient}
 
-\item{tol}{Tolerance between the simulated and estimated correlation}
+\item{tol}{A numeric single value (default = 0.10), that will be the tolerance between the simulated and estimated correlation}
 
-\item{mean}{Mean of the simulated data}
+\item{mean}{A numeric single value (default = 0), that will be the mean of the simulated data}
 
-\item{sd}{Standard deviation of the simulated data}
+\item{sd}{A numeric single value (default = 1), that will be the standard deviation of the simulated data}
 }
 \value{
-data.frame with 2 numeric correlated series and both the simulated and estimated pearson linear coefficient
+Data.frame with 2 numeric correlated series (x and y)
 }
 \description{
 Simulates linear correlated data

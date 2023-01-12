@@ -2,9 +2,9 @@
 #'
 #' @description Rescale data
 #'
-#' @param x numeric vector
-#' @param new_min numeric value of the inferior limit (0 by default)
-#' @param new_max numeric value of the superior limit (1 by default)
+#' @eval arg_vector("x","numeric")
+#' @eval arg_value("new_min","numeric",default = "0",action = "will be the new minimum value")
+#' @eval arg_value("new_max","numeric",default = "1",action = "will be the new maximum value")
 #'
 #' @return numeric vector
 #'

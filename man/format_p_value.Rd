@@ -7,9 +7,9 @@
 format_p_value(p_value, p_value_min = NULL, ...)
 }
 \arguments{
-\item{p_value}{numeric vector of p value(s)}
+\item{p_value}{A numeric vector}
 
-\item{p_value_min}{number of decimals digits}
+\item{p_value_min}{A numeric single value (default = NULL), that will be the lower bound}
 }
 \value{
 formatted data

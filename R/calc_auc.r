@@ -2,8 +2,8 @@
 #'
 #' @description Calculates AUC
 #'
-#' @param x numeric vector
-#' @param y numeric vector
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("y","numeric")
 #' @param limits numeric range for integration (default = 'x' range)
 #'
 #' @return calc_auc

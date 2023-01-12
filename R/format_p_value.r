@@ -2,8 +2,8 @@
 #'
 #' @description Format p value
 #'
-#' @param p_value numeric vector of p value(s)
-#' @param p_value_min number of decimals digits
+#' @eval arg_vector("p_value","numeric")
+#' @eval arg_value("p_value_min","numeric",default = "NULL",action = "will be the lower bound")
 #'
 #' @return formatted data
 #' @export

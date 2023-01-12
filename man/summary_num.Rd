@@ -7,9 +7,9 @@
 summary_num(x, minimal = FALSE)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{minimal}{A boolean value, if TRUE the function will return a minimal version (default = FALSE)}
 
-\item{minimal}{return minimal version (default = FALSE)}
+\item{string}{A numeric vector}
 }
 \value{
 tibble

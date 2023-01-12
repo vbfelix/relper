@@ -7,7 +7,7 @@
 summary_cat(x)
 }
 \arguments{
-\item{x}{characther/factor vector}
+\item{string}{A character vector}
 }
 \value{
 tibble

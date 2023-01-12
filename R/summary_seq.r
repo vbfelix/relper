@@ -2,7 +2,7 @@
 #'
 #' @description Compute the number of values that are repeated in sequence
 #'
-#' @param x vector
+#' @eval arg_vector("x","")
 #'
 #' @return data.frame
 #' @export

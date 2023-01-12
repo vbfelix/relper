@@ -2,8 +2,8 @@
 #'
 #' @description Computes data of ACF ou CCF
 #'
-#' @param x numeric vector
-#' @param y numeric vector
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("y","numeric")
 #'
 #' @return tibble
 #' @export

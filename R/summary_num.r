@@ -2,8 +2,8 @@
 #'
 #' @description Compute summary statistics for numeric variable
 #'
-#' @param x numeric vector
-#' @param minimal return minimal version (default = FALSE)
+#' @eval arg_vector("string","numeric")
+#' @eval arg_boolean("minimal",action = "return a minimal version")
 #'
 #' @return tibble
 #' @export

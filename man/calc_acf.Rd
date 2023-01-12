@@ -7,9 +7,9 @@
 calc_acf(x, y = NULL, ...)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{y}{numeric vector}
+\item{y}{A numeric vector}
 }
 \value{
 tibble

@@ -2,7 +2,7 @@
 #'
 #' @description Check if the value is not a NA
 #'
-#' @param x single value or vector
+#' @eval arg_vector("x","")
 #'
 #' @return boolean
 #' @export

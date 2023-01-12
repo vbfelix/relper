@@ -2,7 +2,7 @@
 #'
 #' @description Compute summary statistics for data
 #'
-#' @param df data.frame
+#' @eval arg_df("df")
 #'
 #' @return tibble
 #' @export

@@ -7,13 +7,13 @@
 tbl_two_num(df, grp_var, num_vars, method = "auto")
 }
 \arguments{
-\item{df}{data.frame}
+\item{df}{A single data.frame}
 
-\item{grp_var}{variable to group by}
+\item{grp_var}{A character variable from a data.frame}
 
-\item{num_vars}{numerical variable(s)}
+\item{num_vars}{One or more variables from a data.frame}
 
-\item{method}{method of summary and test (default = 'auto')}
+\item{method}{Method of summary and test (default = 'auto')}
 }
 \value{
 data.frame

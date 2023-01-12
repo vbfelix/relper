@@ -2,8 +2,8 @@
 #'
 #' @description Transform numeric to percentage
 #'
-#' @param x numeric vector
-#' @param sum need to sum the value (default = FALSE)
+#' @eval arg_vector("x","numeric")
+#' @eval arg_boolean("sum","add the values")
 #'
 #' @return numeric vector
 #' @export

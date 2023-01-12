@@ -2,7 +2,7 @@
 #'
 #' @description Gets range of a date vector
 #'
-#' @param x date vector.
+#' @eval arg_vector("x","date")
 #'
 #' @return character vector
 #' @export

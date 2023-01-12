@@ -7,7 +7,7 @@
 summary_data(df)
 }
 \arguments{
-\item{df}{data.frame}
+\item{df}{A single data.frame}
 }
 \value{
 tibble

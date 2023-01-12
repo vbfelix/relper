@@ -7,9 +7,9 @@
 calc_auc(x, y, limits = NULL)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{y}{numeric vector}
+\item{y}{A numeric vector}
 
 \item{limits}{numeric range for integration (default = 'x' range)}
 }

@@ -7,7 +7,7 @@
 is_negative(x)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 }
 \value{
 Numeric vector

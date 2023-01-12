@@ -2,7 +2,7 @@
 #'
 #' @description return TRUE if the number is negative
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
 #'
 #' @return Numeric vector
 #' @export

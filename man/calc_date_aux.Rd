@@ -7,9 +7,9 @@
 calc_date_aux(df, dt_var)
 }
 \arguments{
-\item{df}{data.frame}
+\item{df}{A single data.frame}
 
-\item{dt_var}{date variable}
+\item{dt_var}{A date variable from a data.frame}
 }
 \value{
 data.frame

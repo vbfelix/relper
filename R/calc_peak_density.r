@@ -2,7 +2,7 @@
 #'
 #' @description Find the high density value
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
 #'
 #' @return numeric value
 #' @export

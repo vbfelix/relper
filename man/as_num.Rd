@@ -7,13 +7,13 @@
 as_num(x)
 }
 \arguments{
-\item{x}{character vector}
+\item{x}{A character vector}
 }
 \value{
 Numeric vector
 }
 \description{
-Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applyting as.numeric()
+Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applying as.numeric()
 }
 \examples{
 

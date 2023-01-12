@@ -4,8 +4,8 @@
 #' @title Create auxiliar variables from a date
 #' @description Create auxiliar variables from a date, such as: year, month, day, etc.
 #'
-#' @param df data.frame
-#' @param dt_var date variable
+#' @eval arg_df("df")
+#' @eval arg_df_var("dt_var","date")
 #'
 #' @return data.frame
 #' @export calc_date_aux

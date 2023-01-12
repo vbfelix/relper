@@ -2,7 +2,7 @@
 #'
 #' @description return TRUE if the variable is a string
 #'
-#' @param x vector
+#' @eval arg_vector("x","")
 #'
 #' @return boolean
 #' @export

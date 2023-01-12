@@ -2,9 +2,11 @@
 #'
 #' @description Provide automatic scaling to ggplot2
 #'
-#' @param axis axis indicator: x (default), y or xy
-#' @param n_ticks number of ticks
-#' @param expand expanded space
+#' @eval arg_value("axis","character",default = "'x'","will be the axis to scale, must be x, y or xy")
+#' @eval arg_number_of("n_ticks",default = "10",number_of = "axis breaks")
+#' @eval arg_value("expand","numeric",default = "0.01","will be the expanded margin to the axis")
+#' @eval arg_mark("decimal")
+#' @eval arg_mark("thousand")
 #'
 #' @return ggplot2 object
 #' @export

@@ -7,7 +7,7 @@
 calc_date_range(x)
 }
 \arguments{
-\item{x}{date vector.}
+\item{x}{A date vector}
 }
 \value{
 character vector

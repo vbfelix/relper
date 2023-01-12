@@ -2,11 +2,11 @@
 #'
 #' @description Format data as "10.500,25"
 #'
-#' @param x numeric vector
-#' @param digits number of decimals digits
-#' @param decimal_mark decimal mark
-#' @param thousand_mark thousand mark
-#' @param br_mark if TRUE, decimal_mark = "," and thousand_mark = "." (default = FALSE)
+#' @eval arg_vector("x","numeric")
+#' @eval arg_number_of("digits","decimal digits")
+#' @eval arg_mark("decimal")
+#' @eval arg_mark("thousand")
+#' @eval arg_boolean("br_mark","set decimal_mark = ',' and thousand_mark = '.'")
 #'
 #' @return formatted data
 #' @export

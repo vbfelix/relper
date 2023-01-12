@@ -2,7 +2,7 @@
 #'
 #' @description Get the row number for unique values
 #'
-#' @param x vector
+#' @eval arg_vector("x","")
 #'
 #' @return Numeric vector
 #' @export

@@ -7,11 +7,11 @@
 format_scale(x, new_min = 0, new_max = 1)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{new_min}{numeric value of the inferior limit (0 by default)}
+\item{new_min}{A numeric single value (default = 0), that will be the new minimum value}
 
-\item{new_max}{numeric value of the superior limit (1 by default)}
+\item{new_max}{A numeric single value (default = 1), that will be the new maximum value}
 }
 \value{
 numeric vector

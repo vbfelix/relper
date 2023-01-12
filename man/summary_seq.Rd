@@ -7,7 +7,7 @@
 summary_seq(x)
 }
 \arguments{
-\item{x}{vector}
+\item{x}{A  vector}
 }
 \value{
 data.frame

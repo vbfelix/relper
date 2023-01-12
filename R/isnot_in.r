@@ -2,8 +2,8 @@
 #'
 #' @description Check if  x is not contained in y
 #'
-#' @param x single value
-#' @param y vector
+#' @eval arg_value("x","")
+#' @eval arg_vector("y","")
 #'
 #' @return boolean
 #' @export

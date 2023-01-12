@@ -3,6 +3,7 @@
 #' @description Computes Cramer's V
 #'
 #' @param chi_square object from the application of the function chisq.test
+#'
 #' @return numeric vector
 #' @export
 #'

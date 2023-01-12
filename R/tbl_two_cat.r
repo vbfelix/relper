@@ -2,10 +2,10 @@
 #'
 #' @description Create a frequency table with chi-square statistic, p-value, cramer's v.
 #'
-#' @param df data.frame
-#' @param grp_var variable to group by
-#' @param vars variable(s)
-#' @param filter value to filter grp_var and vars
+#' @eval arg_df("df")
+#' @eval arg_df_var("grp_var","character")
+#' @param vars One or more variables from a data.frame
+#' @eval arg_value("filter","character",default = "", action = "will be the value to filter the variables")
 #'
 #'
 #' @return data.frame

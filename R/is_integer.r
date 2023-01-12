@@ -2,8 +2,8 @@
 #'
 #' @description return TRUE if the number is a integer, not considering their type but the number itself
 #'
-#' @param x numeric vector
-#'
+#' @eval arg_vector("x","numeric")
+#'#'
 #' @return Numeric vector
 #' @export
 #'

@@ -2,7 +2,7 @@
 #'
 #' @description Get the name of the object and return as a string
 #'
-#' @param x
+#' @param x an R object
 #'
 #' @return vector
 #' @export

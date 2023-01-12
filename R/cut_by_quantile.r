@@ -2,8 +2,8 @@
 #'
 #' @description Breaks data by quantile
 #'
-#' @param x numeric vector.
-#' @param q numeric vector of quantiles.
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("q","numeric")
 #'
 #' @return breaks
 #' @export

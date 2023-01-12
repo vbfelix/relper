@@ -2,9 +2,9 @@
 #'
 #' @description Select string: before, after or between patterns
 #'
-#' @param string character value
-#' @param after pattern to select after
-#' @param before pattern to select before
+#' @eval arg_vector("string","character")
+#' @eval arg_value("after","character",default = "NULL",action = "will be the pattern to select after")
+#' @eval arg_value("before","character",default = "NULL",action = "will be the pattern to select before")
 #'
 #' @return character value
 #' @export

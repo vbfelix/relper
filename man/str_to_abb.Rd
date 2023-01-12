@@ -7,9 +7,9 @@
 str_to_abb(string, n_char = 3)
 }
 \arguments{
-\item{string}{characther vector}
+\item{string}{A character vector}
 
-\item{n_char}{numeric value}
+\item{n_char}{A numeric integer single value (default = 3), that will be the number of characters to define as a abbreviation}
 }
 \value{
 numeric value

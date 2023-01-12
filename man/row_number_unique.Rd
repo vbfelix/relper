@@ -7,7 +7,7 @@
 row_number_unique(x)
 }
 \arguments{
-\item{x}{vector}
+\item{x}{A  vector}
 }
 \value{
 Numeric vector

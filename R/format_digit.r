@@ -2,7 +2,9 @@
 #'
 #' @description Format numbers < 10, e.g., 1 as "01"
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
+#' @eval arg_number_of("digits","length to add zeroes")
+#'
 #' @return character vector
 #' @export
 #'

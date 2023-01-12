@@ -7,7 +7,7 @@
 obj_to_string(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{an R object}
 }
 \value{
 vector

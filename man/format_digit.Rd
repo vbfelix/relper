@@ -7,7 +7,7 @@
 format_digit(x, digits = 2)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 }
 \value{
 character vector

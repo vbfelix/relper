@@ -7,9 +7,9 @@
 as_perc(x, sum = FALSE)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{sum}{need to sum the value (default = FALSE)}
+\item{sum}{A boolean value, if TRUE the function will add the values (default = FALSE)}
 }
 \value{
 numeric vector

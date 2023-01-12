@@ -7,7 +7,7 @@
 calc_harmonic_mean(x)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 }
 \value{
 Harmonic mean

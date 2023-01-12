@@ -2,7 +2,7 @@
 #'
 #' @description Compute arithmetic, geometric and harmonic mean
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
 #'
 #' @return data.frame
 #' @export

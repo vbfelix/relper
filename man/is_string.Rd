@@ -7,7 +7,7 @@
 is_string(x)
 }
 \arguments{
-\item{x}{vector}
+\item{x}{A  vector}
 }
 \value{
 boolean

@@ -13,15 +13,13 @@ format_num(
 )
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{digits}{number of decimals digits}
+\item{decimal_mark}{A character single value to use as the decimal mark}
 
-\item{decimal_mark}{decimal mark}
+\item{thousand_mark}{A character single value to use as the thousand mark}
 
-\item{thousand_mark}{thousand mark}
-
-\item{br_mark}{if TRUE, decimal_mark = "," and thousand_mark = "." (default = FALSE)}
+\item{br_mark}{A boolean value, if TRUE the function will set decimal_mark = ',' and thousand_mark = '.' (default = FALSE)}
 }
 \value{
 formatted data

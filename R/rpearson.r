@@ -2,13 +2,13 @@
 #'
 #' @description Simulates linear correlated data
 #'
-#' @param n Number of observations to simulate
-#' @param pearson Pearson linear correlation coefficient
-#' @param tol Tolerance between the simulated and estimated correlation
-#' @param mean Mean of the simulated data
-#' @param sd Standard deviation of the simulated data
+#' @eval arg_number_of("n",default = "25",number_of = "observations to simulate")
+#' @eval arg_value("pearson","numeric",default = "0.50",action = "will be the expected Pearson linear correlation coefficient")
+#' @eval arg_value("tol","numeric",default = "0.10",action = "will be the tolerance between the simulated and estimated correlation")
+#' @eval arg_value("mean","numeric",default = "0",action = "will be the mean of the simulated data")
+#' @eval arg_value("sd","numeric",default = "1",action = "will be the standard deviation of the simulated data")
 #'
-#' @return data.frame with 2 numeric correlated series and both the simulated and estimated pearson linear coefficient
+#' @return Data.frame with 2 numeric correlated series (x and y)
 #' @export
 #'
 #' @examples

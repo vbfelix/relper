@@ -7,9 +7,9 @@
 calc_cv(x, as_perc = FALSE)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{as_perc}{as percentage (default = FALSE)}
+\item{as_perc}{A boolean value, if TRUE the function will multiply the CV by 100 (default = FALSE)}
 }
 \value{
 Coefficient of variation

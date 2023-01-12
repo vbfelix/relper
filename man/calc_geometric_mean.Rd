@@ -7,7 +7,7 @@
 calc_geometric_mean(x)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 }
 \value{
 Geometric mean

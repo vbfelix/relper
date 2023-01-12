@@ -6,6 +6,11 @@
 \usage{
 plt_theme_y(base_size = 14, base_family = "", margin = 0.35)
 }
+\arguments{
+\item{base_size}{A numeric single value (default = 14), that will be the base font size}
+
+\item{margin}{A numeric single value (default = 0.35), that will be the plot margin}
+}
 \value{
 ggplot2 theme
 }

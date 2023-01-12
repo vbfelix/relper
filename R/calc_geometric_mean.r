@@ -2,7 +2,7 @@
 #'
 #' @description Calculates geometric mean
 #'
-#' @param x numeric vector
+#' @eval arg_vector("x","numeric")
 #'
 #' @return Geometric mean
 #' @export

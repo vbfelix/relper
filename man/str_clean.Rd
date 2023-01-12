@@ -7,13 +7,13 @@
 str_clean(string, remove_accent = TRUE, remove_punct = TRUE, sub_punct = "")
 }
 \arguments{
-\item{string}{character value}
+\item{string}{A character vector}
 
-\item{remove_accent}{logical value to remove accent (default = TRUE)}
+\item{remove_accent}{A boolean value, if TRUE the function will remove accent symbols from the string (default = TRUE)}
 
-\item{remove_punct}{logical value to remove punctuation (default = TRUE)}
+\item{remove_punct}{A boolean value, if TRUE the function will remove punctuation symbols from the string (default = TRUE)}
 
-\item{sub_punct}{character value to replace punctuation (default = "")}
+\item{sub_punct}{A character single value (default = ), that will be replace for the punctuation symbols}
 }
 \value{
 character value

@@ -4,7 +4,12 @@
 \alias{plt_theme_map}
 \title{ggplot2 theme}
 \usage{
-plt_theme_map(base_size = 14, base_family = "", margin = 0.25)
+plt_theme_map(base_size = 14, base_family = "", margin = 0.35)
+}
+\arguments{
+\item{base_size}{A numeric single value (default = 14), that will be the base font size}
+
+\item{margin}{A numeric single value (default = 0.35), that will be the plot margin}
 }
 \value{
 theme object

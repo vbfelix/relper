@@ -2,8 +2,8 @@
 #'
 #' @description Keep only a type of character in the string
 #'
-#' @param string character vector
-#' @param keep type of character to keep (default = 'text')
+#' @eval arg_vector("string","character")
+#' @eval arg_value("keep","character",default = "'text'",action = "will be the type of character to keep")
 #'
 #' @return character vector
 #' @export

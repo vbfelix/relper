@@ -1,8 +1,8 @@
 #' Numeric vector
 #'
-#' @description Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applyting as.numeric()
+#' @description Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applying as.numeric()
 #'
-#' @param x character vector
+#' @eval arg_vector("x","character")
 #'
 #' @return Numeric vector
 #' @export
