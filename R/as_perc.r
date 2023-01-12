@@ -5,7 +5,7 @@
 #' @eval arg_vector("x","numeric")
 #' @eval arg_boolean("sum","add the values")
 #'
-#' @return numeric vector
+#' @return Numeric vector
 #' @export
 #'
 #' @examples

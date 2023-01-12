@@ -5,7 +5,7 @@
 #' @eval arg_vector("string","character")
 #' @eval arg_value("keep","character",default = "'text'",action = "will be the type of character to keep")
 #'
-#' @return character vector
+#' @return Character vector
 #' @export
 #'
 #' @examples
