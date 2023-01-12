@@ -58,7 +58,7 @@
     - <a href="#str_clean" id="toc-str_clean">str_clean</a>
     - <a href="#str_keep" id="toc-str_keep">str_keep</a>
     - <a href="#str_select" id="toc-str_select">str_select</a>
-    - <a href="#str_to_text" id="toc-str_to_text">str_to_text</a>
+    - <a href="#str_to_abb" id="toc-str_to_abb">str_to_abb</a>
   - <a href="#summary_-functions" id="toc-summary_-functions">“summary_”
     functions</a>
     - <a href="#summary_cat" id="toc-summary_cat">summary_cat</a>
@@ -892,15 +892,15 @@ str_select(string,"STRING1","STRING2")
 #> [1] "TARGET"
 ```
 
-### str_to_text
+### str_to_abb
 
-The goal of **str_to_text** is to apply uppercase to strings with a
-number of characters lower than parameter `n_char` (default = 3).
+The goal of **str_to_abb** is to apply uppercase to strings with a
+number of characters lower than the argument `n_char` (default = 3).
 
 ``` r
 abcde_string <- c("aaaaa","bb","ccc","dddd")
 
-str_to_text(abcde_string)
+str_to_abb(abcde_string,n_char = 3)
 #> [1] "Aaaaa" "BB"    "CCC"   "Dddd"
 ```
 

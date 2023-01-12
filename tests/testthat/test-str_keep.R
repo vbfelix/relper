@@ -23,6 +23,10 @@ test_that("warning", {
 
 test_that("error", {
 
+  expect_error(object = str_keep(2,"text"))
+
   expect_error(object = str_keep("A2","aaaaa"))
+
+  expect_error(object = str_keep("A2",2))
 
 })
