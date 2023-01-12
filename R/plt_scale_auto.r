@@ -32,14 +32,20 @@ plt_scale_auto <-
     decimal_mark = ","
   ){
 
+    if(!is.character(axis)){"'axis' must be a character."}
+
+    if(!is.numeric(n_ticks)){"'n_ticks' must be numeric."}
+
+    # if(!relper::is_integer(n_ticks)){"'n_ticks' must be numeric."}
+
     axis <- tolower(axis)
 
-    if(relper::isnot_in(axis,c("x","y"))){
-      stop("Axis must be equal x or y.")
-    }
+    axis_ref <- c("x","y")
+
+    if(relper::isnot_in(axis,c("x","y"))){stop("'axis' must be equal x or y.")}
 
     if(axis == "x"){
-      out <-
+      output <-
         ggplot2::scale_x_continuous(
           expand = c(expand,0),
           breaks = scales::breaks_extended(n_ticks),
@@ -48,7 +54,7 @@ plt_scale_auto <-
     }
 
     if(axis == "y"){
-      out <-
+      output <-
         ggplot2::scale_y_continuous(
           expand = c(expand,0),
           breaks = scales::breaks_extended(n_ticks),
@@ -56,5 +62,5 @@ plt_scale_auto <-
         )
     }
 
-    return(out)
+    return(output)
   }

@@ -21,8 +21,11 @@ Import png file as watermark for ggplot2
 #'
 library(ggplot2)
 
+ggplot(mtcars)+
+plt_water_mark(vfx_watermark)
+
 #A local png file is necessary
 
 ggplot(mtcars)+
-  plt_water_mark(file_path = path_to_local_png)
+  plt_water_mark(png_filepath = path_to_local_png)
 }

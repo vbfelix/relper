@@ -500,6 +500,17 @@ is_even(2.2)
 
 ```
 
+### is_integer
+
+The goal of `is_integer` is to check if a value is a integer, not considering their variable type but the value.
+
+```{r is_integer}
+is_integer(1.1)
+
+is_integer(1)
+
+```
+
 ### is_negative
 
 The goal of `is_negative` is to check if a value is negative.
