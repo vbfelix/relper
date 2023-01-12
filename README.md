@@ -31,6 +31,7 @@
     - <a href="#format_p_value" id="toc-format_p_value">format_p_value</a>
   - <a href="#is_-functions" id="toc-is_-functions">“is_” functions</a>
     - <a href="#is_even" id="toc-is_even">is_even</a>
+    - <a href="#is_integer" id="toc-is_integer">is_integer</a>
     - <a href="#is_negative" id="toc-is_negative">is_negative</a>
     - <a href="#is_odd" id="toc-is_odd">is_odd</a>
     - <a href="#is_outlier" id="toc-is_outlier">is_outlier</a>
@@ -588,6 +589,19 @@ is_even(1.1)
 #> [1] FALSE
 
 is_even(2.2)
+#> [1] TRUE
+```
+
+### is_integer
+
+The goal of `is_integer` is to check if a value is a integer, not
+considering their variable type but the value.
+
+``` r
+is_integer(1.1)
+#> [1] FALSE
+
+is_integer(1)
 #> [1] TRUE
 ```
 
