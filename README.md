@@ -43,6 +43,8 @@
   - <a href="#plt_-functions" id="toc-plt_-functions">“plt_” functions</a>
     - <a href="#plt_flip_y_title"
       id="toc-plt_flip_y_title">plt_flip_y_title</a>
+    - <a href="#plt_identity_line"
+      id="toc-plt_identity_line">plt_identity_line</a>
     - <a href="#plt_no_background"
       id="toc-plt_no_background">plt_no_background</a>
     - <a href="#plt_no_labels" id="toc-plt_no_labels">plt_no_labels</a>
@@ -702,7 +704,7 @@ This functions will be complementary to **ggplot2** objects.
 library(ggplot2)
 
 plot <- 
-ggplot(mtcars,aes(drat,hp))+
+ggplot(mtcars,aes(qsec,mpg))+
   geom_point()
 
 plot
@@ -719,6 +721,17 @@ plot + plt_flip_y_title
 ```
 
 <img src="man/figures/README-plt_flip_y_title-1.png" width="40%" />
+
+### plt_identity_line
+
+The goal of **plt_identity_line** is to add a identity line to a scatter
+plot.
+
+``` r
+plot + plt_identity_line(color = "red")
+```
+
+<img src="man/figures/README-plt_identity_line-1.png" width="40%" />
 
 ### plt_no_background
 

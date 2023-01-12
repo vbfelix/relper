@@ -597,7 +597,7 @@ This functions will be complementary to **ggplot2** objects.
 library(ggplot2)
 
 plot <- 
-ggplot(mtcars,aes(drat,hp))+
+ggplot(mtcars,aes(qsec,mpg))+
   geom_point()
 
 plot
@@ -609,6 +609,14 @@ The goal of **plt_flip_y_title** is to flip the title from y axis.
 
 ```{r plt_flip_y_title}
 plot + plt_flip_y_title
+```
+
+### plt_identity_line
+
+The goal of **plt_identity_line** is to add a identity line to a scatter plot.
+
+```{r plt_identity_line}
+plot + plt_identity_line(color = "red")
 ```
 
 ### plt_no_background
