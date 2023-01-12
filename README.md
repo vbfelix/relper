@@ -66,7 +66,6 @@
     - <a href="#summary_num" id="toc-summary_num">summary_num</a>
     - <a href="#summary_seq" id="toc-summary_seq">summary_seq</a>
   - <a href="#tbl_-functions" id="toc-tbl_-functions">“tbl_” functions</a>
-    - <a href="#tbl_format_num" id="toc-tbl_format_num">tbl_format_num</a>
     - <a href="#tbl_two_cat" id="toc-tbl_two_cat">tbl_two_cat</a>
     - <a href="#tbl_two_num" id="toc-tbl_two_num">tbl_two_num</a>
   - <a href="#other-functions" id="toc-other-functions">Other functions</a>
@@ -989,22 +988,13 @@ summary_seq(y)
 
 This functions show data in an table.
 
-### tbl_format_num
-
-The goal of **tbl_format_num** is to apply **format_num** to all numeric
-variables in a data.frame.
-
-``` r
-mtcars %>%
-   count(vs,am) %>%
-   tbl_format_num(digits = 5)
-#>        vs      am        n
-#> 1 0.00000 0.00000 12.00000
-#> 2 0.00000 1.00000  6.00000
-#> 3 1.00000 0.00000  7.00000
-#> 4 1.00000 1.00000  7.00000
-```
-
+<!-- ### tbl_format_num -->
+<!-- The goal of **tbl_format_num** is to apply **format_num** to all numeric variables in a data.frame. -->
+<!-- ```{r tbl_format_num} -->
+<!-- mtcars %>% -->
+<!--    count(vs,am) %>% -->
+<!--    tbl_format_num(digits = 5) -->
+<!-- ``` -->
 <!-- ### tbl_print -->
 <!-- The goal of **tbl_print** is to print a data.frame as a plot. -->
 <!-- ```{r tbl_print} -->

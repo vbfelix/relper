@@ -801,15 +801,15 @@ summary_seq(y)
 
 This functions show data in an table.
 
-### tbl_format_num
+<!-- ### tbl_format_num -->
 
-The goal of **tbl_format_num** is to apply **format_num** to all numeric variables in a data.frame.
+<!-- The goal of **tbl_format_num** is to apply **format_num** to all numeric variables in a data.frame. -->
 
-```{r tbl_format_num}
-mtcars %>%
-   count(vs,am) %>%
-   tbl_format_num(digits = 5)
-```
+<!-- ```{r tbl_format_num} -->
+<!-- mtcars %>% -->
+<!--    count(vs,am) %>% -->
+<!--    tbl_format_num(digits = 5) -->
+<!-- ``` -->
 
 <!-- ### tbl_print -->
 
@@ -841,8 +841,11 @@ png_tbl_two_cat <-
   mutate(vs = paste0("vs = ",vs)) %>%
   tbl_two_cat(grp_var = vs,vars = c(am,cyl))
 
-gt::gtsave(png_tbl_two_cat, "png_tbl_two_cat.png",
-           vwidth = 1500, vheight = 1000)
+gt::gtsave(
+  png_tbl_two_cat,
+  "tbl_two_cat.png",
+  vwidth = 1500,
+  vheight = 1000)
 
 ```
 
