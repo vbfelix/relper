@@ -33,27 +33,19 @@ plt_scale_auto <-
     decimal_mark = ","
   ){
 
-    if(!is.character(axis)){"'axis' must be a character."}
+    stop_function(arg = axis,type = "character",single_value = TRUE)
 
-    if(!is.numeric(n_ticks)){"'n_ticks' must be numeric."}
+    stop_function(arg = n_ticks,type = "integer",single_value = TRUE,bigger_than = 2)
 
-    if(!relper::is_integer(n_ticks)){"'n_ticks' must be a integer."}
+    stop_function(arg = expand,type = "numeric",single_value = TRUE,bigger_than = 0)
 
-    if(relper::is_negative(n_ticks)){"'n_ticks' must be > 0."}
+    stop_function(arg = thousand_mark,type = "character",single_value = TRUE)
 
-    if(!is.numeric(expand)){"'expand' must be numeric."}
-
-    if(relper::is_negative(expand)){"'expand' must be > 0."}
-
-    if(!is.character(thousand_mark)){"'thousand_mark' must be a character."}
-
-    if(!is.character(decimal_mark)){"'decimal_mark' must be a character."}
-
-    axis <- tolower(axis)
+    stop_function(arg = decimal_mark,type = "character",single_value = TRUE)
 
     axis_ref <- c("x","y","xy","both")
 
-    if(relper::isnot_in(axis,axis_ref)){stop("'axis' must be one of: x, y or xy.")}
+    stop_one_of(axis,axis_ref)
 
     if(axis == "x"){
       output <-
@@ -94,12 +86,14 @@ plt_scale_auto <-
   }
 
 
+# library(ggplot2)
 # plot <-
 # ggplot(mtcars,aes(hp,drat))+
 # geom_point()
 #
 # plot+
-#  plt_scale_auto("xy",n_ticks = 10)
+#  plt_scale_auto("xy",n_ticks = 3,expand = 0)
 #
+# plot+
 #  plt_scale_auto("x",n_ticks = 10)+
 #  plt_scale_auto("y",n_ticks = 10)
