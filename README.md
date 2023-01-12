@@ -972,7 +972,9 @@ repeated values.
 y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
 
 summary_seq(y)
+#> # A tibble: 8 x 2
 #>   value num_rep
+#>   <dbl>   <int>
 #> 1     1       3
 #> 2     2       4
 #> 3     3       1
