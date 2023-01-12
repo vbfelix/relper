@@ -13,7 +13,7 @@ plt_scale_auto(
 )
 }
 \arguments{
-\item{axis}{axis indicator: x or y}
+\item{axis}{axis indicator: x (default), y or xy}
 
 \item{n_ticks}{number of ticks}
 
