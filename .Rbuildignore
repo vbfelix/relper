@@ -5,3 +5,6 @@
 ^test\.r$
 ^data-raw$
 ^man-roxygen
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
