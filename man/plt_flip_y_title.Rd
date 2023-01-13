@@ -14,7 +14,7 @@ plt_flip_y_title
 A ggplot2 object.
 }
 \description{
-The y axis title with horizontal rotation.
+The y axis title with a horizontal rotation.
 }
 \examples{
 library(ggplot2)

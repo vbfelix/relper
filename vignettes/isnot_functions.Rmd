@@ -1,0 +1,39 @@
+---
+title: "isnot_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{isnot_functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+```
+
+`isnot_` functions check if a variable does not pass a certain condition.
+
+# isnot_in
+
+The goal of `isnot_in` is to check if a variable is not contained, it is the same as `!(x %in% y)`.
+
+```{r isnot_in}
+isnot_in("a", letters)
+```
+
+# isnot_na
+
+The goal of `isnot_na` is to check if a variable is not a `NA` it is the same as `!is.na(x)`.
+
+```{r isnot_na}
+isnot_na(2)
+
+isnot_na(NA)
+```

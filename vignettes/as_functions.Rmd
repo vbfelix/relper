@@ -1,0 +1,47 @@
+---
+title: "as_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{as}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+library(dplyr)
+```
+
+`as_` functions coerce values to another type.
+
+# as_num
+The goal of `as_num` is to be a version of `as.numeric`, where the input is a string number with marks, such as "10.000,02".
+
+```{r as_num}
+as_num("123.456,78")
+```
+
+# as_perc
+The goal of `as_perc` is to compute a number as percentage. By default the function will just multiply values by 100.
+
+```{r as_perc}
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  mutate(perc = as_perc(prop))
+```
+
+If you set the argument `sum` to `TRUE` the function will divide the values by their total and multiply by 100.
+
+```{r as_perc-sum}
+mtcars %>% 
+  count(vs,am) %>% 
+  mutate(perc = as_perc(n,sum = TRUE))
+```

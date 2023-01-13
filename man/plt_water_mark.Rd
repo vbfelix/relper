@@ -4,28 +4,22 @@
 \alias{plt_water_mark}
 \title{ggplot2: Application of a watermark}
 \usage{
-plt_water_mark(png_obj = NULL, png_filepath = NULL)
+plt_water_mark(obj)
 }
 \arguments{
-\item{png_obj}{A character single value, that will be name of an .png file already imported in the R global environment}
-
-\item{png_filepath}{A character single value, that will be the path to a .png file}
+\item{obj}{The name of the R object with the watermark as an array}
 }
 \value{
 A ggplot2 object.
 }
 \description{
-Application of an imported .png file as a watermark for a ggplot2 plot.
+Application of a watermark for a ggplot2 plot.
 }
 \examples{
-#'
+
 library(ggplot2)
 
 ggplot(mtcars)+
 plt_water_mark(vfx_watermark)
 
-#A local png file is necessary
-
-ggplot(mtcars)+
-  plt_water_mark(png_filepath = path_to_local_png)
 }

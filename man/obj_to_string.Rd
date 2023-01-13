@@ -17,10 +17,8 @@ Return an object name as a string.
 }
 \examples{
 
-
 x <- rnorm(100)
 
 obj_to_string(x)
-
 
 }

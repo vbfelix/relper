@@ -17,7 +17,7 @@
 
 summary_data <- function(df){
 
-  stop_function(arg = df,type = "dataframe",single_value = TRUE)
+  stop_function(arg = df,type = "dataframe")
 
   df_num <-
     df %>%

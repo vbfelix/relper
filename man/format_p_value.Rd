@@ -4,7 +4,7 @@
 \alias{format_p_value}
 \title{Format p value}
 \usage{
-format_p_value(p_value, lower_bound = NULL, ...)
+format_p_value(p_value, lower_bound = NULL)
 }
 \arguments{
 \item{p_value}{A numeric vector}
@@ -12,7 +12,7 @@ format_p_value(p_value, lower_bound = NULL, ...)
 \item{lower_bound}{A numeric single value (default = NULL), that will be the lower bound}
 }
 \value{
-Characther vector
+A characther vector.
 }
 \description{
 Format p value

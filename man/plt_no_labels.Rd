@@ -14,7 +14,7 @@ plt_no_labels
 A ggplot2 object.
 }
 \description{
-Removal of all labels from a ggplot2 plot.#'
+Removal of all labels from a ggplot2 plot.
 }
 \examples{
 
