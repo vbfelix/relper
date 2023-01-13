@@ -4,7 +4,7 @@
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return A numeric vector with rank, given the unique values from x.
+#' @return A numeric vector with rank, given the unique values from argument 'x'.
 #'
 #' @export
 #'
