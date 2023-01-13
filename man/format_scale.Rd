@@ -2,7 +2,7 @@
 % Please edit documentation in R/format_scale.r
 \name{format_scale}
 \alias{format_scale}
-\title{Scaling data}
+\title{Rescale data}
 \usage{
 format_scale(x, new_min = 0, new_max = 1)
 }
@@ -14,10 +14,10 @@ format_scale(x, new_min = 0, new_max = 1)
 \item{new_max}{A numeric single value (default = 1), that will be the new maximum value}
 }
 \value{
-numeric vector
+A numeric vector.
 }
 \description{
-Rescale data
+Rescale data to have a new range.
 }
 \examples{
 

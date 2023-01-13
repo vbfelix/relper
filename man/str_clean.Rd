@@ -13,7 +13,7 @@ str_clean(string, remove_accent = TRUE, remove_punct = TRUE, sub_punct = "")
 
 \item{remove_punct}{A boolean value, if TRUE the function will remove punctuation symbols from the string (default = TRUE)}
 
-\item{sub_punct}{A character single value (default = ), that will be replace for the punctuation symbols}
+\item{sub_punct}{A character single value (default = ''), that will be replacement for the punctuation symbols}
 }
 \value{
 A character vector.

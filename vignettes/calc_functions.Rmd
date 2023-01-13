@@ -1,0 +1,334 @@
+---
+title: "calc_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{calc_functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+library(dplyr)
+library(ggplot2)
+```
+
+`calc_` functions compute a certain value.
+
+# calc_acf
+
+The goal of `calc_acf` is to compute the auto-correlation function, given by:
+
+$$\frac{\sum_\limits{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_\limits{t = 1}^{n} (x_t - \bar{x})^2 },$$
+where:
+
+ - $x_t$ is a time series of length $n$;
+ - $x_{t-k}$ is a shifted time series by $k$ units in time;
+ - $\bar{x}$ is the average of the time series.
+
+```{r calc_acf}
+x <- rnorm(100)
+
+calc_acf(x)
+
+```
+
+If you pass a second vector in the argument `y` the cross-correlation will be computed instead:
+
+$$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[\left(\sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t\right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},$$
+where:
+
+ - $x_t$ is a time series of length $n$;
+ - $y_t$ is a time series of length $n$.
+
+```{r calc_acf-ccf}
+y <- rexp(100)
+
+calc_acf(x,y)
+
+```
+
+# calc_auc
+
+The goal of `calc_auc` is to compute the area under a curve (AUC).
+
+```{r calc_auc-data}
+x <- seq(-3,3,l = 100)
+
+y <- dnorm(x)
+```
+
+```{r calc_auc-base-plot, echo = F}
+ggplot(tibble(x = x,
+              y = y),
+       aes(x,y))+
+  geom_point()+
+  plt_theme_y()
+```
+
+
+```{r calc_auc-99}
+#from min to max of x
+range(x)
+
+calc_auc(x,y)
+```
+
+```{r calc_auc-plot-99, echo = F}
+df_auc <-
+  tibble(
+    x = x,
+    y = y)
+
+df_auc %>% 
+ggplot(aes(x,y))+
+  geom_area(alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  plt_theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(calc_auc(x,y),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-3,3), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+You can define the argument `limits` to get the AUC of that limit.
+
+```{r calc_auc-95}
+#from -2 to 2
+calc_auc(x,y,limits = c(-2,2))
+```
+
+```{r calc_auc-plot-95, echo = F}
+df_auc %>% 
+  ggplot(aes(x,y))+
+  geom_area(data = df_auc %>% 
+              filter(between(x,-2,2)),
+              alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  plt_theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-2,2)),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-2,2), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+```{r calc_auc-68}
+#from -1 to 1
+calc_auc(x,y,limits = c(-1,1))
+```
+
+```{r calc_auc-plot-68, echo = F}
+df_auc %>% 
+  ggplot(aes(x,y))+
+  geom_area(data = df_auc %>% 
+              filter(between(x,-1,1)),
+              alpha = .7, fill = "chocolate2")+
+  geom_point()+
+  plt_theme_y()+
+  annotate("text",
+           x = mean(x),y = mean(y),label = round(calc_auc(x,y,limits = c(-1,1)),3),
+           fontface = "bold", size = 7)+
+  geom_vline(xintercept = c(-1,1), linetype = "dashed")+
+  scale_x_continuous(breaks = -5:5)+
+  scale_y_continuous(expand = c(0,0))
+```
+
+# calc_corr
+The goal of `calc_corr` is to compute Pearson, Kendall and Spearman correlation coefficients.
+
+```{r calc_corr}
+x <- rnorm(100)
+
+y <- rnorm(100)
+
+calc_corr(x,y)
+```
+
+
+# calc_cramers_v
+
+The goal of `calc_cramers_v` is to compute Cramer's V, given by:
+
+$$\sqrt{\frac{X^2}{n\min(r-1,c-1)}},$$
+where:
+
+  - $X^2$ the chi-square statistic;
+  - $n$ is the sample size;
+  - $r$ is the number of rows in the contingency table;
+  - $c$ is the number of columns in the contingency table.
+
+```{r calc_cramers_v}
+m <- matrix(c(12, 5, 7, 7), ncol = 2)
+
+chi_square <- chisq.test(m)
+
+calc_cramers_v(chi_square)
+```
+
+# calc_cv
+The goal of `calc_cv` is to compute the coefficient of variation (CV), given by:
+
+$$\frac{s}{\bar{x}},$$
+where:
+
+ - $s$ is the sample standard deviation;
+ - $\bar{x}$ is the sample mean.
+ 
+```{r calc_cv}
+set.seed(123);x <- rnorm(100,1)
+
+calc_cv(x)
+```
+
+If you set the argument `as_perc` to `TRUE`, the CV will be multiplied by 100.
+
+```{r calc_cv-as-perc}
+calc_cv(x,as_perc = TRUE)
+```
+
+# calc_date_aux
+
+The goal of `calc_date_aux` is to compute variables derived from date, such as year, month, day, etc.
+
+```{r calc_date_aux}
+dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
+
+df_dt <- data.frame(dt = dt)
+
+calc_date_aux(df_dt,dt) %>% glimpse()
+```
+
+The new variables respective to the date are:
+
+ - **mon_abb:** a factor with the abbreviated name of the month;
+ - **mon_lbl:** a factor with the complete name of the month;
+ - **mon_num:** the number of the month;
+ - **day_num:** the number of the day within the month;
+ - **year_num:** the number of the year;
+ - **year_lbl:** a factor with the number of the year;
+ - **week_num:** the number of complete seven day periods that have occurred between the date and January 1st, plus one;
+ - **epiweek_num:** the US CDC version of epidemiological week. Starts on Sunday;
+ - **isoweek_num:**  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
+ - **wday_abb:** a factor with the week day abbreviated name;
+ - **wday_lbl:** a factor with the week day complete name.
+ 
+# calc_date_diff
+
+The goal of `calc_date_diff` is to compute the difference between two dates.
+
+```{r calc_date_diff}
+date1 <- lubridate::dmy("01/05/1998")
+
+date2 <- lubridate::dmy("21/11/2018")
+
+calc_date_diff(date1 = date1,date2 = date2,unit = "days")
+```
+
+So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509 days.
+
+If you need to add a constant to your difference you can use the argument `add`.
+
+```{r calc_date_diff-add}
+calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
+```
+
+# calc_date_range
+
+The goal of `calc_date_range` is to compute the range of a date vector, and create a string with the minimal and maximum date.
+
+```{r calc_date_range}
+dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
+
+calc_date_range(dt)
+```
+
+
+# calc_geometric_mean
+
+The goal of `calc_geometric_mean` is to compute the geometric mean, given by:
+
+$$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
+where:
+
+ - $x_i$ is a numeric vector of length $n$.
+
+```{r calc_geometric_mean}
+calc_geometric_mean(x)
+```
+
+# calc_harmonic_mean
+
+The goal of `calc_harmonic_mean` is to compute the harmonic mean, given by:
+
+$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$
+where:
+
+ - $x_i$ is a numeric vector of length $n$.
+
+```{r calc_harmonic_mean}
+calc_harmonic_mean(x)
+```
+
+# calc_mean
+
+The goal of `calc_mean` is to compute the arithmetic, geometric and harmonic mean.
+
+```{r calc_mean}
+calc_mean(x)
+```
+
+# calc_mode
+
+The goal of `calc_mode` is to compute the mode.
+
+```{r calc_mode-data}
+set.seed(123);cat_var <- sample(letters,100,replace = TRUE)
+
+table(cat_var)
+
+```
+We can see that the letter "*y*" is the one that appears the most, so it is the mode of the variable.
+
+```{r calc_mode}
+calc_mode(cat_var)
+```
+
+# calc_peak_density
+The goal of `calc_peak_density` is to compute the peak density value of a numeric value.
+
+```{r calc_peak_density-base-plot,echo = F}
+
+ggplot2::ggplot(data = dplyr::tibble(x = x),
+                ggplot2::aes(x))+
+  ggplot2::geom_density()+
+  relper::plt_theme_y()+
+  ggplot2::scale_x_continuous(breaks = 0:20)
+
+```
+
+Let's say we eant to discover what value is the peak in the density above.
+
+```{r calc_peak_density}
+calc_peak_density(x)
+```
+
+```{r calc_peak_density-plot,echo = F}
+ggplot2::ggplot(data = dplyr::tibble(x = x),
+                ggplot2::aes(x))+
+  ggplot2::geom_density()+
+  ggplot2::geom_vline(xintercept = relper::calc_peak_density(x),col = "royalblue4", size = 1)+
+  relper::plt_theme_y()+
+  ggplot2::scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(relper::calc_peak_density(x),3)))
+
+```

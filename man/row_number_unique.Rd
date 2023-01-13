@@ -10,7 +10,7 @@ row_number_unique(x)
 \item{x}{A  vector}
 }
 \value{
-A numeric vector with rank, given the unique values from x.
+A numeric vector with rank, given the unique values from argument 'x'.
 }
 \description{
 Get the row number for unique values.

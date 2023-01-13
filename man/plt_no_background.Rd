@@ -14,7 +14,7 @@ plt_no_background
 A ggplot2 object.
 }
 \description{
-Transparent background for a ggplot2 plot.
+Apply a transparent background for a ggplot2 plot.
 }
 \examples{
 library(ggplot2)

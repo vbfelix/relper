@@ -7,10 +7,10 @@
 calc_mode(x)
 }
 \arguments{
-\item{x}{A character vector}
+\item{x}{A  vector}
 }
 \value{
-A character single value with the computed mode.
+A character vector with the computed mode(s).
 }
 \description{
 Computation of the mode.

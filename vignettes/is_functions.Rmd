@@ -1,0 +1,135 @@
+---
+title: "is_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{is_functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+```
+
+`is_` functions returns a boolean, given a condition.
+
+# is_date
+
+The goal of `is_date` is to check if a value is a date.
+
+```{r is_date}
+is_date(Sys.time())
+
+is_date(Sys.Date())
+```
+
+# is_datetime
+
+The goal of `is_datetime` is to check if a value is a datetime.
+
+```{r is_datetime}
+is_date(Sys.time())
+
+is_date(Sys.Date())
+```
+
+
+# is_even
+
+The goal of `is_even` is to check if a value is even.
+
+```{r is_even}
+is_even(1)
+
+is_even(2)
+
+is_even(1.1)
+
+is_even(2.2)
+
+```
+
+# is_integer
+
+The goal of `is_integer` is to check if a value is a integer, not considering their variable type but the value.
+
+```{r is_integer}
+is_integer(1.1)
+
+is_integer(1)
+
+```
+
+# is_negative
+
+The goal of `is_negative` is to check if a value is negative.
+
+```{r is_negative}
+is_negative(1)
+
+is_negative(-1)
+
+```
+
+# is_odd
+
+The goal of `is_odd` is to check if a value is odd.
+
+```{r is_odd}
+is_odd(1)
+
+is_odd(2)
+
+is_odd(1.1)
+
+is_odd(2.2)
+
+```
+
+# is_outlier
+
+The goal of `is_outlier` is to check if a value is an outlier, by using the boxplot outlier criteria, given by:
+
+$$ [x < (Q_1 - 1.5 * IQR)] \quad  |  \quad [x > (Q_3 - 1.5 * IQR)],$$
+
+where:
+
+ - $Q_1$ is the first quartile;
+ - $Q_3$ is the third quartile;
+ - $IQR$ is the interquartile range, e.g., $Q_3-Q_1$.
+
+```{r is_outlier}
+x <- c(1,2,3,5,7,8,12,100)
+
+is_outlier(x)
+
+```
+
+# is_positive
+
+The goal of `is_positive` is to check if a value is positive.
+
+```{r is_positive}
+is_positive(1)
+
+is_positive(-1)
+
+```
+
+# is_string
+
+The goal of `is_string` is to check if a value is a string, character or factor.
+
+```{r is_string}
+is_string("A")
+
+is_string(factor("A"))
+
+```

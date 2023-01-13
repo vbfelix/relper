@@ -1,0 +1,79 @@
+---
+title: "str_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{str_functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+```
+
+`str_` functions manipulate strings.
+
+# str_clean
+
+The goal of `str_clean` is to remove punctuation and/or accent.
+
+```{r str_clean}
+string <- "a..;éâ...íõ"
+
+#remove only punctuation
+str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
+
+#remove only accent
+str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
+
+#remove both
+str_clean(string)
+```
+
+# str_keep
+
+The goal of `str_keep` is to keep only a type of character in the string.
+
+```{r str_keep}
+string <- "1Aa45Z89$$%#"
+
+str_keep(string,keep = "text")
+
+str_keep(string,keep = "numbers")
+
+str_keep(string,keep = "special")
+```
+
+# str_select
+
+The goal of `str_select` is to select part of a string, before, after or between patterns.
+
+```{r str_select}
+string <- "example text STRING1 TARGET STRING2 example text"
+
+#Select a string, before a pattern
+str_select(string,before = "STRING2")
+
+#Select a string, after a pattern
+str_select(string,after = "STRING1")
+
+#Select a string, between two patterns
+str_select(string,"STRING1","STRING2")
+```
+
+# str_to_abb
+
+The goal of `str_to_abb` is to apply uppercase to strings with a number of characters lower than the argument `n_char` (default = 3).
+
+```{r str_to_abb}
+abcde_string <- c("aaaaa","bb","ccc","dddd")
+
+str_to_abb(abcde_string,n_char = 3)
+```

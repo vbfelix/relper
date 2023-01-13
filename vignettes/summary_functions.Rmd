@@ -1,0 +1,60 @@
+---
+title: "summary_ functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{summary_functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(relper)
+```
+
+`summary_` functions summarize data and return metrics related to them.
+
+# summary_cat
+
+The goal of `summary_cat` is to summarize categorical variables.
+
+```{r summary_cat}
+x <- c(sample(letters,100,replace = TRUE),NA)
+
+summary_cat(x)
+```
+
+# summary_data
+
+The goal of `summary_data` is to summarize all variables from a dataframe.
+
+```{r summary_data}
+summary_data(mtcars)
+```
+
+# summary_num
+
+The goal of `summary_num` is to summarize numeric variables.
+
+```{r summary_num}
+x <- c(rnorm(10),NA,10)
+
+summary_num(x)
+```
+
+# summary_seq
+
+The goal of `summary_seq` is to compute the number of sequential repeated values.
+
+```{r summary_seq}
+y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+
+summary_seq(y)
+
+```
