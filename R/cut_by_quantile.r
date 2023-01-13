@@ -1,17 +1,17 @@
-#' Convert numeric to factor
+#' Convert numeric vector to factor
 #'
-#' @description Divides the range of a numeric vector by the quantiles provided (q).
+#' @description Divides the range of a numeric vector by the quantiles provided ('q').
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("q","numeric")
 #'
-#' @return A factor vector withe interval range of the quantiles.
+#' @return A factor vector with the interval range of the quantiles.
 #'
 #' @export
 #'
 #' @examples
 #'
-#' x <- rnorm(100)
+#' x <- rnorm(10)
 #'
 #' cut_by_quantile(x)
 #'
