@@ -5,7 +5,7 @@
 #' @eval arg_vector("p_value","numeric")
 #' @eval arg_value("lower_bound","numeric",default = "NULL",action = "will be the lower bound")
 #'
-#' @return Characther vector.
+#' @return A characther vector.
 #'
 #' @export
 #'
