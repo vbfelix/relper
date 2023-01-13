@@ -17,7 +17,8 @@ Imports:
     dplyr,
     gt,
     lubridate,
-    tibble
+    tibble,
+    tidyr
 Suggests: 
     knitr,
     rmarkdown,
