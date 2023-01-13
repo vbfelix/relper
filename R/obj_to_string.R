@@ -10,13 +10,13 @@
 #'
 #' @examples
 #'
-#'
 #' x <- rnorm(100)
 #'
 #' obj_to_string(x)
 #'
-#'
 
 obj_to_string <- function(x){
-    deparse(substitute(x))
-  }
+
+  deparse(substitute(x))
+
+}
