@@ -19,7 +19,9 @@ Imports:
     lubridate,
     tibble,
     tidyr,
-    broom
+    broom,
+    purrr,
+    webshot2
 Suggests: 
     knitr,
     rmarkdown,
