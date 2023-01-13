@@ -1,8 +1,18 @@
 pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
-articles: {}
-last_built: 2023-01-13T17:38Z
+articles:
+  as_functions: as_functions.html
+  calc_functions: calc_functions.html
+  format_functions: format_functions.html
+  is_functions: is_functions.html
+  isnot_functions: isnot_functions.html
+  others_functions: others_functions.html
+  plt_functions: plt_functions.html
+  stat_functions: stat_functions.html
+  str_functions: str_functions.html
+  summary_functions: summary_functions.html
+last_built: 2023-01-13T18:30Z
 urls:
   reference: https://vbfelix.github.io/relper/reference
   article: https://vbfelix.github.io/relper/articles

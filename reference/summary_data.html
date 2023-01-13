@@ -21,6 +21,21 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/as_functions.html">as_ functions</a>
+    <a class="dropdown-item" href="../articles/calc_functions.html">calc_ functions</a>
+    <a class="dropdown-item" href="../articles/format_functions.html">format_functions</a>
+    <a class="dropdown-item" href="../articles/is_functions.html">is_ functions</a>
+    <a class="dropdown-item" href="../articles/isnot_functions.html">isnot_ functions</a>
+    <a class="dropdown-item" href="../articles/others_functions.html">Others functions</a>
+    <a class="dropdown-item" href="../articles/plt_functions.html">plt_ functions</a>
+    <a class="dropdown-item" href="../articles/stat_functions.html">stat_functions</a>
+    <a class="dropdown-item" href="../articles/str_functions.html">str_ functions</a>
+    <a class="dropdown-item" href="../articles/summary_functions.html">summary_ functions</a>
+  </div>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
@@ -97,7 +112,24 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">summary_data</span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in stop_function(arg = df, type = "dataframe", single_value = TRUE):</span> argument 'df' must be a single value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "11 numeric variables."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 14</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    var       n    na negative equal_…¹ posit…²   min    p25    p50    p75    max</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> am       32     0        0       19      13  0      0      0      1      1   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> carb     32     0        0        0      32  1      2      2      4      8   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> cyl      32     0        0        0      32  4      4      6      8      8   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> disp     32     0        0        0      32 71.1  121.   196.   326    472   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> drat     32     0        0        0      32  2.76   3.08   3.70   3.92   4.93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> gear     32     0        0        0      32  3      3      4      4      5   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> hp       32     0        0        0      32 52     96.5  123    180    335   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> mpg      32     0        0        0      32 10.4   15.4   19.2   22.8   33.9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> qsec     32     0        0        0      32 14.5   16.9   17.7   18.9   22.9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> vs       32     0        0       18      14  0      0      0      1      1   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> wt       32     0        0        0      32  1.51   2.58   3.32   3.61   5.42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 3 more variables: mode &lt;dbl&gt;, mean &lt;dbl&gt;, cv &lt;dbl&gt;, and abbreviated</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   variable names ¹​equal_zero, ²​positive</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "0 categoric variables."</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
