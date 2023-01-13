@@ -5,7 +5,8 @@
 #' @eval arg_vector("p_value","numeric")
 #' @eval arg_value("lower_bound","numeric",default = "NULL",action = "will be the lower bound")
 #'
-#' @return Characther vector
+#' @return Characther vector.
+#'
 #' @export
 #'
 #' @examples
@@ -14,11 +15,11 @@
 #'
 
 format_p_value <-
-  function(p_value, lower_bound = NULL,...){
+  function(p_value, lower_bound = NULL){
 
   stop_function(arg = p_value,type = "numeric")
 
-  stop_function(arg = lower_bound,type = "numeric",null = TRUE)
+  stop_function(arg = lower_bound,type = "numeric",null = TRUE,single_value = TRUE)
 
   if(is.null(lower_bound)){
     relper::format_num(p_value,digits = 4,...)
@@ -26,7 +27,7 @@ format_p_value <-
     dplyr::if_else(
       condition = p_value < lower_bound,
       true =  paste0("<",lower_bound),
-      false = relper::format_num(p_value,digits = 4,...)
+      false = relper::format_num(p_value,digits = 4)
     )
   }
 
