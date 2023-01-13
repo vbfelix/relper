@@ -5,7 +5,7 @@
 #' @eval arg_vector("string","character")
 #' @eval arg_boolean("remove_accent","remove accent symbols from the string","TRUE")
 #' @eval arg_boolean("remove_punct","remove punctuation symbols from the string","TRUE")
-#' @eval arg_value("sub_punct","character",default = "",action = "will be replace for the punctuation symbols")
+#' @eval arg_value("sub_punct","character",default = "''",action = "will be replacement for the punctuation symbols")
 #'
 #' @return A character vector.
 #'
