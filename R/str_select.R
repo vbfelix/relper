@@ -35,7 +35,7 @@ str_select <- function(string,after = NULL,before = NULL){
 
   if((!is.null(before)) & (!is.null(after))){
     output <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))
-    output <- out[,2]
+    output <- output[,2]
   }
 
   if((!is.null(before)) & (is.null(after))){
