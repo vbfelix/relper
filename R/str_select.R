@@ -1,4 +1,4 @@
-#' Select parts of a string, given patterns.
+#' Select parts of a string, given patterns
 #'
 #' @description Select parts of a string: before, after or between patterns.
 #'

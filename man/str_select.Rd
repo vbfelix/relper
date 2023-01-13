@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_select.r
 \name{str_select}
 \alias{str_select}
-\title{Select parts of a string, given patterns.}
+\title{Select parts of a string, given patterns}
 \usage{
 str_select(string, after = NULL, before = NULL)
 }
