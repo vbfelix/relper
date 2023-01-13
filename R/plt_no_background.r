@@ -1,6 +1,6 @@
 #' ggplot2: Apply a transparent background.
 #'
-#' @description Transparent background for a ggplot2 plot.
+#' @description Apply a transparent background for a ggplot2 plot.
 #'
 #' @return A ggplot2 object.
 #'
