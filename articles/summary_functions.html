@@ -104,8 +104,8 @@ variables.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 5</span></span></span>
 <span><span class="co">#&gt;       n    na blank_space n_distinct mode </span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         26 m    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   101     1           0         26 s</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         24 d    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   101     1           0         24 n</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_data">summary_data<a class="anchor" aria-label="anchor" href="#summary_data"></a>
@@ -143,11 +143,11 @@ variables.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 13</span></span></span>
-<span><span class="co">#&gt;       n    na negat…¹ equal…² posit…³   min    p25   p50   p75   max  mode  mean</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1       5       0       6 -<span style="color: #BB0000;">2.46</span> -<span style="color: #BB0000;">0.817</span> 0.267 0.823    10 0.222 0.838</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 1 more variable: cv &lt;dbl&gt;, and abbreviated variable names ¹​negative,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   ²​equal_zero, ³​positive</span></span></span></code></pre></div>
+<span><span class="co">#&gt;       n    na negative equal_z…¹ posit…²   min    p25    p50    p75   max   mode</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1        8         0       3 -<span style="color: #BB0000;">2.09</span> -<span style="color: #BB0000;">0.725</span> -<span style="color: #BB0000;">0.529</span> 0.066<span style="text-decoration: underline;">1</span>    10 -<span style="color: #BB0000;">0.569</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 2 more variables: mean &lt;dbl&gt;, cv &lt;dbl&gt;, and abbreviated variable names</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ¹​equal_zero, ²​positive</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_seq">summary_seq<a class="anchor" aria-label="anchor" href="#summary_seq"></a>

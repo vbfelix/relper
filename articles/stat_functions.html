@@ -108,17 +108,16 @@ with chi-square statistic, p-value and Cramer’s V.</p>
 <code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>vs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"vs = "</span>,<span class="va">vs</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/stat_two_cat.html">stat_two_cat</a></span><span class="op">(</span>grp_var <span class="op">=</span> <span class="va">vs</span>,vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">am</span>,<span class="va">cyl</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">#&gt; Warning: All elements of `...` must be named.</span></span>
-<span><span class="co">#&gt; Did you want `data = -name`?</span></span>
-<span><span class="co">#&gt; Warning in stats::chisq.test(.$grp_var, .$value): Chi-squared approximation may</span></span>
-<span><span class="co">#&gt; be incorrect</span></span></code></pre>
+<div class="figure">
+<img src="stat_two_cat.png" alt=""><p class="caption">Result of the function stat_two_cat.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="stat_two_num">stat_two_num<a class="anchor" aria-label="anchor" href="#stat_two_num"></a>
 </h2>
 <p>The goal of <code>stat_two_num</code> is to create a summary table
 comparing one or more numerical variables between two groups.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/stat_two_num.html">stat_two_num</a></span><span class="op">(</span></span>
 <span>  df <span class="op">=</span> <span class="va">df</span>,</span>
@@ -126,8 +125,9 @@ comparing one or more numerical variables between two groups.</p>
 <span>  num_vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">num_var1</span>,<span class="va">num_var2</span>,<span class="va">num_var3</span><span class="op">)</span>,</span>
 <span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">#&gt; Joining, by = "name"</span></span>
-<span><span class="co">#&gt; Joining, by = "name"</span></span></code></pre>
+<div class="figure">
+<img src="stat_two_num.png" alt=""><p class="caption">Result of the function stat_two_num.</p>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
