@@ -2,9 +2,9 @@
 #'
 #' @description Computation of the mode.
 #'
-#' @eval arg_vector("x","character")
+#' @eval arg_vector("x","")
 #'
-#' @return A character single value with the computed mode.
+#' @return A character vector with the computed mode(s).
 #' @export
 #'
 #' @examples
@@ -16,9 +16,15 @@
 
 calc_mode <- function(x){
 
-    cat_levels <- unique(x)
+    levels <- unique(x)
 
-    output <- cat_levels[which.max(tabulate(match(x, cat_levels)))]
+    index <- tabulate(match(x, levels))
+
+    mode_index <- index == max(index)
+
+    if(length(mode_index) > 1){warning("The computed mode has ties, more than one result will be provided.")}
+
+    output <- which(mode_index)
 
     return(output)
 
