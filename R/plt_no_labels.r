@@ -1,6 +1,6 @@
 #' ggplot2: Removal of all labels
 #'
-#' @description Removal of all labels from a ggplot2 plot.#'
+#' @description Removal of all labels from a ggplot2 plot.
 #'
 #' @return A ggplot2 object.
 #'
