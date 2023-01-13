@@ -2,7 +2,7 @@
 % Please edit documentation in R/row_number_unique.r
 \name{row_number_unique}
 \alias{row_number_unique}
-\title{row_number() but consdering unique values}
+\title{Create a rank given unique values from a variable}
 \usage{
 row_number_unique(x)
 }
@@ -10,10 +10,10 @@ row_number_unique(x)
 \item{x}{A  vector}
 }
 \value{
-Numeric vector
+A numeric vector with rank, given the unique values from x.
 }
 \description{
-Get the row number for unique values
+Get the row number for unique values.
 }
 \examples{
 

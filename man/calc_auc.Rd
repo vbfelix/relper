@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_auc.r
 \name{calc_auc}
 \alias{calc_auc}
-\title{Area under the curve (AUC)}
+\title{Area under the curve computation}
 \usage{
 calc_auc(x, y, limits = NULL)
 }
@@ -11,13 +11,13 @@ calc_auc(x, y, limits = NULL)
 
 \item{y}{A numeric vector}
 
-\item{limits}{numeric range for integration (default = 'x' range)}
+\item{limits}{A numeric vector of length 2 (default = range of 'x')}
 }
 \value{
-calc_auc
+A numeric single value with the computed AUC.
 }
 \description{
-Calculates AUC
+Computation of the area under the curve (AUC), by linear interpolation.
 }
 \examples{
 

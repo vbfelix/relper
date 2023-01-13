@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_harmonic_mean.r
 \name{calc_harmonic_mean}
 \alias{calc_harmonic_mean}
-\title{Harmonic mean}
+\title{Harmonic mean computation}
 \usage{
 calc_harmonic_mean(x)
 }
@@ -10,10 +10,10 @@ calc_harmonic_mean(x)
 \item{x}{A numeric vector}
 }
 \value{
-Harmonic mean
+A numeric single value with the computed harmonic mean.
 }
 \description{
-Calculates harmonic mean
+Computation of the harmonic mean.
 }
 \examples{
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_outlier.r
 \name{is_outlier}
 \alias{is_outlier}
-\title{Outlier}
+\title{Conditional check for an outlier value}
 \usage{
 is_outlier(x)
 }
@@ -10,10 +10,10 @@ is_outlier(x)
 \item{x}{A numeric vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the value is an outlier (boxplot criteria)
+Return TRUE if the value is an outlier (boxplot criteria).
 }
 \examples{
 

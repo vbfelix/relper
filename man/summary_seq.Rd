@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_seq.r
 \name{summary_seq}
 \alias{summary_seq}
-\title{Compute the number of values that are repeated in sequence}
+\title{Summary sequence of values}
 \usage{
 summary_seq(x)
 }
@@ -10,10 +10,10 @@ summary_seq(x)
 \item{x}{A  vector}
 }
 \value{
-data.frame
+A tibble with the values and the respective number of values repeated in sequence.
 }
 \description{
-Compute the number of values that are repeated in sequence
+Summary of the values in the repeated values in sequence.
 }
 \examples{
 

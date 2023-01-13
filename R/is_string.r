@@ -1,10 +1,11 @@
-#' Conditional check for an string value (character or factor)
+#' Conditional check for an string value
 #'
-#' @description return TRUE if the value is a string (character or factor)
+#' @description Return TRUE if the value is a string (character or factor).
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples

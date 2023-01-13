@@ -1,10 +1,11 @@
-#' Geometric mean
+#' Geometric mean computation
 #'
-#' @description Calculates geometric mean
+#' @description Computation of the geometric mean.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Geometric mean
+#' @return A numeric single value with the computed geometric mean.
+#'
 #' @export
 #'
 #' @examples

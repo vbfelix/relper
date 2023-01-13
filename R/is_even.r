@@ -1,15 +1,18 @@
 #' Conditional check for an even value
 #'
-#' @description return TRUE if the value is even
+#' @description Return TRUE if the value is even.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples
 #'
 #' is_even(4)
+#'
+#' is_even(3)
 #'
 
 is_even <- function(x){

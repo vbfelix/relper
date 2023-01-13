@@ -2,7 +2,7 @@
 % Please edit documentation in R/plt_water_mark.r
 \name{plt_water_mark}
 \alias{plt_water_mark}
-\title{Water mark}
+\title{ggplot2: A watermark}
 \usage{
 plt_water_mark(png_obj = NULL, png_filepath = NULL)
 }
@@ -12,10 +12,10 @@ plt_water_mark(png_obj = NULL, png_filepath = NULL)
 \item{png_filepath}{A character single value, that will be the path to a .png file}
 }
 \value{
-object to use in ggplot2
+A ggplot2 object.
 }
 \description{
-Import png file as watermark for ggplot2
+Application of an imported .png file as a watermark for a ggplot2 plot.
 }
 \examples{
 #'

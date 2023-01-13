@@ -2,7 +2,7 @@
 % Please edit documentation in R/plt_theme_y.r
 \name{plt_theme_y}
 \alias{plt_theme_y}
-\title{ggplot2 theme}
+\title{ggplot2: A black and white theme without major grid lines in the x axis}
 \usage{
 plt_theme_y(base_size = 14, base_family = "", margin = 0.35)
 }
@@ -12,10 +12,10 @@ plt_theme_y(base_size = 14, base_family = "", margin = 0.35)
 \item{margin}{A numeric single value (default = 0.35), that will be the plot margin}
 }
 \value{
-ggplot2 theme
+A ggplot2 object.
 }
 \description{
-theme_bw with no minor grid and major x grid
+A theme with no minor grids in both axes and no major grid lines in the x axis.
 }
 \examples{
 

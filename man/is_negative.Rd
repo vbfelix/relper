@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_negative.r
 \name{is_negative}
 \alias{is_negative}
-\title{Negative number}
+\title{Conditional check for a negative value}
 \usage{
 is_negative(x)
 }
@@ -10,13 +10,15 @@ is_negative(x)
 \item{x}{A numeric vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the number is negative
+Return TRUE if the value is negative.
 }
 \examples{
 
 is_negative(4)
+
+is_negative(-4)
 
 }

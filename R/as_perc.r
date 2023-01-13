@@ -1,19 +1,24 @@
-#' Scaling
+#' Transform value to percentage
 #'
-#' @description Transform numeric to percentage
+#' @description Transform numeric values to percentage, by:
+#' \cr  - Multiplying the values by 100, if sum = FALSE (default).
+#' \cr  - Adding the values and computing the percentage, if sum = TRUE.
 #'
 #' @eval arg_vector("x","numeric")
-#' @eval arg_boolean("sum","add the values")
+#' @eval arg_boolean("sum","be added up")
 #'
-#' @return Numeric vector
+#' @return A numeric vector with x as percentage.
 #' @export
 #'
 #' @examples
 #'
-#' x <- c(.4,.6)
-#'
+#' #sum = FALSE (default)
+#' x <- c(.4,.6)#'
 #' as_perc(x)
 #'
+#' #sum = TRUE
+#' x <- c(120,180)
+#' as_perc(x,sum = TRUE)
 
 as_perc <- function(x, sum = FALSE){
 

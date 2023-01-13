@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_datetime.r
 \name{is_datetime}
 \alias{is_datetime}
-\title{Datetime variable}
+\title{Conditional check for a datetime variable}
 \usage{
 is_datetime(x)
 }
@@ -10,10 +10,10 @@ is_datetime(x)
 \item{x}{A  vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the vector is a datetime
+Return TRUE if the vector is a datetime.
 }
 \examples{
 

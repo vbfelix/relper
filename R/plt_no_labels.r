@@ -1,10 +1,10 @@
-#' No labels in ggplot2
+#' ggplot2: Removal of all labels
 #'
-#' @description Object, that clears ggplot2 labels
+#' @description Removal of all labels from a ggplot2 plot.#'
 #'
+#' @return A ggplot2 object.
 #'
-#' @return ggplot2 object
-  #' @export
+#' @export
 #'
 #' @examples
 #'

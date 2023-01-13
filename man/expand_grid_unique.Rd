@@ -2,7 +2,7 @@
 % Please edit documentation in R/expand_grid_unique.R
 \name{expand_grid_unique}
 \alias{expand_grid_unique}
-\title{expand_grid without repetition}
+\title{All combinations of inputs without repetitions}
 \usage{
 expand_grid_unique(x, y, include_equals = FALSE)
 }
@@ -14,10 +14,11 @@ expand_grid_unique(x, y, include_equals = FALSE)
 \item{include_equals}{A boolean value, if TRUE the function will ignore the equal pairs (default = FALSE)}
 }
 \value{
-
+A tibble with all the combinations of x and y.
 }
 \description{
-
+Create a data frame from all combinations of the supplied vectors,
+ without considering repetitions.
 }
 \examples{
 

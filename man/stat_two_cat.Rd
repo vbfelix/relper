@@ -16,7 +16,7 @@ stat_two_cat(df, grp_var, vars, filter = "")
 \item{filter}{A character single value (default = ), that will be the value to filter the variables}
 }
 \value{
-data.frame
+A gt table.
 }
 \description{
 Create a frequency table with chi-square statistic, p-value, cramer's v.

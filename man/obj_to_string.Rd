@@ -2,18 +2,18 @@
 % Please edit documentation in R/obj_to_string.r
 \name{obj_to_string}
 \alias{obj_to_string}
-\title{Object to string}
+\title{Return an object name as a string}
 \usage{
 obj_to_string(x)
 }
 \arguments{
-\item{x}{an R object}
+\item{x}{A R object}
 }
 \value{
-vector
+A character single value with the name of the R object.
 }
 \description{
-Get the name of the object and return as a string
+Return an object name as a string.
 }
 \examples{
 

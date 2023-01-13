@@ -1,10 +1,10 @@
-#' Date range
+#' Date range computation
 #'
-#' @description Gets range of a date vector
+#' @description The computation of the range of a date vector.
 #'
 #' @eval arg_vector("x","date")
 #'
-#' @return character vector
+#' @return A character single value in the format "{min(x)} - {max(x)}".
 #' @export
 #'
 #' @examples

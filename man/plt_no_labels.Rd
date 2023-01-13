@@ -3,7 +3,7 @@
 \docType{data}
 \name{plt_no_labels}
 \alias{plt_no_labels}
-\title{No labels in ggplot2}
+\title{ggplot2: Removal of all labels}
 \format{
 An object of class \code{labels} of length 6.
 }
@@ -11,10 +11,10 @@ An object of class \code{labels} of length 6.
 plt_no_labels
 }
 \value{
-ggplot2 object
+A ggplot2 object.
 }
 \description{
-Object, that clears ggplot2 labels
+Removal of all labels from a ggplot2 plot.#'
 }
 \examples{
 

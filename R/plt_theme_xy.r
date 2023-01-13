@@ -1,11 +1,12 @@
-#' ggplot2 theme
+#' ggplot2: A black and white theme without minor grid lines
 #'
-#' @description theme_bw with no minor grid
+#' @description A theme with no minor grids in both axes
 #'
 #' @eval arg_value("base_size","numeric",default = "14","will be the base font size")
 #' @eval arg_value("margin","numeric",default = "0.35","will be the plot margin")
 #'
-#' @return ggplot2 theme
+#' @return A ggplot2 object.
+#'
 #' @export
 #'
 #' @examples

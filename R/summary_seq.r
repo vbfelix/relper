@@ -1,10 +1,11 @@
-#' Compute the number of values that are repeated in sequence
+#' Summary sequence of values
 #'
-#' @description Compute the number of values that are repeated in sequence
+#' @description Summary of the values in the repeated values in sequence.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return data.frame
+#' @return A tibble with the values and the respective number of values repeated in sequence.
+#'
 #' @export
 #'
 #' @examples

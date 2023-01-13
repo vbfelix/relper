@@ -1,10 +1,17 @@
-#' Categoric summary
+#' Summary categorical data
 #'
-#' @description Compute summary statistics for categoric variable
+#' @description Summary statistics for categoric variables.
 #'
 #' @eval arg_vector("string","character")
 #'
-#' @return tibble
+#' @return A tibble with:
+#' \cr - n: the number of observations;
+#' \cr - na: the number of missing values;
+#' \cr - blank_space: the number of values blank ("");
+#' \cr - n_distinct: the number of distinct levels;
+#' \cr - mode: the mode.
+#'
+#'
 #' @export
 #'
 #' @examples

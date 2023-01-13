@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_date_diff.r
 \name{calc_date_diff}
 \alias{calc_date_diff}
-\title{Difference between dates}
+\title{The difference between two dates computation}
 \usage{
 calc_date_diff(date1, date2, add = 0, unit = "days")
 }
@@ -16,10 +16,10 @@ calc_date_diff(date1, date2, add = 0, unit = "days")
 \item{unit}{A character single value with the unit of the date result (secs, mins, hours, days, weeks)}
 }
 \value{
-numeric value
+A numeric single value with the computed difference between the two dates.
 }
 \description{
-Difference between dates (date2 - date1 + add)
+Computation of the difference between two dates (date2 - date1 + add).
 }
 \examples{
 

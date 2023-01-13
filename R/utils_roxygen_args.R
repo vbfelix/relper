@@ -1,10 +1,18 @@
 # Functions to help reduce duplication and increase consistency in the docs
 
-arg_mark <- function(type){
+arg_mark <- function(type,default = NULL){
+  output <-
     glue::glue("
     @param {type}_mark \\
     A character single value to use as the {type} mark
     ")
+  if(!is.null(default)){
+    output <-
+      glue::glue(
+        output," (default = {default})"
+      )
+  }
+  return(output)
 }
 
 

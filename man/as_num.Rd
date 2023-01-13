@@ -2,18 +2,25 @@
 % Please edit documentation in R/as_num.r
 \name{as_num}
 \alias{as_num}
-\title{Numeric vector}
+\title{Coerce character to numeric}
 \usage{
-as_num(x)
+as_num(x, thousand_mark = "\\\\.", decimal_mark = "\\\\,")
 }
 \arguments{
 \item{x}{A character vector}
+
+\item{thousand_mark}{A character single value to use as the thousand mark (default = '\ \.')}
+
+\item{decimal_mark}{A character single value to use as the decimal mark (default = '\ \,')}
 }
 \value{
-Numeric vector
+A numeric vector
 }
 \description{
-Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applying as.numeric()
+Coerce a character vector to numeric, by:
+ \cr  - Removing the thousand separator mark.
+ \cr  - Replacing decimal mark with a dot.
+ \cr  - Applying the function as.numeric.
 }
 \examples{
 

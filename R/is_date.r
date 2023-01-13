@@ -1,10 +1,11 @@
-#' Conditional check for date variable
+#' Conditional check for a date variable
 #'
-#' @description return TRUE if the vector is a date
+#' @description Return TRUE if the vector is a date.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples

@@ -1,11 +1,12 @@
-#' ggplot2 theme
+#' ggplot2: A clean black and white theme for maps
 #'
-#' @description no grid, border, background, title, text and ticks
+#' @description Removal of grid, border, background, title, text and ticks for ggplot2 plot.
 #'
 #' @eval arg_value("base_size","numeric",default = "14","will be the base font size")
 #' @eval arg_value("margin","numeric",default = "0.35","will be the plot margin")
 #'
-#' @return theme object
+#' @return A ggplot2 object.
+#'
 #' @export
 #'
 #' @examples

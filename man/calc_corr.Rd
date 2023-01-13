@@ -2,20 +2,20 @@
 % Please edit documentation in R/calc_corr.r
 \name{calc_corr}
 \alias{calc_corr}
-\title{Numeric correlation}
+\title{Correlation computation}
 \usage{
 calc_corr(x, y)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{A numeric vector}
 
-\item{y}{numeric vector}
+\item{y}{A numeric vector}
 }
 \value{
-Numeric vector
+A tibble (1x3) with the computed coefficients.
 }
 \description{
-Compute pearson, kendall and spearman correlation coefficient
+Computation of the Pearson, Kendall and Spearman correlations coefficients.
 }
 \examples{
 

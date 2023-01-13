@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_select.r
 \name{str_select}
 \alias{str_select}
-\title{Select string}
+\title{Select parts of a string, given patterns.}
 \usage{
 str_select(string, after = NULL, before = NULL)
 }
@@ -14,10 +14,10 @@ str_select(string, after = NULL, before = NULL)
 \item{before}{A character single value (default = NULL), that will be the pattern to select before}
 }
 \value{
-character value
+A character vector.
 }
 \description{
-Select string: before, after or between patterns
+Select parts of a string: before, after or between patterns.
 }
 \examples{
 

@@ -1,10 +1,12 @@
-#' Conditional check for an integer value, but not by their variable type
+#' Conditional check for an integer value
 #'
-#' @description return TRUE if the number is a integer, not considering their type but the number itself
+#' @description Return TRUE if the value is a integer,
+#'  not considering their variable type but the value itself.
 #'
 #' @eval arg_vector("x","numeric")
 #'#'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples

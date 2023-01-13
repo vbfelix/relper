@@ -2,20 +2,20 @@
 % Please edit documentation in R/plt_identity_line.R
 \name{plt_identity_line}
 \alias{plt_identity_line}
-\title{Add a identity line to ggplot2 scatter plot}
+\title{ggplot2: Add a identity line to a scatter plot}
 \usage{
 plt_identity_line(color = "black", linetype = "dashed")
 }
 \arguments{
-\item{color}{A character single value (default = black), that will be the line color}
+\item{color}{A character single value (default = 'black'), that will be the line color}
 
-\item{linetype}{A character single value (default = dashed), that will be the line type}
+\item{linetype}{A character single value (default = 'dashed'), that will be the line type}
 }
 \value{
-ggplot2 theme
+A ggplot2 object.
 }
 \description{
-Add a identity line to ggplot2 scatter plot
+Add a identity line to a ggplot2 scatter plot.
 }
 \examples{
 

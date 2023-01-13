@@ -2,18 +2,21 @@
 % Please edit documentation in R/format_digit.r
 \name{format_digit}
 \alias{format_digit}
-\title{two_digit}
+\title{Format value to complete with zeroes to the left}
 \usage{
 format_digit(x, digits = 2)
 }
 \arguments{
 \item{x}{A numeric vector}
+
+\item{digits}{A numeric integer single value (default = 2), that will be the number of length to add zeroes}
 }
 \value{
-character vector
+A character vector with zeroes added to the left to achieve the character size.
 }
 \description{
-Format numbers < 10, e.g., 1 as "01"
+Format value to complete with zeroes to the left until a certain size,
+ e.g., considering a size of 2: 1 -> "01".
 }
 \examples{
 

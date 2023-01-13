@@ -1,11 +1,12 @@
-#' Water mark
+#' ggplot2: A watermark
 #'
-#' @description Import png file as watermark for ggplot2
+#' @description Application of an imported .png file as a watermark for a ggplot2 plot.
 #'
 #' @param png_obj A character single value, that will be name of an .png file already imported in the R global environment
 #' @eval arg_value("png_filepath","character",action = "will be the path to a .png file")
 #'
-#' @return object to use in ggplot2
+#' @return A ggplot2 object.
+#'
 #' @export
 #'
 #' @examples

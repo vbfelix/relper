@@ -2,7 +2,7 @@
 % Please edit documentation in R/plt_theme_map.r
 \name{plt_theme_map}
 \alias{plt_theme_map}
-\title{ggplot2 theme}
+\title{ggplot2: A clean black and white theme for maps}
 \usage{
 plt_theme_map(base_size = 14, base_family = "", margin = 0.35)
 }
@@ -12,10 +12,10 @@ plt_theme_map(base_size = 14, base_family = "", margin = 0.35)
 \item{margin}{A numeric single value (default = 0.35), that will be the plot margin}
 }
 \value{
-theme object
+A ggplot2 object.
 }
 \description{
-no grid, border, background, title, text and ticks
+Removal of grid, border, background, title, text and ticks for ggplot2 plot.
 }
 \examples{
 

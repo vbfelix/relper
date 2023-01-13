@@ -1,14 +1,15 @@
-#' Format numeric data
+#' Format numeric value to add marks
 #'
-#' @description Format data as "10.500,25"
+#' @description Format value to add a thousand and decimal mark.
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_number_of("digits","decimal digits")
-#' @eval arg_mark("decimal")
-#' @eval arg_mark("thousand")
-#' @eval arg_boolean("br_mark","set decimal_mark = ',' and thousand_mark = '.'")
+#' @eval arg_mark("decimal",default = "'.'")
+#' @eval arg_mark("thousand",default = "','")
+#' @eval arg_boolean("br_mark",action = "set decimal_mark = ',' and thousand_mark = '.'")
 #'
-#' @return formatted data
+#' @return A character vector with the formatted vector.
+#'
 #' @export
 #'
 #' @examples

@@ -1,10 +1,11 @@
-#' Conditional check for datetime variable
+#' Conditional check for a datetime variable
 #'
-#' @description return TRUE if the vector is a datetime
+#' @description Return TRUE if the vector is a datetime.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples

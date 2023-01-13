@@ -3,7 +3,7 @@
 \docType{data}
 \name{plt_no_background}
 \alias{plt_no_background}
-\title{Transparent background}
+\title{ggplot2: Apply a transparent background.}
 \format{
 An object of class \code{theme} (inherits from \code{gg}) of length 4.
 }
@@ -11,10 +11,10 @@ An object of class \code{theme} (inherits from \code{gg}) of length 4.
 plt_no_background
 }
 \value{
-theme object
+A ggplot2 object.
 }
 \description{
-Transparent background for ggplot2
+Transparent background for a ggplot2 plot.
 }
 \examples{
 library(ggplot2)

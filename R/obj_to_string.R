@@ -1,10 +1,11 @@
-#' Object to string
+#' Return an object name as a string
 #'
-#' @description Get the name of the object and return as a string
+#' @description Return an object name as a string.
 #'
-#' @param x an R object
+#' @param x A R object
 #'
-#' @return vector
+#' @return A character single value with the name of the R object.
+#'
 #' @export
 #'
 #' @examples

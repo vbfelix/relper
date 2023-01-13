@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_clean.r
 \name{str_clean}
 \alias{str_clean}
-\title{Remove punctuation and/or accent}
+\title{Remove punctuation and/or accent from a string}
 \usage{
 str_clean(string, remove_accent = TRUE, remove_punct = TRUE, sub_punct = "")
 }
@@ -16,10 +16,10 @@ str_clean(string, remove_accent = TRUE, remove_punct = TRUE, sub_punct = "")
 \item{sub_punct}{A character single value (default = ), that will be replace for the punctuation symbols}
 }
 \value{
-character value
+A character vector.
 }
 \description{
-Remove punctuation and/or accent
+Remove punctuation and/or accent from a string.
 }
 \examples{
 

@@ -1,10 +1,11 @@
-#' Mean
+#' Arithmetic, geometric and harmonic mean computation
 #'
-#' @description Compute arithmetic, geometric and harmonic mean
+#' @description Compute the arithmetic, geometric and harmonic mean.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return data.frame
+#' @return A tibble (1x3) with the computed arithmetic, geometric and harmonic mean.
+#'
 #' @export
 #'
 #' @examples

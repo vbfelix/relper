@@ -1,10 +1,11 @@
-#' Harmonic mean
+#' Harmonic mean computation
 #'
-#' @description Calculates harmonic mean
+#' @description Computation of the harmonic mean.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Harmonic mean
+#' @return A numeric single value with the computed harmonic mean.
+#'
 #' @export
 #'
 #' @examples

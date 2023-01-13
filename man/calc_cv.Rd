@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_cv.r
 \name{calc_cv}
 \alias{calc_cv}
-\title{Coefficient of variation (CV)}
+\title{Coefficient of variation computation}
 \usage{
 calc_cv(x, as_perc = FALSE)
 }
@@ -12,10 +12,10 @@ calc_cv(x, as_perc = FALSE)
 \item{as_perc}{A boolean value, if TRUE the function will multiply the CV by 100 (default = FALSE)}
 }
 \value{
-Coefficient of variation
+A numeric single value with the computed CV.
 }
 \description{
-Coefficient of variation
+Computation of the coefficient of variation (CV).
 }
 \examples{
 

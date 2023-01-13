@@ -1,10 +1,11 @@
 #' Conditional check for an outlier value
 #'
-#' @description return TRUE if the value is an outlier (boxplot criteria)
+#' @description Return TRUE if the value is an outlier (boxplot criteria).
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples
@@ -30,7 +31,12 @@ is_outlier <- function(x){
 
   upper_limit <- q3 + (1.5 * iqr)
 
-  output <- dplyr::if_else((x <= lower_limit) | (x >= upper_limit), TRUE, FALSE)
+  output <-
+    dplyr::if_else(
+      condition = (x <= lower_limit) | (x >= upper_limit),
+      true =  TRUE,
+      false =  FALSE
+      )
 
   return(output)
 

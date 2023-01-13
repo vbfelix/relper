@@ -2,7 +2,7 @@
 % Please edit documentation in R/format_num.r
 \name{format_num}
 \alias{format_num}
-\title{Format numeric data}
+\title{Format numeric value to add marks}
 \usage{
 format_num(
   x,
@@ -15,17 +15,17 @@ format_num(
 \arguments{
 \item{x}{A numeric vector}
 
-\item{decimal_mark}{A character single value to use as the decimal mark}
+\item{decimal_mark}{A character single value to use as the decimal mark (default = '.')}
 
-\item{thousand_mark}{A character single value to use as the thousand mark}
+\item{thousand_mark}{A character single value to use as the thousand mark (default = ',')}
 
 \item{br_mark}{A boolean value, if TRUE the function will set decimal_mark = ',' and thousand_mark = '.' (default = FALSE)}
 }
 \value{
-formatted data
+A character vector with the formatted vector.
 }
 \description{
-Format data as "10.500,25"
+Format value to add a thousand and decimal mark.
 }
 \examples{
 

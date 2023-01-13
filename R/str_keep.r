@@ -1,11 +1,12 @@
-#' Keep only a type of character in the string
+#' Keep only a type of character in a string
 #'
-#' @description Keep only a type of character in the string
+#' @description Keep only a type of character in a string.
 #'
 #' @eval arg_vector("string","character")
 #' @eval arg_value("keep","character",default = "'text'",action = "will be the type of character to keep")
 #'
-#' @return Character vector
+#' @return A character vector.
+#'
 #' @export
 #'
 #' @examples

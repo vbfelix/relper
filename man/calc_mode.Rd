@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_mode.r
 \name{calc_mode}
 \alias{calc_mode}
-\title{Mode for character values}
+\title{Mode computation}
 \usage{
 calc_mode(x)
 }
@@ -10,10 +10,10 @@ calc_mode(x)
 \item{x}{A character vector}
 }
 \value{
-character value
+A character single value with the computed mode.
 }
 \description{
-Find the mode
+Computation of the mode.
 }
 \examples{
 

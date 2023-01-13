@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_even.r
 \name{is_even}
 \alias{is_even}
-\title{Even number}
+\title{Conditional check for an even value}
 \usage{
 is_even(x)
 }
@@ -10,13 +10,15 @@ is_even(x)
 \item{x}{A numeric vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the number is even
+Return TRUE if the value is even.
 }
 \examples{
 
 is_even(4)
+
+is_even(3)
 
 }

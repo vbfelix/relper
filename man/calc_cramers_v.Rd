@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_cramers_v.r
 \name{calc_cramers_v}
 \alias{calc_cramers_v}
-\title{calc_cramers_v}
+\title{Cramer's V computation}
 \usage{
 calc_cramers_v(chi_square)
 }
@@ -10,10 +10,10 @@ calc_cramers_v(chi_square)
 \item{chi_square}{object from the application of the function chisq.test}
 }
 \value{
-numeric vector
+A numeric single value with the computed Cramer's V.
 }
 \description{
-Computes Cramer's V
+Computation of the Cramer's V from a chi-square test.
 }
 \examples{
 

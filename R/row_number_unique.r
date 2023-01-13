@@ -1,10 +1,11 @@
-#' row_number() but consdering unique values
+#' Create a rank given unique values from a variable
 #'
-#' @description Get the row number for unique values
+#' @description Get the row number for unique values.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return Numeric vector
+#' @return A numeric vector with rank, given the unique values from x.
+#'
 #' @export
 #'
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_geometric_mean.r
 \name{calc_geometric_mean}
 \alias{calc_geometric_mean}
-\title{Geometric mean}
+\title{Geometric mean computation}
 \usage{
 calc_geometric_mean(x)
 }
@@ -10,10 +10,10 @@ calc_geometric_mean(x)
 \item{x}{A numeric vector}
 }
 \value{
-Geometric mean
+A numeric single value with the computed geometric mean.
 }
 \description{
-Calculates geometric mean
+Computation of the geometric mean.
 }
 \examples{
 

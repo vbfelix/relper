@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_string.r
 \name{is_string}
 \alias{is_string}
-\title{String value}
+\title{Conditional check for an string value}
 \usage{
 is_string(x)
 }
@@ -10,10 +10,10 @@ is_string(x)
 \item{x}{A  vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the variable is a string (character or factor)
+Return TRUE if the value is a string (character or factor).
 }
 \examples{
 

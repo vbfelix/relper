@@ -1,12 +1,13 @@
-#' Select string
+#' Select parts of a string, given patterns.
 #'
-#' @description Select string: before, after or between patterns
+#' @description Select parts of a string: before, after or between patterns.
 #'
 #' @eval arg_vector("string","character")
 #' @eval arg_value("after","character",default = "NULL",action = "will be the pattern to select after")
 #' @eval arg_value("before","character",default = "NULL",action = "will be the pattern to select before")
 #'
-#' @return character value
+#' @return A character vector.
+#'
 #' @export
 #'
 #' @examples

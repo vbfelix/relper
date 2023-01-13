@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_data.r
 \name{summary_data}
 \alias{summary_data}
-\title{Data summary}
+\title{Summary data.frame}
 \usage{
 summary_data(df)
 }
@@ -10,10 +10,10 @@ summary_data(df)
 \item{df}{A single data.frame}
 }
 \value{
-tibble
+A diagnostic of the data.frame.
 }
 \description{
-Compute summary statistics for data
+Summary statistics for a data.frame.
 }
 \examples{
 

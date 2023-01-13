@@ -2,7 +2,7 @@
 % Please edit documentation in R/plt_scale_auto.r
 \name{plt_scale_auto}
 \alias{plt_scale_auto}
-\title{Auto scale}
+\title{ggplot2: Add an automatic scale to a plot}
 \usage{
 plt_scale_auto(
   axis = "x",
@@ -24,10 +24,10 @@ plt_scale_auto(
 \item{decimal_mark}{A character single value to use as the decimal mark}
 }
 \value{
-ggplot2 object
+A ggplot2 object.
 }
 \description{
-Provide automatic scaling to ggplot2
+Create a automatic scale to a ggplot2 plot.
 }
 \examples{
 library(ggplot2)

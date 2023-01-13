@@ -2,7 +2,7 @@
 % Please edit documentation in R/isnot_na.r
 \name{isnot_na}
 \alias{isnot_na}
-\title{Opposite of is.na}
+\title{Conditional check if a value is not a NA}
 \usage{
 isnot_na(x)
 }
@@ -10,10 +10,10 @@ isnot_na(x)
 \item{x}{A  vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-Check if the value is not a NA
+Return TRUE if the value is not a NA.
 }
 \examples{
 

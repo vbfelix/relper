@@ -1,13 +1,13 @@
-#' Difference between dates
+#' The difference between two dates computation
 #'
-#' @description Difference between dates (date2 - date1 + add)
+#' @description Computation of the difference between two dates (date2 - date1 + add).
 #'
 #' @eval arg_value("date1","date")
 #' @eval arg_value("date2","date")
 #' @eval arg_value("add","numeric",default = "0")
 #' @eval arg_date_unit("unit")
 #'
-#' @return numeric value
+#' @return A numeric single value with the computed difference between the two dates.
 #' @export
 #'
 #' @examples

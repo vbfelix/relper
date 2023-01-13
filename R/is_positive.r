@@ -1,15 +1,17 @@
 #' Conditional check for a positive value
 #'
-#' @description return TRUE if the value is positive
+#' @description Return TRUE if the value is positive.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Numeric vector
+#' @return A boolean vector with the return from the condition check.
 #' @export
 #'
 #' @examples
 #'
 #' is_positive(4)
+#'
+#' is_positive(-4)
 #'
 
 is_positive <- function(x){

@@ -1,10 +1,11 @@
-#' Data summary
+#' Summary data.frame
 #'
-#' @description Compute summary statistics for data
+#' @description Summary statistics for a data.frame.
 #'
 #' @eval arg_df("df")
 #'
-#' @return tibble
+#' @return A diagnostic of the data.frame.
+#'
 #' @export
 #'
 #' @examples

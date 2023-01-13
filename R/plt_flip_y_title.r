@@ -1,8 +1,9 @@
-#' Flip y axis title
+#' ggplot2: Flip y axis title
 #'
-#' @description axis.title.y rotated
+#' @description The y axis title with horizontal rotation.
 #'
-#' @return theme object
+#' @return A ggplot2 object.
+#'
 #' @export
 #'
 #' @examples

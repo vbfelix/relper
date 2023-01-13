@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_num.r
 \name{summary_num}
 \alias{summary_num}
-\title{Numeric summary}
+\title{Summary numeric variables}
 \usage{
 summary_num(x, minimal = FALSE)
 }
@@ -12,10 +12,23 @@ summary_num(x, minimal = FALSE)
 \item{string}{A numeric vector}
 }
 \value{
-tibble
+A tibble with:
+\cr - n: the number of observations;
+\cr - na: the number of missing values;
+\cr - negative: the number of negative values;
+\cr - equal_zero: the number of values equal to zero;
+\cr - positive: the number of positive values;
+\cr - min: the minimum;
+\cr - p25: the first quartile;
+\cr - p50: the second quartile (median);
+\cr - p75: the third quartile;
+\cr - max: the maximum;
+\cr - mode: the peak density value;
+\cr - mean: the mean;
+\cr - cv: the coefficient of variation.
 }
 \description{
-Compute summary statistics for numeric variable
+Summary statistics for numeric variables.
 }
 \examples{
 

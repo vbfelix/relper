@@ -1,10 +1,15 @@
-#' Numeric vector
+#' Coerce character to numeric
 #'
-#' @description Coerce a character vector to numeric: removing thousand separator, replacing comma with dots and applying as.numeric()
+#' @description Coerce a character vector to numeric, by:
+#'  \cr  - Removing the thousand separator mark.
+#'  \cr  - Replacing decimal mark with a dot.
+#'  \cr  - Applying the function as.numeric.
 #'
 #' @eval arg_vector("x","character")
+#' @eval arg_mark("decimal",default = "'\\ \\,'")
+#' @eval arg_mark("thousand",default = "'\\ \\.'")
 #'
-#' @return Numeric vector
+#' @return A numeric vector
 #' @export
 #'
 #' @examples
@@ -14,11 +19,17 @@
 #' as_num(x)
 #'
 
-as_num <- function(x){
+as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
+
+  stop_function(arg = x,type = "character")
+
+  stop_function(arg = thousand_mark,type = "character",single_value = TRUE)
+
+  stop_function(arg = decimal_mark,type = "character",single_value = TRUE)
 
   if(!is.numeric(x)){
 
-    as.numeric(gsub("\\,", "\\.",gsub("\\.", "", x)), na.rm = FALSE)
+    as.numeric(gsub(decimal_mark, "\\.",gsub(thousand_mark, "", x)), na.rm = FALSE)
 
   }else{
 

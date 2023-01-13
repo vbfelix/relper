@@ -1,10 +1,10 @@
-#' Mode for character values
+#' Mode computation
 #'
-#' @description Find the mode
+#' @description Computation of the mode.
 #'
 #' @eval arg_vector("x","character")
 #'
-#' @return character value
+#' @return A character single value with the computed mode.
 #' @export
 #'
 #' @examples

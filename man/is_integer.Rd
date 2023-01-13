@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_integer.r
 \name{is_integer}
 \alias{is_integer}
-\title{Check if a value is a integer, but not by their type}
+\title{Conditional check for an integer value}
 \usage{
 is_integer(x)
 }
@@ -10,10 +10,11 @@ is_integer(x)
 \item{x}{A numeric vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the number is a integer, not considering their type but the number itself
+Return TRUE if the value is a integer,
+ not considering their variable type but the value itself.
 }
 \examples{
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_date_range.r
 \name{calc_date_range}
 \alias{calc_date_range}
-\title{Date range}
+\title{Date range computation}
 \usage{
 calc_date_range(x)
 }
@@ -10,10 +10,10 @@ calc_date_range(x)
 \item{x}{A date vector}
 }
 \value{
-character vector
+A character single value in the format "{min(x)} - {max(x)}".
 }
 \description{
-Gets range of a date vector
+The computation of the range of a date vector.
 }
 \examples{
 x <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")

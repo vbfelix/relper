@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_peak_density.r
 \name{calc_peak_density}
 \alias{calc_peak_density}
-\title{Mode for numeric values}
+\title{Peak density computation}
 \usage{
 calc_peak_density(x)
 }
@@ -10,10 +10,10 @@ calc_peak_density(x)
 \item{x}{A numeric vector}
 }
 \value{
-numeric value
+A numeric single value with the computed peak density value.
 }
 \description{
-Find the high density value
+Computation of the peak value, of a density function with a gaussian kernel.
 }
 \examples{
 

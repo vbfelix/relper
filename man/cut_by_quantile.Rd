@@ -2,7 +2,7 @@
 % Please edit documentation in R/cut_by_quantile.r
 \name{cut_by_quantile}
 \alias{cut_by_quantile}
-\title{Breaks data by quantile}
+\title{Convert numeric to factor}
 \usage{
 cut_by_quantile(x, q = seq(0, 1, by = 0.2), ...)
 }
@@ -12,10 +12,10 @@ cut_by_quantile(x, q = seq(0, 1, by = 0.2), ...)
 \item{q}{A numeric vector}
 }
 \value{
-breaks
+A factor vector withe interval range of the quantiles.
 }
 \description{
-Breaks data by quantile
+Divides the range of a numeric vector by the quantiles provided (q).
 }
 \examples{
 

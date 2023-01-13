@@ -1,15 +1,17 @@
 #' Conditional check for an odd value
 #'
-#' @description return TRUE if the value is odd
+#' @description Return TRUE if the value is odd.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
 #' @export
 #'
 #' @examples
 #'
 #' is_odd(4)
+#'
+#' is_odd(3)
 #'
 
 is_odd <- function(x){

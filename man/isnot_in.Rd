@@ -2,23 +2,25 @@
 % Please edit documentation in R/isnot_in.r
 \name{isnot_in}
 \alias{isnot_in}
-\title{Opposite of in}
+\title{Conditional check if a value is not contained in a vector}
 \usage{
 isnot_in(x, y)
 }
 \arguments{
-\item{x}{A  single value}
+\item{x}{A  vector}
 
 \item{y}{A  vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-Check if  x is not contained in y
+Return TRUE if x is not contained in y, the opposite of \%in\%.
 }
 \examples{
 
 isnot_in("a", letters)
+
+isnot_in("1", letters)
 
 }

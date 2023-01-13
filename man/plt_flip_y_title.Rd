@@ -3,7 +3,7 @@
 \docType{data}
 \name{plt_flip_y_title}
 \alias{plt_flip_y_title}
-\title{Flip y axis title}
+\title{ggplot2: Flip y axis title}
 \format{
 An object of class \code{theme} (inherits from \code{gg}) of length 1.
 }
@@ -11,10 +11,10 @@ An object of class \code{theme} (inherits from \code{gg}) of length 1.
 plt_flip_y_title
 }
 \value{
-theme object
+A ggplot2 object.
 }
 \description{
-axis.title.y rotated
+The y axis title with horizontal rotation.
 }
 \examples{
 library(ggplot2)

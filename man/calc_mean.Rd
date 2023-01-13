@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_mean.r
 \name{calc_mean}
 \alias{calc_mean}
-\title{Mean}
+\title{Arithmetic, geometric and harmonic mean computation}
 \usage{
 calc_mean(x)
 }
@@ -10,10 +10,10 @@ calc_mean(x)
 \item{x}{A numeric vector}
 }
 \value{
-data.frame
+A tibble (1x3) with the computed arithmetic, geometric and harmonic mean.
 }
 \description{
-Compute arithmetic, geometric and harmonic mean
+Compute the arithmetic, geometric and harmonic mean.
 }
 \examples{
 

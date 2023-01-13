@@ -16,7 +16,7 @@ stat_two_num(df, grp_var, num_vars, method = "auto")
 \item{method}{Method of summary and test (default = 'auto')}
 }
 \value{
-data.frame
+A gt table.
 }
 \description{
 Create a summary table with t.test: statistic, p-value and IC(95%).

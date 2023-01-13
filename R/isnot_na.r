@@ -1,10 +1,11 @@
-#' Opposite of is.na
+#' Conditional check if a value is not a NA
 #'
-#' @description Check if the value is not a NA
+#' @description Return TRUE if the value is not a NA.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return Boolean vector
+#' @return A boolean vector with the return from the condition check.
+#'
 #' @export
 #'
 #' @examples

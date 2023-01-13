@@ -1,11 +1,13 @@
-#' two_digit
+#' Format value to complete with zeroes to the left
 #'
-#' @description Format numbers < 10, e.g., 1 as "01"
+#' @description Format value to complete with zeroes to the left until a certain size,
+#'  e.g., considering a size of 2: 1 -> "01".
 #'
 #' @eval arg_vector("x","numeric")
-#' @eval arg_number_of("digits","length to add zeroes")
+#' @eval arg_number_of("digits",default = "2",number_of = "length to add zeroes")
 #'
-#' @return character vector
+#' @return A character vector with zeroes added to the left to achieve the character size.
+#'
 #' @export
 #'
 #' @examples
@@ -23,7 +25,12 @@ format_digit <- function(x, digits = 2){
 
   rep_num <- digits - nchar(x)
 
-  rep_num <- dplyr::if_else(rep_num < 0,0,rep_num)
+  rep_num <-
+    dplyr::if_else(
+      condition = rep_num < 0,
+      true = 0,
+      false = rep_num
+      )
 
   paste0(sapply(rep_num,FUN = function(x) paste0(rep("0",times = x),collapse = "")),x)
 

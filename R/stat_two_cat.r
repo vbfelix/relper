@@ -6,9 +6,9 @@
 #' @eval arg_df_var("grp_var","character")
 #' @param vars One or more variables from a data.frame
 #' @eval arg_value("filter","character",default = "", action = "will be the value to filter the variables")
+#'#'
+#' @return A gt table.
 #'
-#'
-#' @return data.frame
 #' @export
 #'
 #' @examples

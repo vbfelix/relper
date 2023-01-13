@@ -2,25 +2,28 @@
 % Please edit documentation in R/calc_acf.r
 \name{calc_acf}
 \alias{calc_acf}
-\title{Auto-correlation function (ACF)}
+\title{Auto-correlation computation}
 \usage{
 calc_acf(x, y = NULL, ...)
 }
 \arguments{
 \item{x}{A numeric vector}
 
-\item{y}{A numeric vector}
+\item{y}{A numeric vector (default = NULL), that will be the value to compute the CCF}
 }
 \value{
-tibble
+A tibble (lag x 2) with: \cr - ACF/CCF. \cr - lag.
 }
 \description{
-Computes data of ACF ou CCF
+Computation of the auto-correlation function (ACF) or the
+ cross-correlation function (CCF), if the argument 'y' is provided.
 }
 \examples{
-
+#'
 
 x <- rnorm(100)
+
+calc_acf(x)
 
 y <- rexp(100)
 

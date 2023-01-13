@@ -12,10 +12,10 @@ str_to_abb(string, n_char = 3)
 \item{n_char}{A numeric integer single value (default = 3), that will be the number of characters to define as a abbreviation}
 }
 \value{
-numeric value
+A character vector.
 }
 \description{
-Apply str_to_upper to strings with number of characters lower than "n_char" (default = 3)
+Apply str_to_upper to strings with number of characters lower than "n_char".
 }
 \examples{
 

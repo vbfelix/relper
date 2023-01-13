@@ -1,11 +1,12 @@
 #' Convert case of a string
 #'
-#' @description Apply str_to_upper to strings with number of characters lower than "n_char" (default = 3)
+#' @description Apply str_to_upper to strings with number of characters lower than "n_char".
 #'
 #' @eval arg_vector("string","character")
 #' @eval arg_number_of("n_char",default = "3","characters to define as a abbreviation")
 #'
-#' @return numeric value
+#' @return A character vector.
+#'
 #' @export
 #'
 #' @examples

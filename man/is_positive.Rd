@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_positive.r
 \name{is_positive}
 \alias{is_positive}
-\title{Positive number}
+\title{Conditional check for a positive value}
 \usage{
 is_positive(x)
 }
@@ -10,13 +10,15 @@ is_positive(x)
 \item{x}{A numeric vector}
 }
 \value{
-Numeric vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the number is positive
+Return TRUE if the value is positive.
 }
 \examples{
 
 is_positive(4)
+
+is_positive(-4)
 
 }

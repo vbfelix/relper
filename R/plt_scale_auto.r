@@ -1,6 +1,6 @@
-#' Auto scale
+#' ggplot2: Add an automatic scale to a plot
 #'
-#' @description Provide automatic scaling to ggplot2
+#' @description Create a automatic scale to a ggplot2 plot.
 #'
 #' @eval arg_value("axis","character",default = "'x'","will be the axis to scale, must be x, y or xy")
 #' @eval arg_number_of("n_breaks",default = "10",number_of = "axis breaks")
@@ -8,7 +8,8 @@
 #' @eval arg_mark("decimal")
 #' @eval arg_mark("thousand")
 #'
-#' @return ggplot2 object
+#' @return A ggplot2 object.
+#'
 #' @export
 #'
 #' @examples

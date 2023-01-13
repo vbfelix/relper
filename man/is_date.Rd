@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_date.r
 \name{is_date}
 \alias{is_date}
-\title{Date variable}
+\title{Conditional check for a date variable}
 \usage{
 is_date(x)
 }
@@ -10,10 +10,10 @@ is_date(x)
 \item{x}{A  vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the vector is a date
+Return TRUE if the vector is a date.
 }
 \examples{
 

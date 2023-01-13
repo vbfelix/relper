@@ -1,11 +1,12 @@
-#' Breaks data by quantile
+#' Convert numeric to factor
 #'
-#' @description Breaks data by quantile
+#' @description Divides the range of a numeric vector by the quantiles provided (q).
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("q","numeric")
 #'
-#' @return breaks
+#' @return A factor vector withe interval range of the quantiles.
+#'
 #' @export
 #'
 #' @examples

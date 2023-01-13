@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_odd.r
 \name{is_odd}
 \alias{is_odd}
-\title{Odd number}
+\title{Conditional check for an odd value}
 \usage{
 is_odd(x)
 }
@@ -10,13 +10,15 @@ is_odd(x)
 \item{x}{A numeric vector}
 }
 \value{
-Boolean vector
+A boolean vector with the return from the condition check.
 }
 \description{
-return TRUE if the number is odd
+Return TRUE if the value is odd.
 }
 \examples{
 
 is_odd(4)
+
+is_odd(3)
 
 }

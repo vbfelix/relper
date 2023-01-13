@@ -1,17 +1,19 @@
 #' Auto-correlation computation
 #'
-#' @description Computation of the auto-correlation function (ACF) or cross-correlation function (CCF)
+#' @description Computation of the auto-correlation function (ACF) or the
+#'  cross-correlation function (CCF), if the argument 'y' is provided.
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("y","numeric",default = "NULL",action = "will be the value to compute the CCF")
 #'
-#' @return Tibble
+#' @return A tibble (lag x 2) with: \cr - ACF/CCF. \cr - lag.
 #' @export
 #'
-#' @examples
-#'
+#' @examples#'
 #'
 #' x <- rnorm(100)
+#'
+#' calc_acf(x)
 #'
 #' y <- rexp(100)
 #'

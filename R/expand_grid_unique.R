@@ -1,12 +1,14 @@
-#' expand_grid without repetition
+#' All combinations of inputs without repetitions
 #'
-#' @description
+#' @description Create a data frame from all combinations of the supplied vectors,
+#'  without considering repetitions.
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("y","numeric")
 #' @eval arg_boolean("include_equals","ignore the equal pairs")
 #'
-#' @return
+#' @return A tibble with all the combinations of x and y.
+#'
 #' @export
 #'
 #' @examples

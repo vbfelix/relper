@@ -2,25 +2,30 @@
 % Please edit documentation in R/as_perc.r
 \name{as_perc}
 \alias{as_perc}
-\title{Scaling}
+\title{Transform value to percentage}
 \usage{
 as_perc(x, sum = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector}
 
-\item{sum}{A boolean value, if TRUE the function will add the values (default = FALSE)}
+\item{sum}{A boolean value, if TRUE the function will be added up (default = FALSE)}
 }
 \value{
-Numeric vector
+A numeric vector with x as percentage.
 }
 \description{
-Transform numeric to percentage
+Transform numeric values to percentage, by:
+\cr  - Multiplying the values by 100, if sum = FALSE (default).
+\cr  - Adding the values and computing the percentage, if sum = TRUE.
 }
 \examples{
 
-x <- c(.4,.6)
-
+#sum = FALSE (default)
+x <- c(.4,.6)#'
 as_perc(x)
 
+#sum = TRUE
+x <- c(120,180)
+as_perc(x,sum = TRUE)
 }

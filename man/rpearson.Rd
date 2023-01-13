@@ -2,7 +2,7 @@
 % Please edit documentation in R/rpearson.r
 \name{rpearson}
 \alias{rpearson}
-\title{Linear correlated data generator}
+\title{Generate two variables linear correlated}
 \usage{
 rpearson(n = 25, pearson = 0.5, tol = 0.1, mean = 0, sd = 1)
 }
@@ -18,10 +18,11 @@ rpearson(n = 25, pearson = 0.5, tol = 0.1, mean = 0, sd = 1)
 \item{sd}{A numeric single value (default = 1), that will be the standard deviation of the simulated data}
 }
 \value{
-Data.frame with 2 numeric correlated series (x and y)
+A tibble (nx2) with two numeric variables (x and y).
 }
 \description{
-Simulates linear correlated data
+Simulates two numeric variables linear correlated,
+ given a Pearson linear correlation coefficient, that also follows a normal distribution.
 }
 \examples{
 

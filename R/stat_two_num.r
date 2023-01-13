@@ -7,7 +7,8 @@
 #' @param num_vars One or more variables from a data.frame
 #' @param method Method of summary and test (default = 'auto')
 #'
-#' @return data.frame
+#' @return A gt table.
+#'
 #' @export
 #'
 #' @examples

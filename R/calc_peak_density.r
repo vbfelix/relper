@@ -1,10 +1,10 @@
-#' Mode for numeric values
+#' Peak density computation
 #'
-#' @description Find the high density value
+#' @description Computation of the peak value, of a density function with a gaussian kernel.
 #'
 #' @eval arg_vector("x","numeric")
 #'
-#' @return numeric value
+#' @return A numeric single value with the computed peak density value.
 #' @export
 #'
 #' @examples
