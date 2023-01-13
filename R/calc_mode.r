@@ -20,11 +20,13 @@ calc_mode <- function(x){
 
     index <- tabulate(match(x, levels))
 
-    mode_index <- index == max(index)
+    max_index <- index == max(index)
+
+    mode_index <- which(max_index)
 
     if(length(mode_index) > 1){warning("The computed mode has ties, more than one result will be provided.")}
 
-    output <- which(mode_index)
+    output <- levels[mode_index]
 
     return(output)
 
