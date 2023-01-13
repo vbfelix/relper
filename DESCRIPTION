@@ -18,7 +18,8 @@ Imports:
     gt,
     lubridate,
     tibble,
-    tidyr
+    tidyr,
+    broom
 Suggests: 
     knitr,
     rmarkdown,
