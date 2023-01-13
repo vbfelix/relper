@@ -1,12 +1,12 @@
-#' Scaling data
+#' Rescale data
 #'
-#' @description Rescale data
+#' @description Rescale data to have a new range.
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_value("new_min","numeric",default = "0",action = "will be the new minimum value")
 #' @eval arg_value("new_max","numeric",default = "1",action = "will be the new maximum value")
 #'
-#' @return numeric vector
+#' @return A numeric vector.
 #'
 #' @export
 #'
