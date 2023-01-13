@@ -31,19 +31,21 @@ mtcars %>%
   stat_two_cat(grp_var = vs,vars = c(am,cyl))
 ```
 
+![Result of the function stat_two_cat.](stat_two_cat.png)
+
 
 ```{r stat_two_cat-plot, echo = FALSE}
 
-temp_table <- 
-  mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
-  stat_two_cat(grp_var = vs,vars = c(am,cyl))
-
-gt::gtsave(
-  temp_table,
-  "stat_two_cat.png",
-  vwidth = 1500,
-  vheight = 1000)
+# temp_table <- 
+#   mtcars %>%
+#   mutate(vs = paste0("vs = ",vs)) %>%
+#   stat_two_cat(grp_var = vs,vars = c(am,cyl))
+# 
+# gt::gtsave(
+#   temp_table,
+#   "stat_two_cat.png",
+#   vwidth = 1500,
+#   vheight = 1000)
 
 ```
 
@@ -62,25 +64,28 @@ stat_two_num(
 
 ```
 
+![Result of the function stat_two_num.](stat_two_num.png)
+
+
 ```{r stat_two_num-plot, echo = FALSE}
-set.seed(123);df <-
-  data.frame(
-    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-    num_var1 = rnorm(100),
-    num_var2 = rpois(100,2),
-    num_var3 = rexp(100,2),
-   num_var4 = abs(rnorm(100))
-  )
-
-table <- 
-stat_two_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
-)
-
-gt::gtsave(table, "stat_two_num.png", vwidth = 1500, vheight = 1000)
+# set.seed(123);df <-
+#   data.frame(
+#     grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
+#     num_var1 = rnorm(100),
+#     num_var2 = rpois(100,2),
+#     num_var3 = rexp(100,2),
+#    num_var4 = abs(rnorm(100))
+#   )
+# 
+# table <- 
+# stat_two_num(
+#   df = df,
+#   grp_var = grp_var,
+#   num_vars = c(num_var1,num_var2,num_var3),
+#   method = c("auto")
+# )
+# 
+# gt::gtsave(table, "stat_two_num.png", vwidth = 1500, vheight = 1000)
 
 ```
 
