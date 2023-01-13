@@ -2,17 +2,18 @@
 % Please edit documentation in R/summary_num.r
 \name{summary_num}
 \alias{summary_num}
-\title{Summary numeric variables}
+\title{Summary  ofnumeric variables}
 \usage{
 summary_num(x, minimal = FALSE)
 }
 \arguments{
-\item{minimal}{A boolean value, if TRUE the function will return a minimal version (default = FALSE)}
+\item{x}{A numeric vector}
 
-\item{string}{A numeric vector}
+\item{minimal}{A boolean value, if TRUE the function will return a minimal version of the summary (default = FALSE)}
 }
 \value{
 A tibble with:
+\cr
 \cr - n: the number of observations;
 \cr - na: the number of missing values;
 \cr - negative: the number of negative values;

@@ -1,6 +1,7 @@
 #' @title Auxiliar date variables computation
 #'
 #' @description Computation of auxiliar date variables:
+#'  \cr
 #'  \cr - mon_abb: a factor with the abbreviated name of the month;
 #'  \cr - mon_lbl: a factor with the complete name of the month;
 #'  \cr - mon_num: the number of the month;

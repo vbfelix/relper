@@ -16,6 +16,7 @@ A numeric vector with x as percentage.
 }
 \description{
 Transform numeric values to percentage, by:
+\cr
 \cr  - Multiplying the values by 100, if sum = FALSE (default).
 \cr  - Adding the values and computing the percentage, if sum = TRUE.
 }

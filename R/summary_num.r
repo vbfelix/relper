@@ -1,11 +1,12 @@
-#' Summary numeric variables
+#' Summary  ofnumeric variables
 #'
 #' @description Summary statistics for numeric variables.
 #'
-#' @eval arg_vector("string","numeric")
-#' @eval arg_boolean("minimal",action = "return a minimal version")
+#' @eval arg_vector("x","numeric")
+#' @eval arg_boolean("minimal",action = "return a minimal version of the summary")
 #'
 #' @return A tibble with:
+#' \cr
 #' \cr - n: the number of observations;
 #' \cr - na: the number of missing values;
 #' \cr - negative: the number of negative values;

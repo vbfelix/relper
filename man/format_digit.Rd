@@ -12,7 +12,7 @@ format_digit(x, digits = 2)
 \item{digits}{A numeric integer single value (default = 2), that will be the number of length to add zeroes}
 }
 \value{
-A character vector with zeroes added to the left to achieve the character size.
+A character vector with zeroes added to the left to achieve the desired size.
 }
 \description{
 Format value to complete with zeroes to the left until a certain size,

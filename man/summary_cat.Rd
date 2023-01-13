@@ -2,15 +2,16 @@
 % Please edit documentation in R/summary_cat.r
 \name{summary_cat}
 \alias{summary_cat}
-\title{Summary categorical data}
+\title{Summary of categorical variables}
 \usage{
 summary_cat(x)
 }
 \arguments{
-\item{string}{A character vector}
+\item{x}{A character vector}
 }
 \value{
 A tibble with:
+\cr
 \cr - n: the number of observations;
 \cr - na: the number of missing values;
 \cr - blank_space: the number of values blank ("");

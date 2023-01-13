@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_data.r
 \name{summary_data}
 \alias{summary_data}
-\title{Summary data.frame}
+\title{Summary of a data.frame}
 \usage{
 summary_data(df)
 }
@@ -13,7 +13,7 @@ summary_data(df)
 A diagnostic of the data.frame.
 }
 \description{
-Summary statistics for a data.frame.
+Summary statistics of a data.frame, with the summary statistics for the categorical and numeric variables.
 }
 \examples{
 

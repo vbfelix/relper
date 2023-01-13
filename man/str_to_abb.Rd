@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_to_abb.r
 \name{str_to_abb}
 \alias{str_to_abb}
-\title{Convert case of a string}
+\title{Convert case of a string, without impacting abbreviations}
 \usage{
 str_to_abb(string, n_char = 3)
 }

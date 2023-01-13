@@ -1,10 +1,11 @@
-#' Summary categorical data
+#' Summary of categorical variables
 #'
 #' @description Summary statistics for categoric variables.
 #'
-#' @eval arg_vector("string","character")
+#' @eval arg_vector("x","character")
 #'
 #' @return A tibble with:
+#' \cr
 #' \cr - n: the number of observations;
 #' \cr - na: the number of missing values;
 #' \cr - blank_space: the number of values blank ("");

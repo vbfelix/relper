@@ -6,7 +6,7 @@
 #' @eval arg_vector("x","numeric")
 #' @eval arg_number_of("digits",default = "2",number_of = "length to add zeroes")
 #'
-#' @return A character vector with zeroes added to the left to achieve the character size.
+#' @return A character vector with zeroes added to the left to achieve the desired size.
 #'
 #' @export
 #'

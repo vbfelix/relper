@@ -1,10 +1,10 @@
-#' Summary sequence of values
+#' Summary of sequence of values
 #'
-#' @description Summary of the values in the repeated values in sequence.
+#' @description Summary of repeated values in a sequence.
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return A tibble with the values and the respective number of values repeated in sequence.
+#' @return A tibble with the values and the respective number of this values repeated in sequence.
 #'
 #' @export
 #'

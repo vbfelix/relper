@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_seq.r
 \name{summary_seq}
 \alias{summary_seq}
-\title{Summary sequence of values}
+\title{Summary of sequence of values}
 \usage{
 summary_seq(x)
 }
@@ -10,10 +10,10 @@ summary_seq(x)
 \item{x}{A  vector}
 }
 \value{
-A tibble with the values and the respective number of values repeated in sequence.
+A tibble with the values and the respective number of this values repeated in sequence.
 }
 \description{
-Summary of the values in the repeated values in sequence.
+Summary of repeated values in a sequence.
 }
 \examples{
 

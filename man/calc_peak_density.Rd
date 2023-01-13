@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_peak_density.r
 \name{calc_peak_density}
 \alias{calc_peak_density}
-\title{Peak density computation}
+\title{Peak density value computation}
 \usage{
 calc_peak_density(x)
 }
@@ -18,6 +18,8 @@ Computation of the peak value, of a density function with a gaussian kernel.
 \examples{
 
 x <- rnorm(100)
+
+plot(density(x))
 
 calc_peak_density(x)
 

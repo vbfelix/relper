@@ -1,4 +1,4 @@
-#' Convert case of a string
+#' Convert case of a string, without impacting abbreviations
 #'
 #' @description Apply str_to_upper to strings with number of characters lower than "n_char".
 #'
@@ -23,9 +23,9 @@ str_to_abb <- function(string, n_char = 3){
   stop_function(arg = n_char,type = "integer",single_value = TRUE,bigger_than = 1)
 
   dplyr::if_else(
-    nchar(string) <= n_char,
-    stringr::str_to_upper(string),
-    stringr::str_to_sentence(string)
+    condition = nchar(string) <= n_char,
+    true = stringr::str_to_upper(string),
+    false = stringr::str_to_sentence(string)
     )
 
 }

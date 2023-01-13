@@ -1,4 +1,4 @@
-#' Peak density computation
+#' Peak density value computation
 #'
 #' @description Computation of the peak value, of a density function with a gaussian kernel.
 #'
@@ -10,6 +10,8 @@
 #' @examples
 #'
 #' x <- rnorm(100)
+#'
+#' plot(density(x))
 #'
 #' calc_peak_density(x)
 #'

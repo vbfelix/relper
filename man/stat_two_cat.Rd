@@ -21,3 +21,10 @@ A gt table.
 \description{
 Create a frequency table with chi-square statistic, p-value, cramer's v.
 }
+\examples{
+
+
+mtcars \%>\%
+ dplyr::mutate(vs = paste0("vs = ",vs)) \%>\%
+ stat_two_cat(grp_var = vs,vars = c(am,cyl))
+}

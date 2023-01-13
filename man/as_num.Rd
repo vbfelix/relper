@@ -14,10 +14,11 @@ as_num(x, thousand_mark = "\\\\.", decimal_mark = "\\\\,")
 \item{decimal_mark}{A character single value to use as the decimal mark (default = '\ \,')}
 }
 \value{
-A numeric vector
+A numeric vector.
 }
 \description{
 Coerce a character vector to numeric, by:
+ \cr
  \cr  - Removing the thousand separator mark.
  \cr  - Replacing decimal mark with a dot.
  \cr  - Applying the function as.numeric.

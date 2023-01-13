@@ -15,3 +15,10 @@ A boolean vector with the return from the condition check.
 \description{
 Return TRUE if the vector is a datetime.
 }
+\examples{
+
+is_datetime(Sys.time())
+
+is_datetime(Sys.Date())
+
+}

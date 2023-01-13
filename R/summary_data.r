@@ -1,6 +1,6 @@
-#' Summary data.frame
+#' Summary of a data.frame
 #'
-#' @description Summary statistics for a data.frame.
+#' @description Summary statistics of a data.frame, with the summary statistics for the categorical and numeric variables.
 #'
 #' @eval arg_df("df")
 #'
@@ -17,7 +17,7 @@
 
 summary_data <- function(df){
 
-  stop_function(arg = df,type = "dataframe")
+  stop_function(arg = df,type = "dataframe",single_value = TRUE)
 
   df_num <-
     df %>%
