@@ -205,9 +205,9 @@
 </h3>
 <p>The goal of <code>as_perc</code> is to compute a number as percentage. By default the function will just multiply values by 100.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">count</span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="reference/as_perc.html">as_perc</a></span><span class="op">(</span><span class="va">prop</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   vs am  n    prop   perc</span></span>
 <span><span class="co">#&gt; 1  0  0 12 0.37500 37.500</span></span>
@@ -216,8 +216,8 @@
 <span><span class="co">#&gt; 4  1  1  7 0.21875 21.875</span></span></code></pre></div>
 <p>If you set the argument <code>sum</code> to <code>TRUE</code> the function will divide the values by their total and multiply by 100.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">count</span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="reference/as_perc.html">as_perc</a></span><span class="op">(</span><span class="va">n</span>,sum <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   vs am  n   perc</span></span>
 <span><span class="co">#&gt; 1  0  0 12 37.500</span></span>
@@ -385,7 +385,7 @@
 <span></span>
 <span><span class="va">df_dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>dt <span class="op">=</span> <span class="va">dt</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/calc_date_aux.html">calc_date_aux</a></span><span class="op">(</span><span class="va">df_dt</span>,<span class="va">dt</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/calc_date_aux.html">calc_date_aux</a></span><span class="op">(</span><span class="va">df_dt</span>,<span class="va">dt</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Rows: 366</span></span>
 <span><span class="co">#&gt; Columns: 12</span></span>
 <span><span class="co">#&gt; $ dt          &lt;date&gt; 1910-01-01, 1910-01-02, 1910-01-03, 1910-01-04, 1910-01-0~</span></span>
@@ -1007,8 +1007,8 @@
 </h3>
 <p>The goal of <code>stat_two_cat</code> is to create a frequency table with chi-square statistic, p-value and Cramer’s V.</p>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>vs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"vs = "</span>,<span class="va">vs</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>vs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"vs = "</span>,<span class="va">vs</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="reference/stat_two_cat.html">stat_two_cat</a></span><span class="op">(</span>grp_var <span class="op">=</span> <span class="va">vs</span>,vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">am</span>,<span class="va">cyl</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-stat_two_cat-plot-1.png" width="40%"></p>
 </div>
@@ -1082,10 +1082,10 @@
 </h3>
 <p>The goal of <code>row_number_unique</code> is to get the row number but considering the unique values of a variable.</p>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">vs</span>,<span class="va">gear</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">vs</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">vs</span>,<span class="va">gear</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">vs</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>gear_position <span class="op">=</span> <span class="fu"><a href="reference/row_number_unique.html">row_number_unique</a></span><span class="op">(</span><span class="va">gear</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 x 3</span></span>
 <span><span class="co">#&gt; # Groups:   vs [2]</span></span>
@@ -1115,7 +1115,7 @@
 <span><span class="co">#&gt;  - Simulation tolerance =  0.1 </span></span>
 <span><span class="co">#&gt;  - Real linear correlation coefficient = 0.7709791</span></span>
 <span></span>
-<span><span class="va">df</span> <span class="op">%&gt;%</span> </span>
+<span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
