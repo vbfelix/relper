@@ -1,6 +1,6 @@
 #' Summary table for comparative analysis between two numeric variables
 #'
-#' @description Create a summary table with t.test: statistic, p-value and IC(95%).
+#' @description Create a summary table with t.test: statistic, p-value and IC(95\%).
 #'
 #' @eval arg_df("df")
 #' @eval arg_df_var("grp_var","character")

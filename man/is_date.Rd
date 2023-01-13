@@ -15,7 +15,3 @@ A boolean vector with the return from the condition check.
 \description{
 Return TRUE if the vector is a date.
 }
-\examples{
-
-
-}

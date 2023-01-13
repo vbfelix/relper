@@ -1,4 +1,4 @@
-#' ggplot2: A watermark
+#' ggplot2: Application of a watermark
 #'
 #' @description Application of an imported .png file as a watermark for a ggplot2 plot.
 #'

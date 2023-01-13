@@ -1,6 +1,7 @@
 #' Coerce character to numeric
 #'
 #' @description Coerce a character vector to numeric, by:
+#'  \cr
 #'  \cr  - Removing the thousand separator mark.
 #'  \cr  - Replacing decimal mark with a dot.
 #'  \cr  - Applying the function as.numeric.
@@ -9,7 +10,8 @@
 #' @eval arg_mark("decimal",default = "'\\ \\,'")
 #' @eval arg_mark("thousand",default = "'\\ \\.'")
 #'
-#' @return A numeric vector
+#' @return A numeric vector.
+#'
 #' @export
 #'
 #' @examples

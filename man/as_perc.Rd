@@ -9,7 +9,7 @@ as_perc(x, sum = FALSE)
 \arguments{
 \item{x}{A numeric vector}
 
-\item{sum}{A boolean value, if TRUE the function will be added up (default = FALSE)}
+\item{sum}{A boolean value, if TRUE the function will add the values and compute the percentage (default = FALSE)}
 }
 \value{
 A numeric vector with x as percentage.
@@ -22,7 +22,7 @@ Transform numeric values to percentage, by:
 \examples{
 
 #sum = FALSE (default)
-x <- c(.4,.6)#'
+x <- c(.4,.6)
 as_perc(x)
 
 #sum = TRUE

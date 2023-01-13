@@ -19,7 +19,7 @@ stat_two_num(df, grp_var, num_vars, method = "auto")
 A gt table.
 }
 \description{
-Create a summary table with t.test: statistic, p-value and IC(95%).
+Create a summary table with t.test: statistic, p-value and IC(95\%).
 }
 \examples{
 

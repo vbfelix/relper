@@ -10,9 +10,9 @@
 #'
 #' @examples
 #'
-# is_date(Sys.time())
-#
-# is_date(Sys.Date())
+#' is_date(Sys.time())
+#'
+#' is_date(Sys.Date())
 #'
 
 is_date <- function(x){

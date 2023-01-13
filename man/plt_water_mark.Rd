@@ -2,7 +2,7 @@
 % Please edit documentation in R/plt_water_mark.r
 \name{plt_water_mark}
 \alias{plt_water_mark}
-\title{ggplot2: A watermark}
+\title{ggplot2: Application of a watermark}
 \usage{
 plt_water_mark(png_obj = NULL, png_filepath = NULL)
 }

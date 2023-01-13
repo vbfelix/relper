@@ -5,7 +5,7 @@
 #' @eval arg_df("df")
 #' @eval arg_df_var("grp_var","character")
 #' @param vars One or more variables from a data.frame
-#' @eval arg_value("filter","character",default = "", action = "will be the value to filter the variables")
+#' @eval arg_value("filter","character",default = "''", action = "will be the value to filter the variables")
 #'#'
 #' @return A gt table.
 #'
@@ -13,11 +13,10 @@
 #'
 #' @examples
 #'
-#'library(dplyr)
 #'
-# mtcars %>%
-#  mutate(vs = paste0("vs = ",vs)) %>%
-#  stat_two_cat(grp_var = vs,vars = c(am,cyl))
+#' mtcars %>%
+#'  dplyr::mutate(vs = paste0("vs = ",vs)) %>%
+#'  stat_two_cat(grp_var = vs,vars = c(am,cyl))
 
 
 stat_two_cat <-
@@ -30,7 +29,7 @@ stat_two_cat <-
 
     stop_function(arg = df,type = "dataframe")
 
-    stop_function(arg = filter,type = "character")
+    stop_function(arg = filter,type = "character",single_value = TRUE)
 
     pivotted_data <-
       df %>%
@@ -40,7 +39,8 @@ stat_two_cat <-
         !is.na(grp_var),
         !is.na(value),
         value != filter,
-        grp_var != filter)
+        grp_var != filter
+        )
 
     chi_square_test  <-
       pivotted_data %>%
