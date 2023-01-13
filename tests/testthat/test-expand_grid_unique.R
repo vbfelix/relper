@@ -17,11 +17,6 @@ test_that("results", {
 
 })
 
-test_that("warning", {
-
-
-})
-
 test_that("error", {
 
   expect_error(expand_grid_unique(1:2,1:2,include_equals = 1))

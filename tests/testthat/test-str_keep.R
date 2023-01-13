@@ -17,10 +17,6 @@ test_that("results", {
 
 })
 
-test_that("warning", {
-
-})
-
 test_that("error", {
 
   expect_error(object = str_keep(2,"text"))

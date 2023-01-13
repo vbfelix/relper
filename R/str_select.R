@@ -27,22 +27,24 @@ str_select <- function(string,after = NULL,before = NULL){
 
   stop_function(arg = string,type = "string")
 
+  if(is.null(after) & is.null(before)){stop("arguments 'after' or 'before' must have an input")}
+
   stop_function(arg = after,type = "string",null = TRUE)
 
   stop_function(arg = before,type = "string",null = TRUE)
 
   if((!is.null(before)) & (!is.null(after))){
-    out <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))
-    out <- out[,2]
+    output <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))
+    output <- out[,2]
   }
 
   if((!is.null(before)) & (is.null(after))){
-    out <- sub(paste0(before,".*"),"",string)
+    output <- sub(paste0(before,".*"),"",string)
   }
 
   if((is.null(before)) & (!is.null(after))){
-    out <- sub(paste0(".*",after),"",string)
+    output <- sub(paste0(".*",after),"",string)
   }
 
-  return(out)
+  return(output)
 }

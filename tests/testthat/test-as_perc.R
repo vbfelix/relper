@@ -1,7 +1,7 @@
 test_that("results", {
-  expect_equal(as_perc(x = 1), 100)
-  expect_equal(as_perc(x = c(1,2)), c(100,200))
-  expect_equal(as_perc(x = c(1,4), sum = TRUE), c(20,80))
+  expect_equal(object = as_perc(x = 1),expected =  100)
+  expect_equal(object = as_perc(x = c(1,2)),expected =  c(100,200))
+  expect_equal(object = as_perc(x = c(1,4), sum = TRUE),expected =  c(20,80))
 })
 
 test_that("error", {

@@ -19,16 +19,6 @@ test_that("results", {
     expected = FALSE
   )
 
-
-
 })
 
-test_that("warning", {
 
-
-})
-
-test_that("error", {
-
-
-})

@@ -1,3 +1,10 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test <- NULL
+
+test_that("results", {
+
+  expect_equal(
+    object = obj_to_string(test),
+    expected = "test"
+  )
+
 })

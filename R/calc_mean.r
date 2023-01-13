@@ -19,14 +19,14 @@ calc_mean<- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  out <-
+  output <-
     dplyr::tibble(
       arithmetic =  mean(x, na.rm = TRUE),
       geometric  =  relper::calc_geometric_mean(x),
       harmonic   =  relper::calc_harmonic_mean(x)
     )
 
-  return(out)
+  return(output)
 
 }
 

@@ -7,11 +7,6 @@ test_that("results", {
 
 })
 
-test_that("warning", {
-
-
-})
-
 test_that("error", {
 
   expect_error(is_outlier(x = "a"))

@@ -3,6 +3,3 @@ test_that("results", {
 
 })
 
-test_that("warning", {
-
-})

@@ -27,7 +27,7 @@ summary_cat <- function(x){
 
   stop_function(arg = x,type = "string")
 
-  out <-
+  output <-
     dplyr::tibble(
       n = length(x),
       na = sum(is.na(x),na.rm = TRUE),
@@ -36,6 +36,6 @@ summary_cat <- function(x){
       mode = calc_mode(x[relper::isnot_na(x)])
     )
 
-  return(out)
+  return(output)
 
 }

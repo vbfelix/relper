@@ -7,10 +7,6 @@ test_that("results", {
 
 })
 
-test_that("warning", {
-
-
-})
 
 test_that("error", {
 
