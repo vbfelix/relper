@@ -1,6 +1,6 @@
 Package: relper
 Title: Miscellaneous Functions
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: person("Vinícius", "Félix", email = "vinicius1b7f@gmail.com", role = c("aut", "cre"))
 Description: Miscellaneous Functions to assist in data cleaning and preparation
 Depends: R (>= 3.6.3)
