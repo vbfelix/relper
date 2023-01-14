@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,9 @@
     <a class="dropdown-item" href="../articles/str_functions.html">str_ functions</a>
     <a class="dropdown-item" href="../articles/summary_functions.html">summary_ functions</a>
   </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -117,13 +120,21 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>dt <span class="op">=</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"01/01/01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">calc_date_aux</span><span class="op">(</span><span class="va">df</span>,<span class="va">dt</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   dt         mon_abb mon_lbl mon_num day_num year_num year_lbl week_num epiwee…¹</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2001-01-01 Jan     January       1       1     <span style="text-decoration: underline;">2</span>001 2001            1        1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 3 more variables: isoweek_num &lt;dbl&gt;, wday_abb &lt;ord&gt;, wday_lbl &lt;ord&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   and abbreviated variable name ¹​epiweek_num</span></span>
+<span class="r-in"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="fu">calc_date_aux</span><span class="op">(</span><span class="va">df</span>,<span class="va">dt</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Rows: 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Columns: 12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ dt          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2001-01-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_abb     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Jan</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_lbl     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> January</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_num     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ day_num     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ year_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ year_lbl    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> 2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ week_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ epiweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ isoweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ wday_abb    <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Mon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ wday_lbl    <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Monday</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
