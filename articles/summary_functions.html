@@ -102,14 +102,10 @@ variables.</p>
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_cat.html">summary_cat</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in calc_mode(x[relper::isnot_na(x)]): The computed mode has ties, more</span></span>
-<span><span class="co">#&gt; than one result will be provided.</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 5</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
 <span><span class="co">#&gt;       n    na blank_space n_distinct mode </span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         26 f    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   101     1           0         26 s    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>   101     1           0         26 q</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         26 t</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_data">summary_data<a class="anchor" aria-label="anchor" href="#summary_data"></a>
@@ -147,10 +143,11 @@ variables.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 13</span></span></span>
-<span><span class="co">#&gt;       n    na negative equal_zero positive   min    p25   p50   p75   max   mode</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1        5          0        6 -<span style="color: #BB0000;">1.37</span> -<span style="color: #BB0000;">0.306</span> 0.412  1.47    10 -<span style="color: #BB0000;">0.154</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 2 more variables: mean &lt;dbl&gt;, cv &lt;dbl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt;       n    na negative equal_zero posit…¹   min    p25   p50   p75   max    mode</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1        5          0       6 -<span style="color: #BB0000;">1.13</span> -<span style="color: #BB0000;">0.227</span> 0.242  2.06    10 9.30<span style="color: #949494;">e</span><span style="color: #BB0000;">-4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 2 more variables: mean &lt;dbl&gt;, cv &lt;dbl&gt;, and abbreviated variable name</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ¹​positive</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_seq">summary_seq<a class="anchor" aria-label="anchor" href="#summary_seq"></a>
