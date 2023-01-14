@@ -1,4 +1,4 @@
-#' The difference between two dates computation
+#' Difference between two dates
 #'
 #' @description Computation of the difference between two dates (date2 - date1 + add).
 #'
@@ -8,6 +8,7 @@
 #' @eval arg_date_unit("unit")
 #'
 #' @return A numeric single value with the computed difference between the two dates.
+#'
 #' @export
 #'
 #' @examples
@@ -16,7 +17,7 @@
 #'
 #' date2 <- lubridate::dmy("21/11/2018")
 #'
-#' calc_date_diff(date1 = date1,date2 = date2,units = "days")
+#' calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 
 calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
 

@@ -25,7 +25,7 @@
 #'
 #' df <- data.frame(dt = lubridate::dmy("01/01/01"))
 #'
-#' calc_date_aux(df,dt)
+#' dplyr::glimpse(calc_date_aux(df,dt))
 #'
 
 calc_date_aux <- function(df,dt_var){

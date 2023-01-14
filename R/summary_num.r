@@ -1,4 +1,4 @@
-#' Summary  ofnumeric variables
+#' Summary  of numeric variables
 #'
 #' @description Summary statistics for numeric variables.
 #'

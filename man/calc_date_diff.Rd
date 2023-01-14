@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_date_diff.r
 \name{calc_date_diff}
 \alias{calc_date_diff}
-\title{The difference between two dates computation}
+\title{Difference between two dates}
 \usage{
 calc_date_diff(date1, date2, add = 0, unit = "days")
 }
@@ -27,5 +27,5 @@ date1 <- lubridate::dmy("01/05/1998")
 
 date2 <- lubridate::dmy("21/11/2018")
 
-calc_date_diff(date1 = date1,date2 = date2,units = "days")
+calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 }

@@ -9,7 +9,7 @@
 #' @return A tibble (lag x 2) with: \cr - ACF/CCF. \cr - lag.
 #' @export
 #'
-#' @examples#'
+#' @examples
 #'
 #' x <- rnorm(100)
 #'

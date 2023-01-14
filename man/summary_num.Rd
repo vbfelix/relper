@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_num.r
 \name{summary_num}
 \alias{summary_num}
-\title{Summary  ofnumeric variables}
+\title{Summary  of numeric variables}
 \usage{
 summary_num(x, minimal = FALSE)
 }

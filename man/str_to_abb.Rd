@@ -4,18 +4,18 @@
 \alias{str_to_abb}
 \title{Convert case of a string, without impacting abbreviations}
 \usage{
-str_to_abb(string, n_char = 3)
+str_to_abb(string, n_abb = 3)
 }
 \arguments{
 \item{string}{A character vector}
 
-\item{n_char}{A numeric integer single value (default = 3), that will be the number of characters to define as a abbreviation}
+\item{n_abb}{A numeric integer single value (default = 3), that will be the number of characters to define as an abbreviation}
 }
 \value{
 A character vector.
 }
 \description{
-Apply str_to_upper to strings with number of characters lower than "n_char".
+Apply str_to_upper to strings with number of characters lower than "n_abb".
 }
 \examples{
 

@@ -7,9 +7,9 @@
 expand_grid_unique(x, y, include_equals = FALSE)
 }
 \arguments{
-\item{x}{A numeric vector}
+\item{x}{A  vector}
 
-\item{y}{A numeric vector}
+\item{y}{A  vector}
 
 \item{include_equals}{A boolean value, if TRUE the function will ignore the equal pairs (default = FALSE)}
 }
@@ -22,6 +22,8 @@ Create a data frame from all combinations of the supplied vectors,
 }
 \examples{
 
-expand_grid_unique(x = 1:6,y = 1:6)
+expand_grid_unique(x = 1:3,y = 1:3)
+
+expand_grid_unique(x = 1:3,y = 1:3,include_equals = TRUE)
 
 }

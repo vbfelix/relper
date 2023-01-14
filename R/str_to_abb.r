@@ -1,9 +1,9 @@
 #' Convert case of a string, without impacting abbreviations
 #'
-#' @description Apply str_to_upper to strings with number of characters lower than "n_char".
+#' @description Apply str_to_upper to strings with number of characters lower than "n_abb".
 #'
 #' @eval arg_vector("string","character")
-#' @eval arg_number_of("n_char",default = "3","characters to define as a abbreviation")
+#' @eval arg_number_of("n_abb",default = "3","characters to define as an abbreviation")
 #'
 #' @return A character vector.
 #'
@@ -16,14 +16,14 @@
 #' str_to_abb(string)
 #'
 
-str_to_abb <- function(string, n_char = 3){
+str_to_abb <- function(string, n_abb = 3){
 
   stop_function(arg = string,type = "string")
 
-  stop_function(arg = n_char,type = "integer",single_value = TRUE,bigger_than = 1)
+  stop_function(arg = n_abb,type = "integer",single_value = TRUE,bigger_than = 1)
 
   dplyr::if_else(
-    condition = nchar(string) <= n_char,
+    condition = nchar(string) <= n_abb,
     true = stringr::str_to_upper(string),
     false = stringr::str_to_sentence(string)
     )

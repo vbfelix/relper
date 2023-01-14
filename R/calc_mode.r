@@ -4,7 +4,7 @@
 #'
 #' @eval arg_vector("x","")
 #'
-#' @return A character vector with the computed mode(s).
+#' @return A vector with the computed mode(s).
 #' @export
 #'
 #' @examples

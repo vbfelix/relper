@@ -1,6 +1,8 @@
-#' Keep only a type of character in a string
+#' Keep only a type of characters in a string
 #'
-#' @description Keep only a type of character in a string.
+#' @description Keep only a type of characters in a string.
+#'
+#' @details The argument 'keep' can be one of: 'text', 'number', 'special'.
 #'
 #' @eval arg_vector("string","character")
 #' @eval arg_value("keep","character",default = "'text'",action = "will be the type of character to keep")

@@ -22,7 +22,7 @@ format_p_value <-
   stop_function(arg = lower_bound,type = "numeric",null = TRUE,single_value = TRUE)
 
   if(is.null(lower_bound)){
-    relper::format_num(p_value,digits = 4,...)
+    relper::format_num(p_value,digits = 4)
   }else{
     dplyr::if_else(
       condition = p_value < lower_bound,

@@ -10,7 +10,7 @@
 #'
 #' @examples
 #'
-#' x <- rnorm(100)
+#' x <- rexp(10)
 #'
 #' calc_mean(x)
 #'

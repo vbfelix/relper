@@ -10,7 +10,7 @@ calc_mode(x)
 \item{x}{A  vector}
 }
 \value{
-A character vector with the computed mode(s).
+A vector with the computed mode(s).
 }
 \description{
 Computation of the mode.

@@ -3,8 +3,8 @@
 #' @description Create a data frame from all combinations of the supplied vectors,
 #'  without considering repetitions.
 #'
-#' @eval arg_vector("x","numeric")
-#' @eval arg_vector("y","numeric")
+#' @eval arg_vector("x","")
+#' @eval arg_vector("y","")
 #' @eval arg_boolean("include_equals","ignore the equal pairs")
 #'
 #' @return A tibble with all the combinations of x and y.
@@ -13,7 +13,9 @@
 #'
 #' @examples
 #'
-#' expand_grid_unique(x = 1:6,y = 1:6)
+#' expand_grid_unique(x = 1:3,y = 1:3)
+#'
+#' expand_grid_unique(x = 1:3,y = 1:3,include_equals = TRUE)
 #'
 
 expand_grid_unique <-

@@ -17,7 +17,7 @@ Compute the arithmetic, geometric and harmonic mean.
 }
 \examples{
 
-x <- rnorm(100)
+x <- rexp(10)
 
 calc_mean(x)
 

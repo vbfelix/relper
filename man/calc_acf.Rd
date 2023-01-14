@@ -19,7 +19,6 @@ Computation of the auto-correlation function (ACF) or the
  cross-correlation function (CCF), if the argument 'y' is provided.
 }
 \examples{
-#'
 
 x <- rnorm(100)
 

@@ -1,7 +1,7 @@
 test_that("results", {
 
   expect_equal(
-    object = format_p_value(1),
+    object = format_p_value(p_value = 1),
     expected = "1.0000"
   )
 

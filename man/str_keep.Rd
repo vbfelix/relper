@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_keep.r
 \name{str_keep}
 \alias{str_keep}
-\title{Keep only a type of character in a string}
+\title{Keep only a type of characters in a string}
 \usage{
 str_keep(string, keep = "text")
 }
@@ -15,7 +15,10 @@ str_keep(string, keep = "text")
 A character vector.
 }
 \description{
-Keep only a type of character in a string.
+Keep only a type of characters in a string.
+}
+\details{
+The argument 'keep' can be one of: 'text', 'number', 'special'.
 }
 \examples{
 
