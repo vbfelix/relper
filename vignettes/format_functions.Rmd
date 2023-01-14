@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 ```
 
@@ -25,7 +25,6 @@ library(relper)
 The goal of `format_digit` is to add zero(s) on the left of a number.
 
 ```{r format_digit}
-
 x <- c(1,4,10,12,100,2000)
 
 format_digit(x)
@@ -35,7 +34,6 @@ format_digit(x)
 You can also set the argument `digits` to add more zeros.
 
 ```{r format_digit-digits}
-
 format_digit(x,digits = 4)
 
 ```
@@ -76,7 +74,6 @@ where:
 By default the vector will be reescaled to have 0 and 1 as their new minimum and maximum values.  
 
 ```{r format_scale}
-
 x <- seq(-3,3,l = 10)
 
 x
@@ -93,9 +90,7 @@ plot(x,y)
 You can also change the range of the new scale.
 
 ```{r format_scale-range}
-
 z <- format_scale(x,new_min = 25,new_max = 100)
-
 ```
 
 ```{r format_scale-range-plot, echo = F}
@@ -106,7 +101,7 @@ plot(x,z)
 
 # format_p_value
 
-The goal of `format_p_value` is to change a p value, by considering a lower bound value where if is the valor is smaller than it, let's say 0.001, the p value will be changed to *<0.001*
+The goal of `format_p_value` is to change a p value, by considering a lower bound value where if is the value is smaller than it, let's say 0.001, the p value will be changed to "*<0.001*"
 
 ```{r format_p_value}
 format_p_value(c(.001,.00000001),lower_bound = 0.001)

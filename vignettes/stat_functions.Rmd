@@ -14,12 +14,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 library(dplyr)
 ```
 
-`stat_` functions apply statistical tests and show the results in an table.
+`stat_` functions apply statistical methods and show the results in an `gt` table.
 
 # stat_two_cat
 

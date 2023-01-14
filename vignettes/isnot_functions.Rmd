@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 ```
 
@@ -26,6 +26,8 @@ The goal of `isnot_in` is to check if a variable is not contained, it is the sam
 
 ```{r isnot_in}
 isnot_in("a", letters)
+
+isnot_in("1", letters)
 ```
 
 # isnot_na

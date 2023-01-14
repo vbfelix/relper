@@ -14,23 +14,25 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 library(ggplot2)
 
+```
+
+`plt_` functions are extensions to `ggplot2` objects. SO let's define a base plot to apply the functions.
+
+```{r}
 plot <- 
 ggplot(mtcars,aes(qsec,mpg))+
   geom_point()
 
 plot
-
 ```
-
-`plt_` functions are extensions to `ggplot2` objects.
 
 # plt_flip_y_title
 
-The goal of `plt_flip_y_title` is to flip the title from y axis, to be read horizontally.
+The goal of `plt_flip_y_title` is to flip the title from y axis, so it can be read horizontally.
 
 ```{r plt_flip_y_title}
 plot + plt_flip_y_title
@@ -70,8 +72,7 @@ plot + plt_scale_auto(axis = "x",n_breaks = 5)
 
 ```{r plt_scale_auto-x-y}
 plot +
-  plt_scale_auto(axis = "x",n_breaks = 5)+
-  plt_scale_auto(axis = "y",n_breaks = 3)
+  plt_scale_auto(axis = "xy",n_breaks = 5)
 ```
 
 # plt_theme_map

@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 ```
 
@@ -25,9 +25,9 @@ library(relper)
 The goal of `summary_cat` is to summarize categorical variables.
 
 ```{r summary_cat}
-x <- c(sample(letters,100,replace = TRUE),NA)
+set.seed(123);g <- c(sample(letters,100,replace = TRUE),NA)
 
-summary_cat(x)
+summary_cat(g)
 ```
 
 # summary_data
@@ -35,7 +35,10 @@ summary_cat(x)
 The goal of `summary_data` is to summarize all variables from a dataframe.
 
 ```{r summary_data}
-summary_data(mtcars)
+
+set.seed(123);df <- data.frame(x = rnorm(100), g = sample(letters,100,replace = TRUE))
+
+summary_data(df)
 ```
 
 # summary_num
@@ -43,7 +46,7 @@ summary_data(mtcars)
 The goal of `summary_num` is to summarize numeric variables.
 
 ```{r summary_num}
-x <- c(rnorm(10),NA,10)
+set.seed(123);x <- c(rnorm(10),NA,10)
 
 summary_num(x)
 ```
@@ -53,7 +56,7 @@ summary_num(x)
 The goal of `summary_seq` is to compute the number of sequential repeated values.
 
 ```{r summary_seq}
-y <- c(1, 1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 7, 1, 1)
+y <- c(1, 1, 1, 2, 2, 6, 7, 1, 1)
 
 summary_seq(y)
 

@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 library(dplyr)
 library(ggplot2)
@@ -73,6 +73,7 @@ ggplot(tibble(x = x,
   plt_theme_y()
 ```
 
+The function default compute the area considering the range of `x`.
 
 ```{r calc_auc-99}
 #from min to max of x
@@ -100,7 +101,7 @@ ggplot(aes(x,y))+
   scale_y_continuous(expand = c(0,0))
 ```
 
-You can define the argument `limits` to get the AUC of that limit.
+But you can define the argument `limits` to get the AUC of that respective range.
 
 ```{r calc_auc-95}
 #from -2 to 2
@@ -186,7 +187,7 @@ where:
  - $\bar{x}$ is the sample mean.
  
 ```{r calc_cv}
-set.seed(123);x <- rnorm(100,1)
+set.seed(123);x <- rexp(n = 100)
 
 calc_cv(x)
 ```
@@ -235,7 +236,7 @@ date2 <- lubridate::dmy("21/11/2018")
 calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 ```
 
-So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509 days.
+So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509 days.
 
 If you need to add a constant to your difference you can use the argument `add`.
 
@@ -309,11 +310,16 @@ The goal of `calc_peak_density` is to compute the peak density value of a numeri
 
 ```{r calc_peak_density-base-plot,echo = F}
 
-ggplot2::ggplot(data = dplyr::tibble(x = x),
-                ggplot2::aes(x))+
+pd_plot <-
+  ggplot2::ggplot(data = dplyr::tibble(x = x),
+                  ggplot2::aes(x))+
   ggplot2::geom_density()+
   relper::plt_theme_y()+
-  ggplot2::scale_x_continuous(breaks = 0:20)
+  ggplot2::scale_x_continuous(breaks = 0:20, expand = c(0,0))+
+  plt_flip_y_title+
+  labs(y = "Density (x)")
+
+pd_plot
 
 ```
 
@@ -323,12 +329,22 @@ Let's say we eant to discover what value is the peak in the density above.
 calc_peak_density(x)
 ```
 
-```{r calc_peak_density-plot,echo = F}
-ggplot2::ggplot(data = dplyr::tibble(x = x),
-                ggplot2::aes(x))+
-  ggplot2::geom_density()+
-  ggplot2::geom_vline(xintercept = relper::calc_peak_density(x),col = "royalblue4", size = 1)+
-  relper::plt_theme_y()+
-  ggplot2::scale_x_continuous(breaks = 0:20,sec.axis = sec_axis(~.,breaks = round(relper::calc_peak_density(x),3)))
+```{r calc_peak_density-plot,echo = F, warning = FALSE, message = FALSE}
+x_peak <- relper::calc_peak_density(x)
+
+pd_plot+
+  ggplot2::geom_vline(
+    xintercept = relper::calc_peak_density(x),
+    col = "royalblue4",
+    size = 1
+    )+
+  ggplot2::scale_x_continuous(
+    breaks = 0:20,
+    expand = c(0,0),
+    sec.axis = sec_axis(~.,
+                        breaks = x_peak,
+                        labels = format_num(x_peak,digits = 3)
+                        )
+    )
 
 ```

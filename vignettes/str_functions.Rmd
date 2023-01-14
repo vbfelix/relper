@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning = FALSE, message = FALSE}
 library(relper)
 ```
 
@@ -22,19 +22,32 @@ library(relper)
 
 # str_clean
 
-The goal of `str_clean` is to remove punctuation and/or accent.
+The goal of `str_clean` is to remove punctuation and/or accent from a string.
 
 ```{r str_clean}
 string <- "a..;éâ...íõ"
+```
 
-#remove only punctuation
-str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
-
-#remove only accent
-str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
-
-#remove both
+By default the function  will remove punctuation and accent symbols.
+```{r default}
 str_clean(string)
+```
+
+But you can remove only remove the accent symbols.
+
+```{r remove_accent}
+str_clean(string,remove_accent = TRUE,remove_punct = FALSE)
+```
+
+Also you can remove only remove the accent symbols.
+
+```{r remove_punct}
+str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
+```
+
+And there is the possibility to substitute the punctuation symbols.
+```{r str_clean_punct}
+str_clean(string,remove_accent = FALSE,remove_punct = TRUE,sub_punct = "-")
 ```
 
 # str_keep
@@ -43,11 +56,23 @@ The goal of `str_keep` is to keep only a type of character in the string.
 
 ```{r str_keep}
 string <- "1Aa45Z89$$%#"
+```
 
+By default the function will keep only letters.
+
+```{r text}
 str_keep(string,keep = "text")
+```
 
+But you can also keep only numbers.
+
+```{r numbers}
 str_keep(string,keep = "numbers")
+```
 
+And there is also an option  to keep special characters.
+
+```{r special}
 str_keep(string,keep = "special")
 ```
 
@@ -57,20 +82,29 @@ The goal of `str_select` is to select part of a string, before, after or between
 
 ```{r str_select}
 string <- "example text STRING1 TARGET STRING2 example text"
+```
 
-#Select a string, before a pattern
+By setting the argument `before` you select only the part of the string before this pattern.
+
+```{r str_select}
 str_select(string,before = "STRING2")
+```
 
-#Select a string, after a pattern
+By setting the argument `after` you select only the part of the string after this pattern.
+
+```{r str_select}
 str_select(string,after = "STRING1")
+```
 
-#Select a string, between two patterns
+By setting the arguments `brfore` and `after` you select only the part of the string between both patterns.
+
+```{r str_select}
 str_select(string,"STRING1","STRING2")
 ```
 
 # str_to_abb
 
-The goal of `str_to_abb` is to apply uppercase to strings with a number of characters lower than the argument `n_abb` (default = 3).
+The goal of `str_to_abb` is to apply uppercase to strings with a number of characters lower than the argument `n_abb` (default = 3), and only uppercase the first letter for the others words, so abbreviations will not be affected. 
 
 ```{r str_to_abb}
 abcde_string <- c("aaaaa","bb","ccc","dddd")
