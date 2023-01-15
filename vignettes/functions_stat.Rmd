@@ -26,13 +26,12 @@ library(dplyr)
 The goal of `stat_two_cat` is to create a frequency table with chi-square statistic, p-value and Cramer's V.
 
 ```{r stat_two_cat,eval = FALSE}
-mtcars %>%
-  mutate(vs = paste0("vs = ",vs)) %>%
+df %>% 
   stat_two_cat(
     df = .,
     grp_var = vs,
     vars = c(am,cyl)
-    )
+  )
 ```
 
 ![Result of the function stat_two_cat.](./figs/stat_two_cat.png)
@@ -58,13 +57,12 @@ mtcars %>%
 The goal of `stat_two_num` is to create a summary table comparing one or more numerical variables between two groups.
 
 ```{r stat_two_num,eval = FALSE}
-
-stat_two_num(
-  df = df,
-  grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3)
-)
-
+df %>% 
+  stat_two_num(
+    df = .,
+    grp_var = grp_var,
+    num_vars = c(num_var1,num_var2,num_var3)
+  )
 ```
 
 ![Result of the function stat_two_num.](./figs/stat_two_num.png)
