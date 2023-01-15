@@ -28,7 +28,11 @@ The goal of `stat_two_cat` is to create a frequency table with chi-square statis
 ```{r stat_two_cat,eval = FALSE}
 mtcars %>%
   mutate(vs = paste0("vs = ",vs)) %>%
-  stat_two_cat(grp_var = vs,vars = c(am,cyl))
+  stat_two_cat(
+    df = .,
+    grp_var = vs,
+    vars = c(am,cyl)
+    )
 ```
 
 ![Result of the function stat_two_cat.](./figs/stat_two_cat.png)
