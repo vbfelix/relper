@@ -92,14 +92,6 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vbfelix.github.io/relper/">relper</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     filter, lag</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 <p><code>calc_</code> functions compute a certain value.</p>
 <div class="section level2">
@@ -126,18 +118,18 @@ time series.</li>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;        acf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.059<span style="text-decoration: underline;">6</span>     1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.145</span>      2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.011<span style="text-decoration: underline;">1</span>     3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.012<span style="text-decoration: underline;">3</span>     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.065</span><span style="color: #BB0000; text-decoration: underline;">4</span>     5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.109</span>      6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.200</span>      7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.025<span style="text-decoration: underline;">7</span>     8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.202      9</span></span>
+<span><span class="co">#&gt;          acf   lag</span></span>
+<span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1            0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.112</span>        1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.103</span>        2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.031<span style="text-decoration: underline;">1</span>       3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.058</span><span style="color: #BB0000; text-decoration: underline;">3</span>       4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.073<span style="text-decoration: underline;">3</span>       5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.086<span style="text-decoration: underline;">0</span>       6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.000</span><span style="color: #BB0000; text-decoration: underline;">986</span>     7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.035<span style="text-decoration: underline;">2</span>       8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.050<span style="text-decoration: underline;">1</span>       9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -161,18 +153,18 @@ where:</p>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;        ccf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.018<span style="text-decoration: underline;">5</span>   -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.072</span><span style="color: #BB0000; text-decoration: underline;">7</span>   -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.089<span style="text-decoration: underline;">1</span>   -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.024</span><span style="color: #BB0000; text-decoration: underline;">5</span>   -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.078</span><span style="color: #BB0000; text-decoration: underline;">6</span>   -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.058<span style="text-decoration: underline;">5</span>   -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.147    -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.140</span>     -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.028<span style="text-decoration: underline;">5</span>    -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.021<span style="text-decoration: underline;">5</span>    -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt;         ccf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.201</span>     -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.112</span>     -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.022<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.096<span style="text-decoration: underline;">8</span>    -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.035<span style="text-decoration: underline;">3</span>    -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.001</span><span style="color: #BB0000; text-decoration: underline;">45</span>   -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.044</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.108      -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.051</span><span style="color: #BB0000; text-decoration: underline;">3</span>     -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.070</span><span style="color: #BB0000; text-decoration: underline;">9</span>     -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -185,6 +177,8 @@ curve (AUC).</p>
 <span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">dnorm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <p><img src="calc_functions_files/figure-html/calc_auc-base-plot-1.png" width="700"></p>
+<p>The function default compute the area considering the range of
+<code>x</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#from min to max of x</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -193,8 +187,8 @@ curve (AUC).</p>
 <span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.9972835</span></span></code></pre></div>
 <p><img src="calc_functions_files/figure-html/calc_auc-plot-99-1.png" width="700"></p>
-<p>You can define the argument <code>limits</code> to get the AUC of
-that limit.</p>
+<p>But you can define the argument <code>limits</code> to get the AUC of
+that respective range.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#from -2 to 2</span></span>
 <span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
@@ -220,7 +214,7 @@ Spearman correlation coefficients.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 3</span></span></span>
 <span><span class="co">#&gt;   pearson kendall spearman</span></span>
 <span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> -<span style="color: #BB0000;">0.096</span><span style="color: #BB0000; text-decoration: underline;">4</span> -<span style="color: #BB0000;">0.047</span><span style="color: #BB0000; text-decoration: underline;">7</span>  -<span style="color: #BB0000;">0.066</span><span style="color: #BB0000; text-decoration: underline;">1</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  -<span style="color: #BB0000;">0.278</span>  -<span style="color: #BB0000;">0.182</span>   -<span style="color: #BB0000;">0.274</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_cramers_v">calc_cramers_v<a class="anchor" aria-label="anchor" href="#calc_cramers_v"></a>
@@ -265,15 +259,15 @@ deviation;</li>
 mean.</li>
 </ul>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_cv.html">calc_cv</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.84</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.99</span></span></code></pre></div>
 <p>If you set the argument <code>as_perc</code> to <code>TRUE</code>,
 the CV will be multiplied by 100.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_cv.html">calc_cv</a></span><span class="op">(</span><span class="va">x</span>,as_perc <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 83.71</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 99.32</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_date_aux">calc_date_aux<a class="anchor" aria-label="anchor" href="#calc_date_aux"></a>
@@ -347,7 +341,7 @@ between two dates.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_date_diff.html">calc_date_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 7509</span></span></code></pre></div>
-<p>So, the difference in day of 21/11/2018 and 01/05/1998 is 7,509
+<p>So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509
 days.</p>
 <p>If you need to add a constant to your difference you can use the
 argument <code>add</code>.</p>
@@ -380,10 +374,7 @@ length <span class="math inline">\(n\)</span>.</li>
 </ul>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_geometric_mean.html">calc_geometric_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in calc_geometric_mean(x): There is at least one value &lt; 0 and that</span></span>
-<span><span class="co">#&gt; cause NaN's when computing the geometric mean.</span></span>
-<span><span class="co">#&gt; Warning in log(x): NaNs produced</span></span>
-<span><span class="co">#&gt; [1] 1.106355</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.618602</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_harmonic_mean">calc_harmonic_mean<a class="anchor" aria-label="anchor" href="#calc_harmonic_mean"></a>
@@ -399,7 +390,7 @@ length <span class="math inline">\(n\)</span>.</li>
 </ul>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_harmonic_mean.html">calc_harmonic_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] -1.048597</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.17634</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_mean">calc_mean<a class="anchor" aria-label="anchor" href="#calc_mean"></a>
@@ -408,13 +399,10 @@ length <span class="math inline">\(n\)</span>.</li>
 geometric and harmonic mean.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in relper::calc_geometric_mean(x): There is at least one value &lt; 0 and</span></span>
-<span><span class="co">#&gt; that cause NaN's when computing the geometric mean.</span></span>
-<span><span class="co">#&gt; Warning in log(x): NaNs produced</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 3</span></span></span>
 <span><span class="co">#&gt;   arithmetic geometric harmonic</span></span>
 <span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>       1.09      1.11    -<span style="color: #BB0000;">1.05</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>       1.05     0.619    0.176</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_mode">calc_mode<a class="anchor" aria-label="anchor" href="#calc_mode"></a>
@@ -443,9 +431,7 @@ density value of a numeric value.</p>
 above.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_peak_density.html">calc_peak_density</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.8076021</span></span></code></pre></div>
-<pre><code><span><span class="co">#&gt; Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `linewidth` instead.</span></span></code></pre>
+<span><span class="co">#&gt; [1] 0.3901813</span></span></code></pre></div>
 <p><img src="calc_functions_files/figure-html/calc_peak_density-plot-1.png" width="700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

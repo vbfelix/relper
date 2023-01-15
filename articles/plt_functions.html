@@ -91,22 +91,22 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vbfelix.github.io/relper/">relper</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">plot</span> <span class="op">&lt;-</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<p><code>plt_</code> functions are extensions to <code>ggplot2</code>
+objects. SO let’s define a base plot to apply the functions.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plot</span> <span class="op">&lt;-</span> </span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">qsec</span>,<span class="va">mpg</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">plot</span></span></code></pre></div>
-<p><img src="plt_functions_files/figure-html/setup-1.png" width="700"></p>
-<p><code>plt_</code> functions are extensions to <code>ggplot2</code>
-objects.</p>
+<p><img src="plt_functions_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 <div class="section level2">
 <h2 id="plt_flip_y_title">plt_flip_y_title<a class="anchor" aria-label="anchor" href="#plt_flip_y_title"></a>
 </h2>
 <p>The goal of <code>plt_flip_y_title</code> is to flip the title from y
-axis, to be read horizontally.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+axis, so it can be read horizontally.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_flip_y_title</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_flip_y_title-1.png" width="700"></p>
 </div>
@@ -115,7 +115,7 @@ axis, to be read horizontally.</p>
 </h2>
 <p>The goal of <code>plt_identity_line</code> is to add a identity line
 to a scatter plot.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_identity_line.html">plt_identity_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_identity_line-1.png" width="700"></p>
 </div>
@@ -124,7 +124,7 @@ to a scatter plot.</p>
 </h2>
 <p>The goal of <code>plt_no_background</code> is to remove the
 background.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_no_background</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_no_background-1.png" width="700"></p>
 </div>
@@ -132,7 +132,7 @@ background.</p>
 <h2 id="plt_no_labels">plt_no_labels<a class="anchor" aria-label="anchor" href="#plt_no_labels"></a>
 </h2>
 <p>The goal of <code>plt_no_labels</code> is to remove all labels.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_no_labels</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_no_labels-1.png" width="700"></p>
 </div>
@@ -141,13 +141,12 @@ background.</p>
 </h2>
 <p>The goal of <code>plt_scale_auto</code> is to add a automatic
 scale.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"x"</span>,n_breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_scale_auto-1.png" width="700"></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"x"</span>,n_breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"y"</span>,n_breaks <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"xy"</span>,n_breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_scale_auto-x-y-1.png" width="700"></p>
 </div>
 <div class="section level2">
@@ -155,7 +154,7 @@ scale.</p>
 </h2>
 <p>The goal of <code>plt_theme_map</code> is to add a theme appropriate
 for a map.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_map.html">plt_theme_map</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_theme_map-1.png" width="700"></p>
 </div>
@@ -164,7 +163,7 @@ for a map.</p>
 </h2>
 <p>The goal of <code>plt_theme_x</code> is to remove major and minor
 grid lines from y axis.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_x.html">plt_theme_x</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_theme_x-1.png" width="700"></p>
 </div>
@@ -173,7 +172,7 @@ grid lines from y axis.</p>
 </h2>
 <p>The goal of <code>plt_theme_xy</code> is to remove minor grid lines
 from x and y axis.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_xy.html">plt_theme_xy</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_theme_xy-1.png" width="700"></p>
 </div>
@@ -182,7 +181,7 @@ from x and y axis.</p>
 </h2>
 <p>The goal of <code>plt_theme_y</code> is to remove major and minor
 grid lines from x axis.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_y.html">plt_theme_y</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_theme_y-1.png" width="700"></p>
 </div>
@@ -191,7 +190,7 @@ grid lines from x axis.</p>
 </h2>
 <p>The goal of <code>plt_water_mark</code> is to add a image as a
 watermark in a <code>ggplot2</code> object.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_water_mark.html">plt_water_mark</a></span><span class="op">(</span><span class="va">vfx_watermark</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plt_functions_files/figure-html/plt_water_mark-1.png" width="700"></p>
 </div>

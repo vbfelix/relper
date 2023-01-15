@@ -96,37 +96,46 @@
 <h2 id="str_clean">str_clean<a class="anchor" aria-label="anchor" href="#str_clean"></a>
 </h2>
 <p>The goal of <code>str_clean</code> is to remove punctuation and/or
-accent.</p>
+accent from a string.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"a..;éâ...íõ"</span></span>
-<span></span>
-<span><span class="co">#remove only punctuation</span></span>
-<span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span>,remove_accent <span class="op">=</span> <span class="cn">FALSE</span>,remove_punct <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "aéâíõ"</span></span>
-<span></span>
-<span><span class="co">#remove only accent</span></span>
-<span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span>,remove_accent <span class="op">=</span> <span class="cn">TRUE</span>,remove_punct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "a..;ea...io"</span></span>
-<span></span>
-<span><span class="co">#remove both</span></span>
-<span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"a..;éâ...íõ"</span></span></code></pre></div>
+<p>By default the function will remove punctuation and accent
+symbols.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "aeaio"</span></span></code></pre></div>
+<p>But you can remove only remove the accent symbols.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span>,remove_accent <span class="op">=</span> <span class="cn">TRUE</span>,remove_punct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "a..;ea...io"</span></span></code></pre></div>
+<p>Also you can remove only remove the accent symbols.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span>,remove_accent <span class="op">=</span> <span class="cn">FALSE</span>,remove_punct <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "aéâíõ"</span></span></code></pre></div>
+<p>And there is the possibility to substitute the punctuation
+symbols.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_clean.html">str_clean</a></span><span class="op">(</span><span class="va">string</span>,remove_accent <span class="op">=</span> <span class="cn">FALSE</span>,remove_punct <span class="op">=</span> <span class="cn">TRUE</span>,sub_punct <span class="op">=</span> <span class="st">"-"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "a---éâ---íõ"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="str_keep">str_keep<a class="anchor" aria-label="anchor" href="#str_keep"></a>
 </h2>
 <p>The goal of <code>str_keep</code> is to keep only a type of character
 in the string.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"1Aa45Z89$$%#"</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "AaZ"</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"numbers"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "14589"</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"special"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"1Aa45Z89$$%#"</span></span></code></pre></div>
+<p>By default the function will keep only letters.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "AaZ"</span></span></code></pre></div>
+<p>But you can also keep only numbers.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"numbers"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "14589"</span></span></code></pre></div>
+<p>And there is also an option to keep special characters.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_keep.html">str_keep</a></span><span class="op">(</span><span class="va">string</span>,keep <span class="op">=</span> <span class="st">"special"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "$$%#"</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -134,19 +143,22 @@ in the string.</p>
 </h2>
 <p>The goal of <code>str_select</code> is to select part of a string,
 before, after or between patterns.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"example text STRING1 TARGET STRING2 example text"</span></span>
-<span></span>
-<span><span class="co">#Select a string, before a pattern</span></span>
-<span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,before <span class="op">=</span> <span class="st">"STRING2"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "example text STRING1 TARGET "</span></span>
-<span></span>
-<span><span class="co">#Select a string, after a pattern</span></span>
-<span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,after <span class="op">=</span> <span class="st">"STRING1"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] " TARGET STRING2 example text"</span></span>
-<span></span>
-<span><span class="co">#Select a string, between two patterns</span></span>
-<span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,<span class="st">"STRING1"</span>,<span class="st">"STRING2"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"example text STRING1 TARGET STRING2 example text"</span></span></code></pre></div>
+<p>By setting the argument <code>before</code> you select only the part
+of the string before this pattern.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,before <span class="op">=</span> <span class="st">"STRING2"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "example text STRING1 TARGET "</span></span></code></pre></div>
+<p>By setting the argument <code>after</code> you select only the part
+of the string after this pattern.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,after <span class="op">=</span> <span class="st">"STRING1"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] " TARGET STRING2 example text"</span></span></code></pre></div>
+<p>By setting the arguments <code>brfore</code> and <code>after</code>
+you select only the part of the string between both patterns.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,<span class="st">"STRING1"</span>,<span class="st">"STRING2"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "TARGET"</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -154,8 +166,9 @@ before, after or between patterns.</p>
 </h2>
 <p>The goal of <code>str_to_abb</code> is to apply uppercase to strings
 with a number of characters lower than the argument <code>n_abb</code>
-(default = 3).</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+(default = 3), and only uppercase the first letter for the others words,
+so abbreviations will not be affected.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">abcde_string</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aaaaa"</span>,<span class="st">"bb"</span>,<span class="st">"ccc"</span>,<span class="st">"dddd"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/str_to_abb.html">str_to_abb</a></span><span class="op">(</span><span class="va">abcde_string</span>,n_abb <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>

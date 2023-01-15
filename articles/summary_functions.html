@@ -99,13 +99,13 @@ related to them.</p>
 <p>The goal of <code>summary_cat</code> is to summarize categorical
 variables.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/summary_cat.html">summary_cat</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/summary_cat.html">summary_cat</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
 <span><span class="co">#&gt;       n    na blank_space n_distinct mode </span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         26 t</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   101     1           0         25 y</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_data">summary_data<a class="anchor" aria-label="anchor" href="#summary_data"></a>
@@ -113,25 +113,21 @@ variables.</p>
 <p>The goal of <code>summary_data</code> is to summarize all variables
 from a dataframe.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/summary_data.html">summary_data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "11 numeric variables."</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 14</span></span></span>
-<span><span class="co">#&gt;    var       n    na negative equal_…¹ posit…²   min    p25    p50    p75    max</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> am       32     0        0       19      13  0      0      0      1      1   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> carb     32     0        0        0      32  1      2      2      4      8   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> cyl      32     0        0        0      32  4      4      6      8      8   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> disp     32     0        0        0      32 71.1  121.   196.   326    472   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> drat     32     0        0        0      32  2.76   3.08   3.70   3.92   4.93</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> gear     32     0        0        0      32  3      3      4      4      5   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> hp       32     0        0        0      32 52     96.5  123    180    335   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> mpg      32     0        0        0      32 10.4   15.4   19.2   22.8   33.9 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> qsec     32     0        0        0      32 14.5   16.9   17.7   18.9   22.9 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> vs       32     0        0       18      14  0      0      0      1      1   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> wt       32     0        0        0      32  1.51   2.58   3.32   3.61   5.42</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 3 more variables: mode &lt;dbl&gt;, mean &lt;dbl&gt;, cv &lt;dbl&gt;, and abbreviated</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   variable names ¹​equal_zero, ²​positive</span></span></span>
-<span><span class="co">#&gt; [1] "0 categoric variables."</span></span></code></pre></div>
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>, g <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/summary_data.html">summary_data</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "1 numeric variable(s)."</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 14</span></span></span>
+<span><span class="co">#&gt;   var       n    na negative equal_zero positive   min    p25    p50   p75   max</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> x       100     0       48          0       52 -<span style="color: #BB0000;">2.31</span> -<span style="color: #BB0000;">0.494</span> 0.061<span style="text-decoration: underline;">8</span> 0.692  2.19</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 3 more variables: mode &lt;dbl&gt;, mean &lt;dbl&gt;, cv &lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; [1] "1 categoric variable(s)."</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
+<span><span class="co">#&gt;   var       n    na blank_space n_distinct mode </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> g       100     0           0         25 z</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_num">summary_num<a class="anchor" aria-label="anchor" href="#summary_num"></a>
@@ -139,13 +135,13 @@ from a dataframe.</p>
 <p>The goal of <code>summary_num</code> is to summarize numeric
 variables.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,<span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,<span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 13</span></span></span>
-<span><span class="co">#&gt;       n    na negative equal_zero posit…¹   min    p25   p50   p75   max    mode</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1        5          0       6 -<span style="color: #BB0000;">1.13</span> -<span style="color: #BB0000;">0.227</span> 0.242  2.06    10 9.30<span style="color: #949494;">e</span><span style="color: #BB0000;">-4</span></span></span>
+<span><span class="co">#&gt;       n    na negative equal_zero posit…¹   min    p25    p50   p75   max   mode</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    12     1        5          0       6 -<span style="color: #BB0000;">1.27</span> -<span style="color: #BB0000;">0.503</span> 0.070<span style="text-decoration: underline;">5</span>  1.01    10 -<span style="color: #BB0000;">0.268</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 2 more variables: mean &lt;dbl&gt;, cv &lt;dbl&gt;, and abbreviated variable name</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   ¹​positive</span></span></span></code></pre></div>
 </div>
@@ -155,20 +151,17 @@ variables.</p>
 <p>The goal of <code>summary_seq</code> is to compute the number of
 sequential repeated values.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_seq.html">summary_seq</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 8 × 2</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 2</span></span></span>
 <span><span class="co">#&gt;   value num_rep</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     1       3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     2       4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     3       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     4       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     5       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>     6       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span>     7       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span>     1       2</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     2       2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     6       1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     7       1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     1       2</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
