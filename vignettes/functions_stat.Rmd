@@ -58,8 +58,7 @@ The goal of `stat_two_num` is to create a summary table comparing one or more nu
 stat_two_num(
   df = df,
   grp_var = grp_var,
-  num_vars = c(num_var1,num_var2,num_var3),
-  method = c("auto")
+  num_vars = c(num_var1,num_var2,num_var3)
 )
 
 ```

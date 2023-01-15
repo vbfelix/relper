@@ -5,7 +5,6 @@
 #' @eval arg_df("df")
 #' @eval arg_df_var("grp_var","character")
 #' @param num_vars One or more variables from a data.frame
-#' @param method Method of summary and test (default = 'auto')
 #'
 #' @return A gt table.
 #'
@@ -13,28 +12,25 @@
 #'
 #' @examples
 #'
-#'set.seed(123);df <-
+#' n <- 20
+#'
+#' set.seed(123);df <-
 #'  data.frame(
-#'    grp_var = sample(paste("group", letters[1:2]),size = 10,replace = TRUE),
-#'    num_var1 = rnorm(10),
-#'    num_var2 = rpois(10,2)
+#'    grp_var = sample(paste("group", letters[1:2]),size = n,replace = TRUE),
+#'    num_var1 = rnorm(n),
+#'    num_var2 = abs(rnorm(n))
 #'  )
 #'
-#'stat_two_num(df,grp_var,c(num_var1,num_var2),method = c("auto"))
-
-
+#' stat_two_num(df,grp_var,c(num_var1,num_var2))
 
 stat_two_num <-
   function(
     df,
     grp_var,
-    num_vars,
-    method = "auto"
+    num_vars
   ){
 
     stop_function(arg = df,type = "dataframe")
-
-    stop_function(arg = method,type = "character")
 
     # utils -------------------------------------------------------------------
 
@@ -49,11 +45,13 @@ stat_two_num <-
 
     test_comparison <-
       function(df,method){
+
         if(method == "mean"){
           out <- broom::tidy(stats::t.test(formula = value ~ grp_var,data = df))
         }else{
           out <- broom::tidy(stats::wilcox.test(formula = value ~ grp_var,data = df,conf.level = .95,conf.int = TRUE))
         }
+
         out %>%
           dplyr::mutate(
             statistic = relper::format_num(statistic, digits = 3, decimal_mark = ".",thousand_mark = ","),
@@ -92,13 +90,8 @@ stat_two_num <-
 # method ------------------------------------------------------------------
 
 
-    method <- tolower(method)
 
-    if(sum(!(method %in% c("mean","median","auto"))) > 0 ){
-      stop("'method' must be 'mean', 'median' or 'auto'.")
-    }
 
-    if(length(method) == 1 & sum(method %in% "auto") > 0 ){
       methods_df <-
         pivotted_data %>%
         dplyr::group_by(name) %>%
@@ -108,16 +101,6 @@ stat_two_num <-
         ) %>%
         dplyr::ungroup() %>%
         dplyr::select(-p_value)
-    }else{
-      methods_df <-
-        data.frame(
-          name = df %>%
-            dplyr::select({{num_vars}}) %>%
-            # select(-grp_var) %>%
-            names(),
-          method = method
-        )
-    }
 
     pivotted_data <-
       pivotted_data %>%
@@ -202,14 +185,14 @@ stat_two_num <-
           tidyr::nest(data = c(grp_var, value)) %>%
           dplyr::group_by(data) %>%
           dplyr::mutate(
-            t_test = purrr::map(
+            test = purrr::map(
               .x = data,
               .y = method,
-              .f = ~test_comparison(df = .x,method = .y)#broom::tidy(t.test(formula = value ~ grp_var,data = x))
+              .f = ~test_comparison(df = .x,method = .y)
             )
           ) %>%
           dplyr::ungroup() %>%
-          tidyr::unnest(t_test) %>%
+          tidyr::unnest(test) %>%
           dplyr::select(-data,-method)
       )%>%
       dplyr::ungroup() %>%
