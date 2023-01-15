@@ -93,16 +93,30 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vbfelix.github.io/relper/">relper</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
 <p><code>stat_</code> functions apply statistical methods and show the
-results in an <code>gt</code> table.</p>
+results in an <code>gt</code> table, let’s create a example data.frame
+to apply them.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>;<span class="va">df</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>    grp_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    cat_var1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    cat_var2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">25</span><span class="op">:</span><span class="fl">26</span><span class="op">]</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    num_var1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,</span>
+<span>    num_var2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">2</span><span class="op">)</span>,</span>
+<span>    num_var3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="stat_two_cat">stat_two_cat<a class="anchor" aria-label="anchor" href="#stat_two_cat"></a>
 </h2>
 <p>The goal of <code>stat_two_cat</code> is to create a frequency table
 with chi-square statistic, p-value and Cramer’s V.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>vs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"vs = "</span>,<span class="va">vs</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/stat_two_cat.html">stat_two_cat</a></span><span class="op">(</span>grp_var <span class="op">=</span> <span class="va">vs</span>,vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">am</span>,<span class="va">cyl</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="../reference/stat_two_cat.html">stat_two_cat</a></span><span class="op">(</span></span>
+<span>    df <span class="op">=</span> <span class="va">.</span>,</span>
+<span>    grp_var <span class="op">=</span> <span class="va">grp_var</span>,</span>
+<span>    vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cat_var1</span>,<span class="va">cat_var2</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="figs/stat_two_cat.png" alt=""><p class="caption">Result of the function stat_two_cat.</p>
 </div>
@@ -112,14 +126,13 @@ with chi-square statistic, p-value and Cramer’s V.</p>
 </h2>
 <p>The goal of <code>stat_two_num</code> is to create a summary table
 comparing one or more numerical variables between two groups.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="../reference/stat_two_num.html">stat_two_num</a></span><span class="op">(</span></span>
-<span>  df <span class="op">=</span> <span class="va">df</span>,</span>
-<span>  grp_var <span class="op">=</span> <span class="va">grp_var</span>,</span>
-<span>  num_vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">num_var1</span>,<span class="va">num_var2</span>,<span class="va">num_var3</span><span class="op">)</span>,</span>
-<span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="../reference/stat_two_num.html">stat_two_num</a></span><span class="op">(</span></span>
+<span>    df <span class="op">=</span> <span class="va">.</span>,</span>
+<span>    grp_var <span class="op">=</span> <span class="va">grp_var</span>,</span>
+<span>    num_vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">num_var1</span>,<span class="va">num_var2</span>,<span class="va">num_var3</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="figs/stat_two_num.png" alt=""><p class="caption">Result of the function stat_two_num.</p>
 </div>
