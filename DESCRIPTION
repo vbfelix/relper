@@ -23,7 +23,8 @@ Imports:
     glue,
     rlang,
     scales,
-    tidyselect
+    tidyselect,
+    forcats
 Suggests: 
     knitr,
     rmarkdown,
