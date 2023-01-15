@@ -1,13 +1,13 @@
 # relper 1.2.0
 
 Removal: 
-* Dependency of the package `png`.
-* Function `summary_data`.
-* Fatasets `df_month` and `df_week`.
+* Datasets: `df_month` and `df_week`.
+* Dependencies: `png`.
+* Functions: `summary_data`.
 
 Addition:
-* Documentation for the example dataset `vfx_watermark`.
-* Dependency of the packages: `glue`, `rlang`, `scales` and `tidyselect`.
+* Dependencies: `glue`, `rlang`, `scales` and `tidyselect`.
+* Documentation: `vfx_watermark`.
 
 # relper 1.1.0
 
