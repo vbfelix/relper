@@ -86,19 +86,19 @@ string <- "example text STRING1 TARGET STRING2 example text"
 
 By setting the argument `before` you select only the part of the string before this pattern.
 
-```{r str_select}
+```{r before}
 str_select(string,before = "STRING2")
 ```
 
 By setting the argument `after` you select only the part of the string after this pattern.
 
-```{r str_select}
+```{r after}
 str_select(string,after = "STRING1")
 ```
 
 By setting the arguments `brfore` and `after` you select only the part of the string between both patterns.
 
-```{r str_select}
+```{r both}
 str_select(string,"STRING1","STRING2")
 ```
 
