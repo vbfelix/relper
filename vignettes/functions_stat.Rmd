@@ -19,7 +19,20 @@ library(relper)
 library(dplyr)
 ```
 
-`stat_` functions apply statistical methods and show the results in an `gt` table.
+`stat_` functions apply statistical methods and show the results in an `gt` table, let's create a example data.frame to apply them.
+
+```{r}
+set.seed(1234);df <-
+  data.frame(
+    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
+    cat_var1 = sample(letters[1:3],size = 100,replace = TRUE),
+    cat_var2 = sample(letters[25:26],size = 100,replace = TRUE),
+    num_var1 = rnorm(100),
+    num_var2 = rpois(100,2),
+    num_var3 = rexp(100,2)
+  )
+```
+
 
 # stat_two_cat
 
@@ -29,8 +42,8 @@ The goal of `stat_two_cat` is to create a frequency table with chi-square statis
 df %>% 
   stat_two_cat(
     df = .,
-    grp_var = vs,
-    vars = c(am,cyl)
+    grp_var = grp_var,
+    vars = c(cat_var1,cat_var2)
   )
 ```
 
@@ -39,22 +52,48 @@ df %>%
 
 ```{r stat_two_cat-plot, echo = FALSE}
 
-# temp_table <- 
-#   mtcars %>%
-#   mutate(vs = paste0("vs = ",vs)) %>%
-#   stat_two_cat(grp_var = vs,vars = c(am,cyl))
+# temp_table <-
+#   df %>%
+#   stat_two_cat(
+#     df = .,
+#     grp_var = grp_var,
+#     vars = c(cat_var1,cat_var2)
+#   )
 # 
 # gt::gtsave(
-#   temp_table,
-#   "stat_two_cat.png",
+#   data = temp_table,
+#   filename = "stat_two_cat.png",
+#   path = file.path(getwd(),"figs"),
 #   vwidth = 1500,
-#   vheight = 1000)
+#   vheight = 1000
+#   )
 
 ```
 
 # stat_two_num
 
 The goal of `stat_two_num` is to create a summary table comparing one or more numerical variables between two groups.
+
+
+```{r stat_two_num-plot, echo = FALSE}
+
+# temp_table <-
+#   df %>%
+#   stat_two_num(
+#     df = .,
+#     grp_var = grp_var,
+#     num_vars = c(num_var1,num_var2,num_var3)
+#   )
+# 
+# gt::gtsave(
+#   data = temp_table,
+#   filename = "stat_two_num.png",
+#   path = file.path(getwd(),"figs"),
+#   vwidth = 1500,
+#   vheight = 1000
+#   )
+
+```
 
 ```{r stat_two_num,eval = FALSE}
 df %>% 
@@ -68,26 +107,5 @@ df %>%
 ![Result of the function stat_two_num.](./figs/stat_two_num.png)
 
 
-```{r stat_two_num-plot, echo = FALSE}
-# set.seed(123);df <-
-#   data.frame(
-#     grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-#     num_var1 = rnorm(100),
-#     num_var2 = rpois(100,2),
-#     num_var3 = rexp(100,2),
-#    num_var4 = abs(rnorm(100))
-#   )
-# 
-# table <- 
-# stat_two_num(
-#   df = df,
-#   grp_var = grp_var,
-#   num_vars = c(num_var1,num_var2,num_var3),
-#   method = c("auto")
-# )
-# 
-# gt::gtsave(table, "stat_two_num.png", vwidth = 1500, vheight = 1000)
-
-```
 
 
