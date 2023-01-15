@@ -10,37 +10,37 @@
     <loc>https://vbfelix.github.io/relper/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/articles/as_functions.html</loc>
+    <loc>https://vbfelix.github.io/relper/articles/functions_as.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/articles/calc_functions.html</loc>
+    <loc>https://vbfelix.github.io/relper/articles/functions_calc.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/articles/format_functions.html</loc>
+    <loc>https://vbfelix.github.io/relper/articles/functions_format.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_is.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_isnot.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_plt.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_stat.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_str.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_summary.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/articles/is_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/isnot_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/others_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/plt_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/stat_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/str_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/summary_functions.html</loc>
+    <loc>https://vbfelix.github.io/relper/articles/other_functions.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/authors.html</loc>
@@ -214,12 +214,12 @@
     <loc>https://vbfelix.github.io/relper/reference/summary_cat.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/reference/summary_data.html</loc>
-  </url>
-  <url>
     <loc>https://vbfelix.github.io/relper/reference/summary_num.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/summary_seq.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/vfx_watermark.html</loc>
   </url>
 </urlset>

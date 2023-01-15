@@ -6,7 +6,6 @@
   - mon_num: the number of the month;
   - day_num: the number of the day within the month;
   - year_num: the number of the year;
-  - year_lbl: a factor with the number of the year;
   - week_num: the number of complete seven day periods that have occurred between the date and January 1st, plus one;
   - epiweek_num: the US CDC version of epidemiological week. Starts on Sunday;
   - isoweek_num:  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
@@ -18,7 +17,6 @@
   - mon_num: the number of the month;
   - day_num: the number of the day within the month;
   - year_num: the number of the year;
-  - year_lbl: a factor with the number of the year;
   - week_num: the number of complete seven day periods that have occurred between the date and January 1st, plus one;
   - epiweek_num: the US CDC version of epidemiological week. Starts on Sunday;
   - isoweek_num:  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
@@ -34,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,16 +46,16 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/as_functions.html">as_ functions</a>
-    <a class="dropdown-item" href="../articles/calc_functions.html">calc_ functions</a>
-    <a class="dropdown-item" href="../articles/format_functions.html">format_functions</a>
-    <a class="dropdown-item" href="../articles/is_functions.html">is_ functions</a>
-    <a class="dropdown-item" href="../articles/isnot_functions.html">isnot_ functions</a>
-    <a class="dropdown-item" href="../articles/others_functions.html">Others functions</a>
-    <a class="dropdown-item" href="../articles/plt_functions.html">plt_ functions</a>
-    <a class="dropdown-item" href="../articles/stat_functions.html">stat_functions</a>
-    <a class="dropdown-item" href="../articles/str_functions.html">str_ functions</a>
-    <a class="dropdown-item" href="../articles/summary_functions.html">summary_ functions</a>
+    <a class="dropdown-item" href="../articles/functions_as.html">Functions as_</a>
+    <a class="dropdown-item" href="../articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
+    <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
+    <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
+    <a class="dropdown-item" href="../articles/functions_plt.html">Functions plt_</a>
+    <a class="dropdown-item" href="../articles/functions_stat.html">Functions stat_</a>
+    <a class="dropdown-item" href="../articles/functions_str.html">Functions str_</a>
+    <a class="dropdown-item" href="../articles/functions_summary.html">Functions summary_</a>
+    <a class="dropdown-item" href="../articles/other_functions.html">Other functions</a>
   </div>
 </li>
 <li class="nav-item">
@@ -85,7 +83,6 @@
  <br> - mon_num: the number of the month;
  <br> - day_num: the number of the day within the month;
  <br> - year_num: the number of the year;
- <br> - year_lbl: a factor with the number of the year;
  <br> - week_num: the number of complete seven day periods that have occurred between the date and January 1st, plus one;
  <br> - epiweek_num: the US CDC version of epidemiological week. Starts on Sunday;
  <br> - isoweek_num:  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
@@ -122,14 +119,13 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="fu">calc_date_aux</span><span class="op">(</span><span class="va">df</span>,<span class="va">dt</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rows: 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Columns: 12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Columns: 11</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ dt          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2001-01-01</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_abb     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Jan</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_lbl     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> January</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ mon_num     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ day_num     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ year_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ year_lbl    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> 2001</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ week_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ epiweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ isoweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1</span>

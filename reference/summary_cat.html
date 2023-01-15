@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,16 +24,16 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/as_functions.html">as_ functions</a>
-    <a class="dropdown-item" href="../articles/calc_functions.html">calc_ functions</a>
-    <a class="dropdown-item" href="../articles/format_functions.html">format_functions</a>
-    <a class="dropdown-item" href="../articles/is_functions.html">is_ functions</a>
-    <a class="dropdown-item" href="../articles/isnot_functions.html">isnot_ functions</a>
-    <a class="dropdown-item" href="../articles/others_functions.html">Others functions</a>
-    <a class="dropdown-item" href="../articles/plt_functions.html">plt_ functions</a>
-    <a class="dropdown-item" href="../articles/stat_functions.html">stat_functions</a>
-    <a class="dropdown-item" href="../articles/str_functions.html">str_ functions</a>
-    <a class="dropdown-item" href="../articles/summary_functions.html">summary_ functions</a>
+    <a class="dropdown-item" href="../articles/functions_as.html">Functions as_</a>
+    <a class="dropdown-item" href="../articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
+    <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
+    <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
+    <a class="dropdown-item" href="../articles/functions_plt.html">Functions plt_</a>
+    <a class="dropdown-item" href="../articles/functions_stat.html">Functions stat_</a>
+    <a class="dropdown-item" href="../articles/functions_str.html">Functions str_</a>
+    <a class="dropdown-item" href="../articles/functions_summary.html">Functions summary_</a>
+    <a class="dropdown-item" href="../articles/other_functions.html">Other functions</a>
   </div>
 </li>
 <li class="nav-item">
@@ -87,21 +87,21 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,re <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "h" "a" "p" "v" "b" "h" "n" "l" "z" "h" "i" "h" "y" "i" "t" "a" "c" "h"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "b" "a" "i" "w" "g" "m" "t" "n" "p" "g" "d" "m" "l" "y" "m" "t" "j" "i"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "l" "h" "g" "y" "o" "s" "q" "k" "g" "s" "w" "z" "c" "f" "g" "d" "j" "q"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "p" "h" "u" "c" "l" "u" "n" "e" "n" "f" "i" "a" "t" "n" "s" "e" "b" "a"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "t" "d" "z" "z" "k" "e" "v" "d" "s" "c" "a" "g" "e" "w" "i" "y" "x" "q"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "u" "e" "x" "l" "b" "v" "r" "d" "j" "o" NA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "u" "f" "y" "b" "e" "h" "l" "m" "r" "a" "y" "y" "f" "u" "o" "i" "o" "z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "p" "t" "f" "k" "h" "v" "v" "g" "p" "q" "v" "r" "q" "b" "d" "m" "e" "v"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "s" "y" "t" "v" "y" "n" "y" "w" "c" "h" "p" "l" "y" "n" "c" "n" "g" "c"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "w" "v" "z" "o" "u" "e" "h" "s" "j" "r" "j" "l" "b" "j" "v" "l" "t" "n"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "q" "n" "v" "c" "h" "n" "s" "o" "x" "q" "w" "k" "g" "o" "w" "z" "f" "n"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "g" "j" "e" "f" "p" "x" "u" "w" "k" "d" NA </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">summary_cat</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       n    na blank_space n_distinct mode </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   101     1           0         26 h    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   101     1           0         26 v    </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
