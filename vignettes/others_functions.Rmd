@@ -60,11 +60,11 @@ obj_to_string(x)
 The goal of `row_number_unique` is to get the row number but considering the unique values of a variable.
 
 ```{r row_number_unique}
-mtcars %>% 
-  select(vs,gear) %>% 
-  slice(1:10) %>% 
-  group_by(vs) %>% 
-  mutate(gear_position = row_number_unique(gear))
+tibble(x = c(1,1,1,2,3,4,5,5)) %>% 
+  mutate(
+    row_number = row_number(),
+    row_number_unique = row_number_unique(x)
+  )
 ```
 
 # rpearson
@@ -72,10 +72,11 @@ mtcars %>%
 The goal of `rpearson` is to simulate data, where two variables will be linear correlated with a normal distribution, using pearson correlation coefficient as a argument.
 
 ```{r rpearson}
-set.seed(123);df <- rpearson(n = 100, pearson = .8, mean = 3)
+set.seed(123);df <- rpearson(n = 100, pearson = .85, mean = 3)
 
 df %>% 
   ggplot(aes(x,y))+
   geom_point()+
-  geom_smooth(method = "lm", se = FALSE)
+  geom_smooth(method = "lm", se = FALSE)+
+  plt_theme_xy()
 ```
