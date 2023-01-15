@@ -4,7 +4,7 @@
 \alias{stat_two_num}
 \title{Summary table for comparative analysis between two numeric variables}
 \usage{
-stat_two_num(df, grp_var, num_vars, method = "auto")
+stat_two_num(df, grp_var, num_vars)
 }
 \arguments{
 \item{df}{A single data.frame}
@@ -12,8 +12,6 @@ stat_two_num(df, grp_var, num_vars, method = "auto")
 \item{grp_var}{A character variable from a data.frame}
 
 \item{num_vars}{One or more variables from a data.frame}
-
-\item{method}{Method of summary and test (default = 'auto')}
 }
 \value{
 A gt table.
@@ -23,12 +21,14 @@ Create a summary table with t.test: statistic, p-value and IC(95\%).
 }
 \examples{
 
+n <- 20
+
 set.seed(123);df <-
  data.frame(
-   grp_var = sample(paste("group", letters[1:2]),size = 10,replace = TRUE),
-   num_var1 = rnorm(10),
-   num_var2 = rpois(10,2)
+   grp_var = sample(paste("group", letters[1:2]),size = n,replace = TRUE),
+   num_var1 = rnorm(n),
+   num_var2 = abs(rnorm(n))
  )
 
-stat_two_num(df,grp_var,c(num_var1,num_var2),method = c("auto"))
+stat_two_num(df,grp_var,c(num_var1,num_var2))
 }
