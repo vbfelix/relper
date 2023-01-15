@@ -15,6 +15,8 @@ format_num(
 \arguments{
 \item{x}{A numeric vector}
 
+\item{digits}{A numeric integer single value (default = 2), that will be the number of decimal digits}
+
 \item{decimal_mark}{A character single value to use as the decimal mark (default = '.')}
 
 \item{thousand_mark}{A character single value to use as the thousand mark (default = ',')}

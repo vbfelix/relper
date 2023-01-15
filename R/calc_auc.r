@@ -41,7 +41,7 @@ calc_auc  <- function(x,y, limits = NULL) {
       }else{
         r <- limits
       }
-      integrate(approxfun(x,y), r[1], r[2])$value
+      stats::integrate(stats::approxfun(x,y), r[1], r[2])$value
     },
     error = function(e) return(NA_real_)
   )

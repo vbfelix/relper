@@ -25,12 +25,10 @@ Create a summary table with t.test: statistic, p-value and IC(95\%).
 
 set.seed(123);df <-
  data.frame(
-   grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-   num_var1 = rnorm(100),
-   num_var2 = rpois(100,2),
-   num_var3 = rexp(100,2),
-  num_var4 = abs(rnorm(100))
+   grp_var = sample(paste("group", letters[1:2]),size = 10,replace = TRUE),
+   num_var1 = rnorm(10),
+   num_var2 = rpois(10,2)
  )
 
-stat_two_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
+stat_two_num(df,grp_var,c(num_var1,num_var2),method = c("auto"))
 }

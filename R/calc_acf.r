@@ -20,7 +20,7 @@
 #' calc_acf(x,y)
 #'
 
-calc_acf <- function(x,y = NULL,...){
+calc_acf <- function(x,y = NULL){
 
   stop_function(arg = x,type = "numeric")
 
@@ -30,7 +30,7 @@ calc_acf <- function(x,y = NULL,...){
 
   if(is.null(y)){
 
-    aux <- acf(x,plot = FALSE,...)
+    aux <- stats::acf(x,plot = FALSE)
 
     output <- tibble::tibble(
       acf = unlist(aux[[1]][,1,1]),
@@ -38,7 +38,7 @@ calc_acf <- function(x,y = NULL,...){
     )
   }else{
 
-    aux <- ccf(x,y,plot = FALSE,...)
+    aux <- stats::ccf(x,y,plot = FALSE)
 
     output <- tibble::tibble(
       ccf = unlist(aux[[1]][,1,1]),

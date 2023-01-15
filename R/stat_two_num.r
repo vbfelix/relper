@@ -15,14 +15,12 @@
 #'
 #'set.seed(123);df <-
 #'  data.frame(
-#'    grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
-#'    num_var1 = rnorm(100),
-#'    num_var2 = rpois(100,2),
-#'    num_var3 = rexp(100,2),
-#'   num_var4 = abs(rnorm(100))
+#'    grp_var = sample(paste("group", letters[1:2]),size = 10,replace = TRUE),
+#'    num_var1 = rnorm(10),
+#'    num_var2 = rpois(10,2)
 #'  )
 #'
-#'stat_two_num(df,grp_var,c(num_var1,num_var2,num_var3,num_var4),method = c("mean","median","median","mean"))
+#'stat_two_num(df,grp_var,c(num_var1,num_var2),method = c("auto"))
 
 
 
@@ -52,9 +50,9 @@ stat_two_num <-
     test_comparison <-
       function(df,method){
         if(method == "mean"){
-          out <- broom::tidy(t.test(formula = value ~ grp_var,data = df))
+          out <- broom::tidy(stats::t.test(formula = value ~ grp_var,data = df))
         }else{
-          out <- broom::tidy(wilcox.test(formula = value ~ grp_var,data = df,conf.level = .95,conf.int = TRUE))
+          out <- broom::tidy(stats::wilcox.test(formula = value ~ grp_var,data = df,conf.level = .95,conf.int = TRUE))
         }
         out %>%
           dplyr::mutate(
@@ -104,9 +102,9 @@ stat_two_num <-
       methods_df <-
         pivotted_data %>%
         dplyr::group_by(name) %>%
-        dplyr::summarise(p_value = shapiro.test(value)$p.value) %>%
+        dplyr::summarise(p_value = stats::shapiro.test(value)$p.value) %>%
         dplyr::mutate(
-          method = if_else(p_value < 0.05,"median","mean")
+          method = dplyr::if_else(p_value < 0.05,"median","mean")
         ) %>%
         dplyr::ungroup() %>%
         dplyr::select(-p_value)
@@ -114,7 +112,7 @@ stat_two_num <-
       methods_df <-
         data.frame(
           name = df %>%
-            select({{num_vars}}) %>%
+            dplyr::select({{num_vars}}) %>%
             # select(-grp_var) %>%
             names(),
           method = method
@@ -131,7 +129,7 @@ stat_two_num <-
 
     median_footnote <- "Median (IQR) - Wilcoxon test"
 
-    methods <- methods_df %>% pull(method)
+    methods <- methods_df %>% dplyr::pull(method)
 
     if( sum(methods %in% "mean") > 0  & sum(methods %in% "median") > 0 ){
       gt_footnote <-
@@ -187,9 +185,9 @@ stat_two_num <-
       dplyr::group_by(grp_var,name,method) %>%
       dplyr::summarise(
         mean = mean(value,na.rm = TRUE),
-        sd = sd(value,na.rm = TRUE),
-        median = median(value,na.rm = TRUE),
-        iqr = IQR(value,na.rm = TRUE)
+        sd = stats::sd(value,na.rm = TRUE),
+        median = stats::median(value,na.rm = TRUE),
+        iqr = stats::IQR(value,na.rm = TRUE)
       ) %>%
       dplyr::mutate(
         label = dplyr::case_when(

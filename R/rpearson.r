@@ -48,11 +48,11 @@ rpearson <-
 
     while (p_stop > tol) {
 
-      x <- rnorm(n,mean = mean, sd = sd)
+      x <- stats::rnorm(n,mean = mean, sd = sd)
 
-      y <- rnorm(length(x), pearson*x, sqrt(1-pearson^2))
+      y <- stats::rnorm(length(x), pearson*x, sqrt(1-pearson^2))
 
-      p_est <- cor(x,y)
+      p_est <- stats::cor(x,y)
 
       p_stop <- abs(pearson - p_est)
 

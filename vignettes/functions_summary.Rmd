@@ -30,17 +30,6 @@ set.seed(123);g <- c(sample(letters,100,replace = TRUE),NA)
 summary_cat(g)
 ```
 
-# summary_data
-
-The goal of `summary_data` is to summarize all variables from a dataframe.
-
-```{r summary_data}
-
-set.seed(123);df <- data.frame(x = rnorm(100), g = sample(letters,100,replace = TRUE))
-
-summary_data(df)
-```
-
 # summary_num
 
 The goal of `summary_num` is to summarize numeric variables.

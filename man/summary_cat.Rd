@@ -23,7 +23,7 @@ Summary statistics for categoric variables.
 }
 \examples{
 
-x <- c(sample(letters,100,re = T),NA)
+x <- c(sample(letters,100,replace = TRUE),NA)
 
 x
 

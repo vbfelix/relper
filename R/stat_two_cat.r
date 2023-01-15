@@ -55,8 +55,8 @@ stat_two_cat <-
       dplyr::select(id,name,statistic,p_value = p.value,cramers_v) %>%
       dplyr::mutate(
         statistic = relper::format_num(statistic,digits = 4),
-        p_value = dplyr::if_else(p_value < 0.001,"<0.001",relper::format_num(p_value,digits = 4)),
-        cramers_v = relper::format_num(cramers_v,digits = 4)
+        p_value =  dplyr::if_else(p_value < 0.001,"<0.001",relper::format_num(p_value,digits = 4)),
+        cramers_v =  relper::format_num(cramers_v,digits = 4)
       )
 
     pivotted_data %>%
@@ -65,9 +65,9 @@ stat_two_cat <-
       dplyr::add_count(name,wt = n,name = "N") %>%
       dplyr::mutate(
         perc = 100*n/N,
-        n = relper::format_num(n,0),
-        N = relper::format_num(N,0),
-        perc = relper::format_num(perc,2),
+        n =  relper::format_num(n,0),
+        N =  relper::format_num(N,0),
+        perc =  relper::format_num(perc,2),
         label = stringr::str_c(perc, "% (",n,"/",N,")")
       ) %>%
       dplyr::select(-n,-N,-perc) %>%
@@ -79,13 +79,13 @@ stat_two_cat <-
       dplyr::arrange(name,id) %>%
       dplyr::mutate(
         name = dplyr::if_else(id == 0,name,""),
-        across(.fns = ~dplyr::if_else(is.na(.),"-",as.character(.) ))
+        dplyr::across(.fns = ~dplyr::if_else(is.na(.),"-",as.character(.) ))
       ) %>%
       dplyr::select(-id) %>%
       gt::gt(rowname_col = "name") %>%
       gt::cols_align(
         align = c("center"),
-        columns = everything()
+        columns = tidyselect::everything()
       ) %>%
       gt::cols_label(
         statistic = "Statistic",
@@ -98,7 +98,7 @@ stat_two_cat <-
         name ~ px(120),
         statistic ~ px(100),
         cramers_v ~ px(90),
-        everything() ~ px(70)
+        tidyselect::everything() ~ px(70)
       )
 
   }

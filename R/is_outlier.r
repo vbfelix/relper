@@ -21,9 +21,9 @@ is_outlier <- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  q1 <- quantile(x, 0.25, na.rm = TRUE)
+  q1 <- stats::quantile(x, 0.25, na.rm = TRUE)
 
-  q3 <- quantile(x, 0.75, na.rm = TRUE)
+  q3 <- stats::quantile(x, 0.75, na.rm = TRUE)
 
   iqr  <- q3 - q1
 

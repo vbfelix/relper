@@ -4,7 +4,7 @@
 \alias{calc_acf}
 \title{Auto-correlation computation}
 \usage{
-calc_acf(x, y = NULL, ...)
+calc_acf(x, y = NULL)
 }
 \arguments{
 \item{x}{A numeric vector}

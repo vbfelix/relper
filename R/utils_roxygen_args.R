@@ -54,9 +54,12 @@ arg_number_of <- function(name,default = NULL, number_of = NULL){
 
   action <- glue::glue("will be the number of {number_of}")
 
-  arg_name(structure = "single value",
-           type = "numeric integer",
-           name = name,default = default,action = action)
+  output <- arg_name(
+    structure = "single value",
+    type = "numeric integer",
+    name = name,default = default,action = action)
+
+  return(output)
 }
 
 arg_boolean <- function(name, action, default = "FALSE"){

@@ -3,6 +3,7 @@
 #' @description A theme with no minor grids in both axes and no major grid lines in the x axis.
 #'
 #' @eval arg_value("base_size","numeric",default = "14","will be the base font size")
+#' @eval arg_value("base_family","character",default = "''","will be the base font family")
 #' @eval arg_value("margin","numeric",default = "0.35","will be the plot margin")
 #'
 #' @return A ggplot2 object.

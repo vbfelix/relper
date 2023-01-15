@@ -2,8 +2,8 @@ Package: relper
 Title: Miscellaneous Functions
 Version: 1.1.0
 Authors@R: person("Vinícius", "Félix", email = "vinicius1b7f@gmail.com", role = c("aut", "cre"))
-Description: Miscellaneous Functions to assist in data cleaning and preparation
-Depends: R (>= 3.6.3)
+Description: A collection of miscellaneous Functions to assist in data cleaning and preparation.
+Depends: R (>= 3.6.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -12,7 +12,6 @@ Imports:
     ggplot2,
     stringr,
     gridExtra,
-    png,
     magrittr,
     dplyr,
     gt,
@@ -20,7 +19,11 @@ Imports:
     tibble,
     tidyr,
     broom,
-    purrr
+    purrr,
+    glue,
+    rlang,
+    scales,
+    tidyselect
 Suggests: 
     knitr,
     rmarkdown,

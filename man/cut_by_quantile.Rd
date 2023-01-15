@@ -4,7 +4,7 @@
 \alias{cut_by_quantile}
 \title{Convert numeric vector to factor}
 \usage{
-cut_by_quantile(x, q = seq(0, 1, by = 0.2), ...)
+cut_by_quantile(x, q = seq(0, 1, by = 0.2))
 }
 \arguments{
 \item{x}{A numeric vector}

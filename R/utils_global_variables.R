@@ -1,0 +1,24 @@
+utils::globalVariables(
+  c("IC",
+    "N",
+    "chi_square",
+    "conf.high",
+    "conf.low",
+    "cramers_v",
+    "data",
+    "id",
+    "if_else",
+    "label",
+    "n",
+    "na.omit",
+    "name",
+    "p.value",
+    "p_value",
+    "perc",
+    "shapiro.test",
+    "statistic",
+    "t_test",
+    ".",
+    "value")
+
+  )

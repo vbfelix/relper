@@ -9,6 +9,8 @@ plt_theme_x(base_size = 14, base_family = "", margin = 0.35)
 \arguments{
 \item{base_size}{A numeric single value (default = 14), that will be the base font size}
 
+\item{base_family}{A character single value (default = ''), that will be the base font family}
+
 \item{margin}{A numeric single value (default = 0.35), that will be the plot margin}
 }
 \value{

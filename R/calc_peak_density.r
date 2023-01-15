@@ -20,7 +20,7 @@ calc_peak_density <- function(x){
 
   stop_function(arg = x,type = "numeric",length_bigger = 1)
 
-  d <- density(na.omit(x))
+  d <- stats::density(stats::na.omit(x))
 
   output <- d$x[which.max(d$y)]
 

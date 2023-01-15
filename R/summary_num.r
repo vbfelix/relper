@@ -48,11 +48,14 @@ summary_num <- function(x, minimal = FALSE){
         equal_zero = sum(x == 0, na.rm = TRUE),
         positive = sum(x > 0, na.rm = TRUE),
         min  = min(x, na.rm = TRUE),
-        p25  = quantile(x,probs = .25, na.rm = TRUE),
-        p50  = median(x, na.rm = TRUE),
-        p75  = quantile(x,probs = .75, na.rm = TRUE),
+        p25  = stats::quantile(x,probs = .25, na.rm = TRUE),
+        p50  = stats::median(x, na.rm = TRUE),
+        p75  = stats::quantile(x,probs = .75, na.rm = TRUE),
         max = max(x, na.rm = TRUE),
-        mode = dplyr::if_else(length(na.omit(x)) < 3, NA_real_,relper::calc_peak_density(na.omit(x))),
+        mode = dplyr::if_else(
+          length(stats::na.omit(x)) < 3,
+          NA_real_,
+          relper::calc_peak_density(stats::na.omit(x))),
         mean = mean(x, na.rm = TRUE),
         cv = relper::calc_cv(x)
       )
@@ -61,11 +64,14 @@ summary_num <- function(x, minimal = FALSE){
       dplyr::tibble(
         n = length(x),
         min  = min(x, na.rm = TRUE),
-        p25  = quantile(x,probs = .25, na.rm = TRUE),
-        p50  = median(x, na.rm = TRUE),
-        p75  = quantile(x,probs = .75, na.rm = TRUE),
+        p25  = stats::quantile(x,probs = .25, na.rm = TRUE),
+        p50  = stats::median(x, na.rm = TRUE),
+        p75  = stats::quantile(x,probs = .75, na.rm = TRUE),
         max = max(x, na.rm = TRUE),
-        mode = dplyr::if_else(length(na.omit(x)) < 3, NA_real_ ,relper::calc_peak_density(na.omit(x))),
+        mode = dplyr::if_else(
+          length(stats::na.omit(x)) < 3,
+          NA_real_ ,
+          relper::calc_peak_density(stats::na.omit(x))),
         mean = mean(x, na.rm = TRUE),
         cv = relper::calc_cv(x)
       )

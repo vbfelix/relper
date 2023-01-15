@@ -1,4 +1,3 @@
-
 test_that("results", {
   expect_equal(calc_auc(x = 1:5,y = rep(2,5)), 8)
   expect_equal(calc_auc(x = 1:5,y = rep(2,5),limits = c(1,4)), 6)

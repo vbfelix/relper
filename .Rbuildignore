@@ -9,3 +9,5 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^README_cache
+^logo.png
