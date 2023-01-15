@@ -1,12 +1,17 @@
-# relper 1.2.0
+# relper 1.2.0 - CRAN preparation
 
-Removal: 
+**Removal:** 
+
 * Datasets: `df_month` and `df_week`.
+
 * Dependencies: `png`.
+
 * Functions: `summary_data`.
 
-Addition:
+**Addition:**
+
 * Dependencies: `glue`, `rlang`, `scales` and `tidyselect`.
+
 * Documentation: `vfx_watermark`.
 
 # relper 1.1.0
