@@ -1,8 +1,8 @@
 ---
-title: "isnot_ functions"
+title: "Functions isnot_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{isnot_functions}
+  %\VignetteIndexEntry{Functions isnot_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

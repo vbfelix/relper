@@ -1,8 +1,8 @@
 ---
-title: "stat_functions"
+title: "Functions stat_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{stat_functions}
+  %\VignetteIndexEntry{Functions stat_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

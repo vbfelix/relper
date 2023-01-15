@@ -1,8 +1,8 @@
 ---
-title: "calc_ functions"
+title: "Functions calc_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{calc_functions}
+  %\VignetteIndexEntry{Functions calc_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

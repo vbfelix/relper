@@ -1,8 +1,8 @@
 ---
-title: "plt_ functions"
+title: "Functions plt_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{plt_functions}
+  %\VignetteIndexEntry{Functions plt_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

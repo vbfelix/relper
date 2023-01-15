@@ -1,8 +1,8 @@
 ---
-title: "summary_ functions"
+title: "Functions summary_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{summary_functions}
+  %\VignetteIndexEntry{Functions summary_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

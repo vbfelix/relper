@@ -1,8 +1,8 @@
 ---
-title: "as_ functions"
+title: "Functions as_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{as}
+  %\VignetteIndexEntry{Functions as_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

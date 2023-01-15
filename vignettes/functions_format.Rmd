@@ -1,8 +1,8 @@
 ---
-title: "format_functions"
+title: "Functions format_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{format_functions}
+  %\VignetteIndexEntry{Functions format_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

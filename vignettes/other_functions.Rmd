@@ -1,8 +1,8 @@
 ---
-title: "Others functions"
+title: "Other functions"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{others_functions}
+  %\VignetteIndexEntry{Other functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
