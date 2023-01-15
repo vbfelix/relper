@@ -31,7 +31,7 @@ mtcars %>%
   stat_two_cat(grp_var = vs,vars = c(am,cyl))
 ```
 
-![Result of the function stat_two_cat.](stat_two_cat.png)
+![Result of the function stat_two_cat.](./figs/stat_two_cat.png)
 
 
 ```{r stat_two_cat-plot, echo = FALSE}
@@ -64,7 +64,7 @@ stat_two_num(
 
 ```
 
-![Result of the function stat_two_num.](stat_two_num.png)
+![Result of the function stat_two_num.](./figs/stat_two_num.png)
 
 
 ```{r stat_two_num-plot, echo = FALSE}
