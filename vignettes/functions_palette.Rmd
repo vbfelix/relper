@@ -1,0 +1,89 @@
+---
+title: "Functions palette_"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Functions palette_}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  # collapse = TRUE,
+  fig.width = 10,
+  comment = "#>"
+)
+```
+
+```{r setup, warning = FALSE, message = FALSE, echo = FALSE}
+library(relper)
+
+palette_vignette <-
+  function(func_palette){
+    
+    palettes <- as.character(unlist(formals(func_palette)$name)) 
+    palettes <- palettes[-1]
+    names(palettes) <- palettes
+    
+    palettes_df <-
+      tibble::tibble(palette = palettes) %>% 
+      dplyr::mutate(color = purrr::map(palettes, func_palette)) %>% 
+      tidyr::unnest(cols = c(color)) %>% 
+      dplyr::group_by(palette) %>% 
+      dplyr::mutate(id = dplyr::row_number()) %>% 
+      dplyr::mutate(x = forcats::fct_reorder(.f = color,.x = id))
+    
+    colors <- palettes_df$color
+    names(colors) <- colors
+    
+    palettes_df %>% 
+      ggplot2::ggplot(ggplot2::aes(x,palette, fill = color))+
+      ggplot2::geom_tile(col = "black",size = .8)+
+      ggplot2::scale_fill_manual(values = colors)+
+      ggplot2::scale_x_discrete(expand = c(0,0))+
+      ggplot2::scale_y_discrete(expand = c(0,0))+
+      ggplot2::theme(
+        legend.position = "none",
+        axis.ticks = ggplot2::element_blank(),
+        axis.text.y = ggplot2::element_blank(),
+        strip.background = ggplot2::element_blank(),
+        strip.text = ggplot2::element_text(face = "bold",size = 15),
+        axis.text.x = ggplot2::element_text(color = "black", size = 10)
+      )+
+      ggplot2::facet_wrap(~palette,scales = "free", ncol = 1)+
+      relper::plt_no_labels
+  }
+```
+
+`palette_` functions provides color schemes that are influenced by popular culture media, such as: TV series, movies, video games, animations, etc.
+
+# palette_div
+
+The goal of `palette_div` is to return a palette for a divergent scale with 5 colors, with the following palettes:
+
+
+```{r, echo = FALSE,fig.height = 12}
+
+palette_vignette(func_palette = palette_div)
+
+```
+
+# palette_seq
+
+The goal of `palette_seq` is to return a palette for a sequential scale with 5 colors, with the following palettes:
+
+```{r, echo = FALSE,fig.height = 8}
+
+palette_vignette(func_palette = palette_seq)
+
+```
+
+# palette_qua
+
+The goal of `palette_qua` is to return a palette for a qualitative scale with 5 colors, with the following palettes:
+
+```{r, echo = FALSE,fig.height = 16}
+
+palette_vignette(func_palette = palette_qua)
+
+```

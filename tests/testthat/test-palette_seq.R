@@ -1,0 +1,24 @@
+test_that("results", {
+  expect_equal(
+    object = palette_seq(name = "andor"),
+    expected =  c("#E5CDB5", "#D6965F", "#D16F3A", "#AD4727", "#733527", "#44383A")
+    )
+
+  expect_equal(
+    object = palette_seq(name = "andor",reverse = TRUE),
+    expected =  rev(c("#E5CDB5", "#D6965F", "#D16F3A", "#AD4727", "#733527", "#44383A"))
+    )
+
+})
+
+test_that("error", {
+
+  expect_error(object = palette_seq(name = "error"))
+
+  expect_error(object = palette_seq(name = c("a","b")))
+
+  expect_error(object = palette_seq(name = "andor",reverse = 2))
+
+  expect_error(object = palette_seq(name = "andor",reverse = "a"))
+
+})
