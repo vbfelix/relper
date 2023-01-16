@@ -7,6 +7,7 @@
 #'  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
 #'  \cr - dexter: 6 colors, inspired by the TV series Dexter.
 #'  \cr - godzilla_vs_kong: 9 colors, inspired by the movie Godzilla vs Kong.
+#'  \cr - good_place: X colors, inspired by the TV series The Good Place.
 #'  \cr - homeland: 9 colors, inspired by the TV series Homeland.
 #'  \cr - laura_dean: 8 colors, inspired by the graphic novel Laura Dean Keeps Breaking Up with Me.
 #'  \cr - racionais: 7 colors, inspired by the CD cover
@@ -33,7 +34,8 @@
 
 palette_div <-
   function(
-    name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","homeland",
+    name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","good_place",
+             "homeland",
              "laura_dean","racionais","sandman","scott_pilgrim",
              "the_americans","the_expanse","vox_machina","wanda_vision"),
     reverse = FALSE
@@ -57,6 +59,9 @@ palette_div <-
 
     godzilla_vs_kong <-
       c("#1F191A","#25403F","#2D7A73","#44B4AC","#A0CBBA","#D9996E","#E45A2E","#BB2F10","#6F2014")
+
+    good_place <-
+      c("#1C262B","#275D86","#237EB9","#8BA8C1","#E4E8E0","#F1DAA1","#F8D26E","#B08D3F","#775B24")
 
     homeland <-
       c("#31302D","#655B4D","#8C8274","#B9A791","#D2C5BE","#91B3C7","#7096AC","#4E7890","#3D5460")
@@ -98,6 +103,6 @@ palette_div <-
 
   }
 
-# palette_vignette(palette_div)
+palette_vignette(palette_div)
 
 
