@@ -1,3 +1,7 @@
+# relper 2.0.0 - Palettes
+
+* Addition of the functions `palette_`
+
 # relper 1.2.0 - CRAN preparation
 
 **Removal:** 
