@@ -7,12 +7,13 @@ articles:
   functions_format: functions_format.html
   functions_is: functions_is.html
   functions_isnot: functions_isnot.html
+  functions_palette: functions_palette.html
   functions_plt: functions_plt.html
   functions_stat: functions_stat.html
   functions_str: functions_str.html
   functions_summary: functions_summary.html
   other_functions: other_functions.html
-last_built: 2023-01-15T14:44Z
+last_built: 2023-01-16T00:17Z
 urls:
   reference: https://vbfelix.github.io/relper/reference
   article: https://vbfelix.github.io/relper/articles

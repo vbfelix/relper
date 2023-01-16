@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,7 @@
     <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
+    <a class="dropdown-item" href="../articles/functions_palette.html">Functions palette_</a>
     <a class="dropdown-item" href="../articles/functions_plt.html">Functions plt_</a>
     <a class="dropdown-item" href="../articles/functions_stat.html">Functions stat_</a>
     <a class="dropdown-item" href="../articles/functions_str.html">Functions str_</a>
@@ -90,18 +91,18 @@
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="cn">NA</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "o" "j" "m" "g" "i" "i" "j" "w" "u" "g" "u" "f" "y" "b" "e" "h" "l" "m"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "r" "a" "y" "y" "f" "u" "o" "i" "o" "z" "p" "t" "f" "k" "h" "v" "v" "g"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "p" "q" "v" "r" "q" "b" "d" "m" "e" "v" "s" "y" "t" "v" "y" "n" "y" "w"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "c" "h" "p" "l" "y" "n" "c" "n" "g" "c" "w" "v" "z" "o" "u" "e" "h" "s"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "j" "r" "j" "l" "b" "j" "v" "l" "t" "n" "q" "n" "v" "c" "h" "n" "s" "o"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "x" "q" "w" "k" "g" "o" "w" "z" "f" "n" NA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "l" "y" "n" "c" "n" "g" "c" "w" "v" "z" "o" "u" "e" "h" "s" "j" "r" "j"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "l" "b" "j" "v" "l" "t" "n" "q" "n" "v" "c" "h" "n" "s" "o" "x" "q" "w"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "k" "g" "o" "w" "z" "f" "n" "g" "j" "e" "f" "p" "x" "u" "w" "k" "d" "l"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "n" "s" "y" "g" "v" "z" "i" "g" "b" "p" "m" "s" "x" "t" "o" "g" "d" "a"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "h" "t" "y" "p" "x" "v" "k" "p" "t" "h" "c" "d" "t" "l" "v" "q" "j" "t"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "k" "y" "w" "h" "n" "u" "m" "b" "k" "m" NA </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">summary_cat</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       n    na blank_space n_distinct mode </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   101     1           0         26 v    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   101     1           0         26 n    </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

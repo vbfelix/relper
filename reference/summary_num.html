@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,7 @@
     <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
+    <a class="dropdown-item" href="../articles/functions_palette.html">Functions palette_</a>
     <a class="dropdown-item" href="../articles/functions_plt.html">Functions plt_</a>
     <a class="dropdown-item" href="../articles/functions_stat.html">Functions stat_</a>
     <a class="dropdown-item" href="../articles/functions_str.html">Functions str_</a>
@@ -102,15 +103,16 @@
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,<span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -0.3706600  0.6443765 -0.2204866  0.3317820  1.0968390  0.4351815</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -0.3259316  1.1488076  0.9935039  0.5483970         NA 10.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -0.1803943 -1.5676751 -0.2607259  0.9618104  0.8538955  0.4187967</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  0.3399565  0.5964251  1.8714180  0.6028704         NA 10.0000000</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">summary_num</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 13</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       n    na negative equal_zero positive    min    p25   p50   p75   max  mode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>    12     1        3          0        8 -<span style="color: #BB0000;">0.371</span> 0.055<span style="text-decoration: underline;">6</span> 0.548  1.05    10 0.656</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 2 more variables: mean &lt;dbl&gt;, cv &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       n    na negat…¹ equal…² posit…³   min    p25   p50   p75   max  mode  mean</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>    12     1       3       0       8 -<span style="color: #BB0000;">1.57</span> 0.079<span style="text-decoration: underline;">8</span> 0.596 0.908    10 0.574  1.24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1 more variable: cv &lt;dbl&gt;, and abbreviated variable names ¹​negative,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ²​equal_zero, ³​positive</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
