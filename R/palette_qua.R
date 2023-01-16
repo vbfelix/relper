@@ -39,75 +39,70 @@ palette_qua <-
     stop_function(arg = reverse,type = "logical",single_value = TRUE)
 
     bojack_horseman <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(158,148,250,235,060,222),
           green = c(103,100,200,099,037,097),
           blue  = c(076,162,119,107,051,146)
       )
 
     cowboy_bebop <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
         red   = c(027,202,033,183,097),
         green = c(082,048,158,181,032),
         blue  = c(096,029,191,164,035)
       )
 
     doctor_who <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(029,218,021,248,111,021,198,247),
           green = c(039,067,064,206,060,064,154,147),
           blue  = c(051,039,107,111,055,107,190,054)
       )
 
-
-
-
-
-
     final_space <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(159,172,237,245),
           green = c(250,017,221,217),
           blue  = c(111,050,048,210)
       )
 
     gurren_lagann <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
         red   = c(159,066,242,218,137),
         green = c(043,079,113,112,100),
         blue  = c(046,145,055,193,106)
       )
 
     omitb <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(038,169,056,145,205),
           green = c(033,138,090,019,178),
           blue  = c(028,027,075,004,131)
       )
 
     pulp_fiction <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(072,213,132,221,225,247),
           green = c(063,039,114,102,202,207),
           blue  = c(092,043,152,082,217,098)
       )
 
     rick_and_morty <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
         red   = c(026,072,245,210,235,036,148,141),
         green = c(029,138,199,217,136,159,091,191),
         blue  = c(060,079,171,100,039,181,067,077)
       )
 
     star_trek <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(016,204,036,189,218,108,130,142),
           green = c(013,047,046,116,196,106,061,156),
           blue  = c(027,088,081,116,192,135,076,181)
       )
 
     this_is_us <-
-      rgb(maxColorValue = 255,
+       grDevices::rgb(maxColorValue = 255,
           red   = c(046,225,097,150,228),
           green = c(044,174,067,138,185),
           blue  = c(051,029,048,130,153)
