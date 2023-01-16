@@ -4,7 +4,9 @@
 #'  \cr
 #'  \cr - arcane: 5 colors, inspired by the animation Arcane.
 #'  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
-#'  \cr - deadly_class: C colors, inspired by the TV series Deadly Class.
+#'  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
+#'  \cr - homeland: 9 colors, inspired by the TV series Homeland.
+#'  \cr - laura_dean: 8 colors, inspired by the graphic novel Laura Dean Keeps Breaking Up with Me.
 #'  \cr - racionais: 7 colors, inspired by the CD cover
 #'  'Nada Como Um Dia Após o Outro Dia' of the brazilian rap group Racionais MC's.
 #'  \cr - sandman: 5 colors, inspired by the graphic novel Sandman.
@@ -28,7 +30,7 @@
 
 palette_div <-
   function(
-    name = c("arcane","casa_de_papel","deadly_class","racionais","sandman",
+    name = c("arcane","casa_de_papel","deadly_class","homeland","laura_dean","racionais","sandman",
              "the_americans","the_expanse","vox_machina","wanda_vision"),
     reverse = FALSE
     ){
@@ -38,77 +40,48 @@ palette_div <-
     stop_function(arg = reverse,type = "logical",single_value = TRUE)
 
     arcane <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(125,150,190,058,043),
-          green = c(084,125,166,092,053),
-          blue  = c(073,110,152,108,072)
-      )
+      c("#7D5449", "#967D6E", "#BEA698", "#3A5C6C", "#2B3548")
 
     casa_de_papel <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(107,184,179,212,148,084,053),
-          green = c(054,060,130,193,169,106,069),
-          blue  = c(043,054,098,160,148,087,059)
-      )
+      c("#6B362B", "#B83C36", "#B38262", "#D4C1A0", "#94A994", "#546A57","#35453B")
 
     deadly_class <-
-      grDevices::rgb(maxColorValue = 255,
-                     red   = c(085,160,173,225,092,022),
-                     green = c(038,054,132,183,090,039),
-                     blue  = c(067,099,156,194,138,093)
-      )
+      c("#552643", "#A03663", "#AD849C", "#E1B7C2", "#5C5A8A", "#16275D")
+
+    homeland <-
+      c("#31302D","#655B4D","#8C8274","#B9A791","#D2C5BE","#91B3C7","#7096AC","#4E7890","#3D5460")
+
+    laura_dean <-
+      rev(c("#483A3A","#8A6253","#AB8B78","#DBA08B","#F8E8E5","#F5C9CD","#F1A4B1","#DB5E69"))
 
     racionais <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(062,117,154,219,133,082,054),
-          green = c(044,071,131,200,191,152,111),
-          blue  = c(042,046,101,151,228,213,193)
-      )
+      c("#3E2C2A", "#75472E", "#9A8365", "#DBC897", "#85BFE4", "#5298D5",
+        "#366FC1")
 
     sandman <-
-      grDevices::rgb(maxColorValue = 255,
-        red   = c(135,183,225,167,112),
-        green = c(100,144,198,183,172),
-        blue  = c(083,107,136,158,160)
-      )
+      c("#876453", "#B7906B", "#E1C688", "#A7B79E", "#70ACA0")
 
     the_americans <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(135,208,234,248,009,043,015),
-          green = c(019,015,142,206,168,136,043),
-          blue  = c(007,005,015,029,223,170,119)
-      )
+      c("#871307", "#D00F05", "#EA8E0F", "#F8CE1D", "#09A8DF", "#2B88AA",
+        "#0F2B77")
 
     the_expanse <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(082,169,179,214,230,157,097,062),
-          green = c(028,054,109,162,235,183,119,075),
-          blue  = c(021,036,076,129,228,186,126,079)
-      )
+      c("#521C15", "#A93624", "#B36D4C", "#D6A281", "#E6EBE4", "#9DB7BA",
+        "#61777E", "#3E4B4F")
 
     vox_machina <-
-      grDevices::rgb(maxColorValue = 255,
-          red   = c(073,116,177,205,181,158,121),
-          green = c(057,103,137,186,204,173,145),
-          blue  = c(083,118,139,178,222,186,162)
-      )
+      c("#493953", "#746776", "#B1898B", "#CDBAB2", "#B5CCDE", "#9EADBA",
+                     "#7991A2")
 
     wanda_vision <-
-      grDevices::rgb(maxColorValue = 255,
-                     red   = c(080,143,193,229,223,149,038,033,024),
-                     green = c(023,042,078,145,203,110,098,062,031),
-                     blue  = c(021,031,062,119,204,131,136,094,056)
-      )
+      c("#501715", "#8F2A1F", "#C14E3E", "#E59177", "#DFCBCC", "#956E83",
+        "#266288", "#213E5E", "#181F38")
 
-    name <- match.arg(name)
+    output <- eval(parse(text = match.arg(name)))
 
-    orig <- eval(parse(text = name))
+    if(reverse){output <- rev(output)}
 
-    n <- length(orig)
-
-    if(reverse){orig <- rev(orig)}
-
-    palette_create(n = n,orig = orig)
+    return(output)
 
   }
 

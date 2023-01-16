@@ -7,12 +7,16 @@
 #'  \cr - doctor_who: 5 colors, inspired by the TV series Doctor Who.
 #'  \cr - final_space: 4 colors, inspired by the animation Final Space.
 #'  \cr - gurren_lagann: 5 colors, inspired by the animation Tengen Toppa Gurren-Lagann.
+#'  \cr - homeland: 5 colors, inspired by the TV series Homeland.
 #'  \cr - legion: 9 colors, inspired by the TV series Legion.
+#'  \cr - moonlight: 6 colors, inspired by the movie Moonlight..
 #'  \cr - omitb: 5 colors, inspired by the TV series Only Murders in the Building.
 #'  \cr - pulp_fiction: 8 colors, inspired by the movie Pulp Fiction.
+#'  \cr - red_dead: 6 colors, inspired by the video game Red Dead Redemption.
 #'  \cr - rick_and_morty: 8 colors, inspired by the animation Rick and Morty.
 #'  \cr - star_trek: 5 colors, inspired by the TV series Star Trek.
 #'  \cr - this_is_us: 5 colors, inspired by the TV series This is Us.
+#'  \cr - versace: 8 colors, inspired by the TV series Versace.
 #'
 #' @eval arg_vector("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
@@ -29,9 +33,10 @@
 
 palette_qua <-
   function(
-    name = c("bojack_horseman","cowboy_bebop","doctor_who","final_space","gurren_lagann",
-             "legion","omitb","pulp_fiction",
-             "rick_and_morty","star_trek","this_is_us"),
+    name = c("bojack_horseman","cowboy_bebop",
+             "doctor_who","final_space","gurren_lagann","homeland",
+             "legion","omitb","moonlight","pulp_fiction","red_dead",
+             "rick_and_morty","star_trek","this_is_us","versace"),
     reverse = FALSE
     ){
 
@@ -40,94 +45,62 @@ palette_qua <-
     stop_function(arg = reverse,type = "logical",single_value = TRUE)
 
     bojack_horseman <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(158,148,250,235,060,222),
-          green = c(103,100,200,099,037,097),
-          blue  = c(076,162,119,107,051,146)
-      )
+      c("#9E674C", "#9464A2", "#FAC877", "#EB636B", "#3C2533", "#DE6192")
 
     cowboy_bebop <-
-       grDevices::rgb(maxColorValue = 255,
-        red   = c(027,202,033,183,097),
-        green = c(082,048,158,181,032),
-        blue  = c(096,029,191,164,035)
-      )
+      c("#1B5260", "#CA301D", "#219EBF", "#B7B5A4", "#612023")
 
     doctor_who <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(029,218,021,248,111,021,198,247),
-          green = c(039,067,064,206,060,064,154,147),
-          blue  = c(051,039,107,111,055,107,190,054)
-      )
+      c("#1D2733", "#DA4327", "#15406B", "#F8CE6F", "#6F3C37", "#15406B",
+        "#C69ABE", "#F79336")
 
     final_space <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(159,172,237,245),
-          green = c(250,017,221,217),
-          blue  = c(111,050,048,210)
-      )
-
-    legion <-
-      grDevices::rgb(maxColorValue = 255,
-                     red   = c(230,218,248,021,098,153,247,168,165),
-                     green = c(049,200,165,114,094,042,116,112,040),
-                     blue  = c(138,086,037,158,060,137,061,064,048)
-      )
+      c("#9FFA6F", "#AC1132", "#EDDD30", "#F5D9D2")
 
     gurren_lagann <-
-       grDevices::rgb(maxColorValue = 255,
-        red   = c(159,066,242,218,137),
-        green = c(043,079,113,112,100),
-        blue  = c(046,145,055,193,106)
-      )
+      c("#9F2B2E", "#424F91", "#F27137", "#DA70C1", "#89646A")
+
+    homeland <-
+      c("#A29088", "#515B98", "#905448", "#7A7982", "#42342E")
+
+    legion <-
+      c("#E6318A", "#DAC856", "#F8A525", "#15729E", "#625E3C", "#992A89",
+        "#F7743D", "#A87040", "#A52830")
+
+    moonlight <-
+      rev(c("#6B4A83","#17647D","#332E5A","#04BEB8","#8BB0DA","#9074AF"))
 
     omitb <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(038,169,056,145,205),
-          green = c(033,138,090,019,178),
-          blue  = c(028,027,075,004,131)
-      )
+      c("#26211C", "#A98A1B", "#385A4B", "#911304", "#CDB283")
 
     pulp_fiction <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(072,213,132,221,225,247),
-          green = c(063,039,114,102,202,207),
-          blue  = c(092,043,152,082,217,098)
-      )
+      c("#483F5C", "#D5272B", "#847298", "#DD6652", "#E1CAD9", "#F7CF62")
+
+    red_dead <-
+      c("#C80710","#080202","#FCA208","#78645C","#FCA208","#E0AC8B")
 
     rick_and_morty <-
-       grDevices::rgb(maxColorValue = 255,
-        red   = c(026,072,245,210,235,036,148,141),
-        green = c(029,138,199,217,136,159,091,191),
-        blue  = c(060,079,171,100,039,181,067,077)
-      )
+      c("#1A1D3C", "#488A4F", "#F5C7AB", "#D2D964", "#EB8827", "#249FB5",
+        "#945B43", "#8DBF4D")
 
     star_trek <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(016,204,036,189,218,108,130,142),
-          green = c(013,047,046,116,196,106,061,156),
-          blue  = c(027,088,081,116,192,135,076,181)
-      )
+      c("#100D1B", "#CC2F58", "#242E51", "#BD7474", "#DAC4C0", "#6C6A87",
+        "#823D4C", "#8E9CB5")
 
     this_is_us <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(046,225,097,150,228),
-          green = c(044,174,067,138,185),
-          blue  = c(051,029,048,130,153)
-      )
+      c("#2E2C33", "#E1AE1D", "#614330", "#968A82", "#E4B999")
 
-    name <- match.arg(name)
+    versace <-
+      c("#092391","#982B52","#DD518F","#FCCE30","#763AA0","#520E34","#E87539","#F8BD72")
 
-    orig <- eval(parse(text = name))
 
-    n <- length(orig)
+    output <- eval(parse(text = match.arg(name)))
 
-    if(reverse){orig <- rev(orig)}
+    if(reverse){output <- rev(output)}
 
-    palette_create(n = n,orig = orig)
+    return(output)
 
   }
 
 # palette_vignette(palette_qua)
-
 

@@ -5,8 +5,9 @@
 \title{Palettes for sequential scale}
 \usage{
 palette_seq(
-  name = c("andor", "breaking_bad", "cyberpunk", "fleabag", "loki", "raised_by_wolves",
-    "sucession"),
+  name = c("andor", "badlands", "breaking_bad", "clockwork_orange", "cyberpunk",
+    "fleabag", "house_of_cards", "loki", "peaky_blinders", "raised_by_wolves",
+    "sucession", "westworld1", "westworld2"),
   reverse = FALSE
 )
 }
@@ -22,12 +23,18 @@ A character vector with the colors hex codes.
 Palettes for a sequential scale, with the following palettes:
  \cr
  \cr - andor: 6 colors, inspired by the TV series Andor (Star Wars).
+ \cr - badlands: 5 colors, inspired by the TV series Into the Badlands.
  \cr - breaking_bad: 5 colors, inspired by the TV series Breaking Bad.
+ \cr - clockwork_orange: 8 colors, inspired by the movie Clockwork Orange.
  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
  \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+ \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
  \cr - loki: 7 colors, inspired by the TV series Loki.
+ \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
  \cr - sucession: 6 colors, inspired by the TV series Sucession.
+ \cr - westworld1: 7 colors, inspired by the TV series WestWorld.
+ \cr - westworld2: 8 colors, inspired by the TV series WestWorld.
 }
 \examples{
 
