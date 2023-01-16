@@ -64,12 +64,6 @@ rpearson <-
         y = y
       )
 
-    cat(n, "observations of x and y were simulated with:",
-        "\n - Mean =", mean,"\n - SD =", sd,
-        "\n - Linear correlation coefficient =", pearson,
-        "\n - Simulation tolerance = ", tol,
-        "\n Resulting in a linear correlation coefficient =", p_est ,"\n")
-
     return(output)
 
   }
