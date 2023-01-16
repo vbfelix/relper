@@ -38,7 +38,7 @@ palette_vignette <-
     
     palettes_df %>% 
       ggplot2::ggplot(ggplot2::aes(x,palette, fill = color))+
-      ggplot2::geom_tile(col = "black",size = .8)+
+      ggplot2::geom_tile(col = "black")+
       ggplot2::scale_fill_manual(values = colors)+
       ggplot2::scale_x_discrete(expand = c(0,0))+
       ggplot2::scale_y_discrete(expand = c(0,0))+
