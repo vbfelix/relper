@@ -3,12 +3,18 @@
 #' @description Palettes for a sequential scale, with the following palettes:
 #'  \cr
 #'  \cr - andor: 6 colors, inspired by the TV series Andor (Star Wars).
+#'  \cr - badlands: 5 colors, inspired by the TV series Into the Badlands.
 #'  \cr - breaking_bad: 5 colors, inspired by the TV series Breaking Bad.
+#'  \cr - clockwork_orange: 8 colors, inspired by the movie Clockwork Orange.
 #'  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
 #'  \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+#'  \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
 #'  \cr - loki: 7 colors, inspired by the TV series Loki.
+#'  \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
 #'  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
 #'  \cr - sucession: 6 colors, inspired by the TV series Sucession.
+#'  \cr - westworld1: 7 colors, inspired by the TV series WestWorld.
+#'  \cr - westworld2: 8 colors, inspired by the TV series WestWorld.
 #'
 #' @eval arg_vector("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
@@ -25,8 +31,9 @@
 
 palette_seq <-
   function(
-    name = c("andor","breaking_bad","cyberpunk",
-             "fleabag","loki","raised_by_wolves","sucession"),
+    name = c("andor","badlands","breaking_bad","clockwork_orange","cyberpunk",
+             "fleabag","house_of_cards","loki","peaky_blinders","raised_by_wolves",
+             "sucession","westworld1","westworld2"),
     reverse = FALSE
     ){
 
@@ -35,65 +42,51 @@ palette_seq <-
     stop_function(arg = reverse,type = "logical",single_value = TRUE)
 
     andor <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(229,214,209,173,115,068),
-          green = c(205,150,111,071,053,056),
-          blue  = c(181,095,058,039,039,058)
-      )
+      c("#E5CDB5", "#D6965F", "#D16F3A", "#AD4727", "#733527", "#44383A")
+
+    badlands <-
+      c("#E4ECED", "#C2B5BA", "#92717B", "#663747", "#131219")
 
     breaking_bad <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(188,127,087,140,197),
-          green = c(196,140,100,134,187),
-          blue  = c(154,094,055,025,043)
-      )
+      c("#BCC49A", "#7F8C5E", "#576437", "#8C8619", "#C5BB2B")
+
+    clockwork_orange <-
+      c("#DED4E4","#F4D0B1","#EAAA66","#EF8640","#A9542D","#EE531C","#593A2B","#33221B")
 
     cyberpunk <-
-       grDevices::rgb(maxColorValue = 255,
-        red   = c(197,197,101,074,030),
-        green = c(177,103,069,035,014),
-        blue  = c(227,169,185,106,036)
-      )
+      c("#C5B1E3", "#C567A9", "#6545B9", "#4A236A", "#1E0E24")
 
     fleabag <-
-      grDevices::rgb(maxColorValue = 255,
-                     red   = c(223,211,162,125,074,027),
-                     green = c(189,140,092,051,012,011),
-                     blue  = c(139,082,072,035,013,049)
-      )
+      c("#DFBD8B", "#D38C52", "#A25C48", "#7D3323", "#4A0C0D", "#1B0B31")
+
+    house_of_cards <-
+      c("#DBDBDC","#AFAFB3","#85878D","#64666C","#484B52","#29292C","#09090A")
 
     loki <-
-      grDevices::rgb(maxColorValue = 255,
-                     red   = c(237,227,207,167,131,107,075),
-                     green = c(216,181,152,120,089,062,038),
-                     blue  = c(195,128,084,082,060,031,019)
-      )
+      c("#EDD8C3", "#E3B580", "#CF9854", "#A77852", "#83593C", "#6B3E1F",
+        "#4B2613")
+
+    peaky_blinders <-
+      c("#F6F7E5","#D8DBBC","#B1BAA0","#8A9D87","#697C6D","#3F5148","#22322E","#0A1618")
 
     raised_by_wolves <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(233,194,157,105,067,012),
-          green = c(213,180,146,128,104,020),
-          blue  = c(149,118,092,101,087,011)
-      )
+      c("#E9D595", "#C2B476", "#9D925C", "#698065", "#436857", "#0C140B")
 
     sucession <-
-       grDevices::rgb(maxColorValue = 255,
-          red   = c(228,197,159,135,101,072),
-          green = c(217,170,133,101,075,052),
-          blue  = c(195,146,113,078,055,038)
-      )
+      c("#E4D9C3","#C5AA92","#9F8571","#87654E","#654B37","#483426")
 
-    name <- match.arg(name)
+    westworld1 <-
+      c("#F9D4B9","#F4AA96","#E7947E","#DD876B","#C07969","#724139","#3A1D1B")
 
-    orig <- eval(parse(text = name))
+    westworld2 <-
+      c("#D0D0D5","#B9BAC2","#9EA1AB","#80848F","#676A75","#504952","#312A31","#761C20")
 
-    n <- length(orig)
+    output <- eval(parse(text = match.arg(name)))
 
-    if(reverse){orig <- rev(orig)}
+    if(reverse){output <- rev(output)}
 
-    palette_create(n = n,orig = orig)
+    return(output)
 
   }
 
 # palette_vignette(palette_seq)
-
