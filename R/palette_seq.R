@@ -51,7 +51,7 @@ palette_seq <-
       c("#BCC49A", "#7F8C5E", "#576437", "#8C8619", "#C5BB2B")
 
     clockwork_orange <-
-      c("#DED4E4","#F4D0B1","#EAAA66","#EF8640","#A9542D","#EE531C","#593A2B","#33221B")
+      c("#DED4E4","#F4D0B1","#EAAA66","#EF8640","#EE531C","#A9542D","#593A2B","#33221B")
 
     cyberpunk <-
       c("#C5B1E3", "#C567A9", "#6545B9", "#4A236A", "#1E0E24")
