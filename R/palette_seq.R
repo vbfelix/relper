@@ -5,6 +5,8 @@
 #'  \cr - andor: 6 colors, inspired by the TV series Andor (Star Wars).
 #'  \cr - breaking_bad: 5 colors, inspired by the TV series Breaking Bad.
 #'  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
+#'  \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+#'  \cr - loki: 7 colors, inspired by the TV series Loki.
 #'  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
 #'  \cr - sucession: 6 colors, inspired by the TV series Sucession.
 #'
@@ -23,7 +25,8 @@
 
 palette_seq <-
   function(
-    name = c("andor","breaking_bad","cyberpunk","raised_by_wolves","sucession"),
+    name = c("andor","breaking_bad","cyberpunk",
+             "fleabag","loki","raised_by_wolves","sucession"),
     reverse = FALSE
     ){
 
@@ -50,6 +53,20 @@ palette_seq <-
         red   = c(197,197,101,074,030),
         green = c(177,103,069,035,014),
         blue  = c(227,169,185,106,036)
+      )
+
+    fleabag <-
+      grDevices::rgb(maxColorValue = 255,
+                     red   = c(223,211,162,125,074,027),
+                     green = c(189,140,092,051,012,011),
+                     blue  = c(139,082,072,035,013,049)
+      )
+
+    loki <-
+      grDevices::rgb(maxColorValue = 255,
+                     red   = c(237,227,207,167,131,107,075),
+                     green = c(216,181,152,120,089,062,038),
+                     blue  = c(195,128,084,082,060,031,019)
       )
 
     raised_by_wolves <-

@@ -5,8 +5,8 @@
 \title{Palettes for divergent scale}
 \usage{
 palette_div(
-  name = c("arcane", "casa_de_papel", "racionais", "sandman", "the_americans",
-    "the_expanse", "vox_machina"),
+  name = c("arcane", "casa_de_papel", "deadly_class", "racionais", "sandman",
+    "the_americans", "the_expanse", "vox_machina", "wanda_vision"),
   reverse = FALSE
 )
 }
@@ -23,12 +23,14 @@ Palette for a divergent scale, with the following palettes:
  \cr
  \cr - arcane: 5 colors, inspired by the animation Arcane.
  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
+ \cr - deadly_class: C colors, inspired by the TV series Deadly Class.
  \cr - racionais: 7 colors, inspired by the CD cover
  'Nada Como Um Dia Após o Outro Dia' of the brazilian rap group Racionais MC's.
  \cr - sandman: 5 colors, inspired by the graphic novel Sandman.
  \cr - the_americans: 7 colors, inspired by the TV series The Americans.
  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
+ \cr - wanda_vision: 9 colors, inspired by the TV series WandaVision.
 }
 \examples{
 

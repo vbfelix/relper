@@ -6,7 +6,7 @@
 \usage{
 palette_qua(
   name = c("bojack_horseman", "cowboy_bebop", "doctor_who", "final_space",
-    "gurren_lagann", "omitb", "pulp_fiction", "rick_and_morty", "star_trek",
+    "gurren_lagann", "legion", "omitb", "pulp_fiction", "rick_and_morty", "star_trek",
     "this_is_us"),
   reverse = FALSE
 )
@@ -27,6 +27,7 @@ Palettes for a qualitative scale, with the following palettes:
  \cr - doctor_who: 5 colors, inspired by the TV series Doctor Who.
  \cr - final_space: 4 colors, inspired by the animation Final Space.
  \cr - gurren_lagann: 5 colors, inspired by the animation Tengen Toppa Gurren-Lagann.
+ \cr - legion: 9 colors, inspired by the TV series Legion.
  \cr - omitb: 5 colors, inspired by the TV series Only Murders in the Building.
  \cr - pulp_fiction: 8 colors, inspired by the movie Pulp Fiction.
  \cr - rick_and_morty: 8 colors, inspired by the animation Rick and Morty.

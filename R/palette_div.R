@@ -4,12 +4,14 @@
 #'  \cr
 #'  \cr - arcane: 5 colors, inspired by the animation Arcane.
 #'  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
+#'  \cr - deadly_class: C colors, inspired by the TV series Deadly Class.
 #'  \cr - racionais: 7 colors, inspired by the CD cover
 #'  'Nada Como Um Dia Após o Outro Dia' of the brazilian rap group Racionais MC's.
 #'  \cr - sandman: 5 colors, inspired by the graphic novel Sandman.
 #'  \cr - the_americans: 7 colors, inspired by the TV series The Americans.
 #'  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
 #'  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
+#'  \cr - wanda_vision: 9 colors, inspired by the TV series WandaVision.
 #'
 #' @eval arg_value("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
@@ -26,7 +28,8 @@
 
 palette_div <-
   function(
-    name = c("arcane","casa_de_papel","racionais","sandman","the_americans","the_expanse","vox_machina"),
+    name = c("arcane","casa_de_papel","deadly_class","racionais","sandman",
+             "the_americans","the_expanse","vox_machina","wanda_vision"),
     reverse = FALSE
     ){
 
@@ -46,6 +49,13 @@ palette_div <-
           red   = c(107,184,179,212,148,084,053),
           green = c(054,060,130,193,169,106,069),
           blue  = c(043,054,098,160,148,087,059)
+      )
+
+    deadly_class <-
+      grDevices::rgb(maxColorValue = 255,
+                     red   = c(085,160,173,225,092,022),
+                     green = c(038,054,132,183,090,039),
+                     blue  = c(067,099,156,194,138,093)
       )
 
     racionais <-
@@ -81,6 +91,13 @@ palette_div <-
           red   = c(073,116,177,205,181,158,121),
           green = c(057,103,137,186,204,173,145),
           blue  = c(083,118,139,178,222,186,162)
+      )
+
+    wanda_vision <-
+      grDevices::rgb(maxColorValue = 255,
+                     red   = c(080,143,193,229,223,149,038,033,024),
+                     green = c(023,042,078,145,203,110,098,062,031),
+                     blue  = c(021,031,062,119,204,131,136,094,056)
       )
 
     name <- match.arg(name)

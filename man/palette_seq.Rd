@@ -5,7 +5,8 @@
 \title{Palettes for sequential scale}
 \usage{
 palette_seq(
-  name = c("andor", "breaking_bad", "cyberpunk", "raised_by_wolves", "sucession"),
+  name = c("andor", "breaking_bad", "cyberpunk", "fleabag", "loki", "raised_by_wolves",
+    "sucession"),
   reverse = FALSE
 )
 }
@@ -23,6 +24,8 @@ Palettes for a sequential scale, with the following palettes:
  \cr - andor: 6 colors, inspired by the TV series Andor (Star Wars).
  \cr - breaking_bad: 5 colors, inspired by the TV series Breaking Bad.
  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
+ \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+ \cr - loki: 7 colors, inspired by the TV series Loki.
  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
  \cr - sucession: 6 colors, inspired by the TV series Sucession.
 }
