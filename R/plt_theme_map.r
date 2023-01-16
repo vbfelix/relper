@@ -29,7 +29,7 @@ plt_theme_map <-
 
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%
       ggplot2::theme(
-        legend.text = ggplot2::element_text(size = 14, face = "bold"),
+        legend.text = ggplot2::element_text(size = 12, face = "bold"),
         panel.grid.major = ggplot2::element_blank(),
         panel.grid.minor = ggplot2::element_blank(),
         axis.text = ggplot2::element_blank(),

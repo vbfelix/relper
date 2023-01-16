@@ -29,7 +29,7 @@ plt_theme_x <-
 
     ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%
       ggplot2::theme(
-        legend.text = ggplot2::element_text(size = 14, face = "bold"),
+        legend.text = ggplot2::element_text(size = 12, face = "bold"),
         legend.position = "top",
         strip.text = ggplot2::element_text(colour = "white"),
         strip.background = ggplot2::element_rect(fill = "black"),
