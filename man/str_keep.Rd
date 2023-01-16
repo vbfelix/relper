@@ -4,7 +4,7 @@
 \alias{str_keep}
 \title{Keep only a type of characters in a string}
 \usage{
-str_keep(string, keep = "text")
+str_keep(string, keep = c("text", "numbers", "special"))
 }
 \arguments{
 \item{string}{A character vector}

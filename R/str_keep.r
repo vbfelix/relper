@@ -21,11 +21,14 @@
 #'
 #' str_keep(string,keep = "special")
 
-str_keep <- function(string,keep = "text"){
+str_keep <-
+  function(string,
+           keep = c("text","numbers","special")
+           ){
 
   stop_function(arg = string,type = "string")
 
-  stop_function(arg = keep,type = "character")
+  stop_function(arg = keep,type = "character", single_value = TRUE)
 
   keep_text <- c("text","char","character","string","word")
 
@@ -35,7 +38,7 @@ str_keep <- function(string,keep = "text"){
 
   keep_ref <- c(keep_text,keep_num,keep_special)
 
-  stop_one_of(keep,keep_ref)
+  # stop_one_of(keep,keep_ref)
 
   if(keep %in% keep_text){
     output <- gsub("[^a-zA-Z]", "", string)
@@ -52,5 +55,4 @@ str_keep <- function(string,keep = "text"){
   return(output)
 
 }
-
 

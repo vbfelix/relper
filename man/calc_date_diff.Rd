@@ -4,7 +4,12 @@
 \alias{calc_date_diff}
 \title{Difference between two dates}
 \usage{
-calc_date_diff(date1, date2, add = 0, unit = "days")
+calc_date_diff(
+  date1,
+  date2,
+  add = 0,
+  unit = c("secs", "mins", "hours", "days", "weeks")
+)
 }
 \arguments{
 \item{date1}{A date single value}

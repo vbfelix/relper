@@ -5,7 +5,7 @@
 \title{ggplot2: Add an automatic scale to a plot}
 \usage{
 plt_scale_auto(
-  axis = "x",
+  axis = c("x", "y", "xy", "both"),
   n_breaks = 10,
   expand = 0.01,
   thousand_mark = ".",

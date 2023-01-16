@@ -19,7 +19,13 @@
 #'
 #' calc_date_diff(date1 = date1,date2 = date2,unit = "days")
 
-calc_date_diff <- function(date1,date2,add = 0, unit = "days"){
+calc_date_diff <-
+  function(
+    date1,
+    date2,
+    add = 0,
+    unit = c("secs", "mins", "hours","days", "weeks")
+    ){
 
   stop_function(arg = date1,type = "date")
 
