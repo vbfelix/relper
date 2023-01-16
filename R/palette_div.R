@@ -5,11 +5,14 @@
 #'  \cr - arcane: 5 colors, inspired by the animation Arcane.
 #'  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
 #'  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
+#'  \cr - dexter: 6 colors, inspired by the TV series Dexter.
+#'  \cr - godzilla_vs_kong: 9 colors, inspired by the movie Godzilla vs Kong.
 #'  \cr - homeland: 9 colors, inspired by the TV series Homeland.
 #'  \cr - laura_dean: 8 colors, inspired by the graphic novel Laura Dean Keeps Breaking Up with Me.
 #'  \cr - racionais: 7 colors, inspired by the CD cover
 #'  'Nada Como Um Dia Após o Outro Dia' of the brazilian rap group Racionais MC's.
 #'  \cr - sandman: 5 colors, inspired by the graphic novel Sandman.
+#'  \cr - svott_pilgrim: 6 colors, inspired by the movie Scott Pilgrim vs the World.
 #'  \cr - the_americans: 7 colors, inspired by the TV series The Americans.
 #'  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
 #'  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
@@ -30,7 +33,8 @@
 
 palette_div <-
   function(
-    name = c("arcane","casa_de_papel","deadly_class","homeland","laura_dean","racionais","sandman",
+    name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","homeland",
+             "laura_dean","racionais","sandman","scott_pilgrim",
              "the_americans","the_expanse","vox_machina","wanda_vision"),
     reverse = FALSE
     ){
@@ -48,6 +52,12 @@ palette_div <-
     deadly_class <-
       c("#552643", "#A03663", "#AD849C", "#E1B7C2", "#5C5A8A", "#16275D")
 
+    dexter <-
+      c("#046382","#12A6C5","#6CC9DE","#EAE0CF","#C69369","#7D3728")
+
+    godzilla_vs_kong <-
+      c("#1F191A","#25403F","#2D7A73","#44B4AC","#A0CBBA","#D9996E","#E45A2E","#BB2F10","#6F2014")
+
     homeland <-
       c("#31302D","#655B4D","#8C8274","#B9A791","#D2C5BE","#91B3C7","#7096AC","#4E7890","#3D5460")
 
@@ -60,6 +70,9 @@ palette_div <-
 
     sandman <-
       c("#876453", "#B7906B", "#E1C688", "#A7B79E", "#70ACA0")
+
+    scott_pilgrim <-
+      c("#86141E","#A5262D","#E0413B","#CBA298","#A17267","#5B2E23")
 
     the_americans <-
       c("#871307", "#D00F05", "#EA8E0F", "#F8CE1D", "#09A8DF", "#2B88AA",

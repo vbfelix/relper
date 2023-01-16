@@ -5,9 +5,9 @@
 \title{Palettes for divergent scale}
 \usage{
 palette_div(
-  name = c("arcane", "casa_de_papel", "deadly_class", "homeland", "laura_dean",
-    "racionais", "sandman", "the_americans", "the_expanse", "vox_machina",
-    "wanda_vision"),
+  name = c("arcane", "casa_de_papel", "deadly_class", "dexter", "godzilla_vs_kong",
+    "homeland", "laura_dean", "racionais", "sandman", "scott_pilgrim", "the_americans",
+    "the_expanse", "vox_machina", "wanda_vision"),
   reverse = FALSE
 )
 }
@@ -25,6 +25,8 @@ Palette for a divergent scale, with the following palettes:
  \cr - arcane: 5 colors, inspired by the animation Arcane.
  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
+ \cr - dexter: 6 colors, inspired by the TV series Dexter.
+ \cr - godzilla_vs_kong: 9 colors, inspired by the movie Godzilla vs Kong.
  \cr - homeland: 9 colors, inspired by the TV series Homeland.
  \cr - laura_dean: 8 colors, inspired by the graphic novel Laura Dean Keeps Breaking Up with Me.
  \cr - racionais: 7 colors, inspired by the CD cover

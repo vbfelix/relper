@@ -8,11 +8,17 @@
 #'  \cr - clockwork_orange: 8 colors, inspired by the movie Clockwork Orange.
 #'  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
 #'  \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+#'  \cr - house_md: 6 colors, inspired by the TV series House MD.
 #'  \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
 #'  \cr - loki: 7 colors, inspired by the TV series Loki.
+#'  \cr - lovecraft_country: 9 colors, inspired by the TV series Lovecraft Country.
 #'  \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
 #'  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
+#'  \cr - sabrina: 8 colors, inspired by the TV series Sabrina.
+#'  \cr - sandman: 6 colors, inspired by the TV series Sandman.
 #'  \cr - sucession: 6 colors, inspired by the TV series Sucession.
+#'  \cr - the_wire: 6 colors, inspired by the TV series The Wire.
+#'  \cr - tiger_king: 7 colors, inspired by the TV series Tiger King.
 #'  \cr - westworld1: 7 colors, inspired by the TV series WestWorld.
 #'  \cr - westworld2: 8 colors, inspired by the TV series WestWorld.
 #'
@@ -32,8 +38,8 @@
 palette_seq <-
   function(
     name = c("andor","badlands","breaking_bad","clockwork_orange","cyberpunk",
-             "fleabag","house_of_cards","loki","peaky_blinders","raised_by_wolves",
-             "sucession","westworld1","westworld2"),
+             "fleabag","house_md","house_of_cards","loki","lovecraft_country","peaky_blinders","raised_by_wolves",
+             "sabrina","sandman","sucession","the_wire","tiger_king","westworld1","westworld2"),
     reverse = FALSE
     ){
 
@@ -59,6 +65,9 @@ palette_seq <-
     fleabag <-
       c("#DFBD8B", "#D38C52", "#A25C48", "#7D3323", "#4A0C0D", "#1B0B31")
 
+    house_md <-
+      c("#899FA4","#546D72","#324C56","#114D6A","#12232D","#080D13")
+
     house_of_cards <-
       c("#DBDBDC","#AFAFB3","#85878D","#64666C","#484B52","#29292C","#09090A")
 
@@ -66,14 +75,29 @@ palette_seq <-
       c("#EDD8C3", "#E3B580", "#CF9854", "#A77852", "#83593C", "#6B3E1F",
         "#4B2613")
 
+    lovecraft_country <-
+      c("#D6B8A0","#846751","#F18F15","#C95910","#9E3D0E","#7D270A","#5A1607","#31140D","#150805")
+
     peaky_blinders <-
       c("#F6F7E5","#D8DBBC","#B1BAA0","#8A9D87","#697C6D","#3F5148","#22322E","#0A1618")
 
     raised_by_wolves <-
       c("#E9D595", "#C2B476", "#9D925C", "#698065", "#436857", "#0C140B")
 
+    sabrina <-
+      c("#FAD0A9","#ECA172","#D06B44","#CD2E28","#903D2E","#AF0506","#510605","#090406")
+
+    sandman <-
+      c("#EDDBAC","#C8AD8B","#939696","#5C6B6E","#334347","#162026")
+
     sucession <-
       c("#E4D9C3","#C5AA92","#9F8571","#87654E","#654B37","#483426")
+
+    the_wire <-
+      c("#B0CFD6","#65B1CE","#4085B4","#2E5A90","#2A3B5D","#080A09")
+
+    tiger_king <-
+      c("#F6EED6","#D2987A","#F98707","#C6510D","#E32B0D","#5A170B","#1D0B08")
 
     westworld1 <-
       c("#F9D4B9","#F4AA96","#E7947E","#DD876B","#C07969","#724139","#3A1D1B")

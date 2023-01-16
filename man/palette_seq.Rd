@@ -6,8 +6,9 @@
 \usage{
 palette_seq(
   name = c("andor", "badlands", "breaking_bad", "clockwork_orange", "cyberpunk",
-    "fleabag", "house_of_cards", "loki", "peaky_blinders", "raised_by_wolves",
-    "sucession", "westworld1", "westworld2"),
+    "fleabag", "house_md", "house_of_cards", "loki", "lovecraft_country",
+    "peaky_blinders", "raised_by_wolves", "sabrina", "sandman", "sucession", "the_wire",
+    "tiger_king", "westworld1", "westworld2"),
   reverse = FALSE
 )
 }
@@ -28,11 +29,17 @@ Palettes for a sequential scale, with the following palettes:
  \cr - clockwork_orange: 8 colors, inspired by the movie Clockwork Orange.
  \cr - cyberpunk: 5 colors, inspired by the videogame Cyberpunk 2077.
  \cr - fleabag: 6 colors, inspired by the TV series Fleabag.
+ \cr - house_md: 6 colors, inspired by the TV series House MD.
  \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
  \cr - loki: 7 colors, inspired by the TV series Loki.
+ \cr - lovecraft_country: 9 colors, inspired by the TV series Lovecraft Country.
  \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
+ \cr - sabrina: 8 colors, inspired by the TV series Sabrina.
+ \cr - sandman: 6 colors, inspired by the TV series Sandman.
  \cr - sucession: 6 colors, inspired by the TV series Sucession.
+ \cr - the_wire: 6 colors, inspired by the TV series The Wire.
+ \cr - tiger_king: 7 colors, inspired by the TV series Tiger King.
  \cr - westworld1: 7 colors, inspired by the TV series WestWorld.
  \cr - westworld2: 8 colors, inspired by the TV series WestWorld.
 }
