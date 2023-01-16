@@ -59,7 +59,7 @@ palette_vignette <-
 
 # palette_div
 
-The goal of `palette_div` is to return a palette for a divergent scale with 5 colors, with the following palettes:
+The goal of `palette_div` is to return a palette for a divergent scale, with the following palettes:
 
 
 ```{r, echo = FALSE,fig.height = 12}
@@ -70,7 +70,7 @@ palette_vignette(func_palette = palette_div)
 
 # palette_seq
 
-The goal of `palette_seq` is to return a palette for a sequential scale with 5 colors, with the following palettes:
+The goal of `palette_seq` is to return a palette for a sequential scale, with the following palettes:
 
 ```{r, echo = FALSE,fig.height = 8}
 
@@ -80,7 +80,7 @@ palette_vignette(func_palette = palette_seq)
 
 # palette_qua
 
-The goal of `palette_qua` is to return a palette for a qualitative scale with 5 colors, with the following palettes:
+The goal of `palette_qua` is to return a palette for a qualitative scale, with the following palettes:
 
 ```{r, echo = FALSE,fig.height = 16}
 
