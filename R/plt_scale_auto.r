@@ -27,7 +27,7 @@
 
 plt_scale_auto <-
   function(
-    axis = "x",
+    axis = c("x","y","xy","both"),
     n_breaks = 10,
     expand = .01,
     thousand_mark = ".",

@@ -1,7 +1,7 @@
 test_that("results", {
 
   expect_equal(
-    object = str_keep("A2#"),
+    object = str_keep("A2#","text"),
     expected = "A"
   )
 
