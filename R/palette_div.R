@@ -103,6 +103,6 @@ palette_div <-
 
   }
 
-palette_vignette(palette_div)
+# palette_vignette(palette_div)
 
 
