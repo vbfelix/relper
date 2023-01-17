@@ -29,14 +29,18 @@ as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
 
   stop_function(arg = decimal_mark,type = "character",single_value = TRUE)
 
-  if(!is.numeric(x)){
+  output <-
+    x %>%
+    gsub(x = .,pattern = thousand_mark,replacement =  "") %>%
+    gsub(x = .,pattern = decimal_mark,replacement =  "\\.") %>%
+    gsub(x = .,pattern = "\\$",replacement =  "") %>%
+    gsub(x = .,pattern = "[a-zA-Z]",replacement =  "") %>%
+    gsub(x = .,pattern = " ",replacement =  "") %>%
+    as.numeric(., na.rm = FALSE)
 
-    as.numeric(gsub(decimal_mark, "\\.",gsub(thousand_mark, "", x)), na.rm = FALSE)
+  if(any(is.na((output)))){warning("some values of 'x' were coerced to NA's")}
 
-  }else{
-
-    return(x)
-
-  }
+  return(output)
 
 }
+
