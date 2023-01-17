@@ -21,6 +21,9 @@ Coerce a character vector to numeric, by:
  \cr
  \cr  - Removing the thousand separator mark.
  \cr  - Replacing decimal mark with a dot.
+ \cr  - Removing the character "$".
+ \cr  - Removing the characters from the alphabet.
+ \cr  - Trimming extra spaces.
  \cr  - Applying the function as.numeric.
 }
 \examples{
