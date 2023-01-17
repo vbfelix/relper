@@ -81,7 +81,7 @@ str_keep(string,keep = "special")
 The goal of `str_select` is to select part of a string, before, after or between patterns.
 
 ```{r str_select}
-string <- "example text STRING1 TARGET STRING2 example text"
+string <- "begin STRING1 TARGET STRING2 end"
 ```
 
 By setting the argument `before` you select only the part of the string before this pattern.
