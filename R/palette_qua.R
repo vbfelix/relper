@@ -49,7 +49,7 @@ palette_qua <-
     stop_function(arg = reverse,type = "logical",single_value = TRUE)
 
     bojack_horseman <-
-      c("#9E674C", "#9464A2", "#FAC877", "#EB636B", "#3C2533", "#DE6192")
+      c("#EB636B","#9E674C", "#9464A2", "#FAC877", "#3C2533", "#DE6192")
 
     cowboy_bebop <-
       c("#1B5260", "#CA301D", "#219EBF", "#B7B5A4", "#612023")
@@ -64,10 +64,10 @@ palette_qua <-
       c("#9F2B2E", "#424F91", "#F27137", "#DA70C1", "#89646A")
 
     heartstopper <-
-      c("#103336","#F7CC99","#C79274","#41A99B","#A2E0E6")
+      c("#41A99B","#F7CC99","#103336","#C79274","#A2E0E6")
 
     homeland <-
-      c("#A29088", "#515B98", "#905448", "#7A7982", "#42342E")
+      c("#7A7982", "#515B98","#A29088", "#905448", "#42342E")
 
     kick_ass <-
       c("#040303","#F3DD42","#654B6D","#1F8163","#763B16","#A1A289")
