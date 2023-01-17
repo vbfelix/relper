@@ -14,5 +14,5 @@
 #'
 
 row_number_unique <- function(x){
-  purrr::map_int(seq_along(x), function(y) length(unique(x[1:y])))
+  as.integer(factor(x,levels = unique(x)))
 }
