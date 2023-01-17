@@ -1,3 +1,9 @@
+# relper 2.1.0
+
+* Addition of more steps to the function `as_num`, such as removing characters.
+
+* Addition of the dataset `vfx_watermark_white`.
+
 # relper 2.0.0 - Palettes
 
 * Addition of the functions `palette_`.
