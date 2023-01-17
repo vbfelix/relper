@@ -26,17 +26,13 @@ stop_function <- function(
       datetime = !relper::is_datetime(arg)
     )
 
-
   a_type <- c("list","dataframe","date","integer","string","character")
 
   if(type %in% a_type){type <- paste0("a ", type)}
 
   if(null){
-    if(!is.null(arg)){
-      type <- paste0(type, " or NULL")
-      if(type == FALSE)
-      condition <- TRUE
-    }else{
+    type <- paste0(type, " or NULL")
+    if(is.null(arg)){
       condition <- FALSE
     }
   }
