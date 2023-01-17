@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = str_clean(string = "a..;éâ...íõ"),
@@ -22,12 +22,28 @@ test_that("results", {
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
-  expect_error(object = str_clean(2,"text"))
+  expect_error(object = str_clean(string = 2,remove_accent = "test"))
 
-  expect_error(object = str_clean("A2","aaaaa"))
+  expect_error(object = str_clean(string = "test",remove_accent = "test"))
 
-  expect_error(object = str_clean("A2",2))
+  expect_error(object = str_clean(string = "test",remove_accent = 2))
+
+  expect_error(object = str_clean(string = "test",remove_punct = "test"))
+
+  expect_error(object = str_clean(string = "test",remove_punct = 2))
+
+  expect_error(object = str_clean(string = "test",sub_punct = TRUE))
+
+  expect_error(object = str_clean(string = "test",sub_punct = 2))
+
+
+
+})
+
+test_that("Wrong length", {
+
+  expect_error(object = str_clean(string = "test",sub_punct = 1))
 
 })

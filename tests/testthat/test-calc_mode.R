@@ -1,5 +1,5 @@
 
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = calc_mode(c("a","a","a","b")),

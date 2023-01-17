@@ -1,24 +1,16 @@
-test_that("results", {
+test_that("Expect TRUE", {
 
-  expect_equal(
-    object = is_datetime(Sys.time()),
-    expected = TRUE
-  )
+  expect_true(is_datetime(Sys.time()))
 
-  expect_equal(
-    object = is_datetime(Sys.Date()),
-    expected = FALSE
-  )
+})
 
-  expect_equal(
-    object = is_datetime(1),
-    expected = FALSE
-  )
+test_that("Expect FALSE", {
 
-  expect_equal(
-    object = is_datetime("a"),
-    expected = FALSE
-  )
+  expect_false(object = is_datetime(Sys.Date()))
+
+  expect_false(object = is_datetime(1))
+
+  expect_false(object = is_datetime("a"))
 
 })
 

@@ -19,6 +19,9 @@ is_negative <- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  !relper::is_positive(x)
+  output <- !relper::is_positive(x)
 
+  output[which(x == 0)] <- FALSE
+
+  return(output)
 }

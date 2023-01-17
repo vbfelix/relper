@@ -1,21 +1,22 @@
-
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
-    object = calc_harmonic_mean(1:10),
+    object = calc_harmonic_mean(x = 1:10),
     expected = 3.41417152147406
   )
 
 })
 
-test_that("warning", {
+test_that("Value = 0", {
 
-  expect_warning(calc_harmonic_mean(0))
+  expect_warning(calc_harmonic_mean(x = 0))
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
-  expect_error(calc_harmonic_mean("a"))
+  expect_error(calc_harmonic_mean(x = "a"))
+
+  expect_error(calc_harmonic_mean(x = TRUE))
 
 })

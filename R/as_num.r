@@ -41,7 +41,7 @@ as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
     gsub(x = .,pattern = " ",replacement =  "") %>%
     as.numeric(., na.rm = FALSE)
 
-  if(any(is.na((output)))){warning("some values of 'x' were coerced to NA's")}
+  warn_any_na(output)
 
   return(output)
 

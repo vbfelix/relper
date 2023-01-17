@@ -19,14 +19,14 @@ calc_geometric_mean <- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  if(sum(x == 0, na.rm = TRUE) > 0 ){
-    warning("There is at least one value = 0 and that caused the geometric mean to be 0.")
-  }
+  warn_any_zero(
+    x  = x,
+    warning = "At least one value = 0 and that caused the mean to be 0."
+  )
 
-  if(sum(x < 0, na.rm = TRUE) > 0 ){
-    warning("There is at least one value < 0 and that cause NaN's when computing the geometric mean.")
-  }
+  #log already provides warning for values < 0
+  output <- exp(mean(log(x), na.rm = TRUE))
 
-  exp(mean(log(x), na.rm = TRUE))
-
+  return(output)
 }
+

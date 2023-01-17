@@ -19,16 +19,20 @@ is_even <- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  x_as_char <- unlist(strsplit(as.character(x),split = ""))
+  x_as_char <- as.character(x)
 
-  x_len <- length(x_as_char)
+  n_char <- nchar(x_as_char)
 
-  n <- dplyr::if_else(x_as_char[x_len] == "0",x_len - 1L,x_len)
+  last_char <- substr(x_as_char,start = n_char, stop = n_char)
 
-  condition <- (as.numeric(x_as_char[n])) %% 2 == 0
+  output <- as.numeric(last_char) %% 2 == 0
 
-  output <- dplyr::if_else(condition, TRUE, FALSE)
+  output[which(x == 0)] <- NA
+
+  warn_any_na(output)
 
   return(output)
 
 }
+
+# is_even(x)

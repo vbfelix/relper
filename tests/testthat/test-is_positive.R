@@ -1,18 +1,32 @@
-test_that("results", {
+test_that("Expected equal", {
 
   expect_equal(
-    object = is_positive(1),
-    expected = TRUE
-  )
-  expect_equal(
-    object = is_positive(-2),
-    expected = FALSE
+    object = is_positive(-1:1),
+    expected = c(FALSE,FALSE,TRUE)
   )
 
 })
 
-test_that("error", {
+test_that("Expect TRUE", {
+
+  expect_true(object = is_positive(1))
+
+  expect_true(object = is_positive(1.1))
+
+})
+
+test_that("Expect FALSE", {
+
+  expect_false(object = is_positive(-1))
+
+  expect_false(object = is_positive(-1.1))
+
+})
+
+test_that("Wrong type", {
 
   expect_error(is_positive(x = "a"))
+
+  expect_error(is_positive(x = TRUE))
 
 })

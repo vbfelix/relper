@@ -41,6 +41,18 @@ stop_function <- function(
 
   if(condition){stop(msg)}
 
+  # single_value --------------------------------------------------------------------
+
+  if(!is.null(single_value)){
+
+    condition <- length(arg) > 1
+
+    msg <- paste0("argument '",arg_name,"' must be a single value")
+
+    if(condition){stop(msg)}
+
+  }
+
   # length_bigger --------------------------------------------------------------------
 
   if(!is.null(length_bigger)){
@@ -77,17 +89,7 @@ stop_function <- function(
 
   }
 
-  # single_value --------------------------------------------------------------------
 
-  if(!is.null(single_value)){
-
-    condition <- length(arg) > 1
-
-    msg <- paste0("argument '",arg_name,"' must be a single value")
-
-    if(condition){stop(msg)}
-
-  }
 
 }
 

@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = calc_corr(x = 1:3,y = 1:3),
@@ -8,11 +8,18 @@ test_that("results", {
 })
 
 
-test_that("error", {
+test_that("Wrong type", {
 
   expect_error(calc_corr(x = "a"))
+
   expect_error(calc_corr(y = "a"))
+
+})
+
+test_that("Wrong length", {
+
   expect_error(calc_corr(x = 1:3, y = 1:4))
+
   expect_error(calc_corr(x = 1:2, y = 1:2))
 
 })

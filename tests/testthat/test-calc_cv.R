@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = calc_cv(1:3,as_perc = FALSE),
@@ -11,16 +11,25 @@ test_that("results", {
 
 })
 
-test_that("warning", {
+test_that("mean = 0", {
 
   expect_warning(calc_cv(x = -1:1))
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
   expect_error(calc_cv(x = "a"))
-  expect_error(calc_cv(x = 1))
+
   expect_error(calc_cv(x = 1:3,as_perc = "a"))
+
+  expect_error(calc_cv(x = 1:3,as_perc = 1))
+
+
+})
+
+test_that("Wrong length", {
+
+  expect_error(calc_cv(x = 1))
 
 })

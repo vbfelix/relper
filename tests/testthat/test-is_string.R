@@ -1,22 +1,16 @@
-test_that("results", {
+test_that("Expect TRUE", {
 
-  expect_equal(
-    object = is_string("A"),
-    expected = TRUE
-  )
-  expect_equal(
-    object = is_string(factor("A")),
-    expected = TRUE
-  )
-  expect_equal(
-    object = is_string(1),
-    expected = FALSE
-  )
-  expect_equal(
-    object = is_string(FALSE),
-    expected = FALSE
-  )
+  expect_true(object = is_string("A"))
+
+  expect_true(object = is_string(factor("A")))
 
 })
 
 
+test_that("Expect FALSE", {
+
+  expect_false(object = is_string(1))
+
+  expect_false(object = is_string(TRUE))
+
+})

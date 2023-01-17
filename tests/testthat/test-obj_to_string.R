@@ -1,6 +1,6 @@
 test <- NULL
 
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = obj_to_string(test),
@@ -8,3 +8,6 @@ test_that("results", {
   )
 
 })
+
+
+

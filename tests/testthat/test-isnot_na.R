@@ -1,30 +1,21 @@
-test_that("results", {
+test_that("Expect TRUE", {
 
-  expect_equal(
-    object = isnot_na(2),
-    expected = TRUE
-  )
+  expect_true(object = isnot_na(2))
 
-  expect_equal(
-    object = isnot_na("A"),
-    expected = TRUE
-  )
+  expect_true(object = isnot_na("a"))
 
-  expect_equal(
-    object = isnot_na(TRUE),
-    expected = TRUE
-  )
-
-  expect_equal(
-    object = isnot_na(NA),
-    expected = FALSE
-  )
-
-  expect_equal(
-    object = isnot_na(NA_real_),
-    expected = FALSE
-  )
+  expect_true(object = isnot_na(TRUE))
 
 })
 
+
+test_that("Expect FALSE", {
+
+  expect_false(object = isnot_na(NA_real_))
+
+  expect_false(object = isnot_na(NA))
+
+  expect_false(object = isnot_na(NaN))
+
+})
 

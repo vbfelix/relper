@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = str_keep("A2#","text"),
@@ -17,12 +17,17 @@ test_that("results", {
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
-  expect_error(object = str_keep(2,"text"))
+  expect_error(object = str_keep(string = 2,keep = "text"))
 
-  expect_error(object = str_keep("A2","aaaaa"))
+  expect_error(object = str_keep(string = "A2",keep = 2))
 
-  expect_error(object = str_keep("A2",2))
+})
+
+test_that("Invalid option", {
+
+
+  expect_error(object = str_keep(string = "A2",keep = "aaaaa"))
 
 })

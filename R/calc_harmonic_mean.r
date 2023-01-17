@@ -19,10 +19,12 @@ calc_harmonic_mean <- function(x){
 
   stop_function(arg = x,type = "numeric")
 
-  if(sum(x == 0, na.rm = TRUE) > 0 ){
-    warning("There is at least one value = 0 and that caused the harmonic mean to be 0.")
-  }
+  warn_any_zero(
+    x  = x ,
+    warning = "at least one value = 0 and that caused the mean to be 0."
+  )
 
-  1/mean(1/x, na.rm = TRUE)
+  output <- 1/mean(1/x, na.rm = TRUE)
 
+  return(output)
 }

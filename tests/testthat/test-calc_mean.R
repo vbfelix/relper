@@ -1,5 +1,4 @@
-
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = calc_mean(1:3),
@@ -12,8 +11,10 @@ test_that("results", {
 })
 
 
-test_that("error", {
+test_that("Wrong type", {
 
-  expect_error(calc_mean("a"))
+  expect_error(calc_mean(x = "a"))
+
+  expect_error(calc_mean(x = TRUE))
 
 })

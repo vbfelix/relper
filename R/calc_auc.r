@@ -37,11 +37,19 @@ calc_auc  <- function(x,y, limits = NULL) {
   tryCatch(
     {
       if(is.null(limits)){
-        r <- range(x)
+        auc_range <- range(x)
       }else{
-        r <- limits
+        if(limits[1] < min(x,na.rm = TRUE)){
+          warning("min('limits') < min(x), min(x) will be used instead")
+          limits[1] <- min(x,na.rm = TRUE)
+        }
+        if(limits[2] > max(x)){
+          warning("max('limits') > max(x), max(x) will be used instead")
+          limits[2] <- max(x,na.rm = TRUE)
+        }
+        auc_range <- limits
       }
-      stats::integrate(stats::approxfun(x,y), r[1], r[2])$value
+      stats::integrate(stats::approxfun(x,y), auc_range[1], auc_range[2])$value
     },
     error = function(e) return(NA_real_)
   )

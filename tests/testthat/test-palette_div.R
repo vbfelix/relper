@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
   expect_equal(
     object = palette_div(name = "sandman"),
     expected =  c("#876453", "#B7906B", "#E1C688", "#A7B79E", "#70ACA0")
@@ -11,14 +11,20 @@ test_that("results", {
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
   expect_error(object = palette_div(name = "error"))
-
-  expect_error(object = palette_div(name = c("a","b")))
 
   expect_error(object = palette_div(name = "sandman",reverse = 2))
 
   expect_error(object = palette_div(name = "sandman",reverse = "a"))
+
+})
+
+test_that("Wrong length", {
+
+  expect_error(object = palette_div(name = c("a","b")))
+
+  expect_error(object = palette_div(name = "sandman",reverse = c(TRUE,TRUE)))
 
 })

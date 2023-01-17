@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = is_outlier(1:5),
@@ -7,8 +7,9 @@ test_that("results", {
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
   expect_error(is_outlier(x = "a"))
 
+  expect_error(is_outlier(x = TRUE))
 })

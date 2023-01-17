@@ -1,4 +1,4 @@
-test_that("results", {
+test_that("Expect equal", {
 
   expect_equal(
     object = expand_grid_unique(1:2,1:2),
@@ -17,9 +17,10 @@ test_that("results", {
 
 })
 
-test_that("error", {
+test_that("Wrong type", {
 
-  expect_error(expand_grid_unique(1:2,1:2,include_equals = 1))
-  expect_error(expand_grid_unique(1:2,1:2,include_equals = 'a'))
+  expect_error(expand_grid_unique(x = 1:2,y = 1:2,include_equals = 1))
+
+  expect_error(expand_grid_unique(x = 1:2,y = 1:2,include_equals = 'a'))
 
 })
