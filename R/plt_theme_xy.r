@@ -25,15 +25,24 @@
 
 plt_theme_xy <-
   function(base_size = 14, base_family = "", margin = .35){
+
+    stop_function(arg = base_size,type = "numeric",single_value = TRUE)
+
+    stop_function(arg = base_family,type = "character",single_value = TRUE)
+
+    stop_function(arg = margin,type = "numeric",single_value = TRUE)
+
     '%+replace%' <- ggplot2::'%+replace%'
 
-    ggplot2::theme_bw(base_size = base_size, base_family = base_family) %+replace%
+    ggplot2::theme_bw(
+      base_size = base_size,
+      base_family = base_family
+    ) %+replace%
       ggplot2::theme(
-        legend.text = ggplot2::element_text(size = 12, face = "bold"),
+        legend.text = ggplot2::element_text(size = 12),
         legend.position = "top",
-        strip.text = ggplot2::element_text(colour = "white"),
-        strip.background = ggplot2::element_rect(fill = "black"),
         panel.grid.minor = ggplot2::element_blank(),
         plot.margin = ggplot2::unit(rep(margin,4), "cm")
       )
   }
+
