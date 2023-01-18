@@ -30,9 +30,10 @@ calc_auc  <- function(x,y, limits = NULL) {
 
   stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE)
 
-  if((length(limits) != 0) & (length(limits) != 2)){
-    stop("'limits' must be of length 2 or NULL.")
-  }
+  stop_length(arg = limits,length = 2,null = TRUE)
+  # if((length(limits) != 0) & (length(limits) != 2)){
+  #   stop("'limits' must be of length 2 or NULL.")
+  # }
 
   tryCatch(
     {
@@ -55,3 +56,9 @@ calc_auc  <- function(x,y, limits = NULL) {
   )
 
 }
+
+calc_auc(x = 1:3,y = 1:3,limits = NULL)
+calc_auc(x = 1:3,y = 1:3,limits = c(1,2))
+calc_auc(x = 1:3,y = 1:3,limits = 1)
+calc_auc(x = 1:3,y = 1:3,limits = 1:3)
+

@@ -1,12 +1,18 @@
 test_that("Expect equal", {
+
   expect_equal(
-    object = calc_auc(x = 1:5,y = rep(2,5)),
-    expected = 8
+    object = calc_auc(x = 1:3,y = 1:3),
+    expected = 4
   )
 
   expect_equal(
-    object = calc_auc(x = 1:5,y = rep(2,5),limits = c(1,4)),
-    expected =  6
+    object = calc_auc(x = 1:3,y = 1:3,limits = NULL),
+    expected = 4
+  )
+
+  expect_equal(
+    object = calc_auc(x = 1:3,y = 1:3,limits = c(1,2)),
+    expected = 1.5
   )
 })
 

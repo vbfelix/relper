@@ -155,3 +155,28 @@ stop_one_of <- function(arg,one_of){
   if(condition){stop(msg)}
 
 }
+
+
+stop_length<- function(arg,length, null = FALSE){
+
+  arg_name <- rlang::get_expr(rlang::enquo(arg))
+
+  condition <- length(arg) != length
+
+  msg <- paste0("argument '",arg_name,"' must be of length = ",length)
+
+  if(null){
+
+    msg <- paste(msg,"or NULL")
+
+    if(is.null(arg)){
+
+      condition <- FALSE
+
+    }
+
+  }
+
+  if(condition){stop(msg)}
+
+}
