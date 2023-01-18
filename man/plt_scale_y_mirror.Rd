@@ -7,7 +7,7 @@
 plt_scale_y_mirror(breaks, labels = NULL, expand = c(0.01, 0))
 }
 \arguments{
-\item{breaks}{A  vector, that will be the breaks in the axis}
+\item{breaks}{A  vector, that will be the breaks in the y axis}
 
 \item{labels}{A  vector (default = NULL), that will be the labels in the axis, if not provided 'breaks' will be used instead}
 
