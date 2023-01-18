@@ -12,7 +12,7 @@
 #'
 #' @examples
 #'
-#'string <- "begin STRING1 TARGET STRING2 end
+#'string <- "begin STRING1 TARGET STRING2 end"
 #'#Select a string, before a pattern
 #'str_select(string,before = "STRING2")
 #'
