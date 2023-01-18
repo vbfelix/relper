@@ -19,16 +19,3 @@ A character vector.
 \description{
 Select parts of a string: before, after or between patterns.
 }
-\examples{
-
-string <- "example text STRING1 TARGET STRING2 example text"
-
-#Select a string, before a pattern
-str_select(string,before = "STRING2")
-
-#Select a string, after a pattern
-str_select(string,after = "STRING1")
-
-#Select a string, between two patterns
-str_select(string,"STRING1","STRING2")
-}
