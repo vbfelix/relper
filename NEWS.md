@@ -1,3 +1,7 @@
+# relper 2.2.0
+
+* Addition of the function `plt_scale_y_mirror.`
+
 # relper 2.1.0
 
 * Addition of more steps to the function `as_num`, such as removing characters.
