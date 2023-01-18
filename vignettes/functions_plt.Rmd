@@ -20,7 +20,7 @@ library(ggplot2)
 
 ```
 
-`plt_` functions are extensions to `ggplot2` objects. SO let's define a base plot to apply the functions.
+`plt_` functions are extensions to `ggplot2` objects. So let's define a base plot to apply the functions.
 
 ```{r}
 plot <- 
@@ -75,6 +75,18 @@ plot +
   plt_scale_auto(axis = "xy",n_breaks = 5)
 ```
 
+# plt_scale_y_mirror
+
+The goal of `plt_scale_y_mirror` is tomMirror the y axis on the right side.
+
+```{r plt_scale_y_mirror}
+plot_breaks <- seq(0,35,3)
+
+plot_labels <- format_num(plot_breaks,digits = 2)
+
+plot + plt_scale_y_mirror(breaks = plot_breaks, labels = plot_labels)
+```
+
 # plt_theme_map
 
 The goal of `plt_theme_map` is to add a theme appropriate for a map.
@@ -88,7 +100,7 @@ plot + plt_theme_map()
 The goal of `plt_theme_x` is to remove major and minor grid lines from y axis.
 
 ```{r plt_theme_x}
-plot + plt_theme_x()
+plot + plt_theme_x(margin = 1)
 ```
 
 # plt_theme_xy
@@ -96,7 +108,7 @@ plot + plt_theme_x()
 The goal of `plt_theme_xy` is to remove minor grid lines from x and y axis.
 
 ```{r plt_theme_xy}
-plot + plt_theme_xy()
+plot + plt_theme_xy(margin = 2)
 ```
 
 # plt_theme_y
