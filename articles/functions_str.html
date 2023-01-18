@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -145,17 +145,17 @@ in the string.</p>
 <p>The goal of <code>str_select</code> is to select part of a string,
 before, after or between patterns.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"example text STRING1 TARGET STRING2 example text"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">string</span> <span class="op">&lt;-</span> <span class="st">"begin STRING1 TARGET STRING2 end"</span></span></code></pre></div>
 <p>By setting the argument <code>before</code> you select only the part
 of the string before this pattern.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,before <span class="op">=</span> <span class="st">"STRING2"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "example text STRING1 TARGET "</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "begin STRING1 TARGET "</span></span></code></pre></div>
 <p>By setting the argument <code>after</code> you select only the part
 of the string after this pattern.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/str_select.html">str_select</a></span><span class="op">(</span><span class="va">string</span>,after <span class="op">=</span> <span class="st">"STRING1"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] " TARGET STRING2 example text"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] " TARGET STRING2 end"</span></span></code></pre></div>
 <p>By setting the arguments <code>brfore</code> and <code>after</code>
 you select only the part of the string between both patterns.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
