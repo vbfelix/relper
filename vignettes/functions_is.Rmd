@@ -133,3 +133,13 @@ is_string("A")
 is_string(factor("A"))
 
 ```
+
+# is_weekend
+
+The goal of `is_weekend` is to check if a date variable is in a weekend (saturday/sunday).
+
+```{r is_weekend}
+is_weekend(Sys.time())
+
+is_weekend(Sys.Date())
+```
