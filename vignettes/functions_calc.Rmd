@@ -186,62 +186,6 @@ If you set the argument `as_perc` to `TRUE`, the CV will be multiplied by 100.
 calc_cv(x,as_perc = TRUE)
 ```
 
-# calc_date_aux
-
-The goal of `calc_date_aux` is to compute variables derived from date, such as year, month, day, etc.
-
-```{r calc_date_aux}
-dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
-
-df_dt <- data.frame(dt = dt)
-
-calc_date_aux(df_dt,dt) %>% glimpse()
-```
-
-The new variables respective to the date are:
-
- - **mon_abb:** a factor with the abbreviated name of the month;
- - **mon_lbl:** a factor with the complete name of the month;
- - **mon_num:** the number of the month;
- - **day_num:** the number of the day within the month;
- - **year_num:** the number of the year;
- - **week_num:** the number of complete seven day periods that have occurred between the date and January 1st, plus one;
- - **epiweek_num:** the US CDC version of epidemiological week. Starts on Sunday;
- - **isoweek_num:**  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
- - **wday_abb:** a factor with the week day abbreviated name;
- - **wday_lbl:** a factor with the week day complete name.
- 
-# calc_date_diff
-
-The goal of `calc_date_diff` is to compute the difference between two dates.
-
-```{r calc_date_diff}
-date1 <- lubridate::dmy("01/05/1998")
-
-date2 <- lubridate::dmy("21/11/2018")
-
-calc_date_diff(date1 = date1,date2 = date2,unit = "days")
-```
-
-So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509 days.
-
-If you need to add a constant to your difference you can use the argument `add`.
-
-```{r calc_date_diff-add}
-calc_date_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
-```
-
-# calc_date_range
-
-The goal of `calc_date_range` is to compute the range of a date vector, and create a string with the minimal and maximum date.
-
-```{r calc_date_range}
-dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
-
-calc_date_range(dt)
-```
-
-
 # calc_geometric_mean
 
 The goal of `calc_geometric_mean` is to compute the geometric mean, given by:
