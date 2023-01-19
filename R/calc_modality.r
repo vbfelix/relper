@@ -3,7 +3,7 @@
 #' @description The number of modes a dataset has.
 #' It can be used to identify whether a dataset is unimodal, bimodal, or multimodal.
 #'
-#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("x","")
 #'
 #' @return A single value.
 #' @export
@@ -19,11 +19,13 @@
 
 calc_modality <- function(x){
 
-    stop_function(arg = x,type = "numeric")
+  suppressWarnings({
 
     output <- length(relper::calc_mode(x))
 
-    return(output)
+  })
+
+  return(output)
 
 }
 
