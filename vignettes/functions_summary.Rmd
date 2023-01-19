@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup, warning = FALSE, message = FALSE}
 library(relper)
+library(dplyr)
 ```
 
 `summary_` functions summarize data and return metrics related to them.
@@ -37,8 +38,15 @@ The goal of `summary_num` is to summarize numeric variables.
 ```{r summary_num}
 set.seed(123);x <- c(rnorm(10),NA,10)
 
-summary_num(x)
+summary_num(x) %>% glimpse()
 ```
+
+It is also possible to return a minimal version of the summary:
+
+```{r summary_num}
+summary_num(x,minimal = TRUE) %>% glimpse()
+```
+
 
 # summary_seq
 
