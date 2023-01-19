@@ -12,6 +12,8 @@ summary_num(x, type = FALSE, other_means = FALSE)
 \item{type}{A boolean value, if TRUE the function will add metrics related to the variables type (default = TRUE)}
 
 \item{other_means}{A boolean value, if TRUE the function will add the harmonic and geometric means (default = FALSE)}
+
+\item{skewness}{A boolean value, if TRUE the function will add the skewness metrics (default = FALSE)}
 }
 \value{
 A tibble with the summary metrics.
@@ -21,8 +23,6 @@ Summary statistics for numeric variables.
 }
 \details{
 By default the summary statistics are:
-
-\cr
 \cr - min: the minimum;
 \cr - p25: the first quartile;
 \cr - p50: the second quartile (median);
@@ -33,8 +33,6 @@ By default the summary statistics are:
 \cr - cv: the coefficient of variation.
 
 If `type` = TRUE, the following metrics will be added:
-
-\cr
 \cr - n: the number of observations;
 \cr - na: the number of missing values;
 \cr - negative: the number of negative values;
@@ -42,10 +40,15 @@ If `type` = TRUE, the following metrics will be added:
 \cr - positive: the number of positive values.
 
 If `other_means` = TRUE, the following metrics will be added:
-
-\cr
 \cr - geometric_mean: the geometric mean;
 \cr - harmonic_mean: the harmonic mean.
+
+If `skewness` = TRUE, the following metrics will be added:
+\cr - Bowley
+\cr - Fisher-Pearson
+\cr - Kelly
+\cr - Rao
+\cr - Pearson median
 }
 \examples{
 

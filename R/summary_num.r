@@ -3,8 +3,6 @@
 #' @description Summary statistics for numeric variables.
 #'
 #' @details By default the summary statistics are:
-#'
-#' \cr
 #' \cr - min: the minimum;
 #' \cr - p25: the first quartile;
 #' \cr - p50: the second quartile (median);
@@ -15,8 +13,6 @@
 #' \cr - cv: the coefficient of variation.
 #'
 #' If `type` = TRUE, the following metrics will be added:
-#'
-#' \cr
 #' \cr - n: the number of observations;
 #' \cr - na: the number of missing values;
 #' \cr - negative: the number of negative values;
@@ -24,18 +20,24 @@
 #' \cr - positive: the number of positive values.
 #'
 #' If `other_means` = TRUE, the following metrics will be added:
-#'
-#' \cr
 #' \cr - geometric_mean: the geometric mean;
 #' \cr - harmonic_mean: the harmonic mean.
+#'
+#' If `skewness` = TRUE, the following metrics will be added:
+#' \cr - Bowley
+#' \cr - Fisher-Pearson
+#' \cr - Kelly
+#' \cr - Rao
+#' \cr - Pearson median
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_boolean("type",action = "add metrics related to the variables type", default = "TRUE")
 #' @eval arg_boolean("other_means",action = "add the harmonic and geometric means")
 #' @eval arg_boolean("skewness",action = "add the skewness metrics")
 #'
+#'
 #' @return A tibble with the summary metrics.
-#'#'
+#'
 #' @export
 #'
 #' @examples
@@ -101,11 +103,9 @@ summary_num <- function(x, type = FALSE, other_means = FALSE){
         dplyr::tibble(
           bowley_skewness = relper::calc_skewness(x = x,type = "bowley"),
           fisher_pearson_skewness = relper::calc_skewness(x = x,type = "fisher_pearson"),
-          kendall_skewness = relper::calc_skewness(x = x,type = "kendall"),
-          pearson_skewness = relper::calc_skewness(x = x,type = "pearson"),
-          rao_skewness = relper::calc_skewness(x = x,type = "rao"),
-          sample_skewness = relper::calc_skewness(x = x,type = "sample")
-        )
+          kelly_skewness = relper::calc_skewness(x = x,type = "kelly"),
+          pearson_skewness = relper::calc_skewness(x = x,type = "pearson_median"),
+          rao_skewness = relper::calc_skewness(x = x,type = "rao")        )
       )
   }
 
