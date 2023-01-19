@@ -5,6 +5,7 @@
 #'  and whether it is symmetric or skewed.
 #'
 #' @eval arg_vector("x","numeric")
+#' @eval arg_value("type","character",action = "is the type of the skewness to be computed")
 #'
 #' @return A numeric single value with the computed value.
 #' @export
@@ -22,11 +23,13 @@ calc_skewness <-
     type = c("bowley","fisher_pearson","kendall","pearson","rao","sample")
   ){
 
-    type <- tolower(type)
-
     stop_function(arg = x,type = "numeric",length_bigger = 1)
 
     stop_function(arg = type,type = "character",single_value = TRUE)
+
+    type_ref <- c("bowley","fisher_pearson","kendall","pearson","rao","sample")
+
+    stop_one_of(arg = type,one_of = type_ref)
 
     x_min <- min(x,na.rm = TRUE)
 
