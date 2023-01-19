@@ -7,7 +7,7 @@
 calc_modality(x)
 }
 \arguments{
-\item{x}{A numeric vector}
+\item{x}{A  vector}
 }
 \value{
 A single value.
