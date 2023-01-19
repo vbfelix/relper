@@ -16,9 +16,9 @@ test_that("Expect TRUE", {
 
 test_that("Expect FALSE", {
 
-  expect_true(is_weekend(x = date1))
+  expect_false(is_weekend(x = date1))
 
-  expect_true(is_weekend(x = datetime1))
+  expect_false(is_weekend(x = datetime1))
 
 })
 
