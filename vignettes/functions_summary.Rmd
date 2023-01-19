@@ -41,12 +41,17 @@ set.seed(123);x <- c(rnorm(10),NA,10)
 summary_num(x) %>% glimpse()
 ```
 
-It is also possible to return a minimal version of the summary:
+It is also possible to return metrics related to type of values we have:
 
 ```{r summary_num}
-summary_num(x,minimal = TRUE) %>% glimpse()
+summary_num(x,type = TRUE) %>% glimpse()
 ```
 
+We can also add other means.
+
+```{r summary_num}
+summary_num(x,other_means = TRUE) %>% glimpse()
+```
 
 # summary_seq
 
@@ -57,4 +62,14 @@ y <- c(1, 1, 1, 2, 2, 6, 7, 1, 1)
 
 summary_seq(y)
 
+```
+# summary_xy
+The goal of `summary_xy` is to summary two numeric variables, by  computing some metrics such as: Pearson, Kendall and Spearman correlation coefficients.
+
+```{r summary_xy}
+x <- rnorm(100)
+
+y <- rnorm(100)
+
+summary_xy(x,y)
 ```
