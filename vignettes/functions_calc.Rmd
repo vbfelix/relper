@@ -280,14 +280,6 @@ where:
 calc_harmonic_mean(x)
 ```
 
-# calc_mean
-
-The goal of `calc_mean` is to compute the arithmetic, geometric and harmonic mean.
-
-```{r calc_mean}
-calc_mean(x)
-```
-
 # calc_mode
 
 The goal of `calc_mode` is to compute the mode.
