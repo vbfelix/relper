@@ -32,8 +32,13 @@ You can install the developer version of `relper` with:
 ``` r
 remotes::install_github("vbfelix/relper")
 ```
+<!-- # Citation -->
 
+<!-- To generate a citation for the package version you are using, you can run -->
 
+<!-- ``` r -->
+<!-- citation(package = "galah") -->
+<!-- ``` -->
 
 
 
