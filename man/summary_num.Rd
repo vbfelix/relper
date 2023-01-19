@@ -2,23 +2,27 @@
 % Please edit documentation in R/summary_num.r
 \name{summary_num}
 \alias{summary_num}
-\title{Summary  of numeric variables}
+\title{Summary of a numeric variable}
 \usage{
-summary_num(x, minimal = FALSE)
+summary_num(x, type = FALSE, other_means = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector}
 
-\item{minimal}{A boolean value, if TRUE the function will return a minimal version of the summary (default = FALSE)}
+\item{type}{A boolean value, if TRUE the function will add metrics related to the variables type (default = TRUE)}
+
+\item{other_means}{A boolean value, if TRUE the function will add the harmonic and geometric means (default = FALSE)}
 }
 \value{
-A tibble with:
+A tibble with the summary metrics.
+}
+\description{
+Summary statistics for numeric variables.
+}
+\details{
+By default the summary statistics are:
+
 \cr
-\cr - n: the number of observations;
-\cr - na: the number of missing values;
-\cr - negative: the number of negative values;
-\cr - equal_zero: the number of values equal to zero;
-\cr - positive: the number of positive values;
 \cr - min: the minimum;
 \cr - p25: the first quartile;
 \cr - p50: the second quartile (median);
@@ -27,9 +31,21 @@ A tibble with:
 \cr - mode: the peak density value;
 \cr - mean: the mean;
 \cr - cv: the coefficient of variation.
-}
-\description{
-Summary statistics for numeric variables.
+
+If `type` = TRUE, the following metrics will be added:
+
+\cr
+\cr - n: the number of observations;
+\cr - na: the number of missing values;
+\cr - negative: the number of negative values;
+\cr - equal_zero: the number of values equal to zero;
+\cr - positive: the number of positive values.
+
+If `other_means` = TRUE, the following metrics will be added:
+
+\cr
+\cr - geometric_mean: the geometric mean;
+\cr - harmonic_mean: the harmonic mean.
 }
 \examples{
 
