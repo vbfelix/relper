@@ -7,6 +7,15 @@
 #' @eval arg_vector("x","numeric")
 #' @eval arg_value("type","character",action = "is the type of the skewness to be computed")
 #'
+#' @details Currently, it is possible to compute the following metrics:
+#'
+#' \cr
+#' \cr - Bowley
+#' \cr - Fisher-Pearson
+#' \cr - Kelly
+#' \cr - Rao
+#' \cr - Pearson median
+#'
 #' @return A numeric single value with the computed value.
 #' @export
 #'
@@ -20,14 +29,14 @@
 calc_skewness <-
   function(
     x,
-    type = c("bowley","fisher_pearson","kendall","pearson","rao","sample")
+    type = "fisher_pearson"
   ){
 
     stop_function(arg = x,type = "numeric",length_bigger = 1)
 
-    stop_function(arg = type,type = "character",single_value = TRUE)
+    stop_function(arg = type,type = "character")
 
-    type_ref <- c("bowley","fisher_pearson","kendall","pearson","rao","sample")
+    type_ref <- c("bowley","fisher_pearson","kelly","pearson_median","rao")
 
     stop_one_of(arg = type,one_of = type_ref)
 
@@ -39,17 +48,29 @@ calc_skewness <-
 
     x_median <- stats::median(x,na.rm = TRUE)
 
+    x_q3 <- quantile(x = x,probs = .75,na.rm = TRUE)
+
+    x_q1 <- quantile(x = x,probs = .25,na.rm = TRUE)
+
+    x_p90 <- quantile(x = x,probs = .90,na.rm = TRUE)
+
+    x_p10 <- quantile(x = x,probs = .10,na.rm = TRUE)
+
     x_sd <- stats::sd(x,na.rm = TRUE)
 
     n <- length(x)
 
+# bowley ------------------------------------------------------------------
+
     if(type == "bowley"){
 
-      dividend <- 4 * (x_mean - x_median)
+      dividend <- x_q3 + x_q1 - (2 * x_median)
 
-      divisor <- 3 * (x_max - x_min)
+      divisor <- x_q3 - x_q1
 
     }
+
+# fisher pearson ----------------------------------------------------------
 
     if(type == "fisher_pearson"){
 
@@ -59,23 +80,18 @@ calc_skewness <-
 
     }
 
-    if(type == "kendall"){
+# kelly ----------------------------------------------------------
 
-      x_matrix <- matrix(x, ncol = 1)
+    if(type == "kelly"){
 
-      dividend <- 3 * (sum((x_matrix - t(x_matrix))^2,na.rm = TRUE) - n * (n - 1))
+      dividend <- x_p90 + x_p10 - (2 * x_median)
 
-      divisor <- (n * (n - 1)) * (2 * n + 5)
-
-    }
-
-    if(type == "pearson"){
-
-      dividend <- (n / ((n-1) * (n-2))) * sum((x - x_mean)^3,na.rm = TRUE)
-
-      divisor <- x_sd^3
+      divisor <- x_p90 - x_p10
 
     }
+
+
+# rao ----------------------------------------------------------
 
     if(type == "rao"){
 
@@ -85,7 +101,10 @@ calc_skewness <-
 
     }
 
-    if(type == "sample"){
+
+# pearson_median ----------------------------------------------------------
+
+    if(type == "pearson_median"){
 
       dividend <- 3 * (x_mean - x_median)
 
@@ -93,7 +112,11 @@ calc_skewness <-
 
     }
 
+# output ------------------------------------------------------------------
+
     output <- dividend/divisor
+
+    names(output) <- NULL
 
     return(output)
 
