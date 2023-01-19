@@ -4,10 +4,12 @@
 \alias{calc_skewness}
 \title{Skewness computation}
 \usage{
-calc_skewness(x)
+calc_skewness(x, type = "fisher_pearson")
 }
 \arguments{
 \item{x}{A numeric vector}
+
+\item{type}{A character single value, that is the type of the skewness to be computed}
 }
 \value{
 A numeric single value with the computed value.
@@ -16,6 +18,16 @@ A numeric single value with the computed value.
 Computation of the skewness, a measure of the asymmetry.
 This metric can be used to determine the shape of a variable,
  and whether it is symmetric or skewed.
+}
+\details{
+Currently, it is possible to compute the following metrics:
+
+\cr
+\cr - Bowley
+\cr - Fisher-Pearson
+\cr - Kelly
+\cr - Rao
+\cr - Pearson median
 }
 \examples{
 
