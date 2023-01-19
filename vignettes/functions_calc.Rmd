@@ -271,3 +271,92 @@ pd_plot+
     )
 
 ```
+
+# calc_skewness
+
+The goal of `calc_skewness` is to compute a skewness coefficient.
+
+```{r calc_skewness}
+calc_skewness(x = x)
+```
+Where different types of coefficients are provided, they are:
+
+## Bowley
+
+The Bowley skewness coefficient, is given by:
+
+$$\frac{Q_3+Q_1-2Q_2}{Q_3-Q_1},$$
+where:
+
+ - $Q_1$ is the first quartile;
+ - $Q_2$ is the second quartile;
+ - $Q_3$ is the third quartile.
+ 
+```{r calc_skewness-bowley}
+calc_skewness(x = x,type = "bowley")
+```
+## Fisher-Pearson
+
+The Fisher-Pearson skewness coefficient, is given by:
+
+$$\frac{\sum_\limits{i=1}^{n}(x_i - \bar{x})^3}{n*(s_x)^3},$$
+
+where:
+
+ - $\bar{x}$ is the mean of $x$;
+ - $x_i$ is a numeric vector of length $n$;
+ - $s_x$ is the standard deviation of $x$.
+ 
+```{r calc_skewness-fisher_pearson}
+calc_skewness(x = x,type = "fisher_pearson")
+```
+
+
+## Kelly
+
+The Kelly skewness coefficient, is given by:
+
+$$\frac{P_{90}+P_{10}-2Q_2}{P_{90}-P_{10}},$$
+where:
+
+ - $P_{90}$ is the 90th percentile;
+ - $Q_2$ is the second quartile, i.e., $P_{50}$;
+ - $P_{10}$ is the 10th percentile;
+ 
+```{r calc_skewness-kelly}
+calc_skewness(x = x,type = "kelly")
+```
+
+## Pearson median
+
+The Pearson median skewness coefficent, or second skewness coefficient, is given by:
+
+$$\frac{3(\bar{x}- \tilde{x})}{s_x},$$
+
+where:
+
+ - $\bar{x}$ is the mean of $x$;
+ - $\tilde{x}$ is the median of $x$;
+ - $s_x$ is the standard deviation of $x$.
+ 
+```{r calc_skewness-pearson_median}
+calc_skewness(x = x,type = "pearson_median")
+```
+
+## Rao
+
+The Rao skewness coefficient, is given by:
+
+<!-- The Rao's skewness is a measure of skewness that was proposed by C.R. Rao in the paper "Some Measures of Skewness and Kurtosis Based on the Sample Range", published in the journal "The Annals of Mathematical Statistics" in 1948. -->
+
+$$\frac{[n/(n-1)](\bar{x}- \tilde{x})}{\sqrt{(n-2)/n}},$$
+
+where:
+
+ - $\bar{x}$ is the mean of $x$;
+ - $\tilde{x}$ is the median of $x$;
+ - $n$ is the length of $x$.
+ 
+```{r calc_skewness-rao}
+calc_skewness(x = x,type = "rao")
+```
