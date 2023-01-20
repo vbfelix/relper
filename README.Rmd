@@ -21,9 +21,25 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-`relper` is a collection of functions that I used in the last few years of data analysis and could not find in other packages. Its purpose is to provide various functions to aid in data cleaning and visualization.
+Welcome to `relper`, a comprehensive R package designed to make data preparation, cleaning, and visualization a breeze. 
 
-Despite not being a part of the `tidyverse` ecosystem, it has some features that complement those of packages like `dplyr` and `ggplot2`.
+Created by a senior [data analyst](https://vbfelix.github.io/header-about.html), `relper` is a collection of functions that have been refined over the years to provide a comprehensive set of tools for data cleaning and visualization.
+
+With `relper`, you can easily transform and format your data, compute important metrics, check conditions, and even use lovely and varied color palettes. Some of the key features of relper include:
+
+ - **Data transformation and formatting**: offers a variety of functions to help you format your data.
+
+ - **Metrics**: provides functions to compute important metrics, such as the coefficient of variation.
+
+ - **Condition checking**: allows you to check conditions, such as determining if a number is even or odd.
+
+ - **Color palettes**: includes beautiful and varied color palettes, inspired by popular TV series and movies.
+
+ - **ggplot2 integration**: complements ggplot2 by allowing you to add an identity line to a scatter plot and more.
+
+ - **String manipulation**: offers a function to manipulate strings, such as keeping only a specific type of character.
+
+The ultimate goal of `relper` is to simplify data analysis by providing a variety of useful functions that will shorten your steps and make data analysis more efficient. Try `relper`and discover how it can streamline your data analysis workflow.
 
 # Installation
 
