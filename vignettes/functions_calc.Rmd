@@ -212,6 +212,16 @@ where:
 calc_harmonic_mean(x)
 ```
 
+# calc_modality
+
+The goal of `calc_modality` is to compute the number of modes.
+
+```{r calc_modality}
+
+calc_modality(x = c("a","a","b","b"))
+
+```
+
 # calc_mode
 
 The goal of `calc_mode` is to compute the mode.
