@@ -7,8 +7,8 @@
 palette_seq(
   name = c("andor", "badlands", "breaking_bad", "clockwork_orange", "cyberpunk",
     "fleabag", "house_md", "house_of_cards", "loki", "lovecraft_country",
-    "peaky_blinders", "raised_by_wolves", "sabrina", "sandman", "sucession", "the_wire",
-    "tiger_king", "westworld1", "westworld2"),
+    "mare_easttown", "peaky_blinders", "raised_by_wolves", "sabrina", "sandman",
+    "sucession", "the_wire", "tiger_king", "westworld1", "westworld2"),
   reverse = FALSE
 )
 }
@@ -33,6 +33,7 @@ Palettes for a sequential scale, with the following palettes:
  \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
  \cr - loki: 7 colors, inspired by the TV series Loki.
  \cr - lovecraft_country: 9 colors, inspired by the TV series Lovecraft Country.
+ \cr - mare_easttown: 7 colors, inspired by the TV series Mare of EastTown.
  \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
  \cr - sabrina: 8 colors, inspired by the TV series Sabrina.

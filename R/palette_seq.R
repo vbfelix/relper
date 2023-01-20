@@ -12,6 +12,7 @@
 #'  \cr - house_of_cards: 7 colors, inspired by the TV series House of Cards.
 #'  \cr - loki: 7 colors, inspired by the TV series Loki.
 #'  \cr - lovecraft_country: 9 colors, inspired by the TV series Lovecraft Country.
+#'  \cr - mare_easttown: 7 colors, inspired by the TV series Mare of EastTown.
 #'  \cr - peaky_blinders: 8 colors, inspired by the TV Peaky Blinders.
 #'  \cr - raised_by_wolves: 6 colors, inspired by the TV series Raised by Wolves.
 #'  \cr - sabrina: 8 colors, inspired by the TV series Sabrina.
@@ -38,7 +39,8 @@
 palette_seq <-
   function(
     name = c("andor","badlands","breaking_bad","clockwork_orange","cyberpunk",
-             "fleabag","house_md","house_of_cards","loki","lovecraft_country","peaky_blinders","raised_by_wolves",
+             "fleabag","house_md","house_of_cards","loki","lovecraft_country",
+             "mare_easttown","peaky_blinders","raised_by_wolves",
              "sabrina","sandman","sucession","the_wire","tiger_king","westworld1","westworld2"),
     reverse = FALSE
     ){
@@ -77,6 +79,9 @@ palette_seq <-
 
     lovecraft_country <-
       c("#D6B8A0","#846751","#F18F15","#C95910","#9E3D0E","#7D270A","#5A1607","#31140D","#150805")
+
+    mare_easttown <-
+      c("#DDC2B5","#C99E8D","#B48172","#9B665D","#784E4B","#593A3C","#352531")
 
     peaky_blinders <-
       c("#F6F7E5","#D8DBBC","#B1BAA0","#8A9D87","#697C6D","#3F5148","#22322E","#0A1618")
