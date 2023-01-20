@@ -30,11 +30,18 @@
 #' \cr - Rao
 #' \cr - Pearson median
 #'
+#' If `kurtosis` = TRUE, the following metrics will be added:
+#' \cr - Bowley
+#' \cr - Fisher-Pearson
+#' \cr - Kelly
+#' \cr - Rao
+#' \cr - Pearson median
+#'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_boolean("type",action = "add metrics related to the variables type", default = "TRUE")
 #' @eval arg_boolean("other_means",action = "add the harmonic and geometric means")
-#' @eval arg_boolean("skewness",action = "add the skewness metrics")
-#'
+#' @eval arg_boolean("skewness",action = "add the skewness coefficients")
+#' @eval arg_boolean("kurtosis",action = "add the kurtosis coefficients")
 #'
 #' @return A tibble with the summary metrics.
 #'
@@ -49,7 +56,14 @@
 #' summary_num(x)
 #'
 
-summary_num <- function(x, type = FALSE, other_means = FALSE){
+summary_num <-
+  function(
+    x,
+    type = FALSE,
+    other_means = FALSE,
+    skewness = FALSE,
+    kurtosis = FALSE
+    ){
 
   stop_function(arg = x,type = "numeric")
 
@@ -105,11 +119,25 @@ summary_num <- function(x, type = FALSE, other_means = FALSE){
           fisher_pearson_skewness = relper::calc_skewness(x = x,type = "fisher_pearson"),
           kelly_skewness = relper::calc_skewness(x = x,type = "kelly"),
           pearson_skewness = relper::calc_skewness(x = x,type = "pearson_median"),
-          rao_skewness = relper::calc_skewness(x = x,type = "rao")        )
+          rao_skewness = relper::calc_skewness(x = x,type = "rao")
+        )
+      )
+  }
+
+  if(!kurtosis){
+    output <-
+      output %>%
+      dplyr::bind_cols(
+        dplyr::tibble(
+          biased_kurtosis = relper::calc_kurtosis(x = x,type = "biased"),
+          excess_kurtosis = relper::calc_kurtosis(x = x,type = "excess"),
+          percentile_kurtosis = relper::calc_kurtosis(x = x,type = "percentile"),
+          unbiased_kurtosis = relper::calc_kurtosis(x = x,type = "unbiased")
+        )
       )
   }
 
   return(output)
 
-}
+  }
 

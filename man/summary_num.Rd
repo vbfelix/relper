@@ -4,7 +4,13 @@
 \alias{summary_num}
 \title{Summary of a numeric variable}
 \usage{
-summary_num(x, type = FALSE, other_means = FALSE)
+summary_num(
+  x,
+  type = FALSE,
+  other_means = FALSE,
+  skewness = FALSE,
+  kurtosis = FALSE
+)
 }
 \arguments{
 \item{x}{A numeric vector}
@@ -13,7 +19,9 @@ summary_num(x, type = FALSE, other_means = FALSE)
 
 \item{other_means}{A boolean value, if TRUE the function will add the harmonic and geometric means (default = FALSE)}
 
-\item{skewness}{A boolean value, if TRUE the function will add the skewness metrics (default = FALSE)}
+\item{skewness}{A boolean value, if TRUE the function will add the skewness coefficients (default = FALSE)}
+
+\item{kurtosis}{A boolean value, if TRUE the function will add the kurtosis coefficients (default = FALSE)}
 }
 \value{
 A tibble with the summary metrics.
@@ -44,6 +52,13 @@ If `other_means` = TRUE, the following metrics will be added:
 \cr - harmonic_mean: the harmonic mean.
 
 If `skewness` = TRUE, the following metrics will be added:
+\cr - Bowley
+\cr - Fisher-Pearson
+\cr - Kelly
+\cr - Rao
+\cr - Pearson median
+
+If `kurtosis` = TRUE, the following metrics will be added:
 \cr - Bowley
 \cr - Fisher-Pearson
 \cr - Kelly
