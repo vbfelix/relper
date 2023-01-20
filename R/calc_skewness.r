@@ -8,8 +8,6 @@
 #' @eval arg_value("type","character",action = "is the type of the skewness to be computed")
 #'
 #' @details Currently, it is possible to compute the following metrics:
-#'
-#' \cr
 #' \cr - Bowley
 #' \cr - Fisher-Pearson
 #' \cr - Kelly
@@ -26,11 +24,7 @@
 #' calc_skewness(x)
 #'
 
-calc_skewness <-
-  function(
-    x,
-    type = "fisher_pearson"
-  ){
+calc_skewness <- function(x,type = "fisher_pearson"){
 
     stop_function(arg = x,type = "numeric",length_bigger = 1)
 

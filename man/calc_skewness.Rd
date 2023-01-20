@@ -21,8 +21,6 @@ This metric can be used to determine the shape of a variable,
 }
 \details{
 Currently, it is possible to compute the following metrics:
-
-\cr
 \cr - Bowley
 \cr - Fisher-Pearson
 \cr - Kelly
