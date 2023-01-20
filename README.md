@@ -6,13 +6,14 @@
 
 # Introduction
 
-Welcome to `relper`, a comprehensive R package designed to make data
-preparation, cleaning, and visualization a breeze.
+Welcome to `relper`, a R package designed to make data preparation,
+cleaning, and visualization a breeze.
 
-Created by a senior [data
-analyst](https://vbfelix.github.io/header-about.html), `relper` is a
-collection of functions that have been refined over the years to provide
-a comprehensive set of tools for data cleaning and visualization.
+Created by a senior
+[statistician](https://vbfelix.github.io/header-about.html), `relper` is
+a collection of functions that have been refined over the years to
+provide a comprehensive set of tools for data cleaning and
+visualization.
 
 With `relper`, you can easily transform and format your data, compute
 important metrics, check conditions, and even use lovely and varied
@@ -30,10 +31,10 @@ color palettes. Some of the key features of relper include:
 - **Color palettes**: includes beautiful and varied color palettes,
   inspired by popular TV series and movies.
 
-- **ggplot2 integration**: complements ggplot2 by allowing you to add an
-  identity line to a scatter plot and more.
+- **ggplot2 integration**: complements ggplot2, e.g., by allowing you to
+  add an identity line to a scatter plot with single command.
 
-- **String manipulation**: offers a function to manipulate strings, such
+- **String manipulation**: offers functions to manipulate strings, such
   as keeping only a specific type of character.
 
 The ultimate goal of `relper` is to simplify data analysis by providing
