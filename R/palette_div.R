@@ -18,6 +18,7 @@
 #'  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
 #'  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
 #'  \cr - wanda_vision: 9 colors, inspired by the TV series WandaVision.
+#'  \cr - white_lotus: 8 colors, inspired by the TV series The White Lotus.
 #'
 #' @eval arg_value("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
@@ -37,7 +38,7 @@ palette_div <-
     name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","good_place",
              "homeland",
              "laura_dean","racionais","sandman","scott_pilgrim",
-             "the_americans","the_expanse","vox_machina","wanda_vision"),
+             "the_americans","the_expanse","vox_machina","wanda_vision","white_lotus"),
     reverse = FALSE
     ){
 
@@ -94,6 +95,9 @@ palette_div <-
     wanda_vision <-
       c("#501715", "#8F2A1F", "#C14E3E", "#E59177", "#DFCBCC", "#956E83",
         "#266288", "#213E5E", "#181F38")
+
+    white_lotus <-
+      c("#486558","#7C836D","#A2A683","#E4DBB1","#F6F2C9","#D1B98F","#C57B69","#934241")
 
     output <- eval(parse(text = match.arg(name)))
 

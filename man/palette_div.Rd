@@ -7,7 +7,7 @@
 palette_div(
   name = c("arcane", "casa_de_papel", "deadly_class", "dexter", "godzilla_vs_kong",
     "good_place", "homeland", "laura_dean", "racionais", "sandman", "scott_pilgrim",
-    "the_americans", "the_expanse", "vox_machina", "wanda_vision"),
+    "the_americans", "the_expanse", "vox_machina", "wanda_vision", "white_lotus"),
   reverse = FALSE
 )
 }
@@ -38,6 +38,7 @@ Palette for a divergent scale, with the following palettes:
  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
  \cr - wanda_vision: 9 colors, inspired by the TV series WandaVision.
+ \cr - white_lotus: 8 colors, inspired by the TV series The White Lotus.
 }
 \examples{
 
