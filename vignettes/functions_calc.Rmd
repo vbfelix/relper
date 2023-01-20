@@ -212,6 +212,61 @@ where:
 calc_harmonic_mean(x)
 ```
 
+# calc_kurtosis
+
+The goal of `calc_kurtosis` is to compute a kurtosis coefficient.
+
+```{r calc_kurtosis}
+calc_kurtosis(x = x)
+```
+## Biased
+
+The biased kurtosis coefficient, is given by:
+
+$$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4},$$
+
+where:
+
+ - $x_i$ is a numeric vector og length $n$;
+ - $\bar{x}$ is the mean of $x$;
+ - $s_x$ is the standard deviation of $x$.
+
+## Excess
+
+The excess kurtosis coefficient, is given by:
+
+$$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4}-3,$$
+
+where:
+
+ - $x_i$ is a numeric vector og length $n$;
+ - $\bar{x}$ is the mean of $x$;
+ - $s_x$ is the standard deviation of $x$.
+
+## Percentile
+
+The percentile kurtosis coefficient, is given by:
+
+$$\frac{Q_3-Q_1}{P_{90}-P_{10}},$$
+where:
+
+ - $Q_1$ is the first quartile;
+ - $Q_3$ is the third quartile;
+ - $P_{90}$ is the 90th percentile;
+ - $P_{10}$ is the 10th percentile.
+
+## Unbiased
+
+The unbiased kurtosis coefficient, is given by:
+
+$$\frac{(n+1)*n}{(n-1)*(n-2)*(n-3)}*\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4} - 3*\frac{(n-1)^2}{(n-2)*(n-3)},$$
+
+where:
+
+ - $x_i$ is a numeric vector og length $n$;
+ - $\bar{x}$ is the mean of $x$;
+ - $s_x$ is the standard deviation of $x$.
+
 # calc_modality
 
 The goal of `calc_modality` is to compute the number of modes.
