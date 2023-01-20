@@ -8,7 +8,7 @@ palette_qua(
   name = c("bojack_horseman", "cowboy_bebop", "doctor_who", "final_space",
     "gurren_lagann", "heartstopper", "homeland", "kick_ass", "legion", "omitb",
     "moonlight", "ms_marvel", "pulp_fiction", "red_dead", "rick_and_morty", "star_trek",
-    "this_is_us", "versace", "ww84"),
+    "ted_lasso", "this_is_us", "versace", "ww84", "young_sheldon"),
   reverse = FALSE
 )
 }
@@ -39,9 +39,11 @@ Palettes for a qualitative scale, with the following palettes:
  \cr - red_dead: 6 colors, inspired by the video game Red Dead Redemption.
  \cr - rick_and_morty: 8 colors, inspired by the animation Rick and Morty.
  \cr - star_trek: 5 colors, inspired by the TV series Star Trek.
+ \cr - ted_lasso: 5 colors, inspired by the TV series Ted Lasso.
  \cr - this_is_us: 5 colors, inspired by the TV series This is Us.
  \cr - versace: 8 colors, inspired by the TV series Versace.
  \cr - ww84: 6 colors, inspired by the movie Wonder Woman 84.
+ \cr - young_sheldon: 5 colors, inspired by the Tv series Young Sheldon.
 }
 \examples{
 

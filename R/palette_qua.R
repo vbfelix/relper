@@ -18,9 +18,11 @@
 #'  \cr - red_dead: 6 colors, inspired by the video game Red Dead Redemption.
 #'  \cr - rick_and_morty: 8 colors, inspired by the animation Rick and Morty.
 #'  \cr - star_trek: 5 colors, inspired by the TV series Star Trek.
+#'  \cr - ted_lasso: 5 colors, inspired by the TV series Ted Lasso.
 #'  \cr - this_is_us: 5 colors, inspired by the TV series This is Us.
 #'  \cr - versace: 8 colors, inspired by the TV series Versace.
 #'  \cr - ww84: 6 colors, inspired by the movie Wonder Woman 84.
+#'  \cr - young_sheldon: 5 colors, inspired by the Tv series Young Sheldon.
 #'
 #' @eval arg_vector("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
@@ -40,7 +42,8 @@ palette_qua <-
     name = c("bojack_horseman","cowboy_bebop",
              "doctor_who","final_space","gurren_lagann","heartstopper","homeland","kick_ass",
              "legion","omitb","moonlight","ms_marvel","pulp_fiction","red_dead",
-             "rick_and_morty","star_trek","this_is_us","versace","ww84"),
+             "rick_and_morty","star_trek","ted_lasso",
+             "this_is_us","versace","ww84","young_sheldon"),
     reverse = FALSE
     ){
 
@@ -99,6 +102,9 @@ palette_qua <-
       c("#100D1B", "#CC2F58", "#242E51", "#BD7474", "#DAC4C0", "#6C6A87",
         "#823D4C", "#8E9CB5")
 
+    ted_lasso <-
+      c("#094895","#6EA540","#AF453B","#C4AF9C","#596172")
+
     this_is_us <-
       c("#2E2C33", "#E1AE1D", "#614330", "#968A82", "#E4B999")
 
@@ -107,6 +113,9 @@ palette_qua <-
 
     ww84 <-
       c("#942415","#15D374","#241210","#E8D025","#BE737B","#86EDC9")
+
+    young_sheldon <-
+      c("#C51C1E","#3D6B5C","#CB9041","#51828B","#8C4D32")
 
     output <- eval(parse(text = match.arg(name)))
 
