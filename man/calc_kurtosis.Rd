@@ -4,10 +4,12 @@
 \alias{calc_kurtosis}
 \title{Kurtosis computation}
 \usage{
-calc_kurtosis(x)
+calc_kurtosis(x, type = "unbiased")
 }
 \arguments{
 \item{x}{A numeric vector}
+
+\item{type}{A character single value, that is the type of the kurtosis to be computed}
 }
 \value{
 A numeric single value with the computed value.
@@ -18,6 +20,13 @@ Computation of the kurtosis, a measure of the "peakedness".
   and whether it is platykurtic (flatter than a normal distribution),
    mesokurtic (same kurtosis as a normal distribution),
     or leptokurtic (more peaked than a normal distribution).
+}
+\details{
+Currently, it is possible to compute the following metrics:
+\cr - Biased
+\cr - Excess
+\cr - Percentile
+\cr - Unbiased
 }
 \examples{
 
