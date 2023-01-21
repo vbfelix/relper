@@ -10,10 +10,10 @@
 #' @eval arg_value("type","character",action = "is the type of the kurtosis to be computed")
 #'
 #' @details Currently, it is possible to compute the following metrics:
-#' \cr - Biased
-#' \cr - Excess
-#' \cr - Percentile
-#' \cr - Unbiased
+#' \cr - Biased kurtosis coefficient
+#' \cr - Excess kurtosis coefficient
+#' \cr - Percentile kurtosis coefficient
+#' \cr - Unbiased kurtosis coefficient
 #'
 #' @return A numeric single value with the computed value.
 #' @export
