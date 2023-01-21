@@ -18,7 +18,7 @@
 
 is_integer<- function(x){
 
-  stop_function(arg = x,type = "numeric")
+  # stop_function(arg = x,type = "numeric")
 
   output <- x %% 1 == 0
 

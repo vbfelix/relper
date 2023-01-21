@@ -33,6 +33,32 @@ set.seed(1234);df <-
   )
 ```
 
+# stat_normality
+
+The goal of `stat_normality` is to test the normality of the data.
+
+```{r stat_normality}
+set.seed(123);x <- rnorm(100)
+
+stat_normality(x,digits = 5)
+```
+You can also print as a `gt` table, by setting the argument `print` to `TRUE`.
+
+```{r stat_normality-save, echo = FALSE,fig.height=4}
+
+# gt::gtsave(
+#   data = stat_normality(x = x,print = TRUE,digits = 5),
+#   filename = "stat_normality.png",
+#   path = file.path(getwd(),"figs"),
+#   vwidth = 1500,
+#   vheight = 1000
+#   )
+
+```
+
+
+![Result of the function stat_normality.](./figs/stat_normality.png){ height=10% }
+
 
 # stat_two_cat
 

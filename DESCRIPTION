@@ -24,7 +24,8 @@ Imports:
     rlang,
     scales,
     tidyselect,
-    forcats
+    forcats,
+    nortest
 Suggests: 
     knitr,
     rmarkdown,
