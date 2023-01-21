@@ -23,10 +23,10 @@ Computation of the kurtosis, a measure of the "peakedness".
 }
 \details{
 Currently, it is possible to compute the following metrics:
-\cr - Biased
-\cr - Excess
-\cr - Percentile
-\cr - Unbiased
+\cr - Biased kurtosis coefficient
+\cr - Excess kurtosis coefficient
+\cr - Percentile kurtosis coefficient
+\cr - Unbiased kurtosis coefficient
 }
 \examples{
 

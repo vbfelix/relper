@@ -21,11 +21,11 @@ This metric can be used to determine the shape of a variable,
 }
 \details{
 Currently, it is possible to compute the following metrics:
-\cr - Bowley
-\cr - Fisher-Pearson
-\cr - Kelly
-\cr - Rao
-\cr - Pearson median
+\cr - Bowley skewness coefficient
+\cr - Fisher-Pearson skewness coefficient
+\cr - Kelly skewness coefficient
+\cr - Rao skewness coefficient
+\cr - Pearson median skewness coefficient
 }
 \examples{
 
