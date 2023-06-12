@@ -1,5 +1,7 @@
 # relper 3.0.1
 
+* Hotfix of the function `summary_num.`
+
 # relper 3.0.0
 
 * Addition of the function `calc_association.`
