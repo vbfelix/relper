@@ -3,8 +3,11 @@ title: "Functions calc_"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Functions calc_}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r, include = FALSE}
@@ -24,14 +27,15 @@ library(ggplot2)
 
 # calc_acf
 
-The goal of `calc_acf` is to compute the auto-correlation function, given by:
+The goal of `calc_acf` is to compute the auto-correlation function,
+given by:
 
 $$\frac{\sum_\limits{t = k+1}^{n}(x_t - \bar{x})(x_{t-k} - \bar{x})}{\sum_\limits{t = 1}^{n} (x_t - \bar{x})^2 },$$
 where:
 
- - $x_t$ is a time series of length $n$;
- - $x_{t-k}$ is a shifted time series by $k$ units in time;
- - $\bar{x}$ is the average of the time series.
+-   $x_t$ is a time series of length $n$;
+-   $x_{t-k}$ is a shifted time series by $k$ units in time;
+-   $\bar{x}$ is the average of the time series.
 
 ```{r calc_acf}
 x <- rnorm(100)
@@ -40,13 +44,14 @@ calc_acf(x)
 
 ```
 
-If you pass a second vector in the argument `y` the cross-correlation will be computed instead:
+If you pass a second vector in the argument `y` the cross-correlation
+will be computed instead:
 
 $$\frac{n \left( \sum_\limits{t = 1}^{n}x_ty_t \right) - \left[\left(\sum_\limits{t = 1}^{n}x_t \right) \left(\sum_\limits{t = 1}^{n}y_t\right) \right]}{\sqrt{\left[n \left( \sum_\limits{t = 1}^{n}x_t^2 \right) - \left( \sum_\limits{t = 1}^{n}x_t \right)^2\right]\left[n \left( \sum_\limits{t = 1}^{n}y_t^2 \right) - \left( \sum_\limits{t = 1}^{n}y_t \right)^2\right]}},$$
 where:
 
- - $x_t$ is a time series of length $n$;
- - $y_t$ is a time series of length $n$.
+-   $x_t$ is a time series of length $n$;
+-   $y_t$ is a time series of length $n$.
 
 ```{r calc_acf-ccf}
 y <- rexp(100)
@@ -54,6 +59,57 @@ y <- rexp(100)
 calc_acf(x,y)
 
 ```
+
+# calc_association
+
+The goal of `calc_association` is to compute associations metrics.
+
+## Contingency
+
+Contingency is a measure of association between two nominal variables. I
+It ranges from 0 and 1, where 0 indicates no relationship and 1
+indicates perfect association, and is given by:
+
+$$\sqrt{\frac{X^2}{n+X^2}},$$
+
+where:
+
+-   $X^2$ the chi-square statistic;
+-   $n$ is the sample size.
+
+## Cramér's V
+
+Cramér's V is a measure of association between two nominal variables. I
+It ranges from 0 and 1, where 0 indicates no relationship and 1
+indicates perfect association, and is given by:
+
+$$\sqrt{\frac{X^2}{n\min(r-1,c-1)}},$$
+
+where:
+
+-   $X^2$ the chi-square statistic;
+-   $n$ is the sample size;
+-   $r$ is the number of rows in the contingency table;
+-   $c$ is the number of columns in the contingency table.
+
+```{r calc_association-cramers-v}
+calc_association(mtcars$am,mtcars$vs,type = "cramers-v")
+```
+
+## Phi
+
+Phi is a measure of association between two nominal dichotomous
+variables, considering a marginal table of the variables given by:
+
+|           | **y = 0** |  **y = 1** | **Total** |
+|-----------|-----------|------------|-----------|
+| **x = 0** |  $n_{00}$ |  $n_{01}$  |  $n_{0.}$ |
+| **x = 1** |  $n_{10}$ |  $n_{11}$  |  $n_{1.}$ |
+| **Total** |  $n_{.0}$ |  $n_{.1}$  |  $n$      |
+
+Then the phi coefficient is given by:
+
+$$\frac{n_{11}*n_{00} - n_{10}*n_{01} }{\sqrt{n_{1.}*n_{0.}*n_{.1}*n_{.0}}}.$$
 
 # calc_auc
 
@@ -101,7 +157,8 @@ ggplot(aes(x,y))+
   scale_y_continuous(expand = c(0,0))
 ```
 
-But you can define the argument `limits` to get the AUC of that respective range.
+But you can define the argument `limits` to get the AUC of that
+respective range.
 
 ```{r calc_auc-95}
 #from -2 to 2
@@ -145,42 +202,24 @@ df_auc %>%
   scale_y_continuous(expand = c(0,0))
 ```
 
-# calc_cramers_v
-
-The goal of `calc_cramers_v` is to compute Cramer's V, given by:
-
-$$\sqrt{\frac{X^2}{n\min(r-1,c-1)}},$$
-where:
-
-  - $X^2$ the chi-square statistic;
-  - $n$ is the sample size;
-  - $r$ is the number of rows in the contingency table;
-  - $c$ is the number of columns in the contingency table.
-
-```{r calc_cramers_v}
-m <- matrix(c(12, 5, 7, 7), ncol = 2)
-
-chi_square <- chisq.test(m)
-
-calc_cramers_v(chi_square)
-```
-
 # calc_cv
-The goal of `calc_cv` is to compute the coefficient of variation (CV), given by:
 
-$$\frac{s}{\bar{x}},$$
-where:
+The goal of `calc_cv` is to compute the coefficient of variation (CV),
+given by:
 
- - $s$ is the sample standard deviation;
- - $\bar{x}$ is the sample mean.
- 
+$$\frac{s}{\bar{x}},$$ where:
+
+-   $s$ is the sample standard deviation;
+-   $\bar{x}$ is the sample mean.
+
 ```{r calc_cv}
 set.seed(123);x <- rexp(n = 100)
 
 calc_cv(x)
 ```
 
-If you set the argument `as_perc` to `TRUE`, the CV will be multiplied by 100.
+If you set the argument `as_perc` to `TRUE`, the CV will be multiplied
+by 100.
 
 ```{r calc_cv-as-perc}
 calc_cv(x,as_perc = TRUE)
@@ -188,12 +227,13 @@ calc_cv(x,as_perc = TRUE)
 
 # calc_geometric_mean
 
-The goal of `calc_geometric_mean` is to compute the geometric mean, given by:
+The goal of `calc_geometric_mean` is to compute the geometric mean,
+given by:
 
 $$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
 where:
 
- - $x_i$ is a numeric vector of length $n$.
+-   $x_i$ is a numeric vector of length $n$.
 
 ```{r calc_geometric_mean}
 calc_geometric_mean(x)
@@ -201,12 +241,12 @@ calc_geometric_mean(x)
 
 # calc_harmonic_mean
 
-The goal of `calc_harmonic_mean` is to compute the harmonic mean, given by:
+The goal of `calc_harmonic_mean` is to compute the harmonic mean, given
+by:
 
-$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$
-where:
+$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$ where:
 
- - $x_i$ is a numeric vector of length $n$.
+-   $x_i$ is a numeric vector of length $n$.
 
 ```{r calc_harmonic_mean}
 calc_harmonic_mean(x)
@@ -219,6 +259,7 @@ The goal of `calc_kurtosis` is to compute a kurtosis coefficient.
 ```{r calc_kurtosis}
 calc_kurtosis(x = x)
 ```
+
 ## Biased
 
 The biased kurtosis coefficient, is given by:
@@ -227,9 +268,9 @@ $$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4},$$
 
 where:
 
- - $x_i$ is a numeric vector og length $n$;
- - $\bar{x}$ is the mean of $x$;
- - $s_x$ is the standard deviation of $x$.
+-   $x_i$ is a numeric vector og length $n$;
+-   $\bar{x}$ is the mean of $x$;
+-   $s_x$ is the standard deviation of $x$.
 
 ## Excess
 
@@ -239,21 +280,20 @@ $$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4}-3,$$
 
 where:
 
- - $x_i$ is a numeric vector og length $n$;
- - $\bar{x}$ is the mean of $x$;
- - $s_x$ is the standard deviation of $x$.
+-   $x_i$ is a numeric vector og length $n$;
+-   $\bar{x}$ is the mean of $x$;
+-   $s_x$ is the standard deviation of $x$.
 
 ## Percentile
 
 The percentile kurtosis coefficient, is given by:
 
-$$\frac{Q_3-Q_1}{P_{90}-P_{10}},$$
-where:
+$$\frac{Q_3-Q_1}{P_{90}-P_{10}},$$ where:
 
- - $Q_1$ is the first quartile;
- - $Q_3$ is the third quartile;
- - $P_{90}$ is the 90th percentile;
- - $P_{10}$ is the 10th percentile.
+-   $Q_1$ is the first quartile;
+-   $Q_3$ is the third quartile;
+-   $P_{90}$ is the 90th percentile;
+-   $P_{10}$ is the 10th percentile.
 
 ## Unbiased
 
@@ -263,9 +303,9 @@ $$\frac{(n+1)*n}{(n-1)*(n-2)*(n-3)}*\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{
 
 where:
 
- - $x_i$ is a numeric vector og length $n$;
- - $\bar{x}$ is the mean of $x$;
- - $s_x$ is the standard deviation of $x$.
+-   $x_i$ is a numeric vector og length $n$;
+-   $\bar{x}$ is the mean of $x$;
+-   $s_x$ is the standard deviation of $x$.
 
 # calc_modality
 
@@ -287,14 +327,18 @@ set.seed(123);cat_var <- sample(letters,100,replace = TRUE)
 table(cat_var)
 
 ```
-We can see that the letter "*y*" is the one that appears the most, so it is the mode of the variable.
+
+We can see that the letter "*y*" is the one that appears the most, so it
+is the mode of the variable.
 
 ```{r calc_mode}
 calc_mode(cat_var)
 ```
 
 # calc_peak_density
-The goal of `calc_peak_density` is to compute the peak density value of a numeric value.
+
+The goal of `calc_peak_density` is to compute the peak density value of
+a numeric value.
 
 ```{r calc_peak_density-base-plot,echo = F}
 
@@ -311,7 +355,8 @@ pd_plot
 
 ```
 
-Let's say we eant to discover what value is the peak in the density above.
+Let's say we eant to discover what value is the peak in the density
+above.
 
 ```{r calc_peak_density}
 calc_peak_density(x)
@@ -344,22 +389,23 @@ The goal of `calc_skewness` is to compute a skewness coefficient.
 ```{r calc_skewness}
 calc_skewness(x = x)
 ```
+
 Where different types of coefficients are provided, they are:
 
 ## Bowley
 
 The Bowley skewness coefficient, is given by:
 
-$$\frac{Q_3+Q_1-2Q_2}{Q_3-Q_1},$$
-where:
+$$\frac{Q_3+Q_1-2Q_2}{Q_3-Q_1},$$ where:
 
- - $Q_1$ is the first quartile;
- - $Q_2$ is the second quartile;
- - $Q_3$ is the third quartile.
- 
+-   $Q_1$ is the first quartile;
+-   $Q_2$ is the second quartile;
+-   $Q_3$ is the third quartile.
+
 ```{r calc_skewness-bowley}
 calc_skewness(x = x,type = "bowley")
 ```
+
 ## Fisher-Pearson
 
 The Fisher-Pearson skewness coefficient, is given by:
@@ -368,42 +414,41 @@ $$\frac{\sum_\limits{i=1}^{n}(x_i - \bar{x})^3}{n*(s_x)^3},$$
 
 where:
 
- - $\bar{x}$ is the mean of $x$;
- - $x_i$ is a numeric vector of length $n$;
- - $s_x$ is the standard deviation of $x$.
- 
+-   $\bar{x}$ is the mean of $x$;
+-   $x_i$ is a numeric vector of length $n$;
+-   $s_x$ is the standard deviation of $x$.
+
 ```{r calc_skewness-fisher_pearson}
 calc_skewness(x = x,type = "fisher_pearson")
 ```
-
 
 ## Kelly
 
 The Kelly skewness coefficient, is given by:
 
-$$\frac{P_{90}+P_{10}-2Q_2}{P_{90}-P_{10}},$$
-where:
+$$\frac{P_{90}+P_{10}-2Q_2}{P_{90}-P_{10}},$$ where:
 
- - $P_{90}$ is the 90th percentile;
- - $Q_2$ is the second quartile, i.e., $P_{50}$;
- - $P_{10}$ is the 10th percentile;
- 
+-   $P_{90}$ is the 90th percentile;
+-   $Q_2$ is the second quartile, i.e., $P_{50}$;
+-   $P_{10}$ is the 10th percentile;
+
 ```{r calc_skewness-kelly}
 calc_skewness(x = x,type = "kelly")
 ```
 
 ## Pearson median
 
-The Pearson median skewness coefficent, or second skewness coefficient, is given by:
+The Pearson median skewness coefficent, or second skewness coefficient,
+is given by:
 
 $$\frac{3(\bar{x}- \tilde{x})}{s_x},$$
 
 where:
 
- - $\bar{x}$ is the mean of $x$;
- - $\tilde{x}$ is the median of $x$;
- - $s_x$ is the standard deviation of $x$.
- 
+-   $\bar{x}$ is the mean of $x$;
+-   $\tilde{x}$ is the median of $x$;
+-   $s_x$ is the standard deviation of $x$.
+
 ```{r calc_skewness-pearson_median}
 calc_skewness(x = x,type = "pearson_median")
 ```
@@ -418,10 +463,10 @@ $$\frac{[n/(n-1)](\bar{x}- \tilde{x})}{\sqrt{(n-2)/n}},$$
 
 where:
 
- - $\bar{x}$ is the mean of $x$;
- - $\tilde{x}$ is the median of $x$;
- - $n$ is the length of $x$.
- 
+-   $\bar{x}$ is the mean of $x$;
+-   $\tilde{x}$ is the median of $x$;
+-   $n$ is the length of $x$.
+
 ```{r calc_skewness-rao}
 calc_skewness(x = x,type = "rao")
 ```
