@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,70 +119,51 @@ variables.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,<span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in log(x): NaNs produced</span></span>
 <span><span class="co">#&gt; Rows: 1</span></span>
-<span><span class="co">#&gt; Columns: 16</span></span>
-<span><span class="co">#&gt; $ n                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 12</span></span>
-<span><span class="co">#&gt; $ na                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1</span></span>
-<span><span class="co">#&gt; $ negative                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 5</span></span>
-<span><span class="co">#&gt; $ equal_zero              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0</span></span>
-<span><span class="co">#&gt; $ positive                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 6</span></span>
-<span><span class="co">#&gt; $ geometric_mean          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.6946152</span></span>
-<span><span class="co">#&gt; $ harmonic_mean           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.7436103</span></span>
-<span><span class="co">#&gt; $ bowley_skewness         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.2417419</span></span>
-<span><span class="co">#&gt; $ fisher_pearson_skewness <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.935</span></span>
-<span><span class="co">#&gt; $ kelly_skewness          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3693696</span></span>
-<span><span class="co">#&gt; $ pearson_skewness        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.8697734</span></span>
-<span><span class="co">#&gt; $ rao_skewness            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.083205</span></span>
-<span><span class="co">#&gt; $ biased_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 5.822098</span></span>
-<span><span class="co">#&gt; $ excess_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2.822098</span></span>
-<span><span class="co">#&gt; $ percentile_kurtosis     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3149319</span></span>
-<span><span class="co">#&gt; $ unbiased_kurtosis       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -3.115912</span></span></code></pre></div>
+<span><span class="co">#&gt; Columns: 8</span></span>
+<span><span class="co">#&gt; $ min  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -1.265061</span></span>
+<span><span class="co">#&gt; $ p25  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.5030688</span></span>
+<span><span class="co">#&gt; $ p50  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.07050839</span></span>
+<span><span class="co">#&gt; $ p75  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.009812</span></span>
+<span><span class="co">#&gt; $ max  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 10</span></span>
+<span><span class="co">#&gt; $ mode <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.2678934</span></span>
+<span><span class="co">#&gt; $ mean <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.9769324</span></span>
+<span><span class="co">#&gt; $ cv   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3.2</span></span></code></pre></div>
 <p>It is also possible to return metrics related to type of values we
 have:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span>,type <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in log(x): NaNs produced</span></span>
 <span><span class="co">#&gt; Rows: 1</span></span>
-<span><span class="co">#&gt; Columns: 19</span></span>
-<span><span class="co">#&gt; $ min                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -1.265061</span></span>
-<span><span class="co">#&gt; $ p25                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.5030688</span></span>
-<span><span class="co">#&gt; $ p50                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.07050839</span></span>
-<span><span class="co">#&gt; $ p75                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.009812</span></span>
-<span><span class="co">#&gt; $ max                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 10</span></span>
-<span><span class="co">#&gt; $ mode                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.2678934</span></span>
-<span><span class="co">#&gt; $ mean                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.9769324</span></span>
-<span><span class="co">#&gt; $ cv                      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3.2</span></span>
-<span><span class="co">#&gt; $ geometric_mean          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.6946152</span></span>
-<span><span class="co">#&gt; $ harmonic_mean           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.7436103</span></span>
-<span><span class="co">#&gt; $ bowley_skewness         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.2417419</span></span>
-<span><span class="co">#&gt; $ fisher_pearson_skewness <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.935</span></span>
-<span><span class="co">#&gt; $ kelly_skewness          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3693696</span></span>
-<span><span class="co">#&gt; $ pearson_skewness        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.8697734</span></span>
-<span><span class="co">#&gt; $ rao_skewness            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.083205</span></span>
-<span><span class="co">#&gt; $ biased_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 5.822098</span></span>
-<span><span class="co">#&gt; $ excess_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2.822098</span></span>
-<span><span class="co">#&gt; $ percentile_kurtosis     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3149319</span></span>
-<span><span class="co">#&gt; $ unbiased_kurtosis       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -3.115912</span></span></code></pre></div>
+<span><span class="co">#&gt; Columns: 13</span></span>
+<span><span class="co">#&gt; $ n          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 12</span></span>
+<span><span class="co">#&gt; $ na         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1</span></span>
+<span><span class="co">#&gt; $ negative   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 5</span></span>
+<span><span class="co">#&gt; $ equal_zero <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0</span></span>
+<span><span class="co">#&gt; $ positive   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 6</span></span>
+<span><span class="co">#&gt; $ min        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -1.265061</span></span>
+<span><span class="co">#&gt; $ p25        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.5030688</span></span>
+<span><span class="co">#&gt; $ p50        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.07050839</span></span>
+<span><span class="co">#&gt; $ p75        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.009812</span></span>
+<span><span class="co">#&gt; $ max        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 10</span></span>
+<span><span class="co">#&gt; $ mode       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.2678934</span></span>
+<span><span class="co">#&gt; $ mean       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.9769324</span></span>
+<span><span class="co">#&gt; $ cv         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3.2</span></span></code></pre></div>
 <p>We can also add other means.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/summary_num.html">summary_num</a></span><span class="op">(</span><span class="va">x</span>,other_means <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in log(x): NaNs produced</span></span>
 <span><span class="co">#&gt; Rows: 1</span></span>
-<span><span class="co">#&gt; Columns: 14</span></span>
-<span><span class="co">#&gt; $ n                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 12</span></span>
-<span><span class="co">#&gt; $ na                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1</span></span>
-<span><span class="co">#&gt; $ negative                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 5</span></span>
-<span><span class="co">#&gt; $ equal_zero              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0</span></span>
-<span><span class="co">#&gt; $ positive                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 6</span></span>
-<span><span class="co">#&gt; $ bowley_skewness         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.2417419</span></span>
-<span><span class="co">#&gt; $ fisher_pearson_skewness <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.935</span></span>
-<span><span class="co">#&gt; $ kelly_skewness          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3693696</span></span>
-<span><span class="co">#&gt; $ pearson_skewness        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.8697734</span></span>
-<span><span class="co">#&gt; $ rao_skewness            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.083205</span></span>
-<span><span class="co">#&gt; $ biased_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 5.822098</span></span>
-<span><span class="co">#&gt; $ excess_kurtosis         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2.822098</span></span>
-<span><span class="co">#&gt; $ percentile_kurtosis     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.3149319</span></span>
-<span><span class="co">#&gt; $ unbiased_kurtosis       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -3.115912</span></span></code></pre></div>
+<span><span class="co">#&gt; Columns: 10</span></span>
+<span><span class="co">#&gt; $ min            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -1.265061</span></span>
+<span><span class="co">#&gt; $ p25            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.5030688</span></span>
+<span><span class="co">#&gt; $ p50            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.07050839</span></span>
+<span><span class="co">#&gt; $ p75            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.009812</span></span>
+<span><span class="co">#&gt; $ max            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 10</span></span>
+<span><span class="co">#&gt; $ mode           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> -0.2678934</span></span>
+<span><span class="co">#&gt; $ mean           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.9769324</span></span>
+<span><span class="co">#&gt; $ cv             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3.2</span></span>
+<span><span class="co">#&gt; $ geometric_mean <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.6946152</span></span>
+<span><span class="co">#&gt; $ harmonic_mean  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.7436103</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary_seq">summary_seq<a class="anchor" aria-label="anchor" href="#summary_seq"></a>
