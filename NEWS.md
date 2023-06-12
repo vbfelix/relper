@@ -1,3 +1,25 @@
+# relper 3.0.0
+
+* Addition of the function `calc_association.`
+
+* Addition of the function `calc_correlation.`
+
+* Addition of the function `calc_kurtosis.`
+
+* Addition of the function `calc_modality.`
+
+* Addition of the function `calc_skewness.`
+
+* Addition of the function `is_weekend.`
+
+* Addition of the function `stat_normality.`
+
+* Addition of the function `summary_xy.`
+
+* Renaming of the function `calc_date_aux()` to `dttm_vars.`
+
+* Renaming of the function `calc_date_diff()` to `dttm_diff.`
+
 # relper 2.2.0
 
 * Addition of the function `plt_scale_y_mirror.`
