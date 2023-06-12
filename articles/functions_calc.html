@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/functions_as.html">Functions as_</a>
     <a class="dropdown-item" href="../articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="../articles/functions_dttm.html">Functions dttm_</a>
     <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
@@ -119,19 +120,19 @@ time series.</li>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;          acf   lag</span></span>
-<span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1            0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.060<span style="text-decoration: underline;">8</span>       1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.029</span><span style="color: #BB0000; text-decoration: underline;">6</span>       2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.130        3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.143        4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.064</span><span style="color: #BB0000; text-decoration: underline;">0</span>       5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.000<span style="text-decoration: underline;">101</span>     6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.190        7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.037</span><span style="color: #BB0000; text-decoration: underline;">0</span>       8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.212</span>        9</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 11 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt;         acf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1           0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.064<span style="text-decoration: underline;">5</span>      1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.120</span>       2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.148</span>       3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.107       4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.002</span><span style="color: #BB0000; text-decoration: underline;">34</span>     5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.074</span><span style="color: #BB0000; text-decoration: underline;">5</span>      6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.136</span>       7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.200</span>       8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.039<span style="text-decoration: underline;">1</span>      9</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
 <p><span class="math display">\[\frac{n \left( \sum_\limits{t =
@@ -154,76 +155,49 @@ where:</p>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;         ccf   lag</span></span>
-<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.020<span style="text-decoration: underline;">9</span>    -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.043</span><span style="color: #BB0000; text-decoration: underline;">3</span>    -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.084<span style="text-decoration: underline;">6</span>    -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.159</span>     -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.030</span><span style="color: #BB0000; text-decoration: underline;">4</span>    -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.114</span>     -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.185</span>     -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.008</span><span style="color: #BB0000; text-decoration: underline;">00</span>    -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.047<span style="text-decoration: underline;">8</span>     -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.131</span>      -<span style="color: #BB0000;">7</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 23 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt;        ccf   lag</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.179</span>    -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.050</span><span style="color: #BB0000; text-decoration: underline;">1</span>   -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.090<span style="text-decoration: underline;">3</span>   -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.202    -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.083</span><span style="color: #BB0000; text-decoration: underline;">6</span>   -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.043</span><span style="color: #BB0000; text-decoration: underline;">2</span>   -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.036<span style="text-decoration: underline;">4</span>   -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.127     -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.166</span>     -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.130</span>     -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="calc_auc">calc_auc<a class="anchor" aria-label="anchor" href="#calc_auc"></a>
+<h2 id="calc_association">calc_association<a class="anchor" aria-label="anchor" href="#calc_association"></a>
 </h2>
-<p>The goal of <code>calc_auc</code> is to compute the area under a
-curve (AUC).</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="fl">3</span>,l <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">dnorm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
-<p><img src="functions_calc_files/figure-html/calc_auc-base-plot-1.png" width="700"></p>
-<p>The function default compute the area considering the range of
-<code>x</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#from min to max of x</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] -3  3</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.9972835</span></span></code></pre></div>
-<p><img src="functions_calc_files/figure-html/calc_auc-plot-99-1.png" width="700"></p>
-<p>But you can define the argument <code>limits</code> to get the AUC of
-that respective range.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#from -2 to 2</span></span>
-<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.9544345</span></span></code></pre></div>
-<p><img src="functions_calc_files/figure-html/calc_auc-plot-95-1.png" width="700"></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#from -1 to 1</span></span>
-<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.6825416</span></span></code></pre></div>
-<p><img src="functions_calc_files/figure-html/calc_auc-plot-68-1.png" width="700"></p>
+<p>The goal of <code>calc_association</code> is to compute associations
+metrics.</p>
+<div class="section level3">
+<h3 id="contingency">Contingency<a class="anchor" aria-label="anchor" href="#contingency"></a>
+</h3>
+<p>Contingency is a measure of association between two nominal
+variables. I It ranges from 0 and 1, where 0 indicates no relationship
+and 1 indicates perfect association, and is given by:</p>
+<p><span class="math display">\[\sqrt{\frac{X^2}{n+X^2}},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(X^2\)</span> the chi-square
+statistic;</li>
+<li>
+<span class="math inline">\(n\)</span> is the sample size.</li>
+</ul>
 </div>
-<div class="section level2">
-<h2 id="calc_corr">calc_corr<a class="anchor" aria-label="anchor" href="#calc_corr"></a>
-</h2>
-<p>The goal of <code>calc_corr</code> is to compute Pearson, Kendall and
-Spearman correlation coefficients.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/calc_corr.html">calc_corr</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 3</span></span></span>
-<span><span class="co">#&gt;   pearson kendall spearman</span></span>
-<span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   0.124  0.070<span style="text-decoration: underline;">7</span>   0.093<span style="text-decoration: underline;">8</span></span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="calc_cramers_v">calc_cramers_v<a class="anchor" aria-label="anchor" href="#calc_cramers_v"></a>
-</h2>
-<p>The goal of <code>calc_cramers_v</code> is to compute Cramer’s V,
-given by:</p>
-<p><span class="math display">\[\sqrt{\frac{X^2}{n\min(r-1,c-1)}},\]</span>
-where:</p>
+<div class="section level3">
+<h3 id="cramérs-v">Cramér’s V<a class="anchor" aria-label="anchor" href="#cram%C3%A9rs-v"></a>
+</h3>
+<p>Cramér’s V is a measure of association between two nominal variables.
+I It ranges from 0 and 1, where 0 indicates no relationship and 1
+indicates perfect association, and is given by:</p>
+<p><span class="math display">\[\sqrt{\frac{X^2}{n\min(r-1,c-1)}},\]</span></p>
+<p>where:</p>
 <ul>
 <li>
 <span class="math inline">\(X^2\)</span> the chi-square
@@ -237,13 +211,162 @@ contingency table;</li>
 <span class="math inline">\(c\)</span> is the number of columns in
 the contingency table.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">12</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_association.html">calc_association</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">am</span>,<span class="va">mtcars</span><span class="op">$</span><span class="va">vs</span>,type <span class="op">=</span> <span class="st">"cramers-v"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.1042136</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="phi">Phi<a class="anchor" aria-label="anchor" href="#phi"></a>
+</h3>
+<p>Phi is a measure of association between two nominal dichotomous
+variables, considering a marginal table of the variables given by:</p>
+<table class="table">
+<thead><tr class="header">
+<th></th>
+<th><strong>y = 0</strong></th>
+<th><strong>y = 1</strong></th>
+<th><strong>Total</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>x = 0</strong></td>
+<td><span class="math inline">\(n_{00}\)</span></td>
+<td><span class="math inline">\(n_{01}\)</span></td>
+<td><span class="math inline">\(n_{0.}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>x = 1</strong></td>
+<td><span class="math inline">\(n_{10}\)</span></td>
+<td><span class="math inline">\(n_{11}\)</span></td>
+<td><span class="math inline">\(n_{1.}\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><span class="math inline">\(n_{.0}\)</span></td>
+<td><span class="math inline">\(n_{.1}\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Then the phi coefficient is given by:</p>
+<p><span class="math display">\[\frac{n_{11}*n_{00} - n_{10}*n_{01}
+}{\sqrt{n_{1.}*n_{0.}*n_{.1}*n_{.0}}}.\]</span></p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="calc_auc">calc_auc<a class="anchor" aria-label="anchor" href="#calc_auc"></a>
+</h2>
+<p>The goal of <code>calc_auc</code> is to compute the area under a
+curve (AUC).</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="fl">3</span>,l <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">chi_square</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html" class="external-link">chisq.test</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">dnorm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<p><img src="functions_calc_files/figure-html/calc_auc-base-plot-1.png" width="700"></p>
+<p>The function default compute the area considering the range of
+<code>x</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#from min to max of x</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] -3  3</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/calc_cramers_v.html">calc_cramers_v</a></span><span class="op">(</span><span class="va">chi_square</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.1438099</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.9972835</span></span></code></pre></div>
+<p><img src="functions_calc_files/figure-html/calc_auc-plot-99-1.png" width="700"></p>
+<p>But you can define the argument <code>limits</code> to get the AUC of
+that respective range.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#from -2 to 2</span></span>
+<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.9544345</span></span></code></pre></div>
+<p><img src="functions_calc_files/figure-html/calc_auc-plot-95-1.png" width="700"></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#from -1 to 1</span></span>
+<span><span class="fu"><a href="../reference/calc_auc.html">calc_auc</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.6825416</span></span></code></pre></div>
+<p><img src="functions_calc_files/figure-html/calc_auc-plot-68-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="calc_correlation">calc_correlation<a class="anchor" aria-label="anchor" href="#calc_correlation"></a>
+</h2>
+<p>The goal of <code>calc_correlation</code> is to compute associations
+metrics.</p>
+<div class="section level3">
+<h3 id="biserial">Biserial<a class="anchor" aria-label="anchor" href="#biserial"></a>
+</h3>
+<p>The Biserial correlation coefficient is a measure of the correlation
+between a continuous variable and a binary variable. It uses the same
+formula as the Pearson correlation.</p>
+</div>
+<div class="section level3">
+<h3 id="kendall">Kendall<a class="anchor" aria-label="anchor" href="#kendall"></a>
+</h3>
+<p>The Kendall correlation coefficient, also called Kendall’s Tau
+coefficient, quantifies the association between two ranked
+variables.</p>
+<p>It was created by Maurice Kendall and is especially beneficial for
+analyzing non-linear relationships or ranked data. The coefficient is
+determined by counting the number of concordant pairs (same order of
+ranks) and discordant pairs (opposite order of ranks) in the data.</p>
+<p><span class="math display">\[\frac{n_c-n_d}{\frac{1}{2}*n(n/1)},\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(n_c\)</span> is the number of concordant
+observations;</li>
+<li>
+<span class="math inline">\(n_d\)</span> is the number of discordant
+observations;</li>
+<li>
+<span class="math inline">\(n\)</span> is the number of
+observations.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="pearson">Pearson<a class="anchor" aria-label="anchor" href="#pearson"></a>
+</h3>
+<p>The Pearson correlation coefficient is a measure of the linear
+relationship between two continuous variables. It ranges from -1 to 1,
+indicating the strength and direction of the association.</p>
+<p>A value of 1 represents a perfect positive linear relationship, -1
+represents a perfect negative linear relationship, and 0 indicates no
+linear relationship.</p>
+<p><span class="math display">\[\frac{\sigma_{xy}}{\sigma_x\sigma_y},\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(\sigma_{xy}\)</span> is the covariance
+of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>;</li>
+<li>
+<span class="math inline">\(\sigma_{x}\)</span> is the variance of
+<span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(\sigma_{y}\)</span> is the variance of
+<span class="math inline">\(y\)</span>.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="spearmann">Spearmann<a class="anchor" aria-label="anchor" href="#spearmann"></a>
+</h3>
+<p>The Spearman correlation coefficient is a measure of the monotonic
+relationship between two variables, it assesses the strength and
+direction of the association, regardless of whether it is linear or
+non-linear.</p>
+<p>It also ranges from -1 to 1, with 1 indicating a perfect monotonic
+relationship and -1 indicating a perfect inverse monotonic relationship.
+A value of 0 suggests no monotonic relationship.</p>
+<p><span class="math display">\[1-
+\frac{6\sum\limits_{i=1}^{n}d_i^2}{n(n^2-1)},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(d_i\)</span> is the difference between
+the ranks of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>;</li>
+<li>
+<span class="math inline">\(n\)</span> is the number of
+observations.</li>
+</ul>
+</div>
 </div>
 <div class="section level2">
 <h2 id="calc_cv">calc_cv<a class="anchor" aria-label="anchor" href="#calc_cv"></a>
@@ -259,103 +382,16 @@ deviation;</li>
 <span class="math inline">\(\bar{x}\)</span> is the sample
 mean.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/calc_cv.html">calc_cv</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.99</span></span></code></pre></div>
 <p>If you set the argument <code>as_perc</code> to <code>TRUE</code>,
 the CV will be multiplied by 100.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_cv.html">calc_cv</a></span><span class="op">(</span><span class="va">x</span>,as_perc <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 99.32</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="calc_date_aux">calc_date_aux<a class="anchor" aria-label="anchor" href="#calc_date_aux"></a>
-</h2>
-<p>The goal of <code>calc_date_aux</code> is to compute variables
-derived from date, such as year, month, day, etc.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1910/1/1"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1911/1/1"</span><span class="op">)</span>, <span class="st">"days"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df_dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>dt <span class="op">=</span> <span class="va">dt</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/calc_date_aux.html">calc_date_aux</a></span><span class="op">(</span><span class="va">df_dt</span>,<span class="va">dt</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 366</span></span>
-<span><span class="co">#&gt; Columns: 11</span></span>
-<span><span class="co">#&gt; $ dt          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 1910-01-01, 1910-01-02, 1910-01-03, 1910-01-04, 1910-01-0…</span></span>
-<span><span class="co">#&gt; $ mon_abb     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Jan, Jan, Jan, Jan, Jan, Jan, Jan, Jan, Jan, Jan, Jan, Jan…</span></span>
-<span><span class="co">#&gt; $ mon_lbl     <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> January, January, January, January, January, January, Janu…</span></span>
-<span><span class="co">#&gt; $ mon_num     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…</span></span>
-<span><span class="co">#&gt; $ day_num     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…</span></span>
-<span><span class="co">#&gt; $ year_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910, 1910…</span></span>
-<span><span class="co">#&gt; $ week_num    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3…</span></span>
-<span><span class="co">#&gt; $ epiweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, …</span></span>
-<span><span class="co">#&gt; $ isoweek_num <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 52, 52, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3,…</span></span>
-<span><span class="co">#&gt; $ wday_abb    <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Sat, Sun, Mon, Tue, Wed, Thu, Fri, Sat, Sun, Mon, Tue, Wed…</span></span>
-<span><span class="co">#&gt; $ wday_lbl    <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Fr…</span></span></code></pre></div>
-<p>The new variables respective to the date are:</p>
-<ul>
-<li>
-<strong>mon_abb:</strong> a factor with the abbreviated name of the
-month;</li>
-<li>
-<strong>mon_lbl:</strong> a factor with the complete name of the
-month;</li>
-<li>
-<strong>mon_num:</strong> the number of the month;</li>
-<li>
-<strong>day_num:</strong> the number of the day within the
-month;</li>
-<li>
-<strong>year_num:</strong> the number of the year;</li>
-<li>
-<strong>week_num:</strong> the number of complete seven day periods
-that have occurred between the date and January 1st, plus one;</li>
-<li>
-<strong>epiweek_num:</strong> the US CDC version of epidemiological
-week. Starts on Sunday;</li>
-<li>
-<strong>isoweek_num:</strong> the week as it would appear in the ISO
-8601 system, which uses a reoccurring leap week. Starts on Monday;</li>
-<li>
-<strong>wday_abb:</strong> a factor with the week day abbreviated
-name;</li>
-<li>
-<strong>wday_lbl:</strong> a factor with the week day complete
-name.</li>
-</ul>
-</div>
-<div class="section level2">
-<h2 id="calc_date_diff">calc_date_diff<a class="anchor" aria-label="anchor" href="#calc_date_diff"></a>
-</h2>
-<p>The goal of <code>calc_date_diff</code> is to compute the difference
-between two dates.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">date1</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"01/05/1998"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">date2</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"21/11/2018"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/calc_date_diff.html">calc_date_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7509</span></span></code></pre></div>
-<p>So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509
-days.</p>
-<p>If you need to add a constant to your difference you can use the
-argument <code>add</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_date_diff.html">calc_date_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span>,add <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7510</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="calc_date_range">calc_date_range<a class="anchor" aria-label="anchor" href="#calc_date_range"></a>
-</h2>
-<p>The goal of <code>calc_date_range</code> is to compute the range of a
-date vector, and create a string with the minimal and maximum date.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1910/1/1"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1911/1/1"</span><span class="op">)</span>, <span class="st">"days"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/calc_date_range.html">calc_date_range</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "01/01/1910 - 01/01/1911"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_geometric_mean">calc_geometric_mean<a class="anchor" aria-label="anchor" href="#calc_geometric_mean"></a>
@@ -369,7 +405,7 @@ geometric mean, given by:</p>
 <span class="math inline">\(x_i\)</span> is a numeric vector of
 length <span class="math inline">\(n\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_geometric_mean.html">calc_geometric_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.618602</span></span></code></pre></div>
 </div>
@@ -385,27 +421,107 @@ where:</p>
 <span class="math inline">\(x_i\)</span> is a numeric vector of
 length <span class="math inline">\(n\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_harmonic_mean.html">calc_harmonic_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.17634</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="calc_mean">calc_mean<a class="anchor" aria-label="anchor" href="#calc_mean"></a>
+<h2 id="calc_kurtosis">calc_kurtosis<a class="anchor" aria-label="anchor" href="#calc_kurtosis"></a>
 </h2>
-<p>The goal of <code>calc_mean</code> is to compute the arithmetic,
-geometric and harmonic mean.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 3</span></span></span>
-<span><span class="co">#&gt;   arithmetic geometric harmonic</span></span>
-<span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>       1.05     0.619    0.176</span></span></code></pre></div>
+<p>The goal of <code>calc_kurtosis</code> is to compute a kurtosis
+coefficient.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_kurtosis.html">calc_kurtosis</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] -2.934065</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="biased">Biased<a class="anchor" aria-label="anchor" href="#biased"></a>
+</h3>
+<p>The biased kurtosis coefficient, is given by:</p>
+<p><span class="math display">\[\frac{\sum\limits_{i=1}^n(x_i -
+\bar{x})^4}{n*s_x^4},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(x_i\)</span> is a numeric vector og
+length <span class="math inline">\(n\)</span>;</li>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(s_x\)</span> is the standard deviation
+of <span class="math inline">\(x\)</span>.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="excess">Excess<a class="anchor" aria-label="anchor" href="#excess"></a>
+</h3>
+<p>The excess kurtosis coefficient, is given by:</p>
+<p><span class="math display">\[\frac{\sum\limits_{i=1}^n(x_i -
+\bar{x})^4}{n*s_x^4}-3,\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(x_i\)</span> is a numeric vector og
+length <span class="math inline">\(n\)</span>;</li>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(s_x\)</span> is the standard deviation
+of <span class="math inline">\(x\)</span>.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="percentile">Percentile<a class="anchor" aria-label="anchor" href="#percentile"></a>
+</h3>
+<p>The percentile kurtosis coefficient, is given by:</p>
+<p><span class="math display">\[\frac{Q_3-Q_1}{P_{90}-P_{10}},\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(Q_1\)</span> is the first quartile;</li>
+<li>
+<span class="math inline">\(Q_3\)</span> is the third quartile;</li>
+<li>
+<span class="math inline">\(P_{90}\)</span> is the 90th
+percentile;</li>
+<li>
+<span class="math inline">\(P_{10}\)</span> is the 10th
+percentile.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="unbiased">Unbiased<a class="anchor" aria-label="anchor" href="#unbiased"></a>
+</h3>
+<p>The unbiased kurtosis coefficient, is given by:</p>
+<p><span class="math display">\[\frac{(n+1)*n}{(n-1)*(n-2)*(n-3)}*\frac{\sum\limits_{i=1}^n(x_i
+- \bar{x})^4}{n*s_x^4} - 3*\frac{(n-1)^2}{(n-2)*(n-3)},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(x_i\)</span> is a numeric vector og
+length <span class="math inline">\(n\)</span>;</li>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(s_x\)</span> is the standard deviation
+of <span class="math inline">\(x\)</span>.</li>
+</ul>
+</div>
+</div>
+<div class="section level2">
+<h2 id="calc_modality">calc_modality<a class="anchor" aria-label="anchor" href="#calc_modality"></a>
+</h2>
+<p>The goal of <code>calc_modality</code> is to compute the number of
+modes.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="../reference/calc_modality.html">calc_modality</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"b"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calc_mode">calc_mode<a class="anchor" aria-label="anchor" href="#calc_mode"></a>
 </h2>
 <p>The goal of <code>calc_mode</code> is to compute the mode.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">cat_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">cat_var</span><span class="op">)</span></span>
@@ -414,7 +530,7 @@ geometric and harmonic mean.</p>
 <span><span class="co">#&gt;  1  2  5  2  4  3  6  4  5  4  3  3  3  6  4  3  3  3  4  3  4  8  3 10  4</span></span></code></pre></div>
 <p>We can see that the letter “<em>y</em>” is the one that appears the
 most, so it is the mode of the variable.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mode.html">calc_mode</a></span><span class="op">(</span><span class="va">cat_var</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "y"</span></span></code></pre></div>
 </div>
@@ -426,10 +542,124 @@ density value of a numeric value.</p>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-base-plot-1.png" width="700"></p>
 <p>Let’s say we eant to discover what value is the peak in the density
 above.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_peak_density.html">calc_peak_density</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.3901813</span></span></code></pre></div>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-plot-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="calc_skewness">calc_skewness<a class="anchor" aria-label="anchor" href="#calc_skewness"></a>
+</h2>
+<p>The goal of <code>calc_skewness</code> is to compute a skewness
+coefficient.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
+<p>Where different types of coefficients are provided, they are:</p>
+<div class="section level3">
+<h3 id="bowley">Bowley<a class="anchor" aria-label="anchor" href="#bowley"></a>
+</h3>
+<p>The Bowley skewness coefficient, is given by:</p>
+<p><span class="math display">\[\frac{Q_3+Q_1-2Q_2}{Q_3-Q_1},\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(Q_1\)</span> is the first quartile;</li>
+<li>
+<span class="math inline">\(Q_2\)</span> is the second
+quartile;</li>
+<li>
+<span class="math inline">\(Q_3\)</span> is the third quartile.</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"bowley"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.07563213</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="fisher-pearson">Fisher-Pearson<a class="anchor" aria-label="anchor" href="#fisher-pearson"></a>
+</h3>
+<p>The Fisher-Pearson skewness coefficient, is given by:</p>
+<p><span class="math display">\[\frac{\sum_\limits{i=1}^{n}(x_i -
+\bar{x})^3}{n*(s_x)^3},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(x_i\)</span> is a numeric vector of
+length <span class="math inline">\(n\)</span>;</li>
+<li>
+<span class="math inline">\(s_x\)</span> is the standard deviation
+of <span class="math inline">\(x\)</span>.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"fisher_pearson"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="kelly">Kelly<a class="anchor" aria-label="anchor" href="#kelly"></a>
+</h3>
+<p>The Kelly skewness coefficient, is given by:</p>
+<p><span class="math display">\[\frac{P_{90}+P_{10}-2Q_2}{P_{90}-P_{10}},\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(P_{90}\)</span> is the 90th
+percentile;</li>
+<li>
+<span class="math inline">\(Q_2\)</span> is the second quartile,
+i.e., <span class="math inline">\(P_{50}\)</span>;</li>
+<li>
+<span class="math inline">\(P_{10}\)</span> is the 10th
+percentile;</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"kelly"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.1755126</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="pearson-median">Pearson median<a class="anchor" aria-label="anchor" href="#pearson-median"></a>
+</h3>
+<p>The Pearson median skewness coefficent, or second skewness
+coefficient, is given by:</p>
+<p><span class="math display">\[\frac{3(\bar{x}-
+\tilde{x})}{s_x},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(\tilde{x}\)</span> is the median of
+<span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(s_x\)</span> is the standard deviation
+of <span class="math inline">\(x\)</span>.</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"pearson_median"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.5718116</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="rao">Rao<a class="anchor" aria-label="anchor" href="#rao"></a>
+</h3>
+<p>The Rao skewness coefficient, is given by:</p>
+<!-- The Rao's skewness is a measure of skewness that was proposed by C.R. Rao in the paper "Some Measures of Skewness and Kurtosis Based on the Sample Range", published in the journal "The Annals of Mathematical Statistics" in 1948. -->
+<p><span class="math display">\[\frac{[n/(n-1)](\bar{x}-
+\tilde{x})}{\sqrt{(n-2)/n}},\]</span></p>
+<p>where:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(\tilde{x}\)</span> is the median of
+<span class="math inline">\(x\)</span>;</li>
+<li>
+<span class="math inline">\(n\)</span> is the length of <span class="math inline">\(x\)</span>.</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.2019945</span></span></code></pre></div>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

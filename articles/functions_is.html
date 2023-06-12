@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/functions_as.html">Functions as_</a>
     <a class="dropdown-item" href="../articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="../articles/functions_dttm.html">Functions dttm_</a>
     <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
@@ -221,6 +222,18 @@ string, character or factor.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/is_string.html">is_string</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="is_weekend">is_weekend<a class="anchor" aria-label="anchor" href="#is_weekend"></a>
+</h2>
+<p>The goal of <code>is_weekend</code> is to check if a date variable is
+in a weekend (saturday/sunday).</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_weekend.html">is_weekend</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/is_weekend.html">is_weekend</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

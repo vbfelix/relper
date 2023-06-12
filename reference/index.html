@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/functions_as.html">Functions as_</a>
     <a class="dropdown-item" href="../articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="../articles/functions_dttm.html">Functions dttm_</a>
     <a class="dropdown-item" href="../articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="../articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="../articles/functions_isnot.html">Functions isnot_</a>
@@ -81,39 +82,24 @@
         <dd>Auto-correlation computation</dd>
       </dl><dl><dt>
           
+          <code><a href="calc_association.html">calc_association()</a></code> 
+        </dt>
+        <dd>Compute association coefficents</dd>
+      </dl><dl><dt>
+          
           <code><a href="calc_auc.html">calc_auc()</a></code> 
         </dt>
         <dd>Area under the curve computation</dd>
       </dl><dl><dt>
           
-          <code><a href="calc_corr.html">calc_corr()</a></code> 
+          <code><a href="calc_correlation.html">calc_correlation()</a></code> 
         </dt>
-        <dd>Correlation computation</dd>
-      </dl><dl><dt>
-          
-          <code><a href="calc_cramers_v.html">calc_cramers_v()</a></code> 
-        </dt>
-        <dd>Cramer's V computation</dd>
+        <dd>Compute correlation coefficents</dd>
       </dl><dl><dt>
           
           <code><a href="calc_cv.html">calc_cv()</a></code> 
         </dt>
         <dd>Coefficient of variation computation</dd>
-      </dl><dl><dt>
-          
-          <code><a href="calc_date_aux.html">calc_date_aux()</a></code> 
-        </dt>
-        <dd>Auxiliar date variables computation</dd>
-      </dl><dl><dt>
-          
-          <code><a href="calc_date_diff.html">calc_date_diff()</a></code> 
-        </dt>
-        <dd>Difference between two dates</dd>
-      </dl><dl><dt>
-          
-          <code><a href="calc_date_range.html">calc_date_range()</a></code> 
-        </dt>
-        <dd>Date range computation</dd>
       </dl><dl><dt>
           
           <code><a href="calc_geometric_mean.html">calc_geometric_mean()</a></code> 
@@ -126,9 +112,14 @@
         <dd>Harmonic mean computation</dd>
       </dl><dl><dt>
           
-          <code><a href="calc_mean.html">calc_mean()</a></code> 
+          <code><a href="calc_kurtosis.html">calc_kurtosis()</a></code> 
         </dt>
-        <dd>Arithmetic, geometric and harmonic mean computation</dd>
+        <dd>Kurtosis computation</dd>
+      </dl><dl><dt>
+          
+          <code><a href="calc_modality.html">calc_modality()</a></code> 
+        </dt>
+        <dd>Modality computation</dd>
       </dl><dl><dt>
           
           <code><a href="calc_mode.html">calc_mode()</a></code> 
@@ -141,9 +132,24 @@
         <dd>Peak density value computation</dd>
       </dl><dl><dt>
           
+          <code><a href="calc_skewness.html">calc_skewness()</a></code> 
+        </dt>
+        <dd>Skewness computation</dd>
+      </dl><dl><dt>
+          
           <code><a href="cut_by_quantile.html">cut_by_quantile()</a></code> 
         </dt>
         <dd>Convert numeric vector to factor</dd>
+      </dl><dl><dt>
+          
+          <code><a href="dttm_diff.html">dttm_diff()</a></code> 
+        </dt>
+        <dd>Difference between two dates</dd>
+      </dl><dl><dt>
+          
+          <code><a href="dttm_vars.html">dttm_vars()</a></code> 
+        </dt>
+        <dd>Create auxiliars variables for a date variable</dd>
       </dl><dl><dt>
           
           <code><a href="expand_grid_unique.html">expand_grid_unique()</a></code> 
@@ -214,6 +220,11 @@
           <code><a href="is_string.html">is_string()</a></code> 
         </dt>
         <dd>Conditional check for an string value</dd>
+      </dl><dl><dt>
+          
+          <code><a href="is_weekend.html">is_weekend()</a></code> 
+        </dt>
+        <dd>Conditional check if a date is a weekend</dd>
       </dl><dl><dt>
           
           <code><a href="isnot_in.html">isnot_in()</a></code> 
@@ -316,6 +327,11 @@
         <dd>Generate two variables linear correlated</dd>
       </dl><dl><dt>
           
+          <code><a href="stat_normality.html">stat_normality()</a></code> 
+        </dt>
+        <dd>Test the normality of a numeric variable</dd>
+      </dl><dl><dt>
+          
           <code><a href="stat_two_cat.html">stat_two_cat()</a></code> 
         </dt>
         <dd>Summary table for comparative analysis between two categorical variables</dd>
@@ -353,12 +369,17 @@
           
           <code><a href="summary_num.html">summary_num()</a></code> 
         </dt>
-        <dd>Summary  of numeric variables</dd>
+        <dd>Summary of a numeric variable</dd>
       </dl><dl><dt>
           
           <code><a href="summary_seq.html">summary_seq()</a></code> 
         </dt>
         <dd>Summary of sequence of values</dd>
+      </dl><dl><dt>
+          
+          <code><a href="summary_xy.html">summary_xy()</a></code> 
+        </dt>
+        <dd>Summary of two numeric variables</dd>
       </dl><dl><dt>
           
           <code><a href="vfx_watermark.html">vfx_watermark</a></code> 

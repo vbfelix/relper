@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="articles/functions_as.html">Functions as_</a>
     <a class="dropdown-item" href="articles/functions_calc.html">Functions calc_</a>
+    <a class="dropdown-item" href="articles/functions_dttm.html">Functions dttm_</a>
     <a class="dropdown-item" href="articles/functions_format.html">Functions format_</a>
     <a class="dropdown-item" href="articles/functions_is.html">Functions is_</a>
     <a class="dropdown-item" href="articles/functions_isnot.html">Functions isnot_</a>
@@ -85,8 +86,18 @@
 <img src="logo.png" class="logo" alt=""><h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h1>
 </div>
-<p><code>relper</code> is a collection of functions that I used in the last few years of data analysis and could not find in other packages. Its purpose is to provide various functions to aid in data cleaning and visualization.</p>
-<p>Despite not being a part of the <code>tidyverse</code> ecosystem, it has some features that complement those of packages like <code>dplyr</code> and <code>ggplot2</code>.</p>
+<p>Welcome to <code>relper</code>, a R package designed to make data preparation, cleaning, and visualization a breeze.</p>
+<p>Created by a senior <a href="https://vbfelix.github.io/header-about.html" class="external-link">statistician</a>, <code>relper</code> is a collection of functions that have been refined over the years to provide a comprehensive set of tools for data cleaning and visualization.</p>
+<p>With <code>relper</code>, you can easily transform and format your data, compute important metrics, check conditions, and even use lovely and varied color palettes. Some of the key features of relper include:</p>
+<ul>
+<li><p><strong>Data transformation and formatting</strong>: offers a variety of functions to help you format your data.</p></li>
+<li><p><strong>Metrics</strong>: provides functions to compute important metrics, such as the coefficient of variation.</p></li>
+<li><p><strong>Condition checking</strong>: allows you to check conditions, such as determining if a number is even or odd.</p></li>
+<li><p><strong>Color palettes</strong>: includes beautiful and varied color palettes, inspired by popular TV series and movies.</p></li>
+<li><p><strong>ggplot2 integration</strong>: complements ggplot2, e.g., by allowing you to add an identity line to a scatter plot with single command.</p></li>
+<li><p><strong>String manipulation</strong>: offers functions to manipulate strings, such as keeping only a specific type of character.</p></li>
+</ul>
+<p>The ultimate goal of <code>relper</code> is to simplify data analysis by providing a variety of useful functions that will shorten your steps and make data analysis more efficient. Try <code>relper</code>and discover how it can streamline your data analysis workflow.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -94,6 +105,11 @@
 <p>You can install the developer version of <code>relper</code> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"vbfelix/relper"</span><span class="op">)</span></span></code></pre></div>
+<!-- # Citation -->
+<!-- To generate a citation for the package version you are using, you can run -->
+<!-- ``` r -->
+<!-- citation(package = "galah") -->
+<!-- ``` -->
 </div>
 
   </main><aside class="col-md-3"><div class="license">

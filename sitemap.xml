@@ -16,6 +16,9 @@
     <loc>https://vbfelix.github.io/relper/articles/functions_calc.html</loc>
   </url>
   <url>
+    <loc>https://vbfelix.github.io/relper/articles/functions_dttm.html</loc>
+  </url>
+  <url>
     <loc>https://vbfelix.github.io/relper/articles/functions_format.html</loc>
   </url>
   <url>
@@ -64,25 +67,16 @@
     <loc>https://vbfelix.github.io/relper/reference/calc_acf.html</loc>
   </url>
   <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_association.html</loc>
+  </url>
+  <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_auc.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_corr.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_cramers_v.html</loc>
+    <loc>https://vbfelix.github.io/relper/reference/calc_correlation.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_cv.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_date_aux.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_date_diff.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_date_range.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_geometric_mean.html</loc>
@@ -91,7 +85,10 @@
     <loc>https://vbfelix.github.io/relper/reference/calc_harmonic_mean.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_mean.html</loc>
+    <loc>https://vbfelix.github.io/relper/reference/calc_kurtosis.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_modality.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_mode.html</loc>
@@ -100,7 +97,16 @@
     <loc>https://vbfelix.github.io/relper/reference/calc_peak_density.html</loc>
   </url>
   <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_skewness.html</loc>
+  </url>
+  <url>
     <loc>https://vbfelix.github.io/relper/reference/cut_by_quantile.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/dttm_diff.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/dttm_vars.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/expand_grid_unique.html</loc>
@@ -146,6 +152,9 @@
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/is_string.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/is_weekend.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/isnot_in.html</loc>
@@ -211,6 +220,9 @@
     <loc>https://vbfelix.github.io/relper/reference/rpearson.html</loc>
   </url>
   <url>
+    <loc>https://vbfelix.github.io/relper/reference/stat_normality.html</loc>
+  </url>
+  <url>
     <loc>https://vbfelix.github.io/relper/reference/stat_two_cat.html</loc>
   </url>
   <url>
@@ -236,6 +248,9 @@
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/summary_seq.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/summary_xy.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/vfx_watermark.html</loc>
