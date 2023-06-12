@@ -2,12 +2,14 @@
 % Please edit documentation in R/calc_correlation.r
 \name{calc_correlation}
 \alias{calc_correlation}
-\title{Correlation/association computation}
+\title{Compute correlation coefficents}
 \usage{
 calc_correlation(x, y, type = "pearson")
 }
 \arguments{
 \item{x}{A numeric vector}
+
+\item{y}{A numeric vector}
 
 \item{type}{A character single value, that is the type of the correlation to be computed}
 }
@@ -15,15 +17,20 @@ calc_correlation(x, y, type = "pearson")
 A numeric single value with the computed value.
 }
 \description{
-Computation of correlation/association coefficients.
+Computation of correlation coefficients.
 }
 \details{
 Currently, it is possible to compute the following metrics:
+
+\cr - Biserial correlation coefficient
+\cr - Kendall's Tau correlation coefficient
+\cr - Pearson linear correlation coefficient
+\cr - Spearmann correlation coefficient
 }
 \examples{
 
 x <- rnorm(100,1)
 
-calc_correlation(x)
+calc_correlation(x,x)
 
 }

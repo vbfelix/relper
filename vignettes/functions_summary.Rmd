@@ -35,7 +35,7 @@ summary_cat(g)
 
 The goal of `summary_num` is to summarize numeric variables.
 
-```{r summary_num}
+```{r summary_num1}
 set.seed(123);x <- c(rnorm(10),NA,10)
 
 summary_num(x) %>% glimpse()
@@ -43,13 +43,13 @@ summary_num(x) %>% glimpse()
 
 It is also possible to return metrics related to type of values we have:
 
-```{r summary_num}
+```{r summary_num2}
 summary_num(x,type = TRUE) %>% glimpse()
 ```
 
 We can also add other means.
 
-```{r summary_num}
+```{r summary_num3}
 summary_num(x,other_means = TRUE) %>% glimpse()
 ```
 

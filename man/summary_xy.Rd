@@ -25,7 +25,7 @@ y <- rnorm(100)
 
 plot(x,y)
 
-calc_corr(x,y)
+summary_xy(x,y)
 
 
 }

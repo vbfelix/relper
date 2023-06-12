@@ -48,7 +48,9 @@ stat_two_cat <-
       dplyr::mutate(
         id = 0,
         chi_square = purrr::map(.x = data,.f = ~stats::chisq.test(.$grp_var,.$value)),
-        cramers_v = purrr::map(.x = chi_square,.f = relper::calc_cramers_v),
+        cramers_v = purrr::map(
+          .x = data,
+          .f = ~relper::calc_association(x = .$grp_var,y = .$value,type = "cramers-v")),
         chi_square = purrr::map(.x = chi_square,.f = broom::tidy)
       ) %>%
       tidyr::unnest(c(chi_square, cramers_v)) %>%

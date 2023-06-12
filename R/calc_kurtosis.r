@@ -71,9 +71,9 @@ calc_kurtosis <- function(x,type = "unbiased"){
 
   if(type == "percentile"){
 
-    dividend <- IQR(x,na.rm = TRUE)/2
+    dividend <- stats::IQR(x,na.rm = TRUE)/2
 
-    divisor <- quantile(x,probs = .9,na.rm = TRUE) - quantile(x,probs = .1,na.rm = TRUE)
+    divisor <- stats::quantile(x,probs = .9,na.rm = TRUE) - stats::quantile(x,probs = .1,na.rm = TRUE)
 
     output <- dividend/divisor
 

@@ -2,7 +2,7 @@
 title: "Functions dttm_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Functions isnot_}
+  %\VignetteIndexEntry{Functions dttm_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -29,7 +29,7 @@ dt <- seq(as.Date("1910/1/1"), as.Date("1911/1/1"), "days")
 
 df_dt <- data.frame(dt = dt)
 
-dttm_vars(df_dt,dt) %>% glimpse()
+dttm_vars(df_dt,dt) %>% dplyr::glimpse()
 ```
 
 The new variables respective to the date are:

@@ -42,13 +42,13 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     x_median <- stats::median(x,na.rm = TRUE)
 
-    x_q3 <- quantile(x = x,probs = .75,na.rm = TRUE)
+    x_q3 <- stats::quantile(x = x,probs = .75,na.rm = TRUE)
 
-    x_q1 <- quantile(x = x,probs = .25,na.rm = TRUE)
+    x_q1 <- stats::quantile(x = x,probs = .25,na.rm = TRUE)
 
-    x_p90 <- quantile(x = x,probs = .90,na.rm = TRUE)
+    x_p90 <- stats::quantile(x = x,probs = .90,na.rm = TRUE)
 
-    x_p10 <- quantile(x = x,probs = .10,na.rm = TRUE)
+    x_p10 <- stats::quantile(x = x,probs = .10,na.rm = TRUE)
 
     x_sd <- stats::sd(x,na.rm = TRUE)
 

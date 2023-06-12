@@ -202,6 +202,54 @@ df_auc %>%
   scale_y_continuous(expand = c(0,0))
 ```
 
+# calc_correlation
+
+The goal of `calc_correlation` is to compute associations metrics.
+
+## Biserial
+
+The Biserial correlation coefficient is a measure of the correlation between a continuous variable and a binary variable. It uses the same formula as the Pearson correlation.
+
+## Kendall
+
+The Kendall correlation coefficient, also called Kendall's Tau coefficient, quantifies the association between two ranked variables.
+
+It was created by Maurice Kendall and is especially beneficial for analyzing non-linear relationships or ranked data. The coefficient is determined by counting the number of concordant pairs (same order of ranks) and discordant pairs (opposite order of ranks) in the data.
+
+$$\frac{n_c-n_d}{\frac{1}{2}*n(n/1)},$$
+where:
+
+-   $n_c$ is the number of concordant observations;
+-   $n_d$ is the number of discordant observations;
+-   $n$ is the number of observations.
+
+
+## Pearson
+
+The Pearson correlation coefficient is a measure of the linear relationship between two continuous variables. It ranges from -1 to 1, indicating the strength and direction of the association.
+
+A value of 1 represents a perfect positive linear relationship, -1 represents a perfect negative linear relationship, and 0 indicates no linear relationship. 
+
+$$\frac{\sigma_{xy}}{\sigma_x\sigma_y},$$
+where:
+
+-   $\sigma_{xy}$ is the covariance of $x$ and $y$;
+-   $\sigma_{x}$ is the variance of $x$;
+-   $\sigma_{y}$ is the variance of $y$.
+
+## Spearmann
+
+The Spearman correlation coefficient is a measure of the monotonic relationship between two variables, it assesses the strength and direction of the association, regardless of whether it is linear or non-linear. 
+
+It also ranges from -1 to 1, with 1 indicating a perfect monotonic relationship and -1 indicating a perfect inverse monotonic relationship. A value of 0 suggests no monotonic relationship. 
+
+$$1- \frac{6\sum\limits_{i=1}^{n}d_i^2}{n(n^2-1)},$$
+
+where:
+
+-   $d_i$ is the difference between the ranks of $x$ and $y$;
+-   $n$ is the number of observations.
+
 # calc_cv
 
 The goal of `calc_cv` is to compute the coefficient of variation (CV),
