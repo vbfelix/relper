@@ -87,7 +87,7 @@ summary_num <-
     )
 
 
-  if(!type){
+  if(type){
     output <-
       dplyr::tibble(
         n = length(x),
@@ -95,11 +95,11 @@ summary_num <-
         negative = sum(x < 0, na.rm = TRUE),
         equal_zero = sum(x == 0, na.rm = TRUE),
         positive = sum(x > 0, na.rm = TRUE)
-      )
+      ) %>%
     dplyr::bind_cols(output)
   }
 
-  if(!other_means){
+  if(other_means){
     output <-
       output %>%
       dplyr::bind_cols(
@@ -110,7 +110,7 @@ summary_num <-
       )
   }
 
-  if(!skewness){
+  if(skewness){
     output <-
       output %>%
       dplyr::bind_cols(
@@ -124,7 +124,7 @@ summary_num <-
       )
   }
 
-  if(!kurtosis){
+  if(kurtosis){
     output <-
       output %>%
       dplyr::bind_cols(
@@ -140,4 +140,3 @@ summary_num <-
   return(output)
 
   }
-
