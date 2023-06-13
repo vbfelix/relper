@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,11 +96,31 @@
 <p><code>dttm_</code> functions help in the manipulation of date and
 datetime variables.</p>
 <div class="section level2">
+<h2 id="dttm_diff">dttm_diff<a class="anchor" aria-label="anchor" href="#dttm_diff"></a>
+</h2>
+<p>The goal of <code>dttm_diff</code> is to compute the difference
+between two dates.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">date1</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"01/05/1998"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">date2</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"21/11/2018"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/dttm_diff.html">dttm_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 7509</span></span></code></pre></div>
+<p>So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509
+days.</p>
+<p>If you need to add a constant to your difference you can use the
+argument <code>add</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/dttm_diff.html">dttm_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span>,add <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 7510</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="dttm_vars">dttm_vars<a class="anchor" aria-label="anchor" href="#dttm_vars"></a>
 </h2>
 <p>The goal of <code>dttm_vars</code> is to compute variables derived
 from date, such as year, month, day, etc.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1910/1/1"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"1911/1/1"</span><span class="op">)</span>, <span class="st">"days"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df_dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>dt <span class="op">=</span> <span class="va">dt</span><span class="op">)</span></span>
@@ -150,26 +170,6 @@ name;</li>
 <strong>wday_lbl:</strong> a factor with the week day complete
 name.</li>
 </ul>
-</div>
-<div class="section level2">
-<h2 id="dttm_diff">dttm_diff<a class="anchor" aria-label="anchor" href="#dttm_diff"></a>
-</h2>
-<p>The goal of <code>dttm_diff</code> is to compute the difference
-between two dates.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">date1</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"01/05/1998"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">date2</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">dmy</a></span><span class="op">(</span><span class="st">"21/11/2018"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/dttm_diff.html">dttm_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7509</span></span></code></pre></div>
-<p>So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509
-days.</p>
-<p>If you need to add a constant to your difference you can use the
-argument <code>add</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/dttm_diff.html">dttm_diff</a></span><span class="op">(</span>date1 <span class="op">=</span> <span class="va">date1</span>,date2 <span class="op">=</span> <span class="va">date2</span>,unit <span class="op">=</span> <span class="st">"days"</span>,add <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7510</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
