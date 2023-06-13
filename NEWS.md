@@ -1,6 +1,4 @@
-# relper 3.0.1
-
-* Hotfix of the function `summary_num.`
+# relper 3.0.2
 
 # relper 3.0.0
 
