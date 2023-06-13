@@ -20,6 +20,27 @@ library(relper)
 
 `dttm_` functions help in the manipulation of date and datetime variables.
 
+# dttm_diff
+
+The goal of `dttm_diff` is to compute the difference between two dates.
+
+```{r dttm_diff}
+date1 <- lubridate::dmy("01/05/1998")
+
+date2 <- lubridate::dmy("21/11/2018")
+
+dttm_diff(date1 = date1,date2 = date2,unit = "days")
+```
+
+So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509 days.
+
+If you need to add a constant to your difference you can use the argument `add`.
+
+```{r dttm_diff-add}
+dttm_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
+```
+
+
 # dttm_vars
 
 The goal of `dttm_vars` is to compute variables derived from date, such as year, month, day, etc.
@@ -44,23 +65,3 @@ The new variables respective to the date are:
  - **isoweek_num:**  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
  - **wday_abb:** a factor with the week day abbreviated name;
  - **wday_lbl:** a factor with the week day complete name.
- 
-# dttm_diff
-
-The goal of `dttm_diff` is to compute the difference between two dates.
-
-```{r dttm_diff}
-date1 <- lubridate::dmy("01/05/1998")
-
-date2 <- lubridate::dmy("21/11/2018")
-
-dttm_diff(date1 = date1,date2 = date2,unit = "days")
-```
-
-So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509 days.
-
-If you need to add a constant to your difference you can use the argument `add`.
-
-```{r dttm_diff-add}
-dttm_diff(date1 = date1,date2 = date2,unit = "days",add = 1)
-```

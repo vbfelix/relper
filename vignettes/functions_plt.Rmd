@@ -77,7 +77,7 @@ plot +
 
 # plt_scale_y_mirror
 
-The goal of `plt_scale_y_mirror` is tomMirror the y axis on the right side.
+The goal of `plt_scale_y_mirror` is to mirror the y axis on the right side.
 
 ```{r plt_scale_y_mirror}
 plot_breaks <- seq(0,35,3)

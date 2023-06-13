@@ -35,9 +35,9 @@ is_date(Sys.Date())
 The goal of `is_datetime` is to check if a value is a datetime.
 
 ```{r is_datetime}
-is_date(Sys.time())
+is_datetime(Sys.time())
 
-is_date(Sys.Date())
+is_datetime(Sys.Date())
 ```
 
 
