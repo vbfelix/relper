@@ -77,6 +77,10 @@ where:
 -   $X^2$ the chi-square statistic;
 -   $n$ is the sample size.
 
+```{r calc_association-contingency}
+calc_association(mtcars$am,mtcars$vs,type = "contingency")
+```
+
 ## Cramér's V
 
 Cramér's V is a measure of association between two nominal variables. I
@@ -110,6 +114,10 @@ variables, considering a marginal table of the variables given by:
 Then the phi coefficient is given by:
 
 $$\frac{n_{11}*n_{00} - n_{10}*n_{01} }{\sqrt{n_{1.}*n_{0.}*n_{.1}*n_{.0}}}.$$
+```{r calc_association-phi}
+calc_association(mtcars$am,mtcars$vs,type = "phi")
+```
+
 
 # calc_auc
 
@@ -206,10 +214,6 @@ df_auc %>%
 
 The goal of `calc_correlation` is to compute associations metrics.
 
-## Biserial
-
-The Biserial correlation coefficient is a measure of the correlation between a continuous variable and a binary variable. It uses the same formula as the Pearson correlation.
-
 ## Kendall
 
 The Kendall correlation coefficient, also called Kendall's Tau coefficient, quantifies the association between two ranked variables.
@@ -223,6 +227,9 @@ where:
 -   $n_d$ is the number of discordant observations;
 -   $n$ is the number of observations.
 
+```{r calc_correlation-kendall}
+calc_correlation(mtcars$hp,mtcars$drat,type = "kendall")
+```
 
 ## Pearson
 
@@ -237,6 +244,11 @@ where:
 -   $\sigma_{x}$ is the variance of $x$;
 -   $\sigma_{y}$ is the variance of $y$.
 
+
+```{r calc_correlation-pearson}
+calc_correlation(mtcars$hp,mtcars$drat,type = "pearson")
+```
+
 ## Spearmann
 
 The Spearman correlation coefficient is a measure of the monotonic relationship between two variables, it assesses the strength and direction of the association, regardless of whether it is linear or non-linear. 
@@ -249,6 +261,11 @@ where:
 
 -   $d_i$ is the difference between the ranks of $x$ and $y$;
 -   $n$ is the number of observations.
+
+
+```{r calc_correlation-spearman}
+calc_correlation(mtcars$hp,mtcars$drat,type = "spearman")
+```
 
 # calc_cv
 
@@ -316,9 +333,13 @@ $$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4},$$
 
 where:
 
--   $x_i$ is a numeric vector og length $n$;
+-   $x_i$ is a numeric vector of length $n$;
 -   $\bar{x}$ is the mean of $x$;
 -   $s_x$ is the standard deviation of $x$.
+
+```{r calc_kurtosis-biased}
+calc_kurtosis(x = x,type = "biased")
+```
 
 ## Excess
 
@@ -328,10 +349,13 @@ $$\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{n*s_x^4}-3,$$
 
 where:
 
--   $x_i$ is a numeric vector og length $n$;
+-   $x_i$ is a numeric vector of length $n$;
 -   $\bar{x}$ is the mean of $x$;
 -   $s_x$ is the standard deviation of $x$.
 
+```{r calc_kurtosis-excess}
+calc_kurtosis(x = x,type = "excess")
+```
 ## Percentile
 
 The percentile kurtosis coefficient, is given by:
@@ -343,6 +367,10 @@ $$\frac{Q_3-Q_1}{P_{90}-P_{10}},$$ where:
 -   $P_{90}$ is the 90th percentile;
 -   $P_{10}$ is the 10th percentile.
 
+```{r calc_kurtosis-percentile}
+calc_kurtosis(x = x,type = "percentile")
+```
+
 ## Unbiased
 
 The unbiased kurtosis coefficient, is given by:
@@ -351,9 +379,13 @@ $$\frac{(n+1)*n}{(n-1)*(n-2)*(n-3)}*\frac{\sum\limits_{i=1}^n(x_i - \bar{x})^4}{
 
 where:
 
--   $x_i$ is a numeric vector og length $n$;
+-   $x_i$ is a numeric vector of length $n$;
 -   $\bar{x}$ is the mean of $x$;
 -   $s_x$ is the standard deviation of $x$.
+
+```{r calc_kurtosis-unbiased}
+calc_kurtosis(x = x,type = "unbiased")
+```
 
 # calc_modality
 

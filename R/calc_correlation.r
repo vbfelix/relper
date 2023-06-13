@@ -35,28 +35,11 @@ calc_correlation <- function(x,y,type = "pearson"){
 
   x_values <- unique(x)
 
-  if(type == "biserial"){
-    if(length(y_values) != 2 & length(x_values) > 2){
-      stop("argument 'y' must be dichotomous")
-    }
-    if(length(x_values) != 2 & length(y_values) > 2){
-      stop("argument 'x' must be dichotomous")
-    }
-  }
-
-  type_ref <- c("biserial","kendall","pearson","spearmann")
+  type_ref <- c("kendall","pearson","spearman")
 
   stop_one_of(arg = type,one_of = type_ref)
 
   n <- length(x)
-
-  # biserial -----------------------------------------------------------------
-
-  if(type == "biserial"){
-
-    output <- stats::cor(x = x,y = y,use = "na.or.complete",method = "pearson")
-
-  }
 
   # kendall -----------------------------------------------------------------
 
@@ -74,11 +57,11 @@ calc_correlation <- function(x,y,type = "pearson"){
 
   }
 
-  # spearmann -----------------------------------------------------------------
+  # spearman -----------------------------------------------------------------
 
-  if(type == "spearmann"){
+  if(type == "spearman"){
 
-    output <- stats::cor(x = x,y = y,use = "na.or.complete",method = "spearmann")
+    output <- stats::cor(x = x,y = y,use = "na.or.complete",method = "spearman")
 
   }
 

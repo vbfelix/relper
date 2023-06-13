@@ -1,5 +1,3 @@
-# relper 3.0.3
-
 # relper 3.0.0
 
 * Addition of the function `calc_association.`

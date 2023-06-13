@@ -37,9 +37,6 @@ test_that("Wrong length", {
   #x and y
   expect_error(object = calc_correlation(x = x,y = 1:2))
 
-  #x and y / biserial
-  expect_error(object = calc_correlation(x = z,y = z,type = "biserial"))
-
 })
 
 test_that("Invalid option", {
