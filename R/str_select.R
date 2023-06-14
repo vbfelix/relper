@@ -45,5 +45,5 @@ str_select <- function(string,after = NULL,before = NULL){
     output <- sub(paste0(".*",after),"",string)
   }
 
-  return(output)
+  return(stringr::str_trim(output))
 }

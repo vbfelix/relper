@@ -22,7 +22,7 @@ library(dplyr)
 `as_` functions coerce values to another type.
 
 # as_num
-The goal of `as_num` is to be a version of `as.numeric`, where the input is a string number with marks, such as "10.000,02".
+The goal of `as_num` is to be a broader version of `as.numeric`, where the input is a string with number and marks, such as "10.000,02".
 
 ```{r as_num}
 as_num("123.456,78")

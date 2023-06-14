@@ -21,6 +21,10 @@ knitr::opts_chunk$set(
 library(relper)
 library(dplyr)
 library(ggplot2)
+
+x <- rnorm(100)
+y <- rexp(100)
+
 ```
 
 `calc_` functions compute a certain value.
@@ -38,7 +42,6 @@ where:
 -   $\bar{x}$ is the average of the time series.
 
 ```{r calc_acf}
-x <- rnorm(100)
 
 calc_acf(x)
 
@@ -54,7 +57,6 @@ where:
 -   $y_t$ is a time series of length $n$.
 
 ```{r calc_acf-ccf}
-y <- rexp(100)
 
 calc_acf(x,y)
 

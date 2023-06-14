@@ -25,7 +25,7 @@ calc_geometric_mean <- function(x){
   )
 
   #log already provides warning for values < 0
-  output <- exp(mean(log(x), na.rm = TRUE))
+  output <- suppressWarnings(exp(mean(log(x), na.rm = TRUE)))
 
   return(output)
 }

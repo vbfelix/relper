@@ -24,7 +24,7 @@ calc_harmonic_mean <- function(x){
     warning = "at least one value = 0 and that caused the mean to be 0."
   )
 
-  output <- 1/mean(1/x, na.rm = TRUE)
+  output <- suppressWarnings(1/mean(1/x, na.rm = TRUE))
 
   return(output)
 }

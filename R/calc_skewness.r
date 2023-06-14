@@ -110,8 +110,6 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     output <- dividend/divisor
 
-    names(output) <- NULL
-
-    return(output)
+    return(unname(output))
 
   }
