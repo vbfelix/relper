@@ -1,3 +1,7 @@
+# relper 3.1.7
+
+* Addition of the function `calc_error.`
+
 # relper 3.0.0
 
 * Addition of the function `calc_association.`
