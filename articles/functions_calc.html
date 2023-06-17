@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,10 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vbfelix.github.io/relper/">relper</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></code></pre></div>
 <p><code>calc_</code> functions compute a certain value.</p>
 <div class="section level2">
 <h2 id="calc_acf">calc_acf<a class="anchor" aria-label="anchor" href="#calc_acf"></a>
@@ -116,22 +119,21 @@ series by <span class="math inline">\(k\)</span> units in time;</li>
 time series.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span></span>
+<code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
 <span><span class="co">#&gt;        acf   lag</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.033</span><span style="color: #BB0000; text-decoration: underline;">6</span>     1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.096</span><span style="color: #BB0000; text-decoration: underline;">3</span>     2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.016</span><span style="color: #BB0000; text-decoration: underline;">2</span>     3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.025<span style="text-decoration: underline;">0</span>     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.103</span>      5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.088<span style="text-decoration: underline;">8</span>     6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.093</span><span style="color: #BB0000; text-decoration: underline;">5</span>     7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.151</span>      8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.099<span style="text-decoration: underline;">5</span>     9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.127</span>      1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.069</span><span style="color: #BB0000; text-decoration: underline;">3</span>     2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.115      3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.130</span>      4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.024<span style="text-decoration: underline;">8</span>     5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.103      6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.253</span>      7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.034<span style="text-decoration: underline;">3</span>     8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.020</span><span style="color: #BB0000; text-decoration: underline;">8</span>     9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -151,22 +153,21 @@ where:</p>
 <span class="math inline">\(n\)</span>.</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span></span>
+<code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;        ccf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.112    -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.115    -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.023</span><span style="color: #BB0000; text-decoration: underline;">9</span>   -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.086<span style="text-decoration: underline;">3</span>   -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.118</span>    -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.114    -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.138</span>    -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.074</span><span style="color: #BB0000; text-decoration: underline;">0</span>    -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.031<span style="text-decoration: underline;">1</span>    -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.064</span><span style="color: #BB0000; text-decoration: underline;">5</span>    -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt;         ccf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.073<span style="text-decoration: underline;">4</span>    -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.145     -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.064<span style="text-decoration: underline;">7</span>    -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.008<span style="text-decoration: underline;">14</span>   -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.014<span style="text-decoration: underline;">5</span>    -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.171</span>     -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.050<span style="text-decoration: underline;">3</span>    -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.063<span style="text-decoration: underline;">8</span>     -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.154      -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.166</span>      -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -503,8 +504,7 @@ percentile.</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_kurtosis.html">calc_kurtosis</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"percentile"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;       90% </span></span>
-<span><span class="co">#&gt; 0.3177264</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.3177264</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="unbiased">Unbiased<a class="anchor" aria-label="anchor" href="#unbiased"></a>
