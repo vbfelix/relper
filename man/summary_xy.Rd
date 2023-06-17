@@ -15,7 +15,7 @@ summary_xy(x, y)
 A tibble (1x3) with the computed coefficients.
 }
 \description{
-Computation of the Pearson, Kendall and Spearman correlations coefficients.
+Computation of the covariance, and Pearson, Kendall and Spearman correlations coefficients.
 }
 \examples{
 
@@ -26,6 +26,5 @@ y <- rnorm(100)
 plot(x,y)
 
 summary_xy(x,y)
-
 
 }

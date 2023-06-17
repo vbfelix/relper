@@ -301,16 +301,19 @@ The goal of `calc_cv` is to compute the errors metrics.
 MAE measures the average absolute difference between the predicted and actual values:
 
 $$\frac{\sum\limits_{i=1}^{n}|X_i-Y_i|}{n}.$$
+
 ## Mean Absolute Percentage Error (MAPE)
 
 MAPE measures the average percentage difference between the predicted and actual values relative to the actual values:
 
 $$\frac{\sum\limits_{i=1}^{n}\left|\frac{X_i-Y_i}{X_i}\right|}{n}.$$
+
 ## Mean Squared Error (MSE)
 
 MSE measures the average of the squared differences between the predicted and actual values:
 
 $$\frac{\sum\limits_{i=1}^{n}(X_i-Y_i)^2}{n}.$$
+
 ## Root Mean Squared Error (RMSE)
 
 RMSE is the square root of the MSE, providing the measure of average prediction error in the same units as the target variable:

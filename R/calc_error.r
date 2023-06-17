@@ -38,7 +38,8 @@ calc_error <- function(x,y){
     MSE  = sum((x_y)^2,na.rm = TRUE)/n,
     RMSE = sqrt(MSE),
     RMSPE  = sqrt(sum((x_y/x)^2,na.rm = TRUE)/n)
-  )
+  ) %>%
+    tidyr::pivot_longer(cols = dplyr::everything(),names_to = "error")
 
   return(output)
 
