@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,18 +122,18 @@ time series.</li>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;         acf   lag</span></span>
-<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1           0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.085</span><span style="color: #BB0000; text-decoration: underline;">9</span>      1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.147       2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.007<span style="text-decoration: underline;">46</span>     3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.019<span style="text-decoration: underline;">6</span>      4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.041<span style="text-decoration: underline;">2</span>      5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.181</span>       6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.064</span><span style="color: #BB0000; text-decoration: underline;">3</span>      7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.160</span>       8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.074</span><span style="color: #BB0000; text-decoration: underline;">5</span>      9</span></span>
+<span><span class="co">#&gt;        acf   lag</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.086</span><span style="color: #BB0000; text-decoration: underline;">5</span>     1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.157</span>      2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.063</span><span style="color: #BB0000; text-decoration: underline;">5</span>     3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.012<span style="text-decoration: underline;">4</span>     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.196      5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.033<span style="text-decoration: underline;">3</span>     6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.163</span>      7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.121      8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.116</span>      9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -156,18 +156,18 @@ where:</p>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;        ccf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.153    -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.037</span><span style="color: #BB0000; text-decoration: underline;">8</span>   -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.156</span>    -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.064<span style="text-decoration: underline;">1</span>   -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.036</span><span style="color: #BB0000; text-decoration: underline;">7</span>   -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.068<span style="text-decoration: underline;">2</span>   -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.039<span style="text-decoration: underline;">6</span>   -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.113</span>     -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.080<span style="text-decoration: underline;">4</span>    -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.048</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt;         ccf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.014<span style="text-decoration: underline;">6</span>    -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.097</span><span style="color: #BB0000; text-decoration: underline;">6</span>    -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.028</span><span style="color: #BB0000; text-decoration: underline;">1</span>    -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.095<span style="text-decoration: underline;">9</span>    -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.036</span><span style="color: #BB0000; text-decoration: underline;">9</span>    -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.003<span style="text-decoration: underline;">81</span>   -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.099</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.089<span style="text-decoration: underline;">9</span>     -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.290      -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.154      -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -401,6 +401,39 @@ the CV will be multiplied by 100.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_cv.html">calc_cv</a></span><span class="op">(</span><span class="va">x</span>,as_perc <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 99.32</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="calc_error">calc_error<a class="anchor" aria-label="anchor" href="#calc_error"></a>
+</h2>
+<p>The goal of <code>calc_cv</code> is to compute the errors
+metrics.</p>
+<div class="section level3">
+<h3 id="mean-absolute-error-mae">Mean Absolute Error (MAE)<a class="anchor" aria-label="anchor" href="#mean-absolute-error-mae"></a>
+</h3>
+<p>MAE measures the average absolute difference between the predicted
+and actual values:</p>
+<p><span class="math display">\[\frac{\sum\limits_{i=1}^{n}|X_i-Y_i|}{n}.\]</span>
+## Mean Absolute Percentage Error (MAPE)</p>
+<p>MAPE measures the average percentage difference between the predicted
+and actual values relative to the actual values:</p>
+<p><span class="math display">\[\frac{\sum\limits_{i=1}^{n}\left|\frac{X_i-Y_i}{X_i}\right|}{n}.\]</span>
+## Mean Squared Error (MSE)</p>
+<p>MSE measures the average of the squared differences between the
+predicted and actual values:</p>
+<p><span class="math display">\[\frac{\sum\limits_{i=1}^{n}(X_i-Y_i)^2}{n}.\]</span>
+## Root Mean Squared Error (RMSE)</p>
+<p>RMSE is the square root of the MSE, providing the measure of average
+prediction error in the same units as the target variable:</p>
+<p><span class="math display">\[\sqrt{\text{MSE}}.\]</span></p>
+</div>
+<div class="section level3">
+<h3 id="root-mean-squared-percentage-error-rmspe">Root Mean Squared Percentage Error (RMSPE)<a class="anchor" aria-label="anchor" href="#root-mean-squared-percentage-error-rmspe"></a>
+</h3>
+<p>RMSPE is the square root of the average of the squared percentage
+differences between the predicted and actual values relative to the
+actual values:</p>
+<p><span class="math display">\[\sqrt{\frac{\sum\limits_{i=1}^{n}\left(\frac{X_i-Y_i}{X_i}\right)^2}{n}}.\]</span></p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="calc_geometric_mean">calc_geometric_mean<a class="anchor" aria-label="anchor" href="#calc_geometric_mean"></a>
