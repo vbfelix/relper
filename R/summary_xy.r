@@ -1,6 +1,6 @@
 #' Summary of two numeric variables
 #'
-#' @description Computation of the Pearson, Kendall and Spearman correlations coefficients.
+#' @description Computation of the covariance, and Pearson, Kendall and Spearman correlations coefficients.
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("y","numeric")
@@ -18,7 +18,6 @@
 #'
 #' summary_xy(x,y)
 #'
-#'
 
 summary_xy <- function(x,y){
 
@@ -30,6 +29,7 @@ summary_xy <- function(x,y){
 
   output <-
   dplyr::tibble(
+    covariance = stats::var(x,y,na.rm = TRUE),
     pearson  =  stats::cor.test(x,y,method = "pearson",na.rm = TRUE)$estimate,
     kendall  =  stats::cor.test(x,y,method = "kendall",na.rm = TRUE)$estimate,
     spearman =  stats::cor.test(x,y,method = "spearman",na.rm = TRUE)$estimate

@@ -61,7 +61,9 @@ stat_normality <- function(x,alpha = 0.05, digits = NULL,print = FALSE){
       dplyr::mutate(
         dplyr::across(
           .cols = c(statistic,p_value),
-          .fns = ~round(x = .,digits = digits)))
+          .fns = ~round(x = .,digits = digits)
+        )
+      )
   }
 
   if(print){

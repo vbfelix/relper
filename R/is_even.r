@@ -34,5 +34,3 @@ is_even <- function(x){
   return(output)
 
 }
-
-# is_even(x)

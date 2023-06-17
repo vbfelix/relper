@@ -108,8 +108,6 @@ calc_association <-
 
     # output ------------------------------------------------------------------
 
-    names(output) <- NULL
-
-    return(output)
+    return(unname(output))
 
   }

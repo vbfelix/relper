@@ -65,6 +65,6 @@ calc_correlation <- function(x,y,type = "pearson"){
 
   }
 
-  return(output)
+  return(unname(output))
 
 }

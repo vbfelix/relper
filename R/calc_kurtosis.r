@@ -95,6 +95,7 @@ calc_kurtosis <- function(x,type = "unbiased"){
 
   }
 
+# output -----------------------------------------------------------------
 
   return(unname(output))
 

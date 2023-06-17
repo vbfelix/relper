@@ -24,7 +24,9 @@ calc_cv <- function(x, as_perc = FALSE){
   mu_x <- mean(x, na.rm = TRUE)
 
   if(is.na(mu_x)){
+
     return(NA_real_)
+
   }else{
 
     if(mu_x == 0){

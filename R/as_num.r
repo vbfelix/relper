@@ -34,10 +34,15 @@ as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
 
   output <-
     x %>%
+    # Remove thousand marker
     gsub(x = .,pattern = thousand_mark,replacement =  "") %>%
+    # Sub decimal marker to "."
     gsub(x = .,pattern = decimal_mark,replacement =  "\\.") %>%
+    # Remove "$"
     gsub(x = .,pattern = "\\$",replacement =  "") %>%
+    # Remove letters
     gsub(x = .,pattern = "[a-zA-Z]",replacement =  "") %>%
+    # Remove blank spaces
     gsub(x = .,pattern = " ",replacement =  "") %>%
     as.numeric(., na.rm = FALSE)
 
