@@ -62,6 +62,14 @@ The goal of `plt_no_labels` is to remove all labels.
 plot + plt_no_labels
 ```
 
+# plt_regression_line
+
+The goal of `plt_regression_line` is to add a regression line to a scatter plot.
+
+```{r plt_regression_line}
+plot + plt_regression_line(color = "red")
+```
+
 # plt_scale_auto
 
 The goal of `plt_scale_auto` is to add a automatic scale.

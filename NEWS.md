@@ -1,5 +1,7 @@
 # relper 3.2.0
 
+* Addition of the function `plt_regression_line.`
+
 # relper 3.1.7
 
 * Addition of the function `calc_error.`

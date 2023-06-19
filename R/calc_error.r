@@ -32,13 +32,13 @@ calc_error <- function(x,y){
   x_y <- x-y
 
   output <-
-  dplyr::tibble(
-    MAE  = sum(abs(x_y),na.rm = TRUE)/n,
-    MAPE = sum(abs(x_y/x),na.rm = TRUE)/n,
-    MSE  = sum((x_y)^2,na.rm = TRUE)/n,
-    RMSE = sqrt(MSE),
-    RMSPE  = sqrt(sum((x_y/x)^2,na.rm = TRUE)/n)
-  ) %>%
+    dplyr::tibble(
+      MAE  = sum(abs(x_y),na.rm = TRUE)/n,
+      MAPE = sum(abs(x_y/x),na.rm = TRUE)/n,
+      MSE  = sum((x_y)^2,na.rm = TRUE)/n,
+      RMSE = sqrt(MSE),
+      RMSPE  = sqrt(sum((x_y/x)^2,na.rm = TRUE)/n)
+    ) %>%
     tidyr::pivot_longer(cols = dplyr::everything(),names_to = "error")
 
   return(output)
