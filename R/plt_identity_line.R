@@ -22,14 +22,15 @@
 #' plot + plt_identity_line()
 #'
 
-plt_identity_line <- function(color = "black", linetype = "dashed"){
+plt_identity_line <- function(color = "black", linetype = "dashed",linewidth = .75){
   list(
     ggplot2::geom_abline(
-      mapping = ggplot2::aes(slope = 1, intercept = 0,alpha = "Identity line"),
+      mapping = ggplot2::aes(slope = 1, intercept = 0,linewidth = "Identity line"),
       linetype = linetype,
-      color = color),
-    ggplot2::labs(alpha = ""),
-    ggplot2::scale_alpha_manual(values = c(1,1))
+      color = color
+    ),
+    ggplot2::labs(linewidth = ""),
+    ggplot2::scale_linewidth_manual(values = c(linewidth,linewidth))
   )
 }
 

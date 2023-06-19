@@ -22,7 +22,7 @@
 #' plot + plt_regression_line()
 #'
 
-plt_regression_line <- function(color = "black", linetype = "dashed"){
+plt_regression_line <- function(color = "black", linetype = "dashed",linewidth = .75){
   list(
     ggplot2::geom_smooth(
       method = "lm",
@@ -30,7 +30,9 @@ plt_regression_line <- function(color = "black", linetype = "dashed"){
       formula = "y ~ x",
       mapping = ggplot2::aes(alpha = "Regression line"),
       linetype = linetype,
-      color = color),
+      color = color,
+      linewidth = linewidth
+    ),
     ggplot2::labs(alpha = ""),
     ggplot2::scale_alpha_manual(values = c(1,1))
   )
