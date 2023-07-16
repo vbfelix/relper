@@ -4,6 +4,7 @@
 #'
 #' @eval arg_value("color","character",default = "'black'", action = "will be the line color")
 #' @eval arg_value("linetype","character",default = "'dashed'", action = "will be the line type")
+#' @eval arg_value("linewidth","numeric",default = "0.75", action = "will be the line width")
 #'
 #' @return A ggplot2 object.
 #'
@@ -23,6 +24,13 @@
 #'
 
 plt_regression_line <- function(color = "black", linetype = "dashed",linewidth = .75){
+
+  stop_function(arg = "color",type = "character",single_value = TRUE)
+
+  stop_function(arg = "linetype",type = "character",single_value = TRUE)
+
+  stop_function(arg = "linewidth",type = "numeric",single_value = TRUE,is_positive = TRUE)
+
   list(
     ggplot2::geom_smooth(
       method = "lm",

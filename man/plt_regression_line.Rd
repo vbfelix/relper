@@ -10,6 +10,8 @@ plt_regression_line(color = "black", linetype = "dashed", linewidth = 0.75)
 \item{color}{A character single value (default = 'black'), that will be the line color}
 
 \item{linetype}{A character single value (default = 'dashed'), that will be the line type}
+
+\item{linewidth}{A numeric single value (default = 0.75), that will be the line width}
 }
 \value{
 A ggplot2 object.
