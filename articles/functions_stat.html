@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.5.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,16 +103,25 @@ to apply them.</p>
 <span>    grp_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    cat_var1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    cat_var2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">25</span><span class="op">:</span><span class="fl">26</span><span class="op">]</span>,size <span class="op">=</span> <span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    num_var1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,</span>
-<span>    num_var2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">2</span><span class="op">)</span>,</span>
-<span>    num_var3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span>    num_var1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">66</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">34</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    num_var2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="fl">80</span>,<span class="fl">2</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">20</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    num_var3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">40</span>,<span class="fl">2</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">60</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="stat_missing_values">stat_missing_values<a class="anchor" aria-label="anchor" href="#stat_missing_values"></a>
+</h2>
+<p>The goal of <code>stat_missing_values</code> is to identify the
+variables with most missing values</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/stat_missing_values.html">stat_missing_values</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<p><img src="functions_stat_files/figure-html/stat_missing_values-1.png" width="1152"></p>
+</div>
 <div class="section level2">
 <h2 id="stat_normality">stat_normality<a class="anchor" aria-label="anchor" href="#stat_normality"></a>
 </h2>
 <p>The goal of <code>stat_normality</code> is to test the normality of
 the data.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/stat_normality.html">stat_normality</a></span><span class="op">(</span><span class="va">x</span>,digits <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
@@ -137,7 +146,7 @@ argument <code>print</code> to <code>TRUE</code>.</p>
 </h2>
 <p>The goal of <code>stat_two_cat</code> is to create a frequency table
 with chi-square statistic, p-value and Cramer’s V.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/stat_two_cat.html">stat_two_cat</a></span><span class="op">(</span></span>
 <span>    df <span class="op">=</span> <span class="va">.</span>,</span>
@@ -153,7 +162,7 @@ with chi-square statistic, p-value and Cramer’s V.</p>
 </h2>
 <p>The goal of <code>stat_two_num</code> is to create a summary table
 comparing one or more numerical variables between two groups.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/stat_two_num.html">stat_two_num</a></span><span class="op">(</span></span>
 <span>    df <span class="op">=</span> <span class="va">.</span>,</span>
