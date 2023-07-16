@@ -5,9 +5,10 @@
 \title{Palettes with two constrast colors}
 \usage{
 palette_two(
-  name = c("boba_fett", "blade_runner_2049", "dear_white_people", "good_omens",
-    "hightown", "jaws", "notorius", "saint_maud", "shirley", "spirited", "the_expanse",
-    "the_help", "watchmen"),
+  name = c("boba_fett", "blade_runner_2049", "dear_white_people", "emily_in_paris",
+    "good_omens", "hightown", "jaws", "notorius", "saint_maud", "shirley", "spirited",
+    "the_english", "the_expanse", "the_gilded_age", "the_help", "titans", "watchmen",
+    "winning_time"),
   reverse = FALSE
 )
 }
@@ -25,6 +26,7 @@ Palette with two constrast colors, with the following palettes:
  \cr - boba_fett: Inspired by the TV series Boba Fett.
  \cr - blade_runner_2049: Inspired by the movie Blade Runner 2049.
  \cr - dear_white_people: Inspired by the TV series Dear White People.
+ \cr - emily_in_paris: Inspired by the TV series Emily in Paris.
  \cr - good_omens: Inspired by the TV series Good Omens.
  \cr - hightown: Inspired by the TV series Hightown.
  \cr - jaws: Inspired by the movie Jaws.
@@ -32,9 +34,13 @@ Palette with two constrast colors, with the following palettes:
  \cr - saint_maud: Inspired by the movie Saint Maud.
  \cr - shirley: Inspired by the movie Shirley.
  \cr - spirited: Inspired by the movie Spirited.
+ \cr - the_english: Inspired by the movie The English.
  \cr - the_expanse: Inspired by the TV series The Expanse.
+ \cr - the_gilded_age: Inspired by the TV series The Gilded Age.
  \cr - the_help: Inspired by the movie The Help.
+ \cr - titans: Inspired by the TV series Titans.
  \cr - watchmen: Inspired by the TV series Watchmen.
+ \cr - winning_time: Inspired by the TV series Winning Time.
 }
 \examples{
 
