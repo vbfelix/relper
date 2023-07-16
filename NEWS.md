@@ -1,5 +1,7 @@
 # relper 3.5.0
 
+* Addition of the function `stat_missing_values`.
+
 # relper 3.4.0
 
 * Addition of the function `str_extract_char`.

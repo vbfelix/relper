@@ -27,10 +27,18 @@ set.seed(1234);df <-
     grp_var = sample(paste("group", letters[1:2]),size = 100,replace = TRUE),
     cat_var1 = sample(letters[1:3],size = 100,replace = TRUE),
     cat_var2 = sample(letters[25:26],size = 100,replace = TRUE),
-    num_var1 = rnorm(100),
-    num_var2 = rpois(100,2),
-    num_var3 = rexp(100,2)
+    num_var1 = c(rnorm(66),rep(NA,34)),
+    num_var2 = c(rpois(80,2),rep(NA,20)),
+    num_var3 = c(rexp(40,2),rep(NA,60))
   )
+```
+
+# stat_missing_values
+
+The goal of `stat_missing_values` is to identify the variables with most missing values
+
+```{r stat_missing_values,fig.height=8,fig.width=12}
+stat_missing_values(df)
 ```
 
 # stat_normality
