@@ -88,4 +88,12 @@ palette_vignette(func_palette = palette_seq)
 
 ```
 
+# palette_two
 
+The goal of `palette_two` is to return a palette with two colors, with the following palettes:
+
+```{r, echo = FALSE,fig.height = 14}
+
+palette_vignette(func_palette = palette_two)
+
+```

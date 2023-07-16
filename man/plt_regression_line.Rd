@@ -4,7 +4,7 @@
 \alias{plt_regression_line}
 \title{ggplot2: Add a regression line to a scatter plot}
 \usage{
-plt_regression_line(color = "black", linetype = "dashed")
+plt_regression_line(color = "black", linetype = "dashed", linewidth = 0.75)
 }
 \arguments{
 \item{color}{A character single value (default = 'black'), that will be the line color}

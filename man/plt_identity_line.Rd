@@ -4,7 +4,7 @@
 \alias{plt_identity_line}
 \title{ggplot2: Add a identity line to a scatter plot}
 \usage{
-plt_identity_line(color = "black", linetype = "dashed")
+plt_identity_line(color = "black", linetype = "dashed", linewidth = 0.75)
 }
 \arguments{
 \item{color}{A character single value (default = 'black'), that will be the line color}

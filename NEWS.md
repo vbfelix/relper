@@ -1,5 +1,7 @@
 # relper 3.3.0
 
+* Addition of the function `palette_two.`
+
 # relper 3.2.0
 
 * Addition of the function `plt_regression_line.`
