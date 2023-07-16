@@ -1,42 +1,44 @@
 # relper 3.4.0
 
+* Addition of the function `str_extract_char`.
+
 # relper 3.3.0
 
-* Addition of the function `palette_two.`
+* Addition of the function `palette_two`.
 
 # relper 3.2.0
 
-* Addition of the function `plt_regression_line.`
+* Addition of the function `plt_regression_line`.
 
 # relper 3.1.7
 
-* Addition of the function `calc_error.`
+* Addition of the function `calc_error`.
 
 # relper 3.0.0
 
-* Addition of the function `calc_association.`
+* Addition of the function `calc_association`.
 
-* Addition of the function `calc_correlation.`
+* Addition of the function `calc_correlation`.
 
-* Addition of the function `calc_kurtosis.`
+* Addition of the function `calc_kurtosis`.
 
-* Addition of the function `calc_modality.`
+* Addition of the function `calc_modality`.
 
-* Addition of the function `calc_skewness.`
+* Addition of the function `calc_skewness`.
 
-* Addition of the function `is_weekend.`
+* Addition of the function `is_weekend`.
 
-* Addition of the function `stat_normality.`
+* Addition of the function `stat_normality`.
 
-* Addition of the function `summary_xy.`
+* Addition of the function `summary_xy`.
 
-* Renaming of the function `calc_date_aux()` to `dttm_vars.`
+* Renaming of the function `calc_date_aux()` to `dttm_vars`.
 
-* Renaming of the function `calc_date_diff()` to `dttm_diff.`
+* Renaming of the function `calc_date_diff()` to `dttm_diff`.
 
 # relper 2.2.0
 
-* Addition of the function `plt_scale_y_mirror.`
+* Addition of the function `plt_scale_y_mirror`.
 
 # relper 2.1.0
 

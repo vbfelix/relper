@@ -46,10 +46,18 @@ str_clean(string,remove_accent = FALSE,remove_punct = TRUE)
 ```
 
 And there is the possibility to substitute the punctuation symbols.
+
 ```{r str_clean_punct}
 str_clean(string,remove_accent = FALSE,remove_punct = TRUE,sub_punct = "-")
 ```
 
+# str_extract_char
+
+The goal of `str_extract_char` is to extract a specific character from a string.
+
+```{r str_extract_char}
+str_extract_char(string = "abcdef",char = 2)
+```
 # str_keep
 
 The goal of `str_keep` is to keep only a type of character in the string.
