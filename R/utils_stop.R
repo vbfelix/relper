@@ -5,7 +5,8 @@ stop_function <- function(
     length_bigger = NULL,
     range = NULL,
     bigger_than = NULL,
-    single_value = NULL
+    single_value = NULL,
+    is_positive = NULL
     ){
 
   arg_name <- rlang::get_expr(rlang::enquo(arg))
@@ -84,6 +85,18 @@ stop_function <- function(
     condition <- arg < bigger_than
 
     msg <- paste0("argument '",arg_name,"' must be >= ", bigger_than)
+
+    if(condition){stop(msg)}
+
+  }
+
+  # is_positive --------------------------------------------------------------------
+
+  if(!is.null(is_positive)){
+
+    condition <- arg <= 0
+
+    msg <- paste0("argument '",arg_name,"' must be > 0 ")
 
     if(condition){stop(msg)}
 
