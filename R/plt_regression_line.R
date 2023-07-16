@@ -29,7 +29,7 @@ plt_regression_line <- function(color = "black", linetype = "dashed",linewidth =
 
   stop_function(arg = "linetype",type = "character",single_value = TRUE)
 
-  stop_function(arg = "linewidth",type = "numeric",single_value = TRUE,is_positive = TRUE)
+  # stop_function(arg = "linewidth",type = "numeric",single_value = TRUE,is_positive = TRUE)
 
   list(
     ggplot2::geom_smooth(
