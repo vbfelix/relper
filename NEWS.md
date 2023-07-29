@@ -1,96 +1,103 @@
-# relper 3 (Calculations all the way)
+# relper 3.6.8
 
-To improve data analysis, I added functions that compute metrics and other calculations.
+## Addition
 
-## 3.6.8
+-   Parameter `prefix` to the function `dttm_vars`
+-   Parameter `...` to the function `plt_scale_y_mirror` to apply the function `format_num` to the breaks labels
 
--   Addition of the parameter `prefix` to the function `dttm_vars`
--   Addition of the parameter `...` to the function `plt_scale_y_mirror` to apply in `format_num`
+# relper 3.5.0
 
-## 3.5.0
+## Addition
 
--   Addition of the function `stat_missing_values`.
+-   Function `stat_missing_values`
 
-## 3.4.0
+# relper 3.4.0
 
--   Addition of the function `str_extract_char`.
+## Addition
 
-## 3.3.0
+-   Function `str_extract_char`
 
--   Addition of the function `palette_two`.
+# relper 3.3.0
 
-## 3.2.0
+## Addition
 
--   Addition of the function `plt_regression_line`.
+-   Function `palette_two`
 
-## 3.1.7
+# relper 3.2.0
 
--   Addition of the function `calc_error`.
+## Addition
 
-## 3.0.0
+-   Function `plt_regression_line`
 
--   Addition of the function `calc_association`.
+# relper 3.1.7
 
--   Addition of the function `calc_correlation`.
+## Addition
 
--   Addition of the function `calc_kurtosis`.
+-   Function `calc_error`
 
--   Addition of the function `calc_modality`.
+# relper 3.0.0
 
--   Addition of the function `calc_skewness`.
+## Addition
 
--   Addition of the function `is_weekend`.
+-   Functions: `calc_association`,`calc_correlation`, `calc_kurtosis`, `calc_modality`, `calc_skewness`, `is_weekend`, `stat_normality` and `summary_xy`
 
--   Addition of the function `stat_normality`.
+## Improvements
 
--   Addition of the function `summary_xy`.
+-   Renaming of the function `calc_date_aux()` to `dttm_vars`
 
--   Renaming of the function `calc_date_aux()` to `dttm_vars`.
+-   Renaming of the function `calc_date_diff()` to `dttm_diff`
 
--   Renaming of the function `calc_date_diff()` to `dttm_diff`.
+# relper 2.2.0
 
-# relper 2 (New colors)
+## Addition
 
-I developed a new type of function called `palette_` that contains palettes inspired by movies and TV shows, as well as other functions that improve plot visualization.
+-   Function `plt_scale_y_mirror`
 
-## 2.2.0
+# relper 2.1.0
 
--   Addition of the function `plt_scale_y_mirror`.
+## Addition
+-   Dataset `vfx_watermark_white`
 
-## 2.1.0
+## Improvements
 
--   Addition of more steps to the function `as_num`, such as removing characters.
+-   More steps to the function `as_num`, such as removing characters
 
--   Addition of the dataset `vfx_watermark_white`.
 
-## 2.0.0
+# relper 2.0.0 - Palettes
 
--   Addition of the functions `palette_`.
+## Addition
 
-# relper 1 (Rebirth)
+-   Functions: `palette_`
 
-I refactored the entire package in this version to use better development practices, such as: vignettes, documentation for all functions, standard naming and unit tests.
+# relper 1.2.0 
 
-## 1.2.0
 
-**Removal:**
+## Addition
 
--   Datasets: `df_month` and `df_week`.
+-   Dependencies: `glue`, `rlang`, `scales` and `tidyselect`
 
--   Dependencies: `png`.
+-   Documentation: `vfx_watermark`
 
--   Functions: `summary_data`.
+## Removal
 
-**Addition:**
+-   Datasets: `df_month` and `df_week`
 
--   Dependencies: `glue`, `rlang`, `scales` and `tidyselect`.
+-   Dependencies: `png`
 
--   Documentation: `vfx_watermark`.
+-   Functions: `summary_data`
 
-## 1.1.0
+# relper 1.1.0
 
--   Changed `str_to_abb` argument `n_char` to `n_abb`.
+## Improvements
 
-## 1.0.1
+-   Renaming of the fcuntion `str_to_abb` argument `n_char` to `n_abb`
 
--   Added vignettes.
+# relper 1.0.1
+
+## Addition
+
+-   Function vignettes
+
+# relper 1.0.0
+
+-   Official release of the package after refactoring
