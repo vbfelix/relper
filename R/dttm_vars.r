@@ -57,7 +57,7 @@ dttm_vars <- function(df,dt_var, prefix = NULL){
         .data = output,
         .fn = ~paste0(prefix,"_",.),
         .cols = mon_abb:wday_lbl
-        )
+      )
 
   }
 
