@@ -28,13 +28,14 @@ plt_scale_y_mirror <-
   function(
     breaks,
     labels = NULL,
-    expand = c(.01,0)){
-
+    expand = c(.01,0),
+    ...
+    ){
 
     stop_length(arg = expand,length = 2)
 
     if(is.null(labels)){
-      labels <- breaks
+      labels <- relper::format_num(breaks,...)
     }else{
       if(length(breaks) != length(labels)){
         stop("arguments 'breaks' and 'labels' must be of the same length")
