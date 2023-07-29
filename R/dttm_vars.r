@@ -33,7 +33,6 @@ dttm_vars <- function(df,dt_var, prefix = NULL){
 
   stop_function(arg = prefix,type = "character",null = TRUE)
 
-
   output <-
     df %>%
     tibble::as_tibble() %>%
