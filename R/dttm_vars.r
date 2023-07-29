@@ -16,6 +16,7 @@
 #'
 #' @eval arg_df("df")
 #' @eval arg_df_var("dt_var","date")
+#' @eval arg_value("prefix","character","NULL","that will be added as the prefix for the computed variables")
 #'
 #' @return A tibble with the original data and the new computed variables.
 #'
@@ -25,7 +26,11 @@
 #'
 #' df <- data.frame(dt = lubridate::dmy("01/01/01"))
 #'
+#' #without prefix
 #' dplyr::glimpse(dttm_vars(df,dt))
+#'
+#' #with prefix
+#' dplyr::glimpse(dttm_vars(df,dt,"dt"))
 #'
 
 dttm_vars <- function(df,dt_var, prefix = NULL){

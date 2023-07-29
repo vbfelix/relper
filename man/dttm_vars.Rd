@@ -4,12 +4,14 @@
 \alias{dttm_vars}
 \title{Create auxiliars variables for a date variable}
 \usage{
-dttm_vars(df, dt_var)
+dttm_vars(df, dt_var, prefix = NULL)
 }
 \arguments{
 \item{df}{A single data.frame}
 
 \item{dt_var}{A date variable from a data.frame}
+
+\item{prefix}{A character single value (default = NULL), that that will be added as the prefix for the computed variables}
 }
 \value{
 A tibble with the original data and the new computed variables.
@@ -22,6 +24,7 @@ Computation of auxiliar date variables:
  \cr - mon_num: the number of the month;
  \cr - day_num: the number of the day within the month;
  \cr - year_num: the number of the year;
+ \cr - year_lbl: the number of the year, bu as a factor;
  \cr - week_num: the number of complete seven day periods that have occurred between the date and January 1st, plus one;
  \cr - epiweek_num: the US CDC version of epidemiological week. Starts on Sunday;
  \cr - isoweek_num:  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
@@ -32,6 +35,10 @@ Computation of auxiliar date variables:
 
 df <- data.frame(dt = lubridate::dmy("01/01/01"))
 
+#without prefix
 dplyr::glimpse(dttm_vars(df,dt))
+
+#with prefix
+dplyr::glimpse(dttm_vars(df,dt,"dt"))
 
 }
