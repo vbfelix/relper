@@ -43,6 +43,7 @@ dttm_vars <- function(df,dt_var, prefix = NULL){
       mon_num = lubridate::month({{dt_var}}),
       day_num = lubridate::day({{dt_var}}),
       year_num = lubridate::year({{dt_var}}),
+      year_lbl = as.factor(year_num),
       week_num = lubridate::week({{dt_var}}),
       epiweek_num = lubridate::epiweek({{dt_var}}),
       isoweek_num = lubridate::isoweek({{dt_var}}),
