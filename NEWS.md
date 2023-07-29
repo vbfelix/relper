@@ -22,7 +22,7 @@
 
 * Addition of the function `calc_error`.
 
-# relper 3.0.0
+# relper 3.0.0 - Calculations
 
 * Addition of the function `calc_association`.
 
