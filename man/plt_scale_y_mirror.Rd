@@ -4,7 +4,7 @@
 \alias{plt_scale_y_mirror}
 \title{ggplot2: Mirror the y axis on the right side}
 \usage{
-plt_scale_y_mirror(breaks, labels = NULL, expand = c(0.01, 0))
+plt_scale_y_mirror(breaks, labels = NULL, expand = c(0.01, 0), ...)
 }
 \arguments{
 \item{breaks}{A  vector, that will be the breaks in the y axis}

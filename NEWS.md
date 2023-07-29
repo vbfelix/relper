@@ -2,9 +2,10 @@
 
 To improve data analysis, I added functions that compute metrics and other calculations.
 
-## 3.6.7
+## 3.6.8
 
--   Addition of the parameter `prefix` to the function `dttm_vars`.
+-   Addition of the parameter `prefix` to the function `dttm_vars`
+-   Addition of the parameter `...` to the function `plt_scale_y_mirror` to apply in `format_num`
 
 ## 3.5.0
 
