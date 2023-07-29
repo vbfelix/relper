@@ -7,6 +7,7 @@
 #'  \cr - mon_num: the number of the month;
 #'  \cr - day_num: the number of the day within the month;
 #'  \cr - year_num: the number of the year;
+#'  \cr - year_lbl: the number of the year, bu as a factor;
 #'  \cr - week_num: the number of complete seven day periods that have occurred between the date and January 1st, plus one;
 #'  \cr - epiweek_num: the US CDC version of epidemiological week. Starts on Sunday;
 #'  \cr - isoweek_num:  the week as it would appear in the ISO 8601 system, which uses a reoccurring leap week. Starts on Monday;
