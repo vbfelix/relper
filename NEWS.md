@@ -1,6 +1,6 @@
-# relper 3.6.0
+# relper 3.6.7
 
-* Addition of the parameter `prefix` to function `dttm_vars`.
+* Addition of the parameter `prefix` to the function `dttm_vars`.
 
 # relper 3.5.0
 
