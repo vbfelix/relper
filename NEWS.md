@@ -1,3 +1,5 @@
+# relper 3.6.0
+
 # relper 3.5.0
 
 * Addition of the function `stat_missing_values`.
