@@ -2,31 +2,31 @@
 
 To improve data analysis, I added functions that compute metrics and other calculations.
 
-## relper 3.6.7
+## 3.6.7
 
 -   Addition of the parameter `prefix` to the function `dttm_vars`.
 
-## relper 3.5.0
+## 3.5.0
 
 -   Addition of the function `stat_missing_values`.
 
-## relper 3.4.0
+## 3.4.0
 
 -   Addition of the function `str_extract_char`.
 
-## relper 3.3.0
+## 3.3.0
 
 -   Addition of the function `palette_two`.
 
-## relper 3.2.0
+## 3.2.0
 
 -   Addition of the function `plt_regression_line`.
 
-## relper 3.1.7
+## 3.1.7
 
 -   Addition of the function `calc_error`.
 
-## relper 3.0.0
+## 3.0.0
 
 -   Addition of the function `calc_association`.
 
@@ -52,17 +52,17 @@ To improve data analysis, I added functions that compute metrics and other calcu
 
 I developed a new type of function called `palette_` that contains palettes inspired by movies and TV shows, as well as other functions that improve plot visualization.
 
-## relper 2.2.0
+## 2.2.0
 
 -   Addition of the function `plt_scale_y_mirror`.
 
-## relper 2.1.0
+## 2.1.0
 
 -   Addition of more steps to the function `as_num`, such as removing characters.
 
 -   Addition of the dataset `vfx_watermark_white`.
 
-## relper 2.0.0
+## 2.0.0
 
 -   Addition of the functions `palette_`.
 
@@ -70,7 +70,7 @@ I developed a new type of function called `palette_` that contains palettes insp
 
 I refactored the entire package in this version to use better development practices, such as: vignettes, documentation for all functions, standard naming and unit tests.
 
-## relper 1.2.0
+## 1.2.0
 
 **Removal:**
 
@@ -86,10 +86,10 @@ I refactored the entire package in this version to use better development practi
 
 -   Documentation: `vfx_watermark`.
 
-## relper 1.1.0
+## 1.1.0
 
 -   Changed `str_to_abb` argument `n_char` to `n_abb`.
 
-## relper 1.0.1
+## 1.0.1
 
 -   Added vignettes.
