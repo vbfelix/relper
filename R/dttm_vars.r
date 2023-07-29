@@ -27,11 +27,15 @@
 #' dplyr::glimpse(dttm_vars(df,dt))
 #'
 
-dttm_vars <- function(df,dt_var){
+dttm_vars <- function(df,dt_var, prefix = NULL){
 
   stop_function(arg = df,type = "dataframe")
 
-  df %>%
+  stop_function(arg = prefix,type = "character",null = TRUE)
+
+
+  output <-
+    df %>%
     tibble::as_tibble() %>%
     dplyr::mutate(
       mon_abb = lubridate::month({{dt_var}},label = TRUE,abbr = TRUE),
@@ -45,6 +49,19 @@ dttm_vars <- function(df,dt_var){
       wday_abb = lubridate::wday({{dt_var}},label = TRUE,abbr = TRUE),
       wday_lbl = lubridate::wday({{dt_var}},label = TRUE,abbr = FALSE)
     )
+
+  if(!is.null(prefix)){
+
+    output <-
+      dplyr::rename_with(
+        .data = output,
+        .fn = ~paste0(prefix,"_",.),
+        .cols = mon_abb:wday_lbl
+        )
+
+  }
+
+  return(output)
 }
 
 

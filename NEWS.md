@@ -1,5 +1,7 @@
 # relper 3.6.0
 
+* Addition of the parameter `prefix` to function `dttm_vars`.
+
 # relper 3.5.0
 
 * Addition of the function `stat_missing_values`.
