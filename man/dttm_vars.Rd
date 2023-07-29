@@ -2,7 +2,7 @@
 % Please edit documentation in R/dttm_vars.r
 \name{dttm_vars}
 \alias{dttm_vars}
-\title{Create auxiliars variables for a date variable}
+\title{Create auxiliar variables for a date variable}
 \usage{
 dttm_vars(df, dt_var, prefix = NULL)
 }

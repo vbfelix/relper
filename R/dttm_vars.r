@@ -1,4 +1,4 @@
-#' @title Create auxiliars variables for a date variable
+#' @title Create auxiliar variables for a date variable
 #'
 #' @description Computation of auxiliar date variables:
 #'  \cr
