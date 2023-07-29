@@ -6,7 +6,7 @@
 
 # Introduction
 
-Welcome to `relper`, a R package designed to make data preparation,
+Welcome to `relper`, an R package designed to make data preparation,
 cleaning, and visualization a breeze.
 
 Created by a senior
@@ -31,7 +31,7 @@ color palettes. Some of the key features of relper include:
 - **Color palettes**: includes beautiful and varied color palettes,
   inspired by popular TV series and movies.
 
-- **ggplot2 integration**: complements ggplot2, e.g., by allowing you to
+- **ggplot2 extension**: complements ggplot2, e.g., by allowing you to
   add an identity line to a scatter plot with single command.
 
 - **String manipulation**: offers functions to manipulate strings, such
