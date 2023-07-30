@@ -42,7 +42,7 @@
 
 -   Function `stat_missing_values`
 
-## relper 3.6.8
+## relper 3.6.9
 
 **Additions**
 

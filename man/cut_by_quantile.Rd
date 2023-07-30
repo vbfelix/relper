@@ -2,7 +2,7 @@
 % Please edit documentation in R/cut_by_quantile.r
 \name{cut_by_quantile}
 \alias{cut_by_quantile}
-\title{Convert numeric vector to factor}
+\title{Convert numeric vector to factor, using quantiles intervals}
 \usage{
 cut_by_quantile(x, q = seq(0, 1, by = 0.2))
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_error.r
 \name{calc_error}
 \alias{calc_error}
-\title{Compute error metrics}
+\title{Error metrics computation}
 \usage{
 calc_error(x, y)
 }

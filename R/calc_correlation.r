@@ -1,4 +1,4 @@
-#' Compute correlation coefficents
+#' Correlation coefficents computation
 #'
 #' @description Computation of correlation coefficients.
 #'

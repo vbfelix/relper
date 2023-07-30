@@ -1,4 +1,4 @@
-#' Convert numeric vector to factor
+#' Convert numeric vector to factor, using quantiles intervals
 #'
 #' @description Divides the range of a numeric vector by the quantiles provided ('q').
 #'

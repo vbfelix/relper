@@ -1,4 +1,4 @@
-#' Compute error metrics
+#' Error metrics computation
 #'
 #' @description Compute error metrics
 #'

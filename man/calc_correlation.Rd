@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc_correlation.r
 \name{calc_correlation}
 \alias{calc_correlation}
-\title{Compute correlation coefficents}
+\title{Correlation coefficents computation}
 \usage{
 calc_correlation(x, y, type = "pearson")
 }
