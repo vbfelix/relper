@@ -1,5 +1,3 @@
-# relper 3.7.0
-
 # relper 3.0.0 (Calculations All The Way)
 
 > *In this major release, `relper` enhances its data analysis capabilities with a powerful suite of functions for computing various metrics and calculations.*
@@ -50,6 +48,12 @@
 
 -   Parameter `prefix` to the function `dttm_vars`
 -   Parameter `...` to the function `plt_scale_y_mirror` to apply the function `format_num` to the breaks labels
+
+## relper 3.7.0
+
+**Additions**
+
+-   Function `is_blank`
 
 # relper 2.0.0 (Visual Delight)
 

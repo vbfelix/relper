@@ -20,6 +20,23 @@ library(relper)
 
 `is_` functions returns a boolean, given a condition.
 
+# is_blank
+
+The goal of `is_blank` is to check if a value is blank.
+
+```{r is_blank}
+
+is_blank("")
+
+is_blank(NA_character_)
+
+is_blank(" ")
+
+is_blank("-")
+
+```
+
+
 # is_date
 
 The goal of `is_date` is to check if a value is a date.
