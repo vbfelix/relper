@@ -62,6 +62,15 @@ The goal of `plt_no_labels` is to remove all labels.
 plot + plt_no_labels
 ```
 
+# plt_pinpoint
+
+The goal of `plt_pinpoint` is to add a single point to a plot.
+
+```{r plt_no_labels}
+plot + plt_pinpoint(x = 18,y = 25)
+```
+
+
 # plt_regression_line
 
 The goal of `plt_regression_line` is to add a regression line to a scatter plot.

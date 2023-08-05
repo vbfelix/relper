@@ -1,5 +1,3 @@
-# relper 3.8.0
-
 # relper 3.0.0 (Calculations All The Way)
 
 > *In this major release, `relper` enhances its data analysis capabilities with a powerful suite of functions for computing various metrics and calculations.*
@@ -56,6 +54,12 @@
 **Additions**
 
 -   Function `is_blank`
+
+## relper 3.8.0
+
+**Additions**
+
+-   Function `plt_pinpoint`
 
 # relper 2.0.0 (Visual Delight)
 
