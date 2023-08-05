@@ -17,9 +17,9 @@
 
 calc_cv <- function(x, as_perc = FALSE){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = as_perc,type = "logical",single_value = TRUE)
+  stopifnot(is.logical(as_perc), length(as_perc) == 1)
 
   mu_x <- mean(x, na.rm = TRUE)
 

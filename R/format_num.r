@@ -24,15 +24,17 @@ format_num <-
            thousand_mark = ",",
            br_mark = FALSE){
 
-    stop_function(arg = x,type = "numeric")
+    stopifnot(is.numeric(x))
 
-    stop_function(arg = digits,type = "integer",single_value = TRUE)
+    stopifnot(is.numeric(digits), length(digits) == 1)
 
-    stop_function(arg = br_mark,type = "logical")
+    digits <- as.integer(digits)
 
-    stop_function(arg = decimal_mark,type = "character")
+    stopifnot(is.logical(br_mark))
 
-    stop_function(arg = thousand_mark,type = "character")
+    stopifnot(is.character(decimal_mark))
+
+    stopifnot(is.character(thousand_mark))
 
     if(br_mark){
       decimal_mark <- ","

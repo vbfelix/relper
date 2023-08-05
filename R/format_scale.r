@@ -25,13 +25,13 @@
 
 format_scale <- function(x, new_min = 0, new_max = 1){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = new_min,type = "numeric",single_value = TRUE)
+  stopifnot(is.numeric(new_min), length(new_min) == 1)
 
-  stop_function(arg = new_max,type = "numeric",single_value = TRUE)
+  stopifnot(is.numeric(new_max), length(new_max) == 1)
 
-  stop_two_args(arg1 = new_min,arg2 = new_max,bigger_than = TRUE)
+  stopifnot(new_max > new_min)
 
   max_x <- max(x, na.rm = TRUE)
 

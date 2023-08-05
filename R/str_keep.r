@@ -24,35 +24,35 @@
 str_keep <-
   function(string,
            keep = c("text","numbers","special")
-           ){
+  ){
 
-  stop_function(arg = string,type = "string")
+    stopifnot(relper::is_string(string))
 
-  stop_function(arg = keep,type = "character", single_value = TRUE)
+    stopifnot(relper::is_string(keep), length(keep) == 1)
 
-  keep_text <- c("text","char","character","string","word")
+    keep_text <- c("text","char","character","string","word")
 
-  keep_num <- c("numeric","number","num","numbers")
+    keep_num <- c("numeric","number","num","numbers")
 
-  keep_special <- c("special")
+    keep_special <- c("special")
 
-  keep_ref <- c(keep_text,keep_num,keep_special)
+    keep_ref <- c(keep_text,keep_num,keep_special)
 
-  # stop_one_of(keep,keep_ref)
+    # stop_one_of(keep,keep_ref)
 
-  if(keep %in% keep_text){
-    output <- gsub("[^a-zA-Z]", "", string)
+    if(keep %in% keep_text){
+      output <- gsub("[^a-zA-Z]", "", string)
+    }
+
+    if(keep %in% keep_num){
+      output <- gsub("[^0-9]", "", string)
+    }
+
+    if(keep %in% keep_special){
+      output <- gsub("[0-9a-zA-Z]", "", string)
+    }
+
+    return(output)
+
   }
-
-  if(keep %in% keep_num){
-    output <- gsub("[^0-9]", "", string)
-  }
-
-  if(keep %in% keep_special){
-    output <- gsub("[0-9a-zA-Z]", "", string)
-  }
-
-  return(output)
-
-}
 

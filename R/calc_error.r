@@ -21,11 +21,11 @@
 
 calc_error <- function(x,y){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 2)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = y,type = "numeric",length_bigger = 2)
+  stopifnot(is.numeric(y), length(y) > 1)
 
-  stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE)
+  stopifnot(length(x) == length(y))
 
   n <- length(x)
 

@@ -28,15 +28,11 @@
 
 plt_pinpoint <- function(x,y,color = "firebrick3",size = 3, linetype = "dashed",linewidth = .75){
 
-  # stop_function(arg = "x",type = "numeric",single_value = TRUE)
+  stopifnot(is.character(color), length(color) == 1)
 
-  # stop_function(arg = "y",type = "numeric",single_value = TRUE)
+  stopifnot(is.character(linetype), length(linetype) == 1)
 
-  # stop_function(arg = "size",type = "numeric",single_value = TRUE,bigger_than = 0)
-
-  stop_function(arg = "color",type = "character",single_value = TRUE)
-
-  stop_function(arg = "linetype",type = "character",single_value = TRUE)
+  stopifnot(is.numeric(linewidth), length(linewidth) == 1, linewidth > 0)
 
   list(
     ggplot2::geom_vline(

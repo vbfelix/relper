@@ -26,11 +26,11 @@
 plt_theme_xy <-
   function(base_size = 14, base_family = "", margin = .35){
 
-    stop_function(arg = base_size,type = "numeric",single_value = TRUE)
+    stopifnot(is.numeric(base_size), length(base_size) == 1, base_size > 0)
 
-    stop_function(arg = base_family,type = "character",single_value = TRUE)
+    stopifnot(is.character(base_family), length(base_family) == 1)
 
-    stop_function(arg = margin,type = "numeric",single_value = TRUE)
+    stopifnot(is.numeric(margin), length(margin) == 1, margin > 0)
 
     '%+replace%' <- ggplot2::'%+replace%'
 

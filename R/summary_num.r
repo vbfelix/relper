@@ -63,80 +63,84 @@ summary_num <-
     other_means = FALSE,
     skewness = FALSE,
     kurtosis = FALSE
-    ){
+  ){
 
-  stop_function(arg = x,type = "numeric")
+    stopifnot(is.numeric(x))
 
-  stop_function(arg = type,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(type), length(type) == 1)
 
-  stop_function(arg = other_means,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(other_means), length(other_means) == 1)
 
-  output <-
-    dplyr::tibble(
-      min = min(x, na.rm = TRUE),
-      p25 = stats::quantile(x,probs = .25, na.rm = TRUE),
-      p50 = stats::median(x, na.rm = TRUE),
-      p75 = stats::quantile(x,probs = .75, na.rm = TRUE),
-      max = max(x, na.rm = TRUE),
-      mode = dplyr::if_else(
-        condition = length(stats::na.omit(x)) < 3,
-        true = NA_real_ ,
-        false = relper::calc_peak_density(stats::na.omit(x))),
-      mean = mean(x, na.rm = TRUE),
-      cv = relper::calc_cv(x)
-    )
+    stopifnot(is.logical(skewness), length(skewness) == 1)
 
+    stopifnot(is.logical(kurtosis), length(kurtosis) == 1)
 
-  if(type){
     output <-
       dplyr::tibble(
-        n = length(x),
-        na = sum(is.na(x)),
-        negative = sum(x < 0, na.rm = TRUE),
-        equal_zero = sum(x == 0, na.rm = TRUE),
-        positive = sum(x > 0, na.rm = TRUE)
-      ) %>%
-    dplyr::bind_cols(output)
-  }
-
-  if(other_means){
-    output <-
-      output %>%
-      dplyr::bind_cols(
-        dplyr::tibble(
-          geometric_mean = relper::calc_geometric_mean(x = x),
-          harmonic_mean = relper::calc_harmonic_mean(x = x)
-        )
+        min = min(x, na.rm = TRUE),
+        p25 = stats::quantile(x,probs = .25, na.rm = TRUE),
+        p50 = stats::median(x, na.rm = TRUE),
+        p75 = stats::quantile(x,probs = .75, na.rm = TRUE),
+        max = max(x, na.rm = TRUE),
+        mode = dplyr::if_else(
+          condition = length(stats::na.omit(x)) < 3,
+          true = NA_real_ ,
+          false = relper::calc_peak_density(stats::na.omit(x))),
+        mean = mean(x, na.rm = TRUE),
+        cv = relper::calc_cv(x)
       )
-  }
 
-  if(skewness){
-    output <-
-      output %>%
-      dplyr::bind_cols(
+
+    if(type){
+      output <-
         dplyr::tibble(
-          bowley_skewness = relper::calc_skewness(x = x,type = "bowley"),
-          fisher_pearson_skewness = relper::calc_skewness(x = x,type = "fisher_pearson"),
-          kelly_skewness = relper::calc_skewness(x = x,type = "kelly"),
-          pearson_skewness = relper::calc_skewness(x = x,type = "pearson_median"),
-          rao_skewness = relper::calc_skewness(x = x,type = "rao")
-        )
-      )
-  }
+          n = length(x),
+          na = sum(is.na(x)),
+          negative = sum(x < 0, na.rm = TRUE),
+          equal_zero = sum(x == 0, na.rm = TRUE),
+          positive = sum(x > 0, na.rm = TRUE)
+        ) %>%
+        dplyr::bind_cols(output)
+    }
 
-  if(kurtosis){
-    output <-
-      output %>%
-      dplyr::bind_cols(
-        dplyr::tibble(
-          biased_kurtosis = relper::calc_kurtosis(x = x,type = "biased"),
-          excess_kurtosis = relper::calc_kurtosis(x = x,type = "excess"),
-          percentile_kurtosis = relper::calc_kurtosis(x = x,type = "percentile"),
-          unbiased_kurtosis = relper::calc_kurtosis(x = x,type = "unbiased")
+    if(other_means){
+      output <-
+        output %>%
+        dplyr::bind_cols(
+          dplyr::tibble(
+            geometric_mean = relper::calc_mean(x = x,type = "geometric"),
+            harmonic_mean = relper::calc_mean(x = x,type = "harmonic")
+          )
         )
-      )
-  }
+    }
 
-  return(output)
+    if(skewness){
+      output <-
+        output %>%
+        dplyr::bind_cols(
+          dplyr::tibble(
+            bowley_skewness = relper::calc_skewness(x = x,type = "bowley"),
+            fisher_pearson_skewness = relper::calc_skewness(x = x,type = "fisher_pearson"),
+            kelly_skewness = relper::calc_skewness(x = x,type = "kelly"),
+            pearson_skewness = relper::calc_skewness(x = x,type = "pearson_median"),
+            rao_skewness = relper::calc_skewness(x = x,type = "rao")
+          )
+        )
+    }
+
+    if(kurtosis){
+      output <-
+        output %>%
+        dplyr::bind_cols(
+          dplyr::tibble(
+            biased_kurtosis = relper::calc_kurtosis(x = x,type = "biased"),
+            excess_kurtosis = relper::calc_kurtosis(x = x,type = "excess"),
+            percentile_kurtosis = relper::calc_kurtosis(x = x,type = "percentile"),
+            unbiased_kurtosis = relper::calc_kurtosis(x = x,type = "unbiased")
+          )
+        )
+    }
+
+    return(output)
 
   }

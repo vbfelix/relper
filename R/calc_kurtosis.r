@@ -27,20 +27,19 @@
 
 calc_kurtosis <- function(x,type = "unbiased"){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = type,type = "character")
+  stopifnot(is.character(type))
 
   type_ref <- c("biased","excess","percentile","unbiased")
 
-  stop_one_of(arg = type,one_of = type_ref)
+  stopifnot(type %in% type_ref)
 
   x_mean <- mean(x,na.rm = TRUE)
 
   x_sd <- stats::sd(x,na.rm = TRUE)
 
   n <- length(x)
-
 
 # biased -----------------------------------------------------------------
 

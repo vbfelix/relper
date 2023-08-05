@@ -30,15 +30,17 @@ rpearson <-
     mean = 0,
     sd = 1){
 
-    stop_function(arg = n,type = "integer",single_value = TRUE,bigger_than = 3)
+    stopifnot(is.numeric(n),length(n) == 1, n > 3)
 
-    stop_function(arg = pearson,type = "numeric",single_value = TRUE,range = c(-1,1))
+    n <- as.integer(n)
 
-    stop_function(arg = tol,type = "numeric",single_value = TRUE,range = c(0,1))
+    stopifnot(is.numeric(pearson),length(n) == 1,pearson >= -1 & pearson <= 1)
 
-    stop_function(arg = mean,type = "numeric",single_value = TRUE)
+    stopifnot(is.numeric(tol), length(tol) == 1, tol >=0 & tol <= 1)
 
-    stop_function(arg = sd,type = "numeric",single_value = TRUE)
+    stopifnot(is.numeric(mean), length(mean) == 1)
+
+    stopifnot(is.numeric(sd), length(sd) == 1)
 
     if((tol > 0) & (tol < .05)){
       warning("A low tolerance may cause a infinite loop or a long simulation time.")

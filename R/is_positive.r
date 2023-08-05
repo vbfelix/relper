@@ -16,7 +16,7 @@
 
 is_positive <- function(x){
 
-  stop_function(arg = x,type = "numeric")
+  stopifnot(is.numeric(x))
 
   dplyr::if_else(
     condition = x > 0,

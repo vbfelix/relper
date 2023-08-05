@@ -2,8 +2,8 @@
 #'
 #' @description Computation of association coefficients.
 #'
-#' @eval arg_vector("x","character")
-#' @eval arg_vector("y","character")
+#' @eval arg_vector("x","numeric")
+#' @eval arg_vector("y","numeric")
 #' @eval arg_value("type","character",action = "is the type of the association to be computed")
 #'
 #' @details Currently, it is possible to compute the following metrics:
@@ -27,9 +27,9 @@
 calc_association <-
   function(x,y,type = "chi-square"){
 
-    stop_function(arg = type,type = "character")
+    stopifnot(is.character(type), length(type) == 1)
 
-    stop_two_args(arg1 = x,arg2 = y,equal_length = TRUE)
+    stopifnot(length(x) == length(y))
 
     y_values <- unique(y)
 
@@ -46,7 +46,9 @@ calc_association <-
 
     type_ref <- c("contingency","chi-square","cramers-v","fisher","phi")
 
-    stop_one_of(arg = type,one_of = type_ref)
+    type <- tolower(type)
+
+    stopifnot(type %in% type_ref)
 
     tbl_xy <- table(x,y)
 

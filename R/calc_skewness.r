@@ -26,13 +26,15 @@
 
 calc_skewness <- function(x,type = "fisher_pearson"){
 
-    stop_function(arg = x,type = "numeric",length_bigger = 1)
+    stopifnot(is.numeric(x),length(x) > 1)
 
-    stop_function(arg = type,type = "character")
+    stopifnot(is.character(type))
+
+    type <- tolower(type)
 
     type_ref <- c("bowley","fisher_pearson","kelly","pearson_median","rao")
 
-    stop_one_of(arg = type,one_of = type_ref)
+    stopifnot(type %in% type_ref)
 
     x_min <- min(x,na.rm = TRUE)
 

@@ -17,9 +17,9 @@
 
 is_weekend <- function(x){
 
-  if(relper::is_datetime(x)){x <- lubridate::as_date(x)}
+  stopifnot(relper::is_date(x) | relper::is_datetime(x))
 
-  stop_function(arg = x,type = "date")
+  if(relper::is_datetime(x)){x <- lubridate::as_date(x)}
 
   output <- lubridate::wday(x,label = FALSE) %in% c(1,7)
 

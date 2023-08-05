@@ -19,7 +19,7 @@
 
 format_digit <- function(x, digits = 2){
 
-  stop_function(arg = digits,type = "integer",bigger_than = 2,single_value = TRUE)
+  stopifnot(relper::is_integer(digits), digits > 1, length(digits) == 1)
 
   x <- as.character(x)
 

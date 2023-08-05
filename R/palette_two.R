@@ -45,9 +45,9 @@ palette_two <-
     reverse = FALSE
     ){
 
-    stop_function(arg = name,type = "character",single_value = TRUE)
+    stopifnot(is.character(name), length(name) == 1)
 
-    stop_function(arg = reverse,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(reverse), length(reverse) == 1)
 
     boba_fett <- c("#537654","#c88220")
 

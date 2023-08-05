@@ -42,9 +42,9 @@ palette_div <-
     reverse = FALSE
     ){
 
-    stop_function(arg = name,type = "character",single_value = TRUE)
+    stopifnot(is.character(name), length(name) == 1)
 
-    stop_function(arg = reverse,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(reverse), length(reverse) == 1)
 
     arcane <-
       c("#7D5449", "#967D6E", "#BEA698", "#3A5C6C", "#2B3548")

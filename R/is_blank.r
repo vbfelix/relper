@@ -21,7 +21,7 @@
 
 is_blank <- function(x){
 
-  stop_function(arg = x,type = "character")
+  stopifnot(is.character(x))
 
   x <- stringr::str_trim(x)
 

@@ -19,9 +19,9 @@
 
 cut_by_quantile <- function(x, q = seq(0,1,by = .20)) {
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = q,type = "numeric",length_bigger = 1,range = c(0,1))
+  stopifnot(is.numeric(q), length(q) > 1, q >= 0 & q <= 1)
 
   cut(
     x = x,

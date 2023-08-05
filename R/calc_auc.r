@@ -22,15 +22,15 @@
 
 calc_auc  <- function(x,y, limits = NULL) {
 
-  stop_function(arg = x,type = "numeric")
+  stopifnot(is.numeric(x))
 
-  stop_function(arg = y,type = "numeric")
+  stopifnot(is.numeric(y))
 
-  stop_function(arg = limits,type = "numeric",null = TRUE)
+  stopifnot(length(x) == length(y))
 
-  stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE)
+  stopifnot(is.null(limits) | is.numeric(limits))
 
-  stop_length(arg = limits,length = 2,null = TRUE)
+  stopifnot(is.null(limits) | length(limits) == 2)
 
   tryCatch(
     {

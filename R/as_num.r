@@ -26,11 +26,11 @@
 
 as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
 
-  stop_function(arg = x,type = "character")
+  stopifnot(is.character(x))
 
-  stop_function(arg = thousand_mark,type = "character",single_value = TRUE)
+  stopifnot(is.character(thousand_mark), length(thousand_mark) == 1)
 
-  stop_function(arg = decimal_mark,type = "character",single_value = TRUE)
+  stopifnot(is.character(decimal_mark), length(decimal_mark) == 1)
 
   output <-
     x %>%

@@ -33,13 +33,13 @@ str_clean <-
     sub_punct = ""
   ){
 
-    stop_function(arg = string,type = "string")
+    stopifnot(relper::is_string(string))
 
-    stop_function(arg = remove_accent,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(remove_accent), length(remove_accent) == 1)
 
-    stop_function(arg = remove_punct,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(remove_punct), length(remove_punct) == 1)
 
-    stop_function(arg = sub_punct,type = "character",single_value = TRUE)
+    stopifnot(is.character(sub_punct), length(sub_punct) == 1)
 
     if(remove_punct){
       string <- gsub("[[:punct:]]",sub_punct, string)

@@ -47,9 +47,9 @@ palette_qua <-
     reverse = FALSE
     ){
 
-    stop_function(arg = name,type = "character",single_value = TRUE)
+    stopifnot(is.character(name), length(name) == 1)
 
-    stop_function(arg = reverse,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(reverse), length(reverse) == 1)
 
     bojack_horseman <-
       c("#EB636B","#9E674C", "#9464A2", "#FAC877", "#3C2533", "#DE6192")

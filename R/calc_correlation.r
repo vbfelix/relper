@@ -25,19 +25,21 @@
 
 calc_correlation <- function(x,y,type = "pearson"){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
-  stop_function(arg = type,type = "character")
+  stopifnot(is.numeric(y), length(y) > 1)
 
-  stop_two_args(arg1 = x,arg2 = y,equal_length = TRUE)
+  stopifnot(length(x) == length(y))
+
+  stopifnot(is.character(type))
+
+  type_ref <- c("kendall","pearson","spearman")
+
+  stopifnot(type %in% type_ref)
 
   y_values <- unique(y)
 
   x_values <- unique(x)
-
-  type_ref <- c("kendall","pearson","spearman")
-
-  stop_one_of(arg = type,one_of = type_ref)
 
   n <- length(x)
 

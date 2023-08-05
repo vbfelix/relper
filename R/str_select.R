@@ -24,13 +24,13 @@
 
 str_select <- function(string,after = NULL,before = NULL){
 
-  stop_function(arg = string,type = "string")
+  stopifnot(relper::is_string(string))
 
-  if(is.null(after) & is.null(before)){stop("arguments 'after' or 'before' must have an input")}
+  stopifnot((!is.null(after) & !is.null(before)) | (is.null(after) & !is.null(before)) | !is.null(after) & is.null(before))
 
-  stop_function(arg = after,type = "string",null = TRUE)
+  stopifnot(is.null(after) | relper::is_string(after))
 
-  stop_function(arg = before,type = "string",null = TRUE)
+  stopifnot(is.null(before) | relper::is_string(before))
 
   if((!is.null(before)) & (!is.null(after))){
     output <- stringr::str_match(string, paste0(after,"\\s*(.*?)\\s*",before))

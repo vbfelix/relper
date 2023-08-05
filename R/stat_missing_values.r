@@ -30,7 +30,9 @@
 
 stat_missing_values <- function(df,plot = TRUE){
 
-  stop_function(arg = df,type = "dataframe")
+  stopifnot(is.data.frame(df))
+
+  stopifnot(is.logical(plot), length(plot) == 1)
 
   output <-
     df %>%

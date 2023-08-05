@@ -21,7 +21,7 @@
 expand_grid_unique <-
   function(x, y, include_equals = FALSE){
 
-  stop_function(arg = include_equals,type = "logical")
+  stopifnot(is.logical(include_equals))
 
   x <- unique(x)
 

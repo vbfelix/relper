@@ -35,9 +35,9 @@
 
 dttm_vars <- function(df,dt_var, prefix = NULL){
 
-  stop_function(arg = df,type = "dataframe")
+  stopifnot(is.data.frame(df))
 
-  stop_function(arg = prefix,type = "character",null = TRUE)
+  stopifnot(is.null(prefix) | is.character(prefix))
 
   output <-
     df %>%

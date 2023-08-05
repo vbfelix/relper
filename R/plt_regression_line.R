@@ -25,11 +25,11 @@
 
 plt_regression_line <- function(color = "black", linetype = "dashed",linewidth = .75){
 
-  stop_function(arg = "color",type = "character",single_value = TRUE)
+  stopifnot(is.character(color), length(color) == 1)
 
-  stop_function(arg = "linetype",type = "character",single_value = TRUE)
+  stopifnot(is.character(linetype), length(linetype) == 1)
 
-  # stop_function(arg = "linewidth",type = "numeric",single_value = TRUE,is_positive = TRUE)
+  stopifnot(is.numeric(linewidth), length(linewidth) == 1, linewidth > 0)
 
   list(
     ggplot2::geom_smooth(

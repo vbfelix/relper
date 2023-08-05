@@ -17,20 +17,23 @@
 format_p_value <-
   function(p_value, lower_bound = NULL){
 
-  stop_function(arg = p_value,type = "numeric")
+    stopifnot(is.numeric(p_value))
 
-  stop_function(arg = lower_bound,type = "numeric",null = TRUE,single_value = TRUE)
-
-  if(is.null(lower_bound)){
-    relper::format_num(p_value,digits = 4)
-  }else{
-    dplyr::if_else(
-      condition = p_value < lower_bound,
-      true =  paste0("<",lower_bound),
-      false = relper::format_num(p_value,digits = 4)
+    stopifnot(
+      is.null(lower_bound) | is.numeric(lower_bound),
+      is.null(lower_bound) | length(lower_bound) == 1
     )
-  }
 
-}
+    if(is.null(lower_bound)){
+      relper::format_num(p_value,digits = 4)
+    }else{
+      dplyr::if_else(
+        condition = p_value < lower_bound,
+        true =  paste0("<",lower_bound),
+        false = relper::format_num(p_value,digits = 4)
+      )
+    }
+
+  }
 
 

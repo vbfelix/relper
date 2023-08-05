@@ -27,9 +27,9 @@ stat_two_cat <-
     filter = ""
   ){
 
-    stop_function(arg = df,type = "dataframe")
+    stopifnot(is.data.frame(df))
 
-    stop_function(arg = filter,type = "character",single_value = TRUE)
+    stopifnot(is.character(filter), length(filter) == 1)
 
     pivotted_data <-
       df %>%

@@ -17,7 +17,7 @@
 
 is_even <- function(x){
 
-  stop_function(arg = x,type = "numeric")
+  stopifnot(is.numeric(x))
 
   x_as_char <- as.character(x)
 

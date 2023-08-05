@@ -45,9 +45,9 @@ palette_seq <-
     reverse = FALSE
     ){
 
-    stop_function(arg = name,type = "character",single_value = TRUE)
+    stopifnot(is.character(name), length(name) == 1)
 
-    stop_function(arg = reverse,type = "logical",single_value = TRUE)
+    stopifnot(is.logical(reverse), length(reverse) == 1)
 
     andor <-
       c("#E5CDB5", "#D6965F", "#D16F3A", "#AD4727", "#733527", "#44383A")

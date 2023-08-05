@@ -26,15 +26,17 @@
 #'
 #' stat_normality(x)
 
-stat_normality <- function(x,alpha = 0.05, digits = NULL,print = FALSE){
+stat_normality <- function(x,alpha = 0.05, digits = 5,print = FALSE){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 7)
+  stopifnot(is.numeric(x), length(x) > 7)
 
-  stop_function(arg = alpha,type = "numeric",single_value = TRUE,range = c(0,1))
+  stopifnot(is.numeric(alpha), length(alpha) == 1, alpha >= 0 & alpha <= 1)
 
-  stop_function(arg = digits,type = "integer",single_value = TRUE,null = TRUE)
+  stopifnot(is.numeric(digits), length(digits) == 1)
 
-  stop_function(arg = print,type = "logical",single_value = TRUE)
+  digits <- as.integer(digits)
+
+  stopifnot(is.logical(print), length(print) == 1)
 
   output <-
     dplyr::bind_rows(
@@ -55,16 +57,14 @@ stat_normality <- function(x,alpha = 0.05, digits = NULL,print = FALSE){
     dplyr::arrange(test) %>%
     dplyr::mutate(is_normal = p_value > alpha)
 
-  if(!is.null(digits)){
-    output <-
-      output %>%
-      dplyr::mutate(
-        dplyr::across(
-          .cols = c(statistic,p_value),
-          .fns = ~round(x = .,digits = digits)
-        )
+  output <-
+    output %>%
+    dplyr::mutate(
+      dplyr::across(
+        .cols = c(statistic,p_value),
+        .fns = ~round(x = .,digits = digits)
       )
-  }
+    )
 
   if(print){
     output %>%

@@ -2,7 +2,7 @@
 #'
 #' @description Mirror the ticks and text from the y axis on the right side.
 #'
-#' @eval arg_vector("breaks","",action = "will be the breaks in the y axis")
+#' @eval arg_vector("breaks","numeric",action = "will be the breaks in the y axis")
 #' @eval arg_vector("labels","",default = "NULL",action = "will be the labels in the axis, if not provided 'breaks' will be used instead")
 #' @eval arg_vector("expand","numeric",default = "c(0.01,0)","is the range expansion used to add some space between the data and the plot border")
 #'
@@ -32,15 +32,12 @@ plt_scale_y_mirror <-
     ...
     ){
 
-    stop_length(arg = expand,length = 2)
+    stopifnot(is.numeric(breaks))
 
-    if(is.null(labels)){
-      labels <- relper::format_num(breaks,...)
-    }else{
-      if(length(breaks) != length(labels)){
-        stop("arguments 'breaks' and 'labels' must be of the same length")
-      }
-    }
+    stopifnot(is.null(labels) | length(labels) == length(breaks))
+
+    stopifnot(is.numeric(expand), length(expand) == 2)
+
 
     if(is.numeric(breaks)){
 

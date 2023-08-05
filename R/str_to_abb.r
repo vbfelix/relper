@@ -18,9 +18,11 @@
 
 str_to_abb <- function(string, n_abb = 3){
 
-  stop_function(arg = string,type = "string")
+  stopifnot(relper::is_string(string))
 
-  stop_function(arg = n_abb,type = "integer",single_value = TRUE,bigger_than = 1)
+  stopifnot(is.numeric(n_abb), length(n_abb) == 1, n_abb > 0)
+
+  n_abb <- as.integer(n_abb)
 
   dplyr::if_else(
     condition = nchar(string) <= n_abb,

@@ -23,9 +23,11 @@ str_extract_char <-
     char = 1
   ){
 
-    stop_function(arg = string,type = "string")
+    stopifnot(relper::is_string(string))
 
-    stop_function(arg = char,type = "integer",single_value = TRUE,is_positive = TRUE)
+    stopifnot(is.numeric(char), length(char) == 1, char > 0)
+
+    char <- as.integer(char)
 
     output <- substr(string, char, char)
 

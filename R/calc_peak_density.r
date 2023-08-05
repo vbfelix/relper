@@ -18,7 +18,7 @@
 
 calc_peak_density <- function(x){
 
-  stop_function(arg = x,type = "numeric",length_bigger = 1)
+  stopifnot(is.numeric(x), length(x) > 1)
 
   d <- stats::density(stats::na.omit(x))
 

@@ -26,7 +26,7 @@
 
 summary_cat <- function(x){
 
-  stop_function(arg = x,type = "string")
+  stopifnot(relper::is_string(x))
 
   output <-
     dplyr::tibble(

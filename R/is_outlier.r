@@ -19,7 +19,7 @@
 
 is_outlier <- function(x){
 
-  stop_function(arg = x,type = "numeric")
+  stopifnot(is.numeric(x))
 
   q1 <- stats::quantile(x, 0.25, na.rm = TRUE)
 

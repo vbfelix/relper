@@ -22,11 +22,11 @@
 
 calc_acf <- function(x,y = NULL){
 
-  stop_function(arg = x,type = "numeric")
+  stopifnot(is.numeric(x))
 
-  stop_function(arg = y,type = "numeric",null = TRUE)
+  stopifnot(is.numeric(y) | is.null(y))
 
-  stop_two_args(arg1 = x, arg2 = y, equal_length = TRUE,null = TRUE)
+  stopifnot(length(x) == length(y) | is.null(y))
 
   if(is.null(y)){
 

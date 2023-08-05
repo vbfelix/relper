@@ -34,19 +34,23 @@ plt_scale_auto <-
     decimal_mark = ","
   ){
 
-    stop_function(arg = axis,type = "character",single_value = TRUE)
+    stopifnot(is.character(axis), length(axis) == 1)
 
-    stop_function(arg = n_breaks,type = "integer",single_value = TRUE,bigger_than = 2)
-
-    stop_function(arg = expand,type = "numeric",single_value = TRUE,bigger_than = 0)
-
-    stop_function(arg = thousand_mark,type = "character",single_value = TRUE)
-
-    stop_function(arg = decimal_mark,type = "character",single_value = TRUE)
+    axis <- tolower(axis)
 
     axis_ref <- c("x","y","xy","both")
 
-    stop_one_of(axis,axis_ref)
+    stopifnot(axis %in% axis_ref)
+
+    stopifnot(is.numeric(n_breaks), length(n_breaks) == 1, n_breaks > 1)
+
+    n_breaks <- as.integer(n_breaks)
+
+    stopifnot(is.numeric(expand), length(expand) == 1, expand > 0)
+
+    stopifnot(is.character(thousand_mark), length(thousand_mark) == 1)
+
+    stopifnot(is.character(decimal_mark), length(decimal_mark) == 1)
 
     if(axis == "x"){
       output <-

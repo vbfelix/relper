@@ -30,7 +30,7 @@ stat_two_num <-
     num_vars
   ){
 
-    stop_function(arg = df,type = "dataframe")
+    stopifnot(is.data.frame(df))
 
     # utils -------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ stat_two_num <-
       }
 
 
-# pivot data --------------------------------------------------------------
+    # pivot data --------------------------------------------------------------
 
     pivotted_data <-
       df %>%
@@ -87,20 +87,20 @@ stat_two_num <-
       dplyr::select(-n) %>%
       tidyr::pivot_longer(cols = -grp_var)
 
-# method ------------------------------------------------------------------
+    # method ------------------------------------------------------------------
 
 
 
 
-      methods_df <-
-        pivotted_data %>%
-        dplyr::group_by(name) %>%
-        dplyr::summarise(p_value = stats::shapiro.test(value)$p.value) %>%
-        dplyr::mutate(
-          method = dplyr::if_else(p_value < 0.05,"median","mean")
-        ) %>%
-        dplyr::ungroup() %>%
-        dplyr::select(-p_value)
+    methods_df <-
+      pivotted_data %>%
+      dplyr::group_by(name) %>%
+      dplyr::summarise(p_value = stats::shapiro.test(value)$p.value) %>%
+      dplyr::mutate(
+        method = dplyr::if_else(p_value < 0.05,"median","mean")
+      ) %>%
+      dplyr::ungroup() %>%
+      dplyr::select(-p_value)
 
     pivotted_data <-
       pivotted_data %>%
@@ -196,8 +196,8 @@ stat_two_num <-
           dplyr::select(-data,-method)
       )%>%
       dplyr::ungroup() %>%
-# gt ----------------------------------------------------------------------
-      gt::gt() %>%
+      # gt ----------------------------------------------------------------------
+    gt::gt() %>%
       gt::cols_align(
         align = c("center"),
         columns = dplyr::everything()
