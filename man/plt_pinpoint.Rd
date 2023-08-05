@@ -16,9 +16,11 @@ plt_pinpoint(
 \arguments{
 \item{x}{A numeric single value}
 
-\item{y}{A numeric single value (default = 3)}
+\item{y}{A numeric single value}
 
 \item{color}{A character single value (default = 'firebrick3'), that will be the line color}
+
+\item{size}{A numeric single value (default = 3)}
 
 \item{linetype}{A character single value (default = 'dashed'), that will be the line type}
 

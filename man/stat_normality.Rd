@@ -4,7 +4,7 @@
 \alias{stat_normality}
 \title{Test the normality of a numeric variable}
 \usage{
-stat_normality(x, alpha = 0.05, digits = NULL, print = FALSE)
+stat_normality(x, alpha = 0.05, digits = 5, print = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector}

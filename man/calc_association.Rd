@@ -7,9 +7,9 @@
 calc_association(x, y, type = "chi-square")
 }
 \arguments{
-\item{x}{A character vector}
+\item{x}{A numeric vector}
 
-\item{y}{A character vector}
+\item{y}{A numeric vector}
 
 \item{type}{A character single value, that is the type of the association to be computed}
 }
