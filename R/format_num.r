@@ -26,9 +26,7 @@ format_num <-
 
     stopifnot(is.numeric(x))
 
-    stopifnot(is.numeric(digits), length(digits) == 1)
-
-    digits <- as.integer(digits)
+    stopifnot(relper::is_integer(digits), length(digits) == 1)
 
     stopifnot(is.logical(br_mark))
 

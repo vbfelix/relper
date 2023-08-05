@@ -25,9 +25,7 @@ str_extract_char <-
 
     stopifnot(relper::is_string(string))
 
-    stopifnot(is.numeric(char), length(char) == 1, char > 0)
-
-    char <- as.integer(char)
+    stopifnot(relper::is_integer(char), length(char) == 1, char > 0)
 
     output <- substr(string, char, char)
 

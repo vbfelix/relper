@@ -32,9 +32,7 @@ stat_normality <- function(x,alpha = 0.05, digits = 5,print = FALSE){
 
   stopifnot(is.numeric(alpha), length(alpha) == 1, alpha >= 0 & alpha <= 1)
 
-  stopifnot(is.numeric(digits), length(digits) == 1)
-
-  digits <- as.integer(digits)
+  stopifnot(relper::is_integer(digits), length(digits) == 1)
 
   stopifnot(is.logical(print), length(print) == 1)
 

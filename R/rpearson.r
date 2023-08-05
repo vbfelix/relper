@@ -30,9 +30,7 @@ rpearson <-
     mean = 0,
     sd = 1){
 
-    stopifnot(is.numeric(n),length(n) == 1, n > 3)
-
-    n <- as.integer(n)
+    stopifnot(relper::is_integer(n),length(n) == 1, n > 3)
 
     stopifnot(is.numeric(pearson),length(n) == 1,pearson >= -1 & pearson <= 1)
 

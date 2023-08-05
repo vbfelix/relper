@@ -42,9 +42,7 @@ plt_scale_auto <-
 
     stopifnot(axis %in% axis_ref)
 
-    stopifnot(is.numeric(n_breaks), length(n_breaks) == 1, n_breaks > 1)
-
-    n_breaks <- as.integer(n_breaks)
+    stopifnot(relper::is_integer(n_breaks), length(n_breaks) == 1, n_breaks > 1)
 
     stopifnot(is.numeric(expand), length(expand) == 1, expand > 0)
 
