@@ -73,6 +73,9 @@
     <loc>https://vbfelix.github.io/relper/reference/calc_auc.html</loc>
   </url>
   <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_combination.html</loc>
+  </url>
+  <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_correlation.html</loc>
   </url>
   <url>
@@ -82,13 +85,10 @@
     <loc>https://vbfelix.github.io/relper/reference/calc_error.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_geometric_mean.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_harmonic_mean.html</loc>
-  </url>
-  <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_kurtosis.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_mean.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_modality.html</loc>
