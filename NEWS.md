@@ -55,11 +55,11 @@
 
 -   Function `is_blank`
 
-## relper 3.8.1
+## relper 3.8.2
 
 **Additions**
 
--   Function `plt_pinpoint`
+-   Function `calc_combination` and `plt_pinpoint` 
 
 # relper 2.0.0 (Visual Delight)
 
