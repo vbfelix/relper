@@ -3,7 +3,7 @@
 #' @description Computation of the mean (arithmetic,geometric and harmonic).
 #'
 #' @eval arg_vector("x","numeric")
-#' @eval arg_vector("x","character")
+#' @eval arg_vector("type","character")
 #'
 #' @return A numeric single value with the computed mean.
 #'

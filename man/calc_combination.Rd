@@ -23,9 +23,8 @@ Computation of number of combinations/permutations.
 }
 \examples{
 
+calc_combination(6,2)
 
-calc_computation(6,2)
-
-calc_computation(6,2,order_matter = TRUE,with_repetition = TRUE)
+calc_combination(6,2,order_matter = TRUE,with_repetition = TRUE)
 
 }
