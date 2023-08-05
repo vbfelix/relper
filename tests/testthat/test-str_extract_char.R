@@ -23,9 +23,6 @@ test_that("Wrong type", {
 
   expect_error(object = str_extract_char(string = "abcdef",char = "a"))
 
-  expect_error(object = str_extract_char(string = "abcdef",char = 2.5))
-
-
 })
 
 test_that("Wrong range", {

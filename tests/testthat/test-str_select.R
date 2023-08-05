@@ -23,7 +23,7 @@ test_that("Wrong type", {
 
 })
 
-test_that("Argument of kength > 1", {
+test_that("Argument of length > 1", {
 
   expect_warning(object = str_select(string = "test",after = c("a","a")))
 
