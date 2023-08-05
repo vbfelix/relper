@@ -212,7 +212,7 @@ df_auc %>%
   scale_y_continuous(expand = c(0,0))
 ```
 
-# calc_correlation
+# calc_combination
 
 The goal of `calc_combination` is to compute the number of combinations/permutations. Considering that we have a total of $n$ observations and that $r$ will be selected.
 
@@ -359,34 +359,6 @@ $$\sqrt{\text{MSE}}.$$
 RMSPE is the square root of the average of the squared percentage differences between the predicted and actual values relative to the actual values:
 
 $$\sqrt{\frac{\sum\limits_{i=1}^{n}\left(\frac{X_i-Y_i}{X_i}\right)^2}{n}}.$$
-
-# calc_geometric_mean
-
-The goal of `calc_geometric_mean` is to compute the geometric mean,
-given by:
-
-$$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
-where:
-
--   $x_i$ is a numeric vector of length $n$.
-
-```{r calc_geometric_mean}
-calc_geometric_mean(x)
-```
-
-# calc_harmonic_mean
-
-The goal of `calc_harmonic_mean` is to compute the harmonic mean, given
-by:
-
-$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$ where:
-
--   $x_i$ is a numeric vector of length $n$.
-
-```{r calc_harmonic_mean}
-calc_harmonic_mean(x)
-```
-
 # calc_kurtosis
 
 The goal of `calc_kurtosis` is to compute a kurtosis coefficient.
@@ -455,6 +427,45 @@ where:
 
 ```{r calc_kurtosis-unbiased}
 calc_kurtosis(x = x,type = "unbiased")
+```
+
+
+# calc_mean
+
+The goal of `calc_mean` is to compute the mean.
+
+## Arithmetic
+
+
+$$\frac{1}{n}\sum\limits_{i=1}^{n}x_i,$$ where:
+
+-   $x_i$ is a numeric vector of length $n$.
+
+```{r arithmetic_mean}
+calc_mean(x = 1:10,type = "arithmetic")
+```
+
+## Geometric 
+
+$$\sqrt[n]{\prod\limits_{i=1}^{n}x_i} = \sqrt[n]{x_1\times x_2 \times...\times x_n},$$
+
+where:
+
+-   $x_i$ is a numeric vector of length $n$.
+
+```{r geometric_mean}
+calc_mean(x = 1:10,type = "geometric")
+```
+
+## Harmonic
+
+$$\frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}},$$ where:
+
+-   $x_i$ is a numeric vector of length $n$.
+
+
+```{r harmonic_mean}
+calc_mean(x = 1:10,type = "harmonic")
 ```
 
 # calc_modality
