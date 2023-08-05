@@ -55,11 +55,16 @@
 
 -   Function `is_blank`
 
-## relper 3.8.2
+## relper 3.8.3
 
 **Additions**
 
 -   Function `calc_combination` and `plt_pinpoint` 
+
+**Improvements**
+
+-   Functions `calc_geometric_mean` and `calc_harmonic_mean` were removed and became `calc_mean`
+
 
 # relper 2.0.0 (Visual Delight)
 
