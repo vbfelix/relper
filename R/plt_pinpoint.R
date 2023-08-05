@@ -4,7 +4,7 @@
 #'
 #' @eval arg_value("x","numeric")
 #' @eval arg_value("y","numeric")
-#' @eval arg_value("y","numeric",default = "3")
+#' @eval arg_value("size","numeric",default = "3")
 #' @eval arg_value("color","character",default = "'firebrick3'", action = "will be the line color")
 #' @eval arg_value("linetype","character",default = "'dashed'", action = "will be the line type")
 #' @eval arg_value("linewidth","numeric",default = "0.75", action = "will be the line width")

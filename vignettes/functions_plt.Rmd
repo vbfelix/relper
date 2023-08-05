@@ -66,7 +66,7 @@ plot + plt_no_labels
 
 The goal of `plt_pinpoint` is to add a single point to a plot.
 
-```{r plt_no_labels}
+```{r plt_pinpoint}
 plot + plt_pinpoint(x = 18,y = 25)
 ```
 
