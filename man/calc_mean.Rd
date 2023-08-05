@@ -7,7 +7,9 @@
 calc_mean(x, type = "arithmetic")
 }
 \arguments{
-\item{x}{A character vector}
+\item{x}{A numeric vector}
+
+\item{type}{A character vector}
 }
 \value{
 A numeric single value with the computed mean.
