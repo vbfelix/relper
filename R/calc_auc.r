@@ -32,6 +32,8 @@ calc_auc  <- function(x,y, limits = NULL) {
 
   stopifnot(is.null(limits) | length(limits) == 2)
 
+  stopifnot(is.null(limits) | limits[2] > limits[1])
+
   tryCatch(
     {
       if(is.null(limits)){
