@@ -28,6 +28,14 @@
 
 plt_pinpoint <- function(x,y,color = "firebrick3",size = 3, linetype = "dashed",linewidth = .75){
 
+  stopifnot(is.numeric(x))
+
+  stopifnot(is.numeric(y))
+
+  stopifnot(length(x) == length(y))
+
+  stopifnot(is.numeric(size), length(size) == 1, size > 0)
+
   stopifnot(is.character(color), length(color) == 1)
 
   stopifnot(is.character(linetype), length(linetype) == 1)
