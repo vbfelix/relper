@@ -39,6 +39,8 @@ dttm_vars <- function(df,dt_var, prefix = NULL){
 
   stopifnot(is.null(prefix) | is.character(prefix))
 
+  stopifnot(is.null(prefix) | length(prefix) == 1)
+
   output <-
     df %>%
     tibble::as_tibble() %>%
