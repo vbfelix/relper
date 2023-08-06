@@ -46,19 +46,20 @@ The goal of `format_num` is to add markers to a number.
 format_num(12345.67)
 ```
 
-You can also change the markers for other characters of your choice.
+You can also change the markers to suit other characters.
 
 ```{r format_num-markers}
 format_num(12345.67,decimal_mark = "*",thousand_mark = "#")
 ```
-Also, if you are Brazilian like me, I made a argument to make our lives easier.
+
+Also, if you're a Brazilian like me, I made a case for making our lives easier.
 
 ```{r format_num-br}
 format_num(12345.67,br_mark = TRUE)
 ```
 
-
 # format_scale
+
 The goal of `format_scale` is to reescale a variable, given by:
 
 $$y_i = (y_{\max} - y_{\min}) * \left[\frac{x_i - \min(x_i)}{\max(x)-\min(x)} \right] + y_{\min},$$
@@ -71,7 +72,7 @@ where:
   - $\min(x_i)$ is the original minimum value of $x_i$;
   - $\max(x_i)$ is the original maximum value of $x_i$.
   
-By default the vector will be reescaled to have 0 and 1 as their new minimum and maximum values.  
+By default, the vector will be rescaled with new minimum and maximum values of 0 and 1.  
 
 ```{r format_scale}
 x <- seq(-3,3,l = 10)

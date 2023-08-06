@@ -32,9 +32,9 @@ date2 <- lubridate::dmy("21/11/2018")
 dttm_diff(date1 = date1,date2 = date2,unit = "days")
 ```
 
-So, the difference in days of 21/11/2018 and 01/05/1998 is 7,509 days.
+So the time difference between 21/11/2018 and 01/05/1998 is 7,509 days.
 
-If you need to add a constant to your difference you can use the argument `add`.
+If you need to add a constant to your difference, use the `add` argument.
 
 ```{r dttm_diff-add}
 dttm_diff(date1 = date1,date2 = date2,unit = "days",add = 1)

@@ -22,14 +22,16 @@ library(dplyr)
 `as_` functions coerce values to another type.
 
 # as_num
-The goal of `as_num` is to be a broader version of `as.numeric`, where the input is a string with number and marks, such as "10.000,02".
+
+The goal of `as_num` is to be a more generalized version of `as.numeric`, where the input is a string with numbers and marks, such as "10.000,02".
 
 ```{r as_num}
 as_num("123.456,78")
 ```
 
 # as_perc
-The goal of `as_perc` is to compute a number as percentage. By default the function will just multiply values by 100.
+
+The goal of `as_perc` is to convert a number to a percentage. By default, the function simply multiplies values by 100.
 
 ```{r as_perc}
 mtcars %>% 
