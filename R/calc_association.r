@@ -35,20 +35,15 @@ calc_association <-
 
     x_values <- unique(x)
 
-    if(type %in% c("fisher","phi") ){
-      if(length(y_values) != 2){
-        stop("argument 'y' must be dichotomous")
-      }
-      if(length(x_values) != 2){
-        stop("argument 'x' must be dichotomous")
-      }
-    }
-
     type_ref <- c("contingency","chi-square","cramers-v","fisher","phi")
 
     type <- tolower(type)
 
     stopifnot(type %in% type_ref)
+
+    if(type %in% c("fisher","phi")){
+      stopifnot((length(y_values) == 2 | length(x_values) == 2))
+    }
 
     tbl_xy <- table(x,y)
 
