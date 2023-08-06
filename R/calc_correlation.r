@@ -35,6 +35,8 @@ calc_correlation <- function(x,y,type = "pearson"){
 
   type_ref <- c("kendall","pearson","spearman")
 
+  type <- tolower(type)
+
   stopifnot(type %in% type_ref)
 
   y_values <- unique(y)
