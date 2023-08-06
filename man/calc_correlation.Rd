@@ -4,7 +4,7 @@
 \alias{calc_correlation}
 \title{Correlation coefficents computation}
 \usage{
-calc_correlation(x, y, type = "pearson")
+calc_correlation(x, y, type = c("pearson", "kendall", "spearman"))
 }
 \arguments{
 \item{x}{A numeric vector}

@@ -4,7 +4,7 @@
 \alias{calc_kurtosis}
 \title{Kurtosis computation}
 \usage{
-calc_kurtosis(x, type = "unbiased")
+calc_kurtosis(x, type = c("unbiased", "biased", "excess", "percentile"))
 }
 \arguments{
 \item{x}{A numeric vector}

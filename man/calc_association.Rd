@@ -4,7 +4,11 @@
 \alias{calc_association}
 \title{Compute association coefficents}
 \usage{
-calc_association(x, y, type = "chi-square")
+calc_association(
+  x,
+  y,
+  type = c("chi-square", "contingency", "cramers-v", "fisher", "phi")
+)
 }
 \arguments{
 \item{x}{A numeric vector}

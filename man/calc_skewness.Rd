@@ -4,7 +4,10 @@
 \alias{calc_skewness}
 \title{Skewness computation}
 \usage{
-calc_skewness(x, type = "fisher_pearson")
+calc_skewness(
+  x,
+  type = c("fisher_pearson", "bowley", "kelly", "pearson_median", "rao")
+)
 }
 \arguments{
 \item{x}{A numeric vector}

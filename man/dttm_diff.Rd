@@ -8,7 +8,7 @@ dttm_diff(
   date1,
   date2,
   add = 0,
-  unit = c("secs", "mins", "hours", "days", "weeks")
+  unit = c("days", "secs", "mins", "hours", "weeks")
 )
 }
 \arguments{
