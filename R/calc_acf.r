@@ -24,9 +24,9 @@ calc_acf <- function(x,y = NULL){
 
   stopifnot(is.numeric(x))
 
-  stopifnot(is.numeric(y) | is.null(y))
+  stopifnot(is.null(y) | is.numeric(y))
 
-  stopifnot(length(x) == length(y) | is.null(y))
+  stopifnot(is.null(y) | length(x) == length(y))
 
   if(is.null(y)){
 
