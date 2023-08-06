@@ -115,7 +115,7 @@ str_select(string,"STRING1","STRING2")
 The goal of `str_to_abb` is to apply uppercase to strings with a number of characters lower than the argument `n_abb` (default = 3), and only uppercase the first letter for the others words, so abbreviations will not be affected. 
 
 ```{r str_to_abb}
-abcde_string <- c("aaaaa","bb","ccc","dddd")
+countries <- c("France","Br","usa","italy")
 
-str_to_abb(abcde_string,n_abb = 3)
+str_to_abb(countries,n_abb = 3)
 ```
