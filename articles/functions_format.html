@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,12 +119,11 @@ number.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/format_num.html">format_num</a></span><span class="op">(</span><span class="fl">12345.67</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "12,345.67"</span></span></code></pre></div>
-<p>You can also change the markers for other characters of your
-choice.</p>
+<p>You can also change the markers to suit other characters.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/format_num.html">format_num</a></span><span class="op">(</span><span class="fl">12345.67</span>,decimal_mark <span class="op">=</span> <span class="st">"*"</span>,thousand_mark <span class="op">=</span> <span class="st">"#"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "12#345*67"</span></span></code></pre></div>
-<p>Also, if you are Brazilian like me, I made a argument to make our
+<p>Also, if you’re a Brazilian like me, I made a case for making our
 lives easier.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/format_num.html">format_num</a></span><span class="op">(</span><span class="fl">12345.67</span>,br_mark <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -158,8 +157,8 @@ minimum value of <span class="math inline">\(x_i\)</span>;</li>
 <span class="math inline">\(\max(x_i)\)</span> is the original
 maximum value of <span class="math inline">\(x_i\)</span>.</li>
 </ul>
-<p>By default the vector will be reescaled to have 0 and 1 as their new
-minimum and maximum values.</p>
+<p>By default, the vector will be rescaled with new minimum and maximum
+values of 0 and 1.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="fl">3</span>,l <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span></span>

@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,8 +98,8 @@
 <div class="section level2">
 <h2 id="as_num">as_num<a class="anchor" aria-label="anchor" href="#as_num"></a>
 </h2>
-<p>The goal of <code>as_num</code> is to be a broader version of
-<code>as.numeric</code>, where the input is a string with number and
+<p>The goal of <code>as_num</code> is to be a more generalized version
+of <code>as.numeric</code>, where the input is a string with numbers and
 marks, such as “10.000,02”.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/as_num.html">as_num</a></span><span class="op">(</span><span class="st">"123.456,78"</span><span class="op">)</span></span>
@@ -108,8 +108,8 @@ marks, such as “10.000,02”.</p>
 <div class="section level2">
 <h2 id="as_perc">as_perc<a class="anchor" aria-label="anchor" href="#as_perc"></a>
 </h2>
-<p>The goal of <code>as_perc</code> is to compute a number as
-percentage. By default the function will just multiply values by
+<p>The goal of <code>as_perc</code> is to convert a number to a
+percentage. By default, the function simply multiplies values by
 100.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>

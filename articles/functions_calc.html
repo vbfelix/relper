@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,18 +122,18 @@ time series.</li>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;        acf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.159      1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.167      2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.083<span style="text-decoration: underline;">0</span>     3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.043<span style="text-decoration: underline;">2</span>     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.042</span><span style="color: #BB0000; text-decoration: underline;">0</span>     5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.123</span>      6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.108</span>      7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.169</span>      8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.037<span style="text-decoration: underline;">7</span>     9</span></span>
+<span><span class="co">#&gt;         acf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1           0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.104</span>       1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.047<span style="text-decoration: underline;">1</span>      2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.083</span><span style="color: #BB0000; text-decoration: underline;">4</span>      3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.153</span>       4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.041</span><span style="color: #BB0000; text-decoration: underline;">3</span>      5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.165</span>       6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.053</span><span style="color: #BB0000; text-decoration: underline;">6</span>      7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.009</span><span style="color: #BB0000; text-decoration: underline;">19</span>     8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.095</span><span style="color: #BB0000; text-decoration: underline;">1</span>      9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -158,16 +158,16 @@ where:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
 <span><span class="co">#&gt;         ccf   lag</span></span>
 <span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.003</span><span style="color: #BB0000; text-decoration: underline;">08</span>   -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.062</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.102</span>     -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.093<span style="text-decoration: underline;">9</span>    -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.077<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.094</span><span style="color: #BB0000; text-decoration: underline;">1</span>    -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.024</span><span style="color: #BB0000; text-decoration: underline;">3</span>    -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.015</span><span style="color: #BB0000; text-decoration: underline;">7</span>     -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.065<span style="text-decoration: underline;">4</span>     -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.034<span style="text-decoration: underline;">5</span>     -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.097</span><span style="color: #BB0000; text-decoration: underline;">1</span>    -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.001</span><span style="color: #BB0000; text-decoration: underline;">28</span>   -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.019</span><span style="color: #BB0000; text-decoration: underline;">9</span>    -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.142</span>     -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.190     -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.070<span style="text-decoration: underline;">6</span>    -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.049</span><span style="color: #BB0000; text-decoration: underline;">7</span>    -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.066<span style="text-decoration: underline;">8</span>     -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.177</span>      -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.207      -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -178,9 +178,10 @@ metrics.</p>
 <div class="section level3">
 <h3 id="contingency">Contingency<a class="anchor" aria-label="anchor" href="#contingency"></a>
 </h3>
-<p>Contingency is a measure of association between two nominal
-variables. I It ranges from 0 and 1, where 0 indicates no relationship
-and 1 indicates perfect association, and is given by:</p>
+<p>Contingency is a measure of the degree to which two nominal variables
+are associated. It has a value between 0 and 1, with 0 indicating no
+relationship and 1 indicating perfect association, and is calculated as
+follows:</p>
 <p><span class="math display">\[\sqrt{\frac{X^2}{n+X^2}},\]</span></p>
 <p>where:</p>
 <ul>
@@ -197,9 +198,10 @@ statistic;</li>
 <div class="section level3">
 <h3 id="cramérs-v">Cramér’s V<a class="anchor" aria-label="anchor" href="#cram%C3%A9rs-v"></a>
 </h3>
-<p>Cramér’s V is a measure of association between two nominal variables.
-I It ranges from 0 and 1, where 0 indicates no relationship and 1
-indicates perfect association, and is given by:</p>
+<p>Cramér’s V is a measure of the degree to which two nominal variables
+are associated. It has a value between 0 and 1, with 0 indicating no
+relationship and 1 indicating perfect association, and is calculated as
+follows:</p>
 <p><span class="math display">\[\sqrt{\frac{X^2}{n\min(r-1,c-1)}},\]</span></p>
 <p>where:</p>
 <ul>
@@ -223,7 +225,8 @@ the contingency table.</li>
 <h3 id="phi">Phi<a class="anchor" aria-label="anchor" href="#phi"></a>
 </h3>
 <p>Phi is a measure of association between two nominal dichotomous
-variables, considering a marginal table of the variables given by:</p>
+variables that takes into account a marginal table of the variables
+given by:</p>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -297,7 +300,7 @@ that respective range.</p>
 <h2 id="calc_combination">calc_combination<a class="anchor" aria-label="anchor" href="#calc_combination"></a>
 </h2>
 <p>The goal of <code>calc_combination</code> is to compute the number of
-combinations/permutations. Considering that we have a total of <span class="math inline">\(n\)</span> observations and that <span class="math inline">\(r\)</span> will be selected.</p>
+combinations/permutations. Given that there are a total of <span class="math inline">\(n\)</span> observations and that <span class="math inline">\(r\)</span> will be chosen.</p>
 <div class="section level3">
 <h3 id="order-matter-with-repetition">Order matter with repetition<a class="anchor" aria-label="anchor" href="#order-matter-with-repetition"></a>
 </h3>
@@ -339,13 +342,12 @@ metrics.</p>
 <div class="section level3">
 <h3 id="kendall">Kendall<a class="anchor" aria-label="anchor" href="#kendall"></a>
 </h3>
-<p>The Kendall correlation coefficient, also called Kendall’s Tau
-coefficient, quantifies the association between two ranked
-variables.</p>
-<p>It was created by Maurice Kendall and is especially beneficial for
-analyzing non-linear relationships or ranked data. The coefficient is
-determined by counting the number of concordant pairs (same order of
-ranks) and discordant pairs (opposite order of ranks) in the data.</p>
+<p>The Kendall correlation coefficient, also known as the Kendall’s Tau
+coefficient, measures the relationship between two ranked variables.</p>
+<p>Maurice Kendall created it, and it is especially useful for analyzing
+non-linear relationships or ranked data. The coefficient is calculated
+by counting the number of concordant pairs (ranks in the same order) and
+discordant pairs (ranks in opposite order) in the data.</p>
 <p><span class="math display">\[\frac{n_c-n_d}{\frac{1}{2}*n(n/1)},\]</span>
 where:</p>
 <ul>
@@ -366,12 +368,12 @@ observations.</li>
 <div class="section level3">
 <h3 id="pearson">Pearson<a class="anchor" aria-label="anchor" href="#pearson"></a>
 </h3>
-<p>The Pearson correlation coefficient is a measure of the linear
-relationship between two continuous variables. It ranges from -1 to 1,
-indicating the strength and direction of the association.</p>
-<p>A value of 1 represents a perfect positive linear relationship, -1
-represents a perfect negative linear relationship, and 0 indicates no
-linear relationship.</p>
+<p>The Pearson correlation coefficient quantifies the linear
+relationship that exists between two continuous variables. It ranges
+from -1 to 1, indicating the association’s strength and direction.</p>
+<p>A value of 1 indicates a perfect positive linear relationship, a
+value of -1 indicates a perfect negative linear relationship, and a
+value of 0 indicates no linear relationship.</p>
 <p><span class="math display">\[\frac{\sigma_{xy}}{\sigma_x\sigma_y},\]</span>
 where:</p>
 <ul>
@@ -392,13 +394,13 @@ of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</s
 <div class="section level3">
 <h3 id="spearmann">Spearmann<a class="anchor" aria-label="anchor" href="#spearmann"></a>
 </h3>
-<p>The Spearman correlation coefficient is a measure of the monotonic
-relationship between two variables, it assesses the strength and
-direction of the association, regardless of whether it is linear or
-non-linear.</p>
-<p>It also ranges from -1 to 1, with 1 indicating a perfect monotonic
-relationship and -1 indicating a perfect inverse monotonic relationship.
-A value of 0 suggests no monotonic relationship.</p>
+<p>The Spearman correlation coefficient assesses the strength and
+direction of a monotonic relationship between two variables, regardless
+of whether it is linear or non-linear.</p>
+<p>It also has a value between -1 and 1, with 1 representing a perfect
+monotonic relationship and -1 representing a perfect inverse monotonic
+relationship. A value of 0 indicates that there is no monotonic
+relationship.</p>
 <p><span class="math display">\[1-
 \frac{6\sum\limits_{i=1}^{n}d_i^2}{n(n^2-1)},\]</span></p>
 <p>where:</p>
@@ -642,8 +644,8 @@ modes.</p>
 <span><span class="co">#&gt; cat_var</span></span>
 <span><span class="co">#&gt;  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  y  z </span></span>
 <span><span class="co">#&gt;  1  2  5  2  4  3  6  4  5  4  3  3  3  6  4  3  3  3  4  3  4  8  3 10  4</span></span></code></pre></div>
-<p>We can see that the letter “<em>y</em>” is the one that appears the
-most, so it is the mode of the variable.</p>
+<p>We can see that the letter “<em>y</em>” appears the most, indicating
+that it is the variable’s mode.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mode.html">calc_mode</a></span><span class="op">(</span><span class="va">cat_var</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "y"</span></span></code></pre></div>
@@ -654,8 +656,7 @@ most, so it is the mode of the variable.</p>
 <p>The goal of <code>calc_peak_density</code> is to compute the peak
 density value of a numeric value.</p>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-base-plot-1.png" width="700"></p>
-<p>Let’s say we eant to discover what value is the peak in the density
-above.</p>
+<p>Assume we want to know what the density’s peak value is.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_peak_density.html">calc_peak_density</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.3901813</span></span></code></pre></div>
