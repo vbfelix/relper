@@ -28,7 +28,8 @@ rpearson <-
     pearson = 0.50,
     tol = 0.10,
     mean = 0,
-    sd = 1){
+    sd = 1
+  ){
 
     stopifnot(relper::is_integer(n),length(n) == 1, n > 3)
 
