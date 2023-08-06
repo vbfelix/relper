@@ -12,7 +12,7 @@ summary_xy(x, y)
 \item{y}{A numeric vector}
 }
 \value{
-A tibble (1x3) with the computed coefficients.
+A tibble (1x4) with the computed coefficients.
 }
 \description{
 Computation of the covariance, and Pearson, Kendall and Spearman correlations coefficients.
