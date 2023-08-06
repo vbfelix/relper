@@ -25,22 +25,22 @@ dttm_diff <-
     date2,
     add = 0,
     unit = c("days","secs", "mins", "hours","weeks")
-    ){
+  ){
 
-  stopifnot(relper::is_date(date1) | relper::is_datetime(date1))
+    stopifnot(relper::is_date(date1) | relper::is_datetime(date1))
 
-  stopifnot(relper::is_date(date2) | relper::is_datetime(date2))
+    stopifnot(relper::is_date(date2) | relper::is_datetime(date2))
 
-  stopifnot(length(date1) == length(date2))
+    stopifnot(length(date1) == length(date2))
 
-  stopifnot(is.numeric(add),length(add) == 1)
+    stopifnot(is.numeric(add),length(add) == 1)
 
-  stopifnot(is.character(unit))
+    stopifnot(is.character(unit))
 
-  unit <- match.arg(unit)
+    unit <- match.arg(unit)
 
-  output <- as.numeric(difftime(date2,date1,units = unit)) + add
+    output <- as.numeric(difftime(date2,date1,units = unit)) + add
 
-  return(output)
+    return(output)
 
-}
+  }
