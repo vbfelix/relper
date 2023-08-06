@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,18 +122,18 @@ time series.</li>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;         acf   lag</span></span>
-<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1           0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.007<span style="text-decoration: underline;">38</span>     1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.080</span><span style="color: #BB0000; text-decoration: underline;">6</span>      2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.166       3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.086</span><span style="color: #BB0000; text-decoration: underline;">3</span>      4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.049<span style="text-decoration: underline;">7</span>      5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.106       6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.068<span style="text-decoration: underline;">4</span>      7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.154       8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.056</span><span style="color: #BB0000; text-decoration: underline;">1</span>      9</span></span>
+<span><span class="co">#&gt;        acf   lag</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.159      1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.167      2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.083<span style="text-decoration: underline;">0</span>     3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.043<span style="text-decoration: underline;">2</span>     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.042</span><span style="color: #BB0000; text-decoration: underline;">0</span>     5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.123</span>      6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.108</span>      7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.169</span>      8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.037<span style="text-decoration: underline;">7</span>     9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -156,18 +156,18 @@ where:</p>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;        ccf   lag</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.125</span>    -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.128    -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.072<span style="text-decoration: underline;">7</span>   -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.053</span><span style="color: #BB0000; text-decoration: underline;">7</span>   -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.051</span><span style="color: #BB0000; text-decoration: underline;">2</span>   -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.027</span><span style="color: #BB0000; text-decoration: underline;">1</span>   -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.177</span>    -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.130</span>     -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.079<span style="text-decoration: underline;">5</span>    -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.017<span style="text-decoration: underline;">9</span>    -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt;         ccf   lag</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.003</span><span style="color: #BB0000; text-decoration: underline;">08</span>   -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.062</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.102</span>     -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.093<span style="text-decoration: underline;">9</span>    -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.077<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.094</span><span style="color: #BB0000; text-decoration: underline;">1</span>    -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.024</span><span style="color: #BB0000; text-decoration: underline;">3</span>    -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.015</span><span style="color: #BB0000; text-decoration: underline;">7</span>     -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.065<span style="text-decoration: underline;">4</span>     -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.034<span style="text-decoration: underline;">5</span>     -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -299,7 +299,7 @@ that respective range.</p>
 <p>The goal of <code>calc_combination</code> is to compute the number of
 combinations/permutations. Considering that we have a total of <span class="math inline">\(n\)</span> observations and that <span class="math inline">\(r\)</span> will be selected.</p>
 <div class="section level3">
-<h3 id="order-matters-with-repetition">Order matters with repetition<a class="anchor" aria-label="anchor" href="#order-matters-with-repetition"></a>
+<h3 id="order-matter-with-repetition">Order matter with repetition<a class="anchor" aria-label="anchor" href="#order-matter-with-repetition"></a>
 </h3>
 <p><span class="math display">\[n^r.\]</span></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -307,7 +307,7 @@ combinations/permutations. Considering that we have a total of <span class="math
 <span><span class="co">#&gt; [1] 10000</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="order-matters-without-repetition">Order matters without repetition<a class="anchor" aria-label="anchor" href="#order-matters-without-repetition"></a>
+<h3 id="order-matter-without-repetition">Order matter without repetition<a class="anchor" aria-label="anchor" href="#order-matter-without-repetition"></a>
 </h3>
 <p><span class="math display">\[\frac{n!}{(n-r)!}.\]</span></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
@@ -315,7 +315,7 @@ combinations/permutations. Considering that we have a total of <span class="math
 <span><span class="co">#&gt; [1] 5040</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="order-does-not-matters-with-repetition">Order does not matters with repetition<a class="anchor" aria-label="anchor" href="#order-does-not-matters-with-repetition"></a>
+<h3 id="order-does-not-matter-with-repetition">Order does not matter with repetition<a class="anchor" aria-label="anchor" href="#order-does-not-matter-with-repetition"></a>
 </h3>
 <p><span class="math display">\[\frac{(n+r-1)!}{r!(n-1)!}.\]</span></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
@@ -323,7 +323,7 @@ combinations/permutations. Considering that we have a total of <span class="math
 <span><span class="co">#&gt; [1] 715</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="order-does-not-matters-without-repetition">Order does not matters without repetition<a class="anchor" aria-label="anchor" href="#order-does-not-matters-without-repetition"></a>
+<h3 id="order-does-not-matter-without-repetition">Order does not matter without repetition<a class="anchor" aria-label="anchor" href="#order-does-not-matter-without-repetition"></a>
 </h3>
 <p><span class="math display">\[\frac{n!}{r!(n-r)!}.\]</span></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
