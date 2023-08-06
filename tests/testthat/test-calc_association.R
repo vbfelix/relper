@@ -44,9 +44,9 @@ test_that("Wrong length", {
   expect_error(object = calc_association(x = x,y = 1:2))
 
   #x and y / fisher
-  expect_error(object = calc_association(x = x,y = z,type = "fisher"))
+  expect_error(object = calc_association(x = z,y = z,type = "fisher"))
 
-  expect_error(object = calc_association(x = x,y = z,type = "phi"))
+  expect_error(object = calc_association(x = z,y = z,type = "phi"))
 
 
 })
