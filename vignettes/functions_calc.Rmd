@@ -279,7 +279,7 @@ where:
 calc_correlation(mtcars$hp,mtcars$drat,type = "pearson")
 ```
 
-## Spearmann
+## Spearman
 
 The Spearman correlation coefficient assesses the strength and direction of a monotonic relationship between two variables, regardless of whether it is linear or non-linear. 
 
@@ -322,7 +322,7 @@ calc_cv(x,as_perc = TRUE)
 
 # calc_error
 
-The goal of `calc_cv` is to compute the errors metrics.
+The goal of `calc_error` is to compute errors metrics.
 
 ## Mean Absolute Error (MAE)
 
@@ -353,6 +353,7 @@ $$\sqrt{\text{MSE}}.$$
 RMSPE is the square root of the average of the squared percentage differences between the predicted and actual values relative to the actual values:
 
 $$\sqrt{\frac{\sum\limits_{i=1}^{n}\left(\frac{X_i-Y_i}{X_i}\right)^2}{n}}.$$
+
 # calc_kurtosis
 
 The goal of `calc_kurtosis` is to compute a kurtosis coefficient.
