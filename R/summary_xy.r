@@ -5,7 +5,7 @@
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("y","numeric")
 #'
-#' @return A tibble (1x3) with the computed coefficients.
+#' @return A tibble (1x4) with the computed coefficients.
 #' @export
 #'
 #' @examples
