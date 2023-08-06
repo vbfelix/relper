@@ -36,10 +36,6 @@ str_keep <-
 
     keep_special <- c("special")
 
-    keep_ref <- c(keep_text,keep_num,keep_special)
-
-    # stop_one_of(keep,keep_ref)
-
     if(keep %in% keep_text){
       output <- gsub("[^a-zA-Z]", "", string)
     }
