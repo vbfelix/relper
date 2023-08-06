@@ -9,6 +9,8 @@ test_that("Expect TRUE", {
 
   expect_true(object = is_blank(NA_character_))
 
+  expect_true(object = is_blank(NULL))
+
 })
 
 test_that("Expect FALSE", {

@@ -21,11 +21,19 @@
 
 is_blank <- function(x){
 
-  stopifnot(is.character(x))
+  stopifnot(is.null(x) | is.character(x))
 
-  x <- stringr::str_trim(x)
+  if(is.null(x)){
 
-  output <- (is.na(x)) | (x == "") | (x == "-")
+    output <- TRUE
+
+  }else{
+
+    x <- stringr::str_trim(x)
+
+    output <- (is.na(x)) | (x == "") | (x == "-")
+
+  }
 
   return(output)
 
