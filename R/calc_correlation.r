@@ -23,7 +23,12 @@
 #' calc_correlation(x,x)
 #'
 
-calc_correlation <- function(x,y,type = "pearson"){
+calc_correlation <-
+  function(
+    x,
+    y,
+    type = c("pearson","kendall","spearman")
+    ){
 
   stopifnot(is.numeric(x), length(x) > 1)
 
@@ -33,11 +38,7 @@ calc_correlation <- function(x,y,type = "pearson"){
 
   stopifnot(is.character(type))
 
-  type_ref <- c("kendall","pearson","spearman")
-
-  type <- tolower(type)
-
-  stopifnot(type %in% type_ref)
+  type <- match.arg(type)
 
   y_values <- unique(y)
 

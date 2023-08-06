@@ -24,7 +24,7 @@ dttm_diff <-
     date1,
     date2,
     add = 0,
-    unit = c("secs", "mins", "hours","days", "weeks")
+    unit = c("days","secs", "mins", "hours","weeks")
     ){
 
   stopifnot(relper::is_date(date1) | relper::is_datetime(date1))
@@ -35,13 +35,9 @@ dttm_diff <-
 
   stopifnot(is.numeric(add),length(add) == 1)
 
-  stopifnot(is.character(unit),length(unit) == 1)
+  stopifnot(is.character(unit))
 
-  unit <- tolower(unit)
-
-  unit_ref <- c("secs", "mins", "hours","days", "weeks")
-
-  stopifnot(unit %in% unit_ref)
+  unit <- match.arg(unit)
 
   output <- as.numeric(difftime(date2,date1,units = unit)) + add
 

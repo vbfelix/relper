@@ -25,15 +25,17 @@
 #' calc_kurtosis(x)
 #'
 
-calc_kurtosis <- function(x,type = "unbiased"){
+calc_kurtosis <-
+  function(
+    x,
+    type = c("unbiased","biased","excess","percentile")
+    ){
 
   stopifnot(is.numeric(x), length(x) > 1)
 
   stopifnot(is.character(type))
 
-  type_ref <- c("biased","excess","percentile","unbiased")
-
-  stopifnot(type %in% type_ref)
+  type <- match.arg(type)
 
   x_mean <- mean(x,na.rm = TRUE)
 

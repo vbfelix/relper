@@ -25,7 +25,7 @@
 
 
 calc_association <-
-  function(x,y,type = "chi-square"){
+  function(x,y,type = c("chi-square","contingency","cramers-v","fisher","phi")){
 
     stopifnot(is.character(type), length(type) == 1)
 
@@ -35,11 +35,7 @@ calc_association <-
 
     x_values <- unique(x)
 
-    type_ref <- c("contingency","chi-square","cramers-v","fisher","phi")
-
-    type <- tolower(type)
-
-    stopifnot(type %in% type_ref)
+    type <- match.arg(type)
 
     if(type %in% c("fisher","phi")){
       stopifnot((length(y_values) == 2 | length(x_values) == 2))

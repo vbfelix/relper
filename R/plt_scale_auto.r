@@ -34,13 +34,9 @@ plt_scale_auto <-
     decimal_mark = ","
   ){
 
-    stopifnot(is.character(axis), length(axis) == 1)
+    stopifnot(is.character(axis))
 
-    axis <- tolower(axis)
-
-    axis_ref <- c("x","y","xy","both")
-
-    stopifnot(axis %in% axis_ref)
+    axis <- match.arg(axis)
 
     stopifnot(relper::is_integer(n_breaks), length(n_breaks) == 1, n_breaks > 1)
 

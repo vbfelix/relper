@@ -24,17 +24,17 @@
 #' calc_skewness(x)
 #'
 
-calc_skewness <- function(x,type = "fisher_pearson"){
+calc_skewness <-
+  function(
+    x,
+    type = c("fisher_pearson","bowley","kelly","pearson_median","rao")
+  ){
 
     stopifnot(is.numeric(x),length(x) > 1)
 
     stopifnot(is.character(type))
 
-    type <- tolower(type)
-
-    type_ref <- c("bowley","fisher_pearson","kelly","pearson_median","rao")
-
-    stopifnot(type %in% type_ref)
+    type <- match.arg(type)
 
     x_min <- min(x,na.rm = TRUE)
 
@@ -56,7 +56,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     n <- length(x)
 
-# bowley ------------------------------------------------------------------
+    # bowley ------------------------------------------------------------------
 
     if(type == "bowley"){
 
@@ -66,7 +66,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     }
 
-# fisher pearson ----------------------------------------------------------
+    # fisher pearson ----------------------------------------------------------
 
     if(type == "fisher_pearson"){
 
@@ -76,7 +76,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     }
 
-# kelly ----------------------------------------------------------
+    # kelly ----------------------------------------------------------
 
     if(type == "kelly"){
 
@@ -87,7 +87,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
     }
 
 
-# rao ----------------------------------------------------------
+    # rao ----------------------------------------------------------
 
     if(type == "rao"){
 
@@ -98,7 +98,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
     }
 
 
-# pearson_median ----------------------------------------------------------
+    # pearson_median ----------------------------------------------------------
 
     if(type == "pearson_median"){
 
@@ -108,7 +108,7 @@ calc_skewness <- function(x,type = "fisher_pearson"){
 
     }
 
-# output ------------------------------------------------------------------
+    # output ------------------------------------------------------------------
 
     output <- dividend/divisor
 
