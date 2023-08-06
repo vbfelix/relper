@@ -30,14 +30,13 @@ plt_scale_y_mirror <-
     labels = NULL,
     expand = c(.01,0),
     ...
-    ){
+  ){
 
     stopifnot(is.numeric(breaks))
 
     stopifnot(is.null(labels) | length(labels) == length(breaks))
 
     stopifnot(is.numeric(expand), length(expand) == 2)
-
 
     if(is.numeric(breaks)){
 
