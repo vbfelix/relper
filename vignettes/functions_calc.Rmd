@@ -216,7 +216,7 @@ df_auc %>%
 
 The goal of `calc_combination` is to compute the number of combinations/permutations. Considering that we have a total of $n$ observations and that $r$ will be selected.
 
-## Order matters with repetition
+## Order matter with repetition
 
 $$n^r.$$
 ```{r}
@@ -224,21 +224,21 @@ calc_combination(n = 10,r = 4,order_matter = TRUE,with_repetition = TRUE)
 ```
 
 
-## Order matters without repetition
+## Order matter without repetition
 
 $$\frac{n!}{(n-r)!}.$$
 ```{r}
 calc_combination(n = 10,r = 4,order_matter = TRUE,with_repetition = FALSE)
 ```
 
-## Order does not matters with repetition
+## Order does not matter with repetition
 
 $$\frac{(n+r-1)!}{r!(n-1)!}.$$
 ```{r}
 calc_combination(n = 10,r = 4,order_matter = FALSE,with_repetition = TRUE)
 ```
 
-## Order does not matters without repetition
+## Order does not matter without repetition
 
 $$\frac{n!}{r!(n-r)!}.$$
 
