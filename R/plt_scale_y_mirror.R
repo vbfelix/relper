@@ -40,6 +40,8 @@ plt_scale_y_mirror <-
 
     if(is.numeric(breaks)){
 
+      if(is.null(labels)){labels <- relper::format_num(breaks,...)}
+
       output <-
         ggplot2::scale_y_continuous(
           breaks = breaks,
@@ -54,6 +56,8 @@ plt_scale_y_mirror <-
     }
 
     if(relper::is_string(breaks)){
+
+      if(is.null(labels)){labels <- breaks}
 
       output <-
         ggplot2::scale_y_discrete(
