@@ -41,7 +41,7 @@ str_keep <-
     }
 
     if(keep %in% keep_num){
-      output <- gsub("[^0-9]", "", string)
+      output <- as.numeric(gsub("[^0-9]", "", string))
     }
 
     if(keep %in% keep_special){
