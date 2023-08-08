@@ -28,10 +28,10 @@ as_perc <- function(x, sum = FALSE){
 
   stopifnot(is.logical(sum), length(sum) == 1)
 
-  if(!sum){
-    output <- 100*x
+  if(sum){
+    output <- 100*x/sum(x,na.rm = TRUE)
   }else{
-    output <- 100*x/sum(x)
+    output <- 100*x
   }
 
   return(output)
