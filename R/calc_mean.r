@@ -22,6 +22,8 @@ calc_mean <- function(x,type = c("arithmetic","geometric","harmonic")){
 
   stopifnot(is.character(type), length(type) == 1)
 
+  type <- match.arg(type)
+
   if(type == "arithmetic"){
 
     output <- mean(x,na.rm = TRUE)
