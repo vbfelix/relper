@@ -20,7 +20,7 @@ calc_mean <- function(x,type = c("arithmetic","geometric","harmonic")){
 
   stopifnot(is.numeric(x))
 
-  stopifnot(is.character(type), length(type) == 1)
+  stopifnot(is.character(type))
 
   type <- match.arg(type)
 
