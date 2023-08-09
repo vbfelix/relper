@@ -16,15 +16,11 @@
 #' calc_mean(x,"geometric")
 #'
 
-calc_mean <- function(x,type = "arithmetic"){
+calc_mean <- function(x,type = c("arithmetic","geometric","harmonic")){
 
   stopifnot(is.numeric(x))
 
-  stopifnot(is.character(type))
-
-  type <- tolower(type)
-
-  stopifnot(type %in% c("arithmetic","geometric","harmonic"))
+  stopifnot(is.character(type), length(type) == 1)
 
   if(type == "arithmetic"){
 
