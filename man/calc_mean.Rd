@@ -18,7 +18,7 @@ calc_mean(
 
 \item{trim}{A numeric vector, that will be fraction of data to be trimmed from both ends}
 
-\item{weight}{A numeric vector, that will be the weighted of the arithmetic mean}
+\item{weight}{A numeric vector, that will be the weight used for the weighted the arithmetic mean}
 }
 \value{
 A numeric single value with the computed mean.
