@@ -55,7 +55,7 @@
 
 -   Function `is_blank`
 
-## relper 3.8.16
+## relper 3.8.17
 
 **Additions**
 
