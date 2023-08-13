@@ -5,8 +5,7 @@
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("type","character")
 #' @eval arg_vector("trim","numeric",action = "will be fraction of data to be trimmed from both ends")
-#' @eval arg_vector("weight","numeric",action = "will be the weighted of the arithmetic mean")
-
+#' @eval arg_vector("weight","numeric",action = "will be the weight used for the weighted the arithmetic mean")
 #'
 #' @return A numeric single value with the computed mean.
 #'
@@ -36,6 +35,8 @@ calc_mean <-
     stopifnot(is.null(trim) | is.numeric(trim))
 
     if(!is.null(trim)){
+
+      stopifnot(length(trim) == 1)
 
       stopifnot(trim > 0,trim < .5)
 
@@ -85,7 +86,6 @@ calc_mean <-
         warning = "At least one value = 0 and that caused the mean to be 0."
       )
 
-      #log already provides warning for values < 0
       output <- suppressWarnings(exp(mean(log(x), na.rm = TRUE)))
 
     }
@@ -94,7 +94,7 @@ calc_mean <-
 
       warn_any_zero(
         x  = x ,
-        warning = "at least one value = 0 and that caused the mean to be 0."
+        warning = "At least one value = 0 and that caused the mean to be 0."
       )
 
       output <- suppressWarnings(1/mean(1/x, na.rm = TRUE))
