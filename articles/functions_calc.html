@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.15</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.16</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,18 +122,18 @@ time series.</li>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 2</span></span></span>
-<span><span class="co">#&gt;         acf   lag</span></span>
-<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1           0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.008</span><span style="color: #BB0000; text-decoration: underline;">38</span>     1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.001</span><span style="color: #BB0000; text-decoration: underline;">36</span>     2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.095<span style="text-decoration: underline;">4</span>      3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.067</span><span style="color: #BB0000; text-decoration: underline;">0</span>      4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.061</span><span style="color: #BB0000; text-decoration: underline;">7</span>      5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.070</span><span style="color: #BB0000; text-decoration: underline;">9</span>      6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.252</span>       7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.069<span style="text-decoration: underline;">8</span>      8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.127</span>       9</span></span>
+<span><span class="co">#&gt;        acf   lag</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.167</span>      1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.205</span>      2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.053<span style="text-decoration: underline;">2</span>     3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.156      4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.109</span>      5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>  0.033<span style="text-decoration: underline;">6</span>     6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.124      7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.035<span style="text-decoration: underline;">5</span>     8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.141</span>      9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -156,18 +156,18 @@ where:</p>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_acf.html">calc_acf</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
-<span><span class="co">#&gt;          ccf   lag</span></span>
-<span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.094</span><span style="color: #BB0000; text-decoration: underline;">7</span>     -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.152      -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.042<span style="text-decoration: underline;">6</span>     -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">0.044</span><span style="color: #BB0000; text-decoration: underline;">0</span>     -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.196      -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.115      -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.055</span><span style="color: #BB0000; text-decoration: underline;">7</span>     -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.000<span style="text-decoration: underline;">226</span>    -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.007<span style="text-decoration: underline;">98</span>     -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.000<span style="text-decoration: underline;">377</span>    -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt;        ccf   lag</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.023</span><span style="color: #BB0000; text-decoration: underline;">6</span>   -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.045<span style="text-decoration: underline;">5</span>   -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.088<span style="text-decoration: underline;">6</span>   -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.109    -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.073</span><span style="color: #BB0000; text-decoration: underline;">0</span>   -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.029</span><span style="color: #BB0000; text-decoration: underline;">8</span>   -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.016</span><span style="color: #BB0000; text-decoration: underline;">6</span>   -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.087<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.041</span><span style="color: #BB0000; text-decoration: underline;">8</span>    -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.056<span style="text-decoration: underline;">6</span>    -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -584,6 +584,9 @@ of <span class="math inline">\(x\)</span>.</li>
 <div class="section level3">
 <h3 id="arithmetic">Arithmetic<a class="anchor" aria-label="anchor" href="#arithmetic"></a>
 </h3>
+<div class="section level4">
+<h4 id="simple-arithmetic-mean">Simple arithmetic mean<a class="anchor" aria-label="anchor" href="#simple-arithmetic-mean"></a>
+</h4>
 <p><span class="math display">\[\frac{1}{n}\sum\limits_{i=1}^{n}x_i,\]</span>
 where:</p>
 <ul>
@@ -594,6 +597,32 @@ length <span class="math inline">\(n\)</span>.</li>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,type <span class="op">=</span> <span class="st">"arithmetic"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 5.5</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="weighted-arithmetic-mean">Weighted arithmetic mean<a class="anchor" aria-label="anchor" href="#weighted-arithmetic-mean"></a>
+</h4>
+<p><span class="math display">\[\frac{1}{\sum\limits_{i=1}^{n}w_i}\sum\limits_{i=1}^{n}w_ix_i,\]</span>
+where:</p>
+<ul>
+<li>
+<span class="math inline">\(x_i\)</span> is a numeric vector of
+length <span class="math inline">\(n\)</span>;</li>
+<li>
+<span class="math inline">\(w_i\)</span> is a numeric vector of
+length <span class="math inline">\(n\)</span>, with the respective
+weights of <span class="math inline">\(x_i\)</span>.</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,type <span class="op">=</span> <span class="st">"arithmetic"</span>,weight <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 7</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="trimmed-arithmetic-mean">Trimmed arithmetic mean<a class="anchor" aria-label="anchor" href="#trimmed-arithmetic-mean"></a>
+</h4>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,type <span class="op">=</span> <span class="st">"arithmetic"</span>,trim <span class="op">=</span> <span class="fl">.4</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 5.5</span></span></code></pre></div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="geometric">Geometric<a class="anchor" aria-label="anchor" href="#geometric"></a>
@@ -606,7 +635,7 @@ length <span class="math inline">\(n\)</span>.</li>
 <span class="math inline">\(x_i\)</span> is a numeric vector of
 length <span class="math inline">\(n\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,type <span class="op">=</span> <span class="st">"geometric"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 4.528729</span></span></code></pre></div>
 </div>
@@ -620,7 +649,7 @@ where:</p>
 <span class="math inline">\(x_i\)</span> is a numeric vector of
 length <span class="math inline">\(n\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mean.html">calc_mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,type <span class="op">=</span> <span class="st">"harmonic"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 3.414172</span></span></code></pre></div>
 </div>
@@ -630,7 +659,7 @@ length <span class="math inline">\(n\)</span>.</li>
 </h2>
 <p>The goal of <code>calc_modality</code> is to compute the number of
 modes.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/calc_modality.html">calc_modality</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"b"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2</span></span></code></pre></div>
@@ -639,7 +668,7 @@ modes.</p>
 <h2 id="calc_mode">calc_mode<a class="anchor" aria-label="anchor" href="#calc_mode"></a>
 </h2>
 <p>The goal of <code>calc_mode</code> is to compute the mode.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">cat_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span>,<span class="fl">100</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">cat_var</span><span class="op">)</span></span>
@@ -648,7 +677,7 @@ modes.</p>
 <span><span class="co">#&gt;  1  2  5  2  4  3  6  4  5  4  3  3  3  6  4  3  3  3  4  3  4  8  3 10  4</span></span></code></pre></div>
 <p>We can see that the letter “<em>y</em>” appears the most, indicating
 that it is the variable’s mode.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_mode.html">calc_mode</a></span><span class="op">(</span><span class="va">cat_var</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "y"</span></span></code></pre></div>
 </div>
@@ -659,7 +688,7 @@ that it is the variable’s mode.</p>
 density value of a numeric value.</p>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-base-plot-1.png" width="700"></p>
 <p>Assume we want to know what the density’s peak value is.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_peak_density.html">calc_peak_density</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.3901813</span></span></code></pre></div>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-plot-1.png" width="700"></p>
@@ -669,7 +698,7 @@ density value of a numeric value.</p>
 </h2>
 <p>The goal of <code>calc_skewness</code> is to compute a skewness
 coefficient.</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
 <p>Where different types of coefficients are provided, they are:</p>
@@ -688,7 +717,7 @@ quartile;</li>
 <li>
 <span class="math inline">\(Q_3\)</span> is the third quartile.</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"bowley"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.07563213</span></span></code></pre></div>
 </div>
@@ -709,7 +738,7 @@ length <span class="math inline">\(n\)</span>;</li>
 <span class="math inline">\(s_x\)</span> is the standard deviation
 of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"fisher_pearson"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
 </div>
@@ -730,7 +759,7 @@ i.e., <span class="math inline">\(P_{50}\)</span>;</li>
 <span class="math inline">\(P_{10}\)</span> is the 10th
 percentile;</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"kelly"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.1755126</span></span></code></pre></div>
 </div>
@@ -752,7 +781,7 @@ coefficient, is given by:</p>
 <span class="math inline">\(s_x\)</span> is the standard deviation
 of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"pearson_median"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.5718116</span></span></code></pre></div>
 </div>
@@ -773,7 +802,7 @@ of <span class="math inline">\(x\)</span>.</li>
 <li>
 <span class="math inline">\(n\)</span> is the length of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2019945</span></span></code></pre></div>
 </div>
