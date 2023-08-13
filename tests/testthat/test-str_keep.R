@@ -7,7 +7,7 @@ test_that("Expect equal", {
 
   expect_equal(
     object = str_keep("A2#","num"),
-    expected = "2"
+    expected = 2
   )
 
   expect_equal(

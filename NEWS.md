@@ -55,11 +55,12 @@
 
 -   Function `is_blank`
 
-## relper 3.8.15
+## relper 3.8.16
 
 **Additions**
 
 -   Function `calc_combination` and `plt_pinpoint` 
+-   Arguments `trim` and `weight` to the function `calc_mean`
 
 **Improvements**
 

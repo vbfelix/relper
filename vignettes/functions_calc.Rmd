@@ -431,6 +431,7 @@ The goal of `calc_mean` is to compute the mean.
 
 ## Arithmetic
 
+### Simple arithmetic mean
 
 $$\frac{1}{n}\sum\limits_{i=1}^{n}x_i,$$ where:
 
@@ -438,6 +439,22 @@ $$\frac{1}{n}\sum\limits_{i=1}^{n}x_i,$$ where:
 
 ```{r arithmetic_mean}
 calc_mean(x = 1:10,type = "arithmetic")
+```
+### Weighted arithmetic mean
+
+$$\frac{1}{\sum\limits_{i=1}^{n}w_i}\sum\limits_{i=1}^{n}w_ix_i,$$ where:
+
+-   $x_i$ is a numeric vector of length $n$;
+-   $w_i$ is a numeric vector of length $n$, with the respective weights of $x_i$.
+
+
+```{r weighted_mean}
+calc_mean(x = 1:10,type = "arithmetic",weight = 1:10)
+```
+### Trimmed arithmetic mean
+
+```{r trimmed_mean}
+calc_mean(x = 1:10,type = "arithmetic",trim = .4)
 ```
 
 ## Geometric 

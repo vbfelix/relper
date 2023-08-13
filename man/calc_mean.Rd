@@ -4,12 +4,21 @@
 \alias{calc_mean}
 \title{Mean computation}
 \usage{
-calc_mean(x, type = "arithmetic")
+calc_mean(
+  x,
+  type = c("arithmetic", "geometric", "harmonic"),
+  trim = NULL,
+  weight = NULL
+)
 }
 \arguments{
 \item{x}{A numeric vector}
 
 \item{type}{A character vector}
+
+\item{trim}{A numeric vector, that will be fraction of data to be trimmed from both ends}
+
+\item{weight}{A numeric vector, that will be the weighted of the arithmetic mean}
 }
 \value{
 A numeric single value with the computed mean.
