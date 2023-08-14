@@ -4,8 +4,8 @@
 #'
 #' @eval arg_vector("x","numeric")
 #' @eval arg_vector("type","character")
-#' @eval arg_vector("trim","numeric",action = "will be fraction of data to be trimmed from both ends")
-#' @eval arg_vector("weight","numeric",action = "will be the weight used for the weighted the arithmetic mean")
+#' @eval arg_vector("trim","numeric",action = "will be the fraction of data to be trimmed from both ends")
+#' @eval arg_vector("weight","numeric",action = "will be the weights used for the weighted the arithmetic mean")
 #'
 #' @return A numeric single value with the computed mean.
 #'
@@ -54,7 +54,7 @@ calc_mean <-
 
     if(!is.null(trim)){
 
-      x <- x[x > quantile(x,trim) & x < quantile(x,1-trim)]
+      x <- x[x > stats::quantile(x,trim) & x < stats::quantile(x,1-trim)]
 
     }
 
