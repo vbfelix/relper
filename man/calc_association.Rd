@@ -11,9 +11,9 @@ calc_association(
 )
 }
 \arguments{
-\item{x}{A numeric vector}
+\item{x}{A character vector}
 
-\item{y}{A numeric vector}
+\item{y}{A character vector}
 
 \item{type}{A character single value, that is the type of the association to be computed}
 }

@@ -24,31 +24,36 @@
 #' as_num(x)
 #'
 
-as_num <- function(x, thousand_mark = "\\.", decimal_mark = "\\,"){
+as_num <-
+  function(
+    x,
+    thousand_mark = "\\.",
+    decimal_mark = "\\,"
+  ){
 
-  stopifnot(is.character(x))
+    stopifnot(is.character(x))
 
-  stopifnot(is.character(thousand_mark), length(thousand_mark) == 1)
+    stopifnot(is.character(thousand_mark), length(thousand_mark) == 1)
 
-  stopifnot(is.character(decimal_mark), length(decimal_mark) == 1)
+    stopifnot(is.character(decimal_mark), length(decimal_mark) == 1)
 
-  output <-
-    x %>%
-    # Remove thousand marker
-    gsub(x = .,pattern = thousand_mark,replacement =  "") %>%
-    # Sub decimal marker to "."
-    gsub(x = .,pattern = decimal_mark,replacement =  "\\.") %>%
-    # Remove "$"
-    gsub(x = .,pattern = "\\$",replacement =  "") %>%
-    # Remove letters
-    gsub(x = .,pattern = "[a-zA-Z]",replacement =  "") %>%
-    # Remove blank spaces
-    gsub(x = .,pattern = " ",replacement =  "") %>%
-    as.numeric(., na.rm = FALSE)
+    output <-
+      x %>%
+      # Remove thousand marker
+      gsub(x = .,pattern = thousand_mark,replacement =  "") %>%
+      # Sub decimal marker to "."
+      gsub(x = .,pattern = decimal_mark,replacement =  "\\.") %>%
+      # Remove "$"
+      gsub(x = .,pattern = "\\$",replacement =  "") %>%
+      # Remove letters
+      gsub(x = .,pattern = "[a-zA-Z]",replacement =  "") %>%
+      # Remove blank spaces
+      gsub(x = .,pattern = " ",replacement =  "") %>%
+      as.numeric(., na.rm = FALSE)
 
-  warn_any_na(output)
+    warn_any_na(output)
 
-  return(output)
+    return(output)
 
-}
+  }
 

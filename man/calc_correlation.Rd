@@ -22,7 +22,6 @@ Computation of correlation coefficients.
 \details{
 Currently, it is possible to compute the following metrics:
 
-\cr - Biserial correlation coefficient
 \cr - Kendall's Tau correlation coefficient
 \cr - Pearson linear correlation coefficient
 \cr - Spearmann correlation coefficient

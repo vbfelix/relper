@@ -24,6 +24,7 @@ This metric can be used to determine the shape of a variable,
 }
 \details{
 Currently, it is possible to compute the following metrics:
+
 \cr - Bowley skewness coefficient
 \cr - Fisher-Pearson skewness coefficient
 \cr - Kelly skewness coefficient

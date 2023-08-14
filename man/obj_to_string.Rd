@@ -7,7 +7,7 @@
 obj_to_string(x)
 }
 \arguments{
-\item{x}{A R object}
+\item{x}{An R object}
 }
 \value{
 A character single value with the name of the R object.

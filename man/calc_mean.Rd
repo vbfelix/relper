@@ -14,9 +14,9 @@ calc_mean(
 \arguments{
 \item{x}{A numeric vector}
 
-\item{type}{A character vector}
+\item{type}{A character single value}
 
-\item{trim}{A numeric vector, that will be the fraction of data to be trimmed from both ends}
+\item{trim}{A numeric single value, that will be the fraction of data to be trimmed from both ends}
 
 \item{weight}{A numeric vector, that will be the weights used for the weighted the arithmetic mean}
 }

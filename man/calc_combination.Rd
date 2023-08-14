@@ -7,9 +7,9 @@
 calc_combination(n, r, order_matter = FALSE, with_repetition = FALSE)
 }
 \arguments{
-\item{n}{A numeric vector, that will be the total number of obervations}
+\item{n}{A numeric single value, that will be the total number of observations}
 
-\item{r}{A numeric vector, that will be the number of obervations to be selected}
+\item{r}{A numeric single value, that will be the number of observations to be selected}
 
 \item{order_matter}{A boolean value, if TRUE the function will be a permutation, if not a combination (default = FALSE)}
 

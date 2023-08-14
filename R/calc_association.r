@@ -2,8 +2,8 @@
 #'
 #' @description Computation of association coefficients.
 #'
-#' @eval arg_vector("x","numeric")
-#' @eval arg_vector("y","numeric")
+#' @eval arg_vector("x","character")
+#' @eval arg_vector("y","character")
 #' @eval arg_value("type","character",action = "is the type of the association to be computed")
 #'
 #' @details Currently, it is possible to compute the following metrics:

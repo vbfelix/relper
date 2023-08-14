@@ -8,6 +8,7 @@
 #' @eval arg_value("type","character",action = "is the type of the skewness to be computed")
 #'
 #' @details Currently, it is possible to compute the following metrics:
+#'
 #' \cr - Bowley skewness coefficient
 #' \cr - Fisher-Pearson skewness coefficient
 #' \cr - Kelly skewness coefficient

@@ -2,8 +2,8 @@
 #'
 #' @description Computation of number of combinations/permutations.
 #'
-#' @eval arg_vector("n","numeric",action = "will be the total number of obervations")
-#' @eval arg_vector("r","numeric",action = "will be the number of obervations to be selected")
+#' @eval arg_value("n","numeric",action = "will be the total number of observations")
+#' @eval arg_value("r","numeric",action = "will be the number of observations to be selected")
 #' @eval arg_boolean("order_matter","be a permutation, if not a combination")
 #' @eval arg_boolean("with_repetition","consider that there will be repetitions")
 #'

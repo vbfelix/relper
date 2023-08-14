@@ -2,7 +2,7 @@
 #'
 #' @description Return an object name as a string.
 #'
-#' @param x A R object
+#' @param x An R object
 #'
 #' @return A character single value with the name of the R object.
 #'

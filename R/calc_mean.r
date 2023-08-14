@@ -3,8 +3,8 @@
 #' @description Computation of the mean (arithmetic,geometric and harmonic).
 #'
 #' @eval arg_vector("x","numeric")
-#' @eval arg_vector("type","character")
-#' @eval arg_vector("trim","numeric",action = "will be the fraction of data to be trimmed from both ends")
+#' @eval arg_value("type","character")
+#' @eval arg_value("trim","numeric",action = "will be the fraction of data to be trimmed from both ends")
 #' @eval arg_vector("weight","numeric",action = "will be the weights used for the weighted the arithmetic mean")
 #'
 #' @return A numeric single value with the computed mean.
