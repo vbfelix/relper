@@ -4,7 +4,7 @@
 #'  \cr
 #'  \cr - bojack_horseman: 5 colors, inspired by the animation BoJack Horseman.
 #'  \cr - cowboy_bebop: 5 colors, inspired by the animation Cowboy Bebop.
-#'  \cr - doctor_who: 5 colors, inspired by the TV series Doctor Who.
+#'  \cr - doctor_who: 6 colors, inspired by the TV series Doctor Who.
 #'  \cr - final_space: 4 colors, inspired by the animation Final Space.
 #'  \cr - gurren_lagann: 5 colors, inspired by the animation Tengen Toppa Gurren-Lagann.
 #'  \cr - heartstopper: 5 colors, inspired by the TV series Heartstopper.
@@ -52,13 +52,13 @@ palette_qua <-
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
     bojack_horseman <-
-      c("#EB636B","#9E674C", "#9464A2", "#FAC877", "#3C2533", "#DE6192")
+      c("#EB636B","#9E674C", "#FAC877", "#3C2533", "#9464A2")
 
     cowboy_bebop <-
-      c("#1B5260", "#CA301D", "#219EBF", "#B7B5A4", "#612023")
+      c("#1B5260", "#CA301D", "#B7B5A4", "#612023","#219EBF")
 
     doctor_who <-
-      c("#1D2733", "#DA4327", "#15406B", "#F8CE6F", "#6F3C37","#C69ABE", "#F79336")
+      c("#DA4327", "#15406B", "#F8CE6F", "#6F3C37","#C69ABE", "#F79336")
 
     final_space <-
       c("#9FFA6F", "#AC1132", "#EDDD30", "#F5D9D2")

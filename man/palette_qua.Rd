@@ -25,7 +25,7 @@ Palettes for a qualitative scale, with the following palettes:
  \cr
  \cr - bojack_horseman: 5 colors, inspired by the animation BoJack Horseman.
  \cr - cowboy_bebop: 5 colors, inspired by the animation Cowboy Bebop.
- \cr - doctor_who: 5 colors, inspired by the TV series Doctor Who.
+ \cr - doctor_who: 6 colors, inspired by the TV series Doctor Who.
  \cr - final_space: 4 colors, inspired by the animation Final Space.
  \cr - gurren_lagann: 5 colors, inspired by the animation Tengen Toppa Gurren-Lagann.
  \cr - heartstopper: 5 colors, inspired by the TV series Heartstopper.
