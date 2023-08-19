@@ -44,6 +44,8 @@ palette_div <-
 
     stopifnot(is.character(name), length(name) == 1)
 
+    name <- match.arg(name)
+
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
     arcane <-

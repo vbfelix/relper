@@ -47,6 +47,8 @@ palette_two <-
 
     stopifnot(is.character(name), length(name) == 1)
 
+    name <- match.arg(name)
+
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
     boba_fett <- c("#537654","#c88220")
