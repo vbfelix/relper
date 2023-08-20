@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.8.18</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.9.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,19 +131,36 @@ background.</p>
 <p><img src="functions_plt_files/figure-html/plt_no_background-1.png" width="700"></p>
 </div>
 <div class="section level2">
+<h2 id="plt_no_grid">plt_no_grid<a class="anchor" aria-label="anchor" href="#plt_no_grid"></a>
+</h2>
+<p>The goal of <code>plt_no_grid</code> is to remove the grid.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_no_grid</span></span></code></pre></div>
+<p><img src="functions_plt_files/figure-html/plt_no_grid-1.png" width="700"></p>
+</div>
+<div class="section level2">
 <h2 id="plt_no_labels">plt_no_labels<a class="anchor" aria-label="anchor" href="#plt_no_labels"></a>
 </h2>
 <p>The goal of <code>plt_no_labels</code> is to remove all labels.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_no_labels</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_no_labels-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="plt_no_text">plt_no_text<a class="anchor" aria-label="anchor" href="#plt_no_text"></a>
+</h2>
+<p>The goal of <code>plt_no_text</code> is to remove the text and
+ticks.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="va">plt_no_text</span></span></code></pre></div>
+<p><img src="functions_plt_files/figure-html/plt_no_text-1.png" width="700"></p>
 </div>
 <div class="section level2">
 <h2 id="plt_pinpoint">plt_pinpoint<a class="anchor" aria-label="anchor" href="#plt_pinpoint"></a>
 </h2>
 <p>The goal of <code>plt_pinpoint</code> is to add a single point to a
 plot.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_pinpoint.html">plt_pinpoint</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">18</span>,y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_pinpoint-1.png" width="700"></p>
 </div>
@@ -152,7 +169,7 @@ plot.</p>
 </h2>
 <p>The goal of <code>plt_regression_line</code> is to add a regression
 line to a scatter plot.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_regression_line.html">plt_regression_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_regression_line-1.png" width="700"></p>
 </div>
@@ -161,10 +178,10 @@ line to a scatter plot.</p>
 </h2>
 <p>The goal of <code>plt_scale_auto</code> is to add a automatic
 scale.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"x"</span>,n_breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_scale_auto-1.png" width="700"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/plt_scale_auto.html">plt_scale_auto</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="st">"xy"</span>,n_breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_scale_auto-x-y-1.png" width="700"></p>
@@ -174,7 +191,7 @@ scale.</p>
 </h2>
 <p>The goal of <code>plt_scale_y_mirror</code> is to mirror the y axis
 on the right side.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot_breaks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">35</span>,<span class="fl">3</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">plot_labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/format_num.html">format_num</a></span><span class="op">(</span><span class="va">plot_breaks</span>,digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
@@ -187,7 +204,7 @@ on the right side.</p>
 </h2>
 <p>The goal of <code>plt_theme_map</code> is to add a theme appropriate
 for a map.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_map.html">plt_theme_map</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_theme_map-1.png" width="700"></p>
 </div>
@@ -196,7 +213,7 @@ for a map.</p>
 </h2>
 <p>The goal of <code>plt_theme_x</code> is to remove major and minor
 grid lines from y axis.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_x.html">plt_theme_x</a></span><span class="op">(</span>margin <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_theme_x-1.png" width="700"></p>
 </div>
@@ -205,7 +222,7 @@ grid lines from y axis.</p>
 </h2>
 <p>The goal of <code>plt_theme_xy</code> is to remove minor grid lines
 from x and y axis.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_xy.html">plt_theme_xy</a></span><span class="op">(</span>margin <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_theme_xy-1.png" width="700"></p>
 </div>
@@ -214,7 +231,7 @@ from x and y axis.</p>
 </h2>
 <p>The goal of <code>plt_theme_y</code> is to remove major and minor
 grid lines from x axis.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_theme_y.html">plt_theme_y</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_theme_y-1.png" width="700"></p>
 </div>
@@ -223,7 +240,7 @@ grid lines from x axis.</p>
 </h2>
 <p>The goal of <code>plt_water_mark</code> is to add a image as a
 watermark in a <code>ggplot2</code> object.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> <span class="fu"><a href="../reference/plt_water_mark.html">plt_water_mark</a></span><span class="op">(</span><span class="va">vfx_watermark</span><span class="op">)</span></span></code></pre></div>
 <p><img src="functions_plt_files/figure-html/plt_water_mark-1.png" width="700"></p>
 </div>
