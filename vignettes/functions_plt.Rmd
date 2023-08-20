@@ -54,12 +54,28 @@ The goal of `plt_no_background` is to remove the background.
 plot + plt_no_background
 ```
 
+# plt_no_grid
+
+The goal of `plt_no_grid` is to remove the grid.
+
+```{r plt_no_grid}
+plot + plt_no_grid
+```
+
 # plt_no_labels
 
 The goal of `plt_no_labels` is to remove all labels.
 
 ```{r plt_no_labels}
 plot + plt_no_labels
+```
+
+# plt_no_text
+
+The goal of `plt_no_text` is to remove the text and ticks.
+
+```{r plt_no_text}
+plot + plt_no_text
 ```
 
 # plt_pinpoint

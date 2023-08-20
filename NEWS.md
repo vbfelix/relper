@@ -59,13 +59,18 @@
 
 **Additions**
 
--   Function `calc_combination` and `plt_pinpoint` 
+-   Functions `calc_combination` and `plt_pinpoint` 
 -   Arguments `trim` and `weight` to the function `calc_mean`
 
 **Improvements**
 
 -   Functions `calc_geometric_mean` and `calc_harmonic_mean` were removed and became `calc_mean`
 
+## relper 3.9.0
+
+**Additions**
+
+-   Functions `plt_no_text` and `plt_no_grid` 
 
 # relper 2.0.0 (Visual Delight)
 
