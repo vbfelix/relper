@@ -82,7 +82,7 @@ pal_vignette(func_palette = pal_qua)
 
 The goal of `pal_seq` is to return a palette for a sequential scale, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 17}
+```{r, echo = FALSE,fig.height = 18}
 
 pal_vignette(func_palette = pal_seq)
 
@@ -92,7 +92,7 @@ pal_vignette(func_palette = pal_seq)
 
 The goal of `pal_two` is to return a palette with two colors, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 14}
+```{r, echo = FALSE,fig.height = 16}
 
 pal_vignette(func_palette = pal_two)
 
