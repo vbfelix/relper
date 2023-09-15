@@ -32,11 +32,11 @@
 #'
 #' @examples
 #'
-#' palette_example(palette = palette_seq(name = "cyberpunk"))
+#' scales::show_col(pal_seq("cyberpunk"))
 #'
 
 
-palette_seq <-
+pal_seq <-
   function(
     name = c("andor","badlands","breaking_bad","clockwork_orange","cyberpunk",
              "fleabag","house_md","house_of_cards","loki","lovecraft_country",
@@ -120,4 +120,4 @@ palette_seq <-
 
   }
 
-# palette_vignette(palette_seq)
+# pal_vignette(pal_seq)

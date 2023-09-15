@@ -1,8 +1,8 @@
 ---
-title: "Functions palette_"
+title: "Functions pal_"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Functions palette_}
+  %\VignetteIndexEntry{Functions pal_}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```{r setup, warning = FALSE, message = FALSE, echo = FALSE}
 library(relper)
 
-palette_vignette <-
+pal_vignette <-
   function(func_palette){
     
     palettes <- as.character(unlist(formals(func_palette)$name)) 
@@ -55,45 +55,45 @@ palette_vignette <-
   }
 ```
 
-`palette_` functions provides color schemes that are influenced by popular culture media, such as: TV series, movies, video games, animations, etc.
+`pal_` functions provides color schemes that are influenced by popular culture media, such as: TV series, movies, video games, animations, etc.
 
-# palette_div
+# pal_div
 
-The goal of `palette_div` is to return a palette for a divergent scale, with the following palettes:
+The goal of `pal_div` is to return a palette for a divergent scale, with the following palettes:
 
 
 ```{r, echo = FALSE,fig.height = 14}
 
-palette_vignette(func_palette = palette_div)
+pal_vignette(func_palette = pal_div)
 
 ```
 
-# palette_qua
+# pal_qua
 
-The goal of `palette_qua` is to return a palette for a qualitative scale, with the following palettes:
+The goal of `pal_qua` is to return a palette for a qualitative scale, with the following palettes:
 
 ```{r, echo = FALSE,fig.height = 18}
 
-palette_vignette(func_palette = palette_qua)
+pal_vignette(func_palette = pal_qua)
 
 ```
 
-# palette_seq
+# pal_seq
 
-The goal of `palette_seq` is to return a palette for a sequential scale, with the following palettes:
+The goal of `pal_seq` is to return a palette for a sequential scale, with the following palettes:
 
 ```{r, echo = FALSE,fig.height = 17}
 
-palette_vignette(func_palette = palette_seq)
+pal_vignette(func_palette = pal_seq)
 
 ```
 
-# palette_two
+# pal_two
 
-The goal of `palette_two` is to return a palette with two colors, with the following palettes:
+The goal of `pal_two` is to return a palette with two colors, with the following palettes:
 
 ```{r, echo = FALSE,fig.height = 14}
 
-palette_vignette(func_palette = palette_two)
+pal_vignette(func_palette = pal_two)
 
 ```

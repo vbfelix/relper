@@ -29,11 +29,11 @@
 #'
 #' @examples
 #'
-#' palette_example(palette = palette_div(name = "sandman"))
+#' scales::show_col(pal_div("sandman"))
 #'
 
 
-palette_div <-
+pal_div <-
   function(
     name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","good_place",
              "homeland",
@@ -109,6 +109,6 @@ palette_div <-
 
   }
 
-# palette_vignette(palette_div)
+# pal_vignette(pal_div)
 
 

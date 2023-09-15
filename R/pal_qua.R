@@ -33,11 +33,11 @@
 #'
 #' @examples
 #'
-#' palette_example(palette = palette_qua(name = "this_is_us"))
+#' scales::show_col(pal_qua("this_is_us"))
 #'
 
 
-palette_qua <-
+pal_qua <-
   function(
     name = c("bojack_horseman","cowboy_bebop",
              "doctor_who","final_space","gurren_lagann","heartstopper","homeland","kick_ass",
@@ -127,5 +127,5 @@ palette_qua <-
 
   }
 
-# palette_vignette(palette_qua)
+# pal_vignette(pal_qua)
 

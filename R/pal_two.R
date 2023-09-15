@@ -30,11 +30,11 @@
 #'
 #' @examples
 #'
-#' palette_example(palette = palette_two(name = "blade_runner_2049"))
+#' scales::show_col(pal_two("boba_fett"))
 #'
 
 
-palette_two <-
+pal_two <-
   function(
     name = c(
       "boba_fett","blade_runner_2049","dear_white_people","emily_in_paris","good_omens","hightown",
@@ -95,6 +95,6 @@ palette_two <-
 
   }
 
-# palette_vignette(palette_two)
+# pal_vignette(pal_two)
 
 

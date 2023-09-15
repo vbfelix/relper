@@ -72,6 +72,10 @@
 
 -   Functions `plt_no_text` and `plt_no_grid` 
 
+**Improvements**
+
+-   Functions `palette_` prefix changed to `pal_`
+
 # relper 2.0.0 (Visual Delight)
 
 > *In this major release, `relper` introduces a brand-new feature called `palette_`, that contains palettes inspired by movies and TV shows.*
