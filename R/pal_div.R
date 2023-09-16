@@ -16,6 +16,7 @@
 #'  \cr - svott_pilgrim: 6 colors, inspired by the movie Scott Pilgrim vs the World.
 #'  \cr - the_americans: 7 colors, inspired by the TV series The Americans.
 #'  \cr - the_expanse: 8 colors, inspired by the TV series The Expanse.
+#'  \cr - the_marvels: 7 colors, inspired by the movie The Marvels.
 #'  \cr - vox_machina: 7 colors, inspired by the animation The Legend of Vox Machina.
 #'  \cr - wanda_vision: 9 colors, inspired by the TV series WandaVision.
 #'  \cr - white_lotus: 8 colors, inspired by the TV series The White Lotus.
@@ -38,7 +39,7 @@ pal_div <-
     name = c("arcane","casa_de_papel","deadly_class","dexter","godzilla_vs_kong","good_place",
              "homeland",
              "laura_dean","racionais","sandman","scott_pilgrim",
-             "the_americans","the_expanse","vox_machina","wanda_vision","white_lotus"),
+             "the_americans","the_expanse","the_marvels","vox_machina","wanda_vision","white_lotus"),
     reverse = FALSE
     ){
 
@@ -89,6 +90,11 @@ pal_div <-
     the_expanse <-
       c("#521C15", "#A93624", "#B36D4C", "#D6A281", "#E6EBE4", "#9DB7BA",
         "#61777E", "#3E4B4F")
+
+    the_marvels_ramp <-
+      colorRampPalette(c("#0c0390","#730aa4","#f65b01","#7b1102"))
+
+    the_marvels <- the_marvels_ramp(7)
 
     vox_machina <-
       c("#493953", "#746776", "#B1898B", "#CDBAB2", "#B5CCDE", "#9EADBA",

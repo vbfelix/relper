@@ -66,11 +66,12 @@
 
 -   Functions `calc_geometric_mean` and `calc_harmonic_mean` were removed and became `calc_mean`
 
-## relper 3.9.0
+## relper 3.9.2
 
 **Additions**
 
--   Functions `plt_no_text` and `plt_no_grid` 
+-   Functions `plt_no_text` and `plt_no_grid`
+-   New palettes
 
 **Improvements**
 

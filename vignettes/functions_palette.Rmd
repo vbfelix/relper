@@ -62,7 +62,7 @@ pal_vignette <-
 The goal of `pal_div` is to return a palette for a divergent scale, with the following palettes:
 
 
-```{r, echo = FALSE,fig.height = 14}
+```{r, echo = FALSE,fig.height = 15}
 
 pal_vignette(func_palette = pal_div)
 
@@ -72,7 +72,7 @@ pal_vignette(func_palette = pal_div)
 
 The goal of `pal_qua` is to return a palette for a qualitative scale, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 18}
+```{r, echo = FALSE,fig.height = 19}
 
 pal_vignette(func_palette = pal_qua)
 
@@ -92,7 +92,7 @@ pal_vignette(func_palette = pal_seq)
 
 The goal of `pal_two` is to return a palette with two colors, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 16}
+```{r, echo = FALSE,fig.height = 17}
 
 pal_vignette(func_palette = pal_two)
 

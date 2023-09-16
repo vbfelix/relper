@@ -5,10 +5,10 @@
 \title{Palettes with two constrast colors}
 \usage{
 pal_two(
-  name = c("boba_fett", "blade_runner_2049", "dear_white_people", "emily_in_paris",
-    "good_omens", "hightown", "jaws", "notorius", "saint_maud", "shirley", "spirited",
-    "the_english", "the_expanse", "the_gilded_age", "the_help", "titans", "watchmen",
-    "winning_time"),
+  name = c("barbie", "boba_fett", "blade_runner_2049", "dear_white_people",
+    "emily_in_paris", "good_omens", "hightown", "jaws", "notorius", "saint_maud",
+    "shirley", "spirited", "the_english", "the_expanse", "the_gilded_age", "the_help",
+    "titans", "watchmen", "winning_time"),
   reverse = FALSE
 )
 }
@@ -23,6 +23,7 @@ A character vector with the colors hex codes.
 \description{
 Palette with two constrast colors, with the following palettes:
  \cr
+ \cr - barbie: Inspired by the movie Barbie.
  \cr - boba_fett: Inspired by the TV series Boba Fett.
  \cr - blade_runner_2049: Inspired by the movie Blade Runner 2049.
  \cr - dear_white_people: Inspired by the TV series Dear White People.

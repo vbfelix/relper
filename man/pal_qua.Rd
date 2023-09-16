@@ -5,9 +5,9 @@
 \title{Palettes for qualitative scale}
 \usage{
 pal_qua(
-  name = c("bojack_horseman", "cowboy_bebop", "doctor_who", "final_space",
-    "gurren_lagann", "heartstopper", "homeland", "kick_ass", "legion", "omitb",
-    "moonlight", "ms_marvel", "pulp_fiction", "red_dead", "rick_and_morty", "star_trek",
+  name = c("bojack_horseman", "cowboy_bebop", "doctor_who", "elemental", "final_space",
+    "gurren_lagann", "heartstopper", "kaleidoscope", "kick_ass", "legion", "omitb",
+    "mario_bros", "moonlight", "ms_marvel", "pulp_fiction", "red_dead", "rick_and_morty",
     "ted_lasso", "this_is_us", "versace", "ww84", "young_sheldon"),
   reverse = FALSE
 )
@@ -26,19 +26,20 @@ Palettes for a qualitative scale, with the following palettes:
  \cr - bojack_horseman: 5 colors, inspired by the animation BoJack Horseman.
  \cr - cowboy_bebop: 5 colors, inspired by the animation Cowboy Bebop.
  \cr - doctor_who: 6 colors, inspired by the TV series Doctor Who.
+ \cr - elemental: 6 colors, inspired by the movie Elemental.
  \cr - final_space: 4 colors, inspired by the animation Final Space.
  \cr - gurren_lagann: 5 colors, inspired by the animation Tengen Toppa Gurren-Lagann.
  \cr - heartstopper: 5 colors, inspired by the TV series Heartstopper.
- \cr - homeland: 5 colors, inspired by the TV series Homeland.
+ \cr - kaleidoscope: 7 colors, inspired by the TV series Kaleidoscope.
  \cr - kick_ass: 6 colors, inspired by the movie Kick-ass.
  \cr - legion: 9 colors, inspired by the TV series Legion.
- \cr - moonlight: 6 colors, inspired by the movie Moonlight.
+ \cr - mario_bros: 7 colors, inspired by the movie The Super Mario Brothers.
+ \cr - moonlight: 5 colors, inspired by the movie Moonlight.
  \cr - ms_marvel: 6 colors, inspired by the TV Series Ms Marvel.
  \cr - omitb: 5 colors, inspired by the TV series Only Murders in the Building.
  \cr - pulp_fiction: 8 colors, inspired by the movie Pulp Fiction.
  \cr - red_dead: 6 colors, inspired by the video game Red Dead Redemption.
  \cr - rick_and_morty: 8 colors, inspired by the animation Rick and Morty.
- \cr - star_trek: 5 colors, inspired by the TV series Star Trek.
  \cr - ted_lasso: 5 colors, inspired by the TV series Ted Lasso.
  \cr - this_is_us: 5 colors, inspired by the TV series This is Us.
  \cr - versace: 8 colors, inspired by the TV series Versace.

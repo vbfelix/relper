@@ -2,6 +2,7 @@
 #'
 #' @description Palette with two constrast colors, with the following palettes:
 #'  \cr
+#'  \cr - barbie: Inspired by the movie Barbie.
 #'  \cr - boba_fett: Inspired by the TV series Boba Fett.
 #'  \cr - blade_runner_2049: Inspired by the movie Blade Runner 2049.
 #'  \cr - dear_white_people: Inspired by the TV series Dear White People.
@@ -37,7 +38,8 @@
 pal_two <-
   function(
     name = c(
-      "boba_fett","blade_runner_2049","dear_white_people","emily_in_paris","good_omens","hightown",
+      "barbie","boba_fett","blade_runner_2049","dear_white_people",
+      "emily_in_paris","good_omens","hightown",
       "jaws","notorius","saint_maud",
       "shirley","spirited","the_english","the_expanse","the_gilded_age","the_help","titans",
       "watchmen","winning_time"
@@ -50,6 +52,8 @@ pal_two <-
     name <- match.arg(name)
 
     stopifnot(is.logical(reverse), length(reverse) == 1)
+
+    barbie <- c("#f11da6","#1ab7fc")
 
     boba_fett <- c("#537654","#c88220")
 
