@@ -95,6 +95,7 @@ pals_seq<- list(
 #'
 #' @eval arg_vector("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
+#' @eval arg_boolean("show_palettes",action = "export the names of all the palettes")
 #'
 #' @return A character vector with the colors hex codes.
 #'
@@ -108,19 +109,28 @@ pals_seq<- list(
 
 pal_seq <-
   function(
-    name = "andor",
-    reverse = FALSE
-    ){
+    name = "young_sheldon",
+    reverse = FALSE,
+    show_palettes = FALSE
+  ){
 
     stopifnot(is.character(name), length(name) == 1)
 
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
-    output <- pals_seq[[name]]
+    stopifnot(is.logical(show_palettes), length(show_palettes) == 1)
 
-    stopifnot(is.character(output))
+    if(show_palettes){
 
-    if(reverse){output <- rev(output)}
+      output <- names(pals_seq)
+
+    }else{
+      output <- pals_seq[[name]]
+
+      stopifnot(is.character(output))
+
+      if(reverse){output <- rev(output)}
+    }
 
     return(output)
 

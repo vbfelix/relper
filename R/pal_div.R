@@ -7,7 +7,9 @@ pals_div <- list(
     c("#7D5449", "#967D6E", "#BEA698", "#3A5C6C", "#2B3548"),
 
   auto_compadecida =
-    c("#5D5D4B","#8E8A76","#C2B09F","#E0A71C","#C76E4A","#A13D20")
+    c("#5D5D4B","#8E8A76","#C2B09F","#E0A71C","#C76E4A","#A13D20"),
+
+  blue_eye_samurai = c("#214442","#0C696D","#45ABAF","#EBAE5B","#E7422A","#7D2D1E"),
 
   casa_de_papel =
     c("#6B362B", "#B83C36", "#B38262", "#D4C1A0", "#94A994", "#546A57","#35453B"),
@@ -66,6 +68,7 @@ pals_div <- list(
 #'  \cr
 #'  \cr - arcane: 5 colors, inspired by the animation Arcane.
 #'  \cr - auto_compadecida: 6 colors, inspired by the movie O Auto da Compadecida.
+#'  \cr - blue_eye_samurai: 6 colors, inpired by the TV series Blue Eye Samurai.
 #'  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
 #'  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
 #'  \cr - dexter: 6 colors, inspired by the TV series Dexter.
@@ -86,6 +89,7 @@ pals_div <- list(
 #'
 #' @eval arg_value("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
+#' @eval arg_boolean("show_palettes",action = "export the names of all the palettes")
 #'
 #' @return A character vector with the colors hex codes.
 #'
@@ -99,19 +103,28 @@ pals_div <- list(
 
 pal_div <-
   function(
-    name = "arcane",
-    reverse = FALSE
-    ){
+    name = "young_sheldon",
+    reverse = FALSE,
+    show_palettes = FALSE
+  ){
 
     stopifnot(is.character(name), length(name) == 1)
 
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
-    output <- pals_div[[name]]
+    stopifnot(is.logical(show_palettes), length(show_palettes) == 1)
 
-    stopifnot(is.character(output))
+    if(show_palettes){
 
-    if(reverse){output <- rev(output)}
+      output <- names(pals_div)
+
+    }else{
+      output <- pals_div[[name]]
+
+      stopifnot(is.character(output))
+
+      if(reverse){output <- rev(output)}
+    }
 
     return(output)
 

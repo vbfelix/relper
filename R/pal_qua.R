@@ -5,8 +5,6 @@ pals_qua <- list(
 
   berlim = c("#0A6D68","#BF2E23","#735738","#CDAE07","#161C15"),
 
-  blue_eye_samurai = c("#214442","#0C696D","#45ABAF","#EBAE5B","#E7422A","#7D2D1E"),
-
   bojack_horseman =
     c("#EB636B","#9E674C", "#FAC877", "#9464A2","#3C2533"),
 
@@ -83,7 +81,6 @@ pals_qua <- list(
 #' @description Palettes for a qualitative scale, with the following palettes:
 #'  \cr
 #'  \cr - berlim: 5 colors, inspired by the TV series Berlim.
-#'  \cr - blue_eye_samurai: 6 colors, inpired by the TV series Blue Eye Samurai.
 #'  \cr - bojack_horseman: 5 colors, inspired by the animation BoJack Horseman.
 #'  \cr - cowboy_bebop: 5 colors, inspired by the animation Cowboy Bebop.
 #'  \cr - doctor_who: 6 colors, inspired by the TV series Doctor Who.
@@ -110,6 +107,7 @@ pals_qua <- list(
 #'
 #' @eval arg_vector("name","character",action = "is the pallete name")
 #' @eval arg_boolean("reverse",action = "reverse the pallete order")
+#' @eval arg_boolean("show_palettes",action = "export the names of all the palettes")
 #'
 #' @return A character vector with the colors hex codes.
 #'
@@ -124,18 +122,27 @@ pals_qua <- list(
 pal_qua <-
   function(
     name = "young_sheldon",
-    reverse = FALSE
-    ){
+    reverse = FALSE,
+    show_palettes = FALSE
+  ){
 
     stopifnot(is.character(name), length(name) == 1)
 
     stopifnot(is.logical(reverse), length(reverse) == 1)
 
-    output <- pals_qua[[name]]
+    stopifnot(is.logical(show_palettes), length(show_palettes) == 1)
 
-    stopifnot(is.character(output))
+    if(show_palettes){
 
-    if(reverse){output <- rev(output)}
+      output <- names(pals_qua)
+
+    }else{
+      output <- pals_qua[[name]]
+
+      stopifnot(is.character(output))
+
+      if(reverse){output <- rev(output)}
+    }
 
     return(output)
 

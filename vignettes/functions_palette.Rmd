@@ -19,11 +19,9 @@ knitr::opts_chunk$set(
 library(relper)
 
 pal_vignette <-
-  function(func_palette){
+  function(func_palette, n_col = 1){
     
-    palettes <- as.character(unlist(formals(func_palette)$name)) 
-    palettes <- palettes[-1]
-    names(palettes) <- palettes
+    palettes <- func_palette(show_palettes = TRUE)
     
     palettes_df <-
       tibble::tibble(palette = palettes) %>% 
@@ -38,7 +36,7 @@ pal_vignette <-
     
     palettes_df %>% 
       ggplot2::ggplot(ggplot2::aes(x,palette, fill = color))+
-      ggplot2::geom_tile(col = "white",size = 1)+
+      ggplot2::geom_tile(col = "white",linewidth = 1)+
       ggplot2::scale_fill_manual(values = colors)+
       ggplot2::scale_x_discrete(expand = c(0,0))+
       ggplot2::scale_y_discrete(expand = c(0,0))+
@@ -50,7 +48,7 @@ pal_vignette <-
         strip.text = ggplot2::element_text(face = "bold",size = 15),
         axis.text.x = ggplot2::element_text(color = "black", size = 10)
       )+
-      ggplot2::facet_wrap(~palette,scales = "free", ncol = 1)+
+      ggplot2::facet_wrap(~palette,scales = "free", ncol = n_col)+
       relper::plt_no_labels
   }
 ```
@@ -62,7 +60,7 @@ pal_vignette <-
 The goal of `pal_div` is to return a palette for a divergent scale, with the following palettes:
 
 
-```{r, echo = FALSE,fig.height = 15}
+```{r pal_div, echo = FALSE,fig.height = 21}
 
 pal_vignette(func_palette = pal_div)
 
@@ -72,7 +70,7 @@ pal_vignette(func_palette = pal_div)
 
 The goal of `pal_qua` is to return a palette for a qualitative scale, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 19}
+```{r pal_qua, echo = FALSE,fig.height = 24}
 
 pal_vignette(func_palette = pal_qua)
 
@@ -82,7 +80,7 @@ pal_vignette(func_palette = pal_qua)
 
 The goal of `pal_seq` is to return a palette for a sequential scale, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 18}
+```{r pal_seq, echo = FALSE,fig.height = 21}
 
 pal_vignette(func_palette = pal_seq)
 
@@ -92,8 +90,8 @@ pal_vignette(func_palette = pal_seq)
 
 The goal of `pal_two` is to return a palette with two colors, with the following palettes:
 
-```{r, echo = FALSE,fig.height = 17}
+```{r pal_two, echo = FALSE,fig.height = 12}
 
-pal_vignette(func_palette = pal_two)
+pal_vignette(func_palette = pal_two,n_col = 2)
 
 ```
