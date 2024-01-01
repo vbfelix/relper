@@ -4,18 +4,14 @@
 \alias{pal_div}
 \title{Palettes for divergent scale}
 \usage{
-pal_div(
-  name = c("arcane", "casa_de_papel", "deadly_class", "dexter", "godzilla_vs_kong",
-    "good_place", "homeland", "laura_dean", "racionais", "sandman", "scott_pilgrim",
-    "the_americans", "the_expanse", "the_marvels", "vox_machina", "wanda_vision",
-    "white_lotus"),
-  reverse = FALSE
-)
+pal_div(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 }
 \arguments{
 \item{name}{A character single value, that is the pallete name}
 
 \item{reverse}{A boolean value, if TRUE the function will reverse the pallete order (default = FALSE)}
+
+\item{show_palettes}{A boolean value, if TRUE the function will export the names of all the palettes (default = FALSE)}
 }
 \value{
 A character vector with the colors hex codes.
@@ -24,6 +20,8 @@ A character vector with the colors hex codes.
 Palette for a divergent scale, with the following palettes:
  \cr
  \cr - arcane: 5 colors, inspired by the animation Arcane.
+ \cr - auto_compadecida: 6 colors, inspired by the movie O Auto da Compadecida.
+ \cr - blue_eye_samurai: 6 colors, inpired by the TV series Blue Eye Samurai.
  \cr - casa_de_papel: 7 colors, inspired by the TV series La Casa de Papel.
  \cr - deadly_class: 6 colors, inspired by the TV series Deadly Class.
  \cr - dexter: 6 colors, inspired by the TV series Dexter.
