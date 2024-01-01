@@ -4,18 +4,14 @@
 \alias{pal_qua}
 \title{Palettes for qualitative scale}
 \usage{
-pal_qua(
-  name = c("bojack_horseman", "cowboy_bebop", "doctor_who", "elemental", "final_space",
-    "gurren_lagann", "heartstopper", "kaleidoscope", "kick_ass", "legion", "omitb",
-    "mario_bros", "moonlight", "ms_marvel", "pulp_fiction", "red_dead", "rick_and_morty",
-    "ted_lasso", "this_is_us", "versace", "ww84", "young_sheldon"),
-  reverse = FALSE
-)
+pal_qua(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 }
 \arguments{
 \item{name}{A character vector, that is the pallete name}
 
 \item{reverse}{A boolean value, if TRUE the function will reverse the pallete order (default = FALSE)}
+
+\item{show_palettes}{A boolean value, if TRUE the function will export the names of all the palettes (default = FALSE)}
 }
 \value{
 A character vector with the colors hex codes.
@@ -23,6 +19,7 @@ A character vector with the colors hex codes.
 \description{
 Palettes for a qualitative scale, with the following palettes:
  \cr
+ \cr - berlim: 5 colors, inspired by the TV series Berlim.
  \cr - bojack_horseman: 5 colors, inspired by the animation BoJack Horseman.
  \cr - cowboy_bebop: 5 colors, inspired by the animation Cowboy Bebop.
  \cr - doctor_who: 6 colors, inspired by the TV series Doctor Who.
@@ -32,6 +29,7 @@ Palettes for a qualitative scale, with the following palettes:
  \cr - heartstopper: 5 colors, inspired by the TV series Heartstopper.
  \cr - kaleidoscope: 7 colors, inspired by the TV series Kaleidoscope.
  \cr - kick_ass: 6 colors, inspired by the movie Kick-ass.
+ \cr - killers_flower_moon: 5 colors, inspired byt the movie Killers of the Flower Moon.
  \cr - legion: 9 colors, inspired by the TV series Legion.
  \cr - mario_bros: 7 colors, inspired by the movie The Super Mario Brothers.
  \cr - moonlight: 5 colors, inspired by the movie Moonlight.

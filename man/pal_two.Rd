@@ -4,18 +4,14 @@
 \alias{pal_two}
 \title{Palettes with two constrast colors}
 \usage{
-pal_two(
-  name = c("barbie", "boba_fett", "blade_runner_2049", "dear_white_people",
-    "emily_in_paris", "good_omens", "hightown", "jaws", "notorius", "saint_maud",
-    "shirley", "spirited", "the_english", "the_expanse", "the_gilded_age", "the_help",
-    "titans", "watchmen", "winning_time"),
-  reverse = FALSE
-)
+pal_two(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 }
 \arguments{
 \item{name}{A character single value, that is the pallete name}
 
 \item{reverse}{A boolean value, if TRUE the function will reverse the pallete order (default = FALSE)}
+
+\item{show_palettes}{A boolean value, if TRUE the function will export the names of all the palettes (default = FALSE)}
 }
 \value{
 A character vector with the colors hex codes.
@@ -28,9 +24,13 @@ Palette with two constrast colors, with the following palettes:
  \cr - blade_runner_2049: Inspired by the movie Blade Runner 2049.
  \cr - dear_white_people: Inspired by the TV series Dear White People.
  \cr - emily_in_paris: Inspired by the TV series Emily in Paris.
+ \cr - exmas: Inspired by the movie Exmas.
+ \cr - family_switch: Inpired by the movie Family Switch.
  \cr - good_omens: Inspired by the TV series Good Omens.
  \cr - hightown: Inspired by the TV series Hightown.
  \cr - jaws: Inspired by the movie Jaws.
+ \cr - nightflyers: Inspired by the TV series Nightflyers.
+ \cr - mussum: Inspired by the movie Mussum.
  \cr - notorious: Inspired by the movie Notorious.
  \cr - saint_maud: Inspired by the movie Saint Maud.
  \cr - shirley: Inspired by the movie Shirley.
@@ -39,6 +39,7 @@ Palette with two constrast colors, with the following palettes:
  \cr - the_expanse: Inspired by the TV series The Expanse.
  \cr - the_gilded_age: Inspired by the TV series The Gilded Age.
  \cr - the_help: Inspired by the movie The Help.
+ \cr - the_whale: Inspired by the movie The Whale.
  \cr - titans: Inspired by the TV series Titans.
  \cr - watchmen: Inspired by the TV series Watchmen.
  \cr - winning_time: Inspired by the TV series Winning Time.

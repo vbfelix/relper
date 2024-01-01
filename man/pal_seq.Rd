@@ -4,18 +4,14 @@
 \alias{pal_seq}
 \title{Palettes for sequential scale}
 \usage{
-pal_seq(
-  name = c("andor", "badlands", "breaking_bad", "clockwork_orange", "cyberpunk",
-    "fleabag", "house_md", "house_of_cards", "loki", "lovecraft_country",
-    "mare_easttown", "peaky_blinders", "raised_by_wolves", "sabrina", "sandman",
-    "sucession", "the_wire", "tiger_king", "westworld1", "westworld2"),
-  reverse = FALSE
-)
+pal_seq(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 }
 \arguments{
 \item{name}{A character vector, that is the pallete name}
 
 \item{reverse}{A boolean value, if TRUE the function will reverse the pallete order (default = FALSE)}
+
+\item{show_palettes}{A boolean value, if TRUE the function will export the names of all the palettes (default = FALSE)}
 }
 \value{
 A character vector with the colors hex codes.
@@ -43,6 +39,7 @@ Palettes for a sequential scale, with the following palettes:
  \cr - tiger_king: 7 colors, inspired by the TV series Tiger King.
  \cr - westworld1: 7 colors, inspired by the TV series WestWorld.
  \cr - westworld2: 8 colors, inspired by the TV series WestWorld.
+ \cr - wonka: 5 colors, inpired by the movie Wonka.
 }
 \examples{
 
