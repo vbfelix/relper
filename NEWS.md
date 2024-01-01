@@ -1,12 +1,10 @@
-# relper 3.10.2
-
 # relper 3.0.0 (Calculations All The Way)
 
 > *In this major release, `relper` enhances its data analysis capabilities with a powerful suite of functions for computing various metrics and calculations.*
 >
 > *These additions transform the package into a comprehensive "Data Insight Toolbox," empowering users to gain deeper insights and perform advanced analyses on their datasets. Additionally, some functions have been renamed for better clarity and consistency.*
 
-## relper 3.10.1
+## relper 3.10.2
 
 **Additions**
 
