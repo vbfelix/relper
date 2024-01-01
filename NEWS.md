@@ -4,7 +4,7 @@
 >
 > *These additions transform the package into a comprehensive "Data Insight Toolbox," empowering users to gain deeper insights and perform advanced analyses on their datasets. Additionally, some functions have been renamed for better clarity and consistency.*
 
-## relper 3.10.0
+## relper 3.10.1
 
 **Additions**
 
