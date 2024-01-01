@@ -165,7 +165,7 @@ is_weekend(Sys.Date())
 
 The goal of `is_zero` is to check if a value is equal to zero.
 
-```{r is_odd}
+```{r is_zero}
 is_zero(1)
 
 is_zero(0)
