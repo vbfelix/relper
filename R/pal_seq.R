@@ -1,4 +1,4 @@
-#' List of palettes
+#' List of sequential colors palettes
 #' @export
 
 pals_seq<- list(

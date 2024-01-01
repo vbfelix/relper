@@ -1,4 +1,4 @@
-#' List of palettes
+#' List of divergent colors palettes
 #' @export
 
 pals_div <- list(

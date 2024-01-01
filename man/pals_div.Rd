@@ -3,7 +3,7 @@
 \docType{data}
 \name{pals_div}
 \alias{pals_div}
-\title{List of palettes}
+\title{List of divergent colors palettes}
 \format{
 An object of class \code{list} of length 19.
 }
@@ -11,6 +11,6 @@ An object of class \code{list} of length 19.
 pals_div
 }
 \description{
-List of palettes
+List of divergent colors palettes
 }
 \keyword{datasets}

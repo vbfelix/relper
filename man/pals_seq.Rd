@@ -3,7 +3,7 @@
 \docType{data}
 \name{pals_seq}
 \alias{pals_seq}
-\title{List of palettes}
+\title{List of sequential colors palettes}
 \format{
 An object of class \code{list} of length 21.
 }
@@ -11,6 +11,6 @@ An object of class \code{list} of length 21.
 pals_seq
 }
 \description{
-List of palettes
+List of sequential colors palettes
 }
 \keyword{datasets}

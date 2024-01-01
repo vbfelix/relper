@@ -2,7 +2,7 @@
 % Please edit documentation in R/pal_two.R
 \name{pal_two}
 \alias{pal_two}
-\title{Palettes with two constrast colors}
+\title{Palettes with two contrastant colors}
 \usage{
 pal_two(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 }
@@ -17,7 +17,7 @@ pal_two(name = "young_sheldon", reverse = FALSE, show_palettes = FALSE)
 A character vector with the colors hex codes.
 }
 \description{
-Palette with two constrast colors, with the following palettes:
+Palette with two contrastant colors, with the following palettes:
  \cr
  \cr - barbie: Inspired by the movie Barbie.
  \cr - boba_fett: Inspired by the TV series Boba Fett.

@@ -3,7 +3,7 @@
 \docType{data}
 \name{pals_two}
 \alias{pals_two}
-\title{List of palettes}
+\title{List of binary colors palettes}
 \format{
 An object of class \code{list} of length 24.
 }
@@ -11,6 +11,6 @@ An object of class \code{list} of length 24.
 pals_two
 }
 \description{
-List of palettes
+List of binary colors palettes
 }
 \keyword{datasets}

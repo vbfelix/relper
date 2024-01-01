@@ -1,4 +1,4 @@
-#' List of palettes
+#' List of binary colors palettes
 #' @export
 
 pals_two<- list(
@@ -52,9 +52,9 @@ pals_two<- list(
 )
 
 
-#' Palettes with two constrast colors
+#' Palettes with two contrastant colors
 #'
-#' @description Palette with two constrast colors, with the following palettes:
+#' @description Palette with two contrastant colors, with the following palettes:
 #'  \cr
 #'  \cr - barbie: Inspired by the movie Barbie.
 #'  \cr - boba_fett: Inspired by the TV series Boba Fett.

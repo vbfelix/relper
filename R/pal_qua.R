@@ -1,4 +1,4 @@
-#' List of palettes
+#' List of qualitative colors palettes
 #' @export
 
 pals_qua <- list(
