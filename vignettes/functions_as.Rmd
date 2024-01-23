@@ -29,10 +29,3 @@ The goal of `as_num` is to be a more generalized version of `as.numeric`, where 
 as_num("123.456,78")
 ```
 
-If you set the argument `sum` to `TRUE` the function will divide the values by their total and multiply by 100.
-
-```{r as_perc-sum}
-mtcars %>% 
-  count(vs,am) %>% 
-  mutate(perc = as_perc(n,sum = TRUE))
-```
