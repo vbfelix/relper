@@ -553,6 +553,23 @@ pd_plot+
 
 ```
 
+# calc_perc
+
+The goal of `calc_perc` is to compute the percentage.
+
+```{r calc_perc}
+
+#without main_var
+calc_perc(mtcars,grp_var = c(cyl,vs))
+
+#main_var within grp_var
+calc_perc(mtcars,grp_var = c(cyl,vs),main_var = vs)
+
+#main_var not within grp_var
+calc_perc(mtcars,grp_var = c(cyl),main_var = vs)
+
+```
+
 # calc_skewness
 
 The goal of `calc_skewness` is to compute a skewness coefficient.
