@@ -61,9 +61,6 @@
     <loc>https://vbfelix.github.io/relper/reference/as_num.html</loc>
   </url>
   <url>
-    <loc>https://vbfelix.github.io/relper/reference/as_perc.html</loc>
-  </url>
-  <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_acf.html</loc>
   </url>
   <url>
@@ -98,6 +95,9 @@
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_peak_density.html</loc>
+  </url>
+  <url>
+    <loc>https://vbfelix.github.io/relper/reference/calc_perc.html</loc>
   </url>
   <url>
     <loc>https://vbfelix.github.io/relper/reference/calc_skewness.html</loc>

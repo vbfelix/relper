@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.10.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.11.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,36 +105,7 @@ marks, such as “10.000,02”.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/as_num.html">as_num</a></span><span class="op">(</span><span class="st">"123.456,78"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 123456.8</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="as_perc">as_perc<a class="anchor" aria-label="anchor" href="#as_perc"></a>
-</h2>
-<p>The goal of <code>as_perc</code> is to convert a number to a
-percentage. By default, the function simply multiplies values by
-100.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="../reference/as_perc.html">as_perc</a></span><span class="op">(</span><span class="va">prop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   vs am  n    prop   perc</span></span>
-<span><span class="co">#&gt; 1  0  0 12 0.37500 37.500</span></span>
-<span><span class="co">#&gt; 2  0  1  6 0.18750 18.750</span></span>
-<span><span class="co">#&gt; 3  1  0  7 0.21875 21.875</span></span>
-<span><span class="co">#&gt; 4  1  1  7 0.21875 21.875</span></span></code></pre></div>
-<p>If you set the argument <code>sum</code> to <code>TRUE</code> the
-function will divide the values by their total and multiply by 100.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">vs</span>,<span class="va">am</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="../reference/as_perc.html">as_perc</a></span><span class="op">(</span><span class="va">n</span>,sum <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   vs am  n   perc</span></span>
-<span><span class="co">#&gt; 1  0  0 12 37.500</span></span>
-<span><span class="co">#&gt; 2  0  1  6 18.750</span></span>
-<span><span class="co">#&gt; 3  1  0  7 21.875</span></span>
-<span><span class="co">#&gt; 4  1  1  7 21.875</span></span></code></pre></div>
-</div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
-    </nav></aside>
+  </main>
 </div>
 
 

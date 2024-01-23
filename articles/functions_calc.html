@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.10.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.11.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,15 +125,15 @@ time series.</li>
 <span><span class="co">#&gt;        acf   lag</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  1          0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.138      1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.187      2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.054<span style="text-decoration: underline;">4</span>     3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.085<span style="text-decoration: underline;">0</span>     4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.039</span><span style="color: #BB0000; text-decoration: underline;">2</span>     5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.235</span>      6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.044<span style="text-decoration: underline;">9</span>     7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">0.277</span>      8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.096<span style="text-decoration: underline;">7</span>     9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">0.220</span>      1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.209</span>      2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.203      3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">0.208</span>      4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.135      5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.081</span><span style="color: #BB0000; text-decoration: underline;">9</span>     6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>  0.043<span style="text-decoration: underline;">5</span>     7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.139      8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.211</span>      9</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span></code></pre></div>
 <p>If you pass a second vector in the argument <code>y</code> the
 cross-correlation will be computed instead:</p>
@@ -158,16 +158,16 @@ where:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 2</span></span></span>
 <span><span class="co">#&gt;         ccf   lag</span></span>
 <span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  0.052<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">16</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.010<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">15</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">0.006</span><span style="color: #BB0000; text-decoration: underline;">54</span>   -<span style="color: #BB0000;">14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.014<span style="text-decoration: underline;">3</span>    -<span style="color: #BB0000;">13</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.185     -<span style="color: #BB0000;">12</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">0.026</span><span style="color: #BB0000; text-decoration: underline;">3</span>    -<span style="color: #BB0000;">11</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.079</span><span style="color: #BB0000; text-decoration: underline;">3</span>    -<span style="color: #BB0000;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.035</span><span style="color: #BB0000; text-decoration: underline;">9</span>     -<span style="color: #BB0000;">9</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.007<span style="text-decoration: underline;">16</span>    -<span style="color: #BB0000;">8</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">0.056</span><span style="color: #BB0000; text-decoration: underline;">5</span>     -<span style="color: #BB0000;">7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">0.159</span>     -<span style="color: #BB0000;">16</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>  0.036<span style="text-decoration: underline;">2</span>    -<span style="color: #BB0000;">15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>  0.101     -<span style="color: #BB0000;">14</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  0.117     -<span style="color: #BB0000;">13</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>  0.036<span style="text-decoration: underline;">0</span>    -<span style="color: #BB0000;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>  0.007<span style="text-decoration: underline;">49</span>   -<span style="color: #BB0000;">11</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">0.001</span><span style="color: #BB0000; text-decoration: underline;">27</span>   -<span style="color: #BB0000;">10</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">0.286</span>      -<span style="color: #BB0000;">9</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>  0.031<span style="text-decoration: underline;">9</span>     -<span style="color: #BB0000;">8</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  0.282      -<span style="color: #BB0000;">7</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -694,11 +694,52 @@ density value of a numeric value.</p>
 <p><img src="functions_calc_files/figure-html/calc_peak_density-plot-1.png" width="700"></p>
 </div>
 <div class="section level2">
+<h2 id="calc_perc">calc_perc<a class="anchor" aria-label="anchor" href="#calc_perc"></a>
+</h2>
+<p>The goal of <code>calc_perc</code> is to compute the percentage.</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co">#without main_var</span></span>
+<span><span class="fu"><a href="../reference/calc_perc.html">calc_perc</a></span><span class="op">(</span><span class="va">mtcars</span>,grp_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cyl</span>,<span class="va">vs</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
+<span><span class="co">#&gt;     cyl    vs     n  perc</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     8     0    14 43.8 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     4     1    10 31.2 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     6     1     4 12.5 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     6     0     3  9.38</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     4     0     1  3.12</span></span>
+<span></span>
+<span><span class="co">#main_var within grp_var</span></span>
+<span><span class="fu"><a href="../reference/calc_perc.html">calc_perc</a></span><span class="op">(</span><span class="va">mtcars</span>,grp_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cyl</span>,<span class="va">vs</span><span class="op">)</span>,main_var <span class="op">=</span> <span class="va">vs</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   vs [2]</span></span></span>
+<span><span class="co">#&gt;      vs   cyl     n  perc</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     0     8    14 77.8 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     0     6     3 16.7 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     0     4     1  5.56</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     1     4    10 71.4 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     1     6     4 28.6</span></span>
+<span></span>
+<span><span class="co">#main_var not within grp_var</span></span>
+<span><span class="fu"><a href="../reference/calc_perc.html">calc_perc</a></span><span class="op">(</span><span class="va">mtcars</span>,grp_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>,main_var <span class="op">=</span> <span class="va">vs</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   vs [2]</span></span></span>
+<span><span class="co">#&gt;      vs   cyl     n  perc</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     0     8    14 77.8 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     0     6     3 16.7 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     0     4     1  5.56</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     1     4    10 71.4 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     1     6     4 28.6</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="calc_skewness">calc_skewness<a class="anchor" aria-label="anchor" href="#calc_skewness"></a>
 </h2>
 <p>The goal of <code>calc_skewness</code> is to compute a skewness
 coefficient.</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
 <p>Where different types of coefficients are provided, they are:</p>
@@ -717,7 +758,7 @@ quartile;</li>
 <li>
 <span class="math inline">\(Q_3\)</span> is the third quartile.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"bowley"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.07563213</span></span></code></pre></div>
 </div>
@@ -738,7 +779,7 @@ length <span class="math inline">\(n\)</span>;</li>
 <span class="math inline">\(s_x\)</span> is the standard deviation
 of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"fisher_pearson"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2.74827</span></span></code></pre></div>
 </div>
@@ -759,7 +800,7 @@ i.e., <span class="math inline">\(P_{50}\)</span>;</li>
 <span class="math inline">\(P_{10}\)</span> is the 10th
 percentile;</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"kelly"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.1755126</span></span></code></pre></div>
 </div>
@@ -781,7 +822,7 @@ coefficient, is given by:</p>
 <span class="math inline">\(s_x\)</span> is the standard deviation
 of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"pearson_median"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.5718116</span></span></code></pre></div>
 </div>
@@ -802,7 +843,7 @@ of <span class="math inline">\(x\)</span>.</li>
 <li>
 <span class="math inline">\(n\)</span> is the length of <span class="math inline">\(x\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_skewness.html">calc_skewness</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>,type <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2019945</span></span></code></pre></div>
 </div>
