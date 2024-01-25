@@ -1,6 +1,6 @@
 Package: relper
 Title: Miscellaneous Functions for Data Preparation, Cleaning, and Visualization
-Version: 3.11.2
+Version: 3.11.3
 Authors@R: person("Vinícius", "Félix", email = "vinicius1b7f@gmail.com", role = c("aut", "cre"))
 Description: A collection of functions to help with data preparation, cleaning, and visualization. relper offers functions to: transform and format data (e.g., easily apply the percentage), compute metrics (e.g., coefficient of variation), check conditions (e.g., determine if a number is even or odd), supply lovely and varied color palettes (e.g., palettes inspired by TV series and movies), complement ggplot2 (e.g., add an identity line to a scatter plot), manipulate strings (e.g., keep only a type of character). The package's ultimate purpose is to simplify data analysis by providing functions that will shorten some steps.
 Depends: R (>= 3.6.0)

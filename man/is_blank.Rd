@@ -7,7 +7,7 @@
 is_blank(x)
 }
 \arguments{
-\item{x}{A character vector}
+\item{x}{A  vector}
 }
 \value{
 A boolean vector with the return from the condition check.
@@ -24,5 +24,9 @@ is_blank(NA_character_)
 is_blank(" ")
 
 is_blank("-")
+
+is_blank(NULL)
+
+is_blank(NaN)
 
 }

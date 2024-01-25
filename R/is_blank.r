@@ -2,7 +2,7 @@
 #'
 #' @description Return TRUE if the value is blank.
 #'
-#' @eval arg_vector("x","character")
+#' @eval arg_vector("x","")
 #'
 #' @return A boolean vector with the return from the condition check.
 #'
@@ -18,10 +18,12 @@
 #'
 #' is_blank("-")
 #'
+#' is_blank(NULL)
+#'
+#' is_blank(NaN)
+#'
 
 is_blank <- function(x){
-
-  stopifnot(is.null(x) | is.character(x))
 
   if(is.null(x)){
 
@@ -29,9 +31,17 @@ is_blank <- function(x){
 
   }else{
 
-    x <- stringr::str_trim(x)
+    if(relper::is_string(x)){
 
-    output <- (is.na(x)) | (x == "") | (x == "-")
+      x <- stringr::str_trim(x)
+
+      output <- (is.na(x)) | (x == "") | (x == "-")
+
+    }else{
+
+      output <- is.na(x)
+
+    }
 
   }
 

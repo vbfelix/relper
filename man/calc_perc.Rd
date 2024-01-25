@@ -28,5 +28,5 @@ calc_perc(mtcars,grp_var = c(cyl,vs))
 calc_perc(mtcars,grp_var = c(cyl,vs),main_var = vs)
 
 #main_var not within grp_var
-calc_perc(mtcars,grp_var = c(cyl,vs),main_var = am)
+calc_perc(mtcars,grp_var = c(cyl),main_var = vs)
 }
