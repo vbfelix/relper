@@ -20,6 +20,18 @@ library(dplyr)
 library(ggplot2)
 ```
 
+# count_na
+
+The goal of `count_na` is to count the number of missing observations.
+
+```{r count_na}
+count_na(c(2,2,NA))
+
+count_na(c(2,2,2))
+
+```
+
+
 # cut_by_quantile
 
 The goal of `cut_by_quantile` is to divide a numeric variable by a set of quantiles.
