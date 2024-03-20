@@ -17,12 +17,9 @@ test_that("Expect FALSE", {
 
   expect_false(object = is_blank("a"))
 
-})
+  expect_false(object = is_blank(TRUE))
 
-test_that("Expect error", {
-
-  expect_error(object = is_blank(TRUE))
-
-  expect_error(object = is_blank(1))
+  expect_false(object = is_blank(1))
 
 })
+
