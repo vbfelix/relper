@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">relper</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.11.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.12.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,11 +96,23 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
+<h2 id="count_na">count_na<a class="anchor" aria-label="anchor" href="#count_na"></a>
+</h2>
+<p>The goal of <code>count_na</code> is to count the number of missing
+observations.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/count_na.html">count_na</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span>,<span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/count_na.html">count_na</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="cut_by_quantile">cut_by_quantile<a class="anchor" aria-label="anchor" href="#cut_by_quantile"></a>
 </h2>
 <p>The goal of <code>cut_by_quantile</code> is to divide a numeric
 variable by a set of quantiles.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span></span>
@@ -117,7 +129,7 @@ variable by a set of quantiles.</p>
 <p>The goal of <code>expand_grid_unique</code> is to create a grid of
 all combination from two variables, with no repetition of pairs, not
 matter the position.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/expand_grid_unique.html">expand_grid_unique</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 2</span></span></span>
 <span><span class="co">#&gt;      V1    V2</span></span>
@@ -127,7 +139,7 @@ matter the position.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     2     3</span></span></code></pre></div>
 <p>You can also set the argument <code>include_equals</code> to
 <code>TRUE</code>, so equal pairs are kept.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/expand_grid_unique.html">expand_grid_unique</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, include_equals <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
 <span><span class="co">#&gt;      V1    V2</span></span>
@@ -144,7 +156,7 @@ matter the position.</p>
 </h2>
 <p>The goal of <code>obj_to_string</code> is to return the name of an R
 object as a string.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">12</span>,<span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/obj_to_string.html">obj_to_string</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -155,7 +167,7 @@ object as a string.</p>
 </h2>
 <p>The goal of <code>row_number_unique</code> is to get the row number,
 but considering the unique values of a variable.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    row_number <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/row_number.html" class="external-link">row_number</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -179,7 +191,7 @@ but considering the unique values of a variable.</p>
 <p>The goal of <code>rpearson</code> is to simulate data, where two
 variables will be linear correlated with a normal distribution, using
 pearson correlation coefficient as an argument.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>;<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rpearson.html">rpearson</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, pearson <span class="op">=</span> <span class="fl">.85</span>, mean <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
