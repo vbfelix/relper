@@ -70,6 +70,28 @@ obj_to_string(x)
 
 ```
 
+# replace_boolean
+
+The goal of `replace_boolean` is to replace the values of a boolean variable to other values.
+
+```{r replace_boolean}
+
+replace_boolean(c(T,T,T,F,F),1,2)
+
+```
+
+
+# replace_na
+
+The goal of `replace_na` is to replace the NA value to another.
+
+```{r replace_na}
+
+replace_na(c(NA,NA,NA),1)
+
+```
+
+
 # row_number_unique
 
 The goal of `row_number_unique` is to get the row number, but considering the unique values of a variable.

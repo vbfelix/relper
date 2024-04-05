@@ -7,7 +7,7 @@
 count_na(x)
 }
 \arguments{
-\item{x}{A  single value}
+\item{x}{A  vector}
 }
 \value{
 A numeric value
