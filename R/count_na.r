@@ -2,7 +2,7 @@
 #'
 #' @description Count the number of NA observations
 #'
-#' @eval arg_value("x","")
+#' @eval arg_vector("x","")
 
 #' @return A numeric value
 #'
