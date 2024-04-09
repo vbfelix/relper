@@ -3,8 +3,8 @@
 #' @description Replace a boolean
 #'
 #' @eval arg_vector("x","boolean")
-#' @eval arg_value("true_value","a value to replace TRUE values in x")
-#' @eval arg_value("false_value","a value to replace FALSE values in x")
+#' @eval arg_value("true_value","",action = "will replace TRUE values")
+#' @eval arg_value("false_value","",action = "will replace FALSE values")
 #'
 #' @return A numeric value
 #'

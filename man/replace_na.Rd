@@ -9,7 +9,7 @@ replace_na(x, na_value)
 \arguments{
 \item{x}{A  vector}
 
-\item{na_value}{A a value to replace NA values in x single value}
+\item{na_nalue}{A  single value, that will replace NA values}
 }
 \value{
 A numeric value

@@ -9,9 +9,9 @@ replace_boolean(x, true_value = NULL, false_value = NULL)
 \arguments{
 \item{x}{A boolean vector}
 
-\item{true_value}{A a value to replace TRUE values in x single value}
+\item{true_value}{A  single value, that will replace TRUE values}
 
-\item{false_value}{A a value to replace FALSE values in x single value}
+\item{false_value}{A  single value, that will replace FALSE values}
 }
 \value{
 A numeric value

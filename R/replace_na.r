@@ -3,7 +3,7 @@
 #' @description Replace a NA value
 #'
 #' @eval arg_vector("x","")
-#' @eval arg_value("na_value","a value to replace NA values in x")
+#' @eval arg_value("na_nalue","",action = "will replace NA values")
 #'
 #' @return A numeric value
 #'
