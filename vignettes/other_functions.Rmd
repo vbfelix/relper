@@ -20,6 +20,15 @@ library(dplyr)
 library(ggplot2)
 ```
 
+# count2
+
+The goal of `count2` is to count the number of observations, giving a initial count.
+
+```{r count2}
+count2(mtcars,cyl)
+
+```
+
 # count_na
 
 The goal of `count_na` is to count the number of missing observations.
