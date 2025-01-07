@@ -1,312 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://vbfelix.github.io/relper/404.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_as.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_calc.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_dttm.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_format.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_is.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_isnot.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_palette.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_plt.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_stat.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_str.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/functions_summary.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/articles/other_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/index.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/as_num.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_acf.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_association.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_auc.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_combination.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_correlation.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_cv.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_error.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_kurtosis.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_mean.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_modality.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_mode.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_peak_density.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_perc.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/calc_skewness.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/count2.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/count_na.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/cut_by_quantile.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/dttm_diff.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/dttm_vars.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/expand_grid_unique.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/format_digit.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/format_num.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/format_p_value.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/format_scale.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_blank.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_date.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_datetime.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_even.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_integer.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_negative.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_odd.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_outlier.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_positive.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_string.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_weekend.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/is_zero.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/isnot_in.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/isnot_na.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/obj_to_string.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pal_div.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pal_qua.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pal_seq.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pal_two.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pals_div.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pals_qua.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pals_seq.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pals_two.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_flip_y_title.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_identity_line.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_no_background.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_no_grid.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_no_labels.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_no_text.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_pinpoint.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_regression_line.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_scale_auto.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_scale_y_mirror.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_theme_map.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_theme_x.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_theme_xy.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_theme_y.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/plt_water_mark.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/replace_boolean.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/replace_na.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/row_number_unique.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/rpearson.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/stat_missing_values.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/stat_normality.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/stat_two_cat.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/stat_two_num.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/str_clean.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/str_extract_char.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/str_keep.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/str_select.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/str_to_abb.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/summary_cat.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/summary_num.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/summary_seq.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/summary_xy.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/vfx_watermark.html</loc>
-  </url>
-  <url>
-    <loc>https://vbfelix.github.io/relper/reference/vfx_watermark_white.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://vbfelix.github.io/relper/404.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/LICENSE-text.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/LICENSE.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_as.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_calc.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_dttm.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_format.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_is.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_isnot.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_palette.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_plt.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_stat.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_str.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/functions_summary.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/index.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/articles/other_functions.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/authors.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/index.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/news/index.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/as_num.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_acf.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_association.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_auc.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_combination.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_correlation.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_cv.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_error.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_kurtosis.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_mean.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_modality.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_mode.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_peak_density.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_perc.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/calc_skewness.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/count2.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/count_na.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/cut_by_quantile.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/dttm_diff.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/dttm_vars.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/expand_grid_unique.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/format_digit.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/format_num.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/format_p_value.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/format_scale.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/index.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_blank.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_date.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_datetime.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_even.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_integer.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_negative.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_odd.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_outlier.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_positive.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_string.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_weekend.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/is_zero.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/isnot_in.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/isnot_na.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/obj_to_string.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pal_div.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pal_qua.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pal_seq.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pal_two.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pals_div.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pals_qua.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pals_seq.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pals_two.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/pipe.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_flip_y_title.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_identity_line.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_no_background.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_no_grid.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_no_labels.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_no_text.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_pinpoint.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_regression_line.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_scale_auto.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_scale_y_mirror.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_theme_map.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_theme_x.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_theme_xy.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_theme_y.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/plt_water_mark.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/replace_boolean.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/replace_na.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/row_number_unique.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/rpearson.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/stat_missing_values.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/stat_normality.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/stat_two_cat.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/stat_two_num.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/str_clean.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/str_extract_char.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/str_keep.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/str_select.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/str_to_abb.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/summary_cat.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/summary_num.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/summary_seq.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/summary_xy.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/vfx_watermark.html</loc></url>
+<url><loc>https://vbfelix.github.io/relper/reference/vfx_watermark_white.html</loc></url>
 </urlset>
+
