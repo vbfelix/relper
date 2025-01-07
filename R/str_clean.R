@@ -46,10 +46,12 @@ str_clean <-
     }
 
     if(remove_accent){
-      string <- iconv(string, from = Encoding(string), to = 'ASCII//TRANSLIT')
+      string <- iconv(string, to = 'ASCII//TRANSLIT')
     }
 
-    return(string)
+    output <- stingr::str_trim(string)
+
+    return(output)
   }
 
 
