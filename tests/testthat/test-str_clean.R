@@ -6,6 +6,22 @@ test_that("Expect equal", {
   )
 
   expect_equal(
+    object = str_clean(string = "aaa "),
+    expected = "aaa"
+  )
+
+  expect_equal(
+    object = str_clean(string = " aaa"),
+    expected = "aaa"
+  )
+
+  expect_equal(
+    object = str_clean(string = " aaa "),
+    expected = "aaa"
+  )
+
+
+  expect_equal(
     object = str_clean(string = "a..;éâ...íõ",remove_accent = TRUE,remove_punct = FALSE),
     expected = "a..;ea...io"
   )

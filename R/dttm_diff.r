@@ -31,7 +31,7 @@ dttm_diff <-
 
     stopifnot(relper::is_date(date2) | relper::is_datetime(date2))
 
-    stopifnot(length(date1) == length(date2))
+    stopifnot(length(date1) == length(date2)| length(date1) == 1|length(date2) == 1)
 
     stopifnot(is.numeric(add),length(add) == 1)
 

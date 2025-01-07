@@ -49,7 +49,7 @@ str_clean <-
       string <- iconv(string, to = 'ASCII//TRANSLIT')
     }
 
-    output <- stingr::str_trim(string)
+    output <- stringr::str_trim(string)
 
     return(output)
   }
