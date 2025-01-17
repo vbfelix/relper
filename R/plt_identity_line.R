@@ -5,6 +5,7 @@
 #' @eval arg_value("color","character",default = "'black'", action = "will be the line color")
 #' @eval arg_value("linetype","character",default = "'dashed'", action = "will be the line type")
 #' @eval arg_value("linewidth","numeric",default = "0.75", action = "will be the line width")
+#' @eval arg_value("label","character",default = "'Identity line'", action = "will be the line label")
 #'
 #' @return A ggplot2 object.
 #'
@@ -23,7 +24,8 @@
 #' plot + plt_identity_line()
 #'
 
-plt_identity_line <- function(color = "black", linetype = "dashed",linewidth = .75){
+plt_identity_line <-
+  function(color = "black", linetype = "dashed",linewidth = .75, label = "Identity line"){
 
   stopifnot(is.character(color), length(color) == 1)
 
@@ -33,7 +35,7 @@ plt_identity_line <- function(color = "black", linetype = "dashed",linewidth = .
 
   list(
     ggplot2::geom_abline(
-      mapping = ggplot2::aes(slope = 1, intercept = 0,linewidth = "Identity line"),
+      mapping = ggplot2::aes(slope = 1, intercept = 0,linewidth = label),
       linetype = linetype,
       color = color
     ),
