@@ -51,7 +51,7 @@ plt_scale_auto <-
         ggplot2::scale_x_continuous(
           expand = c(expand,0),
           breaks = scales::breaks_extended(n_breaks),
-          labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
+          labels = scales::label_number(thousand_mark = thousand_mark,decimal_mark = decimal_mark)
         )
     }
 
@@ -60,7 +60,7 @@ plt_scale_auto <-
         ggplot2::scale_y_continuous(
           expand = c(expand,0),
           breaks = scales::breaks_extended(n_breaks),
-          labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
+          labels = scales::label_number(thousand_mark = thousand_mark,decimal_mark = decimal_mark)
         )
     }
 
@@ -70,12 +70,12 @@ plt_scale_auto <-
           ggplot2::scale_y_continuous(
             expand = c(expand,0),
             breaks = scales::breaks_extended(n_breaks),
-            labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
+            labels = scales::label_number(thousand_mark = thousand_mark,decimal_mark = decimal_mark)
           ),
           ggplot2::scale_x_continuous(
             expand = c(expand,0),
             breaks = scales::breaks_extended(n_breaks),
-            labels = scales::label_number(thousand_mark = ".",decimal_mark = ",")
+            labels = scales::label_number(thousand_mark = thousand_mark,decimal_mark = decimal_mark)
           )
         )
 
